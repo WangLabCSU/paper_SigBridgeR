@@ -2,6 +2,7 @@ library(ggplot2)
 library(ggalluvial)
 library(dplyr)
 
+here::i_am("paper_SigBridgeR/R/benchmarkdata_sankey.R")
 setwd(here::here())
 
 # 示例数据创建
@@ -11,12 +12,12 @@ data_survival <- data.frame(
         rep("GSE161529_HER2", 3),
         rep("GSE161529_TNBC", 3),
         rep("GSE123902", 4),
-        rep("GSE1678897", 3)
+        rep("GSE1678897", 2)
     ),
     bulk = c(
         rep(c("GSE42568", "GSE162228", "TCGA-BRCA"), 2),
         c("GSE3141", "GSE8894", "GSE31210", "TCGA-LUAD"),
-        c("GSE9891", "GSE32062", "GSE140082")
+        c("GSE32062", "GSE140082")
     ),
     phenotype = c("Survival")
 )
