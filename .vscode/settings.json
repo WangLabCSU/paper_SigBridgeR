@@ -1,0 +1,12 @@
+{
+    "positron.r.useNativePipe": false,
+    "[r]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "Posit.air-vscode"
+    },
+    "[quarto]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "quarto.quarto"
+    },
+    "positron.r.pipe": "%>%"
+}
