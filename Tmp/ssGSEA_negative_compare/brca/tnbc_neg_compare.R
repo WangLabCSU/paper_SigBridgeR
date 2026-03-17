@@ -1,6 +1,5 @@
 # setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-setwd("/home/yyx/R/Project/R_code/SigBridgeR/Tmp/ssGSEA_negative_compare/brca")
-
+setwd(usethis::proj_path())
 set.seed(123)
 
 library(dplyr)
@@ -45,7 +44,7 @@ message("Total common genes: ", length(common_gene))
 
 # ✅ 重复抽样 10 次，每次 20 个基因
 set.seed(123) # 保证每次运行结果一致（若需不同结果可移除此行或换种子）
-n_reps <- 10
+n_reps <- 100
 n_genes <- 20
 
 # 检查：确保 common_gene 足够多
@@ -66,4 +65,7 @@ colnames(random20_matrix) <- paste0("Sample_", 1:n_reps)
 
 # 转为 data.table 并保存
 dt_out <- data.table::as.data.table(random20_matrix)
-data.table::fwrite(dt_out, file = 'tnbc_random20_markers_10rep.csv')
+data.table::fwrite(
+  dt_out,
+  file = 'Tmp/ssGSEA_negative_compare/brca/tnbc_random20_markers_100rep.csv'
+)

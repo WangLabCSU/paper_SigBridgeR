@@ -13,7 +13,7 @@ library(GSVA)
 # ! hgsoc-GSE165897, bulk-GSE140082
 
 seurat <- qs::qread(
-  "/home/data/sigbridger/benchmark_data/lung/luad_GSE123902_seurat.qs",
+  "/home/data/sigbridger/benchmark_data/brca/seurat_her2.qs",
   nthreads = 4
 )
 # seurat <- SCTransform(seurat)
@@ -25,10 +25,11 @@ expr <- as.matrix(SeuratObject::LayerData(seurat, layer = "data"))
 # ! from Negative control markes
 # ! random selected
 markers <- data.table::fread(
-  "Tmp/ssGSEA_negative_compare/luad/luad_random20_markers_100rep.csv"
+  "Tmp/ssGSEA_negative_compare/brca/her2_random20_markers_100rep.csv"
 )
 
 mat_out <- NULL
+
 
 sample <- colnames(markers)
 for (i in seq_len(ncol(markers))) {
@@ -72,6 +73,6 @@ for (i in seq_len(ncol(markers))) {
 # 保存完整的结果矩阵
 qs::qsave(
   mat_out,
-  "Tmp/ssGSEA_negative_compare/luad、luad_Sample_100_ssgsea_score.qs"
+  "Tmp/ssGSEA_negative_compare/brca/her2_Sample_100_ssgsea_score.qs"
 )
 # PID=1000308

@@ -1,11 +1,11 @@
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+setwd(usethis::proj_path())
 
 library(dplyr)
 library(tidyr)
 library(data.table)
 
 # ? read test results for significance annotation
-diff_path <- "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/ssGSEA_positive_compare/diff_test/binary/luad"
+diff_path <- "Tmp/ssGSEA_positive_compare/diff_test/binary/luad"
 
 test_files <- list.files(diff_path, recursive = TRUE) %>%
   grep(
@@ -31,7 +31,7 @@ purrr::walk(
   }
 )
 
-esmat_root <- "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/ssGSEA_positive_compare/esmat/binary/luad"
+esmat_root <- "Tmp/ssGSEA_positive_compare/esmat/binary/luad"
 esmat_files <- list.files(esmat_root, recursive = TRUE) %>%
   grep("ssGSEA_score.*\\.qs", ., value = TRUE)
 
@@ -137,7 +137,7 @@ purrr::walk(
       group_by(cluster, type) %>%
       summarise(mean_score = mean(scaled_ssgse_score, na.rm = TRUE))
 
-    all_methods <- unique(gsub("_.*", "", diff$cluster))
+    all_methods <- unique(gsub("_[^_]*$", "", diff$cluster))
 
     combined <- data.frame()
 
@@ -182,7 +182,7 @@ purrr::walk(
     combined <- combined %>%
       dplyr::mutate(
         group = paste(gsub(".*_", "", cluster), "vs Rest"),
-        method = gsub("_.*", "", cluster),
+        method = gsub("_[^_]*$", "", cluster),
         type_sub = gsub("_.*", "", type)
       ) %>%
       tidyr::unite(
@@ -241,7 +241,7 @@ for (bulk_i in bulks) {
 # ? save combined results
 data.table::fwrite(
   combined,
-  file = "binary_luad_test_data.csv"
+  file = "Tmp/ssGSEA_positive_compare/vis/binary/luad/binary_luad_test_data.csv"
 )
 
 cli::cli_alert_success(
@@ -445,7 +445,7 @@ purrr::walk(
           "#8ecde0ff",
           "#465d9bff"
         ))(10),
-        limits = c(0.4, 2.5),
+        limits = c(0.3, 2.6),
         na.value = "#e9e9e9ff", # ← NA 灰色
         name = "Diff"
       ) +
@@ -502,7 +502,7 @@ purrr::walk(
 )
 
 
-htmap_dir <- "heatmap"
+htmap_dir <- "Tmp/ssGSEA_positive_compare/vis/binary/luad/heatmap"
 if (!dir.exists(htmap_dir)) {
   dir.create(htmap_dir, recursive = TRUE)
 }
