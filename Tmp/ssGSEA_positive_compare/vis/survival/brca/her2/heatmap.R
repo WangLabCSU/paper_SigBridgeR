@@ -1,11 +1,11 @@
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+setwd(usethis::proj_path())
 
 library(dplyr)
 library(tidyr)
 library(data.table)
 
 # ? read test results for significance annotation
-diff_path <- "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/ssGSEA_positive_compare/diff_test/survival/brca/her2"
+diff_path <- "Tmp/ssGSEA_positive_compare/diff_test/survival/brca/her2"
 
 test_files <- list.files(diff_path, recursive = TRUE) %>%
   grep(
@@ -31,7 +31,7 @@ purrr::walk(
   }
 )
 
-esmat_root <- "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/ssGSEA_positive_compare/esmat/survival/brca/her2"
+esmat_root <- "Tmp/ssGSEA_positive_compare/esmat/survival/brca/her2"
 esmat_files <- list.files(esmat_root, recursive = TRUE) %>%
   grep("ssGSEA_score.*\\.qs", ., value = TRUE)
 
@@ -139,7 +139,7 @@ purrr::walk(
       group_by(cluster, type) %>%
       summarise(mean_score = mean(scaled_ssgse_score, na.rm = TRUE))
 
-    all_methods <- unique(gsub("_.*", "", diff$cluster))
+    all_methods <- unique(gsub("_[^_]*$", "", diff$cluster))
 
     combined <- data.frame()
 
@@ -184,7 +184,7 @@ purrr::walk(
     combined <- combined %>%
       dplyr::mutate(
         group = paste(gsub(".*_", "", cluster), "vs Rest"),
-        method = gsub("_.*", "", cluster),
+        method = gsub("_[^_]*$", "", cluster),
         type_sub = gsub("_.*", "", type)
       ) %>%
       tidyr::unite(
@@ -244,7 +244,7 @@ for (bulk_i in bulks) {
 # ? save combined results
 data.table::fwrite(
   combined,
-  file = "survival_her2_test_data.csv"
+  file = "Tmp/ssGSEA_positive_compare/vis/survival/brca/her2/survival_her2_test_data.csv"
 )
 
 cli::cli_alert_success(
@@ -505,7 +505,7 @@ purrr::walk(
 )
 
 
-htmap_dir <- "heatmap"
+htmap_dir <- "Tmp/ssGSEA_positive_compare/vis/survival/brca/her2/heatmap"
 if (!dir.exists(htmap_dir)) {
   dir.create(htmap_dir, recursive = TRUE)
 }
