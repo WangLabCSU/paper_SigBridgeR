@@ -1,0 +1,266 @@
+# ! 运行此脚本前，先运行/home/yyx/R/Project/R_code/SigBridgeR/Tmp/ssGSEA/test-tnbc/tnbc_ssGSEA_survival.R
+# ! 把框架打好
+
+# ? 这个脚本的作用是将survival和bianry phenotype列注释结合起来
+es.mat = qs::qread("tnbc_ssgsea_score.qs")
+
+CreateHtmapAnno.survival <- function(
+  seurat_obj,
+  es.mat,
+  color = "#123123"
+) {
+  # 提取元数据
+  meta <- seurat_obj@meta.data %>%
+    tibble::rownames_to_column("cell")
+
+  # 处理表达矩阵并合并元数据
+  es.df <- t(es.mat) %>%
+    as.data.frame() %>%
+    tibble::rownames_to_column("cell") %>%
+    left_join(meta, by = "cell")
+
+  # 定义可能的注释列
+  possible_annotations <- c("scissor", "scPAS", "scAB", "scPP")
+
+  # 检查哪些注释列存在
+  existing_annotations <- possible_annotations %>%
+    purrr::keep(~ .x %in% colnames(es.df))
+
+  # 如果没有找到任何注释列，返回空的 HeatmapAnnotation
+  if (length(existing_annotations) == 0) {
+    return(HeatmapAnnotation())
+  }
+
+  # 创建注释列表
+  annotation_list <- list()
+  color_list <- list()
+
+  # 为每个存在的注释列配置颜色
+  if ("scissor" %in% existing_annotations) {
+    annotation_list$scissor_survival <- es.df$scissor
+    color_list$scissor_survival <- c(
+      "Neutral" = "#CECECE",
+      "Positive" = "#ff3333",
+      "Negative" = "#386c9b"
+    )
+  }
+
+  if ("scPAS" %in% existing_annotations) {
+    annotation_list$scPAS_survival <- es.df$scPAS
+    color_list$scPAS_survival <- c(
+      "Neutral" = "#CECECE",
+      "Positive" = "#ff3333",
+      "Negative" = "#386c9b"
+    )
+  }
+
+  if ("scAB" %in% existing_annotations) {
+    annotation_list$scAB_survival <- es.df$scAB
+    color_list$scAB_survival <- c(
+      "Other" = "#CECECE",
+      "Positive" = "#ff3333"
+    )
+  }
+
+  if ("scPP" %in% existing_annotations) {
+    annotation_list$scPP_survival <- es.df$scPP
+    color_list$scPP_survival <- c(
+      "Neutral" = "#CECECE",
+      "Positive" = "#ff3333",
+      "Negative" = "#386c9b"
+    )
+  }
+
+  # 创建 HeatmapAnnotation
+  HeatmapAnnotation(
+    df = annotation_list,
+    col = color_list,
+    annotation_label = list(
+      scissor_survival = "scissor survival",
+      scPAS_survival = "scPAS survival",
+      scAB_survival = "scAB survival",
+      scPP_survival = "scPP survival"
+    ),
+    annotation_name_gp = gpar(col = color, fontface = "bold"),
+    show_legend = FALSE,
+    height = unit(1, "cm"),
+    gap = unit(0.6, "mm")
+  )
+}
+
+CreateHtmapAnno.binary <- function(
+  seurat_obj,
+  es.mat,
+  color = "#123123"
+) {
+  # 提取元数据
+  meta <- seurat_obj@meta.data %>%
+    tibble::rownames_to_column("cell")
+
+  # 处理表达矩阵并合并元数据
+  es.df <- t(es.mat) %>%
+    as.data.frame() %>%
+    tibble::rownames_to_column("cell") %>%
+    left_join(meta, by = "cell")
+
+  # 定义可能的注释列
+  possible_annotations <- c("scissor", "scPAS", "scAB", "scPP")
+
+  # 检查哪些注释列存在
+  existing_annotations <- possible_annotations %>%
+    purrr::keep(~ .x %in% colnames(es.df))
+
+  # 如果没有找到任何注释列，返回空的 HeatmapAnnotation
+  if (length(existing_annotations) == 0) {
+    return(HeatmapAnnotation())
+  }
+
+  # 创建注释列表
+  annotation_list <- list()
+  color_list <- list()
+
+  # 为每个存在的注释列配置颜色
+  if ("scissor" %in% existing_annotations) {
+    annotation_list$scissor_binary <- es.df$scissor
+    color_list$scissor_binary <- c(
+      "Neutral" = "#CECECE",
+      "Positive" = "#ff3333",
+      "Negative" = "#386c9b"
+    )
+  }
+
+  if ("scPAS" %in% existing_annotations) {
+    annotation_list$scPAS_binary <- es.df$scPAS
+    color_list$scPAS_binary <- c(
+      "Neutral" = "#CECECE",
+      "Positive" = "#ff3333",
+      "Negative" = "#386c9b"
+    )
+  }
+
+  if ("scAB" %in% existing_annotations) {
+    annotation_list$scAB_binary <- es.df$scAB
+    color_list$scAB_binary <- c(
+      "Other" = "#CECECE",
+      "Positive" = "#ff3333"
+    )
+  }
+
+  if ("scPP" %in% existing_annotations) {
+    annotation_list$scPP_binary <- es.df$scPP
+    color_list$scPP_binary <- c(
+      "Neutral" = "#CECECE",
+      "Positive" = "#ff3333",
+      "Negative" = "#386c9b"
+    )
+  }
+
+  # 创建 HeatmapAnnotation
+  HeatmapAnnotation(
+    df = annotation_list,
+    col = color_list,
+    annotation_label = list(
+      scissor_binary = "scissor binary",
+      scPAS_binary = "scPAS binary",
+      scAB_binary = "scAB binary",
+      scPP_binary = "scPP binary"
+    ),
+    annotation_name_gp = gpar(col = color, fontface = "bold"),
+    show_legend = FALSE,
+    height = unit(1, "cm"),
+    gap = unit(0.6, "mm")
+  )
+}
+
+GSE42568_sur <- qs::qread(
+  "/home/data/sigbridger/benchmark_data/brca/TNBC/GSE42568_tnbc_merged_seurat.qs",
+  nthreads = 4
+)
+GSE162228_sur <- qs::qread(
+  "/home/data/sigbridger/benchmark_data/brca/TNBC/GSE162228_tnbc_merged_seurat.qs",
+  nthreads = 4
+)
+col_anno_GSE42568_sur <- CreateHtmapAnno.survival(
+  GSE42568_sur,
+  es.mat,
+  "#00913fff"
+)
+col_anno_GSE162228_sur = CreateHtmapAnno.survival(
+  GSE162228_sur,
+  es.mat,
+  "#cf7815ff"
+)
+
+GSE42568_bi <- qs::qread(
+  "/home/data/sigbridger/benchmark_binary/brca/TNBC/GSE42568_tnbc_merged_seurat.qs",
+  nthreads = 4
+)
+GSE162228_bi <- qs::qread(
+  "/home/data/sigbridger/benchmark_binary/brca/TNBC/GSE162228_tnbc_merged_seurat.qs",
+  nthreads = 4
+)
+
+col_anno_GSE42568_bi <- CreateHtmapAnno.binary(
+  GSE42568_bi,
+  es.mat,
+  "#00913fff"
+)
+col_anno_GSE162228_bi = CreateHtmapAnno.binary(
+  GSE162228_bi,
+  es.mat,
+  "#cf7815ff"
+)
+
+bulk_lgd = Legend(
+  at = c("GSE42568", "GSE162228"),
+  title = "Bulk Sample for Methods",
+  legend_gp = gpar(
+    fill = c("#00913fff", "#cf7815ff")
+  )
+)
+
+htmap_cmb = ComplexHeatmap::Heatmap(
+  es.mat_ordered,
+  name = "ssGSEA\nScore",
+  top_annotation = c(
+    col_anno_cluster,
+    row_anno_gap,
+    col_anno_tnbc,
+    row_anno_gap,
+    col_anno_GSE42568_sur,
+    row_anno_gap,
+    col_anno_GSE162228_sur,
+    row_anno_gap,
+    col_anno_GSE42568_bi,
+    row_anno_gap,
+    col_anno_GSE162228_bi,
+    row_anno_gap,
+    col_anno_distribution,
+    row_anno_gap
+  ),
+  right_annotation = rowAnnotation(
+    ssGSEA = anno_empty(border = FALSE)
+  ),
+  show_column_names = FALSE,
+  show_row_names = FALSE,
+  cluster_columns = FALSE,
+  cluster_rows = FALSE,
+  use_raster = TRUE,
+  column_split = column_split,
+  column_title_rot = 90,
+  column_title_side = "bottom",
+  column_title_gp = gpar(fontface = "bold", fontsize = 8),
+  column_title = cluster_mean_score,
+  heatmap_width = unit(3, "npc")
+)
+
+ragg::agg_png(
+  filename = file.path(plot_dir, "../ssGSEA_tnbc_all_heatmap.png"),
+  width = 1600,
+  height = 1000
+)
+draw(
+  htmap_cmb,
+  annotation_legend_list = list(bulk_lgd, screen_lgd)
+)
+dev.off()

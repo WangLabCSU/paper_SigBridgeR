@@ -1,0 +1,12 @@
+estimate,statistic,p.value,conf.low,conf.high,method,alternative,null.value,screen_method,bulk,type_pheno,group
+0.00699484561295185,53994338,0.732718374812421,-0.033103413142419,0.0477041470783627,Wilcoxon rank sum test with continuity correction,two.sided,0,scAB,GSE9891,binary,scAB_Other vs Rest
+-0.00699195304573758,53533212,0.732718374812421,-0.0477042031427447,0.0331034317658124,Wilcoxon rank sum test with continuity correction,two.sided,0,scAB,GSE9891,binary,scAB_Positive vs Rest
+0.147104686962919,332140432,4.14913958138001e-163,0.137607982121374,0.156500653491239,Wilcoxon rank sum test with continuity correction,two.sided,0,scissor,GSE9891,binary,scissor_Negative vs Rest
+-0.0126997940838103,9567826,0.728230831350657,-0.0835366717574014,0.0597343549754941,Wilcoxon rank sum test with continuity correction,two.sided,0,scissor,GSE9891,binary,scissor_Neutral vs Rest
+-0.148286934894089,243736953,3.64271862260445e-164,-0.157685539501684,-0.138726981293096,Wilcoxon rank sum test with continuity correction,two.sided,0,scissor,GSE9891,binary,scissor_Positive vs Rest
+0.212892285356661,312197698,2.14726148888612e-205,0.200428233331476,0.225160264741178,Wilcoxon rank sum test with continuity correction,two.sided,0,scPAS,GSE9891,binary,scPAS_Negative vs Rest
+0.118087217081301,277209385,1.1654676153443e-78,0.108396406843711,0.127202109213663,Wilcoxon rank sum test with continuity correction,two.sided,0,scPAS,GSE9891,binary,scPAS_Neutral vs Rest
+-0.212776973721166,246713109,0,-0.218363647646778,-0.207053161999331,Wilcoxon rank sum test with continuity correction,two.sided,0,scPAS,GSE9891,binary,scPAS_Positive vs Rest
+0.00497228010944931,47199822,0.822010387574967,-0.0394518936882591,0.0467915116391416,Wilcoxon rank sum test with continuity correction,two.sided,0,scPP,GSE9891,binary,scPP_Negative vs Rest
+-0.0460829873861647,76742459,0.00509417347330848,-0.0773476846323984,-0.0140273981263481,Wilcoxon rank sum test with continuity correction,two.sided,0,scPP,GSE9891,binary,scPP_Neutral vs Rest
+0.0968567730684951,36824265,7.28371399858326e-05,0.0497719738996194,0.141844015830806,Wilcoxon rank sum test with continuity correction,two.sided,0,scPP,GSE9891,binary,scPP_Positive vs Rest

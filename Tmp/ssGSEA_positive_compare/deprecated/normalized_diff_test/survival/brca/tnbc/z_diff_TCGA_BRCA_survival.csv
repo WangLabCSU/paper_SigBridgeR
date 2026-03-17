@@ -1,0 +1,12 @@
+estimate,statistic,p.value,conf.low,conf.high,method,alternative,null.value,screen_method,bulk,type_pheno,group
+0.00793751453270186,285071260,0.250593882955224,-0.00560778395711393,0.0213792773691984,Wilcoxon rank sum test with continuity correction,two.sided,0,scAB,TCGA_BRCA,survival,scAB_Other vs Rest
+-0.00791205324771978,281380589,0.250593882955224,-0.021379279901469,0.00560778096341528,Wilcoxon rank sum test with continuity correction,two.sided,0,scAB,TCGA_BRCA,survival,scAB_Positive vs Rest
+-0.00678649996948917,41973363,0.735575631797235,-0.0461033545063884,0.0328141712238276,Wilcoxon rank sum test with continuity correction,two.sided,0,scissor,TCGA_BRCA,survival,scissor_Negative vs Rest
+0.0123216719564895,61851839,0.422456688786523,-0.0177792771764101,0.0424924532038889,Wilcoxon rank sum test with continuity correction,two.sided,0,scissor,TCGA_BRCA,survival,scissor_Neutral vs Rest
+-0.0208381335573717,19875814,0.364221040192498,-0.0664918836655692,0.0238558457449538,Wilcoxon rank sum test with continuity correction,two.sided,0,scissor,TCGA_BRCA,survival,scissor_Positive vs Rest
+0.00963461146746763,5891872,0.862077584766038,-0.0962104557591407,0.117405425137405,Wilcoxon rank sum test with continuity correction,two.sided,0,scPAS,TCGA_BRCA,survival,scPAS_Negative vs Rest
+0.0229998796980813,22078472,0.393512883721958,-0.0300681628854344,0.0747043847929491,Wilcoxon rank sum test with continuity correction,two.sided,0,scPAS,TCGA_BRCA,survival,scPAS_Neutral vs Rest
+-0.0337374713540859,15554985,0.271497332021075,-0.0921067510629088,0.0266997064215556,Wilcoxon rank sum test with continuity correction,two.sided,0,scPAS,TCGA_BRCA,survival,scPAS_Positive vs Rest
+0.00917791357424542,43106824,0.682740858543093,-0.0350587076516421,0.0531552498557235,Wilcoxon rank sum test with continuity correction,two.sided,0,scPP,TCGA_BRCA,survival,scPP_Negative vs Rest
+-0.0172806711754156,106497955,0.225034744853458,-0.0450605470982967,0.0106625828428293,Wilcoxon rank sum test with continuity correction,two.sided,0,scPP,TCGA_BRCA,survival,scPP_Neutral vs Rest
+0.0211852506545162,70093005,0.233104679810264,-0.0136745926142574,0.055642390958596,Wilcoxon rank sum test with continuity correction,two.sided,0,scPP,TCGA_BRCA,survival,scPP_Positive vs Rest

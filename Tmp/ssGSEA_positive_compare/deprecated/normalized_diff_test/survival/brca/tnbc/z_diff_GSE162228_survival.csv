@@ -1,0 +1,3 @@
+estimate,statistic,p.value,conf.low,conf.high,method,alternative,null.value,screen_method,bulk,type_pheno,group
+-0.0679225605068852,90090073,2.54308155225425e-18,-0.0807828482641582,-0.0544983917360513,Wilcoxon rank sum test with continuity correction,two.sided,0,scAB,GSE162228,survival,scAB_Other vs Rest
+0.0679225647567888,106616151,2.54308155225425e-18,0.0544983915159308,0.0807828466770712,Wilcoxon rank sum test with continuity correction,two.sided,0,scAB,GSE162228,survival,scAB_Positive vs Rest

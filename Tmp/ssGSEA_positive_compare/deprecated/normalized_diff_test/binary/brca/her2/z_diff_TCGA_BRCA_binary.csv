@@ -1,0 +1,6 @@
+estimate,statistic,p.value,conf.low,conf.high,method,alternative,null.value,screen_method,bulk,type_pheno,group
+-0.0170881081514601,9750010,0.594720964837307,-0.0791781457024094,0.0460243790147835,Wilcoxon rank sum test with continuity correction,two.sided,0,scAB,TCGA_BRCA,binary,scAB_Positive vs Rest
+0.0170883191648606,9993670,0.594720964837307,-0.0460244332117776,0.0791781304052294,Wilcoxon rank sum test with continuity correction,two.sided,0,scAB,TCGA_BRCA,binary,scAB_Other vs Rest
+-0.0632178068768295,69574587,7.75818752950423e-12,-0.080949451779087,-0.0454726924512764,Wilcoxon rank sum test with continuity correction,two.sided,0,scPP,TCGA_BRCA,binary,scPP_Negative vs Rest
+0.0653278586878093,119892490,2.72280663480652e-16,0.0500054567237083,0.0806475369374823,Wilcoxon rank sum test with continuity correction,two.sided,0,scPP,TCGA_BRCA,binary,scPP_Neutral vs Rest
+-0.0396920571547767,66436532,0.000599738468351996,-0.0621248671086932,-0.0170804647034146,Wilcoxon rank sum test with continuity correction,two.sided,0,scPP,TCGA_BRCA,binary,scPP_Positive vs Rest

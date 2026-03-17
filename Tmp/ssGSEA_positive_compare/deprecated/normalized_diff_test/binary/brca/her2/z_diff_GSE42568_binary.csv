@@ -1,0 +1,8 @@
+estimate,statistic,p.value,conf.low,conf.high,method,alternative,null.value,screen_method,bulk,type_pheno,group
+0.00333884340207157,124851044,0.688452024622339,-0.0129389151102575,0.0196273125555732,Wilcoxon rank sum test with continuity correction,two.sided,0,scAB,GSE42568,binary,scAB_Other vs Rest
+-0.00333884340207157,124198827,0.688452024622339,-0.0196273125555732,0.0129389151102575,Wilcoxon rank sum test with continuity correction,two.sided,0,scAB,GSE42568,binary,scAB_Positive vs Rest
+0.00735415102230967,51876930,0.537544336276154,-0.0159964869647918,0.0308618055170141,Wilcoxon rank sum test with continuity correction,two.sided,0,scissor,GSE42568,binary,scissor_Negative vs Rest
+-0.00335102555327366,107632684,0.663571244360325,-0.0184342317605603,0.0117281434033328,Wilcoxon rank sum test with continuity correction,two.sided,0,scissor,GSE42568,binary,scissor_Neutral vs Rest
+8.20049530352175e-05,78758803,0.991642532404548,-0.0170374594805073,0.0171363054689713,Wilcoxon rank sum test with continuity correction,two.sided,0,scissor,GSE42568,binary,scissor_Positive vs Rest
+-0.0311588069535128,9150311,0.300179904900291,-0.0885042101110986,0.0286450572134255,Wilcoxon rank sum test with continuity correction,two.sided,0,scPAS,GSE42568,binary,scPAS_Neutral vs Rest
+0.0311574728161894,9612889,0.300179904900291,-0.0286450377255917,0.0885041888240222,Wilcoxon rank sum test with continuity correction,two.sided,0,scPAS,GSE42568,binary,scPAS_Negative vs Rest

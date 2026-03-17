@@ -1,0 +1,8 @@
+estimate,statistic,p.value,conf.low,conf.high,method,alternative,null.value,screen_method,bulk,type_pheno,group
+-0.00642446822961954,43946621,0.765575732444917,-0.0484013705977505,0.0358056127146391,Wilcoxon rank sum test with continuity correction,two.sided,0,scAB,TCGA_BRCA,binary,scAB_Positive vs Rest
+0.00642446822961954,44324723,0.765575732444917,-0.0358056127146391,0.0484013705977505,Wilcoxon rank sum test with continuity correction,two.sided,0,scAB,TCGA_BRCA,binary,scAB_Other vs Rest
+-0.158241290693409,39159720,1.74197088958472e-33,-0.17760712755059,-0.137193118101071,Wilcoxon rank sum test with continuity correction,two.sided,0,scissor,TCGA_BRCA,binary,scissor_Negative vs Rest
+0.0780852146561067,152810892,2.2151151994715e-17,0.0608762824249672,0.0950833826924702,Wilcoxon rank sum test with continuity correction,two.sided,0,scissor,TCGA_BRCA,binary,scissor_Neutral vs Rest
+-0.0213303388042714,101558804,0.0650609625241833,-0.0436548778604993,0.00133731342096035,Wilcoxon rank sum test with continuity correction,two.sided,0,scissor,TCGA_BRCA,binary,scissor_Positive vs Rest
+-0.0168704084280354,40899977,0.619653228558418,-0.0824927389458478,0.048885514336746,Wilcoxon rank sum test with continuity correction,two.sided,0,scPAS,TCGA_BRCA,binary,scPAS_Neutral vs Rest
+0.016870404758851,41508119,0.619653228558418,-0.0488855036635978,0.0824927072411389,Wilcoxon rank sum test with continuity correction,two.sided,0,scPAS,TCGA_BRCA,binary,scPAS_Positive vs Rest

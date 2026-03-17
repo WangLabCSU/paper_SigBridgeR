@@ -1,0 +1,15 @@
+estimate,statistic,p.value,conf.low,conf.high,method,alternative,null.value,screen_method,bulk,type_pheno,group,ssGSEA type
+0.000704617379858566,61770461,0.720280143222642,-0.00312653767827303,0.00453997529784384,Wilcoxon rank sum test with continuity correction,two.sided,0,scAB,GSE162228,binary,Other vs Rest,pos_ssGSEA
+-0.000704617379858566,61234435,0.720280143222642,-0.00453997529784384,0.00312653767827303,Wilcoxon rank sum test with continuity correction,two.sided,0,scAB,GSE162228,binary,Positive vs Rest,pos_ssGSEA
+-0.0913279481303369,21355664,2.83646727416543e-199,-0.0967357399359488,-0.0858582120020624,Wilcoxon rank sum test with continuity correction,two.sided,0,scPAS,GSE162228,binary,Neutral vs Rest,pos_ssGSEA
+0.0913279481303369,57439312,2.83646727416543e-199,0.0858582120020624,0.0967357399359488,Wilcoxon rank sum test with continuity correction,two.sided,0,scPAS,GSE162228,binary,Positive vs Rest,pos_ssGSEA
+-0.00664709202558648,84530591,0.0019526179046887,-0.0110250756586622,-0.00242363267926407,Wilcoxon rank sum test with continuity correction,two.sided,0,scPP,GSE162228,binary,Neutral vs Rest,pos_ssGSEA
+-0.0833918469199815,15767030,0,-0.0871670865458447,-0.0797118270497292,Wilcoxon rank sum test with continuity correction,two.sided,0,scPP,GSE162228,binary,Negative vs Rest,pos_ssGSEA
+0.19473654530716,77188812,0,0.188356398059744,0.201172441118561,Wilcoxon rank sum test with continuity correction,two.sided,0,scPP,GSE162228,binary,Positive vs Rest,pos_ssGSEA
+0.012177324453706,68247643,2.02192170642755e-19,0.00952537581864713,0.0148352479099282,Wilcoxon rank sum test with continuity correction,two.sided,0,scAB,GSE162228,binary,Other vs Rest,neg_ssGSEA
+-0.012177324453706,54757253,2.02192170642755e-19,-0.0148352479099282,-0.00952537581864713,Wilcoxon rank sum test with continuity correction,two.sided,0,scAB,GSE162228,binary,Positive vs Rest,neg_ssGSEA
+0.0308393722460759,50413750,1.58621650394223e-75,0.027593696976391,0.0341229917617414,Wilcoxon rank sum test with continuity correction,two.sided,0,scPAS,GSE162228,binary,Neutral vs Rest,neg_ssGSEA
+-0.0308393722460759,28381226,1.58621650394223e-75,-0.0341229917617414,-0.027593696976391,Wilcoxon rank sum test with continuity correction,two.sided,0,scPAS,GSE162228,binary,Positive vs Rest,neg_ssGSEA
+-0.0183149283328257,75931470,3.49814644671241e-37,-0.0213010801413374,-0.0154317172074693,Wilcoxon rank sum test with continuity correction,two.sided,0,scPP,GSE162228,binary,Neutral vs Rest,neg_ssGSEA
+0.105313554149738,73376228,0,0.100903017963763,0.109707191756585,Wilcoxon rank sum test with continuity correction,two.sided,0,scPP,GSE162228,binary,Negative vs Rest,neg_ssGSEA
+-0.0361618538119931,28178735,2.4408911889293e-146,-0.0390261437823725,-0.0333589400532346,Wilcoxon rank sum test with continuity correction,two.sided,0,scPP,GSE162228,binary,Positive vs Rest,neg_ssGSEA

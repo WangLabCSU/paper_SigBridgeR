@@ -1,0 +1,103 @@
+library(dplyr)
+library(Seurat)
+library(BiocParallel)
+library(scAB)
+# library(SigBridgeR)
+
+# setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+setwd(
+  "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/method_compare/survival/brca/her2/GSE162228"
+)
+
+data_path = "/home/data/sigbridger/benchmark_data/brca"
+devtools::document("~/R/Project/R_code/SigBridgeR")
+
+# * load data
+seurat = qs::qread(file.path(data_path, "seurat_her2.qs"))
+
+bulk = qs::qread(
+  file.path(data_path, "brca_bulkdata_GSE162228.qs")
+)
+
+pheno = qs::qread(file.path(
+  data_path,
+  "brca_pheno_GSE162228.qs"
+))
+
+surv_data = pheno %>%
+  select("overall survival (years):ch1", "characteristics_ch1.5") %>%
+  rename("time" := 1) %>%
+  mutate(
+    status = case_when(
+      characteristics_ch1.5 == "alive: Death" ~ 1,
+      characteristics_ch1.5 == "alive: Alive" ~ 0
+    )
+  ) %>%
+  select(-"characteristics_ch1.5") %>%
+  mutate_all(~ as.numeric(.))
+
+# bulk = bulk[, rownames(surv_data)]
+
+if (!all(colnames(bulk) == rownames(surv_data))) {
+  stop("bulk and surv_data not match")
+}
+if (anyNA(bulk)) {
+  stop("bulk has NA")
+}
+
+
+# ! -------------------- scAB ---------------------
+
+# * random search, 100 times
+set.seed(123)
+alpha_samples <- Reduce(`*`, rep(c(2, 5), 2), init = 5e-4, accumulate = TRUE)
+
+
+scab_obj <- create_scAB.v5(
+  Object = seurat,
+  bulk_dataset = bulk,
+  phenotype = surv_data,
+  method = 'survival',
+  verbose = TRUE
+)
+
+save_path = '/home/data/sigbridger/method_compare/survival/brca/her2/GSE162228'
+if (!dir.exists(save_path)) {
+  dir.create(save_path, recursive = TRUE)
+}
+qs::qsave(scab_obj, file = file.path(save_path, "scAB_obj.qs"), nthreads = 4L)
+# scab_obj <- qs::qread(file.path(save_path, 'scAB_obj.qs'))
+
+k <- scAB::select_K.optimized(
+  Object = scab_obj,
+  K_max = 20L,
+  repeat_times = 10L,
+  maxiter = 2000L, # default in scAB
+  seed = 123,
+  verbose = TRUE
+)
+
+cli::cli_alert_success(crayon::green(
+  "Optimal K: {k}"
+))
+
+para_list <- select_alpha.optimized(
+  Object = scab_obj,
+  method = 'survival',
+  K = k,
+  cross_k = 5,
+  para_1_list = alpha_samples,
+  para_2_list = alpha_samples,
+  parallel = T,
+  worker = 5L,
+  verbose = TRUE
+)
+
+alpha <- para_list$para$alpha_1
+alpha_2 <- para_list$para$alpha_2
+
+cli::cli_alert_success(crayon::green(
+  "Optimal parameters: alpha = {alpha}, alpha_2 = {alpha_2}"
+))
+
+qs::qsave(para_list, file = "scAB_para_list.qs", nthreads = 4L) # 242618

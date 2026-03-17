@@ -1,0 +1,9 @@
+estimate,statistic,p.value,conf.low,conf.high,method,alternative,null.value,screen_method,bulk,type_pheno,group
+-0.0693108719548611,88773767,2.26400782065761e-44,-0.0783143086557175,-0.0600967437155298,Wilcoxon rank sum test with continuity correction,two.sided,0,scAB,TCGA_LUAD,survival,scAB_Positive vs Rest
+0.0693108996266421,109132905,2.26400782065761e-44,0.060096767260774,0.0783143119198352,Wilcoxon rank sum test with continuity correction,two.sided,0,scAB,TCGA_LUAD,survival,scAB_Other vs Rest
+-0.101062815200073,8520875,1.46860362444715e-07,-0.129605550576888,-0.0686118813889087,Wilcoxon rank sum test with continuity correction,two.sided,0,scissor,TCGA_LUAD,survival,scissor_Negative vs Rest
+0.0951751599035861,15023359,7.68574831618099e-08,0.0641305388653599,0.1228910565736,Wilcoxon rank sum test with continuity correction,two.sided,0,scissor,TCGA_LUAD,survival,scissor_Neutral vs Rest
+-0.068281678486465,3757019,0.0883486108681213,-0.141602230518689,0.00979529857740219,Wilcoxon rank sum test with continuity correction,two.sided,0,scissor,TCGA_LUAD,survival,scissor_Positive vs Rest
+0.0146228357437568,26587837,0.457573823898603,-0.0238032627420278,0.0532488933868809,Wilcoxon rank sum test with continuity correction,two.sided,0,scPAS,TCGA_LUAD,survival,scPAS_Negative vs Rest
+-0.0152439343894167,32577736,0.343867598600881,-0.0467613998289986,0.0162668214961467,Wilcoxon rank sum test with continuity correction,two.sided,0,scPAS,TCGA_LUAD,survival,scPAS_Neutral vs Rest
+0.0155641318236419,7601643,0.55240247163535,-0.0357193177852725,0.0667553799169084,Wilcoxon rank sum test with continuity correction,two.sided,0,scPAS,TCGA_LUAD,survival,scPAS_Positive vs Rest

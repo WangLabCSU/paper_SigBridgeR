@@ -1,0 +1,21 @@
+estimate,statistic,p.value,conf.low,conf.high,method,alternative,null.value,screen_method,bulk,type_pheno,group,ssGSEA type
+-0.0293994065592438,27176026,1.94314329096908e-37,-0.0339146354974474,-0.0249419398656934,Wilcoxon rank sum test with continuity correction,two.sided,0,scAB,GSE162228,survival,Other vs Rest,pos_ssGSEA
+0.0293994065592438,37800061,1.94314329096908e-37,0.0249419398656934,0.0339146354974474,Wilcoxon rank sum test with continuity correction,two.sided,0,scAB,GSE162228,survival,Positive vs Rest,pos_ssGSEA
+-0.0019701801263435,14952890,0.515987401443825,-0.00790093474448439,0.00396405448449503,Wilcoxon rank sum test with continuity correction,two.sided,0,scPAS,GSE162228,survival,Neutral vs Rest,pos_ssGSEA
+0.00219304574881666,14098045,0.4828827185136,-0.00392703576588185,0.00831788628014578,Wilcoxon rank sum test with continuity correction,two.sided,0,scPAS,GSE162228,survival,Positive vs Rest,pos_ssGSEA
+-0.000902677639176078,1296861,0.937463287582553,-0.0233618543697403,0.0221164268285306,Wilcoxon rank sum test with continuity correction,two.sided,0,scPAS,GSE162228,survival,Negative vs Rest,pos_ssGSEA
+0.0208104566294452,27258099,2.4929241653807e-18,0.0159320763228754,0.0258568200126657,Wilcoxon rank sum test with continuity correction,two.sided,0,DEGAS,GSE162228,survival,Other vs Rest,pos_ssGSEA
+-0.0208104515944503,21005033,2.4929241653807e-18,-0.0258568080575401,-0.0159320741665358,Wilcoxon rank sum test with continuity correction,two.sided,0,DEGAS,GSE162228,survival,Positive vs Rest,pos_ssGSEA
+0.00724944655834772,79545764,1.65527077765283e-07,0.00452319549250457,0.00999241389811903,Wilcoxon rank sum test with continuity correction,two.sided,0,LP_SGL,GSE162228,survival,Neutral vs Rest,pos_ssGSEA
+-0.00118392665719366,40791932,0.535600502168525,-0.00486446583977015,0.00254905146505162,Wilcoxon rank sum test with continuity correction,two.sided,0,LP_SGL,GSE162228,survival,Positive vs Rest,pos_ssGSEA
+-0.0114782347902425,40667323,2.76470097565977e-10,-0.0150882703105277,-0.00790396033927317,Wilcoxon rank sum test with continuity correction,two.sided,0,LP_SGL,GSE162228,survival,Negative vs Rest,pos_ssGSEA
+-0.0204912503307373,28688164,5.86111401949462e-20,-0.0248596214992338,-0.0161332310373067,Wilcoxon rank sum test with continuity correction,two.sided,0,scAB,GSE162228,survival,Other vs Rest,neg_ssGSEA
+0.0204899254329341,36287923,5.86111401949462e-20,0.0161332254866502,0.0248596259978485,Wilcoxon rank sum test with continuity correction,two.sided,0,scAB,GSE162228,survival,Positive vs Rest,neg_ssGSEA
+0.00496347500293323,15577329,0.120534618603551,-0.00130551258370504,0.0112609030833251,Wilcoxon rank sum test with continuity correction,two.sided,0,scPAS,GSE162228,survival,Neutral vs Rest,neg_ssGSEA
+-0.011352060360976,12974062,0.00059567600981719,-0.0179062812162039,-0.00483866269758558,Wilcoxon rank sum test with continuity correction,two.sided,0,scPAS,GSE162228,survival,Positive vs Rest,neg_ssGSEA
+0.0639610232439736,1796405,3.12341487716771e-09,0.0439954942653519,0.0833187509001659,Wilcoxon rank sum test with continuity correction,two.sided,0,scPAS,GSE162228,survival,Negative vs Rest,neg_ssGSEA
+0.0184662997615163,26631463,2.90554959937524e-12,0.0132861518575128,0.0237016255872841,Wilcoxon rank sum test with continuity correction,two.sided,0,DEGAS,GSE162228,survival,Other vs Rest,neg_ssGSEA
+-0.0184895363908107,21631669,2.90554959937524e-12,-0.023701630689756,-0.0132861447412319,Wilcoxon rank sum test with continuity correction,two.sided,0,DEGAS,GSE162228,survival,Positive vs Rest,neg_ssGSEA
+-0.00375458216160561,74575755,0.00998071525847421,-0.00664459127267795,-0.000901844882270166,Wilcoxon rank sum test with continuity correction,two.sided,0,LP_SGL,GSE162228,survival,Neutral vs Rest,neg_ssGSEA
+-0.0359179157318365,31999617,3.50135172605873e-84,-0.0395344390893516,-0.0322904178180288,Wilcoxon rank sum test with continuity correction,two.sided,0,LP_SGL,GSE162228,survival,Positive vs Rest,neg_ssGSEA
+0.0450511274144028,54429647,1.1398381516372e-109,0.0411425514659987,0.0489457845740072,Wilcoxon rank sum test with continuity correction,two.sided,0,LP_SGL,GSE162228,survival,Negative vs Rest,neg_ssGSEA

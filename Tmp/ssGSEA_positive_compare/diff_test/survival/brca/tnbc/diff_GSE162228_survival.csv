@@ -1,0 +1,19 @@
+estimate,statistic,p.value,conf.low,conf.high,method,alternative,null.value,screen_method,bulk,type_pheno,group,ssGSEA type
+-0.0142226747324821,86899436,2.44977383212979e-26,-0.0168076796250196,-0.0116186361763923,Wilcoxon rank sum test with continuity correction,two.sided,0,scAB,GSE162228,survival,Other vs Rest,pos_ssGSEA
+0.0142226750010407,106847993,2.44977383212979e-26,0.011618636162145,0.0168076794262734,Wilcoxon rank sum test with continuity correction,two.sided,0,scAB,GSE162228,survival,Positive vs Rest,pos_ssGSEA
+0.011304982141949,23396182,1.19588306624969e-05,0.00605667704945716,0.016872107807358,Wilcoxon rank sum test with continuity correction,two.sided,0,scPAS,GSE162228,survival,Neutral vs Rest,pos_ssGSEA
+-0.0113049823406574,19524659,1.19588306624969e-05,-0.0168721081796167,-0.0060566897176877,Wilcoxon rank sum test with continuity correction,two.sided,0,scPAS,GSE162228,survival,Positive vs Rest,pos_ssGSEA
+-0.00498018263538281,103928254,1.63744960451492e-05,-0.00730290213653487,-0.00267227027441778,Wilcoxon rank sum test with continuity correction,two.sided,0,LP_SGL,GSE162228,survival,Positive vs Rest,pos_ssGSEA
+0.0125075344186719,188190422,2.69401681107271e-39,0.0105520137926436,0.0144441938652763,Wilcoxon rank sum test with continuity correction,two.sided,0,LP_SGL,GSE162228,survival,Neutral vs Rest,pos_ssGSEA
+-0.0205194301026024,64130120,5.72906929935031e-48,-0.023459981881689,-0.0175952487242145,Wilcoxon rank sum test with continuity correction,two.sided,0,LP_SGL,GSE162228,survival,Negative vs Rest,pos_ssGSEA
+0.0155637105963072,79372687,1.01802837556103e-25,0.0125791166777601,0.0186051161564675,Wilcoxon rank sum test with continuity correction,two.sided,0,DEGAS,GSE162228,survival,Other vs Rest,pos_ssGSEA
+-0.0155637102246079,62516474,1.01802837556103e-25,-0.0186051155644461,-0.0125791176460048,Wilcoxon rank sum test with continuity correction,two.sided,0,DEGAS,GSE162228,survival,Positive vs Rest,pos_ssGSEA
+-0.0208630552959804,85671646,8.72972000131152e-33,-0.02429336384598,-0.0174430861531879,Wilcoxon rank sum test with continuity correction,two.sided,0,scAB,GSE162228,survival,Other vs Rest,neg_ssGSEA
+0.02086305556013,108075783,8.72972000131152e-33,0.017443086638427,0.0242933653111293,Wilcoxon rank sum test with continuity correction,two.sided,0,scAB,GSE162228,survival,Positive vs Rest,neg_ssGSEA
+0.0322410939587425,25425302,3.02399430902367e-19,0.0246720541788995,0.039905735956842,Wilcoxon rank sum test with continuity correction,two.sided,0,scPAS,GSE162228,survival,Neutral vs Rest,neg_ssGSEA
+-0.0322387603254931,17495539,3.02399430902367e-19,-0.039905735956842,-0.0246720541788995,Wilcoxon rank sum test with continuity correction,two.sided,0,scPAS,GSE162228,survival,Positive vs Rest,neg_ssGSEA
+-0.0189519255313918,96089525,2.9185020252313e-34,-0.0221075257188199,-0.0158500434522394,Wilcoxon rank sum test with continuity correction,two.sided,0,LP_SGL,GSE162228,survival,Positive vs Rest,neg_ssGSEA
+0.0132437408273338,184960276,6.09138950479073e-26,0.0107548634362788,0.0157711520831607,Wilcoxon rank sum test with continuity correction,two.sided,0,LP_SGL,GSE162228,survival,Neutral vs Rest,neg_ssGSEA
+-0.00240705991874514,75198995,0.204059344816555,-0.00617195926617509,0.00130177457205581,Wilcoxon rank sum test with continuity correction,two.sided,0,LP_SGL,GSE162228,survival,Negative vs Rest,neg_ssGSEA
+0.0375906263631865,86562945,4.38045445972204e-84,0.0335257750974195,0.0417583806787846,Wilcoxon rank sum test with continuity correction,two.sided,0,DEGAS,GSE162228,survival,Other vs Rest,neg_ssGSEA
+-0.0375906267719736,55326216,4.38045445972204e-84,-0.0417583818364433,-0.0335257729489218,Wilcoxon rank sum test with continuity correction,two.sided,0,DEGAS,GSE162228,survival,Positive vs Rest,neg_ssGSEA

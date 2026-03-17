@@ -1,0 +1,6 @@
+estimate,statistic,p.value,conf.low,conf.high,method,alternative,null.value,screen_method,bulk,type_pheno,group
+-0.00408454055248001,32501213,0.715638743397447,-0.0260648971392592,0.0179346482118115,Wilcoxon rank sum test with continuity correction,two.sided,0,scAB,GSE162228,survival,scAB_Other vs Rest
+0.0040393690046834,32804658,0.715638743397447,-0.0179346395916593,0.0260648975928123,Wilcoxon rank sum test with continuity correction,two.sided,0,scAB,GSE162228,survival,scAB_Positive vs Rest
+0.0257023508816988,5612377,0.402206686606183,-0.0349489065576233,0.0854225941371965,Wilcoxon rank sum test with continuity correction,two.sided,0,scPAS,GSE162228,survival,scPAS_Negative vs Rest
+-0.0326590012828195,17113408,0.142249183419546,-0.0762040763373438,0.0110084026664894,Wilcoxon rank sum test with continuity correction,two.sided,0,scPAS,GSE162228,survival,scPAS_Neutral vs Rest
+0.0365278572163034,12673674,0.233434420791662,-0.0234964924123917,0.0970024931712137,Wilcoxon rank sum test with continuity correction,two.sided,0,scPAS,GSE162228,survival,scPAS_Positive vs Rest

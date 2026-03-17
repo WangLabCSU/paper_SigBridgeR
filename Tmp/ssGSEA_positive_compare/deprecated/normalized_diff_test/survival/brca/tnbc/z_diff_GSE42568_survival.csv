@@ -1,0 +1,12 @@
+estimate,statistic,p.value,conf.low,conf.high,method,alternative,null.value,screen_method,bulk,type_pheno,group
+-0.0666574282317989,87555467,2.86549729235043e-22,-0.0780185571668003,-0.0549087795627901,Wilcoxon rank sum test with continuity correction,two.sided,0,scAB,GSE42568,survival,scAB_Other vs Rest
+0.0666706725353938,105768629,2.86549729235043e-22,0.0549087528673887,0.0780186042092139,Wilcoxon rank sum test with continuity correction,two.sided,0,scAB,GSE42568,survival,scAB_Positive vs Rest
+0.0858096478710445,52850354,6.3949126366966e-14,0.0639426022954195,0.107242585511134,Wilcoxon rank sum test with continuity correction,two.sided,0,scissor,GSE42568,survival,scissor_Negative vs Rest
+-0.094528991596869,114729133,4.6188766418598e-61,-0.104867708770941,-0.0840437381883099,Wilcoxon rank sum test with continuity correction,two.sided,0,scissor,GSE42568,survival,scissor_Neutral vs Rest
+0.0921169988288086,104645404,2.77693516991377e-47,0.0805216279117444,0.103510717269125,Wilcoxon rank sum test with continuity correction,two.sided,0,scissor,GSE42568,survival,scissor_Positive vs Rest
+0.077719179485607,42333027,0.000798714012430251,0.0323914914573323,0.122278782775018,Wilcoxon rank sum test with continuity correction,two.sided,0,scPAS,GSE42568,survival,scPAS_Negative vs Rest
+-0.0769531642810649,73000454,2.8374264431623e-08,-0.103282685195462,-0.0503332454843287,Wilcoxon rank sum test with continuity correction,two.sided,0,scPAS,GSE42568,survival,scPAS_Neutral vs Rest
+0.0727883088947827,42267502,1.13419928333864e-05,0.0412187056709996,0.103979433204397,Wilcoxon rank sum test with continuity correction,two.sided,0,scPAS,GSE42568,survival,scPAS_Positive vs Rest
+-0.00300463020967925,108164953,0.838367246851363,-0.0314154465327536,0.0259648700351151,Wilcoxon rank sum test with continuity correction,two.sided,0,scPP,GSE42568,survival,scPP_Negative vs Rest
+0.000707451489926387,201942851,0.946070437427455,-0.0199881857395611,0.0211853303211842,Wilcoxon rank sum test with continuity correction,two.sided,0,scPP,GSE42568,survival,scPP_Neutral vs Rest
+0.00151291225807312,112971265,0.912869896063111,-0.0254517780883662,0.0287595622040439,Wilcoxon rank sum test with continuity correction,two.sided,0,scPP,GSE42568,survival,scPP_Positive vs Rest
