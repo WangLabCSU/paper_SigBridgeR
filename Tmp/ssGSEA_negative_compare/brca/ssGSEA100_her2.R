@@ -65,7 +65,7 @@ for (i in seq_len(ncol(markers))) {
   es.mat <- gsva(ssgsea_param) # 行为 cluster-通路，列为细胞
 
   # 拼接到结果矩阵
-  mat_out <- cbind(mat_out, es.mat)
+  mat_out <- rbind(mat_out, es.mat)
   gc(verbose = FALSE)
   cli::cli_h2("Finish {i}")
 }
