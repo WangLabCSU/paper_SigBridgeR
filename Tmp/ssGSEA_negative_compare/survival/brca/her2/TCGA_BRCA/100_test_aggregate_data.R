@@ -3,12 +3,12 @@ setwd(usethis::proj_path())
 library(dplyr)
 
 scores <- qs::qread(
-  "Tmp/ssGSEA_negative_compare/brca/tnbc_Sample_100_ssgsea_score.qs",
+  "Tmp/ssGSEA_negative_compare/brca/her2_Sample_100_ssgsea_score.qs",
   nthreads = 4L
 )
 
 seurat <- qs::qread(
-  "/home/data/sigbridger/benchmark_data/brca/TNBC/GSE42568_tnbc_merged_seurat.qs",
+  "/home/data/sigbridger/benchmark_data/brca/HER2/tcga_her2_merged_seurat.qs",
   nthreads = 4L
 )
 meta <- seurat[[]]
@@ -125,14 +125,14 @@ mean_scores <- CalcGroupMeanScores(
   scores,
   meta,
   meta_cols = colnames(screened_label),
-  sample_name = "Sample_100_GS162228"
+  sample_name = "Sample_100_TCGA_BRCA"
 )
 
-dir_out <- "Tmp/ssGSEA_negative_compare/survival/brca/tnbc/GSE42568"
+dir_out <- "Tmp/ssGSEA_negative_compare/survival/brca/her2/TCGA_BRCA"
 
 data.table::fwrite(
   mean_scores,
-  file.path(dir_out, "tnbc_sur_100reps_neg_ctrl_stat.csv")
+  file.path(dir_out, "her2_sur_100reps_neg_ctrl_stat.csv")
 )
 
 # mean_scores <- data.table::fread(file.path(

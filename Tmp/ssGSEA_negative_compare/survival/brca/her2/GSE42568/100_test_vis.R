@@ -140,7 +140,7 @@ PlotGroupMeanScores <- function(
 }
 
 mean_scores <- data.table::fread(
-  "Tmp/ssGSEA_negative_compare/survival/brca/tnbc/GSE42568/tnbc_sur_100reps_neg_ctrl_stat.csv"
+  "Tmp/ssGSEA_negative_compare/survival/brca/her2/GSE42568/her2_sur_100reps_neg_ctrl_stat.csv"
 )
 
 mean_scores <- tidyr::unite(
@@ -163,7 +163,7 @@ p <- PlotGroupMeanScores(
 p
 
 ggplot2::ggsave(
-  "Tmp/ssGSEA_negative_compare/survival/brca/tnbc/GSE42568/luad_sur_100reps_neg_ctrl_stat.png",
+  "Tmp/ssGSEA_negative_compare/survival/brca/her2/GSE42568/her2_sur_100reps_neg_ctrl_stat.png",
   p,
   width = 8,
   height = 6,

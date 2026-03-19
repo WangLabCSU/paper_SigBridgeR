@@ -1,8 +1,8 @@
 # ! Negative Comparison
 # ! Survival
 # ! luad
-# ! GSE3141
-# ! GSE123902
+# ! GSE162228
+# ! GSE161529
 library(kSamples)
 library(dplyr)
 library(tidyr)
@@ -10,11 +10,11 @@ library(tidyr)
 setwd(usethis::proj_path())
 
 seurat <- qs::qread(
-  "/home/data/sigbridger/benchmark_data/brca/TNBC/GSE162228_tnbc_merged_seurat.qs",
+  "/home/data/sigbridger/benchmark_data/brca/HER2/GSE162228_her2_merged_seurat.qs",
   nthreads = 4L
 )
 scores <- data.table::fread(
-  "Tmp/ssGSEA_negative_compare/survival/brca/tnbc/GSE162228/tnbc_sur_100reps_neg_ctrl_stat.csv"
+  "Tmp/ssGSEA_negative_compare/survival/brca/her2/GSE162228/her2_sur_100reps_neg_ctrl_stat.csv"
 )
 
 scores <- tidyr::unite(
@@ -95,5 +95,5 @@ results <- results %>%
 
 data.table::fwrite(
   results,
-  "Tmp/ssGSEA_negative_compare/survival/brca/tnbc/GSE162228/rep100_ad_results.csv"
+  "Tmp/ssGSEA_negative_compare/survival/brca/her2/GSE162228/rep100_ad_results.csv"
 )

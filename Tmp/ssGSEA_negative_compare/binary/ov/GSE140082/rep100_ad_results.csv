@@ -1,0 +1,8 @@
+meta_column,n_samples,n_groups,AS_stat,T_AV_stat,p_value,test_name,n_ties,sig,warning,null_dist1,null_dist2,method,n_sim,message,significant,sig_label
+DEGAS,,,,,,,,,,,,,,分组数不足,,ns
+LP_SGL,300,3,0.149,-1.7326,1,Anderson-Darling,0,1.06814,FALSE,,,asymptotic,1,OK,FALSE,ns
+PIPET,300,3,0.254,-1.6349,1,Anderson-Darling,0,1.06814,FALSE,,,asymptotic,1,OK,FALSE,ns
+scAB,200,2,0.0958,-1.199,0.99999,Anderson-Darling,0,0.75419,FALSE,,,asymptotic,1,OK,FALSE,ns
+scPAS,300,3,0.207,-1.6784,1,Anderson-Darling,0,1.06814,FALSE,,,asymptotic,1,OK,FALSE,ns
+scPP,300,3,0.148,-1.7341,1,Anderson-Darling,0,1.06814,FALSE,,,asymptotic,1,OK,FALSE,ns
+scissor,300,3,0.0765,-1.8008,1,Anderson-Darling,0,1.06814,FALSE,,,asymptotic,1,OK,FALSE,ns

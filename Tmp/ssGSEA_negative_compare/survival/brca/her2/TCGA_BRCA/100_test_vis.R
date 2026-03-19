@@ -11,7 +11,7 @@ PlotGroupMeanScores <- function(
   box_width = 0.6,
   dodge_width = 0.7,
   title = "Mean Score Distribution by Group",
-  subtitle = "GSE42568",
+  subtitle = "TCGA_BRCA",
   x_label = "Meta Column & Label",
   y_label = "Mean Score",
   angle = 45
@@ -140,7 +140,7 @@ PlotGroupMeanScores <- function(
 }
 
 mean_scores <- data.table::fread(
-  "Tmp/ssGSEA_negative_compare/survival/brca/tnbc/GSE42568/tnbc_sur_100reps_neg_ctrl_stat.csv"
+  "Tmp/ssGSEA_negative_compare/survival/brca/her2/TCGA_BRCA/her2_sur_100reps_neg_ctrl_stat.csv"
 )
 
 mean_scores <- tidyr::unite(
@@ -156,14 +156,14 @@ mean_scores <- tidyr::unite(
 p <- PlotGroupMeanScores(
   mean_scores,
   title = "Negative Control - Random ssGSEA Mean Score Distribution by Group",
-  subtitle = "GSE42568 survival",
+  subtitle = "TCGA_BRCA survival",
   x_label = "Screening Group",
   y_label = "Mean Score of ssGSEA",
 )
 p
 
 ggplot2::ggsave(
-  "Tmp/ssGSEA_negative_compare/survival/brca/tnbc/GSE42568/luad_sur_100reps_neg_ctrl_stat.png",
+  "Tmp/ssGSEA_negative_compare/survival/brca/her2/TCGA_BRCA/her2_sur_100reps_neg_ctrl_stat.png",
   p,
   width = 8,
   height = 6,
