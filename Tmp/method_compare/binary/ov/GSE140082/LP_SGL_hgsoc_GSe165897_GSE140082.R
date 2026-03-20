@@ -4,9 +4,10 @@ library(BiocParallel)
 library(SigBridgeR)
 
 # setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-setwd(
-  "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082"
-)
+setwd(file.path(
+  usethis::proj_path(),
+  "Tmp/method_compare/binary/ov/GSE140082"
+))
 
 # devtools::document('/home/yyx/R/Project/R_code/SigBridgeR')
 data_path = "/home/data/sigbridger/benchmark_data/ov"

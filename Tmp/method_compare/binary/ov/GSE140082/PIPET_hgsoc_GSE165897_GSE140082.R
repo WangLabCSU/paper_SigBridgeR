@@ -4,10 +4,10 @@ library(BiocParallel)
 library(SigBridgeR)
 
 # setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-setwd(
-  "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082"
-)
-
+setwd(file.path(
+  usethis::proj_path(),
+  "Tmp/method_compare/binary/ov/GSE140082"
+))
 SigBridgeR::setThreads(10L)
 
 # devtools::document('/home/yyx/R/Project/R_code/SigBridgeR')
@@ -122,74 +122,72 @@ data.table::fwrite(
 
 cli::cli_alert_success(crayon::green("pipet random search completed."))
 
-# # * EOC细胞标记为肿瘤细胞，作为判断依据，注意有肿瘤细胞转移的情况
-# pipet_random_search = data.table::fread(
-#   "pipet_random_search.csv",
-# )
-# pipet_random_search$benchmark = setNames(
-#   grepl("EOC", seurat$cell_subtype),
-#   colnames(seurat)
-# )
-# # * 计算指标
-# source(
-#   "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/ComputeMetrics.R"
-# )
-# metrics = ComputeMetrics(pipet_random_search)
-# t_metrics <- data.table::transpose(metrics)
-# colnames(t_metrics) <- rownames(metrics)
-# arg_samples = cbind(arg_samples, t_metrics)
-# data.table::fwrite(
-#   arg_samples,
-#   file = "pipet_arg_samples.csv",
-#   row.names = TRUE
-# )
+# * EOC细胞标记为肿瘤细胞，作为判断依据，注意有肿瘤细胞转移的情况
+pipet_random_search = data.table::fread(
+  "pipet_random_search.csv",
+)
+pipet_random_search$benchmark = setNames(
+  grepl("EOC", seurat$cell_subtype),
+  colnames(seurat)
+)
+# * 计算指标
+source(file.path(usethis::proj_path(), "Tmp/cross_args_ite/ComputeMetrics.R"))
+metrics = ComputeMetrics(pipet_random_search)
+t_metrics <- data.table::transpose(metrics)
+colnames(t_metrics) <- rownames(metrics)
+arg_samples = cbind(arg_samples, t_metrics)
+data.table::fwrite(
+  arg_samples,
+  file = "pipet_arg_samples.csv",
+  row.names = TRUE
+)
 
-# # * 图
-# p <- ggplot(
-#   arg_samples,
-#   aes(
-#     x = nPerm,
-#     y = log2FC,
-#     fill = F1,
-#     shape = distance
-#   )
-# ) +
-#   ggplot2::facet_wrap(~distance) +
-#   ggbeeswarm::geom_quasirandom(
-#     size = 6,
-#     alpha = 0.9,
-#     color = "black",
-#     method = "quasirandom", # 或 "swarm", "quasirandom"
-#     groupOnX = TRUE # 按x轴分组躲避
-#   ) +
-#   scale_shape_manual(values = c(21, 21, 21, 21, 21, 21)) +
-#   scale_fill_gradient(
-#     low = "white",
-#     high = "red",
-#     name = "F1"
-#   ) +
-#   labs(
-#     title = "Validation of the Screening Efficiency of degas under Random Parameters",
-#     subtitle = "x = nPerm, y = log2FC",
-#     x = "nPerm",
-#     y = "log2FC"
-#   ) +
-#   theme_minimal(base_size = 14) + # 全局字体基准
-#   theme(
-#     # 2. 轴文字放大
-#     axis.text = element_text(size = 12),
-#     axis.title = element_text(size = 13),
-#     # 3. x 轴 45° 倾斜
-#     axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1),
-#     # 4. 图例文字放大
-#     legend.text = element_text(size = 12),
-#     legend.title = element_text(size = 13)
-#   )
+# * 图
+p <- ggplot(
+  arg_samples,
+  aes(
+    x = nPerm,
+    y = log2FC,
+    fill = F1,
+    shape = distance
+  )
+) +
+  ggplot2::facet_wrap(~distance) +
+  ggbeeswarm::geom_quasirandom(
+    size = 6,
+    alpha = 0.9,
+    color = "black",
+    method = "quasirandom", # 或 "swarm", "quasirandom"
+    groupOnX = TRUE # 按x轴分组躲避
+  ) +
+  scale_shape_manual(values = c(21, 21, 21, 21, 21, 21)) +
+  scale_fill_gradient(
+    low = "white",
+    high = "red",
+    name = "F1"
+  ) +
+  labs(
+    title = "Validation of the Screening Efficiency of degas under Random Parameters",
+    subtitle = "x = nPerm, y = log2FC",
+    x = "nPerm",
+    y = "log2FC"
+  ) +
+  theme_minimal(base_size = 14) + # 全局字体基准
+  theme(
+    # 2. 轴文字放大
+    axis.text = element_text(size = 12),
+    axis.title = element_text(size = 13),
+    # 3. x 轴 45° 倾斜
+    axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1),
+    # 4. 图例文字放大
+    legend.text = element_text(size = 12),
+    legend.title = element_text(size = 13)
+  )
 
-# ggsave(
-#   filename = "pipet_acc.png",
-#   plot = p,
-#   width = 10,
-#   height = 8,
-#   dpi = 300
-# )
+ggsave(
+  filename = "pipet_acc.png",
+  plot = p,
+  width = 10,
+  height = 8,
+  dpi = 300
+)
