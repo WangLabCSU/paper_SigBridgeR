@@ -49,11 +49,11 @@ bulk <- bulk[, names(pheno)]
 # * random search, 100 times
 set.seed(123)
 arg_samples <- data.frame(
-  arch = sample(c("DenseNet", "Standard"), 50, replace = TRUE),
-  ff_depth = sample(2:10, 50, replace = TRUE),
-  bag_depth = sample(3:10, 50, replace = TRUE)
+  lamb1 = sample(2:10, 50, replace = TRUE),
+  lamb2 = sample(2:10, 50, replace = TRUE),
+  lamb3 = sample(2:10, 50, replace = TRUE)
 ) %>%
-  add_row(arch = "DenseNet", ff_depth = 3, bag_depth = 5)
+  add_row(lamb1 = 3, lamb2 = 3, lamb3 = 3)
 
 SigBridgeR::setThreads(
   8L,
@@ -71,9 +71,9 @@ res_list <- lapply(
   function(i) {
     tryCatch(
       {
-        arch <- arg_samples[i, "arch"][[1]]
-        ff_depth <- arg_samples[i, "ff_depth"][[1]]
-        bag_depth <- arg_samples[i, "bag_depth"][[1]]
+        lamb1 <- arg_samples[i, "lamb1"][[1]]
+        lamb2 <- arg_samples[i, "lamb2"][[1]]
+        lamb3 <- arg_samples[i, "lamb3"][[1]]
 
         result <- Screen(
           matched_bulk = bulk,
@@ -83,9 +83,9 @@ res_list <- lapply(
           phenotype_class = "binary",
           screen_method = "DEGAS",
           degas_params = list(
-            DEGAS.architecture = arch,
-            DEGAS.ff_depth = ff_depth,
-            DEGAS.bag_depth = bag_depth
+            DEGAS.lambda1 = lamb1,
+            DEGAS.lambda2 = lamb2,
+            DEGAS.lambda3 = lamb3
           )
         )
 
@@ -121,7 +121,7 @@ rownames(all_results) = colnames(seurat)
 
 data.table::fwrite(
   all_results,
-  file = "degas_random_search.csv",
+  file = "degas2_random_search.csv",
   row.names = TRUE
 )
 
