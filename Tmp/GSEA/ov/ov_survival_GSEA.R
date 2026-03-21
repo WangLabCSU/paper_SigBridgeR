@@ -1,5 +1,5 @@
 # setwd(dirname(.rs.api.getActiveDocumentContext()$path))
-setwd("~/R/Project/R_code/SigBridgeR/Tmp/GSEA/ov")
+setwd(file.path(usethis::proj_path(), "Tmp/GSEA/ov"))
 
 set.seed(123)
 
@@ -13,7 +13,7 @@ library(irGSEA)
 
 # ! bulk-GSE140082, sc-GSE165897, survival as phenotype
 seurat <- qs::qread(
-  "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/benchmark_data/ov/GSE165897/GSE140082_ov_merged_seurat.qs",
+  "/home/data/sigbridger/benchmark_binary/ov/GSE165897/GSE140082_ov_merged_seurat.qs",
   nthreads = 4
 )
 
