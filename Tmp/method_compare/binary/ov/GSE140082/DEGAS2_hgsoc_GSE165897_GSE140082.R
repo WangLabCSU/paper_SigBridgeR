@@ -129,83 +129,73 @@ cli::cli_alert_success(crayon::green("DEGAS random search completed."))
 
 # # ! ----- 可视化 ----
 
-# # * EOC细胞标记为肿瘤细胞，作为判断依据，注意有肿瘤细胞转移的情况
-# degas_random_search = data.table::fread(
-#   "degas_random_search.csv",
-# )
-# degas_random_search$benchmark = setNames(
-#   grepl("EOC", seurat$cell_subtype),
-#   colnames(seurat)
-# )
+# * EOC细胞标记为肿瘤细胞，作为判断依据，注意有肿瘤细胞转移的情况
+degas_random_search = data.table::fread(
+  "degas2_random_search.csv",
+)
+degas_random_search$benchmark = setNames(
+  grepl("EOC", seurat$cell_subtype),
+  colnames(seurat)
+)
 
-# for (i in seq_len(ncol(degas_random_search))) {
-#   set(
-#     degas_random_search,
-#     j = i,
-#     value = as.logical(degas_random_search[[i]] == "Positive")
-#   )
-# }
+# * 计算指标
+source(file.path(usethis::proj_path(), "Tmp/cross_args_ite/ComputeMetrics.R"))
+metrics = ComputeMetrics(degas_random_search)
+t_metrics <- data.table::transpose(metrics)
+colnames(t_metrics) <- rownames(metrics)
+arg_samples = cbind(arg_samples, t_metrics)
 
-# # * 计算指标
-# source(
-#   "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/ComputeMetrics.R"
-# )
-# metrics = ComputeMetrics(degas_random_search)
-# t_metrics <- data.table::transpose(metrics)
-# colnames(t_metrics) <- rownames(metrics)
-# arg_samples = cbind(arg_samples, t_metrics)
+data.table::fwrite(
+  arg_samples,
+  file = "degas2_arg_samples.csv",
+  row.names = TRUE
+)
 
-# data.table::fwrite(
-#   arg_samples,
-#   file = "degas_arg_samples.csv",
-#   row.names = TRUE
-# )
+# * 图
+p <- ggplot(
+  arg_samples,
+  aes(
+    x = bag_depth,
+    y = ff_depth,
+    fill = F1,
+    shape = arch
+  )
+) +
+  ggbeeswarm::geom_quasirandom(
+    size = 6,
+    alpha = 0.9,
+    color = "black",
+    method = "quasirandom", # 或 "swarm", "quasirandom"
+    groupOnX = TRUE # 按x轴分组躲避
+  ) +
+  scale_shape_manual(values = c(21, 22)) +
+  scale_fill_gradient(
+    low = "white",
+    high = "red",
+    name = "F1"
+  ) +
+  labs(
+    title = "Validation of the Screening Efficiency of degas under Random Parameters",
+    subtitle = "x = bag_depth, y = ff_depth",
+    x = "bag_depth",
+    y = "ff_depth"
+  ) +
+  theme_minimal(base_size = 14) + # 全局字体基准
+  theme(
+    # 2. 轴文字放大
+    axis.text = element_text(size = 12),
+    axis.title = element_text(size = 13),
+    # 3. x 轴 45° 倾斜
+    axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1),
+    # 4. 图例文字放大
+    legend.text = element_text(size = 12),
+    legend.title = element_text(size = 13)
+  )
 
-# # * 图
-# p <- ggplot(
-#   arg_samples,
-#   aes(
-#     x = bag_depth,
-#     y = ff_depth,
-#     fill = F1,
-#     shape = arch
-#   )
-# ) +
-#   ggbeeswarm::geom_quasirandom(
-#     size = 6,
-#     alpha = 0.9,
-#     color = "black",
-#     method = "quasirandom", # 或 "swarm", "quasirandom"
-#     groupOnX = TRUE # 按x轴分组躲避
-#   ) +
-#   scale_shape_manual(values = c(21, 22)) +
-#   scale_fill_gradient(
-#     low = "white",
-#     high = "red",
-#     name = "F1"
-#   ) +
-#   labs(
-#     title = "Validation of the Screening Efficiency of degas under Random Parameters",
-#     subtitle = "x = bag_depth, y = ff_depth",
-#     x = "bag_depth",
-#     y = "ff_depth"
-#   ) +
-#   theme_minimal(base_size = 14) + # 全局字体基准
-#   theme(
-#     # 2. 轴文字放大
-#     axis.text = element_text(size = 12),
-#     axis.title = element_text(size = 13),
-#     # 3. x 轴 45° 倾斜
-#     axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1),
-#     # 4. 图例文字放大
-#     legend.text = element_text(size = 12),
-#     legend.title = element_text(size = 13)
-#   )
-
-# ggsave(
-#   filename = "degas_acc.png",
-#   plot = p,
-#   width = 10,
-#   height = 8,
-#   dpi = 300
-# )
+ggsave(
+  filename = "degas_acc.png",
+  plot = p,
+  width = 10,
+  height = 8,
+  dpi = 300
+)
