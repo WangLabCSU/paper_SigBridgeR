@@ -13,14 +13,14 @@ irgsea_score <- qs::qread(
 #   nthreads = 4L
 # )
 
-# ir_meta <- irgsea_score[[]]
+ir_meta <- irgsea_score[[]]
 
 # my_meta <- my[[]]
 
-# screen_labels <- grepv(
-#   "^sc[a-zA-Z]+$|DEGAS$|LP_SGL$|PIPET$",
-#   colnames(my_meta)
-# )
+screen_labels <- grepv(
+  "^sc[a-zA-Z]+$|DEGAS$|LP_SGL$|PIPET$",
+  colnames(ir_meta)
+)
 
 # for (col in screen_labels) {
 #   ir_meta[[col]] <- my_meta[col]
@@ -57,7 +57,7 @@ if (file.exists(file.path(data_path, "ov_GSE140082_dge_result.qs"))) {
   done_labels <- character(0)
 }
 
-if (!"scissor" %in% done_labels) {
+if (!"scissor" %in% done_labels && "scissor" %in% screen_labels) {
   scissor.dge <- irGSEA::irGSEA.integrate(
     object = irgsea_score,
     group.by = "scissor",
@@ -67,9 +67,11 @@ if (!"scissor" %in% done_labels) {
   )
   dge_res$scissor <- scissor.dge
   cli::cli_h2("Scissor Done!")
+} else {
+  cli::cli_alert_info("skip scissor")
 }
 
-if (!"scpas" %in% done_labels) {
+if (!"scpas" %in% done_labels && "scPAS" %in% screen_labels) {
   scpas.dge <- irGSEA::irGSEA.integrate(
     object = irgsea_score,
     group.by = "scPAS",
@@ -79,9 +81,11 @@ if (!"scpas" %in% done_labels) {
   )
   dge_res$scpas <- scpas.dge
   cli::cli_h2("scPAS Done!")
+} else {
+  cli::cli_alert_info("skip scpas")
 }
 
-if (!"scab" %in% done_labels) {
+if (!"scab" %in% done_labels && "scAB" %in% screen_labels) {
   scab.dge <- irGSEA::irGSEA.integrate(
     object = irgsea_score,
     group.by = "scAB",
@@ -91,9 +95,11 @@ if (!"scab" %in% done_labels) {
   )
   dge_res$scscabAB <- scab.dge
   cli::cli_h2("scAB Done!")
+} else {
+  cli::cli_alert_info("skip scab")
 }
 
-if (!"scpp" %in% done_labels) {
+if (!"scpp" %in% done_labels && "scPP" %in% screen_labels) {
   scpp.dge <- irGSEA::irGSEA.integrate(
     object = irgsea_score,
     group.by = "scPP",
@@ -103,9 +109,11 @@ if (!"scpp" %in% done_labels) {
   )
   dge_res$scpp <- scpp.dge
   cli::cli_h2("scPP Done!")
+} else {
+  cli::cli_alert_info("skip scpp")
 }
 
-if (!"lp_sgl" %in% done_labels) {
+if (!"lp_sgl" %in% done_labels && "LP_SGL" %in% screen_labels) {
   lp_sgl.dge <- irGSEA::irGSEA.integrate(
     object = irgsea_score,
     group.by = "LP_SGL",
@@ -115,9 +123,11 @@ if (!"lp_sgl" %in% done_labels) {
   )
   dge_res$lp_sgl <- lp_sgl.dge
   cli::cli_h2("LP_SGL Done!")
+} else {
+  cli::cli_alert_info("skip lp_sgl")
 }
 
-if (!"degas" %in% done_labels) {
+if (!"degas" %in% done_labels && "DEGAS" %in% screen_labels) {
   degas.dge <- irGSEA::irGSEA.integrate(
     object = irgsea_score,
     group.by = "DEGAS",
@@ -127,9 +137,11 @@ if (!"degas" %in% done_labels) {
   )
   dge_res$degas <- degas.dge
   cli::cli_h2("DEGAS Done!")
+} else {
+  cli::cli_alert_info("skip degas")
 }
 
-if (!"pipet" %in% done_labels) {
+if (!"pipet" %in% done_labels && "PIPET" %in% screen_labels) {
   pipet.dge <- irGSEA::irGSEA.integrate(
     object = irgsea_score,
     group.by = "PIPET",
@@ -139,6 +151,8 @@ if (!"pipet" %in% done_labels) {
   )
   dge_res$pipet <- pipet.dge
   cli::cli_h2("PIPET Done!")
+} else {
+  cli::cli_alert_info("skip pipet")
 }
 
 # ! store the survival label
