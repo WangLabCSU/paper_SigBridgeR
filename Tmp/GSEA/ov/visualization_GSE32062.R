@@ -50,10 +50,8 @@ filtered_dge <- purrr::map(
 #     }
 # )
 
-future::plan(future::multicore, workers = 4L)
-
 # ! 添加换行符，GO太长了
-truncated_dge <- furrr::future_map(
+truncated_dge <- purrr::map(
   filtered_dge,
   ~ purrr::map(
     .x,
@@ -79,8 +77,9 @@ truncated_dge <- furrr::future_map(
       })
       .x
     }
-  )
+  ),.progress = "Truncating"
 )
+
 
 # ! Don't use furrr here, it got stucked
 bubbles <- purrr::map(
@@ -138,9 +137,10 @@ purrr::iwalk(bubbles, function(dataset_list, dataset_name) {
 
     ggplot2::ggsave(
       filename = filepath,
-      plot = dataset_list[[i]] ,
+      plot = dataset_list[[i]] +
+        ggplot2::theme(plot.margin = ggplot2::margin(l = 15)),
       height = 6,
-      width = 6.5,
+      width = 7,
       limitsize = FALSE
     )
 

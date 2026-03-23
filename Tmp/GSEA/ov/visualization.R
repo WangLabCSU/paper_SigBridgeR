@@ -138,9 +138,10 @@ purrr::iwalk(bubbles, function(dataset_list, dataset_name) {
 
     ggplot2::ggsave(
       filename = filepath,
-      plot = dataset_list[[i]],
+      plot = dataset_list[[i]] +
+        ggplot2::theme(plot.margin = ggplot2::margin(l = 15)),
       height = 6,
-      width = 6.5,
+      width = 7,
       limitsize = FALSE
     )
 
