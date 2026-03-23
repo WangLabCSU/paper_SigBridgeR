@@ -2,7 +2,7 @@
 setwd(file.path(usethis::proj_path(), "Tmp/GSEA/brca/tnbc"))
 
 data_path <- "/home/data/sigbridger/GSEA/brca/tnbc"
-# ! BULK- GSE162228
+# ! BULK- GSE42568
 # ! SC- GSE161529 - tnbc
 # ! phenotype - survival
 
@@ -11,12 +11,12 @@ irgsea_score <- qs::qread(
   nthreads = 8L
 )
 
-tnbc_GSE162228 <- qs::qread(
-  "/home/data/sigbridger/benchmark_data/brca/TNBC/GSE162228_tnbc_merged_seurat.qs",
+tnbc_GSE42568 <- qs::qread(
+  "/home/data/sigbridger/benchmark_data/brca/TNBC/GSE42568_tnbc_merged_seurat.qs",
   nthreads = 4L
 )
 
-irgsea_score <- SigBridgeR::MergeResult(irgsea_score, tnbc_GSE162228)
+irgsea_score <- SigBridgeR::MergeResult(irgsea_score, tnbc_GSE42568)
 
 
 screen_labels <- grepv(
@@ -24,9 +24,9 @@ screen_labels <- grepv(
   colnames(irgsea_score[[]])
 )
 
-if (file.exists(file.path(data_path, "tnbc_GSE162228_dge_result.qs"))) {
+if (file.exists(file.path(data_path, "tnbc_GSE42568_dge_result.qs"))) {
   dge_res <- qs::qread(
-    file.path(data_path, "tnbc_GSE162228_dge_result.qs"),
+    file.path(data_path, "tnbc_GSE42568_dge_result.qs"),
     nthreads = 4L
   )
 
@@ -181,6 +181,8 @@ if (
 
 qs::qsave(
   dge_res,
-  file.path(data_path, "tnbc_GSE162228_dge_result.qs"),
+  file.path(data_path, "tnbc_GSE42568_dge_result.qs"),
   nthreads = 4L
 )
+
+cli::cli_h1("All done")

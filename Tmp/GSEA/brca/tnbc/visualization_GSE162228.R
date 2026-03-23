@@ -1,15 +1,13 @@
 # setwd(.rs.api.getActiveDocumentContext()$path |> dirname())
-setwd("/home/yyx/R/Project/R_code/SigBridgeR/Tmp/GSEA/brca/tnbc")
-source("~/R/Project/R_code/SigBridgeR/Tmp/GSEA/irGSEA_bubble.R")
-
-# library(irGSEA)
+setwd(file.path(usethis::proj_path(), "Tmp/GSEA/brca/tnbc"))
+source("../../irGSEA_bubble.R")
 
 data_path = "/home/data/sigbridger/GSEA/brca/tnbc"
 
-irgsea_score = qs::qread(
-  file.path(data_path, "tnbc_irGSEA_score.qs"),
-  nthreads = 8L
-)
+# irgsea_score = qs::qread(
+#   file.path(data_path, "tnbc_irGSEA_score.qs"),
+#   nthreads = 8L
+# )
 
 dge = qs::qread(
   "/home/data/sigbridger/GSEA/brca/tnbc/tnbc_GSE162228_dge_result.qs",
@@ -59,32 +57,15 @@ truncated_dge <- purrr::map(
       })
       .x
     }
-  )
+  ),
+  .progress = "Truncating"
 )
 
-# ! 太丑了
-# htmaps <- purrr::map(
-#     filtered_dge,
-#     ~ {
-#         lapply(names(.x), function(method) {
-#             irGSEA.heatmap(
-#                 object = .x,
-#                 method = method,
-#                 top = 50,
-#                 show.geneset = NULL,
-#                 heatmap.width = 30,
-#                 significance.color = c("#CECECE", "#ff857eff"),
-#                 cluster.color = ggsci::pal_igv(),
-#                 direction.color = c("#8abdffff", "#ff857eff")
-#             )
-#         })
-#     }
-# )
-
-bubbles = purrr::map(
+# ! Don't use furrr here, it got stucked
+bubbles <- purrr::map(
   truncated_dge,
   ~ {
-    lapply(names(.x), function(method) {
+    l <- lapply(names(.x), function(method) {
       if (nrow(.x[[method]]) < 2) {
         return(NULL)
       }
@@ -103,22 +84,27 @@ bubbles = purrr::map(
         ),
         direction.color = c("#8abdffff", "#ff857eff"),
         cluster_rows = FALSE,
-        top = 50
+        top = 20
       )
     })
-  }
+    names(l) <- names(.x)
+    l
+  },
+  .progress = "Drawing bubbles"
 )
 
-if (!dir.exists("survival_plot_GSE162228")) {
-  dir.create("survival_plot_GSE162228")
+
+plot_dir <- "survival_plot_GSE162228"
+if (!dir.exists(plot_dir)) {
+  dir.create(plot_dir)
 }
-purrr::imap(bubbles, function(dataset_list, dataset_name) {
+purrr::iwalk(bubbles, function(dataset_list, dataset_name) {
   if (is.null(dataset_list) || length(dataset_list) == 0) {
     return(NULL)
   }
   method_name <- c("AUCell", "UCell", "singscore", "ssgsea", "RRA")
 
-  purrr::imap(dataset_list, function(plot_obj, i) {
+  purrr::iwalk(dataset_list, function(plot_obj, i) {
     if (is.null(plot_obj)) {
       return(NULL)
     }
@@ -127,21 +113,20 @@ purrr::imap(bubbles, function(dataset_list, dataset_name) {
       "tnbc_",
       dataset_name,
       "_",
-      method_name[i],
+      i,
       "_bubble.pdf"
     )
-    filepath <- file.path("survival_plot_GSE162228", filename)
+    filepath <- file.path(plot_dir, filename)
 
     ggplot2::ggsave(
       filename = filepath,
       plot = dataset_list[[i]] +
-        ggplot2::theme(plot.margin = ggplot2::margin(l = 50)),
-      height = 15,
-      width = 10,
+        ggplot2::theme(plot.margin = ggplot2::margin(l = 15)),
+      height = 6,
+      width = 7,
       limitsize = FALSE
     )
 
     message("已保存: ", filepath)
-    return(filepath)
   })
 })
