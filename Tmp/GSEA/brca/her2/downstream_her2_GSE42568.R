@@ -1,22 +1,22 @@
 # setwd(.rs.api.getActiveDocumentContext()$path |> dirname())
-setwd(file.path(usethis::proj_path(), "Tmp/GSEA/brca/tnbc"))
+setwd(file.path(usethis::proj_path(), "Tmp/GSEA/brca/her2"))
 
-data_path <- "/home/data/sigbridger/GSEA/brca/tnbc"
-# ! BULK- tcga
-# ! SC- GSE161529 - tnbc
+data_path <- "/home/data/sigbridger/GSEA/brca/her2"
+# ! BULK- GSE42568
+# ! SC- GSE161529 - her2
 # ! phenotype - survival
 
 irgsea_score <- qs::qread(
-  "/home/data/sigbridger/GSEA/brca/tnbc/tnbc_irGSEA_score.qs",
+  "/home/data/sigbridger/GSEA/brca/her2/her2_irGSEA_score.qs",
   nthreads = 8L
 )
 
-tnbc_tcga <- qs::qread(
-  "/home/data/sigbridger/benchmark_data/brca/TNBC/tcga_tnbc_merged_seurat.qs",
+her2_GSE42568 <- qs::qread(
+  "/home/data/sigbridger/benchmark_data/brca/HER2/GSE42568_her2_merged_seurat.qs",
   nthreads = 4L
 )
 
-irgsea_score <- SigBridgeR::MergeResult(irgsea_score, tnbc_tcga)
+irgsea_score <- SigBridgeR::MergeResult(irgsea_score, her2_GSE42568)
 
 
 screen_labels <- grepv(
@@ -24,9 +24,9 @@ screen_labels <- grepv(
   colnames(irgsea_score[[]])
 )
 
-if (file.exists(file.path(data_path, "tnbc_tcga_dge_result.qs"))) {
+if (file.exists(file.path(data_path, "her2_GSE42568_dge_result.qs"))) {
   dge_res <- qs::qread(
-    file.path(data_path, "tnbc_tcga_dge_result.qs"),
+    file.path(data_path, "her2_GSE42568_dge_result.qs"),
     nthreads = 4L
   )
 
@@ -181,6 +181,8 @@ if (
 
 qs::qsave(
   dge_res,
-  file.path(data_path, "tnbc_tcga_dge_result.qs"),
+  file.path(data_path, "her2_GSE42568_dge_result.qs"),
   nthreads = 4L
 )
+
+cli::cli_h1("All done")
