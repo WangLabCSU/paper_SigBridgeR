@@ -1,5 +1,5 @@
 # setwd(dirname(.rs.api.getActiveDocumentContext()$path))
-setwd("~/R/Project/R_code/SigBridgeR/Tmp/GSEA/lung")
+setwd(file.path(usethis::proj_path(), "Tmp/GSEA/lung"))
 
 set.seed(123)
 
@@ -13,7 +13,7 @@ library(irGSEA)
 
 # ! bulk- none, sc-GSE123902(raw preprocessed)
 seurat <- qs::qread(
-  "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/benchmark_data/lung/luad_GSE123902_seurat.qs",
+  "/home/data/sigbridger/benchmark_data/lung/luad_GSE123902_seurat.qs",
   nthreads = 4
 )
 
@@ -46,6 +46,6 @@ seurat_score <- irGSEA.score(
 qs::qsave(
   seurat_score,
   "/home/data/sigbridger/GSEA/lung/luad_irGSEA_score.qs",
-  nthreads = 4L
+  nthreads = 8L
 )
-# PID=3033797
+

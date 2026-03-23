@@ -1,5 +1,5 @@
 # setwd(.rs.api.getActiveDocumentContext()$path |> dirname())
-setwd("/home/yyx/R/Project/R_code/SigBridgeR/Tmp/GSEA/lung")
+setwd(file.path(usethis::proj_path(), "Tmp/GSEA/lung"))
 source("/home/yyx/R/Project/R_code/SigBridgeR/Tmp/GSEA/irGSEA_bubble.R")
 
 library(irGSEA)

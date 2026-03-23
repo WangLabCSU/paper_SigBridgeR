@@ -1,12 +1,14 @@
 # setwd(.rs.api.getActiveDocumentContext()$path |> dirname())
-setwd("/home/yyx/R/Project/R_code/SigBridgeR/Tmp/GSEA/ov")
+setwd(file.path(usethis::proj_path(), "/Tmp/GSEA/ov"))
+source("../irGSEA_bubble.R")
+
 
 library(irGSEA)
 data_path = "/home/data/sigbridger/GSEA/ov"
-irgsea_score = qs::qread(
-  file.path(data_path, "ov_GSE140082_irGSEA_score.qs"),
-  nthreads = 8L
-)
+# irgsea_score = qs::qread(
+#   file.path(data_path, "ov_GSE140082_irGSEA_score.qs"),
+#   nthreads = 8L
+# )
 
 dge = qs::qread(
   file.path(data_path, "ov_GSE140082_dge_result.qs"),
@@ -26,7 +28,7 @@ filtered_dge <- purrr::map(
           dplyr::filter(pvalue <= 0.05)
       }
     }
-  )
+  ),.progress = "Filtering"
 )
 
 
@@ -76,13 +78,14 @@ truncated_dge <- purrr::map(
       })
       .x
     }
-  )
+  ),.progress = "Truncating"
 )
 
-bubbles = purrr::map(
+# ! Don't use furrr here, it got stucked
+bubbles <- purrr::map(
   truncated_dge,
   ~ {
-    lapply(names(.x), function(method) {
+    l<-lapply(names(.x), function(method) {
       if (nrow(.x[[method]]) < 2) {
         return(NULL)
       }
@@ -101,22 +104,25 @@ bubbles = purrr::map(
         ),
         direction.color = c("#8abdffff", "#ff857eff"),
         cluster_rows = FALSE,
-        top = 50
+        top = 20
       )
     })
-  }
+    names(l) <- names(.x)
+    l
+  },.progress = "Drawing bubbles"
 )
+
 
 if (!dir.exists("survival_plot")) {
   dir.create("survival_plot")
 }
-purrr::imap(bubbles, function(dataset_list, dataset_name) {
+purrr::iwalk(bubbles, function(dataset_list, dataset_name) {
   if (is.null(dataset_list) || length(dataset_list) == 0) {
     return(NULL)
   }
   method_name <- c("AUCell", "UCell", "singscore", "ssgsea", "RRA")
 
-  purrr::imap(dataset_list, function(plot_obj, i) {
+  purrr::iwalk(dataset_list, function(plot_obj, i) {
     if (is.null(plot_obj)) {
       return(NULL)
     }
@@ -125,17 +131,16 @@ purrr::imap(bubbles, function(dataset_list, dataset_name) {
       "ov_",
       dataset_name,
       "_",
-      method_name[i],
+      i,
       "_bubble.pdf"
     )
     filepath <- file.path("survival_plot", filename)
 
     ggplot2::ggsave(
       filename = filepath,
-      plot = dataset_list[[i]] +
-        ggplot2::theme(plot.margin = ggplot2::margin(l = 50)),
-      height = 12,
-      width = 10,
+      plot = dataset_list[[i]],
+      height = 6,
+      width = 6.5,
       limitsize = FALSE
     )
 

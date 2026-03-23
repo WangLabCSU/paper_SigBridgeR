@@ -1,13 +1,13 @@
 # setwd(.rs.api.getActiveDocumentContext()$path |> dirname())
-setwd("/home/yyx/R/Project/R_code/SigBridgeR/Tmp/GSEA/ov")
-source("/home/yyx/R/Project/R_code/SigBridgeR/Tmp/GSEA/irGSEA_bubble.R")
+setwd(file.path(usethis::proj_path(), "/Tmp/GSEA/ov"))
+source("../irGSEA_bubble.R")
 
 library(irGSEA)
 data_path = "/home/data/sigbridger/GSEA/ov"
-irgsea_score = qs::qread(
-  file.path(data_path, "ov_GSE140082_irGSEA_score.qs"),
-  nthreads = 8L
-)
+# irgsea_score = qs::qread(
+#   file.path(data_path, "ov_GSE140082_irGSEA_score.qs"),
+#   nthreads = 8L
+# )
 
 dge = qs::qread(
   file.path(data_path, "ov_GSE32062_dge_result.qs"),
@@ -50,8 +50,10 @@ filtered_dge <- purrr::map(
 #     }
 # )
 
+future::plan(future::multicore, workers = 4L)
+
 # ! 添加换行符，GO太长了
-truncated_dge <- purrr::map(
+truncated_dge <- furrr::future_map(
   filtered_dge,
   ~ purrr::map(
     .x,
@@ -80,10 +82,11 @@ truncated_dge <- purrr::map(
   )
 )
 
-bubbles = purrr::map(
+# ! Don't use furrr here, it got stucked
+bubbles <- purrr::map(
   truncated_dge,
   ~ {
-    lapply(names(.x), function(method) {
+    l<-lapply(names(.x), function(method) {
       if (nrow(.x[[method]]) < 2) {
         return(NULL)
       }
@@ -102,22 +105,24 @@ bubbles = purrr::map(
         ),
         direction.color = c("#8abdffff", "#ff857eff"),
         cluster_rows = FALSE,
-        top = 50
+        top = 20
       )
     })
-  }
+    names(l) <- names(.x)
+    l
+  },.progress = "Drawing bubbles"
 )
 
 if (!dir.exists("survival_plot_GSE32062")) {
   dir.create("survival_plot_GSE32062")
 }
-purrr::imap(bubbles, function(dataset_list, dataset_name) {
+purrr::iwalk(bubbles, function(dataset_list, dataset_name) {
   if (is.null(dataset_list) || length(dataset_list) == 0) {
     return(NULL)
   }
   method_name <- c("AUCell", "UCell", "singscore", "ssgsea", "RRA")
 
-  purrr::imap(dataset_list, function(plot_obj, i) {
+  purrr::iwalk(dataset_list, function(plot_obj, i) {
     if (is.null(plot_obj)) {
       return(NULL)
     }
@@ -126,21 +131,19 @@ purrr::imap(bubbles, function(dataset_list, dataset_name) {
       "ov_",
       dataset_name,
       "_",
-      method_name[i],
+      i,
       "_bubble.pdf"
     )
     filepath <- file.path("survival_plot_GSE32062", filename)
 
     ggplot2::ggsave(
       filename = filepath,
-      plot = dataset_list[[i]] +
-        ggplot2::theme(plot.margin = ggplot2::margin(l = 50)),
-      height = 12,
-      width = 10,
+      plot = dataset_list[[i]] ,
+      height = 6,
+      width = 6.5,
       limitsize = FALSE
     )
 
     message("已保存: ", filepath)
-    return(filepath)
   })
 })

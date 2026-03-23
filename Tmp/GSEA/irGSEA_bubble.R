@@ -187,7 +187,7 @@ irGSEA.bubble <- function(
     ) +
     ggplot2::labs(x = NULL, y = NULL) +
     ggplot2::guides(size = ggplot2::guide_legend(title = "P Value")) +
-    ggplot2::scale_size_manual(values = c(1, 1.5, 2, 2.5, 3))
+    ggplot2::scale_size_manual(values = c(2,3,4,5,6))
   sig.genesets.bubble.matrix <- sig.genesets.bubble %>%
     dplyr::select(c(Name, cell, value)) %>%
     dplyr::mutate(Name = factor(Name, levels = unique(Name))) %>%

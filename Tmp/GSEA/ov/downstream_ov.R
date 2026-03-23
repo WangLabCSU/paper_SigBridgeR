@@ -161,3 +161,8 @@ qs::qsave(
   file.path(data_path, "ov_GSE140082_dge_result.qs"),
   nthreads = 4L
 )
+
+res <- qs::qread(
+  file.path(data_path, "ov_GSE140082_dge_result.qs"),
+  nthreads = 4L
+)
