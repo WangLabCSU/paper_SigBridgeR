@@ -145,6 +145,5 @@ purrr::iwalk(bubbles, function(dataset_list, dataset_name) {
     )
 
     message("已保存: ", filepath)
-    return(filepath)
   })
 })
