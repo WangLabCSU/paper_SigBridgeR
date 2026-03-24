@@ -1,16 +1,13 @@
 # setwd(.rs.api.getActiveDocumentContext()$path |> dirname())
-setwd(
-  "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/GSEA/binary_brca/binary_tum_tnbc"
-)
-
+setwd(file.path(usethis::proj_path(), "Tmp/GSEA/binary_brca/binary_tum_tnbc"))
 
 # library(irGSEA)
-source("/home/yyx/R/Project/R_code/SigBridgeR/Tmp/GSEA/irGSEA_bubble.R")
+source("../../irGSEA_bubble.R")
 
-irgsea_score = qs::qread(
-  "/home/data/sigbridger/GSEA/brca/tnbc/tnbc_irGSEA_score.qs",
-  nthreads = 8L
-)
+# irgsea_score = qs::qread(
+#   "/home/data/sigbridger/GSEA/brca/tnbc/tnbc_irGSEA_score.qs",
+#   nthreads = 8L
+# )
 
 dge = qs::qread(
   "/home/data/sigbridger/GSEA/binary_brca/tnbc/binary_tnbc_GSE42568_dge.qs",
