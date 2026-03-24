@@ -1,92 +1,188 @@
 # setwd(.rs.api.getActiveDocumentContext()$path |> dirname())
-setwd("/home/yyx/R/Project/R_code/SigBridgeR/Tmp/GSEA/brca/her2")
+setwd(file.path(usethis::proj_path(), "Tmp/GSEA/brca/her2"))
 
-options(future.globals.maxSize = 100000 * 1024^5)
-
-save_path = "/home/data/sigbridger/GSEA/brca/her2"
-
-irgsea_score = qs::qread(
-  "/home/data/sigbridger/GSEA/brca/her2/her2_irGSEA_score.qs",
-  nthreads = 8L
-)
-
+data_path <- "/home/data/sigbridger/GSEA/brca/her2"
 # ! BULK- GSE162228
 # ! SC- GSE161529 - her2
 # ! phenotype - survival
 
-her2_GSE162228_merged <- qs::qread(
+irgsea_score <- qs::qread(
+  "/home/data/sigbridger/GSEA/brca/her2/her2_irGSEA_score.qs",
+  nthreads = 8L
+)
+
+her2_GSE162228 <- qs::qread(
   "/home/data/sigbridger/benchmark_data/brca/HER2/GSE162228_her2_merged_seurat.qs",
   nthreads = 4L
 )
 
-labeled_irgsea = SigBridgeR::MergeResult(irgsea_score, her2_GSE162228_merged)
+irgsea_score <- SigBridgeR::MergeResult(irgsea_score, her2_GSE162228)
+
+
+screen_labels <- grepv(
+  "^sc[a-zA-Z]+$|DEGAS$|LP_SGL$|PIPET$",
+  colnames(irgsea_score[[]])
+)
+
+if (file.exists(file.path(data_path, "her2_GSE162228_dge_result.qs"))) {
+  dge_res <- qs::qread(
+    file.path(data_path, "her2_GSE162228_dge_result.qs"),
+    nthreads = 4L
+  )
+
+  done_labels <- names(dge_res)
+} else {
+  dge_res <- list()
+
+  done_labels <- character(0)
+}
+
+is_more_than_2_group <- function(col, seurat) {
+  if (length(unique(seurat@meta.data[[col]])) > 2) {
+    return(TRUE)
+  } else {
+    cli::cli_alert_info("{col} has only 1 group")
+    return(FALSE)
+  }
+}
+
 
 # Wlicox test is perform to all enrichment score matrixes and gene sets
 # with adjusted p value &lt; 0.05 are used to integrated through RRA.
 # Among them, Gene sets with p value &lt; 0.05 are statistically
 # significant and common differential in all gene sets enrichment analysis
 # methods. All results are saved in a list.
-scpas.dge <- irGSEA::irGSEA.integrate(
-  object = labeled_irgsea,
-  group.by = "scPAS",
-  metadata = NULL,
-  col.name = NULL,
-  method = c("AUCell", "UCell", "singscore", "ssgsea")
-)
 
-cli::cli_alert_success("Done!")
+if (
+  !"scissor" %in% done_labels &&
+    "scissor" %in% screen_labels &&
+    is_more_than_2_group("scissor", irgsea_score)
+) {
+  scissor.dge <- irGSEA::irGSEA.integrate(
+    object = irgsea_score,
+    group.by = "scissor",
+    metadata = NULL,
+    col.name = NULL,
+    method = c("AUCell", "UCell", "singscore", "ssgsea")
+  )
+  dge_res$scissor <- scissor.dge
+  cli::cli_h2("Scissor Done!")
+} else {
+  cli::cli_alert_info("skip scissor")
+}
 
-scab.dge <- irGSEA::irGSEA.integrate(
-  object = labeled_irgsea,
-  group.by = "scAB",
-  metadata = NULL,
-  col.name = NULL,
-  method = c("AUCell", "UCell", "singscore", "ssgsea")
-)
+if (
+  !"scpas" %in% done_labels &&
+    "scPAS" %in% screen_labels &&
+    is_more_than_2_group("scPAS", irgsea_score)
+) {
+  scpas.dge <- irGSEA::irGSEA.integrate(
+    object = irgsea_score,
+    group.by = "scPAS",
+    metadata = NULL,
+    col.name = NULL,
+    method = c("AUCell", "UCell", "singscore", "ssgsea")
+  )
+  dge_res$scpas <- scpas.dge
+  cli::cli_h2("scPAS Done!")
+} else {
+  cli::cli_alert_info("skip scpas")
+}
 
-cli::cli_alert_success("Done!")
+if (
+  !"scab" %in% done_labels &&
+    "scAB" %in% screen_labels &&
+    is_more_than_2_group("scAB", irgsea_score)
+) {
+  scab.dge <- irGSEA::irGSEA.integrate(
+    object = irgsea_score,
+    group.by = "scAB",
+    metadata = NULL,
+    col.name = NULL,
+    method = c("AUCell", "UCell", "singscore", "ssgsea")
+  )
+  dge_res$scscabAB <- scab.dge
+  cli::cli_h2("scAB Done!")
+} else {
+  cli::cli_alert_info("skip scab")
+}
 
-# scissor.dge <- irGSEA::irGSEA.integrate(
-#     object = labeled_irgsea,
-#     group.by = "scissor",
-#     metadata = NULL,
-#     col.name = NULL,
-#     method = c("AUCell", "UCell", "singscore", "ssgsea")
-# )
+if (
+  !"scpp" %in% done_labels &&
+    "scPP" %in% screen_labels &&
+    is_more_than_2_group("scPP", irgsea_score)
+) {
+  scpp.dge <- irGSEA::irGSEA.integrate(
+    object = irgsea_score,
+    group.by = "scPP",
+    metadata = NULL,
+    col.name = NULL,
+    method = c("AUCell", "UCell", "singscore", "ssgsea")
+  )
+  dge_res$scpp <- scpp.dge
+  cli::cli_h2("scPP Done!")
+} else {
+  cli::cli_alert_info("skip scpp")
+}
 
-cli::cli_alert_success(
-  "scissor has been skipped due to no positive cells available!"
-)
+if (
+  !"lp_sgl" %in% done_labels &&
+    "LP_SGL" %in% screen_labels &&
+    is_more_than_2_group("LP_SGL", irgsea_score)
+) {
+  lp_sgl.dge <- irGSEA::irGSEA.integrate(
+    object = irgsea_score,
+    group.by = "LP_SGL",
+    metadata = NULL,
+    col.name = NULL,
+    method = c("AUCell", "UCell", "singscore", "ssgsea")
+  )
+  dge_res$lp_sgl <- lp_sgl.dge
+  cli::cli_h2("LP_SGL Done!")
+} else {
+  cli::cli_alert_info("skip lp_sgl")
+}
 
-# # ! scPP is not available
-# scpp.dge <- irGSEA::irGSEA.integrate(
-#     object = labeled_irgsea,
-#     group.by = "scPP",
-#     metadata = NULL,
-#     col.name = NULL,
-#     method = c("AUCell", "UCell", "singscore", "ssgsea")
-# )
-# cli::cli_alert_success("Done!")
+if (
+  !"degas" %in% done_labels &&
+    "DEGAS" %in% screen_labels &&
+    is_more_than_2_group("DEGAS", irgsea_score)
+) {
+  degas.dge <- irGSEA::irGSEA.integrate(
+    object = irgsea_score,
+    group.by = "DEGAS",
+    metadata = NULL,
+    col.name = NULL,
+    method = c("AUCell", "UCell", "singscore", "ssgsea")
+  )
+  dge_res$degas <- degas.dge
+  cli::cli_h2("DEGAS Done!")
+} else {
+  cli::cli_alert_info("skip degas")
+}
 
-qs::qsave(
-  list(
-    # scissor = scissor.dge,
-    scab = scab.dge,
-    scpas = scpas.dge
-    # ,        scpp = scpp.dge
-  ),
-  file = file.path(save_path, "her2_GSE162228_dge_result.qs"),
-  nthreads = 4L
-)
-# PID='3084235'
+if (
+  !"pipet" %in% done_labels &&
+    "PIPET" %in% screen_labels &&
+    is_more_than_2_group("PIPET", irgsea_score)
+) {
+  pipet.dge <- irGSEA::irGSEA.integrate(
+    object = irgsea_score,
+    group.by = "PIPET",
+    metadata = NULL,
+    col.name = NULL,
+    method = c("AUCell", "UCell", "singscore", "ssgsea")
+  )
+  dge_res$pipet <- pipet.dge
+  cli::cli_h2("PIPET Done!")
+} else {
+  cli::cli_alert_info("skip pipet")
+}
 
-dge_res = qs::qread(
-  "/home/data/sigbridger/GSEA/brca/her2/her2_GSE162228_dge_result.qs",
-  nthreads = 4L
-)
-dge_res$scab = scab.dge
 qs::qsave(
   dge_res,
-  file = file.path(save_path, "her2_GSE162228_dge_result.qs"),
+  file.path(data_path, "her2_GSE162228_dge_result.qs"),
   nthreads = 4L
 )
+
+cli::cli_h1("All done")

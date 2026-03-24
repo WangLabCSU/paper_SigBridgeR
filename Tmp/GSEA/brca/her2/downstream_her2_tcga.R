@@ -1,80 +1,132 @@
 # setwd(.rs.api.getActiveDocumentContext()$path |> dirname())
-setwd("/home/yyx/R/Project/R_code/SigBridgeR/Tmp/GSEA/brca/her2")
+setwd(file.path(usethis::proj_path(), "Tmp/GSEA/brca/her2"))
+source("../../irGSEA_bubble.R")
 
-options(future.globals.maxSize = 100000 * 1024^5)
+data_path <- "/home/data/sigbridger/GSEA/brca/her2"
 
-save_path = "/home/data/sigbridger/GSEA/brca/her2"
+# irgsea_score = qs::qread(
+#   file.path(data_path, "her2_irGSEA_score.qs"),
+#   nthreads = 8L
+# )
 
-irgsea_score = qs::qread(
-  "/home/data/sigbridger/GSEA/brca/her2/her2_irGSEA_score.qs",
+dge <- qs::qread(
+  "/home/data/sigbridger/GSEA/brca/her2/her2_tcga_dge_result.qs",
   nthreads = 8L
 )
 
-# ! BULK- tcga
-# ! SC- GSE161529 - her2
-# ! phenotype - survival
-
-her2_tcga_merged <- qs::qread(
-  "/home/data/sigbridger/benchmark_data/brca/HER2/tcga_her2_merged_seurat.qs",
-  nthreads = 4L
+filtered_dge <- purrr::map(
+  dge,
+  ~ purrr::map(
+    .x,
+    ~ {
+      if ("p_val" %in% names(.x)) {
+        .x %>%
+          dplyr::filter(p_val <= 0.05 & p_val_adj <= 0.05)
+      } else {
+        .x %>%
+          dplyr::filter(pvalue <= 0.05)
+      }
+    }
+  )
 )
 
-labeled_irgsea = SigBridgeR::MergeResult(irgsea_score, her2_tcga_merged)
+# ! 添加换行符，GO太长了
+truncated_dge <- purrr::map(
+  filtered_dge,
+  ~ purrr::map(
+    .x,
+    ~ {
+      .x <- dplyr::rename(.x, "Full_name" = "Name")
+      need2truncate <- .x$Full_name
 
-# Wlicox test is perform to all enrichment score matrixes and gene sets
-# with adjusted p value &lt; 0.05 are used to integrated through RRA.
-# Among them, Gene sets with p value &lt; 0.05 are statistically
-# significant and common differential in all gene sets enrichment analysis
-# methods. All results are saved in a list.
-scpas.dge <- irGSEA::irGSEA.integrate(
-  object = labeled_irgsea,
-  group.by = "scPAS",
-  metadata = NULL,
-  col.name = NULL,
-  method = c("AUCell", "UCell", "singscore", "ssgsea")
-)
-
-cli::cli_alert_success("Done scPAS!")
-
-scab.dge <- irGSEA::irGSEA.integrate(
-  object = labeled_irgsea,
-  group.by = "scAB",
-  metadata = NULL,
-  col.name = NULL,
-  method = c("AUCell", "UCell", "singscore", "ssgsea")
-)
-
-cli::cli_alert_success("Done scAB!")
-
-scissor.dge <- irGSEA::irGSEA.integrate(
-  object = labeled_irgsea,
-  group.by = "scissor",
-  metadata = NULL,
-  col.name = NULL,
-  method = c("AUCell", "UCell", "singscore", "ssgsea")
-)
-
-cli::cli_alert_success(
-  "Done scissor !"
-)
-
-scpp.dge <- irGSEA::irGSEA.integrate(
-  object = labeled_irgsea,
-  group.by = "scPP",
-  metadata = NULL,
-  col.name = NULL,
-  method = c("AUCell", "UCell", "singscore", "ssgsea")
-)
-cli::cli_alert_success("Done scPP!")
-
-qs::qsave(
-  list(
-    scissor = scissor.dge,
-    scab = scab.dge,
-    scpas = scpas.dge,
-    scpp = scpp.dge
+      .x$Name <- purrr::map_chr(need2truncate, function(GO) {
+        if (stringr::str_length(GO) > 30) {
+          parts <- strsplit(GO, "-")[[1]]
+          middle_index <- ceiling(length(parts) / 2)
+          paste0(
+            paste(parts[1:middle_index], collapse = "-"),
+            "-\n",
+            paste(
+              parts[(middle_index + 1):length(parts)],
+              collapse = "-"
+            )
+          )
+        } else {
+          GO
+        }
+      })
+      .x
+    }
   ),
-  file = file.path(save_path, "her2_tcga_dge_result.qs"),
-  nthreads = 4L
+  .progress = "Truncating"
 )
-# PID='377957'
+
+# ! Don't use furrr here, it got stucked
+bubbles <- purrr::map(
+  truncated_dge,
+  ~ {
+    l <- lapply(names(.x), function(method) {
+      if (nrow(.x[[method]]) < 2) {
+        return(NULL)
+      }
+      irGSEA.bubble(
+        object = .x,
+        method = method,
+        significance.color = c("#CECECE", "#ff857eff"),
+        cluster.color = setNames(
+          c(
+            "#ff3333",
+            "#386c9b",
+            "#CECECE",
+            "#CECECE"
+          ),
+          c("Positive", "Negative", "Neutral", "Other")
+        ),
+        direction.color = c("#8abdffff", "#ff857eff"),
+        cluster_rows = FALSE,
+        top = 20
+      )
+    })
+    names(l) <- names(.x)
+    l
+  },
+  .progress = "Drawing bubbles"
+)
+
+
+plot_dir <- "survival_plot_tcga"
+if (!dir.exists(plot_dir)) {
+  dir.create(plot_dir)
+}
+purrr::iwalk(bubbles, function(dataset_list, dataset_name) {
+  if (is.null(dataset_list) || length(dataset_list) == 0) {
+    return(NULL)
+  }
+  method_name <- c("AUCell", "UCell", "singscore", "ssgsea", "RRA")
+
+  purrr::iwalk(dataset_list, function(plot_obj, i) {
+    if (is.null(plot_obj)) {
+      return(NULL)
+    }
+
+    filename <- paste0(
+      "her2_",
+      dataset_name,
+      "_",
+      i,
+      "_bubble.pdf"
+    )
+    filepath <- file.path(plot_dir, filename)
+
+    ggplot2::ggsave(
+      filename = filepath,
+      plot = dataset_list[[i]] +
+        ggplot2::theme(plot.margin = ggplot2::margin(l = 15)),
+      height = 6,
+      width = 7,
+      limitsize = FALSE
+    )
+
+    message("已保存: ", filepath)
+  })
+})
