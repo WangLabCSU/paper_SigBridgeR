@@ -1,125 +1,196 @@
 # setwd(.rs.api.getActiveDocumentContext()$path |> dirname())
-setwd("/home/yyx/R/Project/R_code/SigBridgeR/Tmp/GSEA/binary_ov")
+setwd(file.path(usethis::proj_path(), "Tmp/GSEA/ov"))
 
-data_path = "/home/data/sigbridger/GSEA/ov"
-
-library(irGSEA)
-
-irgsea_score = qs::qread(
-  file.path(data_path, "ov_GSE140082_irGSEA_score.qs"),
-  nthreads = 8L
+irgsea_score <- qs::qread(
+  "/home/data/sigbridger/GSEA/ov/ov_GSE140082_irGSEA_score.qs",
+  nthreads = 16L
 )
 
-# ! BULK- GSE9891
-# ! SC- GSE165897 - ov
-# ! phenotype - binary variable
-
-ov_GSE9891_merged <- qs::qread(
+ov_GSE9891 <- qs::qread(
   "/home/data/sigbridger/benchmark_binary/ov/GSE165897/GSE9891_hgsoc_merged_seurat.qs",
-  nthreads = 8L
+  nthreads = 4L
 )
-meta = ov_GSE9891_merged[[]]
+
+cli::cli_alert_info("Data loaded")
+
+meta <- ov_GSE9891[[]]
 
 irgsea_score$scissor = meta$scissor
 irgsea_score$scPAS = meta$scPAS
 irgsea_score$scAB = meta$scAB
-irgsea_score$scPAS_RS = meta$scPAS_RS
-irgsea_score$scPAS_NRS = meta$scPAS_NRS
-irgsea_score$scPAS_Pvalue = meta$scPAS_Pvalue
-irgsea_score$scPAS_FDR = meta$scPAS_FDR
-irgsea_score$scAB_Subset1 = meta$scAB_Subset1
-irgsea_score$scAB_Subset2 = meta$scAB_Subset2
-irgsea_score$Subset1_loading = meta$Subset1_loading
-irgsea_score$Subset2_loading = meta$Subset2_loading
-irgsea_score$scpp = meta$scpp
-# irgsea_score$scPP = NULL
+irgsea_score$scPP = meta$scPP
+irgsea_score$DEGAS <- meta$DEGAS
+irgsea_score$LP_SGL = meta$LP_SGL
+irgsea_score$PIPET = meta$PIPET
 
-labeled_irgsea = SigBridgeR::MergeResult(irgsea_score, ov_GSE9891_merged)
+screen_labels <- grepv(
+  "^sc[a-zA-Z]+$|DEGAS$|LP_SGL$|PIPET$",
+  colnames(irgsea_score[[]])
+)
+
+data_path <- "/home/data/sigbridger/GSEA/binary_ov"
+
+
+if (file.exists(file.path(data_path, "binary_ov_GSE9891_dge.qs"))) {
+  dge_res <- qs::qread(
+    file.path(data_path, "binary_ov_GSE9891_dge.qs"),
+    nthreads = 4L
+  )
+
+  done_labels <- names(dge_res)
+} else {
+  dge_res <- list()
+
+  done_labels <- character(0)
+}
+
+
+is_more_than_2_group <- function(col, seurat) {
+  if (length(unique(seurat@meta.data[[col]])) > 2) {
+    return(TRUE)
+  } else {
+    cli::cli_alert_info("{col} has only 1 group")
+    return(FALSE)
+  }
+}
+
 
 # Wlicox test is perform to all enrichment score matrixes and gene sets
 # with adjusted p value &lt; 0.05 are used to integrated through RRA.
 # Among them, Gene sets with p value &lt; 0.05 are statistically
 # significant and common differential in all gene sets enrichment analysis
 # methods. All results are saved in a list.
-scissor.dge <- irGSEA::irGSEA.integrate(
-  object = labeled_irgsea,
-  group.by = "scissor",
-  metadata = NULL,
-  col.name = NULL,
-  method = c(
-    "AUCell",
-    "UCell",
-    "singscore",
-    "ssgsea"
-    #,         "JASMINE",
-    # "viper"
+
+if (
+  !"scissor" %in% done_labels &&
+    "scissor" %in% screen_labels &&
+    is_more_than_2_group("scissor", irgsea_score)
+) {
+  scissor.dge <- irGSEA::irGSEA.integrate(
+    object = irgsea_score,
+    group.by = "scissor",
+    metadata = NULL,
+    col.name = NULL,
+    method = c("AUCell", "UCell", "singscore", "ssgsea")
   )
-)
+  dge_res$scissor <- scissor.dge
+  cli::cli_h2("Scissor Done!")
+} else {
+  cli::cli_alert_info("skip scissor")
+}
 
-cli::cli_alert_success("Done!")
-
-scpas.dge <- irGSEA::irGSEA.integrate(
-  object = labeled_irgsea,
-  group.by = "scPAS",
-  metadata = NULL,
-  col.name = NULL,
-  method = c(
-    "AUCell",
-    "UCell",
-    "singscore",
-    "ssgsea"
-    #, "JASMINE",
-    # "viper"
+if (
+  !"scpas" %in% done_labels &&
+    "scPAS" %in% screen_labels &&
+    is_more_than_2_group("scPAS", irgsea_score)
+) {
+  scpas.dge <- irGSEA::irGSEA.integrate(
+    object = irgsea_score,
+    group.by = "scPAS",
+    metadata = NULL,
+    col.name = NULL,
+    method = c("AUCell", "UCell", "singscore", "ssgsea")
   )
-)
+  dge_res$scpas <- scpas.dge
+  cli::cli_h2("scPAS Done!")
+} else {
+  cli::cli_alert_info("skip scpas")
+}
 
-cli::cli_alert_success("Done!")
-
-scab.dge <- irGSEA::irGSEA.integrate(
-  object = labeled_irgsea,
-  group.by = "scAB",
-  metadata = NULL,
-  col.name = NULL,
-  method = c(
-    "AUCell",
-    "UCell",
-    "singscore",
-    "ssgsea"
-    # ,        "JASMINE",
-    # "viper"
+if (
+  !"scab" %in% done_labels &&
+    "scAB" %in% screen_labels &&
+    is_more_than_2_group("scAB", irgsea_score)
+) {
+  scab.dge <- irGSEA::irGSEA.integrate(
+    object = irgsea_score,
+    group.by = "scAB",
+    metadata = NULL,
+    col.name = NULL,
+    method = c("AUCell", "UCell", "singscore", "ssgsea")
   )
-)
+  dge_res$scscabAB <- scab.dge
+  cli::cli_h2("scAB Done!")
+} else {
+  cli::cli_alert_info("skip scab")
+}
 
-cli::cli_alert_success("Done!")
-
-scpp.dge <- irGSEA::irGSEA.integrate(
-  object = labeled_irgsea,
-  group.by = "scPP",
-  metadata = NULL,
-  col.name = NULL,
-  method = c(
-    "AUCell",
-    "UCell",
-    "singscore",
-    "ssgsea"
-    #, "JASMINE",
-    # "viper"
+if (
+  !"scpp" %in% done_labels &&
+    "scPP" %in% screen_labels &&
+    is_more_than_2_group("scPP", irgsea_score)
+) {
+  scpp.dge <- irGSEA::irGSEA.integrate(
+    object = irgsea_score,
+    group.by = "scPP",
+    metadata = NULL,
+    col.name = NULL,
+    method = c("AUCell", "UCell", "singscore", "ssgsea")
   )
-)
-cli::cli_alert_success("Done!")
+  dge_res$scpp <- scpp.dge
+  cli::cli_h2("scPP Done!")
+} else {
+  cli::cli_alert_info("skip scpp")
+}
 
-output_dir = "/home/data/sigbridger/GSEA/binary_ov"
+if (
+  !"lp_sgl" %in% done_labels &&
+    "LP_SGL" %in% screen_labels &&
+    is_more_than_2_group("LP_SGL", irgsea_score)
+) {
+  lp_sgl.dge <- irGSEA::irGSEA.integrate(
+    object = irgsea_score,
+    group.by = "LP_SGL",
+    metadata = NULL,
+    col.name = NULL,
+    method = c("AUCell", "UCell", "singscore", "ssgsea")
+  )
+  dge_res$lp_sgl <- lp_sgl.dge
+  cli::cli_h2("LP_SGL Done!")
+} else {
+  cli::cli_alert_info("skip lp_sgl")
+}
+
+if (
+  !"degas" %in% done_labels &&
+    "DEGAS" %in% screen_labels &&
+    is_more_than_2_group("DEGAS", irgsea_score)
+) {
+  degas.dge <- irGSEA::irGSEA.integrate(
+    object = irgsea_score,
+    group.by = "DEGAS",
+    metadata = NULL,
+    col.name = NULL,
+    method = c("AUCell", "UCell", "singscore", "ssgsea")
+  )
+  dge_res$degas <- degas.dge
+  cli::cli_h2("DEGAS Done!")
+} else {
+  cli::cli_alert_info("skip degas")
+}
+
+if (
+  !"pipet" %in% done_labels &&
+    "PIPET" %in% screen_labels &&
+    is_more_than_2_group("PIPET", irgsea_score)
+) {
+  pipet.dge <- irGSEA::irGSEA.integrate(
+    object = irgsea_score,
+    group.by = "PIPET",
+    metadata = NULL,
+    col.name = NULL,
+    method = c("AUCell", "UCell", "singscore", "ssgsea")
+  )
+  dge_res$pipet <- pipet.dge
+  cli::cli_h2("PIPET Done!")
+} else {
+  cli::cli_alert_info("skip pipet")
+}
 
 qs::qsave(
-  list(
-    scissor = scissor.dge,
-    scab = scab.dge,
-    scpas = scpas.dge,
-    scpp = scpp.dge
-  ),
-  file = file.path(output_dir, "binary_ov_GSE9891_dge.qs"),
+  dge_res,
+  file.path(data_path, "binary_ov_GSE9891_dge.qs"),
   nthreads = 4L
 )
-# PID='995694'
 
-cli::cli_h1("All Done!")
+cli::cli_alert_success("All done!")

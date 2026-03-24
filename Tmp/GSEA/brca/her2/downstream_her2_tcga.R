@@ -1,132 +1,188 @@
 # setwd(.rs.api.getActiveDocumentContext()$path |> dirname())
 setwd(file.path(usethis::proj_path(), "Tmp/GSEA/brca/her2"))
-source("../../irGSEA_bubble.R")
 
 data_path <- "/home/data/sigbridger/GSEA/brca/her2"
+# ! BULK- tcga
+# ! SC- GSE161529 - her2
+# ! phenotype - survival
 
-# irgsea_score = qs::qread(
-#   file.path(data_path, "her2_irGSEA_score.qs"),
-#   nthreads = 8L
-# )
-
-dge <- qs::qread(
-  "/home/data/sigbridger/GSEA/brca/her2/her2_tcga_dge_result.qs",
+irgsea_score <- qs::qread(
+  "/home/data/sigbridger/GSEA/brca/her2/her2_irGSEA_score.qs",
   nthreads = 8L
 )
 
-filtered_dge <- purrr::map(
-  dge,
-  ~ purrr::map(
-    .x,
-    ~ {
-      if ("p_val" %in% names(.x)) {
-        .x %>%
-          dplyr::filter(p_val <= 0.05 & p_val_adj <= 0.05)
-      } else {
-        .x %>%
-          dplyr::filter(pvalue <= 0.05)
-      }
-    }
+her2_tcga <- qs::qread(
+  "/home/data/sigbridger/benchmark_data/brca/HER2/tcga_her2_merged_seurat.qs",
+  nthreads = 4L
+)
+
+irgsea_score <- SigBridgeR::MergeResult(irgsea_score, her2_tcga)
+
+
+screen_labels <- grepv(
+  "^sc[a-zA-Z]+$|DEGAS$|LP_SGL$|PIPET$",
+  colnames(irgsea_score[[]])
+)
+
+if (file.exists(file.path(data_path, "her2_tcga_dge_result.qs"))) {
+  dge_res <- qs::qread(
+    file.path(data_path, "her2_tcga_dge_result.qs"),
+    nthreads = 4L
   )
-)
 
-# ! 添加换行符，GO太长了
-truncated_dge <- purrr::map(
-  filtered_dge,
-  ~ purrr::map(
-    .x,
-    ~ {
-      .x <- dplyr::rename(.x, "Full_name" = "Name")
-      need2truncate <- .x$Full_name
+  done_labels <- names(dge_res)
+} else {
+  dge_res <- list()
 
-      .x$Name <- purrr::map_chr(need2truncate, function(GO) {
-        if (stringr::str_length(GO) > 30) {
-          parts <- strsplit(GO, "-")[[1]]
-          middle_index <- ceiling(length(parts) / 2)
-          paste0(
-            paste(parts[1:middle_index], collapse = "-"),
-            "-\n",
-            paste(
-              parts[(middle_index + 1):length(parts)],
-              collapse = "-"
-            )
-          )
-        } else {
-          GO
-        }
-      })
-      .x
-    }
-  ),
-  .progress = "Truncating"
-)
-
-# ! Don't use furrr here, it got stucked
-bubbles <- purrr::map(
-  truncated_dge,
-  ~ {
-    l <- lapply(names(.x), function(method) {
-      if (nrow(.x[[method]]) < 2) {
-        return(NULL)
-      }
-      irGSEA.bubble(
-        object = .x,
-        method = method,
-        significance.color = c("#CECECE", "#ff857eff"),
-        cluster.color = setNames(
-          c(
-            "#ff3333",
-            "#386c9b",
-            "#CECECE",
-            "#CECECE"
-          ),
-          c("Positive", "Negative", "Neutral", "Other")
-        ),
-        direction.color = c("#8abdffff", "#ff857eff"),
-        cluster_rows = FALSE,
-        top = 20
-      )
-    })
-    names(l) <- names(.x)
-    l
-  },
-  .progress = "Drawing bubbles"
-)
-
-
-plot_dir <- "survival_plot_tcga"
-if (!dir.exists(plot_dir)) {
-  dir.create(plot_dir)
+  done_labels <- character(0)
 }
-purrr::iwalk(bubbles, function(dataset_list, dataset_name) {
-  if (is.null(dataset_list) || length(dataset_list) == 0) {
-    return(NULL)
+
+is_more_than_2_group <- function(col, seurat) {
+  if (length(unique(seurat@meta.data[[col]])) > 2) {
+    return(TRUE)
+  } else {
+    cli::cli_alert_info("{col} has only 1 group")
+    return(FALSE)
   }
-  method_name <- c("AUCell", "UCell", "singscore", "ssgsea", "RRA")
+}
 
-  purrr::iwalk(dataset_list, function(plot_obj, i) {
-    if (is.null(plot_obj)) {
-      return(NULL)
-    }
 
-    filename <- paste0(
-      "her2_",
-      dataset_name,
-      "_",
-      i,
-      "_bubble.pdf"
-    )
-    filepath <- file.path(plot_dir, filename)
+# Wlicox test is perform to all enrichment score matrixes and gene sets
+# with adjusted p value &lt; 0.05 are used to integrated through RRA.
+# Among them, Gene sets with p value &lt; 0.05 are statistically
+# significant and common differential in all gene sets enrichment analysis
+# methods. All results are saved in a list.
 
-    ggplot2::ggsave(
-      filename = filepath,
-      plot = dataset_list[[i]] +
-        ggplot2::theme(plot.margin = ggplot2::margin(l = 15)),
-      height = 6,
-      width = 7,
-      limitsize = FALSE
-    )
+if (
+  !"scissor" %in% done_labels &&
+    "scissor" %in% screen_labels &&
+    is_more_than_2_group("scissor", irgsea_score)
+) {
+  scissor.dge <- irGSEA::irGSEA.integrate(
+    object = irgsea_score,
+    group.by = "scissor",
+    metadata = NULL,
+    col.name = NULL,
+    method = c("AUCell", "UCell", "singscore", "ssgsea")
+  )
+  dge_res$scissor <- scissor.dge
+  cli::cli_h2("Scissor Done!")
+} else {
+  cli::cli_alert_info("skip scissor")
+}
 
-    message("已保存: ", filepath)
-  })
-})
+if (
+  !"scpas" %in% done_labels &&
+    "scPAS" %in% screen_labels &&
+    is_more_than_2_group("scPAS", irgsea_score)
+) {
+  scpas.dge <- irGSEA::irGSEA.integrate(
+    object = irgsea_score,
+    group.by = "scPAS",
+    metadata = NULL,
+    col.name = NULL,
+    method = c("AUCell", "UCell", "singscore", "ssgsea")
+  )
+  dge_res$scpas <- scpas.dge
+  cli::cli_h2("scPAS Done!")
+} else {
+  cli::cli_alert_info("skip scpas")
+}
+
+if (
+  !"scab" %in% done_labels &&
+    "scAB" %in% screen_labels &&
+    is_more_than_2_group("scAB", irgsea_score)
+) {
+  scab.dge <- irGSEA::irGSEA.integrate(
+    object = irgsea_score,
+    group.by = "scAB",
+    metadata = NULL,
+    col.name = NULL,
+    method = c("AUCell", "UCell", "singscore", "ssgsea")
+  )
+  dge_res$scscabAB <- scab.dge
+  cli::cli_h2("scAB Done!")
+} else {
+  cli::cli_alert_info("skip scab")
+}
+
+if (
+  !"scpp" %in% done_labels &&
+    "scPP" %in% screen_labels &&
+    is_more_than_2_group("scPP", irgsea_score)
+) {
+  scpp.dge <- irGSEA::irGSEA.integrate(
+    object = irgsea_score,
+    group.by = "scPP",
+    metadata = NULL,
+    col.name = NULL,
+    method = c("AUCell", "UCell", "singscore", "ssgsea")
+  )
+  dge_res$scpp <- scpp.dge
+  cli::cli_h2("scPP Done!")
+} else {
+  cli::cli_alert_info("skip scpp")
+}
+
+if (
+  !"lp_sgl" %in% done_labels &&
+    "LP_SGL" %in% screen_labels &&
+    is_more_than_2_group("LP_SGL", irgsea_score)
+) {
+  lp_sgl.dge <- irGSEA::irGSEA.integrate(
+    object = irgsea_score,
+    group.by = "LP_SGL",
+    metadata = NULL,
+    col.name = NULL,
+    method = c("AUCell", "UCell", "singscore", "ssgsea")
+  )
+  dge_res$lp_sgl <- lp_sgl.dge
+  cli::cli_h2("LP_SGL Done!")
+} else {
+  cli::cli_alert_info("skip lp_sgl")
+}
+
+if (
+  !"degas" %in% done_labels &&
+    "DEGAS" %in% screen_labels &&
+    is_more_than_2_group("DEGAS", irgsea_score)
+) {
+  degas.dge <- irGSEA::irGSEA.integrate(
+    object = irgsea_score,
+    group.by = "DEGAS",
+    metadata = NULL,
+    col.name = NULL,
+    method = c("AUCell", "UCell", "singscore", "ssgsea")
+  )
+  dge_res$degas <- degas.dge
+  cli::cli_h2("DEGAS Done!")
+} else {
+  cli::cli_alert_info("skip degas")
+}
+
+if (
+  !"pipet" %in% done_labels &&
+    "PIPET" %in% screen_labels &&
+    is_more_than_2_group("PIPET", irgsea_score)
+) {
+  pipet.dge <- irGSEA::irGSEA.integrate(
+    object = irgsea_score,
+    group.by = "PIPET",
+    metadata = NULL,
+    col.name = NULL,
+    method = c("AUCell", "UCell", "singscore", "ssgsea")
+  )
+  dge_res$pipet <- pipet.dge
+  cli::cli_h2("PIPET Done!")
+} else {
+  cli::cli_alert_info("skip pipet")
+}
+
+qs::qsave(
+  dge_res,
+  file.path(data_path, "her2_tcga_dge_result.qs"),
+  nthreads = 4L
+)
+
+cli::cli_h1("All done")
