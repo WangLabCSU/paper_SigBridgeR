@@ -9,7 +9,7 @@ source("../../irGSEA_bubble.R")
 #   nthreads = 8L
 # )
 
-dge = qs::qread(
+dge <- qs::qread(
   "/home/data/sigbridger/GSEA/binary_brca/tnbc/binary_tnbc_GSE162228_dge.qs",
   nthreads = 8L
 )
@@ -94,7 +94,7 @@ bubbles <- purrr::map(
 )
 
 
-plot_dir = "binary_plot_GSE162228"
+plot_dir <- "binary_plot_GSE162228"
 if (!dir.exists(plot_dir)) {
   dir.create(plot_dir)
 }
