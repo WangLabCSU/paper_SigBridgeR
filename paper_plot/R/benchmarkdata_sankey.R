@@ -2,15 +2,14 @@ library(ggplot2)
 library(ggalluvial)
 library(dplyr)
 
-here::i_am("paper_SigBridgeR/R/benchmarkdata_sankey.R")
-setwd(here::here())
+setwd(usethis::proj_path())
 
 # 示例数据创建
 set.seed(123)
 data_survival <- data.frame(
   single_cell = c(
-    rep("GSE161529_HER2", 3),
-    rep("GSE161529_TNBC", 3),
+    rep("GSE161529\nHER2", 3),
+    rep("GSE161529\nTNBC", 3),
     rep("GSE123902", 4),
     rep("GSE1678897", 2)
   ),
@@ -24,8 +23,8 @@ data_survival <- data.frame(
 
 data_binary <- data.frame(
   single_cell = c(
-    rep("GSE161529_HER2", 3),
-    rep("GSE161529_TNBC", 3),
+    rep("GSE161529\nHER2", 3),
+    rep("GSE161529\nTNBC", 3),
     "GSE123902",
     rep("GSE1678897", 2)
   ),
@@ -37,7 +36,7 @@ data_binary <- data.frame(
   phenotype = c("Binary")
 )
 
-data = rbind(data_survival, data_binary)
+data <- rbind(data_survival, data_binary)
 # 按搭配关系排序：根据single_cell的顺序来排序bulk
 data_custom_ordered <- data %>%
   mutate(
@@ -45,8 +44,8 @@ data_custom_ordered <- data %>%
     single_cell = factor(
       single_cell,
       levels = c(
-        "GSE161529_HER2",
-        "GSE161529_TNBC",
+        "GSE161529\nHER2",
+        "GSE161529\nTNBC",
         "GSE123902",
         "GSE1678897"
       )
@@ -59,7 +58,7 @@ data_custom_ordered <- data %>%
   )
 
 # 桑基图
-p = ggplot(
+p <- ggplot(
   data_custom_ordered,
   aes(
     axis1 = single_cell,
@@ -67,14 +66,22 @@ p = ggplot(
     axis3 = phenotype
   )
 ) +
-  geom_alluvium(aes(fill = single_cell)) +
+  geom_alluvium(aes(fill = single_cell), alpha = 0.25) +
+  scale_fill_manual(
+    values = c(
+      "GSE161529\nHER2" = "#aa3824",
+      "GSE161529\nTNBC" = "#a76723",
+      "GSE1678897" = "#408e22",
+      "GSE123902" = "#2261a8"
+    )
+  ) +
   geom_stratum(
     alpha = 0.25,
     color = "black"
   ) +
   geom_text(stat = "stratum", aes(label = after_stat(stratum))) +
   scale_x_discrete(
-    limits = c("Single Cell", "Bulk", "Phenotype"),
+    limits = c("Single Cell Datasets", "Bulk Datasets", "Phenotype Type"),
     expand = c(0.15, 0.05)
   ) +
   theme_minimal() +
@@ -85,4 +92,4 @@ p = ggplot(
     axis.text.y = element_blank()
   )
 
-ggsave("plot/benchmarkdata_sankey.png", p, width = 11, height = 8)
+ggsave("paper_plot/plot/benchmarkdata_sankey.png", p, width = 11, height = 8)
