@@ -1,0 +1,76 @@
+nohup: ignoring input
+Loading required package: SeuratObject
+Loading required package: sp
+‘SeuratObject’ was built with package ‘Matrix’ 1.7.3 but the current
+version is 1.7.4; it is recomended that you reinstall ‘SeuratObject’ as
+the ABI for ‘Matrix’ may have changed
+
+Attaching package: ‘SeuratObject’
+
+The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+ℹ Updating SigBridgeR documentation
+ℹ Loading SigBridgeR
+Loading required package: Matrix
+✔ SigBridgeR v2.4.0 loaded
+ℹ [2025/09/22 07:47:02] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/22 08:09:38] Selecting K...
+ℹ [2025/09/22 08:15:04] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/22 08:51:01] Screening cells...
+Warning in multimode::locmodes(x, mod0 = 2) :
+  If the density function has an unbounded support, artificial modes may have been created in the tails
+ℹ [2025/09/22 08:51:02] scAB screening done.
+ℹ [2025/09/22 08:51:11] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/22 09:13:35] Selecting K...
+ℹ [2025/09/22 09:20:59] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/22 09:51:40] Screening cells...
+ℹ [2025/09/22 09:51:40] scAB screening done.
+ℹ [2025/09/22 09:51:50] Start scPP screening.
+ℹ [2025/09/22 09:51:50] Finding markers...
+ℹ [2025/09/22 09:52:01] Screening...
+Warning in .AUCell_calcAUC(geneSets = geneSets, rankings = rankings, nCores = nCores,  :
+  The following gene sets will be excluded from the analysis(less than 20% of their genes are available):
+gene_neg
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	6 (67% of 9)
+✖ [2025/09/22 09:52:35] subscript out of bounds
+ℹ [2025/09/22 09:52:35] scPP screening exit.
+Error in `case_when()` at SigBridgeR/R/24-scPP_Screen.R:231:5:
+! Failed to evaluate the left-hand side of formula 1.
+Caused by error:
+! object 'scPP_result' not found
+Backtrace:
+    ▆
+ 1. ├─SigBridgeR::Screen(...)
+ 2. │ └─SigBridgeR::DoscPP(...) at SigBridgeR/R/20-QuickScreen.R:158:17
+ 3. │   └─dplyr::case_when(...) at SigBridgeR/R/24-scPP_Screen.R:231:5
+ 4. │     └─dplyr:::case_formula_evaluate(...)
+ 5. │       ├─base::withCallingHandlers(...)
+ 6. │       └─rlang::eval_tidy(pair$lhs, env = default_env)
+ 7. └─base::.handleSimpleError(...)
+ 8.   └─dplyr (local) h(simpleError(msg, call))
+ 9.     └─rlang::abort(message, parent = cnd, call = error_call)
+Execution halted

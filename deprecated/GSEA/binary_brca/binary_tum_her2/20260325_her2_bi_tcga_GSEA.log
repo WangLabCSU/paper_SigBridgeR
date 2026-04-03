@@ -1,0 +1,53 @@
+nohup: ignoring input
+✔ Setting active project to "/home/yyx/R/Project/R_code/paper_SigBridgeR".
+✔ Successfully merged 2 objects.
+Calculate differential gene set : AUCell
+Finish!
+Calculate differential gene set : UCell
+Finish!
+Calculate differential gene set : singscore
+Finish!
+Calculate differential gene set : ssgsea
+Finish!
+The following `from` values were not present in `x`: GOBP-HEPOXILIN-METABOLIC-PROCESS
+
+── Scissor Done! ──
+
+Calculate differential gene set : AUCell
+Finish!
+Calculate differential gene set : UCell
+Finish!
+Calculate differential gene set : singscore
+Finish!
+Calculate differential gene set : ssgsea
+Finish!
+The following `from` values were not present in `x`: GOBP-HEPOXILIN-METABOLIC-PROCESS, GOBP-PEPTIDOGLYCAN-METABOLIC-PROCESS, GOBP-REGULATION-OF-KILLING-OF-CELLS-OF-ANOTHER-ORGANISM, GOCC-INNER-DYNEIN-ARM, GOCC-PERINUCLEAR-THECA, GOMF-GLUTAMATE-GATED-CALCIUM-ION-CHANNEL-ACTIVITY, GOMF-GLUTAMATE-GATED-RECEPTOR-ACTIVITY, GOMF-GLUTAMATE-RECEPTOR-ACTIVITY, GOMF-NEUROLIGIN-FAMILY-PROTEIN-BINDING, GOMF-NMDA-GLUTAMATE-RECEPTOR-ACTIVITY, HP-PERMANENT-ATRIAL-FIBRILLATION, HP-TYPIFIED-BY-AGE-RELATED-DISEASE-ONSET
+── scPAS Done! ──
+
+ℹ skip scab
+ℹ skip scpp
+Calculate differential gene set : AUCell
+Finish!
+Calculate differential gene set : UCell
+Finish!
+Calculate differential gene set : singscore
+Finish!
+Calculate differential gene set : ssgsea
+Finish!
+
+── LP_SGL Done! ──
+
+ℹ DEGAS has only 1 group
+ℹ skip degas
+Calculate differential gene set : AUCell
+Finish!
+Calculate differential gene set : UCell
+Finish!
+Calculate differential gene set : singscore
+Finish!
+Calculate differential gene set : ssgsea
+Finish!
+
+── PIPET Done! ──
+
+✔ All done!

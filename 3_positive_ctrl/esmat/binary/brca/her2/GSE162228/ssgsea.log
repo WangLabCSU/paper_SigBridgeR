@@ -1,0 +1,78 @@
+nohup: ignoring input
+Registered S3 methods overwritten by 'Seqinfo':
+  method                from        
+  as.data.frame.Seqinfo GenomeInfoDb
+  merge.Seqinfo         GenomeInfoDb
+  summary.Seqinfo       GenomeInfoDb
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+
+Attaching package: ‘data.table’
+
+The following objects are masked from ‘package:dplyr’:
+
+    between, first, last
+
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.9 GiB
+ℹ GSVA version 2.2.1
+ℹ Using a MulticoreParam parallel back-end with 2 workers
+ℹ Calculating GSVA ranks
+ℹ kcdf='auto' (default)
+ℹ GSVA dense (classical) algorithm
+ℹ Direct row-wise ECDFs estimation
+Estimating row ECDFs with 2 cores ■■■■■■■■■■                        30% | ETA: …
+Estimating row ECDFs with 2 cores ■■■■■■■■■■■■■                     40% | ETA: …
+Estimating row ECDFs with 2 cores ■■■■■■■■■■■■■■■■                  50% | ETA: …
+Estimating row ECDFs with 2 cores ■■■■■■■■■■■■■■■■■■■               60% | ETA: …
+Estimating row ECDFs with 2 cores ■■■■■■■■■■■■■■■■■■■■■■            70% | ETA: …
+Estimating row ECDFs with 2 cores ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: …
+Estimating row ECDFs with 2 cores ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      90% | ETA: …
+Estimating row ECDFs with 2 cores ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA: …
+⠙ Calculating GSVA column ranks 5 done (1.4/s) | 3.6s
+⠹ Calculating GSVA column ranks 11 done (1.8/s) | 6s
+⠸ Calculating GSVA column ranks 17 done (1.9/s) | 9s
+⠼ Calculating GSVA column ranks 22 done (1.8/s) | 12s
+⠴ Calculating GSVA column ranks 27 done (1.7/s) | 15.8s
+⠦ Calculating GSVA column ranks 31 done (1.7/s) | 18.6s
+⠧ Calculating GSVA column ranks 35 done (1.6/s) | 21.7s
+⠇ Calculating GSVA column ranks 38 done (1.5/s) | 24.5s
+⠏ Calculating GSVA column ranks 42 done (1.5/s) | 27.9s
+⠋ Calculating GSVA column ranks 45 done (1.5/s) | 30.9s
+⠙ Calculating GSVA column ranks 48 done (1.4/s) | 33.6s
+⠹ Calculating GSVA column ranks 51 done (1.4/s) | 36.9s
+⠸ Calculating GSVA column ranks 54 done (1.4/s) | 39.9s
+⠼ Calculating GSVA column ranks 57 done (1.3/s) | 43.3s
+⠴ Calculating GSVA column ranks 58 done (1.3/s) | 46.1s
+⠦ Calculating GSVA column ranks 61 done (1.2/s) | 49.1s
+⠧ Calculating GSVA column ranks 64 done (1.2/s) | 52.7s
+⠇ Calculating GSVA column ranks 67 done (1.2/s) | 56.1s
+⠏ Calculating GSVA column ranks 69 done (1.2/s) | 58.4s
+⠋ Calculating GSVA column ranks 72 done (1.2/s) | 1m 2.2s
+⠙ Calculating GSVA column ranks 74 done (1.1/s) | 1m 4.6s
+⠹ Calculating GSVA column ranks 77 done (1.1/s) | 1m 8.6s
+⠸ Calculating GSVA column ranks 79 done (1.1/s) | 1m 11.4s
+⠼ Calculating GSVA column ranks 81 done (1.1/s) | 1m 14.2s
+⠴ Calculating GSVA column ranks 83 done (1.1/s) | 1m 16.8s
+⠦ Calculating GSVA column ranks 85 done (1.1/s) | 1m 19.6s
+⠧ Calculating GSVA column ranks 88 done (1/s) | 1m 25.3s
+⠇ Calculating GSVA column ranks 89 done (1/s) | 1m 26.7s
+⠏ Calculating GSVA column ranks 91 done (1/s) | 1m 29.4s
+⠋ Calculating GSVA column ranks 93 done (1/s) | 1m 32.7s
+⠙ Calculating GSVA column ranks 95 done (0.99/s) | 1m 35.8s
+⠹ Calculating GSVA column ranks 97 done (0.97/s) | 1m 39.5s
+⠸ Calculating GSVA column ranks 98 done (0.97/s) | 1m 41.1s
+⠼ Calculating GSVA column ranks 100 done (0.96/s) | 1m 44.6s
+ℹ Using a MulticoreParam parallel back-end with 2 workers
+ℹ Calculating GSVA scores
+ℹ Calculating GSVA scores with 2 cores
+✔ Calculations finished

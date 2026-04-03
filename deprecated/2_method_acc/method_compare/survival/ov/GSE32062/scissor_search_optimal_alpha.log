@@ -1,0 +1,41 @@
+nohup: ignoring input
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+
+Attaching package: ‘data.table’
+
+The following objects are masked from ‘package:dplyr’:
+
+    between, first, last
+
+ℹ Updating SigBridgeR documentation
+ℹ Loading SigBridgeR
+✔ SigBridgeR v2.5.4 loaded
+ℹ [2025/11/21 15:00:26] Scissor start...
+ℹ [2025/11/21 15:00:26] Loading data from 'Scissor_inputs.RData'
+ℹ [2025/11/21 15:02:01] Screening...
+
+── At alpha = 0.005 ──
+
+Scissor identified 3575 Scissor+ cells and 12052 Scissor- cells.
+The percentage of selected cell is: 30.723%
+
+── At alpha = 0.01 ──
+
+Scissor identified 2638 Scissor+ cells and 8003 Scissor- cells.
+The percentage of selected cell is: 20.92%
+
+── At alpha = 0.05 ──
+
+Scissor identified 26 Scissor+ cells and 2168 Scissor- cells.
+The percentage of selected cell is: 4.313%
+ℹ [2025/11/21 16:02:14] Scissor Ended.

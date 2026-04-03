@@ -1,0 +1,159 @@
+nohup: ignoring input
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Loading required package: SeuratObject
+Loading required package: sp
+‘SeuratObject’ was built under R 4.5.0 but the current version is
+4.5.1; it is recomended that you reinstall ‘SeuratObject’ as the ABI
+for R may have changed
+‘SeuratObject’ was built with package ‘Matrix’ 1.7.3 but the current
+version is 1.7.4; it is recomended that you reinstall ‘SeuratObject’ as
+the ABI for ‘Matrix’ may have changed
+
+Attaching package: ‘SeuratObject’
+
+The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+✔ scAB v1.0.0 loaded
+ℹ Updating SigBridgeR documentation
+ℹ Loading SigBridgeR
+✔ SigBridgeR v2.5.4 loaded
+ℹ [2025/11/24 15:05:04] Selecting optimal `alpha` and `alpha_2`, this would take a while
+Alpha = 0.00, alpha_2 = 0.00 ■■■■■■■                           20% | ETA:  2h
+Alpha = 0.00, alpha_2 = 0.00 ■■■■■■■■■■■■■                     40% | ETA:  2h
+Alpha = 0.00, alpha_2 = 0.00 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  1h
+Alpha = 0.00, alpha_2 = 0.00 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 33m
+Alpha = 0.00, alpha_2 = 0.00 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.00, alpha_2 = 0.00 ■■■■■■■                           20% | ETA:  2h
+Alpha = 0.00, alpha_2 = 0.00 ■■■■■■■■■■■■■                     40% | ETA:  2h
+Alpha = 0.00, alpha_2 = 0.00 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  1h
+Alpha = 0.00, alpha_2 = 0.00 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 35m
+Alpha = 0.00, alpha_2 = 0.00 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.01, alpha_2 = 0.00 ■■■■■■■                           20% | ETA:  3h
+Alpha = 0.01, alpha_2 = 0.00 ■■■■■■■■■■■■■                     40% | ETA:  2h
+Alpha = 0.01, alpha_2 = 0.00 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  1h
+Alpha = 0.01, alpha_2 = 0.00 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 38m
+Alpha = 0.01, alpha_2 = 0.00 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.01, alpha_2 = 0.00 ■■■■■■■                           20% | ETA:  3h
+Alpha = 0.01, alpha_2 = 0.00 ■■■■■■■■■■■■■                     40% | ETA:  2h
+Alpha = 0.01, alpha_2 = 0.00 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  1h
+Alpha = 0.01, alpha_2 = 0.00 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 37m
+Alpha = 0.01, alpha_2 = 0.00 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.05, alpha_2 = 0.00 ■■■■■■■                           20% | ETA:  3h
+Alpha = 0.05, alpha_2 = 0.00 ■■■■■■■■■■■■■                     40% | ETA:  2h
+Alpha = 0.05, alpha_2 = 0.00 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  1h
+Alpha = 0.05, alpha_2 = 0.00 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 38m
+Alpha = 0.05, alpha_2 = 0.00 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.00, alpha_2 = 0.00 ■■■■■■■                           20% | ETA:  2h
+Alpha = 0.00, alpha_2 = 0.00 ■■■■■■■■■■■■■                     40% | ETA:  2h
+Alpha = 0.00, alpha_2 = 0.00 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  1h
+Alpha = 0.00, alpha_2 = 0.00 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 33m
+Alpha = 0.00, alpha_2 = 0.00 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.00, alpha_2 = 0.00 ■■■■■■■                           20% | ETA:  2h
+Alpha = 0.00, alpha_2 = 0.00 ■■■■■■■■■■■■■                     40% | ETA:  2h
+Alpha = 0.00, alpha_2 = 0.00 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  1h
+Alpha = 0.00, alpha_2 = 0.00 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 34m
+Alpha = 0.00, alpha_2 = 0.00 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.01, alpha_2 = 0.00 ■■■■■■■                           20% | ETA:  3h
+Alpha = 0.01, alpha_2 = 0.00 ■■■■■■■■■■■■■                     40% | ETA:  2h
+Alpha = 0.01, alpha_2 = 0.00 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  1h
+Alpha = 0.01, alpha_2 = 0.00 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 37m
+Alpha = 0.01, alpha_2 = 0.00 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.01, alpha_2 = 0.00 ■■■■■■■                           20% | ETA:  3h
+Alpha = 0.01, alpha_2 = 0.00 ■■■■■■■■■■■■■                     40% | ETA:  2h
+Alpha = 0.01, alpha_2 = 0.00 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  1h
+Alpha = 0.01, alpha_2 = 0.00 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 37m
+Alpha = 0.01, alpha_2 = 0.00 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.05, alpha_2 = 0.00 ■■■■■■■                           20% | ETA:  3h
+Alpha = 0.05, alpha_2 = 0.00 ■■■■■■■■■■■■■                     40% | ETA:  2h
+Alpha = 0.05, alpha_2 = 0.00 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  1h
+Alpha = 0.05, alpha_2 = 0.00 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 36m
+Alpha = 0.05, alpha_2 = 0.00 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.00, alpha_2 = 0.01 ■■■■■■■                           20% | ETA:  2h
+Alpha = 0.00, alpha_2 = 0.01 ■■■■■■■■■■■■■                     40% | ETA:  2h
+Alpha = 0.00, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  1h
+Alpha = 0.00, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 33m
+Alpha = 0.00, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.00, alpha_2 = 0.01 ■■■■■■■                           20% | ETA:  2h
+Alpha = 0.00, alpha_2 = 0.01 ■■■■■■■■■■■■■                     40% | ETA:  2h
+Alpha = 0.00, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  1h
+Alpha = 0.00, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 34m
+Alpha = 0.00, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■                           20% | ETA:  3h
+Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■                     40% | ETA:  2h
+Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  1h
+Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 37m
+Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■                           20% | ETA:  2h
+Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■                     40% | ETA:  2h
+Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  1h
+Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 34m
+Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.05, alpha_2 = 0.01 ■■■■■■■                           20% | ETA:  2h
+Alpha = 0.05, alpha_2 = 0.01 ■■■■■■■■■■■■■                     40% | ETA:  2h
+Alpha = 0.05, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  1h
+Alpha = 0.05, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 31m
+Alpha = 0.05, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.00, alpha_2 = 0.01 ■■■■■■■                           20% | ETA:  2h
+Alpha = 0.00, alpha_2 = 0.01 ■■■■■■■■■■■■■                     40% | ETA:  2h
+Alpha = 0.00, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  1h
+Alpha = 0.00, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 34m
+Alpha = 0.00, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.00, alpha_2 = 0.01 ■■■■■■■                           20% | ETA:  2h
+Alpha = 0.00, alpha_2 = 0.01 ■■■■■■■■■■■■■                     40% | ETA:  2h
+Alpha = 0.00, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  1h
+Alpha = 0.00, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 36m
+Alpha = 0.00, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■                           20% | ETA:  3h
+Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■                     40% | ETA:  2h
+Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  1h
+Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 36m
+Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■                           20% | ETA:  2h
+Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■                     40% | ETA:  2h
+Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  1h
+Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 33m
+Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.05, alpha_2 = 0.01 ■■■■■■■                           20% | ETA:  2h
+Alpha = 0.05, alpha_2 = 0.01 ■■■■■■■■■■■■■                     40% | ETA:  1h
+Alpha = 0.05, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  1h
+Alpha = 0.05, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 28m
+Alpha = 0.05, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.00, alpha_2 = 0.05 ■■■■■■■                           20% | ETA:  2h
+Alpha = 0.00, alpha_2 = 0.05 ■■■■■■■■■■■■■                     40% | ETA:  2h
+Alpha = 0.00, alpha_2 = 0.05 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  1h
+Alpha = 0.00, alpha_2 = 0.05 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 31m
+Alpha = 0.00, alpha_2 = 0.05 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.00, alpha_2 = 0.05 ■■■■■■■                           20% | ETA:  2h
+Alpha = 0.00, alpha_2 = 0.05 ■■■■■■■■■■■■■                     40% | ETA:  2h
+Alpha = 0.00, alpha_2 = 0.05 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  1h
+Alpha = 0.00, alpha_2 = 0.05 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 31m
+Alpha = 0.00, alpha_2 = 0.05 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.01, alpha_2 = 0.05 ■■■■■■■                           20% | ETA:  2h
+Alpha = 0.01, alpha_2 = 0.05 ■■■■■■■■■■■■■                     40% | ETA:  1h
+Alpha = 0.01, alpha_2 = 0.05 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  1h
+Alpha = 0.01, alpha_2 = 0.05 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 29m
+Alpha = 0.01, alpha_2 = 0.05 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.01, alpha_2 = 0.05 ■■■■■■■                           20% | ETA:  2h
+Alpha = 0.01, alpha_2 = 0.05 ■■■■■■■■■■■■■                     40% | ETA:  1h
+Alpha = 0.01, alpha_2 = 0.05 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  1h
+Alpha = 0.01, alpha_2 = 0.05 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 28m
+Alpha = 0.01, alpha_2 = 0.05 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.05, alpha_2 = 0.05 ■■■■■■■                           20% | ETA:  2h
+Alpha = 0.05, alpha_2 = 0.05 ■■■■■■■■■■■■■                     40% | ETA:  1h
+Alpha = 0.05, alpha_2 = 0.05 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  1h
+Alpha = 0.05, alpha_2 = 0.05 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 26m
+Alpha = 0.05, alpha_2 = 0.05 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+✔ [2025/11/27 13:15:07] Best `alpha` and `alpha_2` are 0.05 and 0.05
+✔ Optimal parameters: alpha = 0.05, alpha_2 = 0.05

@@ -1,0 +1,81 @@
+nohup: ignoring input
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+
+Attaching package: ‘data.table’
+
+The following objects are masked from ‘package:dplyr’:
+
+    between, first, last
+
+Loading required package: future
+ℹ Updating SigBridgeR documentation
+ℹ Loading SigBridgeR
+✔ SigBridgeR v2.5.4 loaded
+Warning: Layer counts isn't present in the assay object; returning NULL
+ ■■■■                              10% |  ETA: 25m
+ ■■■■■■■                           20% |  ETA:  1h
+ ■■■■■■■■■■                        30% |  ETA: 50m
+Warning: Layer counts isn't present in the assay object; returning NULL
+ ■■■■■■■■■■■■■                     40% |  ETA: 39m
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.4 GiB
+Read matrix with 54650 cells and 13188 genes
+Chose k=61
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.02% of the values became negative in the scaling process and were set to zero
+The matrix went from 13.16% nonzero to 58.86% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.1 GiB
+ ■■■■■■■■■■■■■■■■                  50% |  ETA: 34m
+Warning: Layer counts isn't present in the assay object; returning NULL
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.8 GiB
+ ■■■■■■■■■■■■■■■■■■■               60% |  ETA: 32m
+Warning: Layer counts isn't present in the assay object; returning NULL
+ ■■■■■■■■■■■■■■■■■■■■■■            70% |  ETA: 23m
+ ■■■■■■■■■■■■■■■■■■■■■■■■■         80% |  ETA: 15m
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.4 GiB
+Read matrix with 54650 cells and 13188 genes
+Chose k=71
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.01% of the values became negative in the scaling process and were set to zero
+The matrix went from 13.16% nonzero to 57.83% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.3 GiB
+ ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      90% |  ETA:  7m
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.4 GiB
+Read matrix with 54650 cells and 13188 genes
+Chose k=66
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.02% of the values became negative in the scaling process and were set to zero
+The matrix went from 13.16% nonzero to 58.32% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.9 GiB
+✔ Finished 3th job

@@ -1,0 +1,178 @@
+nohup: ignoring input
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+✔ SigBridgeR v3.0.2 loaded
+[1] 15201 50865
+[1] 11620
+
+── Starting Robust Benchmark (TicToc + peakRAM) ────────────────────────────────
+ℹ Testing n_cells: 1000
+-> Warming up with small subset...
+ℹ `label_type` not specified or not of length 1, using "Scissor"
+ℹ [2026/01/11 10:42:12] Scissor start...
+ℹ [2026/01/11 10:42:12] Start from raw data...
+ℹ Using "RNA_snn" graph for network.
+ℹ [2026/01/11 10:42:12] Normalizing quantiles of data
+ℹ [2026/01/11 10:42:15] Subsetting data
+ℹ [2026/01/11 10:42:17] Calculating correlation
+
+----------------------------------------
+Five-number summary of correlations:
+0.078932 0.155142 0.1638 0.172884 0.211002
+----------------------------------------
+ℹ [2026/01/11 10:42:21] Perform cox regression on the given clinical outcomes...
+✔ [2026/01/11 10:42:23] Statistics data saved to 'Scissor_inputs.RData'.
+ℹ [2026/01/11 10:42:24] Screening...
+
+── At alpha = 0.05 ──
+
+Scissor identified 0 Scissor+ cells and 77 Scissor- cells.
+The percentage of selected cell is: 7.7%
+ℹ [2026/01/11 10:42:32] Scissor Ended.
+-> Running main benchmark...
+ℹ `label_type` not specified or not of length 1, using "Scissor"
+ℹ [2026/01/11 10:42:34] Scissor start...
+ℹ [2026/01/11 10:42:34] Start from raw data...
+ℹ Using "RNA_snn" graph for network.
+ℹ [2026/01/11 10:42:34] Normalizing quantiles of data
+ℹ [2026/01/11 10:42:37] Subsetting data
+ℹ [2026/01/11 10:42:38] Calculating correlation
+----------------------------------------
+Five-number summary of correlations:
+0.078932 0.155142 0.1638 0.172884 0.211002
+----------------------------------------
+ℹ [2026/01/11 10:42:38] Perform cox regression on the given clinical outcomes...
+✔ [2026/01/11 10:42:41] Statistics data saved to 'Scissor_inputs.RData'.
+ℹ [2026/01/11 10:42:42] Screening...
+
+── At alpha = 0.05 ──
+
+Scissor identified 0 Scissor+ cells and 77 Scissor- cells.
+The percentage of selected cell is: 7.7%
+ℹ [2026/01/11 10:42:50] Scissor Ended.
+✔   Done! Time: 17.26s, Peak RAM: 0.63 GB
+ℹ Testing n_cells: 5000
+-> Warming up with small subset...
+ℹ `label_type` not specified or not of length 1, using "Scissor"
+ℹ [2026/01/11 10:42:51] Scissor start...
+ℹ [2026/01/11 10:42:51] Start from raw data...
+ℹ Using "RNA_snn" graph for network.
+ℹ [2026/01/11 10:42:51] Normalizing quantiles of data
+ℹ [2026/01/11 10:42:54] Subsetting data
+ℹ [2026/01/11 10:42:55] Calculating correlation
+----------------------------------------
+Five-number summary of correlations:
+0.078932 0.155142 0.1638 0.172884 0.211002
+----------------------------------------
+ℹ [2026/01/11 10:42:55] Perform cox regression on the given clinical outcomes...
+✔ [2026/01/11 10:42:58] Statistics data saved to 'Scissor_inputs.RData'.
+ℹ [2026/01/11 10:42:58] Screening...
+
+── At alpha = 0.05 ──
+
+Scissor identified 0 Scissor+ cells and 77 Scissor- cells.
+The percentage of selected cell is: 7.7%
+ℹ [2026/01/11 10:43:06] Scissor Ended.
+-> Running main benchmark...
+ℹ `label_type` not specified or not of length 1, using "Scissor"
+ℹ [2026/01/11 10:43:08] Scissor start...
+ℹ [2026/01/11 10:43:08] Start from raw data...
+ℹ Using "RNA_snn" graph for network.
+ℹ [2026/01/11 10:43:08] Normalizing quantiles of data
+ℹ [2026/01/11 10:43:19] Subsetting data
+ℹ [2026/01/11 10:43:20] Calculating correlation
+----------------------------------------
+Five-number summary of correlations:
+0.074006 0.153488 0.16358 0.17547 0.22752
+----------------------------------------
+ℹ [2026/01/11 10:43:21] Perform cox regression on the given clinical outcomes...
+✔ [2026/01/11 10:43:30] Statistics data saved to 'Scissor_inputs.RData'.
+ℹ [2026/01/11 10:43:30] Screening...
+
+── At alpha = 0.05 ──
+
+Scissor identified 0 Scissor+ cells and 1025 Scissor- cells.
+The percentage of selected cell is: 20.5%
+✔   Done! Time: 41.57s, Peak RAM: 2.69 GB
+ℹ Testing n_cells: 10000
+-> Warming up with small subset...
+ℹ `label_type` not specified or not of length 1, using "Scissor"
+ℹ [2026/01/11 10:43:49] Scissor start...
+ℹ [2026/01/11 10:43:49] Start from raw data...
+ℹ Using "RNA_snn" graph for network.
+ℹ [2026/01/11 10:43:49] Normalizing quantiles of data
+ℹ [2026/01/11 10:43:52] Subsetting data
+ℹ [2026/01/11 10:43:53] Calculating correlation
+----------------------------------------
+Five-number summary of correlations:
+0.078932 0.155142 0.1638 0.172884 0.211002
+----------------------------------------
+ℹ [2026/01/11 10:43:53] Perform cox regression on the given clinical outcomes...
+✔ [2026/01/11 10:43:56] Statistics data saved to 'Scissor_inputs.RData'.
+ℹ [2026/01/11 10:43:56] Screening...
+
+── At alpha = 0.05 ──
+
+Scissor identified 0 Scissor+ cells and 77 Scissor- cells.
+The percentage of selected cell is: 7.7%
+ℹ [2026/01/11 10:44:04] Scissor Ended.
+-> Running main benchmark...
+ℹ `label_type` not specified or not of length 1, using "Scissor"
+ℹ [2026/01/11 10:44:06] Scissor start...
+ℹ [2026/01/11 10:44:06] Start from raw data...
+ℹ Using "RNA_snn" graph for network.
+ℹ [2026/01/11 10:44:08] Normalizing quantiles of data
+ℹ [2026/01/11 10:44:27] Subsetting data
+ℹ [2026/01/11 10:44:29] Calculating correlation
+----------------------------------------
+Five-number summary of correlations:
+0.070973 0.148549 0.158995 0.171406 0.22613
+----------------------------------------
+ℹ [2026/01/11 10:44:31] Perform cox regression on the given clinical outcomes...
+✔ [2026/01/11 10:44:49] Statistics data saved to 'Scissor_inputs.RData'.
+ℹ [2026/01/11 10:44:50] Screening...
+
+── At alpha = 0.05 ──
+
+Scissor identified 4 Scissor+ cells and 1412 Scissor- cells.
+The percentage of selected cell is: 14.16%
+ℹ [2026/01/11 10:45:15] Scissor Ended.
+✔   Done! Time: 71.12s, Peak RAM: 7.51 GB
+ℹ Testing n_cells: 50000
+-> Warming up with small subset...
+ℹ `label_type` not specified or not of length 1, using "Scissor"
+ℹ [2026/01/11 10:45:17] Scissor start...
+ℹ [2026/01/11 10:45:17] Start from raw data...
+ℹ Using "RNA_snn" graph for network.
+ℹ [2026/01/11 10:45:17] Normalizing quantiles of data
+ℹ [2026/01/11 10:45:20] Subsetting data
+ℹ [2026/01/11 10:45:20] Calculating correlation
+----------------------------------------
+Five-number summary of correlations:
+0.078932 0.155142 0.1638 0.172884 0.211002
+----------------------------------------
+ℹ [2026/01/11 10:45:21] Perform cox regression on the given clinical outcomes...
+✔ [2026/01/11 10:45:23] Statistics data saved to 'Scissor_inputs.RData'.
+ℹ [2026/01/11 10:45:24] Screening...
+
+── At alpha = 0.05 ──
+
+Scissor identified 0 Scissor+ cells and 77 Scissor- cells.
+The percentage of selected cell is: 7.7%
+ℹ [2026/01/11 10:45:32] Scissor Ended.
+-> Running main benchmark...
+ℹ `label_type` not specified or not of length 1, using "Scissor"
+ℹ [2026/01/11 10:45:34] Scissor start...
+ℹ [2026/01/11 10:45:34] Start from raw data...
+ℹ Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 18.6 GiB

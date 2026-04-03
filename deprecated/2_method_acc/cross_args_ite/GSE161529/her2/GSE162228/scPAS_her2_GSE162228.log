@@ -1,0 +1,3400 @@
+nohup: ignoring input
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+
+Attaching package: ‘data.table’
+
+The following objects are masked from ‘package:dplyr’:
+
+    between, first, last
+
+ℹ Updating SigBridgeR documentation
+ℹ Loading SigBridgeR
+✔ SigBridgeR v2.5.4 loaded
+[1] FALSE
+[1] TRUE
+  |                                                                              |                                                                      |   0%############### LOG OUTPUT ###############
+Task: 1
+Node: 2
+Timestamp: 2025-11-10 10:48:01.090959
+Success: TRUE
+
+Task duration:
+   user  system elapsed 
+624.032 760.973 378.142 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10265440  548.3   16284284  869.7  16284284  869.7
+Vcells 264947519 2021.4  363290304 2771.7 265677166 2027.0
+
+Log messages:
+INFO [2025-11-10 10:41:42] loading futile.logger package
+WARN [2025-11-10 10:41:50] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 10:41:50] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 10:41:52] sparse->dense coercion: allocating vector of size 2.9 GiB
+WARN [2025-11-10 10:44:27] Layer counts isn't present in the assay object; returning NULL
+WARN [2025-11-10 10:44:38] sparse->dense coercion: allocating vector of size 1.1 GiB
+
+stderr and stdout:
+ℹ [2025/11/10 10:41:50] Quantile normalizing bulk data...
+ℹ [2025/11/10 10:41:50] Imputation of missing values in single cell RNA-sequencing data with "ALRA"
+
+Attaching package: ‘Matrix’
+
+The following objects are masked from ‘package:tidyr’:
+
+    expand, pack, unpack
+
+Loading required package: SeuratObject
+Loading required package: sp
+‘SeuratObject’ was built under R 4.5.0 but the current version is
+4.5.1; it is recomended that you reinstall ‘SeuratObject’ as the ABI
+for R may have changed
+‘SeuratObject’ was built with package ‘Matrix’ 1.7.3 but the current
+version is 1.7.4; it is recomended that you reinstall ‘SeuratObject’ as
+the ABI for ‘Matrix’ may have changed
+
+Attaching package: ‘SeuratObject’
+
+The following objects are masked from ‘package:SigBridgeR’:
+
+    %||%, plan
+
+The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+
+Attaching package: ‘Seurat’
+
+The following object is masked from ‘package:SigBridgeR’:
+
+    %||%
+
+Warning: The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead.
+ℹ The deprecated feature was likely used in the scPAS package.
+  Please report the issue to the authors.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.9 GiB
+Read matrix with 31872 cells and 12231 genes
+Chose k=67
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.02% of the values became negative in the scaling process and were set to zero
+The matrix went from 14.41% nonzero to 56.81% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/11/10 10:44:27] Extracting single-cell expression profiles...
+ℹ [2025/11/10 10:44:32] Constructing a gene-gene similarity by single cell data...
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.1 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 10:44:53] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 10:44:53] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 51.0615147525583
+scPAS identified 438 risk+ features and 356 risk- features.
+The percentage of selected feature is: 17.609%
+ℹ [2025/11/10 10:47:16] Calculating quantified risk scores...
+ℹ [2025/11/10 10:47:24] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_1 finished.
+
+  |                                                                              |=                                                                     |   2%############### LOG OUTPUT ###############
+Task: 2
+Node: 1
+Timestamp: 2025-11-10 10:49:43.081743
+Success: TRUE
+
+Task duration:
+   user  system elapsed 
+478.254  58.818 480.044 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266291  548.3   16284284  869.7  16284284  869.7
+Vcells 264997062 2021.8  436028364 3326.7 265677166 2027.0
+
+Log messages:
+INFO [2025-11-10 10:41:43] loading futile.logger package
+WARN [2025-11-10 10:41:50] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 10:41:50] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 10:42:32] Layer counts isn't present in the assay object; returning NULL
+
+stderr and stdout:
+ℹ [2025/11/10 10:41:50] Quantile normalizing bulk data...
+ℹ [2025/11/10 10:41:50] Imputation of missing values in single cell RNA-sequencing data with "KNN"
+
+Attaching package: ‘Matrix’
+
+The following objects are masked from ‘package:tidyr’:
+
+    expand, pack, unpack
+
+Warning: The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead.
+ℹ The deprecated feature was likely used in the scPAS package.
+  Please report the issue to the authors.
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/11/10 10:42:32] Extracting single-cell expression profiles...
+ℹ [2025/11/10 10:42:39] Constructing a gene-gene similarity by single cell data...
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 10:42:53] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 10:42:53] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 29.4010271748811
+scPAS identified 702 risk+ features and 538 risk- features.
+The percentage of selected feature is: 37.159%
+
+── At alpha = 0.005 ──
+
+lambda = 9.80877384493053
+scPAS identified 270 risk+ features and 202 risk- features.
+The percentage of selected feature is: 14.144%
+ℹ [2025/11/10 10:49:13] Calculating quantified risk scores...
+ℹ [2025/11/10 10:49:19] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_2 finished.
+
+  |                                                                              |===                                                                   |   4%############### LOG OUTPUT ###############
+Task: 3
+Node: 2
+Timestamp: 2025-11-10 10:55:01.970709
+Success: TRUE
+
+Task duration:
+   user  system elapsed 
+426.372  64.620 419.869 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266305  548.3   16284284  869.7  16284284  869.7
+Vcells 265044855 2022.2  436028364 3326.7 265677166 2027.0
+
+Log messages:
+INFO [2025-11-10 10:48:02] loading futile.logger package
+WARN [2025-11-10 10:48:08] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 10:48:08] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 10:48:47] Layer counts isn't present in the assay object; returning NULL
+
+stderr and stdout:
+ℹ [2025/11/10 10:48:08] Quantile normalizing bulk data...
+ℹ [2025/11/10 10:48:08] Imputation of missing values in single cell RNA-sequencing data with "KNN"
+
+Attaching package: ‘Matrix’
+
+The following objects are masked from ‘package:tidyr’:
+
+    expand, pack, unpack
+
+Warning: The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead.
+ℹ The deprecated feature was likely used in the scPAS package.
+  Please report the issue to the authors.
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/11/10 10:48:47] Extracting single-cell expression profiles...
+ℹ [2025/11/10 10:48:55] Constructing a gene-gene similarity by single cell data...
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 10:49:12] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 10:49:12] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 53.7090987113947
+scPAS identified 342 risk+ features and 272 risk- features.
+The percentage of selected feature is: 15.829%
+ℹ [2025/11/10 10:54:27] Calculating quantified risk scores...
+ℹ [2025/11/10 10:54:34] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_3 finished.
+
+  |                                                                              |====                                                                  |   6%############### LOG OUTPUT ###############
+Task: 5
+Node: 2
+Timestamp: 2025-11-10 11:21:14.903182
+Success: TRUE
+
+Task duration:
+    user   system  elapsed 
+1587.649   47.910 1571.934 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266318  548.3   16284284  869.7  16284284  869.7
+Vcells 265092583 2022.5  436028364 3326.7 265677166 2027.0
+
+Log messages:
+INFO [2025-11-10 10:55:03] loading futile.logger package
+
+stderr and stdout:
+ℹ [2025/11/10 10:55:09] Quantile normalizing bulk data...
+ℹ [2025/11/10 10:55:09] Extracting single-cell expression profiles...
+ℹ [2025/11/10 10:55:10] Constructing a gene-gene similarity by single cell data...
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 10:55:25] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 10:55:25] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 30.8237787570504
+scPAS identified 731 risk+ features and 559 risk- features.
+The percentage of selected feature is: 35.724%
+
+── At alpha = 0.005 ──
+
+lambda = 10.2834323806343
+scPAS identified 268 risk+ features and 205 risk- features.
+The percentage of selected feature is: 13.099%
+ℹ [2025/11/10 11:20:47] Calculating quantified risk scores...
+ℹ [2025/11/10 11:20:52] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_5 finished.
+
+  |                                                                              |=====                                                                 |   8%############### LOG OUTPUT ###############
+Task: 6
+Node: 2
+Timestamp: 2025-11-10 11:25:11.998341
+Success: TRUE
+
+Task duration:
+   user  system elapsed 
+222.597  36.686 236.101 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266334  548.3   16284284  869.7  16284284  869.7
+Vcells 265140525 2022.9  436028364 3326.7 265677166 2027.0
+
+Log messages:
+INFO [2025-11-10 11:21:15] loading futile.logger package
+WARN [2025-11-10 11:21:22] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 11:21:22] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 11:22:00] Layer counts isn't present in the assay object; returning NULL
+
+stderr and stdout:
+ℹ [2025/11/10 11:21:22] Quantile normalizing bulk data...
+ℹ [2025/11/10 11:21:22] Imputation of missing values in single cell RNA-sequencing data with "KNN"
+
+Attaching package: ‘Matrix’
+
+The following objects are masked from ‘package:tidyr’:
+
+    expand, pack, unpack
+
+Warning: The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead.
+ℹ The deprecated feature was likely used in the scPAS package.
+  Please report the issue to the authors.
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/11/10 11:22:00] Extracting single-cell expression profiles...
+ℹ [2025/11/10 11:22:05] Constructing a gene-gene similarity by single cell data...
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 11:22:10] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 11:22:10] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 12.0769042767728
+scPAS identified 477 risk+ features and 450 risk- features.
+The percentage of selected feature is: 66.404%
+
+── At alpha = 0.005 ──
+
+lambda = 7.72744859580079
+scPAS identified 202 risk+ features and 141 risk- features.
+The percentage of selected feature is: 24.57%
+
+── At alpha = 0.01 ──
+
+lambda = 5.10761613572255
+scPAS identified 121 risk+ features and 70 risk- features.
+The percentage of selected feature is: 13.682%
+ℹ [2025/11/10 11:24:58] Calculating quantified risk scores...
+ℹ [2025/11/10 11:25:00] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_6 finished.
+
+  |                                                                              |=======                                                               |  10%############### LOG OUTPUT ###############
+Task: 4
+Node: 1
+Timestamp: 2025-11-10 11:27:45.287923
+Success: TRUE
+
+Task duration:
+    user   system  elapsed 
+2307.315   55.716 2281.196 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266342  548.3   16284284  869.7  16284284  869.7
+Vcells 265188238 2023.3  436028364 3326.7 265677166 2027.0
+
+Log messages:
+INFO [2025-11-10 10:49:44] loading futile.logger package
+WARN [2025-11-10 10:49:54] sparse->dense coercion: allocating vector of size 1.0 GiB
+
+stderr and stdout:
+ℹ [2025/11/10 10:49:50] Quantile normalizing bulk data...
+ℹ [2025/11/10 10:49:50] Extracting single-cell expression profiles...
+ℹ [2025/11/10 10:49:52] Constructing a gene-gene similarity by single cell data...
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.0 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 10:50:08] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 10:50:08] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 32.113100256303
+scPAS identified 812 risk+ features and 648 risk- features.
+The percentage of selected feature is: 33.71%
+
+── At alpha = 0.005 ──
+
+lambda = 10.7135759577397
+scPAS identified 276 risk+ features and 229 risk- features.
+The percentage of selected feature is: 11.66%
+ℹ [2025/11/10 11:27:13] Calculating quantified risk scores...
+ℹ [2025/11/10 11:27:19] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_4 finished.
+
+  |                                                                              |========                                                              |  12%############### LOG OUTPUT ###############
+Task: 8
+Node: 1
+Timestamp: 2025-11-10 11:29:14.199183
+Success: TRUE
+
+Task duration:
+   user  system elapsed 
+ 69.790  25.331  87.915 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266356  548.3   16284284  869.7  16284284  869.7
+Vcells 265236132 2023.6  436028364 3326.7 265677166 2027.0
+
+Log messages:
+INFO [2025-11-10 11:27:46] loading futile.logger package
+WARN [2025-11-10 11:27:52] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 11:27:52] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 11:28:31] Layer counts isn't present in the assay object; returning NULL
+
+stderr and stdout:
+ℹ [2025/11/10 11:27:52] Quantile normalizing bulk data...
+ℹ [2025/11/10 11:27:52] Imputation of missing values in single cell RNA-sequencing data with "KNN"
+
+Attaching package: ‘Matrix’
+
+The following objects are masked from ‘package:tidyr’:
+
+    expand, pack, unpack
+
+Warning: The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead.
+ℹ The deprecated feature was likely used in the scPAS package.
+  Please report the issue to the authors.
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/11/10 11:28:31] Extracting single-cell expression profiles...
+ℹ [2025/11/10 11:28:36] Constructing a gene-gene similarity by single cell data...
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 11:28:39] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 11:28:39] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 18.0667624824728
+scPAS identified 270 risk+ features and 182 risk- features.
+The percentage of selected feature is: 60.753%
+
+── At alpha = 0.005 ──
+
+lambda = 13.9241571643971
+scPAS identified 36 risk+ features and 16 risk- features.
+The percentage of selected feature is: 6.989%
+ℹ [2025/11/10 11:29:07] Calculating quantified risk scores...
+ℹ [2025/11/10 11:29:08] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_8 finished.
+
+  |                                                                              |==========                                                            |  14%############### LOG OUTPUT ###############
+Task: 7
+Node: 2
+Timestamp: 2025-11-10 11:29:42.737018
+Success: TRUE
+
+Task duration:
+   user  system elapsed 
+483.468 738.902 269.664 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266368  548.3   16284284  869.7  16284284  869.7
+Vcells 265284107 2024.0  436028364 3326.7 265677166 2027.0
+
+Log messages:
+INFO [2025-11-10 11:25:13] loading futile.logger package
+WARN [2025-11-10 11:25:19] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 11:25:19] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 11:25:20] sparse->dense coercion: allocating vector of size 2.9 GiB
+WARN [2025-11-10 11:27:47] Layer counts isn't present in the assay object; returning NULL
+
+stderr and stdout:
+ℹ [2025/11/10 11:25:19] Quantile normalizing bulk data...
+ℹ [2025/11/10 11:25:19] Imputation of missing values in single cell RNA-sequencing data with "ALRA"
+
+Attaching package: ‘Matrix’
+
+The following objects are masked from ‘package:tidyr’:
+
+    expand, pack, unpack
+
+Loading required package: SeuratObject
+Loading required package: sp
+‘SeuratObject’ was built under R 4.5.0 but the current version is
+4.5.1; it is recomended that you reinstall ‘SeuratObject’ as the ABI
+for R may have changed
+‘SeuratObject’ was built with package ‘Matrix’ 1.7.3 but the current
+version is 1.7.4; it is recomended that you reinstall ‘SeuratObject’ as
+the ABI for ‘Matrix’ may have changed
+
+Attaching package: ‘SeuratObject’
+
+The following objects are masked from ‘package:SigBridgeR’:
+
+    %||%, plan
+
+The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+
+Attaching package: ‘Seurat’
+
+The following object is masked from ‘package:SigBridgeR’:
+
+    %||%
+
+Warning: The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead.
+ℹ The deprecated feature was likely used in the scPAS package.
+  Please report the issue to the authors.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.9 GiB
+Read matrix with 31872 cells and 12231 genes
+Chose k=63
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.02% of the values became negative in the scaling process and were set to zero
+The matrix went from 14.41% nonzero to 57.29% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/11/10 11:27:47] Extracting single-cell expression profiles...
+ℹ [2025/11/10 11:27:50] Constructing a gene-gene similarity by single cell data...
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 11:27:59] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 11:27:59] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 33.5375375402333
+scPAS identified 423 risk+ features and 314 risk- features.
+The percentage of selected feature is: 34.327%
+
+── At alpha = 0.005 ──
+
+lambda = 10.1948150004701
+scPAS identified 187 risk+ features and 133 risk- features.
+The percentage of selected feature is: 14.905%
+ℹ [2025/11/10 11:29:24] Calculating quantified risk scores...
+ℹ [2025/11/10 11:29:26] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_7 finished.
+
+  |                                                                              |===========                                                           |  16%############### LOG OUTPUT ###############
+Task: 10
+Node: 2
+Timestamp: 2025-11-10 11:32:05.739413
+Success: TRUE
+
+Task duration:
+   user  system elapsed 
+126.498  34.407 141.899 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266380  548.3   16284284  869.7  16284284  869.7
+Vcells 265331780 2024.4  436028364 3326.7 265677166 2027.0
+
+Log messages:
+INFO [2025-11-10 11:29:43] loading futile.logger package
+WARN [2025-11-10 11:29:50] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 11:29:50] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 11:30:29] Layer counts isn't present in the assay object; returning NULL
+
+stderr and stdout:
+ℹ [2025/11/10 11:29:50] Quantile normalizing bulk data...
+ℹ [2025/11/10 11:29:50] Imputation of missing values in single cell RNA-sequencing data with "KNN"
+
+Attaching package: ‘Matrix’
+
+The following objects are masked from ‘package:tidyr’:
+
+    expand, pack, unpack
+
+Warning: The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead.
+ℹ The deprecated feature was likely used in the scPAS package.
+  Please report the issue to the authors.
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/11/10 11:30:29] Extracting single-cell expression profiles...
+ℹ [2025/11/10 11:30:34] Constructing a gene-gene similarity by single cell data...
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 11:30:37] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 11:30:37] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 24.7115311392584
+scPAS identified 283 risk+ features and 193 risk- features.
+The percentage of selected feature is: 46.394%
+
+── At alpha = 0.005 ──
+
+lambda = 8.63682049470566
+scPAS identified 137 risk+ features and 84 risk- features.
+The percentage of selected feature is: 21.54%
+
+── At alpha = 0.01 ──
+
+lambda = 5.70868420193307
+scPAS identified 80 risk+ features and 38 risk- features.
+The percentage of selected feature is: 11.501%
+ℹ [2025/11/10 11:31:55] Calculating quantified risk scores...
+ℹ [2025/11/10 11:31:57] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_10 finished.
+
+  |                                                                              |============                                                          |  18%############### LOG OUTPUT ###############
+Task: 9
+Node: 1
+Timestamp: 2025-11-10 11:35:56.811359
+Success: TRUE
+
+Task duration:
+   user  system elapsed 
+396.148  52.591 401.600 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266391  548.3   16284284  869.7  16284284  869.7
+Vcells 265379574 2024.7  436028364 3326.7 265677166 2027.0
+
+Log messages:
+INFO [2025-11-10 11:29:15] loading futile.logger package
+WARN [2025-11-10 11:29:21] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 11:29:21] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 11:30:00] Layer counts isn't present in the assay object; returning NULL
+
+stderr and stdout:
+ℹ [2025/11/10 11:29:21] Quantile normalizing bulk data...
+ℹ [2025/11/10 11:29:21] Imputation of missing values in single cell RNA-sequencing data with "KNN"
+
+Attaching package: ‘Matrix’
+
+The following objects are masked from ‘package:tidyr’:
+
+    expand, pack, unpack
+
+Warning: The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead.
+ℹ The deprecated feature was likely used in the scPAS package.
+  Please report the issue to the authors.
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/11/10 11:30:00] Extracting single-cell expression profiles...
+ℹ [2025/11/10 11:30:07] Constructing a gene-gene similarity by single cell data...
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 11:30:18] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 11:30:18] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 30.826154594428
+scPAS identified 636 risk+ features and 468 risk- features.
+The percentage of selected feature is: 36.078%
+
+── At alpha = 0.005 ──
+
+lambda = 9.37060280257833
+scPAS identified 273 risk+ features and 210 risk- features.
+The percentage of selected feature is: 15.784%
+ℹ [2025/11/10 11:35:27] Calculating quantified risk scores...
+ℹ [2025/11/10 11:35:33] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_9 finished.
+
+  |                                                                              |==============                                                        |  20%############### LOG OUTPUT ###############
+Task: 11
+Node: 2
+Timestamp: 2025-11-10 11:38:55.803234
+Success: TRUE
+
+Task duration:
+   user  system elapsed 
+663.829 909.900 409.044 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266404  548.3   16284284  869.7  16284284  869.7
+Vcells 265427549 2025.1  436028364 3326.7 265677166 2027.0
+
+Log messages:
+INFO [2025-11-10 11:32:06] loading futile.logger package
+WARN [2025-11-10 11:32:13] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 11:32:13] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 11:32:14] sparse->dense coercion: allocating vector of size 2.9 GiB
+WARN [2025-11-10 11:34:47] Layer counts isn't present in the assay object; returning NULL
+
+stderr and stdout:
+ℹ [2025/11/10 11:32:13] Quantile normalizing bulk data...
+ℹ [2025/11/10 11:32:13] Imputation of missing values in single cell RNA-sequencing data with "ALRA"
+
+Attaching package: ‘Matrix’
+
+The following objects are masked from ‘package:tidyr’:
+
+    expand, pack, unpack
+
+Loading required package: SeuratObject
+Loading required package: sp
+‘SeuratObject’ was built under R 4.5.0 but the current version is
+4.5.1; it is recomended that you reinstall ‘SeuratObject’ as the ABI
+for R may have changed
+‘SeuratObject’ was built with package ‘Matrix’ 1.7.3 but the current
+version is 1.7.4; it is recomended that you reinstall ‘SeuratObject’ as
+the ABI for ‘Matrix’ may have changed
+
+Attaching package: ‘SeuratObject’
+
+The following objects are masked from ‘package:SigBridgeR’:
+
+    %||%, plan
+
+The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+
+Attaching package: ‘Seurat’
+
+The following object is masked from ‘package:SigBridgeR’:
+
+    %||%
+
+Warning: The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead.
+ℹ The deprecated feature was likely used in the scPAS package.
+  Please report the issue to the authors.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.9 GiB
+Read matrix with 31872 cells and 12231 genes
+Chose k=74
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.02% of the values became negative in the scaling process and were set to zero
+The matrix went from 14.41% nonzero to 55.88% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/11/10 11:34:47] Extracting single-cell expression profiles...
+ℹ [2025/11/10 11:34:52] Constructing a gene-gene similarity by single cell data...
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 11:35:10] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 11:35:10] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 30.7623039648181
+scPAS identified 787 risk+ features and 635 risk- features.
+The percentage of selected feature is: 35.855%
+
+── At alpha = 0.005 ──
+
+lambda = 9.79645745734168
+scPAS identified 301 risk+ features and 242 risk- features.
+The percentage of selected feature is: 13.691%
+ℹ [2025/11/10 11:38:22] Calculating quantified risk scores...
+ℹ [2025/11/10 11:38:29] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_11 finished.
+
+  |                                                                              |===============                                                       |  22%############### LOG OUTPUT ###############
+Task: 13
+Node: 2
+Timestamp: 2025-11-10 11:39:57.221298
+Success: TRUE
+
+Task duration:
+   user  system elapsed 
+ 54.842  12.665  60.345 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266414  548.3   16284284  869.7  16284284  869.7
+Vcells 265475136 2025.5  436028364 3326.7 265677166 2027.0
+
+Log messages:
+INFO [2025-11-10 11:38:56] loading futile.logger package
+
+stderr and stdout:
+ℹ [2025/11/10 11:39:03] Quantile normalizing bulk data...
+ℹ [2025/11/10 11:39:03] Extracting single-cell expression profiles...
+ℹ [2025/11/10 11:39:04] Constructing a gene-gene similarity by single cell data...
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 11:39:07] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 11:39:07] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 24.6381757434125
+scPAS identified 152 risk+ features and 109 risk- features.
+The percentage of selected feature is: 46.942%
+
+── At alpha = 0.005 ──
+
+lambda = 5.93535398169167
+scPAS identified 114 risk+ features and 89 risk- features.
+The percentage of selected feature is: 36.511%
+
+── At alpha = 0.01 ──
+
+lambda = 4.10989541932158
+scPAS identified 73 risk+ features and 56 risk- features.
+The percentage of selected feature is: 23.201%
+
+── At alpha = 0.05 ──
+
+lambda = 1.37114375136128
+scPAS identified 17 risk+ features and 10 risk- features.
+The percentage of selected feature is: 4.856%
+ℹ [2025/11/10 11:39:51] Calculating quantified risk scores...
+ℹ [2025/11/10 11:39:52] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_13 finished.
+
+  |                                                                              |================                                                      |  24%############### LOG OUTPUT ###############
+Task: 14
+Node: 2
+Timestamp: 2025-11-10 11:41:09.36956
+Success: TRUE
+
+Task duration:
+   user  system elapsed 
+ 65.325  13.024  71.144 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266428  548.3   16284284  869.7  16284284  869.7
+Vcells 265522910 2025.8  436028364 3326.7 265695105 2027.1
+
+Log messages:
+INFO [2025-11-10 11:39:58] loading futile.logger package
+
+stderr and stdout:
+ℹ [2025/11/10 11:40:04] Quantile normalizing bulk data...
+ℹ [2025/11/10 11:40:04] Extracting single-cell expression profiles...
+ℹ [2025/11/10 11:40:05] Constructing a gene-gene similarity by single cell data...
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 11:40:09] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 11:40:09] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 46.3946026594369
+scPAS identified 113 risk+ features and 68 risk- features.
+The percentage of selected feature is: 21.625%
+
+── At alpha = 0.005 ──
+
+lambda = 14.1031341542552
+scPAS identified 39 risk+ features and 17 risk- features.
+The percentage of selected feature is: 6.691%
+ℹ [2025/11/10 11:41:02] Calculating quantified risk scores...
+ℹ [2025/11/10 11:41:03] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_14 finished.
+
+  |                                                                              |==================                                                    |  25%############### LOG OUTPUT ###############
+Task: 12
+Node: 1
+Timestamp: 2025-11-10 11:41:19.90397
+Success: TRUE
+
+Task duration:
+   user  system elapsed 
+561.095 848.962 322.071 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266440  548.3   16284284  869.7  16284284  869.7
+Vcells 265570991 2026.2  436028364 3326.7 265736412 2027.5
+
+Log messages:
+INFO [2025-11-10 11:35:57] loading futile.logger package
+WARN [2025-11-10 11:36:04] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 11:36:04] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 11:36:05] sparse->dense coercion: allocating vector of size 2.9 GiB
+WARN [2025-11-10 11:38:38] Layer counts isn't present in the assay object; returning NULL
+
+stderr and stdout:
+ℹ [2025/11/10 11:36:04] Quantile normalizing bulk data...
+ℹ [2025/11/10 11:36:04] Imputation of missing values in single cell RNA-sequencing data with "ALRA"
+
+Attaching package: ‘Matrix’
+
+The following objects are masked from ‘package:tidyr’:
+
+    expand, pack, unpack
+
+Loading required package: SeuratObject
+Loading required package: sp
+‘SeuratObject’ was built under R 4.5.0 but the current version is
+4.5.1; it is recomended that you reinstall ‘SeuratObject’ as the ABI
+for R may have changed
+‘SeuratObject’ was built with package ‘Matrix’ 1.7.3 but the current
+version is 1.7.4; it is recomended that you reinstall ‘SeuratObject’ as
+the ABI for ‘Matrix’ may have changed
+
+Attaching package: ‘SeuratObject’
+
+The following objects are masked from ‘package:SigBridgeR’:
+
+    %||%, plan
+
+The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+
+Attaching package: ‘Seurat’
+
+The following object is masked from ‘package:SigBridgeR’:
+
+    %||%
+
+Warning: The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead.
+ℹ The deprecated feature was likely used in the scPAS package.
+  Please report the issue to the authors.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.9 GiB
+Read matrix with 31872 cells and 12231 genes
+Chose k=71
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.02% of the values became negative in the scaling process and were set to zero
+The matrix went from 14.41% nonzero to 56.23% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/11/10 11:38:38] Extracting single-cell expression profiles...
+ℹ [2025/11/10 11:38:43] Constructing a gene-gene similarity by single cell data...
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 11:38:54] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 11:38:54] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 30.7046762790919
+scPAS identified 597 risk+ features and 438 risk- features.
+The percentage of selected feature is: 37.123%
+
+── At alpha = 0.005 ──
+
+lambda = 9.33367555501475
+scPAS identified 263 risk+ features and 200 risk- features.
+The percentage of selected feature is: 16.607%
+ℹ [2025/11/10 11:40:54] Calculating quantified risk scores...
+ℹ [2025/11/10 11:40:59] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_12 finished.
+
+  |                                                                              |===================                                                   |  27%############### LOG OUTPUT ###############
+Task: 16
+Node: 1
+Timestamp: 2025-11-10 11:42:17.695889
+Success: TRUE
+
+Task duration:
+   user  system elapsed 
+ 50.761  13.151  56.719 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266450  548.3   16284284  869.7  16284284  869.7
+Vcells 265618537 2026.6  436028364 3326.7 265789534 2027.9
+
+Log messages:
+INFO [2025-11-10 11:41:21] loading futile.logger package
+
+stderr and stdout:
+ℹ [2025/11/10 11:41:27] Quantile normalizing bulk data...
+ℹ [2025/11/10 11:41:27] Extracting single-cell expression profiles...
+ℹ [2025/11/10 11:41:28] Constructing a gene-gene similarity by single cell data...
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 11:41:32] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 11:41:32] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 39.8395733206279
+scPAS identified 124 risk+ features and 85 risk- features.
+The percentage of selected feature is: 28.091%
+
+── At alpha = 0.005 ──
+
+lambda = 13.9241571643971
+scPAS identified 36 risk+ features and 16 risk- features.
+The percentage of selected feature is: 6.989%
+ℹ [2025/11/10 11:42:10] Calculating quantified risk scores...
+ℹ [2025/11/10 11:42:11] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_16 finished.
+
+  |                                                                              |=====================                                                 |  29%############### LOG OUTPUT ###############
+Task: 17
+Node: 1
+Timestamp: 2025-11-10 11:47:58.573731
+Success: TRUE
+
+Task duration:
+   user  system elapsed 
+340.231  27.269 339.876 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266466  548.3   16284284  869.7  16284284  869.7
+Vcells 265666373 2026.9  436028364 3326.7 265874646 2028.5
+
+Log messages:
+INFO [2025-11-10 11:42:18] loading futile.logger package
+
+stderr and stdout:
+ℹ [2025/11/10 11:42:24] Quantile normalizing bulk data...
+ℹ [2025/11/10 11:42:25] Extracting single-cell expression profiles...
+ℹ [2025/11/10 11:42:26] Constructing a gene-gene similarity by single cell data...
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 11:42:31] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 11:42:31] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 11.0040253861673
+scPAS identified 562 risk+ features and 420 risk- features.
+The percentage of selected feature is: 70.344%
+
+── At alpha = 0.005 ──
+
+lambda = 7.72744859580079
+scPAS identified 201 risk+ features and 142 risk- features.
+The percentage of selected feature is: 24.57%
+
+── At alpha = 0.01 ──
+
+lambda = 5.35081912298562
+scPAS identified 117 risk+ features and 66 risk- features.
+The percentage of selected feature is: 13.109%
+ℹ [2025/11/10 11:47:45] Calculating quantified risk scores...
+ℹ [2025/11/10 11:47:47] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_17 finished.
+
+  |                                                                              |======================                                                |  31%############### LOG OUTPUT ###############
+Task: 18
+Node: 1
+Timestamp: 2025-11-10 11:51:17.47271
+Success: TRUE
+
+Task duration:
+   user  system elapsed 
+401.837 743.256 197.896 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266486  548.3   16284284  869.7  16284284  869.7
+Vcells 265714476 2027.3  436028364 3326.7 265903914 2028.7
+
+Log messages:
+INFO [2025-11-10 11:47:59] loading futile.logger package
+WARN [2025-11-10 11:48:05] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 11:48:06] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 11:48:06] sparse->dense coercion: allocating vector of size 2.9 GiB
+WARN [2025-11-10 11:50:35] Layer counts isn't present in the assay object; returning NULL
+
+stderr and stdout:
+ℹ [2025/11/10 11:48:05] Quantile normalizing bulk data...
+ℹ [2025/11/10 11:48:05] Imputation of missing values in single cell RNA-sequencing data with "ALRA"
+
+Attaching package: ‘Matrix’
+
+The following objects are masked from ‘package:tidyr’:
+
+    expand, pack, unpack
+
+Loading required package: SeuratObject
+Loading required package: sp
+‘SeuratObject’ was built under R 4.5.0 but the current version is
+4.5.1; it is recomended that you reinstall ‘SeuratObject’ as the ABI
+for R may have changed
+‘SeuratObject’ was built with package ‘Matrix’ 1.7.3 but the current
+version is 1.7.4; it is recomended that you reinstall ‘SeuratObject’ as
+the ABI for ‘Matrix’ may have changed
+
+Attaching package: ‘SeuratObject’
+
+The following objects are masked from ‘package:SigBridgeR’:
+
+    %||%, plan
+
+The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+
+Attaching package: ‘Seurat’
+
+The following object is masked from ‘package:SigBridgeR’:
+
+    %||%
+
+Warning: The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead.
+ℹ The deprecated feature was likely used in the scPAS package.
+  Please report the issue to the authors.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.9 GiB
+Read matrix with 31872 cells and 12231 genes
+Chose k=61
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.03% of the values became negative in the scaling process and were set to zero
+The matrix went from 14.41% nonzero to 57.54% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/11/10 11:50:35] Extracting single-cell expression profiles...
+ℹ [2025/11/10 11:50:38] Constructing a gene-gene similarity by single cell data...
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 11:50:44] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 11:50:44] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 29.9189660209585
+scPAS identified 156 risk+ features and 110 risk- features.
+The percentage of selected feature is: 40.923%
+
+── At alpha = 0.005 ──
+
+lambda = 7.55069064155298
+scPAS identified 102 risk+ features and 74 risk- features.
+The percentage of selected feature is: 27.077%
+
+── At alpha = 0.01 ──
+
+lambda = 4.7639454789729
+scPAS identified 66 risk+ features and 47 risk- features.
+The percentage of selected feature is: 17.385%
+ℹ [2025/11/10 11:51:09] Calculating quantified risk scores...
+ℹ [2025/11/10 11:51:10] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_18 finished.
+
+  |                                                                              |=======================                                               |  33%############### LOG OUTPUT ###############
+Task: 15
+Node: 2
+Timestamp: 2025-11-10 11:55:25.48169
+Success: TRUE
+
+Task duration:
+   user  system elapsed 
+861.512  35.178 855.100 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266491  548.3   16284284  869.7  16284284  869.7
+Vcells 265761979 2027.7  436028364 3326.7 265960653 2029.2
+
+Log messages:
+INFO [2025-11-10 11:41:10] loading futile.logger package
+
+stderr and stdout:
+ℹ [2025/11/10 11:41:16] Quantile normalizing bulk data...
+ℹ [2025/11/10 11:41:16] Extracting single-cell expression profiles...
+ℹ [2025/11/10 11:41:18] Constructing a gene-gene similarity by single cell data...
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 11:41:27] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 11:41:27] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 29.2187883303951
+scPAS identified 595 risk+ features and 438 risk- features.
+The percentage of selected feature is: 38.373%
+
+── At alpha = 0.005 ──
+
+lambda = 8.88199204276468
+scPAS identified 280 risk+ features and 209 risk- features.
+The percentage of selected feature is: 18.165%
+ℹ [2025/11/10 11:55:01] Calculating quantified risk scores...
+ℹ [2025/11/10 11:55:05] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_15 finished.
+
+  |                                                                              |=========================                                             |  35%############### LOG OUTPUT ###############
+Task: 19
+Node: 1
+Timestamp: 2025-11-10 11:56:38.377452
+Success: TRUE
+
+Task duration:
+   user  system elapsed 
+531.379 672.636 319.896 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266508  548.3   16284284  869.7  16284284  869.7
+Vcells 265810061 2028.0  436028364 3326.7 265982890 2029.3
+
+Log messages:
+INFO [2025-11-10 11:51:18] loading futile.logger package
+WARN [2025-11-10 11:51:25] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 11:51:25] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 11:51:25] sparse->dense coercion: allocating vector of size 2.9 GiB
+WARN [2025-11-10 11:53:55] Layer counts isn't present in the assay object; returning NULL
+
+stderr and stdout:
+ℹ [2025/11/10 11:51:24] Quantile normalizing bulk data...
+ℹ [2025/11/10 11:51:24] Imputation of missing values in single cell RNA-sequencing data with "ALRA"
+
+Attaching package: ‘Matrix’
+
+The following objects are masked from ‘package:tidyr’:
+
+    expand, pack, unpack
+
+Loading required package: SeuratObject
+Loading required package: sp
+‘SeuratObject’ was built under R 4.5.0 but the current version is
+4.5.1; it is recomended that you reinstall ‘SeuratObject’ as the ABI
+for R may have changed
+‘SeuratObject’ was built with package ‘Matrix’ 1.7.3 but the current
+version is 1.7.4; it is recomended that you reinstall ‘SeuratObject’ as
+the ABI for ‘Matrix’ may have changed
+
+Attaching package: ‘SeuratObject’
+
+The following objects are masked from ‘package:SigBridgeR’:
+
+    %||%, plan
+
+The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+
+Attaching package: ‘Seurat’
+
+The following object is masked from ‘package:SigBridgeR’:
+
+    %||%
+
+Warning: The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead.
+ℹ The deprecated feature was likely used in the scPAS package.
+  Please report the issue to the authors.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.9 GiB
+Read matrix with 31872 cells and 12231 genes
+Chose k=64
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.02% of the values became negative in the scaling process and were set to zero
+The matrix went from 14.41% nonzero to 57.15% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/11/10 11:53:56] Extracting single-cell expression profiles...
+ℹ [2025/11/10 11:53:59] Constructing a gene-gene similarity by single cell data...
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 11:54:11] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 11:54:11] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 30.7046762790919
+scPAS identified 595 risk+ features and 434 risk- features.
+The percentage of selected feature is: 36.908%
+
+── At alpha = 0.005 ──
+
+lambda = 9.33367555501475
+scPAS identified 263 risk+ features and 201 risk- features.
+The percentage of selected feature is: 16.643%
+ℹ [2025/11/10 11:56:13] Calculating quantified risk scores...
+ℹ [2025/11/10 11:56:17] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_19 finished.
+
+  |                                                                              |==========================                                            |  37%############### LOG OUTPUT ###############
+Task: 21
+Node: 1
+Timestamp: 2025-11-10 11:58:20.934918
+Success: TRUE
+
+Task duration:
+   user  system elapsed 
+ 82.492  26.282 101.561 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266522  548.3   16284284  869.7  16284284  869.7
+Vcells 265857714 2028.4  436028364 3326.7 266034907 2029.7
+
+Log messages:
+INFO [2025-11-10 11:56:39] loading futile.logger package
+WARN [2025-11-10 11:56:45] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 11:56:45] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 11:57:23] Layer counts isn't present in the assay object; returning NULL
+
+stderr and stdout:
+ℹ [2025/11/10 11:56:45] Quantile normalizing bulk data...
+ℹ [2025/11/10 11:56:45] Imputation of missing values in single cell RNA-sequencing data with "KNN"
+
+Attaching package: ‘Matrix’
+
+The following objects are masked from ‘package:tidyr’:
+
+    expand, pack, unpack
+
+Warning: The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead.
+ℹ The deprecated feature was likely used in the scPAS package.
+  Please report the issue to the authors.
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/11/10 11:57:23] Extracting single-cell expression profiles...
+ℹ [2025/11/10 11:57:29] Constructing a gene-gene similarity by single cell data...
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 11:57:32] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 11:57:32] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 33.8972756587373
+scPAS identified 193 risk+ features and 135 risk- features.
+The percentage of selected feature is: 35.307%
+
+── At alpha = 0.005 ──
+
+lambda = 14.2701032043485
+scPAS identified 42 risk+ features and 20 risk- features.
+The percentage of selected feature is: 6.674%
+ℹ [2025/11/10 11:58:13] Calculating quantified risk scores...
+ℹ [2025/11/10 11:58:14] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_21 finished.
+
+  |                                                                              |===========================                                           |  39%############### LOG OUTPUT ###############
+Task: 22
+Node: 1
+Timestamp: 2025-11-10 11:58:40.456078
+Success: TRUE
+
+Task duration:
+   user  system elapsed 
+ 13.572  12.069  18.518 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266536  548.3   16284284  869.7  16284284  869.7
+Vcells 265905400 2028.7  436028364 3326.7 266070743 2030.0
+
+Log messages:
+INFO [2025-11-10 11:58:21] loading futile.logger package
+
+stderr and stdout:
+ℹ [2025/11/10 11:58:28] Quantile normalizing bulk data...
+ℹ [2025/11/10 11:58:28] Extracting single-cell expression profiles...
+ℹ [2025/11/10 11:58:29] Constructing a gene-gene similarity by single cell data...
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 11:58:31] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 11:58:31] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 123.43416516693
+scPAS identified 0 risk+ features and 0 risk- features.
+The percentage of selected feature is: 0%
+ℹ [2025/11/10 11:58:35] Calculating quantified risk scores...
+ℹ [2025/11/10 11:58:36] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_22 finished.
+
+  |                                                                              |=============================                                         |  41%############### LOG OUTPUT ###############
+Task: 23
+Node: 1
+Timestamp: 2025-11-10 12:01:03.030712
+Success: TRUE
+
+Task duration:
+   user  system elapsed 
+126.423  34.226 141.574 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266554  548.3   16284284  869.7  16284284  869.7
+Vcells 265953364 2029.1  436028364 3326.7 266134963 2030.5
+
+Log messages:
+INFO [2025-11-10 11:58:41] loading futile.logger package
+WARN [2025-11-10 11:58:47] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 11:58:47] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 11:59:26] Layer counts isn't present in the assay object; returning NULL
+
+stderr and stdout:
+ℹ [2025/11/10 11:58:47] Quantile normalizing bulk data...
+ℹ [2025/11/10 11:58:47] Imputation of missing values in single cell RNA-sequencing data with "KNN"
+
+Attaching package: ‘Matrix’
+
+The following objects are masked from ‘package:tidyr’:
+
+    expand, pack, unpack
+
+Warning: The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead.
+ℹ The deprecated feature was likely used in the scPAS package.
+  Please report the issue to the authors.
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/11/10 11:59:26] Extracting single-cell expression profiles...
+ℹ [2025/11/10 11:59:31] Constructing a gene-gene similarity by single cell data...
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 11:59:34] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 11:59:34] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 24.7115311392584
+scPAS identified 283 risk+ features and 193 risk- features.
+The percentage of selected feature is: 46.394%
+
+── At alpha = 0.005 ──
+
+lambda = 8.63682049470566
+scPAS identified 137 risk+ features and 84 risk- features.
+The percentage of selected feature is: 21.54%
+
+── At alpha = 0.01 ──
+
+lambda = 5.70868420193307
+scPAS identified 80 risk+ features and 38 risk- features.
+The percentage of selected feature is: 11.501%
+ℹ [2025/11/10 12:00:53] Calculating quantified risk scores...
+ℹ [2025/11/10 12:00:54] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_23 finished.
+
+  |                                                                              |==============================                                        |  43%############### LOG OUTPUT ###############
+Task: 24
+Node: 1
+Timestamp: 2025-11-10 12:11:49.504522
+Success: TRUE
+
+Task duration:
+   user  system elapsed 
+654.569  69.693 645.471 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266571  548.3   16284284  869.7  16284284  869.7
+Vcells 266001189 2029.5  436028364 3326.7 266251269 2031.4
+
+Log messages:
+INFO [2025-11-10 12:01:04] loading futile.logger package
+WARN [2025-11-10 12:01:10] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 12:01:10] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 12:01:49] Layer counts isn't present in the assay object; returning NULL
+WARN [2025-11-10 12:02:04] sparse->dense coercion: allocating vector of size 1.0 GiB
+
+stderr and stdout:
+ℹ [2025/11/10 12:01:10] Quantile normalizing bulk data...
+ℹ [2025/11/10 12:01:10] Imputation of missing values in single cell RNA-sequencing data with "KNN"
+
+Attaching package: ‘Matrix’
+
+The following objects are masked from ‘package:tidyr’:
+
+    expand, pack, unpack
+
+Warning: The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead.
+ℹ The deprecated feature was likely used in the scPAS package.
+  Please report the issue to the authors.
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/11/10 12:01:49] Extracting single-cell expression profiles...
+ℹ [2025/11/10 12:01:57] Constructing a gene-gene similarity by single cell data...
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.0 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 12:02:16] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 12:02:16] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 30.6535102882808
+scPAS identified 851 risk+ features and 683 risk- features.
+The percentage of selected feature is: 35.419%
+
+── At alpha = 0.005 ──
+
+lambda = 10.2266273957897
+scPAS identified 293 risk+ features and 245 risk- features.
+The percentage of selected feature is: 12.422%
+ℹ [2025/11/10 12:11:13] Calculating quantified risk scores...
+ℹ [2025/11/10 12:11:22] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_24 finished.
+
+  |                                                                              |================================                                      |  45%############### LOG OUTPUT ###############
+Task: 25
+Node: 1
+Timestamp: 2025-11-10 12:13:22.855776
+Success: TRUE
+
+Task duration:
+   user  system elapsed 
+ 74.457  25.069  92.357 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266586  548.3   16284284  869.7  16284284  869.7
+Vcells 266049015 2029.8  436028364 3326.7 266251269 2031.4
+
+Log messages:
+INFO [2025-11-10 12:11:50] loading futile.logger package
+WARN [2025-11-10 12:11:56] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 12:11:56] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 12:12:35] Layer counts isn't present in the assay object; returning NULL
+
+stderr and stdout:
+ℹ [2025/11/10 12:11:56] Quantile normalizing bulk data...
+ℹ [2025/11/10 12:11:56] Imputation of missing values in single cell RNA-sequencing data with "KNN"
+
+Attaching package: ‘Matrix’
+
+The following objects are masked from ‘package:tidyr’:
+
+    expand, pack, unpack
+
+Warning: The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead.
+ℹ The deprecated feature was likely used in the scPAS package.
+  Please report the issue to the authors.
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/11/10 12:12:35] Extracting single-cell expression profiles...
+ℹ [2025/11/10 12:12:40] Constructing a gene-gene similarity by single cell data...
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 12:12:42] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 12:12:42] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 16.2102744165432
+scPAS identified 209 risk+ features and 148 risk- features.
+The percentage of selected feature is: 64.209%
+
+── At alpha = 0.005 ──
+
+lambda = 5.93535398169167
+scPAS identified 117 risk+ features and 85 risk- features.
+The percentage of selected feature is: 36.331%
+
+── At alpha = 0.01 ──
+
+lambda = 3.74478363761547
+scPAS identified 83 risk+ features and 64 risk- features.
+The percentage of selected feature is: 26.439%
+
+── At alpha = 0.05 ──
+
+lambda = 1.37114375136128
+scPAS identified 17 risk+ features and 10 risk- features.
+The percentage of selected feature is: 4.856%
+ℹ [2025/11/10 12:13:16] Calculating quantified risk scores...
+ℹ [2025/11/10 12:13:17] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_25 finished.
+
+  |                                                                              |=================================                                     |  47%############### LOG OUTPUT ###############
+Task: 20
+Node: 2
+Timestamp: 2025-11-10 12:23:01.477631
+Success: TRUE
+
+Task duration:
+    user   system  elapsed 
+1671.056   45.291 1654.977 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266587  548.3   16284284  869.7  16284284  869.7
+Vcells 266096677 2030.2  436028364 3326.7 266340385 2032.1
+
+Log messages:
+INFO [2025-11-10 11:55:26] loading futile.logger package
+
+stderr and stdout:
+ℹ [2025/11/10 11:55:32] Quantile normalizing bulk data...
+ℹ [2025/11/10 11:55:32] Extracting single-cell expression profiles...
+ℹ [2025/11/10 11:55:34] Constructing a gene-gene similarity by single cell data...
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 11:55:48] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 11:55:48] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 32.2659477739015
+scPAS identified 700 risk+ features and 551 risk- features.
+The percentage of selected feature is: 33.793%
+
+── At alpha = 0.005 ──
+
+lambda = 9.80827432470669
+scPAS identified 285 risk+ features and 223 risk- features.
+The percentage of selected feature is: 13.722%
+ℹ [2025/11/10 12:22:32] Calculating quantified risk scores...
+ℹ [2025/11/10 12:22:37] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_20 finished.
+
+  |                                                                              |==================================                                    |  49%############### LOG OUTPUT ###############
+Task: 27
+Node: 2
+Timestamp: 2025-11-10 12:30:07.753023
+Success: TRUE
+
+Task duration:
+   user  system elapsed 
+666.743 831.021 425.280 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266606  548.3   16284284  869.7  16284284  869.7
+Vcells 266144785 2030.6  436028364 3326.7 266364813 2032.3
+
+Log messages:
+INFO [2025-11-10 12:23:02] loading futile.logger package
+WARN [2025-11-10 12:23:09] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 12:23:09] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 12:23:09] sparse->dense coercion: allocating vector of size 2.9 GiB
+WARN [2025-11-10 12:25:39] Layer counts isn't present in the assay object; returning NULL
+WARN [2025-11-10 12:25:49] sparse->dense coercion: allocating vector of size 1.0 GiB
+
+stderr and stdout:
+ℹ [2025/11/10 12:23:08] Quantile normalizing bulk data...
+ℹ [2025/11/10 12:23:08] Imputation of missing values in single cell RNA-sequencing data with "ALRA"
+
+Attaching package: ‘Matrix’
+
+The following objects are masked from ‘package:tidyr’:
+
+    expand, pack, unpack
+
+Loading required package: SeuratObject
+Loading required package: sp
+‘SeuratObject’ was built under R 4.5.0 but the current version is
+4.5.1; it is recomended that you reinstall ‘SeuratObject’ as the ABI
+for R may have changed
+‘SeuratObject’ was built with package ‘Matrix’ 1.7.3 but the current
+version is 1.7.4; it is recomended that you reinstall ‘SeuratObject’ as
+the ABI for ‘Matrix’ may have changed
+
+Attaching package: ‘SeuratObject’
+
+The following objects are masked from ‘package:SigBridgeR’:
+
+    %||%, plan
+
+The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+
+Attaching package: ‘Seurat’
+
+The following object is masked from ‘package:SigBridgeR’:
+
+    %||%
+
+Warning: The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead.
+ℹ The deprecated feature was likely used in the scPAS package.
+  Please report the issue to the authors.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.9 GiB
+Read matrix with 31872 cells and 12231 genes
+Chose k=64
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.02% of the values became negative in the scaling process and were set to zero
+The matrix went from 14.41% nonzero to 57.18% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/11/10 12:25:39] Extracting single-cell expression profiles...
+ℹ [2025/11/10 12:25:44] Constructing a gene-gene similarity by single cell data...
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.0 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 12:26:05] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 12:26:05] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 32.113100256303
+scPAS identified 814 risk+ features and 661 risk- features.
+The percentage of selected feature is: 34.057%
+
+── At alpha = 0.005 ──
+
+lambda = 10.2266273957897
+scPAS identified 294 risk+ features and 244 risk- features.
+The percentage of selected feature is: 12.422%
+ℹ [2025/11/10 12:29:33] Calculating quantified risk scores...
+ℹ [2025/11/10 12:29:40] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_27 finished.
+
+  |                                                                              |====================================                                  |  51%############### LOG OUTPUT ###############
+Task: 28
+Node: 2
+Timestamp: 2025-11-10 12:34:18.904751
+Success: TRUE
+
+Task duration:
+   user  system elapsed 
+248.931  21.979 250.139 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266618  548.3   16284284  869.7  16284284  869.7
+Vcells 266192327 2030.9  436028364 3326.7 266389496 2032.4
+
+Log messages:
+INFO [2025-11-10 12:30:08] loading futile.logger package
+
+stderr and stdout:
+ℹ [2025/11/10 12:30:14] Quantile normalizing bulk data...
+ℹ [2025/11/10 12:30:15] Extracting single-cell expression profiles...
+ℹ [2025/11/10 12:30:16] Constructing a gene-gene similarity by single cell data...
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 12:30:20] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 12:30:20] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 10.5606873972919
+scPAS identified 493 risk+ features and 367 risk- features.
+The percentage of selected feature is: 70.957%
+
+── At alpha = 0.005 ──
+
+lambda = 7.41611965940025
+scPAS identified 182 risk+ features and 134 risk- features.
+The percentage of selected feature is: 26.073%
+
+── At alpha = 0.01 ──
+
+lambda = 4.90183686985453
+scPAS identified 109 risk+ features and 72 risk- features.
+The percentage of selected feature is: 14.934%
+ℹ [2025/11/10 12:34:07] Calculating quantified risk scores...
+ℹ [2025/11/10 12:34:08] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_28 finished.
+
+  |                                                                              |=====================================                                 |  53%############### LOG OUTPUT ###############
+Task: 29
+Node: 2
+Timestamp: 2025-11-10 12:40:57.593477
+Success: TRUE
+
+Task duration:
+   user  system elapsed 
+623.137 785.525 397.693 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266637  548.3   16284284  869.7  16284284  869.7
+Vcells 266240389 2031.3  436028364 3326.7 266456808 2033.0
+
+Log messages:
+INFO [2025-11-10 12:34:19] loading futile.logger package
+WARN [2025-11-10 12:34:26] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 12:34:26] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 12:34:27] sparse->dense coercion: allocating vector of size 2.9 GiB
+WARN [2025-11-10 12:37:02] Layer counts isn't present in the assay object; returning NULL
+
+stderr and stdout:
+ℹ [2025/11/10 12:34:26] Quantile normalizing bulk data...
+ℹ [2025/11/10 12:34:26] Imputation of missing values in single cell RNA-sequencing data with "ALRA"
+
+Attaching package: ‘Matrix’
+
+The following objects are masked from ‘package:tidyr’:
+
+    expand, pack, unpack
+
+Loading required package: SeuratObject
+Loading required package: sp
+‘SeuratObject’ was built under R 4.5.0 but the current version is
+4.5.1; it is recomended that you reinstall ‘SeuratObject’ as the ABI
+for R may have changed
+‘SeuratObject’ was built with package ‘Matrix’ 1.7.3 but the current
+version is 1.7.4; it is recomended that you reinstall ‘SeuratObject’ as
+the ABI for ‘Matrix’ may have changed
+
+Attaching package: ‘SeuratObject’
+
+The following objects are masked from ‘package:SigBridgeR’:
+
+    %||%, plan
+
+The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+
+Attaching package: ‘Seurat’
+
+The following object is masked from ‘package:SigBridgeR’:
+
+    %||%
+
+Warning: The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead.
+ℹ The deprecated feature was likely used in the scPAS package.
+  Please report the issue to the authors.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.9 GiB
+Read matrix with 31872 cells and 12231 genes
+Chose k=70
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.02% of the values became negative in the scaling process and were set to zero
+The matrix went from 14.41% nonzero to 56.40% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/11/10 12:37:02] Extracting single-cell expression profiles...
+ℹ [2025/11/10 12:37:06] Constructing a gene-gene similarity by single cell data...
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 12:37:19] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 12:37:19] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 35.4469810942673
+scPAS identified 566 risk+ features and 429 risk- features.
+The percentage of selected feature is: 31.577%
+
+── At alpha = 0.005 ──
+
+lambda = 9.81800820490143
+scPAS identified 253 risk+ features and 195 risk- features.
+The percentage of selected feature is: 14.218%
+ℹ [2025/11/10 12:40:31] Calculating quantified risk scores...
+ℹ [2025/11/10 12:40:36] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_29 finished.
+
+  |                                                                              |======================================                                |  55%############### LOG OUTPUT ###############
+Task: 30
+Node: 2
+Timestamp: 2025-11-10 12:46:54.958071
+Success: TRUE
+
+Task duration:
+   user  system elapsed 
+571.964 729.564 356.362 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266653  548.3   16284284  869.7  16284284  869.7
+Vcells 266288204 2031.7  436028364 3326.7 266499839 2033.3
+
+Log messages:
+INFO [2025-11-10 12:40:58] loading futile.logger package
+WARN [2025-11-10 12:41:05] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 12:41:05] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 12:41:05] sparse->dense coercion: allocating vector of size 2.9 GiB
+WARN [2025-11-10 12:43:35] Layer counts isn't present in the assay object; returning NULL
+
+stderr and stdout:
+ℹ [2025/11/10 12:41:04] Quantile normalizing bulk data...
+ℹ [2025/11/10 12:41:04] Imputation of missing values in single cell RNA-sequencing data with "ALRA"
+
+Attaching package: ‘Matrix’
+
+The following objects are masked from ‘package:tidyr’:
+
+    expand, pack, unpack
+
+Loading required package: SeuratObject
+Loading required package: sp
+‘SeuratObject’ was built under R 4.5.0 but the current version is
+4.5.1; it is recomended that you reinstall ‘SeuratObject’ as the ABI
+for R may have changed
+‘SeuratObject’ was built with package ‘Matrix’ 1.7.3 but the current
+version is 1.7.4; it is recomended that you reinstall ‘SeuratObject’ as
+the ABI for ‘Matrix’ may have changed
+
+Attaching package: ‘SeuratObject’
+
+The following objects are masked from ‘package:SigBridgeR’:
+
+    %||%, plan
+
+The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+
+Attaching package: ‘Seurat’
+
+The following object is masked from ‘package:SigBridgeR’:
+
+    %||%
+
+Warning: The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead.
+ℹ The deprecated feature was likely used in the scPAS package.
+  Please report the issue to the authors.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.9 GiB
+Read matrix with 31872 cells and 12231 genes
+Chose k=62
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.03% of the values became negative in the scaling process and were set to zero
+The matrix went from 14.41% nonzero to 57.39% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/11/10 12:43:35] Extracting single-cell expression profiles...
+ℹ [2025/11/10 12:43:40] Constructing a gene-gene similarity by single cell data...
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 12:43:55] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 12:43:55] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 40.7810201004231
+scPAS identified 514 risk+ features and 391 risk- features.
+The percentage of selected feature is: 26.362%
+
+── At alpha = 0.005 ──
+
+lambda = 9.82417661726484
+scPAS identified 269 risk+ features and 208 risk- features.
+The percentage of selected feature is: 13.895%
+ℹ [2025/11/10 12:46:26] Calculating quantified risk scores...
+ℹ [2025/11/10 12:46:32] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_30 finished.
+
+  |                                                                              |========================================                              |  57%############### LOG OUTPUT ###############
+Task: 31
+Node: 2
+Timestamp: 2025-11-10 12:55:34.111988
+Success: TRUE
+
+Task duration:
+   user  system elapsed 
+521.100  60.212 518.149 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266668  548.3   16284284  869.7  16284284  869.7
+Vcells 266335858 2032.0  436028364 3326.7 266569210 2033.8
+
+Log messages:
+INFO [2025-11-10 12:46:56] loading futile.logger package
+WARN [2025-11-10 12:47:02] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 12:47:02] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 12:47:40] Layer counts isn't present in the assay object; returning NULL
+
+stderr and stdout:
+ℹ [2025/11/10 12:47:02] Quantile normalizing bulk data...
+ℹ [2025/11/10 12:47:02] Imputation of missing values in single cell RNA-sequencing data with "KNN"
+
+Attaching package: ‘Matrix’
+
+The following objects are masked from ‘package:tidyr’:
+
+    expand, pack, unpack
+
+Warning: The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead.
+ℹ The deprecated feature was likely used in the scPAS package.
+  Please report the issue to the authors.
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/11/10 12:47:41] Extracting single-cell expression profiles...
+ℹ [2025/11/10 12:47:48] Constructing a gene-gene similarity by single cell data...
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 12:48:03] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 12:48:03] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 30.8237787570504
+scPAS identified 722 risk+ features and 553 risk- features.
+The percentage of selected feature is: 35.309%
+
+── At alpha = 0.005 ──
+
+lambda = 9.8160345081208
+scPAS identified 287 risk+ features and 217 risk- features.
+The percentage of selected feature is: 13.957%
+ℹ [2025/11/10 12:55:03] Calculating quantified risk scores...
+ℹ [2025/11/10 12:55:10] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_31 finished.
+
+  |                                                                              |=========================================                             |  59%############### LOG OUTPUT ###############
+Task: 26
+Node: 1
+Timestamp: 2025-11-10 12:57:25.887176
+Success: TRUE
+
+Task duration:
+    user   system  elapsed 
+2669.591   56.777 2642.026 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266672  548.3   16284284  869.7  16284284  869.7
+Vcells 266383588 2032.4  436028364 3326.7 266569210 2033.8
+
+Log messages:
+INFO [2025-11-10 12:13:23] loading futile.logger package
+WARN [2025-11-10 12:13:34] sparse->dense coercion: allocating vector of size 1.1 GiB
+
+stderr and stdout:
+ℹ [2025/11/10 12:13:30] Quantile normalizing bulk data...
+ℹ [2025/11/10 12:13:30] Extracting single-cell expression profiles...
+ℹ [2025/11/10 12:13:32] Constructing a gene-gene similarity by single cell data...
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.1 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 12:13:49] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 12:13:49] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 32.0593188328924
+scPAS identified 852 risk+ features and 681 risk- features.
+The percentage of selected feature is: 33.319%
+
+── At alpha = 0.005 ──
+
+lambda = 9.74546280120697
+scPAS identified 333 risk+ features and 275 risk- features.
+The percentage of selected feature is: 13.215%
+ℹ [2025/11/10 12:56:50] Calculating quantified risk scores...
+ℹ [2025/11/10 12:56:57] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_26 finished.
+
+  |                                                                              |===========================================                           |  61%############### LOG OUTPUT ###############
+Task: 32
+Node: 2
+Timestamp: 2025-11-10 13:00:41.865453
+Success: TRUE
+
+Task duration:
+   user  system elapsed 
+529.921 750.779 306.753 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266688  548.4   16284284  869.7  16284284  869.7
+Vcells 266431643 2032.8  436028364 3326.7 266621184 2034.2
+
+Log messages:
+INFO [2025-11-10 12:55:35] loading futile.logger package
+WARN [2025-11-10 12:55:41] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 12:55:41] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 12:55:42] sparse->dense coercion: allocating vector of size 2.9 GiB
+WARN [2025-11-10 12:58:09] Layer counts isn't present in the assay object; returning NULL
+
+stderr and stdout:
+ℹ [2025/11/10 12:55:41] Quantile normalizing bulk data...
+ℹ [2025/11/10 12:55:41] Imputation of missing values in single cell RNA-sequencing data with "ALRA"
+
+Attaching package: ‘Matrix’
+
+The following objects are masked from ‘package:tidyr’:
+
+    expand, pack, unpack
+
+Loading required package: SeuratObject
+Loading required package: sp
+‘SeuratObject’ was built under R 4.5.0 but the current version is
+4.5.1; it is recomended that you reinstall ‘SeuratObject’ as the ABI
+for R may have changed
+‘SeuratObject’ was built with package ‘Matrix’ 1.7.3 but the current
+version is 1.7.4; it is recomended that you reinstall ‘SeuratObject’ as
+the ABI for ‘Matrix’ may have changed
+
+Attaching package: ‘SeuratObject’
+
+The following objects are masked from ‘package:SigBridgeR’:
+
+    %||%, plan
+
+The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+
+Attaching package: ‘Seurat’
+
+The following object is masked from ‘package:SigBridgeR’:
+
+    %||%
+
+Warning: The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead.
+ℹ The deprecated feature was likely used in the scPAS package.
+  Please report the issue to the authors.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.9 GiB
+Read matrix with 31872 cells and 12231 genes
+Chose k=64
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.02% of the values became negative in the scaling process and were set to zero
+The matrix went from 14.41% nonzero to 57.17% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/11/10 12:58:09] Extracting single-cell expression profiles...
+ℹ [2025/11/10 12:58:13] Constructing a gene-gene similarity by single cell data...
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 12:58:24] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 12:58:24] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 29.2187883303951
+scPAS identified 598 risk+ features and 434 risk- features.
+The percentage of selected feature is: 38.336%
+
+── At alpha = 0.005 ──
+
+lambda = 9.30491478015273
+scPAS identified 257 risk+ features and 195 risk- features.
+The percentage of selected feature is: 16.79%
+ℹ [2025/11/10 13:00:18] Calculating quantified risk scores...
+ℹ [2025/11/10 13:00:22] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_32 finished.
+
+  |                                                                              |============================================                          |  63%############### LOG OUTPUT ###############
+Task: 34
+Node: 2
+Timestamp: 2025-11-10 13:12:06.688854
+Success: TRUE
+
+Task duration:
+   user  system elapsed 
+689.858  68.497 683.819 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266702  548.4   16284284  869.7  16284284  869.7
+Vcells 266479296 2033.1  436028364 3326.7 266735059 2035.1
+
+Log messages:
+INFO [2025-11-10 13:00:42] loading futile.logger package
+WARN [2025-11-10 13:00:49] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 13:00:49] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 13:01:28] Layer counts isn't present in the assay object; returning NULL
+
+stderr and stdout:
+ℹ [2025/11/10 13:00:49] Quantile normalizing bulk data...
+ℹ [2025/11/10 13:00:49] Imputation of missing values in single cell RNA-sequencing data with "KNN"
+
+Attaching package: ‘Matrix’
+
+The following objects are masked from ‘package:tidyr’:
+
+    expand, pack, unpack
+
+Warning: The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead.
+ℹ The deprecated feature was likely used in the scPAS package.
+  Please report the issue to the authors.
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/11/10 13:01:28] Extracting single-cell expression profiles...
+ℹ [2025/11/10 13:01:35] Constructing a gene-gene similarity by single cell data...
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 13:01:52] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 13:01:52] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 22.2128721895474
+scPAS identified 1006 risk+ features and 816 risk- features.
+The percentage of selected feature is: 45.94%
+
+── At alpha = 0.005 ──
+
+lambda = 9.35119334665881
+scPAS identified 331 risk+ features and 258 risk- features.
+The percentage of selected feature is: 14.851%
+ℹ [2025/11/10 13:11:32] Calculating quantified risk scores...
+ℹ [2025/11/10 13:11:40] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_34 finished.
+
+  |                                                                              |=============================================                         |  65%############### LOG OUTPUT ###############
+Task: 35
+Node: 2
+Timestamp: 2025-11-10 13:14:49.048523
+Success: TRUE
+
+Task duration:
+   user  system elapsed 
+159.668  21.496 161.366 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266716  548.4   16284284  869.7  16284284  869.7
+Vcells 266527025 2033.5  436028364 3326.7 266735059 2035.1
+
+Log messages:
+INFO [2025-11-10 13:12:07] loading futile.logger package
+
+stderr and stdout:
+ℹ [2025/11/10 13:12:13] Quantile normalizing bulk data...
+ℹ [2025/11/10 13:12:13] Extracting single-cell expression profiles...
+ℹ [2025/11/10 13:12:15] Constructing a gene-gene similarity by single cell data...
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 13:12:19] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 13:12:19] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 19.5834658200026
+scPAS identified 337 risk+ features and 227 risk- features.
+The percentage of selected feature is: 54.971%
+
+── At alpha = 0.005 ──
+
+lambda = 8.24426367368659
+scPAS identified 140 risk+ features and 95 risk- features.
+The percentage of selected feature is: 22.904%
+
+── At alpha = 0.01 ──
+
+lambda = 5.70868420193307
+scPAS identified 79 risk+ features and 39 risk- features.
+The percentage of selected feature is: 11.501%
+ℹ [2025/11/10 13:14:39] Calculating quantified risk scores...
+ℹ [2025/11/10 13:14:41] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_35 finished.
+
+  |                                                                              |===============================================                       |  67%############### LOG OUTPUT ###############
+Task: 36
+Node: 2
+Timestamp: 2025-11-10 13:22:05.265893
+Success: TRUE
+
+Task duration:
+   user  system elapsed 
+690.729 793.199 435.210 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266736  548.4   16284284  869.7  16284284  869.7
+Vcells 266575113 2033.9  436028364 3326.7 266796548 2035.5
+
+Log messages:
+INFO [2025-11-10 13:14:50] loading futile.logger package
+WARN [2025-11-10 13:14:56] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 13:14:56] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 13:14:57] sparse->dense coercion: allocating vector of size 2.9 GiB
+WARN [2025-11-10 13:17:24] Layer counts isn't present in the assay object; returning NULL
+WARN [2025-11-10 13:17:35] sparse->dense coercion: allocating vector of size 1.1 GiB
+
+stderr and stdout:
+ℹ [2025/11/10 13:14:56] Quantile normalizing bulk data...
+ℹ [2025/11/10 13:14:56] Imputation of missing values in single cell RNA-sequencing data with "ALRA"
+
+Attaching package: ‘Matrix’
+
+The following objects are masked from ‘package:tidyr’:
+
+    expand, pack, unpack
+
+Loading required package: SeuratObject
+Loading required package: sp
+‘SeuratObject’ was built under R 4.5.0 but the current version is
+4.5.1; it is recomended that you reinstall ‘SeuratObject’ as the ABI
+for R may have changed
+‘SeuratObject’ was built with package ‘Matrix’ 1.7.3 but the current
+version is 1.7.4; it is recomended that you reinstall ‘SeuratObject’ as
+the ABI for ‘Matrix’ may have changed
+
+Attaching package: ‘SeuratObject’
+
+The following objects are masked from ‘package:SigBridgeR’:
+
+    %||%, plan
+
+The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+
+Attaching package: ‘Seurat’
+
+The following object is masked from ‘package:SigBridgeR’:
+
+    %||%
+
+Warning: The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead.
+ℹ The deprecated feature was likely used in the scPAS package.
+  Please report the issue to the authors.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.9 GiB
+Read matrix with 31872 cells and 12231 genes
+Chose k=68
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.02% of the values became negative in the scaling process and were set to zero
+The matrix went from 14.41% nonzero to 56.61% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/11/10 13:17:24] Extracting single-cell expression profiles...
+ℹ [2025/11/10 13:17:30] Constructing a gene-gene similarity by single cell data...
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.1 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 13:17:51] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 13:17:51] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 42.3921666030039
+scPAS identified 607 risk+ features and 488 risk- features.
+The percentage of selected feature is: 24.285%
+
+── At alpha = 0.005 ──
+
+lambda = 10.6985694432164
+scPAS identified 283 risk+ features and 232 risk- features.
+The percentage of selected feature is: 11.422%
+ℹ [2025/11/10 13:21:30] Calculating quantified risk scores...
+ℹ [2025/11/10 13:21:38] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_36 finished.
+
+  |                                                                              |================================================                      |  69%############### LOG OUTPUT ###############
+Task: 37
+Node: 2
+Timestamp: 2025-11-10 13:29:03.237346
+Success: TRUE
+
+Task duration:
+   user  system elapsed 
+413.700  53.643 416.972 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266750  548.4   16284284  869.7  16284284  869.7
+Vcells 266622741 2034.2  436028364 3326.7 266842555 2035.9
+
+Log messages:
+INFO [2025-11-10 13:22:06] loading futile.logger package
+WARN [2025-11-10 13:22:12] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 13:22:12] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 13:22:51] Layer counts isn't present in the assay object; returning NULL
+
+stderr and stdout:
+ℹ [2025/11/10 13:22:12] Quantile normalizing bulk data...
+ℹ [2025/11/10 13:22:12] Imputation of missing values in single cell RNA-sequencing data with "KNN"
+
+Attaching package: ‘Matrix’
+
+The following objects are masked from ‘package:tidyr’:
+
+    expand, pack, unpack
+
+Warning: The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead.
+ℹ The deprecated feature was likely used in the scPAS package.
+  Please report the issue to the authors.
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/11/10 13:22:51] Extracting single-cell expression profiles...
+ℹ [2025/11/10 13:22:57] Constructing a gene-gene similarity by single cell data...
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 13:23:10] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 13:23:10] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 30.8299764525504
+scPAS identified 642 risk+ features and 483 risk- features.
+The percentage of selected feature is: 35.703%
+
+── At alpha = 0.005 ──
+
+lambda = 9.81800820490143
+scPAS identified 256 risk+ features and 196 risk- features.
+The percentage of selected feature is: 14.345%
+ℹ [2025/11/10 13:28:35] Calculating quantified risk scores...
+ℹ [2025/11/10 13:28:41] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_37 finished.
+
+  |                                                                              |=================================================                     |  71%############### LOG OUTPUT ###############
+Task: 38
+Node: 2
+Timestamp: 2025-11-10 13:31:44.999226
+Success: TRUE
+
+Task duration:
+   user  system elapsed 
+146.043  34.763 160.684 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266766  548.4   16284284  869.7  16284284  869.7
+Vcells 266670576 2034.6  436028364 3326.7 266855255 2036.0
+
+Log messages:
+INFO [2025-11-10 13:29:04] loading futile.logger package
+WARN [2025-11-10 13:29:10] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 13:29:10] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 13:29:49] Layer counts isn't present in the assay object; returning NULL
+
+stderr and stdout:
+ℹ [2025/11/10 13:29:10] Quantile normalizing bulk data...
+ℹ [2025/11/10 13:29:10] Imputation of missing values in single cell RNA-sequencing data with "KNN"
+
+Attaching package: ‘Matrix’
+
+The following objects are masked from ‘package:tidyr’:
+
+    expand, pack, unpack
+
+Warning: The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead.
+ℹ The deprecated feature was likely used in the scPAS package.
+  Please report the issue to the authors.
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/11/10 13:29:49] Extracting single-cell expression profiles...
+ℹ [2025/11/10 13:29:54] Constructing a gene-gene similarity by single cell data...
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 13:29:57] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 13:29:57] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 33.8464023646928
+scPAS identified 231 risk+ features and 162 risk- features.
+The percentage of selected feature is: 35.058%
+
+── At alpha = 0.005 ──
+
+lambda = 8.54186315818194
+scPAS identified 152 risk+ features and 89 risk- features.
+The percentage of selected feature is: 21.499%
+
+── At alpha = 0.01 ──
+
+lambda = 5.64592019668335
+scPAS identified 88 risk+ features and 42 risk- features.
+The percentage of selected feature is: 11.597%
+ℹ [2025/11/10 13:31:34] Calculating quantified risk scores...
+ℹ [2025/11/10 13:31:36] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_38 finished.
+
+  |                                                                              |===================================================                   |  73%############### LOG OUTPUT ###############
+Task: 33
+Node: 1
+Timestamp: 2025-11-10 13:39:49.283181
+Success: TRUE
+
+Task duration:
+    user   system  elapsed 
+2568.279   54.595 2542.393 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266770  548.4   16284284  869.7  16284284  869.7
+Vcells 266718286 2034.9  436028364 3326.7 266949264 2036.7
+
+Log messages:
+INFO [2025-11-10 12:57:26] loading futile.logger package
+WARN [2025-11-10 12:57:37] sparse->dense coercion: allocating vector of size 1.1 GiB
+
+stderr and stdout:
+ℹ [2025/11/10 12:57:33] Quantile normalizing bulk data...
+ℹ [2025/11/10 12:57:33] Extracting single-cell expression profiles...
+ℹ [2025/11/10 12:57:35] Constructing a gene-gene similarity by single cell data...
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.1 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 12:57:51] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 12:57:51] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 32.0681194107585
+scPAS identified 837 risk+ features and 667 risk- features.
+The percentage of selected feature is: 33.356%
+
+── At alpha = 0.005 ──
+
+lambda = 10.2123029505117
+scPAS identified 299 risk+ features and 252 risk- features.
+The percentage of selected feature is: 12.22%
+ℹ [2025/11/10 13:39:13] Calculating quantified risk scores...
+ℹ [2025/11/10 13:39:20] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_33 finished.
+
+  |                                                                              |====================================================                  |  75%############### LOG OUTPUT ###############
+Task: 40
+Node: 1
+Timestamp: 2025-11-10 13:55:03.133774
+Success: TRUE
+
+Task duration:
+   user  system elapsed 
+920.778  35.174 912.838 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266784  548.4   16284284  869.7  16284284  869.7
+Vcells 266766073 2035.3  436028364 3326.7 267051653 2037.5
+
+Log messages:
+INFO [2025-11-10 13:39:50] loading futile.logger package
+
+stderr and stdout:
+ℹ [2025/11/10 13:39:56] Quantile normalizing bulk data...
+ℹ [2025/11/10 13:39:56] Extracting single-cell expression profiles...
+ℹ [2025/11/10 13:39:58] Constructing a gene-gene similarity by single cell data...
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 13:40:07] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 13:40:07] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 29.3091013545084
+scPAS identified 617 risk+ features and 457 risk- features.
+The percentage of selected feature is: 38.522%
+
+── At alpha = 0.005 ──
+
+lambda = 9.33367555501475
+scPAS identified 262 risk+ features and 200 risk- features.
+The percentage of selected feature is: 16.571%
+ℹ [2025/11/10 13:54:39] Calculating quantified risk scores...
+ℹ [2025/11/10 13:54:43] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_40 finished.
+
+  |                                                                              |======================================================                |  76%############### LOG OUTPUT ###############
+Task: 39
+Node: 2
+Timestamp: 2025-11-10 13:59:30.764029
+Success: TRUE
+
+Task duration:
+    user   system  elapsed 
+1682.667   46.860 1664.757 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266797  548.4   16284284  869.7  16284284  869.7
+Vcells 266813887 2035.7  436028364 3326.7 267051653 2037.5
+
+Log messages:
+INFO [2025-11-10 13:31:46] loading futile.logger package
+
+stderr and stdout:
+ℹ [2025/11/10 13:31:52] Quantile normalizing bulk data...
+ℹ [2025/11/10 13:31:52] Extracting single-cell expression profiles...
+ℹ [2025/11/10 13:31:54] Constructing a gene-gene similarity by single cell data...
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 13:32:08] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 13:32:08] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 32.2659477739015
+scPAS identified 700 risk+ features and 551 risk- features.
+The percentage of selected feature is: 33.793%
+
+── At alpha = 0.005 ──
+
+lambda = 9.80827432470669
+scPAS identified 285 risk+ features and 223 risk- features.
+The percentage of selected feature is: 13.722%
+ℹ [2025/11/10 13:59:02] Calculating quantified risk scores...
+ℹ [2025/11/10 13:59:07] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_39 finished.
+
+  |                                                                              |=======================================================               |  78%############### LOG OUTPUT ###############
+Task: 42
+Node: 2
+Timestamp: 2025-11-10 14:03:25.528729
+Success: TRUE
+
+Task duration:
+   user  system elapsed 
+454.741 788.578 233.597 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266815  548.4   16284284  869.7  16284284  869.7
+Vcells 266861989 2036.0  436028364 3326.7 267056230 2037.5
+
+Log messages:
+INFO [2025-11-10 13:59:31] loading futile.logger package
+WARN [2025-11-10 13:59:38] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 13:59:38] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 13:59:39] sparse->dense coercion: allocating vector of size 2.9 GiB
+WARN [2025-11-10 14:02:07] Layer counts isn't present in the assay object; returning NULL
+
+stderr and stdout:
+ℹ [2025/11/10 13:59:38] Quantile normalizing bulk data...
+ℹ [2025/11/10 13:59:38] Imputation of missing values in single cell RNA-sequencing data with "ALRA"
+
+Attaching package: ‘Matrix’
+
+The following objects are masked from ‘package:tidyr’:
+
+    expand, pack, unpack
+
+Loading required package: SeuratObject
+Loading required package: sp
+‘SeuratObject’ was built under R 4.5.0 but the current version is
+4.5.1; it is recomended that you reinstall ‘SeuratObject’ as the ABI
+for R may have changed
+‘SeuratObject’ was built with package ‘Matrix’ 1.7.3 but the current
+version is 1.7.4; it is recomended that you reinstall ‘SeuratObject’ as
+the ABI for ‘Matrix’ may have changed
+
+Attaching package: ‘SeuratObject’
+
+The following objects are masked from ‘package:SigBridgeR’:
+
+    %||%, plan
+
+The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+
+Attaching package: ‘Seurat’
+
+The following object is masked from ‘package:SigBridgeR’:
+
+    %||%
+
+Warning: The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead.
+ℹ The deprecated feature was likely used in the scPAS package.
+  Please report the issue to the authors.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.9 GiB
+Read matrix with 31872 cells and 12231 genes
+Chose k=70
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.02% of the values became negative in the scaling process and were set to zero
+The matrix went from 14.41% nonzero to 56.39% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/11/10 14:02:08] Extracting single-cell expression profiles...
+ℹ [2025/11/10 14:02:11] Constructing a gene-gene similarity by single cell data...
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 14:02:17] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 14:02:17] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 25.8881892970394
+scPAS identified 273 risk+ features and 188 risk- features.
+The percentage of selected feature is: 44.932%
+
+── At alpha = 0.005 ──
+
+lambda = 8.24426367368659
+scPAS identified 140 risk+ features and 93 risk- features.
+The percentage of selected feature is: 22.71%
+
+── At alpha = 0.01 ──
+
+lambda = 5.70868420193307
+scPAS identified 80 risk+ features and 41 risk- features.
+The percentage of selected feature is: 11.793%
+ℹ [2025/11/10 14:03:17] Calculating quantified risk scores...
+ℹ [2025/11/10 14:03:18] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_42 finished.
+
+  |                                                                              |========================================================              |  80%############### LOG OUTPUT ###############
+Task: 43
+Node: 2
+Timestamp: 2025-11-10 14:07:46.39731
+Success: TRUE
+
+Task duration:
+   user  system elapsed 
+456.445 675.774 259.738 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266831  548.4   16284284  869.7  16284284  869.7
+Vcells 266909804 2036.4  436028364 3326.7 267108562 2037.9
+
+Log messages:
+INFO [2025-11-10 14:03:26] loading futile.logger package
+WARN [2025-11-10 14:03:33] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 14:03:33] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 14:03:33] sparse->dense coercion: allocating vector of size 2.9 GiB
+WARN [2025-11-10 14:05:59] Layer counts isn't present in the assay object; returning NULL
+
+stderr and stdout:
+ℹ [2025/11/10 14:03:32] Quantile normalizing bulk data...
+ℹ [2025/11/10 14:03:32] Imputation of missing values in single cell RNA-sequencing data with "ALRA"
+
+Attaching package: ‘Matrix’
+
+The following objects are masked from ‘package:tidyr’:
+
+    expand, pack, unpack
+
+Loading required package: SeuratObject
+Loading required package: sp
+‘SeuratObject’ was built under R 4.5.0 but the current version is
+4.5.1; it is recomended that you reinstall ‘SeuratObject’ as the ABI
+for R may have changed
+‘SeuratObject’ was built with package ‘Matrix’ 1.7.3 but the current
+version is 1.7.4; it is recomended that you reinstall ‘SeuratObject’ as
+the ABI for ‘Matrix’ may have changed
+
+Attaching package: ‘SeuratObject’
+
+The following objects are masked from ‘package:SigBridgeR’:
+
+    %||%, plan
+
+The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+
+Attaching package: ‘Seurat’
+
+The following object is masked from ‘package:SigBridgeR’:
+
+    %||%
+
+Warning: The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead.
+ℹ The deprecated feature was likely used in the scPAS package.
+  Please report the issue to the authors.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.9 GiB
+Read matrix with 31872 cells and 12231 genes
+Chose k=58
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.03% of the values became negative in the scaling process and were set to zero
+The matrix went from 14.41% nonzero to 57.95% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/11/10 14:05:59] Extracting single-cell expression profiles...
+ℹ [2025/11/10 14:06:02] Constructing a gene-gene similarity by single cell data...
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 14:06:08] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 14:06:08] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 13.3260760821814
+scPAS identified 458 risk+ features and 344 risk- features.
+The percentage of selected feature is: 66.172%
+
+── At alpha = 0.005 ──
+
+lambda = 8.13918217094055
+scPAS identified 170 risk+ features and 113 risk- features.
+The percentage of selected feature is: 23.35%
+
+── At alpha = 0.01 ──
+
+lambda = 4.46637119236518
+scPAS identified 122 risk+ features and 90 risk- features.
+The percentage of selected feature is: 17.492%
+ℹ [2025/11/10 14:07:33] Calculating quantified risk scores...
+ℹ [2025/11/10 14:07:35] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_43 finished.
+
+  |                                                                              |==========================================================            |  82%############### LOG OUTPUT ###############
+Task: 44
+Node: 2
+Timestamp: 2025-11-10 14:10:59.987613
+Success: TRUE
+
+Task duration:
+   user  system elapsed 
+177.311  35.781 192.581 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266846  548.4   16284284  869.7  16284284  869.7
+Vcells 266957458 2036.8  436028364 3326.7 267147022 2038.2
+
+Log messages:
+INFO [2025-11-10 14:07:47] loading futile.logger package
+WARN [2025-11-10 14:07:53] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 14:07:53] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 14:08:32] Layer counts isn't present in the assay object; returning NULL
+
+stderr and stdout:
+ℹ [2025/11/10 14:07:53] Quantile normalizing bulk data...
+ℹ [2025/11/10 14:07:53] Imputation of missing values in single cell RNA-sequencing data with "KNN"
+
+Attaching package: ‘Matrix’
+
+The following objects are masked from ‘package:tidyr’:
+
+    expand, pack, unpack
+
+Warning: The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead.
+ℹ The deprecated feature was likely used in the scPAS package.
+  Please report the issue to the authors.
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/11/10 14:08:32] Extracting single-cell expression profiles...
+ℹ [2025/11/10 14:08:37] Constructing a gene-gene similarity by single cell data...
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 14:08:41] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 14:08:41] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 10.0806878563731
+scPAS identified 468 risk+ features and 407 risk- features.
+The percentage of selected feature is: 72.195%
+
+── At alpha = 0.005 ──
+
+lambda = 7.41611965940025
+scPAS identified 183 risk+ features and 136 risk- features.
+The percentage of selected feature is: 26.32%
+
+── At alpha = 0.01 ──
+
+lambda = 4.67904081892771
+scPAS identified 118 risk+ features and 85 risk- features.
+The percentage of selected feature is: 16.749%
+ℹ [2025/11/10 14:10:46] Calculating quantified risk scores...
+ℹ [2025/11/10 14:10:48] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_44 finished.
+
+  |                                                                              |===========================================================           |  84%############### LOG OUTPUT ###############
+Task: 41
+Node: 1
+Timestamp: 2025-11-10 14:15:54.118284
+Success: TRUE
+
+Task duration:
+    user   system  elapsed 
+1260.583   40.773 1249.781 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266853  548.4   16284284  869.7  16284284  869.7
+Vcells 267005143 2037.1  436028364 3326.7 267209490 2038.7
+
+Log messages:
+INFO [2025-11-10 13:55:04] loading futile.logger package
+
+stderr and stdout:
+ℹ [2025/11/10 13:55:10] Quantile normalizing bulk data...
+ℹ [2025/11/10 13:55:10] Extracting single-cell expression profiles...
+ℹ [2025/11/10 13:55:12] Constructing a gene-gene similarity by single cell data...
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 13:55:23] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 13:55:23] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 30.8091796645187
+scPAS identified 668 risk+ features and 507 risk- features.
+The percentage of selected feature is: 36.254%
+
+── At alpha = 0.005 ──
+
+lambda = 9.81138533135348
+scPAS identified 261 risk+ features and 203 risk- features.
+The percentage of selected feature is: 14.317%
+ℹ [2025/11/10 14:15:27] Calculating quantified risk scores...
+ℹ [2025/11/10 14:15:32] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_41 finished.
+
+  |                                                                              |============================================================          |  86%############### LOG OUTPUT ###############
+Task: 46
+Node: 1
+Timestamp: 2025-11-10 14:20:44.200806
+Success: TRUE
+
+Task duration:
+   user  system elapsed 
+492.641 675.035 288.935 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266871  548.4   16284284  869.7  16284284  869.7
+Vcells 267053245 2037.5  436028364 3326.7 267254916 2039.0
+
+Log messages:
+INFO [2025-11-10 14:15:55] loading futile.logger package
+WARN [2025-11-10 14:16:01] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 14:16:01] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 14:16:02] sparse->dense coercion: allocating vector of size 2.9 GiB
+WARN [2025-11-10 14:18:33] Layer counts isn't present in the assay object; returning NULL
+
+stderr and stdout:
+ℹ [2025/11/10 14:16:01] Quantile normalizing bulk data...
+ℹ [2025/11/10 14:16:01] Imputation of missing values in single cell RNA-sequencing data with "ALRA"
+
+Attaching package: ‘Matrix’
+
+The following objects are masked from ‘package:tidyr’:
+
+    expand, pack, unpack
+
+Loading required package: SeuratObject
+Loading required package: sp
+‘SeuratObject’ was built under R 4.5.0 but the current version is
+4.5.1; it is recomended that you reinstall ‘SeuratObject’ as the ABI
+for R may have changed
+‘SeuratObject’ was built with package ‘Matrix’ 1.7.3 but the current
+version is 1.7.4; it is recomended that you reinstall ‘SeuratObject’ as
+the ABI for ‘Matrix’ may have changed
+
+Attaching package: ‘SeuratObject’
+
+The following objects are masked from ‘package:SigBridgeR’:
+
+    %||%, plan
+
+The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+
+Attaching package: ‘Seurat’
+
+The following object is masked from ‘package:SigBridgeR’:
+
+    %||%
+
+Warning: The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead.
+ℹ The deprecated feature was likely used in the scPAS package.
+  Please report the issue to the authors.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.9 GiB
+Read matrix with 31872 cells and 12231 genes
+Chose k=60
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.03% of the values became negative in the scaling process and were set to zero
+The matrix went from 14.41% nonzero to 57.66% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/11/10 14:18:33] Extracting single-cell expression profiles...
+ℹ [2025/11/10 14:18:37] Constructing a gene-gene similarity by single cell data...
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 14:18:44] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 14:18:44] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 12.5911751788657
+scPAS identified 557 risk+ features and 439 risk- features.
+The percentage of selected feature is: 66.846%
+
+── At alpha = 0.005 ──
+
+lambda = 7.34078875394418
+scPAS identified 227 risk+ features and 164 risk- features.
+The percentage of selected feature is: 26.242%
+
+── At alpha = 0.01 ──
+
+lambda = 4.63151240814905
+scPAS identified 140 risk+ features and 98 risk- features.
+The percentage of selected feature is: 15.973%
+ℹ [2025/11/10 14:20:30] Calculating quantified risk scores...
+ℹ [2025/11/10 14:20:31] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_46 finished.
+
+  |                                                                              |==============================================================        |  88%############### LOG OUTPUT ###############
+Task: 45
+Node: 2
+Timestamp: 2025-11-10 14:29:27.016949
+Success: TRUE
+
+Task duration:
+    user   system  elapsed 
+1114.598   38.452 1105.858 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266881  548.4   16284284  869.7  16284284  869.7
+Vcells 267100771 2037.9  436028364 3326.7 267335567 2039.7
+
+Log messages:
+INFO [2025-11-10 14:11:01] loading futile.logger package
+
+stderr and stdout:
+ℹ [2025/11/10 14:11:07] Quantile normalizing bulk data...
+ℹ [2025/11/10 14:11:07] Extracting single-cell expression profiles...
+ℹ [2025/11/10 14:11:08] Constructing a gene-gene similarity by single cell data...
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 14:11:19] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 14:11:19] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 32.2939651510523
+scPAS identified 608 risk+ features and 454 risk- features.
+The percentage of selected feature is: 34.706%
+
+── At alpha = 0.005 ──
+
+lambda = 9.81679110911604
+scPAS identified 251 risk+ features and 192 risk- features.
+The percentage of selected feature is: 14.477%
+ℹ [2025/11/10 14:29:01] Calculating quantified risk scores...
+ℹ [2025/11/10 14:29:05] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_45 finished.
+
+  |                                                                              |===============================================================       |  90%############### LOG OUTPUT ###############
+Task: 47
+Node: 1
+Timestamp: 2025-11-10 14:32:24.69428
+Success: TRUE
+
+Task duration:
+   user  system elapsed 
+708.509  71.096 699.465 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266898  548.4   16284284  869.7  16284284  869.7
+Vcells 267148722 2038.2  436028364 3326.7 267335598 2039.7
+
+Log messages:
+INFO [2025-11-10 14:20:45] loading futile.logger package
+WARN [2025-11-10 14:20:51] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 14:20:51] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 14:21:30] Layer counts isn't present in the assay object; returning NULL
+WARN [2025-11-10 14:21:45] sparse->dense coercion: allocating vector of size 1.1 GiB
+
+stderr and stdout:
+ℹ [2025/11/10 14:20:51] Quantile normalizing bulk data...
+ℹ [2025/11/10 14:20:51] Imputation of missing values in single cell RNA-sequencing data with "KNN"
+
+Attaching package: ‘Matrix’
+
+The following objects are masked from ‘package:tidyr’:
+
+    expand, pack, unpack
+
+Warning: The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead.
+ℹ The deprecated feature was likely used in the scPAS package.
+  Please report the issue to the authors.
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/11/10 14:21:30] Extracting single-cell expression profiles...
+ℹ [2025/11/10 14:21:38] Constructing a gene-gene similarity by single cell data...
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.1 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 14:21:58] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 14:21:58] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 30.6153954819077
+scPAS identified 864 risk+ features and 693 risk- features.
+The percentage of selected feature is: 35.194%
+
+── At alpha = 0.005 ──
+
+lambda = 10.2139115299925
+scPAS identified 297 risk+ features and 250 risk- features.
+The percentage of selected feature is: 12.364%
+ℹ [2025/11/10 14:31:48] Calculating quantified risk scores...
+ℹ [2025/11/10 14:31:57] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_47 finished.
+
+  |                                                                              |=================================================================     |  92%############### LOG OUTPUT ###############
+Task: 49
+Node: 1
+Timestamp: 2025-11-10 14:37:42.730514
+Success: TRUE
+
+Task duration:
+   user  system elapsed 
+552.923 820.592 316.883 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266913  548.4   16284284  869.7  16284284  869.7
+Vcells 267196667 2038.6  436028364 3326.7 267402650 2040.2
+
+Log messages:
+INFO [2025-11-10 14:32:25] loading futile.logger package
+WARN [2025-11-10 14:32:32] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 14:32:32] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 14:32:33] sparse->dense coercion: allocating vector of size 2.9 GiB
+WARN [2025-11-10 14:34:58] Layer counts isn't present in the assay object; returning NULL
+
+stderr and stdout:
+ℹ [2025/11/10 14:32:32] Quantile normalizing bulk data...
+ℹ [2025/11/10 14:32:32] Imputation of missing values in single cell RNA-sequencing data with "ALRA"
+
+Attaching package: ‘Matrix’
+
+The following objects are masked from ‘package:tidyr’:
+
+    expand, pack, unpack
+
+Loading required package: SeuratObject
+Loading required package: sp
+‘SeuratObject’ was built under R 4.5.0 but the current version is
+4.5.1; it is recomended that you reinstall ‘SeuratObject’ as the ABI
+for R may have changed
+‘SeuratObject’ was built with package ‘Matrix’ 1.7.3 but the current
+version is 1.7.4; it is recomended that you reinstall ‘SeuratObject’ as
+the ABI for ‘Matrix’ may have changed
+
+Attaching package: ‘SeuratObject’
+
+The following objects are masked from ‘package:SigBridgeR’:
+
+    %||%, plan
+
+The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+
+Attaching package: ‘Seurat’
+
+The following object is masked from ‘package:SigBridgeR’:
+
+    %||%
+
+Warning: The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead.
+ℹ The deprecated feature was likely used in the scPAS package.
+  Please report the issue to the authors.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.9 GiB
+Read matrix with 31872 cells and 12231 genes
+Chose k=70
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.02% of the values became negative in the scaling process and were set to zero
+The matrix went from 14.41% nonzero to 56.38% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/11/10 14:34:58] Extracting single-cell expression profiles...
+ℹ [2025/11/10 14:35:02] Constructing a gene-gene similarity by single cell data...
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 14:35:13] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 14:35:13] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 30.7046762790919
+scPAS identified 596 risk+ features and 432 risk- features.
+The percentage of selected feature is: 36.872%
+
+── At alpha = 0.005 ──
+
+lambda = 9.33367555501475
+scPAS identified 260 risk+ features and 199 risk- features.
+The percentage of selected feature is: 16.463%
+ℹ [2025/11/10 14:37:18] Calculating quantified risk scores...
+ℹ [2025/11/10 14:37:22] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_49 finished.
+
+  |                                                                              |==================================================================    |  94%############### LOG OUTPUT ###############
+Task: 48
+Node: 2
+Timestamp: 2025-11-10 14:38:59.879309
+Success: TRUE
+
+Task duration:
+   user  system elapsed 
+575.821  31.451 571.780 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266923  548.4   16284284  869.7  16284284  869.7
+Vcells 267244213 2039.0  436028364 3326.7 267418872 2040.3
+
+Log messages:
+INFO [2025-11-10 14:29:28] loading futile.logger package
+
+stderr and stdout:
+ℹ [2025/11/10 14:29:34] Quantile normalizing bulk data...
+ℹ [2025/11/10 14:29:34] Extracting single-cell expression profiles...
+ℹ [2025/11/10 14:29:35] Constructing a gene-gene similarity by single cell data...
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 14:29:44] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 14:29:44] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 32.0188187690375
+scPAS identified 466 risk+ features and 342 risk- features.
+The percentage of selected feature is: 36.136%
+
+── At alpha = 0.005 ──
+
+lambda = 9.73315150202428
+scPAS identified 211 risk+ features and 157 risk- features.
+The percentage of selected feature is: 16.458%
+ℹ [2025/11/10 14:38:40] Calculating quantified risk scores...
+ℹ [2025/11/10 14:38:43] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_48 finished.
+
+  |                                                                              |===================================================================   |  96%############### LOG OUTPUT ###############
+Task: 50
+Node: 1
+Timestamp: 2025-11-10 14:42:23.138689
+Success: TRUE
+
+Task duration:
+   user  system elapsed 
+494.576 746.111 279.384 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266940  548.4   16284284  869.7  16284284  869.7
+Vcells 267292315 2039.3  436028364 3326.7 267482850 2040.8
+
+Log messages:
+INFO [2025-11-10 14:37:43] loading futile.logger package
+WARN [2025-11-10 14:37:50] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 14:37:50] c("The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.", i = "Please use the `layer` argument instead.")
+WARN [2025-11-10 14:37:50] sparse->dense coercion: allocating vector of size 2.9 GiB
+WARN [2025-11-10 14:40:19] Layer counts isn't present in the assay object; returning NULL
+
+stderr and stdout:
+ℹ [2025/11/10 14:37:50] Quantile normalizing bulk data...
+ℹ [2025/11/10 14:37:50] Imputation of missing values in single cell RNA-sequencing data with "ALRA"
+
+Attaching package: ‘Matrix’
+
+The following objects are masked from ‘package:tidyr’:
+
+    expand, pack, unpack
+
+Loading required package: SeuratObject
+Loading required package: sp
+‘SeuratObject’ was built under R 4.5.0 but the current version is
+4.5.1; it is recomended that you reinstall ‘SeuratObject’ as the ABI
+for R may have changed
+‘SeuratObject’ was built with package ‘Matrix’ 1.7.3 but the current
+version is 1.7.4; it is recomended that you reinstall ‘SeuratObject’ as
+the ABI for ‘Matrix’ may have changed
+
+Attaching package: ‘SeuratObject’
+
+The following objects are masked from ‘package:SigBridgeR’:
+
+    %||%, plan
+
+The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+
+Attaching package: ‘Seurat’
+
+The following object is masked from ‘package:SigBridgeR’:
+
+    %||%
+
+Warning: The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead.
+ℹ The deprecated feature was likely used in the scPAS package.
+  Please report the issue to the authors.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.9 GiB
+Read matrix with 31872 cells and 12231 genes
+Chose k=64
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.02% of the values became negative in the scaling process and were set to zero
+The matrix went from 14.41% nonzero to 57.18% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/11/10 14:40:19] Extracting single-cell expression profiles...
+ℹ [2025/11/10 14:40:22] Constructing a gene-gene similarity by single cell data...
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 14:40:29] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 14:40:29] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 23.0655921355277
+scPAS identified 453 risk+ features and 330 risk- features.
+The percentage of selected feature is: 49.463%
+
+── At alpha = 0.005 ──
+
+lambda = 7.69514532642223
+scPAS identified 222 risk+ features and 158 risk- features.
+The percentage of selected feature is: 24.005%
+
+── At alpha = 0.01 ──
+
+lambda = 4.8550860481696
+scPAS identified 141 risk+ features and 91 risk- features.
+The percentage of selected feature is: 14.656%
+ℹ [2025/11/10 14:42:08] Calculating quantified risk scores...
+ℹ [2025/11/10 14:42:10] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_50 finished.
+
+  |                                                                              |===================================================================== |  98%############### LOG OUTPUT ###############
+Task: 51
+Node: 2
+Timestamp: 2025-11-10 14:45:26.397971
+Success: TRUE
+
+Task duration:
+   user  system elapsed 
+388.478  26.829 385.512 
+
+Memory used:
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10266944  548.4   16284284  869.7  16284284  869.7
+Vcells 267339838 2039.7  436028364 3326.7 267521319 2041.1
+
+Log messages:
+INFO [2025-11-10 14:39:00] loading futile.logger package
+
+stderr and stdout:
+ℹ [2025/11/10 14:39:06] Quantile normalizing bulk data...
+ℹ [2025/11/10 14:39:07] Extracting single-cell expression profiles...
+ℹ [2025/11/10 14:39:08] Constructing a gene-gene similarity by single cell data...
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/11/10 14:39:14] Optimizing the network-regularized sparse regression model...
+ℹ [2025/11/10 14:39:14] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 27.7726110413983
+scPAS identified 451 risk+ features and 318 risk- features.
+The percentage of selected feature is: 41.189%
+
+── At alpha = 0.005 ──
+
+lambda = 9.26550147952095
+scPAS identified 196 risk+ features and 139 risk- features.
+The percentage of selected feature is: 17.943%
+ℹ [2025/11/10 14:45:08] Calculating quantified risk scores...
+ℹ [2025/11/10 14:45:11] Qualitative identification by permutation test program with 2000 times random perturbations...
+process_51 finished.
+
+  |                                                                              |======================================================================| 100%
+
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  10265998  548.3   16284284  869.7  16284284  869.7
+Vcells 267338945 2039.7  436028364 3326.7 267521319 2041.1
+✔ scPAS random search completed.

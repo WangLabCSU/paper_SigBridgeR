@@ -1,0 +1,61 @@
+nohup: ignoring input
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+
+Attaching package: ‘data.table’
+
+The following objects are masked from ‘package:dplyr’:
+
+    between, first, last
+
+ℹ Updating SigBridgeR documentation
+ℹ Loading SigBridgeR
+✔ SigBridgeR v2.5.4 loaded
+ℹ [2025/11/21 18:57:50] Scissor start...
+ℹ [2025/11/21 18:57:50] Start from raw data...
+ℹ Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 7.7 GiB
+ℹ [2025/11/21 18:58:00] Normalizing quantiles of data
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.8 GiB
+ℹ [2025/11/21 18:59:01] Subsetting data
+ℹ [2025/11/21 18:59:05] Calculating correlation
+----------------------------------------
+Five-number summary of correlations:
+0.128755 0.216104 0.247585 0.288083 0.54639
+----------------------------------------
+ℹ [2025/11/21 19:05:04] Perform cox regression on the given clinical outcomes...
+✔ [2025/11/21 19:06:35] Statistics data saved to 'Scissor_inputs.RData'.
+ℹ [2025/11/21 19:06:36] Screening...
+
+── At alpha = 0.005 ──
+
+Scissor identified 2062 Scissor+ cells and 2599 Scissor- cells.
+The percentage of selected cell is: 14.485%
+ℹ [2025/11/21 19:15:26] Scissor Ended.
+Error in `x[[i, drop = TRUE]]`:
+! ‘cell_type’ not found in this Seurat object
+ Did you mean "Celltype"?
+Backtrace:
+     ▆
+  1. ├─base::ifelse(seurat$cell_type == "EOC", TRUE, FALSE)
+  2. ├─seurat$cell_type
+  3. └─SeuratObject:::`$.Seurat`(seurat, cell_type)
+  4.   ├─x[[i, drop = TRUE]]
+  5.   └─SeuratObject:::`[[.Seurat`(x, i, drop = TRUE)
+  6.     └─base::tryCatch(...)
+  7.       └─base (local) tryCatchList(expr, classes, parentenv, handlers)
+  8.         └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
+  9.           └─value[[3L]](cond)
+ 10.             └─rlang::abort(...)
+Execution halted

@@ -1,0 +1,46 @@
+nohup: ignoring input
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+
+Attaching package: ‘data.table’
+
+The following objects are masked from ‘package:dplyr’:
+
+    between, first, last
+
+ℹ Updating SigBridgeR documentation
+ℹ Loading SigBridgeR
+✔ SigBridgeR v2.5.4 loaded
+ℹ [2025/12/04 14:56:59] Scissor start...
+ℹ [2025/12/04 14:56:59] Start from raw data...
+ℹ Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 7.7 GiB
+ℹ [2025/12/04 14:57:08] Normalizing quantiles of data
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.8 GiB
+ℹ [2025/12/04 14:58:02] Subsetting data
+ℹ [2025/12/04 14:58:06] Calculating correlation
+----------------------------------------
+Five-number summary of correlations:
+0.128544 0.215924 0.247389 0.287911 0.546636
+----------------------------------------
+ℹ Current phenotype contains 59 tumor_Negative and 504 tumor_Positive samples.
+ℹ [2025/12/04 15:03:52] Perform logistic regression on the given phenotypes...
+✔ [2025/12/04 15:05:23] Statistics data saved to 'Scissor_inputs.RData'.
+ℹ [2025/12/04 15:05:24] Screening...
+
+── At alpha = 0.005 ──
+
+Scissor identified 2118 Scissor+ cells and 404 Scissor- cells.
+The percentage of selected cell is: 7.838%
+ℹ [2025/12/04 15:09:12] Scissor Ended.

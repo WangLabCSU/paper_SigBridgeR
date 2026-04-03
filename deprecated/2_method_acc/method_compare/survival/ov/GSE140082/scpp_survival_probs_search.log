@@ -1,0 +1,431 @@
+nohup: ignoring input
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+
+Attaching package: ‘data.table’
+
+The following objects are masked from ‘package:dplyr’:
+
+    between, first, last
+
+✔ ScPP v0.0.0.9000 loaded
+ℹ Updating SigBridgeR documentation
+ℹ Loading SigBridgeR
+✔ SigBridgeR v2.5.4 loaded
+Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights,  :
+  Loglik converged before variable  1 ; coefficient may be infinite. 
+Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights,  :
+  Loglik converged before variable  1 ; coefficient may be infinite. 
+Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights,  :
+  Loglik converged before variable  1 ; coefficient may be infinite. 
+Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights,  :
+  Loglik converged before variable  1 ; coefficient may be infinite. 
+Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights,  :
+  Loglik converged before variable  1 ; coefficient may be infinite. 
+ℹ [2025/11/21 11:50:58] Running fixed threshold mode with prob = 0.01
+ℹ [2025/11/21 11:50:59] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 11:52:00] Classified 89 Positive, 372 Negative cells
+ℹ [2025/11/21 11:52:00] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 11:52:02] Found 79 positive markers, 427 negative markers
+ℹ [2025/11/21 11:52:04] Running fixed threshold mode with prob = 0.02
+ℹ [2025/11/21 11:52:05] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 11:52:56] Classified 141 Positive, 746 Negative cells
+ℹ [2025/11/21 11:52:56] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 11:52:58] Found 102 positive markers, 631 negative markers
+ℹ [2025/11/21 11:53:00] Running fixed threshold mode with prob = 0.03
+ℹ [2025/11/21 11:53:01] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 11:53:52] Classified 230 Positive, 1102 Negative cells
+ℹ [2025/11/21 11:53:52] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 11:53:55] Found 141 positive markers, 841 negative markers
+ℹ [2025/11/21 11:53:56] Running fixed threshold mode with prob = 0.04
+ℹ [2025/11/21 11:53:57] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 11:54:48] Classified 329 Positive, 1462 Negative cells
+ℹ [2025/11/21 11:54:48] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 11:54:51] Found 179 positive markers, 1007 negative markers
+ℹ [2025/11/21 11:54:52] Running fixed threshold mode with prob = 0.05
+ℹ [2025/11/21 11:54:53] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 11:55:44] Classified 425 Positive, 1824 Negative cells
+ℹ [2025/11/21 11:55:44] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 11:55:47] Found 175 positive markers, 1162 negative markers
+ℹ [2025/11/21 11:55:49] Running fixed threshold mode with prob = 0.06
+ℹ [2025/11/21 11:55:49] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 11:56:40] Classified 536 Positive, 2192 Negative cells
+ℹ [2025/11/21 11:56:40] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 11:56:43] Found 180 positive markers, 1333 negative markers
+ℹ [2025/11/21 11:56:44] Running fixed threshold mode with prob = 0.07
+ℹ [2025/11/21 11:56:44] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 11:57:35] Classified 651 Positive, 2560 Negative cells
+ℹ [2025/11/21 11:57:35] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 11:57:38] Found 189 positive markers, 1496 negative markers
+ℹ [2025/11/21 11:57:39] Running fixed threshold mode with prob = 0.08
+ℹ [2025/11/21 11:57:39] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 11:58:29] Classified 770 Positive, 2950 Negative cells
+ℹ [2025/11/21 11:58:29] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 11:58:32] Found 195 positive markers, 1664 negative markers
+ℹ [2025/11/21 11:58:33] Running fixed threshold mode with prob = 0.09
+ℹ [2025/11/21 11:58:33] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 11:59:22] Classified 879 Positive, 3288 Negative cells
+ℹ [2025/11/21 11:59:22] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 11:59:24] Found 212 positive markers, 1796 negative markers
+ℹ [2025/11/21 11:59:26] Running fixed threshold mode with prob = 0.1
+ℹ [2025/11/21 11:59:26] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 12:00:15] Classified 1012 Positive, 3661 Negative cells
+ℹ [2025/11/21 12:00:15] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 12:00:17] Found 212 positive markers, 1967 negative markers
+ℹ [2025/11/21 12:00:18] Running fixed threshold mode with prob = 0.11
+ℹ [2025/11/21 12:00:19] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 12:01:07] Classified 1142 Positive, 4029 Negative cells
+ℹ [2025/11/21 12:01:07] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 12:01:10] Found 228 positive markers, 2105 negative markers
+ℹ [2025/11/21 12:01:11] Running fixed threshold mode with prob = 0.12
+ℹ [2025/11/21 12:01:11] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 12:02:00] Classified 1268 Positive, 4396 Negative cells
+ℹ [2025/11/21 12:02:00] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 12:02:03] Found 235 positive markers, 2206 negative markers
+ℹ [2025/11/21 12:02:04] Running fixed threshold mode with prob = 0.13
+ℹ [2025/11/21 12:02:04] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 12:02:53] Classified 1382 Positive, 4777 Negative cells
+ℹ [2025/11/21 12:02:53] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 12:02:56] Found 239 positive markers, 2292 negative markers
+ℹ [2025/11/21 12:02:57] Running fixed threshold mode with prob = 0.14
+ℹ [2025/11/21 12:02:57] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 12:03:46] Classified 1496 Positive, 5144 Negative cells
+ℹ [2025/11/21 12:03:46] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 12:03:49] Found 246 positive markers, 2375 negative markers
+ℹ [2025/11/21 12:03:50] Running fixed threshold mode with prob = 0.15
+ℹ [2025/11/21 12:03:51] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 12:04:39] Classified 1632 Positive, 5504 Negative cells
+ℹ [2025/11/21 12:04:39] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 12:04:43] Found 263 positive markers, 2406 negative markers
+ℹ [2025/11/21 12:04:44] Running fixed threshold mode with prob = 0.16
+ℹ [2025/11/21 12:04:44] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 12:05:33] Classified 1755 Positive, 5887 Negative cells
+ℹ [2025/11/21 12:05:33] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 12:05:36] Found 266 positive markers, 2403 negative markers
+ℹ [2025/11/21 12:05:37] Running fixed threshold mode with prob = 0.17
+ℹ [2025/11/21 12:05:37] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 12:06:26] Classified 1886 Positive, 6241 Negative cells
+ℹ [2025/11/21 12:06:26] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 12:06:29] Found 268 positive markers, 2436 negative markers
+ℹ [2025/11/21 12:06:30] Running fixed threshold mode with prob = 0.18
+ℹ [2025/11/21 12:06:30] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 12:07:18] Classified 2010 Positive, 6626 Negative cells
+ℹ [2025/11/21 12:07:18] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 12:07:21] Found 268 positive markers, 2494 negative markers
+ℹ [2025/11/21 12:07:23] Running fixed threshold mode with prob = 0.19
+ℹ [2025/11/21 12:07:23] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 12:08:10] Classified 2128 Positive, 6988 Negative cells
+ℹ [2025/11/21 12:08:10] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 12:08:14] Found 269 positive markers, 2557 negative markers
+ℹ [2025/11/21 12:08:15] Running fixed threshold mode with prob = 0.2
+ℹ [2025/11/21 12:08:15] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 12:09:03] Classified 2244 Positive, 7362 Negative cells
+ℹ [2025/11/21 12:09:03] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 12:09:06] Found 275 positive markers, 2629 negative markers
+ℹ [2025/11/21 12:09:07] Running fixed threshold mode with prob = 0.21
+ℹ [2025/11/21 12:09:08] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 12:09:55] Classified 2378 Positive, 7724 Negative cells
+ℹ [2025/11/21 12:09:56] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 12:09:59] Found 275 positive markers, 2650 negative markers
+ℹ [2025/11/21 12:10:00] Running fixed threshold mode with prob = 0.22
+ℹ [2025/11/21 12:10:01] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 12:10:48] Classified 2494 Positive, 8080 Negative cells
+ℹ [2025/11/21 12:10:48] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 12:10:52] Found 279 positive markers, 2668 negative markers
+ℹ [2025/11/21 12:10:53] Running fixed threshold mode with prob = 0.23
+ℹ [2025/11/21 12:10:54] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 12:11:41] Classified 2612 Positive, 8443 Negative cells
+ℹ [2025/11/21 12:11:41] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 12:11:45] Found 279 positive markers, 2700 negative markers
+ℹ [2025/11/21 12:11:47] Running fixed threshold mode with prob = 0.24
+ℹ [2025/11/21 12:11:47] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 12:12:35] Classified 2748 Positive, 8790 Negative cells
+ℹ [2025/11/21 12:12:35] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 12:12:39] Found 288 positive markers, 2762 negative markers
+ℹ [2025/11/21 12:12:40] Running fixed threshold mode with prob = 0.26
+ℹ [2025/11/21 12:12:40] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 12:13:27] Classified 13232 Positive, 9536 Negative cells
+ℹ [2025/11/21 12:13:28] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 12:13:35] Found 396 positive markers, 3241 negative markers
+
+ℹ [2025/11/21 11:50:58] Running fixed threshold mode with prob = 0.27
+ℹ [2025/11/21 11:50:59] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 11:52:00] Classified 13760 Positive, 9943 Negative cells
+ℹ [2025/11/21 11:52:01] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 11:52:11] Found 390 positive markers, 3170 negative markers
+ℹ [2025/11/21 11:52:12] Running fixed threshold mode with prob = 0.28
+ℹ [2025/11/21 11:52:13] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 11:53:05] Classified 14258 Positive, 10291 Negative cells
+ℹ [2025/11/21 11:53:05] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 11:53:16] Found 388 positive markers, 3126 negative markers
+ℹ [2025/11/21 11:53:17] Running fixed threshold mode with prob = 0.29
+ℹ [2025/11/21 11:53:18] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 11:54:10] Classified 14770 Positive, 10669 Negative cells
+ℹ [2025/11/21 11:54:10] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 11:54:21] Found 377 positive markers, 3091 negative markers
+ℹ [2025/11/21 11:54:23] Running fixed threshold mode with prob = 0.3
+ℹ [2025/11/21 11:54:24] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 11:55:17] Classified 15262 Positive, 11039 Negative cells
+ℹ [2025/11/21 11:55:17] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 11:55:29] Found 370 positive markers, 3011 negative markers
+ℹ [2025/11/21 11:55:30] Running fixed threshold mode with prob = 0.31
+ℹ [2025/11/21 11:55:31] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 11:56:24] Classified 15788 Positive, 11416 Negative cells
+ℹ [2025/11/21 11:56:24] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 11:56:35] Found 360 positive markers, 2942 negative markers
+ℹ [2025/11/21 11:56:36] Running fixed threshold mode with prob = 0.32
+ℹ [2025/11/21 11:56:37] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 11:57:28] Classified 16278 Positive, 11785 Negative cells
+ℹ [2025/11/21 11:57:28] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 11:57:39] Found 353 positive markers, 2873 negative markers
+ℹ [2025/11/21 11:57:41] Running fixed threshold mode with prob = 0.33
+ℹ [2025/11/21 11:57:42] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 11:58:33] Classified 16813 Positive, 12173 Negative cells
+ℹ [2025/11/21 11:58:33] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 11:58:45] Found 346 positive markers, 2825 negative markers
+ℹ [2025/11/21 11:58:46] Running fixed threshold mode with prob = 0.34
+ℹ [2025/11/21 11:58:47] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 11:59:38] Classified 17295 Positive, 12557 Negative cells
+ℹ [2025/11/21 11:59:38] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 11:59:50] Found 341 positive markers, 2781 negative markers
+ℹ [2025/11/21 11:59:52] Running fixed threshold mode with prob = 0.35
+ℹ [2025/11/21 11:59:53] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 12:00:45] Classified 17831 Positive, 12922 Negative cells
+ℹ [2025/11/21 12:00:45] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 12:00:57] Found 335 positive markers, 2734 negative markers
+ℹ [2025/11/21 12:00:58] Running fixed threshold mode with prob = 0.36
+ℹ [2025/11/21 12:00:59] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 12:01:51] Classified 18331 Positive, 13312 Negative cells
+ℹ [2025/11/21 12:01:51] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 12:02:03] Found 327 positive markers, 2691 negative markers
+ℹ [2025/11/21 12:02:05] Running fixed threshold mode with prob = 0.37
+ℹ [2025/11/21 12:02:06] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 12:02:56] Classified 18833 Positive, 13643 Negative cells
+ℹ [2025/11/21 12:02:56] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 12:03:09] Found 326 positive markers, 2645 negative markers
+ℹ [2025/11/21 12:03:11] Running fixed threshold mode with prob = 0.38
+ℹ [2025/11/21 12:03:12] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 12:04:03] Classified 19340 Positive, 14073 Negative cells
+ℹ [2025/11/21 12:04:03] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 12:04:15] Found 305 positive markers, 2550 negative markers
+ℹ [2025/11/21 12:04:17] Running fixed threshold mode with prob = 0.39
+ℹ [2025/11/21 12:04:18] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 12:05:10] Classified 19857 Positive, 14441 Negative cells
+ℹ [2025/11/21 12:05:10] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 12:05:23] Found 292 positive markers, 2502 negative markers
+ℹ [2025/11/21 12:05:25] Running fixed threshold mode with prob = 0.4
+ℹ [2025/11/21 12:05:26] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 12:06:18] Classified 20365 Positive, 14832 Negative cells
+ℹ [2025/11/21 12:06:18] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 12:06:33] Found 283 positive markers, 2431 negative markers
+ℹ [2025/11/21 12:06:35] Running fixed threshold mode with prob = 0.41
+ℹ [2025/11/21 12:06:36] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 12:07:27] Classified 20893 Positive, 15209 Negative cells
+ℹ [2025/11/21 12:07:27] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 12:07:42] Found 267 positive markers, 2342 negative markers
+ℹ [2025/11/21 12:07:44] Running fixed threshold mode with prob = 0.42
+ℹ [2025/11/21 12:07:45] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 12:08:36] Classified 21392 Positive, 15590 Negative cells
+ℹ [2025/11/21 12:08:36] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 12:08:50] Found 256 positive markers, 2241 negative markers
+ℹ [2025/11/21 12:08:52] Running fixed threshold mode with prob = 0.43
+ℹ [2025/11/21 12:08:53] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 12:09:44] Classified 21891 Positive, 15941 Negative cells
+ℹ [2025/11/21 12:09:44] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 12:09:59] Found 247 positive markers, 2177 negative markers
+ℹ [2025/11/21 12:10:01] Running fixed threshold mode with prob = 0.44
+ℹ [2025/11/21 12:10:02] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 12:10:53] Classified 22410 Positive, 16352 Negative cells
+ℹ [2025/11/21 12:10:53] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 12:11:07] Found 240 positive markers, 2130 negative markers
+ℹ [2025/11/21 12:11:09] Running fixed threshold mode with prob = 0.45
+ℹ [2025/11/21 12:11:09] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 12:12:00] Classified 22904 Positive, 16728 Negative cells
+ℹ [2025/11/21 12:12:00] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 12:12:14] Found 227 positive markers, 2075 negative markers
+ℹ [2025/11/21 12:12:16] Running fixed threshold mode with prob = 0.46
+ℹ [2025/11/21 12:12:17] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 12:13:08] Classified 23418 Positive, 17072 Negative cells
+ℹ [2025/11/21 12:13:08] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 12:13:23] Found 215 positive markers, 2005 negative markers
+ℹ [2025/11/21 12:13:25] Running fixed threshold mode with prob = 0.47
+ℹ [2025/11/21 12:13:26] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 12:14:17] Classified 23914 Positive, 17490 Negative cells
+ℹ [2025/11/21 12:14:17] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 12:14:32] Found 199 positive markers, 1931 negative markers
+ℹ [2025/11/21 12:14:34] Running fixed threshold mode with prob = 0.48
+ℹ [2025/11/21 12:14:34] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 12:15:25] Classified 24450 Positive, 17849 Negative cells
+ℹ [2025/11/21 12:15:25] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 12:15:40] Found 173 positive markers, 1846 negative markers
+ℹ [2025/11/21 12:15:42] Running fixed threshold mode with prob = 0.49
+ℹ [2025/11/21 12:15:42] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 12:16:33] Classified 24944 Positive, 18250 Negative cells
+ℹ [2025/11/21 12:16:33] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 12:16:48] Found 147 positive markers, 1744 negative markers
+ℹ [2025/11/21 12:16:49] Running fixed threshold mode with prob = 0.5
+ℹ [2025/11/21 12:16:50] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	10 (59% of 17)
+	gene_neg: 	11 (42% of 26)
+✔ [2025/11/21 12:17:40] Classified 25446 Positive, 18648 Negative cells
+ℹ [2025/11/21 12:17:40] Finding markers between `Positive` and `Negative` group...
+✔ [2025/11/21 12:17:54] Found 121 positive markers, 1651 negative markers
+
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells   4263295  227.7   13327194  711.8  13327194  711.8
+Vcells 400490505 3055.6  786299090 5999.0 478312480 3649.3
+✔ scPP random search completed.

@@ -1,0 +1,4344 @@
+nohup: ignoring input
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+
+Attaching package: ‘data.table’
+
+The following objects are masked from ‘package:dplyr’:
+
+    between, first, last
+
+ℹ Updating SigBridgeR documentation
+ℹ Loading SigBridgeR
+Loading required package: Matrix
+
+Attaching package: ‘Matrix’
+
+The following objects are masked from ‘package:tidyr’:
+
+    expand, pack, unpack
+
+✔ SigBridgeR v2.4.1 loaded
+[1] TRUE
+ℹ [2025/09/24 08:28:42] Start scPAS screening.
+Loading required package: SeuratObject
+Loading required package: sp
+‘SeuratObject’ was built with package ‘Matrix’ 1.7.3 but the current
+version is 1.7.4; it is recomended that you reinstall ‘SeuratObject’ as
+the ABI for ‘Matrix’ may have changed
+
+Attaching package: ‘SeuratObject’
+
+The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step2: Imputation of missing values in single cell RNA-sequencing data with KNN...."
+Warning: The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead.
+ℹ The deprecated feature was likely used in the scPAS package.
+  Please report the issue to the authors.
+Warning: Layer counts isn't present in the assay object; returning NULL
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.4 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 6.6444299947537"
+[1] "scPAS identified 1425 rick+ features and 1283 rick- features."
+[1] "The percentage of selected feature is: 72.233%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 3.06989901420078"
+[1] "scPAS identified 811 rick+ features and 708 rick- features."
+[1] "The percentage of selected feature is: 40.517%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 2.12573065316108"
+[1] "scPAS identified 531 rick+ features and 444 rick- features."
+[1] "The percentage of selected feature is: 26.007%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.854217636579077"
+[1] "scPAS identified 103 rick+ features and 81 rick- features."
+[1] "The percentage of selected feature is: 4.908%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.491071351624457"
+[1] "scPAS identified 61 rick+ features and 41 rick- features."
+[1] "The percentage of selected feature is: 2.721%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.269475101088424"
+[1] "scPAS identified 43 rick+ features and 24 rick- features."
+[1] "The percentage of selected feature is: 1.787%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.18820424058988"
+[1] "scPAS identified 35 rick+ features and 16 rick- features."
+[1] "The percentage of selected feature is: 1.360%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.14115318044241"
+[1] "scPAS identified 31 rick+ features and 15 rick- features."
+[1] "The percentage of selected feature is: 1.227%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.112922544353928"
+[1] "scPAS identified 29 rick+ features and 13 rick- features."
+[1] "The percentage of selected feature is: 1.120%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0941021202949402"
+[1] "scPAS identified 28 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 1.067%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0806589602528059"
+[1] "scPAS identified 27 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 1.040%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.077457720640482"
+[1] "scPAS identified 23 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 0.880%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.068851307235984"
+[1] "scPAS identified 23 rick+ features and 9 rick- features."
+[1] "The percentage of selected feature is: 0.854%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 08:50:52] scPAS screening done.
+ℹ [2025/09/24 08:50:54] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step2: Imputation of missing values in single cell RNA-sequencing data with ALRA"
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+Read matrix with 50865 cells and 15201 genes
+Chose k=59
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.05% of the values became negative in the scaling process and were set to zero
+The matrix went from 11.57% nonzero to 51.99% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.3 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 9.20178054541506"
+[1] "scPAS identified 1248 rick+ features and 1033 rick- features."
+[1] "The percentage of selected feature is: 65.944%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 3.69770423084179"
+[1] "scPAS identified 679 rick+ features and 554 rick- features."
+[1] "The percentage of selected feature is: 35.646%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 2.44407368880334"
+[1] "scPAS identified 440 rick+ features and 351 rick- features."
+[1] "The percentage of selected feature is: 22.868%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.854217636579077"
+[1] "scPAS identified 100 rick+ features and 78 rick- features."
+[1] "The percentage of selected feature is: 5.146%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.491071351624457"
+[1] "scPAS identified 55 rick+ features and 41 rick- features."
+[1] "The percentage of selected feature is: 2.775%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.269475101088424"
+[1] "scPAS identified 38 rick+ features and 23 rick- features."
+[1] "The percentage of selected feature is: 1.764%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.18820424058988"
+[1] "scPAS identified 33 rick+ features and 16 rick- features."
+[1] "The percentage of selected feature is: 1.417%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.147874295387831"
+[1] "scPAS identified 29 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.127%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.118299436310265"
+[1] "scPAS identified 28 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.099%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0985828635918874"
+[1] "scPAS identified 26 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.041%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0844995973644749"
+[1] "scPAS identified 26 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.070%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.077457720640482"
+[1] "scPAS identified 22 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 0.925%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.068851307235984"
+[1] "scPAS identified 22 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 0.925%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 09:05:35] scPAS screening done.
+ℹ [2025/09/24 09:05:37] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step2: Imputation of missing values in single cell RNA-sequencing data with ALRA"
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+Read matrix with 50865 cells and 15201 genes
+Chose k=62
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.05% of the values became negative in the scaling process and were set to zero
+The matrix went from 11.57% nonzero to 51.62% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 6.05415714683621"
+[1] "scPAS identified 523 rick+ features and 552 rick- features."
+[1] "The percentage of selected feature is: 77.899%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 3.06989901420078"
+[1] "scPAS identified 326 rick+ features and 310 rick- features."
+[1] "The percentage of selected feature is: 46.087%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 2.02911291425366"
+[1] "scPAS identified 228 rick+ features and 209 rick- features."
+[1] "The percentage of selected feature is: 31.667%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.778331296067851"
+[1] "scPAS identified 70 rick+ features and 64 rick- features."
+[1] "The percentage of selected feature is: 9.710%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.447445926195499"
+[1] "scPAS identified 37 rick+ features and 36 rick- features."
+[1] "The percentage of selected feature is: 5.290%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.257227041852747"
+[1] "scPAS identified 22 rick+ features and 18 rick- features."
+[1] "The percentage of selected feature is: 2.899%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.179650067392283"
+[1] "scPAS identified 18 rick+ features and 16 rick- features."
+[1] "The percentage of selected feature is: 2.464%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.14115318044241"
+[1] "scPAS identified 17 rick+ features and 13 rick- features."
+[1] "The percentage of selected feature is: 2.174%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.112922544353928"
+[1] "scPAS identified 16 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 2.029%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0941021202949402"
+[1] "scPAS identified 13 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 1.812%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0806589602528059"
+[1] "scPAS identified 13 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.739%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.0705765902212052"
+[1] "scPAS identified 13 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.739%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.0627347468632935"
+[1] "scPAS identified 13 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.739%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 09:15:39] scPAS screening done.
+ℹ [2025/09/24 09:15:41] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 5.77898636090072"
+[1] "scPAS identified 666 rick+ features and 619 rick- features."
+[1] "The percentage of selected feature is: 79.077%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 2.93036736611304"
+[1] "scPAS identified 406 rick+ features and 364 rick- features."
+[1] "The percentage of selected feature is: 47.385%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 2.02911291425366"
+[1] "scPAS identified 274 rick+ features and 234 rick- features."
+[1] "The percentage of selected feature is: 31.262%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.778331296067851"
+[1] "scPAS identified 81 rick+ features and 64 rick- features."
+[1] "The percentage of selected feature is: 8.923%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.468751400803967"
+[1] "scPAS identified 42 rick+ features and 33 rick- features."
+[1] "The percentage of selected feature is: 4.615%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.269475101088424"
+[1] "scPAS identified 26 rick+ features and 15 rick- features."
+[1] "The percentage of selected feature is: 2.523%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.18820424058988"
+[1] "scPAS identified 21 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.969%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.14115318044241"
+[1] "scPAS identified 19 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.785%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.112922544353928"
+[1] "scPAS identified 19 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.785%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0941021202949402"
+[1] "scPAS identified 15 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.538%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0844995973644749"
+[1] "scPAS identified 15 rick+ features and 8 rick- features."
+[1] "The percentage of selected feature is: 1.415%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.0739371476939155"
+[1] "scPAS identified 14 rick+ features and 8 rick- features."
+[1] "The percentage of selected feature is: 1.354%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.0657219090612583"
+[1] "scPAS identified 14 rick+ features and 6 rick- features."
+[1] "The percentage of selected feature is: 1.231%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 09:42:30] scPAS screening done.
+ℹ [2025/09/24 09:42:33] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step2: Imputation of missing values in single cell RNA-sequencing data with KNN...."
+Warning: Layer counts isn't present in the assay object; returning NULL
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.1 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 6.05415714683621"
+[1] "scPAS identified 1203 rick+ features and 1026 rick- features."
+[1] "The percentage of selected feature is: 75.945%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 2.79717764677541"
+[1] "scPAS identified 714 rick+ features and 610 rick- features."
+[1] "The percentage of selected feature is: 45.111%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 1.76481893337098"
+[1] "scPAS identified 524 rick+ features and 440 rick- features."
+[1] "The percentage of selected feature is: 32.845%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.815392126649878"
+[1] "scPAS identified 111 rick+ features and 84 rick- features."
+[1] "The percentage of selected feature is: 6.644%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.468751400803967"
+[1] "scPAS identified 62 rick+ features and 42 rick- features."
+[1] "The percentage of selected feature is: 3.543%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.269475101088424"
+[1] "scPAS identified 38 rick+ features and 21 rick- features."
+[1] "The percentage of selected feature is: 2.010%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.18820424058988"
+[1] "scPAS identified 31 rick+ features and 15 rick- features."
+[1] "The percentage of selected feature is: 1.567%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.14115318044241"
+[1] "scPAS identified 28 rick+ features and 15 rick- features."
+[1] "The percentage of selected feature is: 1.465%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.118299436310265"
+[1] "scPAS identified 26 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.261%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0985828635918874"
+[1] "scPAS identified 25 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.227%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0844995973644749"
+[1] "scPAS identified 24 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 1.227%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.0739371476939155"
+[1] "scPAS identified 24 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 1.227%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.0657219090612583"
+[1] "scPAS identified 24 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 1.227%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 09:57:32] scPAS screening done.
+ℹ [2025/09/24 09:57:35] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.4 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 6.34243039688974"
+[1] "scPAS identified 1429 rick+ features and 1247 rick- features."
+[1] "The percentage of selected feature is: 72.737%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 3.06989901420078"
+[1] "scPAS identified 788 rick+ features and 684 rick- features."
+[1] "The percentage of selected feature is: 40.011%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 2.22694891843941"
+[1] "scPAS identified 506 rick+ features and 424 rick- features."
+[1] "The percentage of selected feature is: 25.279%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.854217636579077"
+[1] "scPAS identified 101 rick+ features and 84 rick- features."
+[1] "The percentage of selected feature is: 5.029%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.491071351624457"
+[1] "scPAS identified 60 rick+ features and 41 rick- features."
+[1] "The percentage of selected feature is: 2.745%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.269475101088424"
+[1] "scPAS identified 43 rick+ features and 24 rick- features."
+[1] "The percentage of selected feature is: 1.821%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.179650067392283"
+[1] "scPAS identified 35 rick+ features and 18 rick- features."
+[1] "The percentage of selected feature is: 1.441%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.14115318044241"
+[1] "scPAS identified 31 rick+ features and 14 rick- features."
+[1] "The percentage of selected feature is: 1.223%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.112922544353928"
+[1] "scPAS identified 29 rick+ features and 13 rick- features."
+[1] "The percentage of selected feature is: 1.142%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0941021202949402"
+[1] "scPAS identified 28 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 1.087%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0806589602528059"
+[1] "scPAS identified 27 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 1.060%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.077457720640482"
+[1] "scPAS identified 23 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 0.897%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.068851307235984"
+[1] "scPAS identified 23 rick+ features and 9 rick- features."
+[1] "The percentage of selected feature is: 0.870%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 11:45:34] scPAS screening done.
+ℹ [2025/09/24 11:45:37] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step2: Imputation of missing values in single cell RNA-sequencing data with KNN...."
+Warning: Layer counts isn't present in the assay object; returning NULL
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.5 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 6.6444299947537"
+[1] "scPAS identified 1473 rick+ features and 1335 rick- features."
+[1] "The percentage of selected feature is: 72.037%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 3.06989901420078"
+[1] "scPAS identified 827 rick+ features and 728 rick- features."
+[1] "The percentage of selected feature is: 39.892%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 2.12573065316108"
+[1] "scPAS identified 539 rick+ features and 459 rick- features."
+[1] "The percentage of selected feature is: 25.603%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.854217636579077"
+[1] "scPAS identified 108 rick+ features and 89 rick- features."
+[1] "The percentage of selected feature is: 5.054%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.491071351624457"
+[1] "scPAS identified 65 rick+ features and 42 rick- features."
+[1] "The percentage of selected feature is: 2.745%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.269475101088424"
+[1] "scPAS identified 44 rick+ features and 24 rick- features."
+[1] "The percentage of selected feature is: 1.744%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.18820424058988"
+[1] "scPAS identified 36 rick+ features and 17 rick- features."
+[1] "The percentage of selected feature is: 1.360%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.14115318044241"
+[1] "scPAS identified 33 rick+ features and 15 rick- features."
+[1] "The percentage of selected feature is: 1.231%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.112922544353928"
+[1] "scPAS identified 29 rick+ features and 15 rick- features."
+[1] "The percentage of selected feature is: 1.129%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0941021202949402"
+[1] "scPAS identified 28 rick+ features and 13 rick- features."
+[1] "The percentage of selected feature is: 1.052%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0806589602528059"
+[1] "scPAS identified 28 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 1.026%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.0739371476939155"
+[1] "scPAS identified 26 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 0.924%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.068851307235984"
+[1] "scPAS identified 23 rick+ features and 8 rick- features."
+[1] "The percentage of selected feature is: 0.795%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 12:09:59] scPAS screening done.
+ℹ [2025/09/24 12:10:00] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 5.77898636090072"
+[1] "scPAS identified 402 rick+ features and 348 rick- features."
+[1] "The percentage of selected feature is: 78.370%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 2.93036736611304"
+[1] "scPAS identified 246 rick+ features and 228 rick- features."
+[1] "The percentage of selected feature is: 49.530%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 1.93688660069343"
+[1] "scPAS identified 177 rick+ features and 164 rick- features."
+[1] "The percentage of selected feature is: 35.632%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.67695286846122"
+[1] "scPAS identified 64 rick+ features and 59 rick- features."
+[1] "The percentage of selected feature is: 12.853%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.389165648033926"
+[1] "scPAS identified 40 rick+ features and 36 rick- features."
+[1] "The percentage of selected feature is: 7.941%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.203848031662469"
+[1] "scPAS identified 32 rick+ features and 29 rick- features."
+[1] "The percentage of selected feature is: 6.374%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.149148642065166"
+[1] "scPAS identified 22 rick+ features and 20 rick- features."
+[1] "The percentage of selected feature is: 4.389%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.117187850200992"
+[1] "scPAS identified 16 rick+ features and 19 rick- features."
+[1] "The percentage of selected feature is: 3.657%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.0982142703248915"
+[1] "scPAS identified 15 rick+ features and 16 rick- features."
+[1] "The percentage of selected feature is: 3.239%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0818452252707429"
+[1] "scPAS identified 13 rick+ features and 17 rick- features."
+[1] "The percentage of selected feature is: 3.135%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0701530502320654"
+[1] "scPAS identified 13 rick+ features and 17 rick- features."
+[1] "The percentage of selected feature is: 3.135%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.0613839189530572"
+[1] "scPAS identified 13 rick+ features and 16 rick- features."
+[1] "The percentage of selected feature is: 3.030%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.0545634835138286"
+[1] "scPAS identified 13 rick+ features and 16 rick- features."
+[1] "The percentage of selected feature is: 3.030%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 12:23:42] scPAS screening done.
+ℹ [2025/09/24 12:23:44] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step2: Imputation of missing values in single cell RNA-sequencing data with ALRA"
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+Read matrix with 50865 cells and 15201 genes
+Chose k=64
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.05% of the values became negative in the scaling process and were set to zero
+The matrix went from 11.57% nonzero to 51.33% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 5.51632251186757"
+[1] "scPAS identified 483 rick+ features and 433 rick- features."
+[1] "The percentage of selected feature is: 81.206%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 3.06989901420078"
+[1] "scPAS identified 265 rick+ features and 252 rick- features."
+[1] "The percentage of selected feature is: 45.833%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 2.02911291425366"
+[1] "scPAS identified 195 rick+ features and 188 rick- features."
+[1] "The percentage of selected feature is: 33.954%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.742954937433173"
+[1] "scPAS identified 63 rick+ features and 60 rick- features."
+[1] "The percentage of selected feature is: 10.904%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.427108818289539"
+[1] "scPAS identified 42 rick+ features and 37 rick- features."
+[1] "The percentage of selected feature is: 7.004%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.245535675812229"
+[1] "scPAS identified 23 rick+ features and 15 rick- features."
+[1] "The percentage of selected feature is: 3.369%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.163690450541486"
+[1] "scPAS identified 17 rick+ features and 15 rick- features."
+[1] "The percentage of selected feature is: 2.837%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.128613520926374"
+[1] "scPAS identified 17 rick+ features and 14 rick- features."
+[1] "The percentage of selected feature is: 2.748%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.102890816741099"
+[1] "scPAS identified 16 rick+ features and 13 rick- features."
+[1] "The percentage of selected feature is: 2.571%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0857423472842491"
+[1] "scPAS identified 15 rick+ features and 13 rick- features."
+[1] "The percentage of selected feature is: 2.482%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0769928860252641"
+[1] "scPAS identified 15 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 2.394%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.0673687752721061"
+[1] "scPAS identified 15 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 2.394%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.0598833557974276"
+[1] "scPAS identified 15 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 2.305%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 12:33:33] scPAS screening done.
+ℹ [2025/09/24 12:33:34] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step2: Imputation of missing values in single cell RNA-sequencing data with ALRA"
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+Read matrix with 50865 cells and 15201 genes
+Chose k=68
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.04% of the values became negative in the scaling process and were set to zero
+The matrix went from 11.57% nonzero to 50.94% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.4 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 7.63947986689861"
+[1] "scPAS identified 1382 rick+ features and 1166 rick- features."
+[1] "The percentage of selected feature is: 70.640%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 3.2160745667502"
+[1] "scPAS identified 773 rick+ features and 656 rick- features."
+[1] "The percentage of selected feature is: 39.617%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 2.22694891843941"
+[1] "scPAS identified 498 rick+ features and 400 rick- features."
+[1] "The percentage of selected feature is: 24.896%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.854217636579077"
+[1] "scPAS identified 102 rick+ features and 84 rick- features."
+[1] "The percentage of selected feature is: 5.157%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.491071351624457"
+[1] "scPAS identified 59 rick+ features and 42 rick- features."
+[1] "The percentage of selected feature is: 2.800%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.269475101088424"
+[1] "scPAS identified 43 rick+ features and 23 rick- features."
+[1] "The percentage of selected feature is: 1.830%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.179650067392283"
+[1] "scPAS identified 35 rick+ features and 18 rick- features."
+[1] "The percentage of selected feature is: 1.469%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.14115318044241"
+[1] "scPAS identified 31 rick+ features and 14 rick- features."
+[1] "The percentage of selected feature is: 1.248%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.112922544353928"
+[1] "scPAS identified 29 rick+ features and 13 rick- features."
+[1] "The percentage of selected feature is: 1.164%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0941021202949402"
+[1] "scPAS identified 28 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.081%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0806589602528059"
+[1] "scPAS identified 27 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.054%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.0739371476939155"
+[1] "scPAS identified 26 rick+ features and 9 rick- features."
+[1] "The percentage of selected feature is: 0.970%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.068851307235984"
+[1] "scPAS identified 23 rick+ features and 9 rick- features."
+[1] "The percentage of selected feature is: 0.887%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 12:48:33] scPAS screening done.
+ℹ [2025/09/24 12:48:34] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step2: Imputation of missing values in single cell RNA-sequencing data with KNN...."
+Warning: Layer counts isn't present in the assay object; returning NULL
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 3.80218713167951"
+[1] "scPAS identified 561 rick+ features and 490 rick- features."
+[1] "The percentage of selected feature is: 86.431%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 2.79717764677541"
+[1] "scPAS identified 300 rick+ features and 293 rick- features."
+[1] "The percentage of selected feature is: 48.766%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 1.93688660069343"
+[1] "scPAS identified 206 rick+ features and 203 rick- features."
+[1] "The percentage of selected feature is: 33.635%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.742954937433173"
+[1] "scPAS identified 68 rick+ features and 58 rick- features."
+[1] "The percentage of selected feature is: 10.362%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.427108818289539"
+[1] "scPAS identified 40 rick+ features and 39 rick- features."
+[1] "The percentage of selected feature is: 6.497%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.245535675812229"
+[1] "scPAS identified 21 rick+ features and 17 rick- features."
+[1] "The percentage of selected feature is: 3.125%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.171484694568498"
+[1] "scPAS identified 18 rick+ features and 14 rick- features."
+[1] "The percentage of selected feature is: 2.632%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.134737550544212"
+[1] "scPAS identified 17 rick+ features and 14 rick- features."
+[1] "The percentage of selected feature is: 2.549%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.10779004043537"
+[1] "scPAS identified 16 rick+ features and 14 rick- features."
+[1] "The percentage of selected feature is: 2.467%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0898250336961414"
+[1] "scPAS identified 16 rick+ features and 14 rick- features."
+[1] "The percentage of selected feature is: 2.467%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0769928860252641"
+[1] "scPAS identified 15 rick+ features and 13 rick- features."
+[1] "The percentage of selected feature is: 2.303%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.0705765902212052"
+[1] "scPAS identified 14 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 2.056%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.0627347468632935"
+[1] "scPAS identified 14 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 2.056%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 12:55:53] scPAS screening done.
+ℹ [2025/09/24 12:55:55] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step2: Imputation of missing values in single cell RNA-sequencing data with ALRA"
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+Read matrix with 50865 cells and 15201 genes
+Chose k=61
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.05% of the values became negative in the scaling process and were set to zero
+The matrix went from 11.57% nonzero to 51.72% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 7.29225371664722"
+[1] "scPAS identified 896 rick+ features and 774 rick- features."
+[1] "The percentage of selected feature is: 73.731%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 3.36921037827371"
+[1] "scPAS identified 503 rick+ features and 421 rick- features."
+[1] "The percentage of selected feature is: 40.795%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 2.12573065316108"
+[1] "scPAS identified 360 rick+ features and 296 rick- features."
+[1] "The percentage of selected feature is: 28.962%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.778331296067851"
+[1] "scPAS identified 107 rick+ features and 75 rick- features."
+[1] "The percentage of selected feature is: 8.035%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.491071351624457"
+[1] "scPAS identified 52 rick+ features and 31 rick- features."
+[1] "The percentage of selected feature is: 3.664%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.269475101088424"
+[1] "scPAS identified 37 rick+ features and 17 rick- features."
+[1] "The percentage of selected feature is: 2.384%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.179650067392283"
+[1] "scPAS identified 32 rick+ features and 13 rick- features."
+[1] "The percentage of selected feature is: 1.987%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.14115318044241"
+[1] "scPAS identified 27 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.678%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.112922544353928"
+[1] "scPAS identified 26 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.589%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0941021202949402"
+[1] "scPAS identified 26 rick+ features and 9 rick- features."
+[1] "The percentage of selected feature is: 1.545%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0844995973644749"
+[1] "scPAS identified 24 rick+ features and 9 rick- features."
+[1] "The percentage of selected feature is: 1.457%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.0739371476939155"
+[1] "scPAS identified 24 rick+ features and 9 rick- features."
+[1] "The percentage of selected feature is: 1.457%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.0657219090612583"
+[1] "scPAS identified 23 rick+ features and 8 rick- features."
+[1] "The percentage of selected feature is: 1.369%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 13:07:30] scPAS screening done.
+ℹ [2025/09/24 13:07:31] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 5.51632251186757"
+[1] "scPAS identified 1077 rick+ features and 934 rick- features."
+[1] "The percentage of selected feature is: 78.036%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 2.67004160573845"
+[1] "scPAS identified 645 rick+ features and 555 rick- features."
+[1] "The percentage of selected feature is: 46.566%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 1.93688660069343"
+[1] "scPAS identified 438 rick+ features and 358 rick- features."
+[1] "The percentage of selected feature is: 30.889%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.815392126649878"
+[1] "scPAS identified 104 rick+ features and 76 rick- features."
+[1] "The percentage of selected feature is: 6.985%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.468751400803967"
+[1] "scPAS identified 60 rick+ features and 35 rick- features."
+[1] "The percentage of selected feature is: 3.686%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.257227041852747"
+[1] "scPAS identified 39 rick+ features and 24 rick- features."
+[1] "The percentage of selected feature is: 2.445%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.179650067392283"
+[1] "scPAS identified 33 rick+ features and 16 rick- features."
+[1] "The percentage of selected feature is: 1.901%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.14115318044241"
+[1] "scPAS identified 28 rick+ features and 13 rick- features."
+[1] "The percentage of selected feature is: 1.591%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.112922544353928"
+[1] "scPAS identified 27 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 1.513%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0941021202949402"
+[1] "scPAS identified 27 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 1.513%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0806589602528059"
+[1] "scPAS identified 26 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.436%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.0705765902212052"
+[1] "scPAS identified 25 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.358%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.0627347468632935"
+[1] "scPAS identified 25 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.358%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 14:02:06] scPAS screening done.
+ℹ [2025/09/24 14:02:08] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step2: Imputation of missing values in single cell RNA-sequencing data with KNN...."
+Warning: Layer counts isn't present in the assay object; returning NULL
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 5.77898636090072"
+[1] "scPAS identified 412 rick+ features and 358 rick- features."
+[1] "The percentage of selected feature is: 80.460%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 2.93036736611304"
+[1] "scPAS identified 244 rick+ features and 222 rick- features."
+[1] "The percentage of selected feature is: 48.694%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 1.93688660069343"
+[1] "scPAS identified 179 rick+ features and 162 rick- features."
+[1] "The percentage of selected feature is: 35.632%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.67695286846122"
+[1] "scPAS identified 65 rick+ features and 59 rick- features."
+[1] "The percentage of selected feature is: 12.957%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.389165648033926"
+[1] "scPAS identified 42 rick+ features and 35 rick- features."
+[1] "The percentage of selected feature is: 8.046%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.213554409144769"
+[1] "scPAS identified 30 rick+ features and 27 rick- features."
+[1] "The percentage of selected feature is: 5.956%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.149148642065166"
+[1] "scPAS identified 23 rick+ features and 20 rick- features."
+[1] "The percentage of selected feature is: 4.493%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.117187850200992"
+[1] "scPAS identified 16 rick+ features and 19 rick- features."
+[1] "The percentage of selected feature is: 3.657%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.0982142703248915"
+[1] "scPAS identified 15 rick+ features and 16 rick- features."
+[1] "The percentage of selected feature is: 3.239%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0818452252707429"
+[1] "scPAS identified 13 rick+ features and 17 rick- features."
+[1] "The percentage of selected feature is: 3.135%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0701530502320654"
+[1] "scPAS identified 13 rick+ features and 17 rick- features."
+[1] "The percentage of selected feature is: 3.135%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.0613839189530572"
+[1] "scPAS identified 13 rick+ features and 16 rick- features."
+[1] "The percentage of selected feature is: 3.030%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.0545634835138286"
+[1] "scPAS identified 13 rick+ features and 16 rick- features."
+[1] "The percentage of selected feature is: 3.030%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 14:08:34] scPAS screening done.
+ℹ [2025/09/24 14:08:36] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step2: Imputation of missing values in single cell RNA-sequencing data with KNN...."
+Warning: Layer counts isn't present in the assay object; returning NULL
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 5.77898636090072"
+[1] "scPAS identified 1074 rick+ features and 915 rick- features."
+[1] "The percentage of selected feature is: 77.183%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 2.79717764677541"
+[1] "scPAS identified 639 rick+ features and 539 rick- features."
+[1] "The percentage of selected feature is: 45.712%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 1.8488521154209"
+[1] "scPAS identified 443 rick+ features and 378 rick- features."
+[1] "The percentage of selected feature is: 31.859%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.815392126649878"
+[1] "scPAS identified 108 rick+ features and 78 rick- features."
+[1] "The percentage of selected feature is: 7.218%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.468751400803967"
+[1] "scPAS identified 58 rick+ features and 35 rick- features."
+[1] "The percentage of selected feature is: 3.609%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.257227041852747"
+[1] "scPAS identified 39 rick+ features and 24 rick- features."
+[1] "The percentage of selected feature is: 2.445%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.179650067392283"
+[1] "scPAS identified 33 rick+ features and 16 rick- features."
+[1] "The percentage of selected feature is: 1.901%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.14115318044241"
+[1] "scPAS identified 28 rick+ features and 13 rick- features."
+[1] "The percentage of selected feature is: 1.591%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.112922544353928"
+[1] "scPAS identified 27 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 1.513%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0941021202949402"
+[1] "scPAS identified 27 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 1.513%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0806589602528059"
+[1] "scPAS identified 26 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.436%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.0705765902212052"
+[1] "scPAS identified 25 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.358%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.0627347468632935"
+[1] "scPAS identified 25 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.358%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 14:23:56] scPAS screening done.
+ℹ [2025/09/24 14:23:58] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step2: Imputation of missing values in single cell RNA-sequencing data with ALRA"
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+Read matrix with 50865 cells and 15201 genes
+Chose k=64
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.05% of the values became negative in the scaling process and were set to zero
+The matrix went from 11.57% nonzero to 51.41% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.1 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 6.34243039688974"
+[1] "scPAS identified 1255 rick+ features and 973 rick- features."
+[1] "The percentage of selected feature is: 75.911%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 2.93036736611304"
+[1] "scPAS identified 704 rick+ features and 595 rick- features."
+[1] "The percentage of selected feature is: 44.259%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 2.02911291425366"
+[1] "scPAS identified 471 rick+ features and 389 rick- features."
+[1] "The percentage of selected feature is: 29.302%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.815392126649878"
+[1] "scPAS identified 109 rick+ features and 81 rick- features."
+[1] "The percentage of selected feature is: 6.474%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.491071351624457"
+[1] "scPAS identified 55 rick+ features and 38 rick- features."
+[1] "The percentage of selected feature is: 3.169%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.269475101088424"
+[1] "scPAS identified 38 rick+ features and 20 rick- features."
+[1] "The percentage of selected feature is: 1.976%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.18820424058988"
+[1] "scPAS identified 31 rick+ features and 15 rick- features."
+[1] "The percentage of selected feature is: 1.567%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.14115318044241"
+[1] "scPAS identified 28 rick+ features and 15 rick- features."
+[1] "The percentage of selected feature is: 1.465%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.118299436310265"
+[1] "scPAS identified 26 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.261%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0985828635918874"
+[1] "scPAS identified 25 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.227%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0844995973644749"
+[1] "scPAS identified 24 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 1.227%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.0739371476939155"
+[1] "scPAS identified 24 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 1.227%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.0657219090612583"
+[1] "scPAS identified 24 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 1.227%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 14:37:07] scPAS screening done.
+ℹ [2025/09/24 14:37:10] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step2: Imputation of missing values in single cell RNA-sequencing data with KNN...."
+Warning: Layer counts isn't present in the assay object; returning NULL
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.3 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 6.6444299947537"
+[1] "scPAS identified 1317 rick+ features and 1131 rick- features."
+[1] "The percentage of selected feature is: 72.405%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 3.06989901420078"
+[1] "scPAS identified 752 rick+ features and 643 rick- features."
+[1] "The percentage of selected feature is: 41.260%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 2.12573065316108"
+[1] "scPAS identified 489 rick+ features and 401 rick- features."
+[1] "The percentage of selected feature is: 26.324%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.854217636579077"
+[1] "scPAS identified 97 rick+ features and 82 rick- features."
+[1] "The percentage of selected feature is: 5.294%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.468751400803967"
+[1] "scPAS identified 64 rick+ features and 45 rick- features."
+[1] "The percentage of selected feature is: 3.224%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.269475101088424"
+[1] "scPAS identified 38 rick+ features and 22 rick- features."
+[1] "The percentage of selected feature is: 1.775%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.18820424058988"
+[1] "scPAS identified 32 rick+ features and 15 rick- features."
+[1] "The percentage of selected feature is: 1.390%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.147874295387831"
+[1] "scPAS identified 29 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.154%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.118299436310265"
+[1] "scPAS identified 28 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.124%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0985828635918874"
+[1] "scPAS identified 26 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.065%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0844995973644749"
+[1] "scPAS identified 25 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.065%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.0739371476939155"
+[1] "scPAS identified 24 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.035%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.068851307235984"
+[1] "scPAS identified 22 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 0.946%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 14:55:42] scPAS screening done.
+ℹ [2025/09/24 14:55:44] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 5.51632251186757"
+[1] "scPAS identified 1027 rick+ features and 858 rick- features."
+[1] "The percentage of selected feature is: 78.022%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 2.79717764677541"
+[1] "scPAS identified 605 rick+ features and 495 rick- features."
+[1] "The percentage of selected feature is: 45.530%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 1.93688660069343"
+[1] "scPAS identified 423 rick+ features and 331 rick- features."
+[1] "The percentage of selected feature is: 31.209%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.815392126649878"
+[1] "scPAS identified 101 rick+ features and 70 rick- features."
+[1] "The percentage of selected feature is: 7.078%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.491071351624457"
+[1] "scPAS identified 52 rick+ features and 30 rick- features."
+[1] "The percentage of selected feature is: 3.394%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.257227041852747"
+[1] "scPAS identified 39 rick+ features and 22 rick- features."
+[1] "The percentage of selected feature is: 2.525%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.179650067392283"
+[1] "scPAS identified 33 rick+ features and 14 rick- features."
+[1] "The percentage of selected feature is: 1.945%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.14115318044241"
+[1] "scPAS identified 28 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 1.656%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.112922544353928"
+[1] "scPAS identified 27 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.573%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0941021202949402"
+[1] "scPAS identified 27 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.573%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0806589602528059"
+[1] "scPAS identified 27 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.531%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.0705765902212052"
+[1] "scPAS identified 25 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.449%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.0627347468632935"
+[1] "scPAS identified 25 rick+ features and 9 rick- features."
+[1] "The percentage of selected feature is: 1.407%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 15:43:28] scPAS screening done.
+ℹ [2025/09/24 15:43:29] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step2: Imputation of missing values in single cell RNA-sequencing data with ALRA"
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+Read matrix with 50865 cells and 15201 genes
+Chose k=63
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.05% of the values became negative in the scaling process and were set to zero
+The matrix went from 11.57% nonzero to 51.52% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.2 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 7.63947986689861"
+[1] "scPAS identified 1241 rick+ features and 953 rick- features."
+[1] "The percentage of selected feature is: 71.095%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 2.93036736611304"
+[1] "scPAS identified 718 rick+ features and 617 rick- features."
+[1] "The percentage of selected feature is: 43.260%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 2.12573065316108"
+[1] "scPAS identified 458 rick+ features and 384 rick- features."
+[1] "The percentage of selected feature is: 27.285%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.815392126649878"
+[1] "scPAS identified 110 rick+ features and 85 rick- features."
+[1] "The percentage of selected feature is: 6.319%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.491071351624457"
+[1] "scPAS identified 53 rick+ features and 38 rick- features."
+[1] "The percentage of selected feature is: 2.949%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.269475101088424"
+[1] "scPAS identified 38 rick+ features and 22 rick- features."
+[1] "The percentage of selected feature is: 1.944%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.18820424058988"
+[1] "scPAS identified 33 rick+ features and 16 rick- features."
+[1] "The percentage of selected feature is: 1.588%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.147874295387831"
+[1] "scPAS identified 28 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.231%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.118299436310265"
+[1] "scPAS identified 27 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.199%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0985828635918874"
+[1] "scPAS identified 26 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.167%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0844995973644749"
+[1] "scPAS identified 25 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.167%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.0739371476939155"
+[1] "scPAS identified 24 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.134%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.0657219090612583"
+[1] "scPAS identified 24 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 1.167%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 15:57:32] scPAS screening done.
+ℹ [2025/09/24 15:57:33] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step2: Imputation of missing values in single cell RNA-sequencing data with ALRA"
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+Read matrix with 50865 cells and 15201 genes
+Chose k=57
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.06% of the values became negative in the scaling process and were set to zero
+The matrix went from 11.57% nonzero to 52.20% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.0 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 6.6444299947537"
+[1] "scPAS identified 1092 rick+ features and 937 rick- features."
+[1] "The percentage of selected feature is: 74.322%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 2.79717764677541"
+[1] "scPAS identified 661 rick+ features and 571 rick- features."
+[1] "The percentage of selected feature is: 45.128%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 1.93688660069343"
+[1] "scPAS identified 464 rick+ features and 382 rick- features."
+[1] "The percentage of selected feature is: 30.989%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.854217636579077"
+[1] "scPAS identified 89 rick+ features and 76 rick- features."
+[1] "The percentage of selected feature is: 6.044%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.468751400803967"
+[1] "scPAS identified 62 rick+ features and 38 rick- features."
+[1] "The percentage of selected feature is: 3.663%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.257227041852747"
+[1] "scPAS identified 40 rick+ features and 25 rick- features."
+[1] "The percentage of selected feature is: 2.381%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.179650067392283"
+[1] "scPAS identified 35 rick+ features and 17 rick- features."
+[1] "The percentage of selected feature is: 1.905%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.14115318044241"
+[1] "scPAS identified 28 rick+ features and 13 rick- features."
+[1] "The percentage of selected feature is: 1.502%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.112922544353928"
+[1] "scPAS identified 27 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 1.429%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0941021202949402"
+[1] "scPAS identified 27 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 1.429%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0806589602528059"
+[1] "scPAS identified 26 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.355%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.0705765902212052"
+[1] "scPAS identified 25 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.282%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.0627347468632935"
+[1] "scPAS identified 25 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.282%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 16:12:26] scPAS screening done.
+ℹ [2025/09/24 16:12:34] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step2: Imputation of missing values in single cell RNA-sequencing data with ALRA"
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+Read matrix with 50865 cells and 15201 genes
+Chose k=65
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.05% of the values became negative in the scaling process and were set to zero
+The matrix went from 11.57% nonzero to 51.29% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 6.05415714683621"
+[1] "scPAS identified 345 rick+ features and 296 rick- features."
+[1] "The percentage of selected feature is: 81.552%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 2.79717764677541"
+[1] "scPAS identified 212 rick+ features and 198 rick- features."
+[1] "The percentage of selected feature is: 52.163%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 1.8488521154209"
+[1] "scPAS identified 158 rick+ features and 145 rick- features."
+[1] "The percentage of selected feature is: 38.550%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.616814241387412"
+[1] "scPAS identified 67 rick+ features and 60 rick- features."
+[1] "The percentage of selected feature is: 16.158%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.371477468716586"
+[1] "scPAS identified 38 rick+ features and 37 rick- features."
+[1] "The percentage of selected feature is: 9.542%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.203848031662469"
+[1] "scPAS identified 29 rick+ features and 27 rick- features."
+[1] "The percentage of selected feature is: 7.125%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.13589868777498"
+[1] "scPAS identified 26 rick+ features and 24 rick- features."
+[1] "The percentage of selected feature is: 6.361%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.117187850200992"
+[1] "scPAS identified 16 rick+ features and 16 rick- features."
+[1] "The percentage of selected feature is: 4.071%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.0937502801607934"
+[1] "scPAS identified 16 rick+ features and 15 rick- features."
+[1] "The percentage of selected feature is: 3.944%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0781252334673278"
+[1] "scPAS identified 16 rick+ features and 15 rick- features."
+[1] "The percentage of selected feature is: 3.944%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0669644858291381"
+[1] "scPAS identified 15 rick+ features and 15 rick- features."
+[1] "The percentage of selected feature is: 3.817%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.0585939251004958"
+[1] "scPAS identified 14 rick+ features and 15 rick- features."
+[1] "The percentage of selected feature is: 3.690%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.0520834889782185"
+[1] "scPAS identified 14 rick+ features and 15 rick- features."
+[1] "The percentage of selected feature is: 3.690%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 16:22:10] scPAS screening done.
+ℹ [2025/09/24 16:22:17] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step2: Imputation of missing values in single cell RNA-sequencing data with KNN...."
+Warning: Layer counts isn't present in the assay object; returning NULL
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 6.05415714683621"
+[1] "scPAS identified 422 rick+ features and 389 rick- features."
+[1] "The percentage of selected feature is: 77.981%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 2.93036736611304"
+[1] "scPAS identified 246 rick+ features and 247 rick- features."
+[1] "The percentage of selected feature is: 47.404%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 1.93688660069343"
+[1] "scPAS identified 182 rick+ features and 182 rick- features."
+[1] "The percentage of selected feature is: 35.000%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.709186488896124"
+[1] "scPAS identified 63 rick+ features and 61 rick- features."
+[1] "The percentage of selected feature is: 11.923%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.407696063324939"
+[1] "scPAS identified 40 rick+ features and 39 rick- features."
+[1] "The percentage of selected feature is: 7.596%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.234375700401983"
+[1] "scPAS identified 25 rick+ features and 21 rick- features."
+[1] "The percentage of selected feature is: 4.423%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.163690450541486"
+[1] "scPAS identified 17 rick+ features and 15 rick- features."
+[1] "The percentage of selected feature is: 3.077%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.128613520926374"
+[1] "scPAS identified 17 rick+ features and 14 rick- features."
+[1] "The percentage of selected feature is: 2.981%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.102890816741099"
+[1] "scPAS identified 16 rick+ features and 13 rick- features."
+[1] "The percentage of selected feature is: 2.788%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0898250336961414"
+[1] "scPAS identified 16 rick+ features and 13 rick- features."
+[1] "The percentage of selected feature is: 2.788%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0769928860252641"
+[1] "scPAS identified 16 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 2.692%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.0673687752721061"
+[1] "scPAS identified 15 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 2.596%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.0598833557974276"
+[1] "scPAS identified 15 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 2.500%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 16:28:55] scPAS screening done.
+ℹ [2025/09/24 16:28:59] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step2: Imputation of missing values in single cell RNA-sequencing data with KNN...."
+Warning: Layer counts isn't present in the assay object; returning NULL
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 5.77898636090072"
+[1] "scPAS identified 542 rick+ features and 554 rick- features."
+[1] "The percentage of selected feature is: 79.420%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 2.93036736611304"
+[1] "scPAS identified 334 rick+ features and 319 rick- features."
+[1] "The percentage of selected feature is: 47.319%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 1.93688660069343"
+[1] "scPAS identified 233 rick+ features and 226 rick- features."
+[1] "The percentage of selected feature is: 33.261%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.778331296067851"
+[1] "scPAS identified 69 rick+ features and 61 rick- features."
+[1] "The percentage of selected feature is: 9.420%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.447445926195499"
+[1] "scPAS identified 40 rick+ features and 36 rick- features."
+[1] "The percentage of selected feature is: 5.507%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.257227041852747"
+[1] "scPAS identified 22 rick+ features and 18 rick- features."
+[1] "The percentage of selected feature is: 2.899%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.179650067392283"
+[1] "scPAS identified 18 rick+ features and 16 rick- features."
+[1] "The percentage of selected feature is: 2.464%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.14115318044241"
+[1] "scPAS identified 17 rick+ features and 13 rick- features."
+[1] "The percentage of selected feature is: 2.174%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.112922544353928"
+[1] "scPAS identified 16 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 2.029%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0941021202949402"
+[1] "scPAS identified 13 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 1.812%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0806589602528059"
+[1] "scPAS identified 13 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.739%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.0705765902212052"
+[1] "scPAS identified 13 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.739%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.0627347468632935"
+[1] "scPAS identified 13 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.739%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 16:36:35] scPAS screening done.
+ℹ [2025/09/24 16:36:36] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step2: Imputation of missing values in single cell RNA-sequencing data with ALRA"
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+Read matrix with 50865 cells and 15201 genes
+Chose k=72
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.04% of the values became negative in the scaling process and were set to zero
+The matrix went from 11.57% nonzero to 50.52% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 6.05415714683621"
+[1] "scPAS identified 559 rick+ features and 573 rick- features."
+[1] "The percentage of selected feature is: 77.641%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 3.2160745667502"
+[1] "scPAS identified 342 rick+ features and 319 rick- features."
+[1] "The percentage of selected feature is: 45.336%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 2.02911291425366"
+[1] "scPAS identified 242 rick+ features and 219 rick- features."
+[1] "The percentage of selected feature is: 31.619%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.815392126649878"
+[1] "scPAS identified 68 rick+ features and 57 rick- features."
+[1] "The percentage of selected feature is: 8.573%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.468751400803967"
+[1] "scPAS identified 36 rick+ features and 34 rick- features."
+[1] "The percentage of selected feature is: 4.801%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.269475101088424"
+[1] "scPAS identified 22 rick+ features and 16 rick- features."
+[1] "The percentage of selected feature is: 2.606%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.18820424058988"
+[1] "scPAS identified 17 rick+ features and 13 rick- features."
+[1] "The percentage of selected feature is: 2.058%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.14115318044241"
+[1] "scPAS identified 17 rick+ features and 13 rick- features."
+[1] "The percentage of selected feature is: 2.058%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.118299436310265"
+[1] "scPAS identified 15 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.783%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0985828635918874"
+[1] "scPAS identified 14 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.715%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0844995973644749"
+[1] "scPAS identified 13 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.646%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.0739371476939155"
+[1] "scPAS identified 13 rick+ features and 9 rick- features."
+[1] "The percentage of selected feature is: 1.509%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.0657219090612583"
+[1] "scPAS identified 12 rick+ features and 9 rick- features."
+[1] "The percentage of selected feature is: 1.440%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 16:47:09] scPAS screening done.
+ℹ [2025/09/24 16:47:15] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 6.05415714683621"
+[1] "scPAS identified 685 rick+ features and 626 rick- features."
+[1] "The percentage of selected feature is: 76.937%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 2.93036736611304"
+[1] "scPAS identified 415 rick+ features and 373 rick- features."
+[1] "The percentage of selected feature is: 46.244%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 2.02911291425366"
+[1] "scPAS identified 279 rick+ features and 255 rick- features."
+[1] "The percentage of selected feature is: 31.338%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.778331296067851"
+[1] "scPAS identified 81 rick+ features and 66 rick- features."
+[1] "The percentage of selected feature is: 8.627%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.468751400803967"
+[1] "scPAS identified 41 rick+ features and 35 rick- features."
+[1] "The percentage of selected feature is: 4.460%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.269475101088424"
+[1] "scPAS identified 26 rick+ features and 17 rick- features."
+[1] "The percentage of selected feature is: 2.523%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.18820424058988"
+[1] "scPAS identified 22 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.937%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.14115318044241"
+[1] "scPAS identified 19 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.702%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.118299436310265"
+[1] "scPAS identified 16 rick+ features and 8 rick- features."
+[1] "The percentage of selected feature is: 1.408%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0985828635918874"
+[1] "scPAS identified 15 rick+ features and 8 rick- features."
+[1] "The percentage of selected feature is: 1.350%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0844995973644749"
+[1] "scPAS identified 14 rick+ features and 7 rick- features."
+[1] "The percentage of selected feature is: 1.232%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.0739371476939155"
+[1] "scPAS identified 14 rick+ features and 7 rick- features."
+[1] "The percentage of selected feature is: 1.232%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.0657219090612583"
+[1] "scPAS identified 14 rick+ features and 7 rick- features."
+[1] "The percentage of selected feature is: 1.232%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 17:15:45] scPAS screening done.
+
+ℹ [2025/09/24 08:28:42] Start scPAS screening.
+Loading required package: SeuratObject
+Loading required package: sp
+‘SeuratObject’ was built with package ‘Matrix’ 1.7.3 but the current
+version is 1.7.4; it is recomended that you reinstall ‘SeuratObject’ as
+the ABI for ‘Matrix’ may have changed
+
+Attaching package: ‘SeuratObject’
+
+The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step2: Imputation of missing values in single cell RNA-sequencing data with KNN...."
+Warning: The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead.
+ℹ The deprecated feature was likely used in the scPAS package.
+  Please report the issue to the authors.
+Warning: Layer counts isn't present in the assay object; returning NULL
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.1 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 5.51632251186757"
+[1] "scPAS identified 1189 rick+ features and 1034 rick- features."
+[1] "The percentage of selected feature is: 77.592%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 2.67004160573845"
+[1] "scPAS identified 705 rick+ features and 626 rick- features."
+[1] "The percentage of selected feature is: 46.457%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 1.76481893337098"
+[1] "scPAS identified 512 rick+ features and 444 rick- features."
+[1] "The percentage of selected feature is: 33.368%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.815392126649878"
+[1] "scPAS identified 108 rick+ features and 84 rick- features."
+[1] "The percentage of selected feature is: 6.702%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.468751400803967"
+[1] "scPAS identified 63 rick+ features and 43 rick- features."
+[1] "The percentage of selected feature is: 3.700%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.257227041852747"
+[1] "scPAS identified 41 rick+ features and 25 rick- features."
+[1] "The percentage of selected feature is: 2.304%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.18820424058988"
+[1] "scPAS identified 31 rick+ features and 15 rick- features."
+[1] "The percentage of selected feature is: 1.606%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.14115318044241"
+[1] "scPAS identified 28 rick+ features and 15 rick- features."
+[1] "The percentage of selected feature is: 1.501%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.118299436310265"
+[1] "scPAS identified 26 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.291%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0985828635918874"
+[1] "scPAS identified 25 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.257%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0844995973644749"
+[1] "scPAS identified 24 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 1.257%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.0739371476939155"
+[1] "scPAS identified 24 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 1.257%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.0657219090612583"
+[1] "scPAS identified 24 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 1.257%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 08:43:30] scPAS screening done.
+ℹ [2025/09/24 08:43:32] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 5.77898636090072"
+[1] "scPAS identified 666 rick+ features and 619 rick- features."
+[1] "The percentage of selected feature is: 79.077%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 2.93036736611304"
+[1] "scPAS identified 406 rick+ features and 364 rick- features."
+[1] "The percentage of selected feature is: 47.385%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 2.02911291425366"
+[1] "scPAS identified 274 rick+ features and 234 rick- features."
+[1] "The percentage of selected feature is: 31.262%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.778331296067851"
+[1] "scPAS identified 81 rick+ features and 64 rick- features."
+[1] "The percentage of selected feature is: 8.923%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.468751400803967"
+[1] "scPAS identified 42 rick+ features and 33 rick- features."
+[1] "The percentage of selected feature is: 4.615%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.269475101088424"
+[1] "scPAS identified 26 rick+ features and 15 rick- features."
+[1] "The percentage of selected feature is: 2.523%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.18820424058988"
+[1] "scPAS identified 21 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.969%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.14115318044241"
+[1] "scPAS identified 19 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.785%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.112922544353928"
+[1] "scPAS identified 19 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.785%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0941021202949402"
+[1] "scPAS identified 15 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.538%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0844995973644749"
+[1] "scPAS identified 15 rick+ features and 8 rick- features."
+[1] "The percentage of selected feature is: 1.415%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.0739371476939155"
+[1] "scPAS identified 14 rick+ features and 8 rick- features."
+[1] "The percentage of selected feature is: 1.354%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.0657219090612583"
+[1] "scPAS identified 14 rick+ features and 6 rick- features."
+[1] "The percentage of selected feature is: 1.231%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 09:08:35] scPAS screening done.
+ℹ [2025/09/24 09:08:37] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 5.77898636090072"
+[1] "scPAS identified 632 rick+ features and 565 rick- features."
+[1] "The percentage of selected feature is: 77.879%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 3.06989901420078"
+[1] "scPAS identified 374 rick+ features and 329 rick- features."
+[1] "The percentage of selected feature is: 45.738%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 1.93688660069343"
+[1] "scPAS identified 270 rick+ features and 233 rick- features."
+[1] "The percentage of selected feature is: 32.726%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.778331296067851"
+[1] "scPAS identified 74 rick+ features and 60 rick- features."
+[1] "The percentage of selected feature is: 8.718%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.447445926195499"
+[1] "scPAS identified 44 rick+ features and 36 rick- features."
+[1] "The percentage of selected feature is: 5.205%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.257227041852747"
+[1] "scPAS identified 26 rick+ features and 16 rick- features."
+[1] "The percentage of selected feature is: 2.733%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.179650067392283"
+[1] "scPAS identified 23 rick+ features and 13 rick- features."
+[1] "The percentage of selected feature is: 2.342%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.14115318044241"
+[1] "scPAS identified 20 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 2.082%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.112922544353928"
+[1] "scPAS identified 19 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.952%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0941021202949402"
+[1] "scPAS identified 18 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.887%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0806589602528059"
+[1] "scPAS identified 16 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.692%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.0739371476939155"
+[1] "scPAS identified 13 rick+ features and 7 rick- features."
+[1] "The percentage of selected feature is: 1.301%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.0657219090612583"
+[1] "scPAS identified 13 rick+ features and 6 rick- features."
+[1] "The percentage of selected feature is: 1.236%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 09:32:12] scPAS screening done.
+ℹ [2025/09/24 09:32:13] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step2: Imputation of missing values in single cell RNA-sequencing data with ALRA"
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+Read matrix with 50865 cells and 15201 genes
+Chose k=67
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.04% of the values became negative in the scaling process and were set to zero
+The matrix went from 11.57% nonzero to 51.06% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 4.57974786083436"
+[1] "scPAS identified 307 rick+ features and 213 rick- features."
+[1] "The percentage of selected feature is: 85.106%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 2.54868409398052"
+[1] "scPAS identified 175 rick+ features and 164 rick- features."
+[1] "The percentage of selected feature is: 55.483%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 1.68460518913685"
+[1] "scPAS identified 135 rick+ features and 129 rick- features."
+[1] "The percentage of selected feature is: 43.208%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.562018164193839"
+[1] "scPAS identified 65 rick+ features and 49 rick- features."
+[1] "The percentage of selected feature is: 18.658%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.32309215791123"
+[1] "scPAS identified 45 rick+ features and 35 rick- features."
+[1] "The percentage of selected feature is: 13.093%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.177296622224031"
+[1] "scPAS identified 32 rick+ features and 25 rick- features."
+[1] "The percentage of selected feature is: 9.329%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.123825822905529"
+[1] "scPAS identified 29 rick+ features and 23 rick- features."
+[1] "The percentage of selected feature is: 8.511%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.0928693671791466"
+[1] "scPAS identified 28 rick+ features and 23 rick- features."
+[1] "The percentage of selected feature is: 8.347%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.0778331296067852"
+[1] "scPAS identified 25 rick+ features and 22 rick- features."
+[1] "The percentage of selected feature is: 7.692%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0679493438874898"
+[1] "scPAS identified 18 rick+ features and 20 rick- features."
+[1] "The percentage of selected feature is: 6.219%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0610155454699341"
+[1] "scPAS identified 18 rick+ features and 15 rick- features."
+[1] "The percentage of selected feature is: 5.401%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.0585939251004958"
+[1] "scPAS identified 12 rick+ features and 15 rick- features."
+[1] "The percentage of selected feature is: 4.419%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.0520834889782185"
+[1] "scPAS identified 11 rick+ features and 15 rick- features."
+[1] "The percentage of selected feature is: 4.255%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 09:40:43] scPAS screening done.
+ℹ [2025/09/24 09:40:49] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.4 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 6.34243039688974"
+[1] "scPAS identified 1429 rick+ features and 1247 rick- features."
+[1] "The percentage of selected feature is: 72.737%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 3.06989901420078"
+[1] "scPAS identified 788 rick+ features and 684 rick- features."
+[1] "The percentage of selected feature is: 40.011%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 2.22694891843941"
+[1] "scPAS identified 506 rick+ features and 424 rick- features."
+[1] "The percentage of selected feature is: 25.279%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.854217636579077"
+[1] "scPAS identified 101 rick+ features and 84 rick- features."
+[1] "The percentage of selected feature is: 5.029%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.491071351624457"
+[1] "scPAS identified 60 rick+ features and 41 rick- features."
+[1] "The percentage of selected feature is: 2.745%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.269475101088424"
+[1] "scPAS identified 43 rick+ features and 24 rick- features."
+[1] "The percentage of selected feature is: 1.821%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.179650067392283"
+[1] "scPAS identified 35 rick+ features and 18 rick- features."
+[1] "The percentage of selected feature is: 1.441%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.14115318044241"
+[1] "scPAS identified 31 rick+ features and 14 rick- features."
+[1] "The percentage of selected feature is: 1.223%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.112922544353928"
+[1] "scPAS identified 29 rick+ features and 13 rick- features."
+[1] "The percentage of selected feature is: 1.142%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0941021202949402"
+[1] "scPAS identified 28 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 1.087%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0806589602528059"
+[1] "scPAS identified 27 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 1.060%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.077457720640482"
+[1] "scPAS identified 23 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 0.897%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.068851307235984"
+[1] "scPAS identified 23 rick+ features and 9 rick- features."
+[1] "The percentage of selected feature is: 0.870%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 11:29:09] scPAS screening done.
+ℹ [2025/09/24 11:29:10] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step2: Imputation of missing values in single cell RNA-sequencing data with KNN...."
+Warning: Layer counts isn't present in the assay object; returning NULL
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.4 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 6.6444299947537"
+[1] "scPAS identified 1425 rick+ features and 1283 rick- features."
+[1] "The percentage of selected feature is: 72.233%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 3.06989901420078"
+[1] "scPAS identified 811 rick+ features and 708 rick- features."
+[1] "The percentage of selected feature is: 40.517%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 2.12573065316108"
+[1] "scPAS identified 531 rick+ features and 444 rick- features."
+[1] "The percentage of selected feature is: 26.007%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.854217636579077"
+[1] "scPAS identified 103 rick+ features and 81 rick- features."
+[1] "The percentage of selected feature is: 4.908%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.491071351624457"
+[1] "scPAS identified 61 rick+ features and 41 rick- features."
+[1] "The percentage of selected feature is: 2.721%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.269475101088424"
+[1] "scPAS identified 43 rick+ features and 24 rick- features."
+[1] "The percentage of selected feature is: 1.787%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.18820424058988"
+[1] "scPAS identified 35 rick+ features and 16 rick- features."
+[1] "The percentage of selected feature is: 1.360%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.14115318044241"
+[1] "scPAS identified 31 rick+ features and 15 rick- features."
+[1] "The percentage of selected feature is: 1.227%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.112922544353928"
+[1] "scPAS identified 29 rick+ features and 13 rick- features."
+[1] "The percentage of selected feature is: 1.120%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0941021202949402"
+[1] "scPAS identified 28 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 1.067%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0806589602528059"
+[1] "scPAS identified 27 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 1.040%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.077457720640482"
+[1] "scPAS identified 23 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 0.880%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.068851307235984"
+[1] "scPAS identified 23 rick+ features and 9 rick- features."
+[1] "The percentage of selected feature is: 0.854%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 11:51:01] scPAS screening done.
+ℹ [2025/09/24 11:51:03] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.3 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 6.34243039688974"
+[1] "scPAS identified 1335 rick+ features and 1106 rick- features."
+[1] "The percentage of selected feature is: 73.791%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 2.93036736611304"
+[1] "scPAS identified 757 rick+ features and 631 rick- features."
+[1] "The percentage of selected feature is: 41.959%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 2.12573065316108"
+[1] "scPAS identified 482 rick+ features and 399 rick- features."
+[1] "The percentage of selected feature is: 26.632%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.854217636579077"
+[1] "scPAS identified 96 rick+ features and 81 rick- features."
+[1] "The percentage of selected feature is: 5.351%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.468751400803967"
+[1] "scPAS identified 65 rick+ features and 44 rick- features."
+[1] "The percentage of selected feature is: 3.295%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.269475101088424"
+[1] "scPAS identified 38 rick+ features and 21 rick- features."
+[1] "The percentage of selected feature is: 1.784%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.18820424058988"
+[1] "scPAS identified 32 rick+ features and 15 rick- features."
+[1] "The percentage of selected feature is: 1.421%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.147874295387831"
+[1] "scPAS identified 29 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.179%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.118299436310265"
+[1] "scPAS identified 28 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.149%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0985828635918874"
+[1] "scPAS identified 26 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.088%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0844995973644749"
+[1] "scPAS identified 25 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.088%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.0739371476939155"
+[1] "scPAS identified 24 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.058%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.0657219090612583"
+[1] "scPAS identified 24 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.058%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 13:22:18] scPAS screening done.
+ℹ [2025/09/24 13:22:20] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step2: Imputation of missing values in single cell RNA-sequencing data with ALRA"
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+Read matrix with 50865 cells and 15201 genes
+Chose k=57
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.06% of the values became negative in the scaling process and were set to zero
+The matrix went from 11.57% nonzero to 52.27% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 6.05415714683621"
+[1] "scPAS identified 613 rick+ features and 589 rick- features."
+[1] "The percentage of selected feature is: 78.204%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 3.2160745667502"
+[1] "scPAS identified 371 rick+ features and 314 rick- features."
+[1] "The percentage of selected feature is: 44.567%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 2.02911291425366"
+[1] "scPAS identified 256 rick+ features and 226 rick- features."
+[1] "The percentage of selected feature is: 31.360%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.778331296067851"
+[1] "scPAS identified 75 rick+ features and 60 rick- features."
+[1] "The percentage of selected feature is: 8.783%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.468751400803967"
+[1] "scPAS identified 41 rick+ features and 31 rick- features."
+[1] "The percentage of selected feature is: 4.684%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.257227041852747"
+[1] "scPAS identified 26 rick+ features and 17 rick- features."
+[1] "The percentage of selected feature is: 2.798%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.179650067392283"
+[1] "scPAS identified 23 rick+ features and 13 rick- features."
+[1] "The percentage of selected feature is: 2.342%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.14115318044241"
+[1] "scPAS identified 21 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 2.147%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.112922544353928"
+[1] "scPAS identified 19 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.952%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0941021202949402"
+[1] "scPAS identified 18 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.887%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0806589602528059"
+[1] "scPAS identified 16 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.692%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.0739371476939155"
+[1] "scPAS identified 13 rick+ features and 7 rick- features."
+[1] "The percentage of selected feature is: 1.301%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.0657219090612583"
+[1] "scPAS identified 13 rick+ features and 6 rick- features."
+[1] "The percentage of selected feature is: 1.236%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 13:32:46] scPAS screening done.
+ℹ [2025/09/24 13:32:47] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 5.51632251186757"
+[1] "scPAS identified 1027 rick+ features and 858 rick- features."
+[1] "The percentage of selected feature is: 78.022%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 2.79717764677541"
+[1] "scPAS identified 605 rick+ features and 495 rick- features."
+[1] "The percentage of selected feature is: 45.530%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 1.93688660069343"
+[1] "scPAS identified 423 rick+ features and 331 rick- features."
+[1] "The percentage of selected feature is: 31.209%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.815392126649878"
+[1] "scPAS identified 101 rick+ features and 70 rick- features."
+[1] "The percentage of selected feature is: 7.078%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.491071351624457"
+[1] "scPAS identified 52 rick+ features and 30 rick- features."
+[1] "The percentage of selected feature is: 3.394%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.257227041852747"
+[1] "scPAS identified 39 rick+ features and 22 rick- features."
+[1] "The percentage of selected feature is: 2.525%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.179650067392283"
+[1] "scPAS identified 33 rick+ features and 14 rick- features."
+[1] "The percentage of selected feature is: 1.945%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.14115318044241"
+[1] "scPAS identified 28 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 1.656%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.112922544353928"
+[1] "scPAS identified 27 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.573%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0941021202949402"
+[1] "scPAS identified 27 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.573%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0806589602528059"
+[1] "scPAS identified 27 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.531%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.0705765902212052"
+[1] "scPAS identified 25 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.449%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.0627347468632935"
+[1] "scPAS identified 25 rick+ features and 9 rick- features."
+[1] "The percentage of selected feature is: 1.407%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 14:20:43] scPAS screening done.
+ℹ [2025/09/24 14:20:45] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step2: Imputation of missing values in single cell RNA-sequencing data with ALRA"
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+Read matrix with 50865 cells and 15201 genes
+Chose k=65
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.04% of the values became negative in the scaling process and were set to zero
+The matrix went from 11.57% nonzero to 51.26% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 6.96080953081213"
+[1] "scPAS identified 1013 rick+ features and 836 rick- features."
+[1] "The percentage of selected feature is: 74.019%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 3.2160745667502"
+[1] "scPAS identified 573 rick+ features and 471 rick- features."
+[1] "The percentage of selected feature is: 41.793%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 2.12573065316108"
+[1] "scPAS identified 397 rick+ features and 319 rick- features."
+[1] "The percentage of selected feature is: 28.663%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.815392126649878"
+[1] "scPAS identified 100 rick+ features and 76 rick- features."
+[1] "The percentage of selected feature is: 7.046%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.468751400803967"
+[1] "scPAS identified 59 rick+ features and 34 rick- features."
+[1] "The percentage of selected feature is: 3.723%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.257227041852747"
+[1] "scPAS identified 39 rick+ features and 25 rick- features."
+[1] "The percentage of selected feature is: 2.562%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.179650067392283"
+[1] "scPAS identified 33 rick+ features and 16 rick- features."
+[1] "The percentage of selected feature is: 1.962%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.14115318044241"
+[1] "scPAS identified 28 rick+ features and 13 rick- features."
+[1] "The percentage of selected feature is: 1.641%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.112922544353928"
+[1] "scPAS identified 27 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 1.561%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0941021202949402"
+[1] "scPAS identified 27 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 1.561%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0806589602528059"
+[1] "scPAS identified 26 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.481%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.0705765902212052"
+[1] "scPAS identified 25 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.401%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.0627347468632935"
+[1] "scPAS identified 25 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.401%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 14:32:51] scPAS screening done.
+ℹ [2025/09/24 14:32:53] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step2: Imputation of missing values in single cell RNA-sequencing data with KNN...."
+Warning: Layer counts isn't present in the assay object; returning NULL
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 5.77898636090072"
+[1] "scPAS identified 1074 rick+ features and 915 rick- features."
+[1] "The percentage of selected feature is: 77.183%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 2.79717764677541"
+[1] "scPAS identified 639 rick+ features and 539 rick- features."
+[1] "The percentage of selected feature is: 45.712%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 1.8488521154209"
+[1] "scPAS identified 443 rick+ features and 378 rick- features."
+[1] "The percentage of selected feature is: 31.859%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.815392126649878"
+[1] "scPAS identified 108 rick+ features and 78 rick- features."
+[1] "The percentage of selected feature is: 7.218%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.468751400803967"
+[1] "scPAS identified 58 rick+ features and 35 rick- features."
+[1] "The percentage of selected feature is: 3.609%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.257227041852747"
+[1] "scPAS identified 39 rick+ features and 24 rick- features."
+[1] "The percentage of selected feature is: 2.445%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.179650067392283"
+[1] "scPAS identified 33 rick+ features and 16 rick- features."
+[1] "The percentage of selected feature is: 1.901%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.14115318044241"
+[1] "scPAS identified 28 rick+ features and 13 rick- features."
+[1] "The percentage of selected feature is: 1.591%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.112922544353928"
+[1] "scPAS identified 27 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 1.513%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0941021202949402"
+[1] "scPAS identified 27 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 1.513%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0806589602528059"
+[1] "scPAS identified 26 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.436%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.0705765902212052"
+[1] "scPAS identified 25 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.358%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.0627347468632935"
+[1] "scPAS identified 25 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.358%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 14:45:56] scPAS screening done.
+ℹ [2025/09/24 14:45:58] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step2: Imputation of missing values in single cell RNA-sequencing data with ALRA"
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+Read matrix with 50865 cells and 15201 genes
+Chose k=63
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.05% of the values became negative in the scaling process and were set to zero
+The matrix went from 11.57% nonzero to 51.49% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 6.05415714683621"
+[1] "scPAS identified 346 rick+ features and 293 rick- features."
+[1] "The percentage of selected feature is: 81.298%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 2.79717764677541"
+[1] "scPAS identified 211 rick+ features and 198 rick- features."
+[1] "The percentage of selected feature is: 52.036%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 1.8488521154209"
+[1] "scPAS identified 161 rick+ features and 148 rick- features."
+[1] "The percentage of selected feature is: 39.313%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.616814241387412"
+[1] "scPAS identified 66 rick+ features and 60 rick- features."
+[1] "The percentage of selected feature is: 16.031%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.371477468716586"
+[1] "scPAS identified 38 rick+ features and 37 rick- features."
+[1] "The percentage of selected feature is: 9.542%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.203848031662469"
+[1] "scPAS identified 29 rick+ features and 27 rick- features."
+[1] "The percentage of selected feature is: 7.125%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.13589868777498"
+[1] "scPAS identified 26 rick+ features and 24 rick- features."
+[1] "The percentage of selected feature is: 6.361%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.117187850200992"
+[1] "scPAS identified 16 rick+ features and 16 rick- features."
+[1] "The percentage of selected feature is: 4.071%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.0937502801607934"
+[1] "scPAS identified 16 rick+ features and 15 rick- features."
+[1] "The percentage of selected feature is: 3.944%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0781252334673278"
+[1] "scPAS identified 16 rick+ features and 15 rick- features."
+[1] "The percentage of selected feature is: 3.944%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0669644858291381"
+[1] "scPAS identified 15 rick+ features and 15 rick- features."
+[1] "The percentage of selected feature is: 3.817%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.0585939251004958"
+[1] "scPAS identified 14 rick+ features and 15 rick- features."
+[1] "The percentage of selected feature is: 3.690%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.0520834889782185"
+[1] "scPAS identified 14 rick+ features and 15 rick- features."
+[1] "The percentage of selected feature is: 3.690%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 14:55:20] scPAS screening done.
+ℹ [2025/09/24 14:55:22] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step2: Imputation of missing values in single cell RNA-sequencing data with KNN...."
+Warning: Layer counts isn't present in the assay object; returning NULL
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 5.77898636090072"
+[1] "scPAS identified 1074 rick+ features and 915 rick- features."
+[1] "The percentage of selected feature is: 77.183%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 2.79717764677541"
+[1] "scPAS identified 639 rick+ features and 539 rick- features."
+[1] "The percentage of selected feature is: 45.712%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 1.8488521154209"
+[1] "scPAS identified 443 rick+ features and 378 rick- features."
+[1] "The percentage of selected feature is: 31.859%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.815392126649878"
+[1] "scPAS identified 108 rick+ features and 78 rick- features."
+[1] "The percentage of selected feature is: 7.218%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.468751400803967"
+[1] "scPAS identified 58 rick+ features and 35 rick- features."
+[1] "The percentage of selected feature is: 3.609%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.257227041852747"
+[1] "scPAS identified 39 rick+ features and 24 rick- features."
+[1] "The percentage of selected feature is: 2.445%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.179650067392283"
+[1] "scPAS identified 33 rick+ features and 16 rick- features."
+[1] "The percentage of selected feature is: 1.901%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.14115318044241"
+[1] "scPAS identified 28 rick+ features and 13 rick- features."
+[1] "The percentage of selected feature is: 1.591%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.112922544353928"
+[1] "scPAS identified 27 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 1.513%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0941021202949402"
+[1] "scPAS identified 27 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 1.513%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0806589602528059"
+[1] "scPAS identified 26 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.436%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.0705765902212052"
+[1] "scPAS identified 25 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.358%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.0627347468632935"
+[1] "scPAS identified 25 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.358%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 15:09:01] scPAS screening done.
+ℹ [2025/09/24 15:09:03] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step2: Imputation of missing values in single cell RNA-sequencing data with KNN...."
+Warning: Layer counts isn't present in the assay object; returning NULL
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.0 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 5.77898636090072"
+[1] "scPAS identified 1076 rick+ features and 944 rick- features."
+[1] "The percentage of selected feature is: 76.198%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 2.79717764677541"
+[1] "scPAS identified 649 rick+ features and 554 rick- features."
+[1] "The percentage of selected feature is: 45.379%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 1.8488521154209"
+[1] "scPAS identified 449 rick+ features and 391 rick- features."
+[1] "The percentage of selected feature is: 31.686%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.854217636579077"
+[1] "scPAS identified 88 rick+ features and 75 rick- features."
+[1] "The percentage of selected feature is: 6.149%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.468751400803967"
+[1] "scPAS identified 58 rick+ features and 37 rick- features."
+[1] "The percentage of selected feature is: 3.584%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.257227041852747"
+[1] "scPAS identified 39 rick+ features and 26 rick- features."
+[1] "The percentage of selected feature is: 2.452%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.179650067392283"
+[1] "scPAS identified 33 rick+ features and 17 rick- features."
+[1] "The percentage of selected feature is: 1.886%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.14115318044241"
+[1] "scPAS identified 28 rick+ features and 13 rick- features."
+[1] "The percentage of selected feature is: 1.547%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.112922544353928"
+[1] "scPAS identified 27 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 1.471%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0941021202949402"
+[1] "scPAS identified 27 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 1.471%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0806589602528059"
+[1] "scPAS identified 26 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.396%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.0705765902212052"
+[1] "scPAS identified 25 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.320%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.0627347468632935"
+[1] "scPAS identified 25 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.320%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 15:24:07] scPAS screening done.
+ℹ [2025/09/24 15:24:09] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step2: Imputation of missing values in single cell RNA-sequencing data with ALRA"
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+Read matrix with 50865 cells and 15201 genes
+Chose k=58
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.05% of the values became negative in the scaling process and were set to zero
+The matrix went from 11.57% nonzero to 52.10% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 5.77898636090072"
+[1] "scPAS identified 470 rick+ features and 428 rick- features."
+[1] "The percentage of selected feature is: 79.610%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 3.06989901420078"
+[1] "scPAS identified 266 rick+ features and 255 rick- features."
+[1] "The percentage of selected feature is: 46.188%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 2.02911291425366"
+[1] "scPAS identified 194 rick+ features and 186 rick- features."
+[1] "The percentage of selected feature is: 33.688%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.742954937433173"
+[1] "scPAS identified 63 rick+ features and 59 rick- features."
+[1] "The percentage of selected feature is: 10.816%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.427108818289539"
+[1] "scPAS identified 43 rick+ features and 36 rick- features."
+[1] "The percentage of selected feature is: 7.004%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.245535675812229"
+[1] "scPAS identified 23 rick+ features and 15 rick- features."
+[1] "The percentage of selected feature is: 3.369%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.163690450541486"
+[1] "scPAS identified 17 rick+ features and 15 rick- features."
+[1] "The percentage of selected feature is: 2.837%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.128613520926374"
+[1] "scPAS identified 17 rick+ features and 14 rick- features."
+[1] "The percentage of selected feature is: 2.748%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.102890816741099"
+[1] "scPAS identified 16 rick+ features and 13 rick- features."
+[1] "The percentage of selected feature is: 2.571%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0857423472842491"
+[1] "scPAS identified 15 rick+ features and 13 rick- features."
+[1] "The percentage of selected feature is: 2.482%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0769928860252641"
+[1] "scPAS identified 15 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 2.394%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.0673687752721061"
+[1] "scPAS identified 15 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 2.394%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.0598833557974276"
+[1] "scPAS identified 15 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 2.305%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 15:33:40] scPAS screening done.
+ℹ [2025/09/24 15:33:41] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step2: Imputation of missing values in single cell RNA-sequencing data with KNN...."
+Warning: Layer counts isn't present in the assay object; returning NULL
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.0 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 5.51632251186757"
+[1] "scPAS identified 1140 rick+ features and 974 rick- features."
+[1] "The percentage of selected feature is: 77.436%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 2.67004160573845"
+[1] "scPAS identified 674 rick+ features and 587 rick- features."
+[1] "The percentage of selected feature is: 46.190%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 1.76481893337098"
+[1] "scPAS identified 488 rick+ features and 424 rick- features."
+[1] "The percentage of selected feature is: 33.407%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.815392126649878"
+[1] "scPAS identified 105 rick+ features and 82 rick- features."
+[1] "The percentage of selected feature is: 6.850%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.468751400803967"
+[1] "scPAS identified 61 rick+ features and 37 rick- features."
+[1] "The percentage of selected feature is: 3.590%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.257227041852747"
+[1] "scPAS identified 40 rick+ features and 26 rick- features."
+[1] "The percentage of selected feature is: 2.418%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.179650067392283"
+[1] "scPAS identified 34 rick+ features and 17 rick- features."
+[1] "The percentage of selected feature is: 1.868%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.14115318044241"
+[1] "scPAS identified 28 rick+ features and 13 rick- features."
+[1] "The percentage of selected feature is: 1.502%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.112922544353928"
+[1] "scPAS identified 27 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 1.429%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0941021202949402"
+[1] "scPAS identified 27 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 1.429%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0806589602528059"
+[1] "scPAS identified 26 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.355%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.0705765902212052"
+[1] "scPAS identified 25 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.282%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.0627347468632935"
+[1] "scPAS identified 25 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.282%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 15:48:02] scPAS screening done.
+ℹ [2025/09/24 15:48:04] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step2: Imputation of missing values in single cell RNA-sequencing data with KNN...."
+Warning: Layer counts isn't present in the assay object; returning NULL
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.2 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 6.34243039688974"
+[1] "scPAS identified 1265 rick+ features and 1084 rick- features."
+[1] "The percentage of selected feature is: 74.171%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 2.93036736611304"
+[1] "scPAS identified 714 rick+ features and 627 rick- features."
+[1] "The percentage of selected feature is: 42.343%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 1.93688660069343"
+[1] "scPAS identified 508 rick+ features and 424 rick- features."
+[1] "The percentage of selected feature is: 29.428%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.854217636579077"
+[1] "scPAS identified 93 rick+ features and 81 rick- features."
+[1] "The percentage of selected feature is: 5.494%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.491071351624457"
+[1] "scPAS identified 55 rick+ features and 38 rick- features."
+[1] "The percentage of selected feature is: 2.937%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.269475101088424"
+[1] "scPAS identified 38 rick+ features and 21 rick- features."
+[1] "The percentage of selected feature is: 1.863%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.18820424058988"
+[1] "scPAS identified 33 rick+ features and 16 rick- features."
+[1] "The percentage of selected feature is: 1.547%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.147874295387831"
+[1] "scPAS identified 28 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.200%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.118299436310265"
+[1] "scPAS identified 27 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.168%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0985828635918874"
+[1] "scPAS identified 26 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.137%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0844995973644749"
+[1] "scPAS identified 25 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.137%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.0739371476939155"
+[1] "scPAS identified 24 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.105%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.0657219090612583"
+[1] "scPAS identified 24 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 1.137%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 16:05:18] scPAS screening done.
+ℹ [2025/09/24 16:05:21] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step2: Imputation of missing values in single cell RNA-sequencing data with ALRA"
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+Read matrix with 50865 cells and 15201 genes
+Chose k=61
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.05% of the values became negative in the scaling process and were set to zero
+The matrix went from 11.57% nonzero to 51.74% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 6.05415714683621"
+[1] "scPAS identified 427 rick+ features and 395 rick- features."
+[1] "The percentage of selected feature is: 79.038%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 2.93036736611304"
+[1] "scPAS identified 245 rick+ features and 243 rick- features."
+[1] "The percentage of selected feature is: 46.923%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 1.93688660069343"
+[1] "scPAS identified 187 rick+ features and 178 rick- features."
+[1] "The percentage of selected feature is: 35.096%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.742954937433173"
+[1] "scPAS identified 58 rick+ features and 59 rick- features."
+[1] "The percentage of selected feature is: 11.250%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.407696063324939"
+[1] "scPAS identified 40 rick+ features and 39 rick- features."
+[1] "The percentage of selected feature is: 7.596%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.234375700401983"
+[1] "scPAS identified 25 rick+ features and 21 rick- features."
+[1] "The percentage of selected feature is: 4.423%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.163690450541486"
+[1] "scPAS identified 17 rick+ features and 15 rick- features."
+[1] "The percentage of selected feature is: 3.077%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.128613520926374"
+[1] "scPAS identified 17 rick+ features and 14 rick- features."
+[1] "The percentage of selected feature is: 2.981%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.102890816741099"
+[1] "scPAS identified 16 rick+ features and 13 rick- features."
+[1] "The percentage of selected feature is: 2.788%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0898250336961414"
+[1] "scPAS identified 16 rick+ features and 13 rick- features."
+[1] "The percentage of selected feature is: 2.788%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0734934405293563"
+[1] "scPAS identified 15 rick+ features and 14 rick- features."
+[1] "The percentage of selected feature is: 2.788%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.0673687752721061"
+[1] "scPAS identified 15 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 2.596%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.0598833557974276"
+[1] "scPAS identified 15 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 2.500%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 16:17:50] scPAS screening done.
+ℹ [2025/09/24 16:17:52] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step2: Imputation of missing values in single cell RNA-sequencing data with ALRA"
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+Read matrix with 50865 cells and 15201 genes
+Chose k=56
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.06% of the values became negative in the scaling process and were set to zero
+The matrix went from 11.57% nonzero to 52.37% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 6.96080953081213"
+[1] "scPAS identified 1007 rick+ features and 846 rick- features."
+[1] "The percentage of selected feature is: 74.179%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 2.93036736611304"
+[1] "scPAS identified 604 rick+ features and 507 rick- features."
+[1] "The percentage of selected feature is: 44.476%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 2.12573065316108"
+[1] "scPAS identified 401 rick+ features and 321 rick- features."
+[1] "The percentage of selected feature is: 28.903%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.815392126649878"
+[1] "scPAS identified 104 rick+ features and 76 rick- features."
+[1] "The percentage of selected feature is: 7.206%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.468751400803967"
+[1] "scPAS identified 58 rick+ features and 34 rick- features."
+[1] "The percentage of selected feature is: 3.683%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.257227041852747"
+[1] "scPAS identified 39 rick+ features and 24 rick- features."
+[1] "The percentage of selected feature is: 2.522%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.179650067392283"
+[1] "scPAS identified 33 rick+ features and 16 rick- features."
+[1] "The percentage of selected feature is: 1.962%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.14115318044241"
+[1] "scPAS identified 28 rick+ features and 13 rick- features."
+[1] "The percentage of selected feature is: 1.641%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.112922544353928"
+[1] "scPAS identified 27 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 1.561%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0941021202949402"
+[1] "scPAS identified 27 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 1.561%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0806589602528059"
+[1] "scPAS identified 26 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.481%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.0705765902212052"
+[1] "scPAS identified 25 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.401%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.0627347468632935"
+[1] "scPAS identified 25 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.401%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 16:29:50] scPAS screening done.
+ℹ [2025/09/24 16:29:52] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 5.77898636090072"
+[1] "scPAS identified 402 rick+ features and 348 rick- features."
+[1] "The percentage of selected feature is: 78.370%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 2.93036736611304"
+[1] "scPAS identified 246 rick+ features and 228 rick- features."
+[1] "The percentage of selected feature is: 49.530%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 1.93688660069343"
+[1] "scPAS identified 177 rick+ features and 164 rick- features."
+[1] "The percentage of selected feature is: 35.632%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.67695286846122"
+[1] "scPAS identified 64 rick+ features and 59 rick- features."
+[1] "The percentage of selected feature is: 12.853%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.389165648033926"
+[1] "scPAS identified 40 rick+ features and 36 rick- features."
+[1] "The percentage of selected feature is: 7.941%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.203848031662469"
+[1] "scPAS identified 32 rick+ features and 29 rick- features."
+[1] "The percentage of selected feature is: 6.374%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.149148642065166"
+[1] "scPAS identified 22 rick+ features and 20 rick- features."
+[1] "The percentage of selected feature is: 4.389%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.117187850200992"
+[1] "scPAS identified 16 rick+ features and 19 rick- features."
+[1] "The percentage of selected feature is: 3.657%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.0982142703248915"
+[1] "scPAS identified 15 rick+ features and 16 rick- features."
+[1] "The percentage of selected feature is: 3.239%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0818452252707429"
+[1] "scPAS identified 13 rick+ features and 17 rick- features."
+[1] "The percentage of selected feature is: 3.135%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0701530502320654"
+[1] "scPAS identified 13 rick+ features and 17 rick- features."
+[1] "The percentage of selected feature is: 3.135%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.0613839189530572"
+[1] "scPAS identified 13 rick+ features and 16 rick- features."
+[1] "The percentage of selected feature is: 3.030%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.0545634835138286"
+[1] "scPAS identified 13 rick+ features and 16 rick- features."
+[1] "The percentage of selected feature is: 3.030%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 16:41:51] scPAS screening done.
+ℹ [2025/09/24 16:41:53] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step2: Imputation of missing values in single cell RNA-sequencing data with KNN...."
+Warning: Layer counts isn't present in the assay object; returning NULL
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.4 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 6.6444299947537"
+[1] "scPAS identified 1392 rick+ features and 1264 rick- features."
+[1] "The percentage of selected feature is: 72.194%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 3.06989901420078"
+[1] "scPAS identified 803 rick+ features and 693 rick- features."
+[1] "The percentage of selected feature is: 40.663%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 2.22694891843941"
+[1] "scPAS identified 506 rick+ features and 412 rick- features."
+[1] "The percentage of selected feature is: 24.952%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.854217636579077"
+[1] "scPAS identified 101 rick+ features and 83 rick- features."
+[1] "The percentage of selected feature is: 5.001%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.491071351624457"
+[1] "scPAS identified 61 rick+ features and 41 rick- features."
+[1] "The percentage of selected feature is: 2.772%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.269475101088424"
+[1] "scPAS identified 43 rick+ features and 24 rick- features."
+[1] "The percentage of selected feature is: 1.821%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.18820424058988"
+[1] "scPAS identified 35 rick+ features and 16 rick- features."
+[1] "The percentage of selected feature is: 1.386%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.14115318044241"
+[1] "scPAS identified 31 rick+ features and 15 rick- features."
+[1] "The percentage of selected feature is: 1.250%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.112922544353928"
+[1] "scPAS identified 29 rick+ features and 13 rick- features."
+[1] "The percentage of selected feature is: 1.142%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0941021202949402"
+[1] "scPAS identified 28 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 1.087%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0806589602528059"
+[1] "scPAS identified 27 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 1.060%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.077457720640482"
+[1] "scPAS identified 23 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 0.897%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.068851307235984"
+[1] "scPAS identified 23 rick+ features and 9 rick- features."
+[1] "The percentage of selected feature is: 0.870%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 17:02:55] scPAS screening done.
+ℹ [2025/09/24 17:02:56] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step2: Imputation of missing values in single cell RNA-sequencing data with KNN...."
+Warning: Layer counts isn't present in the assay object; returning NULL
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 5.77898636090072"
+[1] "scPAS identified 470 rick+ features and 429 rick- features."
+[1] "The percentage of selected feature is: 79.699%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 3.06989901420078"
+[1] "scPAS identified 267 rick+ features and 252 rick- features."
+[1] "The percentage of selected feature is: 46.011%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 1.93688660069343"
+[1] "scPAS identified 195 rick+ features and 192 rick- features."
+[1] "The percentage of selected feature is: 34.309%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.709186488896124"
+[1] "scPAS identified 69 rick+ features and 63 rick- features."
+[1] "The percentage of selected feature is: 11.702%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.427108818289539"
+[1] "scPAS identified 44 rick+ features and 38 rick- features."
+[1] "The percentage of selected feature is: 7.270%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.245535675812229"
+[1] "scPAS identified 23 rick+ features and 15 rick- features."
+[1] "The percentage of selected feature is: 3.369%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.163690450541486"
+[1] "scPAS identified 17 rick+ features and 15 rick- features."
+[1] "The percentage of selected feature is: 2.837%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.128613520926374"
+[1] "scPAS identified 17 rick+ features and 14 rick- features."
+[1] "The percentage of selected feature is: 2.748%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.102890816741099"
+[1] "scPAS identified 16 rick+ features and 13 rick- features."
+[1] "The percentage of selected feature is: 2.571%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0857423472842491"
+[1] "scPAS identified 15 rick+ features and 13 rick- features."
+[1] "The percentage of selected feature is: 2.482%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0769928860252641"
+[1] "scPAS identified 16 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 2.482%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.0673687752721061"
+[1] "scPAS identified 15 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 2.394%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.0598833557974276"
+[1] "scPAS identified 15 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 2.305%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 17:10:31] scPAS screening done.
+ℹ [2025/09/24 17:10:33] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 5.77898636090072"
+[1] "scPAS identified 803 rick+ features and 716 rick- features."
+[1] "The percentage of selected feature is: 78.058%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 2.93036736611304"
+[1] "scPAS identified 467 rick+ features and 415 rick- features."
+[1] "The percentage of selected feature is: 45.324%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 2.02911291425366"
+[1] "scPAS identified 321 rick+ features and 281 rick- features."
+[1] "The percentage of selected feature is: 30.935%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.778331296067851"
+[1] "scPAS identified 97 rick+ features and 68 rick- features."
+[1] "The percentage of selected feature is: 8.479%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.491071351624457"
+[1] "scPAS identified 44 rick+ features and 30 rick- features."
+[1] "The percentage of selected feature is: 3.803%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.269475101088424"
+[1] "scPAS identified 30 rick+ features and 17 rick- features."
+[1] "The percentage of selected feature is: 2.415%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.18820424058988"
+[1] "scPAS identified 25 rick+ features and 13 rick- features."
+[1] "The percentage of selected feature is: 1.953%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.147874295387831"
+[1] "scPAS identified 20 rick+ features and 9 rick- features."
+[1] "The percentage of selected feature is: 1.490%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.118299436310265"
+[1] "scPAS identified 20 rick+ features and 8 rick- features."
+[1] "The percentage of selected feature is: 1.439%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0985828635918874"
+[1] "scPAS identified 19 rick+ features and 8 rick- features."
+[1] "The percentage of selected feature is: 1.387%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0844995973644749"
+[1] "scPAS identified 18 rick+ features and 8 rick- features."
+[1] "The percentage of selected feature is: 1.336%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.0739371476939155"
+[1] "scPAS identified 18 rick+ features and 8 rick- features."
+[1] "The percentage of selected feature is: 1.336%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.0657219090612583"
+[1] "scPAS identified 18 rick+ features and 8 rick- features."
+[1] "The percentage of selected feature is: 1.336%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 17:45:50] scPAS screening done.
+ℹ [2025/09/24 17:45:53] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step2: Imputation of missing values in single cell RNA-sequencing data with KNN...."
+Warning: Layer counts isn't present in the assay object; returning NULL
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.2 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 6.96080953081213"
+[1] "scPAS identified 1256 rick+ features and 1080 rick- features."
+[1] "The percentage of selected feature is: 72.255%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 2.93036736611304"
+[1] "scPAS identified 733 rick+ features and 646 rick- features."
+[1] "The percentage of selected feature is: 42.654%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 2.02911291425366"
+[1] "scPAS identified 488 rick+ features and 411 rick- features."
+[1] "The percentage of selected feature is: 27.807%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.854217636579077"
+[1] "scPAS identified 94 rick+ features and 81 rick- features."
+[1] "The percentage of selected feature is: 5.413%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.491071351624457"
+[1] "scPAS identified 55 rick+ features and 38 rick- features."
+[1] "The percentage of selected feature is: 2.877%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.269475101088424"
+[1] "scPAS identified 38 rick+ features and 21 rick- features."
+[1] "The percentage of selected feature is: 1.825%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.18820424058988"
+[1] "scPAS identified 33 rick+ features and 16 rick- features."
+[1] "The percentage of selected feature is: 1.516%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.147874295387831"
+[1] "scPAS identified 28 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.175%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.118299436310265"
+[1] "scPAS identified 27 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.144%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0985828635918874"
+[1] "scPAS identified 26 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.114%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0844995973644749"
+[1] "scPAS identified 25 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.114%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.0739371476939155"
+[1] "scPAS identified 24 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.083%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.0657219090612583"
+[1] "scPAS identified 24 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 1.114%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 18:03:48] scPAS screening done.
+ℹ [2025/09/24 18:03:50] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 5.77898636090072"
+[1] "scPAS identified 632 rick+ features and 565 rick- features."
+[1] "The percentage of selected feature is: 77.879%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 3.06989901420078"
+[1] "scPAS identified 374 rick+ features and 329 rick- features."
+[1] "The percentage of selected feature is: 45.738%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 1.93688660069343"
+[1] "scPAS identified 270 rick+ features and 233 rick- features."
+[1] "The percentage of selected feature is: 32.726%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.778331296067851"
+[1] "scPAS identified 74 rick+ features and 60 rick- features."
+[1] "The percentage of selected feature is: 8.718%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.447445926195499"
+[1] "scPAS identified 44 rick+ features and 36 rick- features."
+[1] "The percentage of selected feature is: 5.205%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.257227041852747"
+[1] "scPAS identified 26 rick+ features and 16 rick- features."
+[1] "The percentage of selected feature is: 2.733%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.179650067392283"
+[1] "scPAS identified 23 rick+ features and 13 rick- features."
+[1] "The percentage of selected feature is: 2.342%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.14115318044241"
+[1] "scPAS identified 20 rick+ features and 12 rick- features."
+[1] "The percentage of selected feature is: 2.082%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.112922544353928"
+[1] "scPAS identified 19 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.952%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0941021202949402"
+[1] "scPAS identified 18 rick+ features and 11 rick- features."
+[1] "The percentage of selected feature is: 1.887%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0806589602528059"
+[1] "scPAS identified 16 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.692%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.0739371476939155"
+[1] "scPAS identified 13 rick+ features and 7 rick- features."
+[1] "The percentage of selected feature is: 1.301%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.0657219090612583"
+[1] "scPAS identified 13 rick+ features and 6 rick- features."
+[1] "The percentage of selected feature is: 1.236%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 18:27:40] scPAS screening done.
+ℹ [2025/09/24 18:27:43] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step 2: Extracting single-cell expression profiles...."
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Perform cox regression on the given clinical outcomes:"
+[1] "alpha = 0.001"
+[1] "lambda = 5.77898636090072"
+[1] "scPAS identified 728 rick+ features and 662 rick- features."
+[1] "The percentage of selected feature is: 77.915%"
+
+[1] "alpha = 0.005"
+[1] "lambda = 2.79717764677541"
+[1] "scPAS identified 441 rick+ features and 405 rick- features."
+[1] "The percentage of selected feature is: 47.422%"
+
+[1] "alpha = 0.01"
+[1] "lambda = 1.93688660069343"
+[1] "scPAS identified 303 rick+ features and 273 rick- features."
+[1] "The percentage of selected feature is: 32.287%"
+
+[1] "alpha = 0.05"
+[1] "lambda = 0.778331296067851"
+[1] "scPAS identified 89 rick+ features and 66 rick- features."
+[1] "The percentage of selected feature is: 8.688%"
+
+[1] "alpha = 0.1"
+[1] "lambda = 0.468751400803967"
+[1] "scPAS identified 43 rick+ features and 35 rick- features."
+[1] "The percentage of selected feature is: 4.372%"
+
+[1] "alpha = 0.2"
+[1] "lambda = 0.269475101088424"
+[1] "scPAS identified 27 rick+ features and 15 rick- features."
+[1] "The percentage of selected feature is: 2.354%"
+
+[1] "alpha = 0.3"
+[1] "lambda = 0.18820424058988"
+[1] "scPAS identified 21 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.738%"
+
+[1] "alpha = 0.4"
+[1] "lambda = 0.14115318044241"
+[1] "scPAS identified 19 rick+ features and 10 rick- features."
+[1] "The percentage of selected feature is: 1.626%"
+
+[1] "alpha = 0.5"
+[1] "lambda = 0.118299436310265"
+[1] "scPAS identified 18 rick+ features and 7 rick- features."
+[1] "The percentage of selected feature is: 1.401%"
+
+[1] "alpha = 0.6"
+[1] "lambda = 0.0985828635918874"
+[1] "scPAS identified 16 rick+ features and 7 rick- features."
+[1] "The percentage of selected feature is: 1.289%"
+
+[1] "alpha = 0.7"
+[1] "lambda = 0.0844995973644749"
+[1] "scPAS identified 15 rick+ features and 7 rick- features."
+[1] "The percentage of selected feature is: 1.233%"
+
+[1] "alpha = 0.8"
+[1] "lambda = 0.0739371476939155"
+[1] "scPAS identified 15 rick+ features and 7 rick- features."
+[1] "The percentage of selected feature is: 1.233%"
+
+[1] "alpha = 0.9"
+[1] "lambda = 0.0657219090612583"
+[1] "scPAS identified 15 rick+ features and 7 rick- features."
+[1] "The percentage of selected feature is: 1.233%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/24 18:55:58] scPAS screening done.
+
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells   9996863  533.9   16978295  906.8  16978295  906.8
+Vcells 413220951 3152.7  560678080 4277.7 427789171 3263.8
+✔ scPAS random search completed.

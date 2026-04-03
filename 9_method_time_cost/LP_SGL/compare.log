@@ -1,0 +1,72 @@
+nohup: ignoring input
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+✔ SigBridgeR v3.1.0 loaded
+[1] 15201 50865
+[1] 11620
+Running with:
+  n_cells
+1    1000
+ℹ `label_type` not specified or not of length 1, using "LP_SGL"
+ℹ [2026/01/18 13:09:44] Starting LP-SGL screen
+ℹ [2026/01/18 13:09:44] Fetch graph from Seurat object
+ℹ [2026/01/18 13:09:44] Run Leiden clustering
+ℹ [2026/01/18 13:09:45] Calculating correlation matrix...
+
+ℹ [2026/01/18 13:09:56] Fitting SGL model with alpha = 0.5, this may take a while
+ℹ [2026/01/18 13:11:42] Running 5-fold cross-validation
+ℹ [2026/01/18 13:22:06] Optimal lambda index: 20 (error = 784.871126604138)
+ℹ [2026/01/18 13:22:07] Identified 61 lp_sgl negative cells, 871 lp_sgl neutral cells, and 68 lp_sgl positive cells
+✔ [2026/01/18 13:22:07] LP-SGL screening done.
+Warning: Some expressions had a GC in every iteration; so filtering is disabled.
+2    5000
+ℹ `label_type` not specified or not of length 1, using "LP_SGL"
+ℹ [2026/01/18 13:41:48] Starting LP-SGL screen
+ℹ [2026/01/18 13:41:48] Fetch graph from Seurat object
+ℹ [2026/01/18 13:41:48] Run Leiden clustering
+ℹ [2026/01/18 13:41:49] Calculating correlation matrix...
+ℹ [2026/01/18 13:41:50] Fitting SGL model with alpha = 0.5, this may take a while
+ℹ [2026/01/18 13:42:26] Running 5-fold cross-validation
+ℹ [2026/01/18 13:46:55] Optimal lambda index: 20 (error = 797.413540664837)
+ℹ [2026/01/18 13:46:56] Identified 281 lp_sgl negative cells, 4464 lp_sgl neutral cells, and 255 lp_sgl positive cells
+✔ [2026/01/18 13:46:56] LP-SGL screening done.
+Warning: Some expressions had a GC in every iteration; so filtering is disabled.
+3   10000
+ℹ `label_type` not specified or not of length 1, using "LP_SGL"
+ℹ [2026/01/18 14:03:01] Starting LP-SGL screen
+ℹ [2026/01/18 14:03:01] Fetch graph from Seurat object
+ℹ [2026/01/18 14:03:01] Run Leiden clustering
+ℹ [2026/01/18 14:03:03] Calculating correlation matrix...
+ℹ [2026/01/18 14:03:05] Fitting SGL model with alpha = 0.5, this may take a while
+ℹ [2026/01/18 14:04:29] Running 5-fold cross-validation
+ℹ [2026/01/18 14:12:46] Optimal lambda index: 20 (error = 789.72859114444)
+ℹ [2026/01/18 14:12:46] Identified 810 lp_sgl negative cells, 8549 lp_sgl neutral cells, and 641 lp_sgl positive cells
+✔ [2026/01/18 14:12:46] LP-SGL screening done.
+Warning: Some expressions had a GC in every iteration; so filtering is disabled.
+4   50000
+ℹ `label_type` not specified or not of length 1, using "LP_SGL"
+ℹ [2026/01/18 14:43:38] Starting LP-SGL screen
+ℹ [2026/01/18 14:43:38] Fetch graph from Seurat object
+ℹ [2026/01/18 14:43:38] Run Leiden clustering
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.3 GiB
+ℹ [2026/01/18 14:43:59] Calculating correlation matrix...
+ℹ [2026/01/18 14:44:12] Fitting SGL model with alpha = 0.5, this may take a while
+ℹ [2026/01/18 15:33:58] Running 5-fold cross-validation
+ℹ [2026/01/18 19:23:38] Optimal lambda index: 20 (error = 676.456718888133)
+ℹ [2026/01/18 19:23:38] Identified 9389 lp_sgl negative cells, 30980 lp_sgl neutral cells, and 9631 lp_sgl positive cells
+✔ [2026/01/18 19:23:38] LP-SGL screening done.
+Warning: Some expressions had a GC in every iteration; so filtering is disabled.
+            used   (Mb) gc trigger    (Mb)   max used    (Mb)
+Ncells   8575758  458.0   24528457  1310.0   24528457  1310.0
+Vcells 941491128 7183.1 3015159205 23003.9 3015159205 23003.9
+ℹ Finished benchmarking LP_SGL!

@@ -1,0 +1,41 @@
+nohup: ignoring input
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Registered S3 methods overwritten by 'Seqinfo':
+  method                from        
+  as.data.frame.Seqinfo GenomeInfoDb
+  merge.Seqinfo         GenomeInfoDb
+  summary.Seqinfo       GenomeInfoDb
+
+Attaching package: ‘data.table’
+
+The following objects are masked from ‘package:dplyr’:
+
+    between, first, last
+
+ℹ GSVA version 2.2.1
+ℹ Using a MulticoreParam parallel back-end with 2 workers
+ℹ Calculating GSVA ranks
+ℹ kcdf='auto' (default)
+ℹ GSVA sparse algorithm
+ℹ Direct row-wise ECDFs estimation
+Estimating row ECDFs with 2 cores ■■■■■■■■■■                        30% | ETA: …
+Estimating row ECDFs with 2 cores ■■■■■■■■■■■■■                     40% | ETA: …
+Estimating row ECDFs with 2 cores ■■■■■■■■■■■■■■■■                  50% | ETA: …
+Estimating row ECDFs with 2 cores ■■■■■■■■■■■■■■■■■■■               60% | ETA: …
+Estimating row ECDFs with 2 cores ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      90% | ETA: …
+Estimating row ECDFs with 2 cores ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA: …
+ℹ Calculating GSVA column ranks
+ℹ Using a MulticoreParam parallel back-end with 2 workers
+ℹ Calculating GSVA scores
+ℹ Calculating GSVA scores with 2 cores
+✔ Calculations finished

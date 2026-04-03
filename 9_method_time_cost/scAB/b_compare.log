@@ -1,0 +1,192 @@
+nohup: ignoring input
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+✔ SigBridgeR v3.0.2 loaded
+[1] 15201 50865
+[1] 11620
+Running with:
+  n_cells
+1    1000
+ℹ `label_type` not specified or not of length 1, using "scAB"
+ℹ [2026/01/12 18:44:37] Start scAB screening.
+ℹ  Using "RNA_snn" graph for network.
+ℹ [2026/01/12 18:44:37] Calculating L, D and A
+ℹ [2026/01/12 18:44:38] Normalizing quantiles of data
+ℹ [2026/01/12 18:44:47] Calculating correlation
+
+ℹ [2026/01/12 18:44:57] Guanranking
+ℹ [2026/01/12 18:44:57] Selecting K
+loss of 2: 0.00193882
+loss of 3: 0.00198443
+ℹ [2026/01/12 18:45:06] Run NMF with phenotype and cell-cell similarity regularization at K = 2
+ℹ [2026/01/12 18:45:15] Screening cells...
+ℹ [2026/01/12 18:45:16] scAB screening done.
+loss of 2: 0.00193882
+loss of 3: 0.00198443
+loss of 2: 0.00193882
+loss of 3: 0.00198443
+loss of 2: 0.00193882
+loss of 3: 0.00198443
+2    5000
+ℹ `label_type` not specified or not of length 1, using "scAB"
+ℹ [2026/01/12 18:47:24] Start scAB screening.
+ℹ  Using "RNA_snn" graph for network.
+ℹ [2026/01/12 18:47:24] Calculating L, D and A
+ℹ [2026/01/12 18:47:27] Normalizing quantiles of data
+ℹ [2026/01/12 18:47:56] Calculating correlation
+ℹ [2026/01/12 18:47:59] Guanranking
+ℹ [2026/01/12 18:47:59] Selecting K
+loss of 2: 0.00182694
+loss of 3: 0.00189193
+ℹ [2026/01/12 18:48:21] Run NMF with phenotype and cell-cell similarity regularization at K = 2
+ℹ [2026/01/12 18:48:44] Screening cells...
+ℹ [2026/01/12 18:48:44] scAB screening done.
+loss of 2: 0.00182694
+loss of 3: 0.00189193
+loss of 2: 0.00182694
+loss of 3: 0.00189193
+loss of 2: 0.00182694
+loss of 3: 0.00189193
+3   10000
+ℹ `label_type` not specified or not of length 1, using "scAB"
+ℹ [2026/01/12 18:52:46] Start scAB screening.
+ℹ  Using "RNA_snn" graph for network.
+ℹ [2026/01/12 18:52:46] Calculating L, D and A
+ℹ [2026/01/12 18:52:50] Normalizing quantiles of data
+ℹ [2026/01/12 18:53:38] Calculating correlation
+ℹ [2026/01/12 18:53:44] Guanranking
+ℹ [2026/01/12 18:53:44] Selecting K
+loss of 2: 0.00182572
+loss of 3: 0.00188784
+ℹ [2026/01/12 18:54:37] Run NMF with phenotype and cell-cell similarity regularization at K = 2
+ℹ [2026/01/12 18:55:19] Screening cells...
+ℹ [2026/01/12 18:55:19] scAB screening done.
+loss of 2: 0.00182572
+loss of 3: 0.00188784
+loss of 2: 0.00182572
+loss of 3: 0.00188784
+loss of 2: 0.00182572
+loss of 3: 0.00188784
+4   50000
+ℹ `label_type` not specified or not of length 1, using "scAB"
+ℹ [2026/01/12 19:03:02] Start scAB screening.
+ℹ  Using "RNA_snn" graph for network.
+ℹ [2026/01/12 19:03:02] Calculating L, D and A
+ℹ [2026/01/12 19:03:18] Normalizing quantiles of data
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/01/12 19:07:14] Calculating correlation
+ℹ [2026/01/12 19:07:41] Guanranking
+ℹ [2026/01/12 19:07:41] Selecting K
+loss of 2: 0.00184864
+loss of 3: 0.00191138
+ℹ [2026/01/12 19:23:21] Run NMF with phenotype and cell-cell similarity regularization at K = 2
+ℹ [2026/01/12 19:27:58] Screening cells...
+ℹ [2026/01/12 19:27:58] scAB screening done.
+loss of 2: 0.00184864
+loss of 3: 0.00191138
+loss of 2: 0.00184864
+loss of 3: 0.00191138
+loss of 2: 0.00184864
+loss of 3: 0.00191138
+Warning: Some expressions had a GC in every iteration; so filtering is disabled.
+            used   (Mb) gc trigger    (Mb)   max used    (Mb)
+Ncells   6727634  359.3   10636755   568.1   10636755   568.1
+Vcells 902085868 6882.4 2699862144 20598.4 2522969250 19248.8
+Running with:
+  n_cells
+1    1000
+ℹ `label_type` not specified or not of length 1, using "scAB"
+ℹ [2026/01/12 21:01:20] Start scAB screening.
+ℹ  Using "RNA_snn" graph for network.
+ℹ [2026/01/12 21:01:20] Calculating L, D and A
+ℹ [2026/01/12 21:01:22] Normalizing quantiles of data
+ℹ [2026/01/12 21:01:34] Calculating correlation
+ℹ [2026/01/12 21:01:36] Guanranking
+ℹ [2026/01/12 21:01:36] Selecting K
+loss of 2: 0.00186948
+loss of 3: 0.00193821
+ℹ [2026/01/12 21:02:09] Run NMF with phenotype and cell-cell similarity regularization at K = 2
+ℹ [2026/01/12 21:02:49] Screening cells...
+ℹ [2026/01/12 21:02:49] scAB screening done.
+loss of 2: 0.00186948
+loss of 3: 0.00193821
+loss of 2: 0.00186948
+loss of 3: 0.00193821
+loss of 2: 0.00186948
+loss of 3: 0.00193821
+2    5000
+ℹ `label_type` not specified or not of length 1, using "scAB"
+ℹ [2026/01/12 21:07:17] Start scAB screening.
+ℹ  Using "RNA_snn" graph for network.
+ℹ [2026/01/12 21:07:17] Calculating L, D and A
+ℹ [2026/01/12 21:07:22] Normalizing quantiles of data
+ℹ [2026/01/12 21:07:52] Calculating correlation
+ℹ [2026/01/12 21:07:56] Guanranking
+ℹ [2026/01/12 21:07:56] Selecting K
+loss of 2: 0.00178813
+loss of 3: 0.00187251
+ℹ [2026/01/12 21:10:23] Run NMF with phenotype and cell-cell similarity regularization at K = 2
+ℹ [2026/01/12 21:11:22] Screening cells...
+ℹ [2026/01/12 21:11:23] scAB screening done.
+loss of 2: 0.00178813
+loss of 3: 0.00187251
+loss of 2: 0.00178813
+loss of 3: 0.00187251
+loss of 2: 0.00178813
+loss of 3: 0.00187251
+3   10000
+ℹ `label_type` not specified or not of length 1, using "scAB"
+ℹ [2026/01/12 21:23:51] Start scAB screening.
+ℹ  Using "RNA_snn" graph for network.
+ℹ [2026/01/12 21:23:51] Calculating L, D and A
+ℹ [2026/01/12 21:23:56] Normalizing quantiles of data
+ℹ [2026/01/12 21:25:01] Calculating correlation
+ℹ [2026/01/12 21:25:09] Guanranking
+ℹ [2026/01/12 21:25:09] Selecting K
+loss of 2: 0.00180292
+loss of 3: 0.00186719
+ℹ [2026/01/12 21:29:22] Run NMF with phenotype and cell-cell similarity regularization at K = 2
+ℹ [2026/01/12 21:30:57] Screening cells...
+ℹ [2026/01/12 21:30:57] scAB screening done.
+loss of 2: 0.00180292
+loss of 3: 0.00186719
+loss of 2: 0.00180292
+loss of 3: 0.00186719
+loss of 2: 0.00180292
+loss of 3: 0.00186719
+4   50000
+ℹ `label_type` not specified or not of length 1, using "scAB"
+ℹ [2026/01/12 21:51:01] Start scAB screening.
+ℹ  Using "RNA_snn" graph for network.
+ℹ [2026/01/12 21:51:01] Calculating L, D and A
+ℹ [2026/01/12 21:51:24] Normalizing quantiles of data
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/01/12 21:56:38] Calculating correlation
+ℹ [2026/01/12 21:57:11] Guanranking
+ℹ [2026/01/12 21:57:12] Selecting K
+loss of 2: 0.00183882
+loss of 3: 0.00191446
+ℹ [2026/01/12 22:20:24] Run NMF with phenotype and cell-cell similarity regularization at K = 2
+ℹ [2026/01/12 22:25:45] Screening cells...
+Warning in multimode::locmodes(x, mod0 = 2) :
+  If the density function has an unbounded support, artificial modes may have been created in the tails
+ℹ [2026/01/12 22:25:47] scAB screening done.
+loss of 2: 0.00183882
+loss of 3: 0.00191446
+loss of 2: 0.00183882
+loss of 3: 0.00191446
+loss of 2: 0.00183882
+loss of 3: 0.00191446
+Warning: Some expressions had a GC in every iteration; so filtering is disabled.
+ℹ Finished benchmarking scAB!

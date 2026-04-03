@@ -1,0 +1,147 @@
+Read matrix with 54650 cells and 13188 genes
+Chose k=68
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.02% of the values became negative in the scaling process and were set to zero
+The matrix went from 13.16% nonzero to 58.15% nonzero
+Read matrix with 54650 cells and 13188 genes
+Chose k=64
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.02% of the values became negative in the scaling process and were set to zero
+The matrix went from 13.16% nonzero to 58.57% nonzero
+Read matrix with 54650 cells and 13188 genes
+Chose k=62
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.02% of the values became negative in the scaling process and were set to zero
+The matrix went from 13.16% nonzero to 58.73% nonzero
+Read matrix with 54650 cells and 13188 genes
+Chose k=68
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.02% of the values became negative in the scaling process and were set to zero
+The matrix went from 13.16% nonzero to 58.15% nonzero
+Read matrix with 54650 cells and 13188 genes
+Chose k=63
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.02% of the values became negative in the scaling process and were set to zero
+The matrix went from 13.16% nonzero to 58.61% nonzero
+Read matrix with 54650 cells and 13188 genes
+Chose k=68
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.02% of the values became negative in the scaling process and were set to zero
+The matrix went from 13.16% nonzero to 58.11% nonzero
+Read matrix with 54650 cells and 13188 genes
+Chose k=61
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.02% of the values became negative in the scaling process and were set to zero
+The matrix went from 13.16% nonzero to 58.88% nonzero
+Read matrix with 54650 cells and 13188 genes
+Chose k=67
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.02% of the values became negative in the scaling process and were set to zero
+The matrix went from 13.16% nonzero to 58.21% nonzero
+Read matrix with 54650 cells and 13188 genes
+Chose k=76
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.01% of the values became negative in the scaling process and were set to zero
+The matrix went from 13.16% nonzero to 57.30% nonzero
+Read matrix with 54650 cells and 13188 genes
+Chose k=64
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.02% of the values became negative in the scaling process and were set to zero
+The matrix went from 13.16% nonzero to 58.54% nonzero
+Read matrix with 54650 cells and 13188 genes
+Chose k=69
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.02% of the values became negative in the scaling process and were set to zero
+The matrix went from 13.16% nonzero to 58.04% nonzero
+Read matrix with 54650 cells and 13188 genes
+Chose k=66
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.02% of the values became negative in the scaling process and were set to zero
+The matrix went from 13.16% nonzero to 58.34% nonzero
+Read matrix with 54650 cells and 13188 genes
+Chose k=73
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.01% of the values became negative in the scaling process and were set to zero
+The matrix went from 13.16% nonzero to 57.61% nonzero
+Read matrix with 54650 cells and 13188 genes
+Chose k=76
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.01% of the values became negative in the scaling process and were set to zero
+The matrix went from 13.16% nonzero to 57.34% nonzero
+Read matrix with 54650 cells and 13188 genes
+Chose k=62
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.02% of the values became negative in the scaling process and were set to zero
+The matrix went from 13.16% nonzero to 58.76% nonzero
+Read matrix with 54650 cells and 13188 genes
+Chose k=64
+Getting nonzeros
+Randomized SVD
+Find the 0.001000 quantile of each gene
+Sweep
+Scaling all except for 0 columns
+0.02% of the values became negative in the scaling process and were set to zero
+The matrix went from 13.16% nonzero to 58.52% nonzero
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells   4104211  219.2    7637710  407.9   7637710  407.9
+Vcells 424061859 3235.4  695698743 5307.8 424557051 3239.2

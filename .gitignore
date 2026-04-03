@@ -4,7 +4,6 @@
 scExp.csv 
 patExp.csv
 patLab.csv
-*.log
 Bias*.csv
 Theta*.csv
 BlankClassMTL*

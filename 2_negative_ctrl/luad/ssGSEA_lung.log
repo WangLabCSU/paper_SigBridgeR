@@ -1,0 +1,323 @@
+nohup: ignoring input
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.8 GiB
+ℹ GSVA version 2.2.1
+ℹ Calculating GSVA ranks
+ℹ kcdf='auto' (default)
+ℹ GSVA dense (classical) algorithm
+ℹ Direct row-wise ECDFs estimation
+Estimating ECDFs ■■                                 2% |  ETA:  1m
+Estimating ECDFs ■■■                                6% |  ETA:  1m
+Estimating ECDFs ■■■■                              10% |  ETA:  1m
+Estimating ECDFs ■■■■■                             14% |  ETA:  1m
+Estimating ECDFs ■■■■■■■                           22% |  ETA: 47s
+Estimating ECDFs ■■■■■■■■■■                        28% |  ETA: 40s
+Estimating ECDFs ■■■■■■■■■■■                       35% |  ETA: 36s
+Estimating ECDFs ■■■■■■■■■■■■■                     41% |  ETA: 33s
+Estimating ECDFs ■■■■■■■■■■■■■■■                   47% |  ETA: 29s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■                 53% |  ETA: 24s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■               60% |  ETA: 21s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■              65% |  ETA: 18s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■            71% |  ETA: 15s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■■■■         79% |  ETA: 11s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■■■■■■       85% |  ETA:  7s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      91% |  ETA:  5s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     95% |  ETA:  3s
+ℹ Calculating GSVA column ranks
+ℹ Calculating GSVA scores
+Calculating GSVA scores ■■■                                6% | ETA: 15s
+Calculating GSVA scores ■■■■                              11% | ETA: 15s
+Calculating GSVA scores ■■■■■■■■■                         26% | ETA: 13s
+Calculating GSVA scores ■■■■■■■■■■■■■■                    44% | ETA: 10s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■■■■■              62% | ETA:  7s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■■■■■■■■■■         79% | ETA:  4s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    96% | ETA:  1s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+✔ Calculations finished
+ℹ GSVA version 2.2.1
+ℹ Calculating GSVA ranks
+ℹ kcdf='auto' (default)
+ℹ GSVA dense (classical) algorithm
+ℹ Direct row-wise ECDFs estimation
+Estimating ECDFs ■■■                                8% |  ETA: 45s
+Estimating ECDFs ■■■■■                             14% |  ETA: 41s
+Estimating ECDFs ■■■■■■■                           21% |  ETA: 38s
+Estimating ECDFs ■■■■■■■■■                         27% |  ETA: 35s
+Estimating ECDFs ■■■■■■■■■■■                       33% |  ETA: 32s
+Estimating ECDFs ■■■■■■■■■■■■■                     40% |  ETA: 28s
+Estimating ECDFs ■■■■■■■■■■■■■■■                   47% |  ETA: 25s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■                 53% |  ETA: 22s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■                58% |  ETA: 20s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■              63% |  ETA: 18s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■            69% |  ETA: 15s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■■■          76% |  ETA: 12s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  8s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      91% |  ETA:  4s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■   98% |  ETA:  1s
+ℹ Calculating GSVA column ranks
+ℹ Calculating GSVA scores
+Calculating GSVA scores ■■                                 4% | ETA: 24s
+Calculating GSVA scores ■■■■■                             15% | ETA: 20s
+Calculating GSVA scores ■■■■■■■■■■■                       32% | ETA: 14s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■                  48% | ETA: 10s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■■■■■■             65% | ETA:  7s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■■■■■■■■■■         81% | ETA:  4s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    97% | ETA:  1s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+✔ Calculations finished
+ℹ GSVA version 2.2.1
+ℹ Calculating GSVA ranks
+ℹ kcdf='auto' (default)
+ℹ GSVA dense (classical) algorithm
+ℹ Direct row-wise ECDFs estimation
+Estimating ECDFs ■■                                 3% |  ETA:  2m
+Estimating ECDFs ■■■                                5% |  ETA:  1m
+Estimating ECDFs ■■■■                              11% |  ETA:  1m
+Estimating ECDFs ■■■■■■                            17% |  ETA:  1m
+Estimating ECDFs ■■■■■■■■                          22% |  ETA: 46s
+Estimating ECDFs ■■■■■■■■■■                        28% |  ETA: 41s
+Estimating ECDFs ■■■■■■■■■■■                       34% |  ETA: 38s
+Estimating ECDFs ■■■■■■■■■■■■■                     41% |  ETA: 33s
+Estimating ECDFs ■■■■■■■■■■■■■■■                   47% |  ETA: 28s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■                 53% |  ETA: 25s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■               60% |  ETA: 21s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■             66% |  ETA: 18s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■            71% |  ETA: 15s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■■■          78% |  ETA: 12s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■■■■■        84% |  ETA:  8s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      90% |  ETA:  5s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    97% |  ETA:  2s
+ℹ Calculating GSVA column ranks
+ℹ Calculating GSVA scores
+Calculating GSVA scores ■■                                 4% | ETA: 22s
+Calculating GSVA scores ■■■■■                             12% | ETA: 21s
+Calculating GSVA scores ■■■■■■■■■                         26% | ETA: 17s
+Calculating GSVA scores ■■■■■■■■■■■■■■                    43% | ETA: 12s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■■                 52% | ETA: 11s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■■■■■              63% | ETA:  9s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■■■■■■■■■■         79% | ETA:  5s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    95% | ETA:  1s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+✔ Calculations finished
+ℹ GSVA version 2.2.1
+ℹ Calculating GSVA ranks
+ℹ kcdf='auto' (default)
+ℹ GSVA dense (classical) algorithm
+ℹ Direct row-wise ECDFs estimation
+Estimating ECDFs ■■                                 4% |  ETA:  1m
+Estimating ECDFs ■■■                                8% |  ETA:  1m
+Estimating ECDFs ■■■■■                             14% |  ETA:  1m
+Estimating ECDFs ■■■■■■■                           20% |  ETA: 46s
+Estimating ECDFs ■■■■■■■■■                         26% |  ETA: 41s
+Estimating ECDFs ■■■■■■■■■■■                       32% |  ETA: 38s
+Estimating ECDFs ■■■■■■■■■■■■                      38% |  ETA: 34s
+Estimating ECDFs ■■■■■■■■■■■■■■                    44% |  ETA: 30s
+Estimating ECDFs ■■■■■■■■■■■■■■■■                  51% |  ETA: 26s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■                57% |  ETA: 22s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■              64% |  ETA: 18s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■            72% |  ETA: 14s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■■■■         79% |  ETA: 10s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■■■■■■       86% |  ETA:  7s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     93% |  ETA:  3s
+ℹ Calculating GSVA column ranks
+ℹ Calculating GSVA scores
+Calculating GSVA scores ■■                                 4% | ETA: 21s
+Calculating GSVA scores ■■■■■                             12% | ETA: 22s
+Calculating GSVA scores ■■■■■■■■■                         27% | ETA: 17s
+Calculating GSVA scores ■■■■■■■■■■■■■■                    43% | ETA: 12s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■■■■               60% | ETA:  8s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■■■■■■■■■          78% | ETA:  4s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    96% | ETA:  1s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+✔ Calculations finished
+ℹ GSVA version 2.2.1
+ℹ Calculating GSVA ranks
+ℹ kcdf='auto' (default)
+ℹ GSVA dense (classical) algorithm
+ℹ Direct row-wise ECDFs estimation
+Estimating ECDFs ■■                                 3% |  ETA: 39s
+Estimating ECDFs ■■■■                              10% |  ETA: 37s
+Estimating ECDFs ■■■■■■                            18% |  ETA: 34s
+Estimating ECDFs ■■■■■■■■                          24% |  ETA: 33s
+Estimating ECDFs ■■■■■■■■■■                        30% |  ETA: 31s
+Estimating ECDFs ■■■■■■■■■■■■                      37% |  ETA: 27s
+Estimating ECDFs ■■■■■■■■■■■■■■                    45% |  ETA: 24s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■                 52% |  ETA: 21s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■                58% |  ETA: 18s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■             66% |  ETA: 15s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■■           72% |  ETA: 12s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■■■■         80% |  ETA:  8s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■■■■■■       87% |  ETA:  5s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     94% |  ETA:  3s
+ℹ Calculating GSVA column ranks
+ℹ Calculating GSVA scores
+Calculating GSVA scores ■■                                 4% | ETA: 27s
+Calculating GSVA scores ■■■                                6% | ETA: 26s
+Calculating GSVA scores ■■■■■■                            18% | ETA: 22s
+Calculating GSVA scores ■■■■■■■■■■■                       33% | ETA: 16s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■                  49% | ETA: 11s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■■■■■              63% | ETA:  8s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■■■■■■■■■          75% | ETA:  6s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      89% | ETA:  2s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+✔ Calculations finished
+ℹ GSVA version 2.2.1
+ℹ Calculating GSVA ranks
+ℹ kcdf='auto' (default)
+ℹ GSVA dense (classical) algorithm
+ℹ Direct row-wise ECDFs estimation
+Estimating ECDFs ■■                                 4% |  ETA:  1m
+Estimating ECDFs ■■■                                7% |  ETA:  1m
+Estimating ECDFs ■■■■■                             13% |  ETA:  1m
+Estimating ECDFs ■■■■■■■                           20% |  ETA: 45s
+Estimating ECDFs ■■■■■■■■■                         27% |  ETA: 39s
+Estimating ECDFs ■■■■■■■■■■■                       33% |  ETA: 35s
+Estimating ECDFs ■■■■■■■■■■■■■                     40% |  ETA: 31s
+Estimating ECDFs ■■■■■■■■■■■■■■■                   46% |  ETA: 27s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■                 53% |  ETA: 23s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■               60% |  ETA: 20s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■             66% |  ETA: 17s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■            71% |  ETA: 15s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■■■          76% |  ETA: 12s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■■■■         81% |  ETA: 10s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■■■■■■       87% |  ETA:  7s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     92% |  ETA:  4s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■   98% |  ETA:  1s
+ℹ Calculating GSVA column ranks
+ℹ Calculating GSVA scores
+Calculating GSVA scores ■■                                 4% | ETA: 27s
+Calculating GSVA scores ■■■■                               9% | ETA: 25s
+Calculating GSVA scores ■■■■■■■■                          23% | ETA: 19s
+Calculating GSVA scores ■■■■■■■■■■■■■                     39% | ETA: 14s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■■■                56% | ETA:  9s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■■■■■■■■           72% | ETA:  6s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      89% | ETA:  2s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+✔ Calculations finished
+ℹ GSVA version 2.2.1
+ℹ Calculating GSVA ranks
+ℹ kcdf='auto' (default)
+ℹ GSVA dense (classical) algorithm
+ℹ Direct row-wise ECDFs estimation
+Estimating ECDFs ■■■                                8% |  ETA: 45s
+Estimating ECDFs ■■■■■                             14% |  ETA: 42s
+Estimating ECDFs ■■■■■■■                           21% |  ETA: 39s
+Estimating ECDFs ■■■■■■■■■                         26% |  ETA: 37s
+Estimating ECDFs ■■■■■■■■■■                        31% |  ETA: 35s
+Estimating ECDFs ■■■■■■■■■■■■                      38% |  ETA: 31s
+Estimating ECDFs ■■■■■■■■■■■■■■                    44% |  ETA: 28s
+Estimating ECDFs ■■■■■■■■■■■■■■■■                  50% |  ETA: 25s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■                56% |  ETA: 22s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■               61% |  ETA: 20s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■             66% |  ETA: 17s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■■           73% |  ETA: 13s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■■■■         79% |  ETA: 10s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■■■■■■       85% |  ETA:  7s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     93% |  ETA:  3s
+ℹ Calculating GSVA column ranks
+ℹ Calculating GSVA scores
+Calculating GSVA scores ■■                                 4% | ETA: 27s
+Calculating GSVA scores ■■                                 4% | ETA: 28s
+Calculating GSVA scores ■■■■■■                            16% | ETA: 22s
+Calculating GSVA scores ■■■■■■■■■■                        31% | ETA: 16s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■                  49% | ETA: 11s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■■■■■■             65% | ETA:  7s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% | ETA:  3s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■   99% | ETA:  0s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+✔ Calculations finished
+ℹ GSVA version 2.2.1
+ℹ Calculating GSVA ranks
+ℹ kcdf='auto' (default)
+ℹ GSVA dense (classical) algorithm
+ℹ Direct row-wise ECDFs estimation
+Estimating ECDFs ■■                                 4% |  ETA:  2m
+Estimating ECDFs ■■■■                               9% |  ETA:  1m
+Estimating ECDFs ■■■■■■                            17% |  ETA: 46s
+Estimating ECDFs ■■■■■■■■                          24% |  ETA: 39s
+Estimating ECDFs ■■■■■■■■■■                        30% |  ETA: 35s
+Estimating ECDFs ■■■■■■■■■■■■                      37% |  ETA: 31s
+Estimating ECDFs ■■■■■■■■■■■■■■                    45% |  ETA: 27s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■                 52% |  ETA: 23s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■               59% |  ETA: 19s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■              65% |  ETA: 17s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■            70% |  ETA: 14s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■■■          77% |  ETA: 11s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■■■■■        84% |  ETA:  8s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      91% |  ETA:  4s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■   98% |  ETA:  1s
+ℹ Calculating GSVA column ranks
+ℹ Calculating GSVA scores
+Calculating GSVA scores ■■                                 4% | ETA: 25s
+Calculating GSVA scores ■■                                 5% | ETA: 25s
+Calculating GSVA scores ■■■■■■                            17% | ETA: 21s
+Calculating GSVA scores ■■■■■■■■■■■                       34% | ETA: 14s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■■                 52% | ETA:  9s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■■■■■■■            71% | ETA:  5s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      90% | ETA:  2s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+✔ Calculations finished
+ℹ GSVA version 2.2.1
+ℹ Calculating GSVA ranks
+ℹ kcdf='auto' (default)
+ℹ GSVA dense (classical) algorithm
+ℹ Direct row-wise ECDFs estimation
+Estimating ECDFs ■■■                                8% |  ETA: 39s
+Estimating ECDFs ■■■■■■                            16% |  ETA: 35s
+Estimating ECDFs ■■■■■■■                           22% |  ETA: 33s
+Estimating ECDFs ■■■■■■■■■■                        28% |  ETA: 31s
+Estimating ECDFs ■■■■■■■■■■■■                      35% |  ETA: 28s
+Estimating ECDFs ■■■■■■■■■■■■■■                    42% |  ETA: 25s
+Estimating ECDFs ■■■■■■■■■■■■■■■■                  50% |  ETA: 21s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■                57% |  ETA: 18s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■              64% |  ETA: 15s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■            71% |  ETA: 13s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■■■          77% |  ETA: 10s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■■■■■        84% |  ETA:  7s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      91% |  ETA:  4s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    97% |  ETA:  1s
+ℹ Calculating GSVA column ranks
+ℹ Calculating GSVA scores
+Calculating GSVA scores ■■                                 4% | ETA: 27s
+Calculating GSVA scores ■■■                                7% | ETA: 27s
+Calculating GSVA scores ■■■■■■■                           19% | ETA: 21s
+Calculating GSVA scores ■■■■■■■■■■■■                      36% | ETA: 15s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■■                 53% | ETA: 10s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■■■■■■■            70% | ETA:  6s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■■■■■■■■■■■■       86% | ETA:  3s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+✔ Calculations finished
+ℹ GSVA version 2.2.1
+ℹ Calculating GSVA ranks
+ℹ kcdf='auto' (default)
+ℹ GSVA dense (classical) algorithm
+ℹ Direct row-wise ECDFs estimation
+Estimating ECDFs ■■                                 4% |  ETA:  2m
+Estimating ECDFs ■■■                                7% |  ETA:  1m
+Estimating ECDFs ■■■■■                             14% |  ETA:  1m
+Estimating ECDFs ■■■■■■■                           20% |  ETA: 46s
+Estimating ECDFs ■■■■■■■■■                         26% |  ETA: 42s
+Estimating ECDFs ■■■■■■■■■■                        31% |  ETA: 39s
+Estimating ECDFs ■■■■■■■■■■■■                      37% |  ETA: 35s
+Estimating ECDFs ■■■■■■■■■■■■■■                    43% |  ETA: 31s
+Estimating ECDFs ■■■■■■■■■■■■■■■                   48% |  ETA: 28s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■                 54% |  ETA: 25s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■               60% |  ETA: 22s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■             66% |  ETA: 19s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■            71% |  ETA: 16s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■■■          75% |  ETA: 14s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■■■■         81% |  ETA: 10s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■■■■■■       86% |  ETA:  8s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      91% |  ETA:  5s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    97% |  ETA:  2s
+ℹ Calculating GSVA column ranks
+ℹ Calculating GSVA scores
+Calculating GSVA scores ■■                                 4% | ETA: 27s
+Calculating GSVA scores ■■■■■                             14% | ETA: 23s
+Calculating GSVA scores ■■■■■■■■■■                        29% | ETA: 17s
+Calculating GSVA scores ■■■■■■■■■■■■■■                    45% | ETA: 12s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■■■■               61% | ETA:  8s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■■■■■■■■■          77% | ETA:  5s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     93% | ETA:  1s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+✔ Calculations finished

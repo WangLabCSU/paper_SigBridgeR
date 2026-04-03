@@ -1,0 +1,119 @@
+nohup: ignoring input
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+✔ SigBridgeR v3.0.2 loaded
+[1] 15201 50865
+Running with:
+  n_cells
+1    1000
+ℹ `label_type` not specified or not of length "1", using "scPAS"
+ℹ [2026/01/09 18:54:04] Start scPAS screening.
+ℹ [2026/01/09 18:54:05] Quantile normalizing bulk data
+ℹ [2026/01/09 18:54:05] Extracting single-cell expression profiles...
+ℹ [2026/01/09 18:54:05] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2026/01/09 18:54:08] Optimizing the network-regularized sparse regression model
+ℹ [2026/01/09 18:54:08] Current phenotype contains 18 scPAS and 267 NA samples.
+ℹ [2026/01/09 18:54:08] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.01 ──
+
+lambda = 0.182475604322142
+scPAS identified 535 risk+ features and 531 risk- features.
+The percentage of selected feature is: 39.791%
+ℹ [2026/01/09 18:57:19] Calculating quantified risk scores...
+ℹ [2026/01/09 18:57:19] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2026/01/09 18:57:22] scPAS screening done.
+2    5000
+ℹ `label_type` not specified or not of length "1", using "scPAS"
+ℹ [2026/01/09 19:07:00] Start scPAS screening.
+ℹ [2026/01/09 19:07:01] Quantile normalizing bulk data
+ℹ [2026/01/09 19:07:02] Extracting single-cell expression profiles...
+ℹ [2026/01/09 19:07:02] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2026/01/09 19:07:04] Optimizing the network-regularized sparse regression model
+ℹ [2026/01/09 19:07:04] Current phenotype contains 18 scPAS and 267 NA samples.
+ℹ [2026/01/09 19:07:04] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.01 ──
+
+lambda = 0.174200847617413
+scPAS identified 569 risk+ features and 546 risk- features.
+The percentage of selected feature is: 41.62%
+ℹ [2026/01/09 19:28:41] Calculating quantified risk scores...
+ℹ [2026/01/09 19:28:41] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2026/01/09 19:28:48] scPAS screening done.
+3   10000
+ℹ `label_type` not specified or not of length "1", using "scPAS"
+ℹ [2026/01/09 20:34:00] Start scPAS screening.
+ℹ [2026/01/09 20:34:03] Quantile normalizing bulk data
+ℹ [2026/01/09 20:34:03] Extracting single-cell expression profiles...
+ℹ [2026/01/09 20:34:03] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2026/01/09 20:34:06] Optimizing the network-regularized sparse regression model
+ℹ [2026/01/09 20:34:06] Current phenotype contains 18 scPAS and 267 NA samples.
+ℹ [2026/01/09 20:34:06] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.01 ──
+
+lambda = 0.174473149737267
+scPAS identified 571 risk+ features and 550 risk- features.
+The percentage of selected feature is: 41.704%
+ℹ [2026/01/09 20:37:34] Calculating quantified risk scores...
+ℹ [2026/01/09 20:37:35] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2026/01/09 20:37:48] scPAS screening done.
+4   50000
+ℹ `label_type` not specified or not of length "1", using "scPAS"
+ℹ [2026/01/09 20:49:10] Start scPAS screening.
+ℹ [2026/01/09 20:49:20] Quantile normalizing bulk data
+ℹ [2026/01/09 20:49:20] Extracting single-cell expression profiles...
+ℹ [2026/01/09 20:49:22] Constructing a gene-gene similarity by single cell data
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.0 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2026/01/09 20:49:31] Optimizing the network-regularized sparse regression model
+ℹ [2026/01/09 20:49:31] Current phenotype contains 18 scPAS and 267 NA samples.
+ℹ [2026/01/09 20:49:31] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.01 ──
+
+lambda = 0.174513674622944
+scPAS identified 1140 risk+ features and 1458 risk- features.
+The percentage of selected feature is: 96.437%
+ℹ [2026/01/09 21:38:08] Calculating quantified risk scores...
+ℹ [2026/01/09 21:38:14] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2026/01/09 21:38:17] scPAS screening done.
+5  100000
+Error in `Screen()`:
+! `sc_data` must inherit from class 'Seurat'.
+Backtrace:
+     ▆
+  1. ├─... %>% mutate(n_cells = as.factor(n_cells))
+  2. ├─dplyr::mutate(., n_cells = as.factor(n_cells))
+  3. ├─bench::press(...)
+  4. │ └─base::lapply(seq_len(nrow(parameters)), eval_one)
+  5. │   └─bench (local) FUN(X[[i]], ...)
+  6. │     └─rlang::eval_tidy(args[[which(unnamed)]], data = env)
+  7. └─bench::mark(...)
+  8.   └─bench (local) eval_one(exprs[[i]], memory)
+  9.     └─base::eval(e, env)
+ 10.       └─base::eval(e, env)
+ 11.         └─SigBridgeR::Screen(...)
+ 12.           └─chk::chk_is(sc_data, "Seurat")
+ 13.             └─chk::abort_chk(...)
+ 14.               └─chk::err(..., n = n, tidy = tidy, class = "chk_error", call = call)
+ 15.                 └─rlang::abort(msg, class = class, !!!args[named], call = call)
+Execution halted

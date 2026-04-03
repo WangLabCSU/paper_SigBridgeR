@@ -1,0 +1,171 @@
+nohup: ignoring input
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+✔ SigBridgeR v3.0.2 loaded
+[1] 15201 50865
+[1] 11620
+Running with:
+  n_cells
+1    1000
+ℹ `label_type` not specified or not of length "1", using "scPP"
+ℹ [2026/01/01 17:47:31] Start scPP screening.
+ℹ [2026/01/01 17:47:31] Finding overall markers...
+Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights,  :
+  Loglik converged before variable  1 ; coefficient may be infinite. 
+Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights,  :
+  Loglik converged before variable  1 ; coefficient may be infinite. 
+Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights,  :
+  Loglik converged before variable  1 ; coefficient may be infinite. 
+ℹ [2026/01/01 18:12:50] Screening...
+ℹ [2026/01/01 18:12:50] Running fixed threshold mode with prob = 0.2
+ℹ [2026/01/01 18:12:50] Computing AUC scores...
+Registered S3 methods overwritten by 'Seqinfo':
+  method                from        
+  as.data.frame.Seqinfo GenomeInfoDb
+  merge.Seqinfo         GenomeInfoDb
+  summary.Seqinfo       GenomeInfoDb
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	24 (73% of 33)
+	gene_neg: 	26 (55% of 47)
+✔ [2026/01/01 18:12:59] Classified 40 Positive, 141 Negative cells
+ℹ [2026/01/01 18:12:59] Finding markers between `Positive` and `Negative` group...
+✔ [2026/01/01 18:13:00] Found 6 positive markers, 42 negative markers
+✔ [2026/01/01 18:13:00] scPP screening done.
+Warning: Some expressions had a GC in every iteration; so filtering is disabled.
+Warning: stack imbalance in '{', 39 then 41
+2    5000
+ℹ `label_type` not specified or not of length "1", using "scPP"
+ℹ [2026/01/01 20:15:13] Start scPP screening.
+ℹ [2026/01/01 20:15:13] Finding overall markers...
+Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights,  :
+  Loglik converged before variable  1 ; coefficient may be infinite. 
+Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights,  :
+  Loglik converged before variable  1 ; coefficient may be infinite. 
+Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights,  :
+  Loglik converged before variable  1 ; coefficient may be infinite. 
+ℹ [2026/01/01 20:52:54] Screening...
+ℹ [2026/01/01 20:52:54] Running fixed threshold mode with prob = 0.2
+ℹ [2026/01/01 20:52:55] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	24 (73% of 33)
+	gene_neg: 	26 (55% of 47)
+✔ [2026/01/01 20:52:58] Classified 177 Positive, 740 Negative cells
+ℹ [2026/01/01 20:52:58] Finding markers between `Positive` and `Negative` group...
+✔ [2026/01/01 20:52:59] Found 28 positive markers, 368 negative markers
+✔ [2026/01/01 20:52:59] scPP screening done.
+Warning: Some expressions had a GC in every iteration; so filtering is disabled.
+3   10000
+ℹ `label_type` not specified or not of length "1", using "scPP"
+ℹ [2026/01/01 22:57:23] Start scPP screening.
+ℹ [2026/01/01 22:57:23] Finding overall markers...
+Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights,  :
+  Loglik converged before variable  1 ; coefficient may be infinite. 
+Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights,  :
+  Loglik converged before variable  1 ; coefficient may be infinite. 
+Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights,  :
+  Loglik converged before variable  1 ; coefficient may be infinite. 
+ℹ [2026/01/01 23:36:41] Screening...
+ℹ [2026/01/01 23:36:41] Running fixed threshold mode with prob = 0.2
+ℹ [2026/01/01 23:36:42] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	24 (73% of 33)
+	gene_neg: 	26 (55% of 47)
+✔ [2026/01/01 23:36:49] Classified 356 Positive, 1454 Negative cells
+ℹ [2026/01/01 23:36:49] Finding markers between `Positive` and `Negative` group...
+✔ [2026/01/01 23:36:50] Found 70 positive markers, 923 negative markers
+✔ [2026/01/01 23:36:50] scPP screening done.
+Warning: Some expressions had a GC in every iteration; so filtering is disabled.
+4   50000
+ℹ `label_type` not specified or not of length "1", using "scPP"
+ℹ [2026/01/02 01:43:19] Start scPP screening.
+ℹ [2026/01/02 01:43:19] Finding overall markers...
+Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights,  :
+  Loglik converged before variable  1 ; coefficient may be infinite. 
+Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights,  :
+  Loglik converged before variable  1 ; coefficient may be infinite. 
+Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights,  :
+  Loglik converged before variable  1 ; coefficient may be infinite. 
+ℹ [2026/01/02 02:22:34] Screening...
+ℹ [2026/01/02 02:22:34] Running fixed threshold mode with prob = 0.2
+ℹ [2026/01/02 02:22:35] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	24 (73% of 33)
+	gene_neg: 	26 (55% of 47)
+✔ [2026/01/02 02:23:25] Classified 1819 Positive, 7265 Negative cells
+ℹ [2026/01/02 02:23:25] Finding markers between `Positive` and `Negative` group...
+✔ [2026/01/02 02:23:32] Found 184 positive markers, 1987 negative markers
+✔ [2026/01/02 02:23:32] scPP screening done.
+Warning: Some expressions had a GC in every iteration; so filtering is disabled.
+Warning: stack imbalance in 'lapply', 25 then 27
+             used    (Mb) gc trigger    (Mb)   max used    (Mb)
+Ncells   36202456  1933.5   89861790  4799.2  112327234  5999.0
+Vcells 1515285229 11560.8 3395830706 25908.2 3395830704 25908.2
+Running with:
+  n_cells
+1    1000
+ℹ `label_type` not specified or not of length "1", using "scPP"
+ℹ [2026/01/02 04:36:52] Start scPP screening.
+ℹ [2026/01/02 04:36:52] Finding overall markers...
+ℹ [2026/01/02 04:36:53] Screening...
+ℹ [2026/01/02 04:36:53] Running fixed threshold mode with prob = 0.2
+ℹ [2026/01/02 04:36:53] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	166 (61% of 271)
+	gene_neg: 	217 (66% of 329)
+✔ [2026/01/02 04:36:53] Classified 40 Positive, 43 Negative cells
+ℹ [2026/01/02 04:36:53] Finding markers between `Positive` and `Negative` group...
+✔ [2026/01/02 04:36:54] Found 17 positive markers, 2 negative markers
+✔ [2026/01/02 04:36:54] scPP screening done.
+2    5000
+ℹ `label_type` not specified or not of length "1", using "scPP"
+ℹ [2026/01/02 04:37:01] Start scPP screening.
+ℹ [2026/01/02 04:37:01] Finding overall markers...
+ℹ [2026/01/02 04:37:02] Screening...
+ℹ [2026/01/02 04:37:02] Running fixed threshold mode with prob = 0.2
+ℹ [2026/01/02 04:37:02] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	166 (61% of 271)
+	gene_neg: 	217 (66% of 329)
+✔ [2026/01/02 04:37:06] Classified 226 Positive, 212 Negative cells
+ℹ [2026/01/02 04:37:06] Finding markers between `Positive` and `Negative` group...
+✔ [2026/01/02 04:37:06] Found 723 positive markers, 186 negative markers
+✔ [2026/01/02 04:37:06] scPP screening done.
+3   10000
+ℹ `label_type` not specified or not of length "1", using "scPP"
+ℹ [2026/01/02 04:37:33] Start scPP screening.
+ℹ [2026/01/02 04:37:33] Finding overall markers...
+ℹ [2026/01/02 04:37:33] Screening...
+ℹ [2026/01/02 04:37:33] Running fixed threshold mode with prob = 0.2
+ℹ [2026/01/02 04:37:34] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	166 (61% of 271)
+	gene_neg: 	217 (66% of 329)
+✔ [2026/01/02 04:37:41] Classified 455 Positive, 418 Negative cells
+ℹ [2026/01/02 04:37:41] Finding markers between `Positive` and `Negative` group...
+✔ [2026/01/02 04:37:42] Found 1377 positive markers, 436 negative markers
+✔ [2026/01/02 04:37:42] scPP screening done.
+4   50000
+ℹ `label_type` not specified or not of length "1", using "scPP"
+ℹ [2026/01/02 04:38:22] Start scPP screening.
+ℹ [2026/01/02 04:38:22] Finding overall markers...
+ℹ [2026/01/02 04:38:23] Screening...
+ℹ [2026/01/02 04:38:23] Running fixed threshold mode with prob = 0.2
+ℹ [2026/01/02 04:38:24] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	166 (61% of 271)
+	gene_neg: 	217 (66% of 329)
+✔ [2026/01/02 04:39:05] Classified 2220 Positive, 1984 Negative cells
+ℹ [2026/01/02 04:39:05] Finding markers between `Positive` and `Negative` group...
+✔ [2026/01/02 04:39:09] Found 2523 positive markers, 1095 negative markers
+✔ [2026/01/02 04:39:09] scPP screening done.
+Warning: Some expressions had a GC in every iteration; so filtering is disabled.
+ℹ Finished benchmarking scPP!

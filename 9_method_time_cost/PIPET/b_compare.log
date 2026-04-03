@@ -1,0 +1,126 @@
+nohup: ignoring input
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+✔ SigBridgeR v3.2.0 loaded
+[1] 15201 50865
+[1] 11620
+Running with:
+  n_cells
+1    1000
+ℹ `label_type` not specified or not of length 1, using "PIPET"
+ℹ [2026/01/21 21:46:53] Starting PIPET screen
+ℹ [2026/01/21 21:46:53] Creating marker genes from bulk data...
+ℹ [2026/01/21 21:46:53] Fitting model with limma
+✔ [2026/01/21 21:46:54] Created 34 marker genes
+ℹ [2026/01/21 21:46:54] Running PIPET correlation analysis...
+ℹ [2026/01/21 21:46:55] The classification of markers is: group_0: 6 and group_1: 8
+ℹ [2026/01/21 21:46:55] Normalize count data with CPM and log1p
+ℹ [2026/01/21 21:46:55] Scale features with z-score normalization
+ℹ [2026/01/21 21:46:58] Organize the computed results
+✔ [2026/01/21 21:46:58] PIPET screening done.
+Warning: Some expressions had a GC in every iteration; so filtering is disabled.
+2    5000
+ℹ `label_type` not specified or not of length 1, using "PIPET"
+ℹ [2026/01/21 21:47:14] Starting PIPET screen
+ℹ [2026/01/21 21:47:14] Creating marker genes from bulk data...
+ℹ [2026/01/21 21:47:15] Fitting model with limma
+✔ [2026/01/21 21:47:15] Created 34 marker genes
+ℹ [2026/01/21 21:47:15] Running PIPET correlation analysis...
+ℹ [2026/01/21 21:47:15] The classification of markers is: group_0: 6 and group_1: 8
+ℹ [2026/01/21 21:47:15] Normalize count data with CPM and log1p
+ℹ [2026/01/21 21:47:16] Scale features with z-score normalization
+Prediction ■■■■■■                            18% |  ETA: 13s
+Prediction ■■■■■■■■■■■■■■                    44% |  ETA:  8s
+Prediction ■■■■■■■■■■■■■■■■■■■■■■            70% |  ETA:  4s
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    96% |  ETA:  0s
+ℹ [2026/01/21 21:47:32] Organize the computed results
+✔ [2026/01/21 21:47:32] PIPET screening done.
+Warning: Some expressions had a GC in every iteration; so filtering is disabled.
+3   10000
+ℹ `label_type` not specified or not of length 1, using "PIPET"
+ℹ [2026/01/21 21:48:35] Starting PIPET screen
+ℹ [2026/01/21 21:48:35] Creating marker genes from bulk data...
+ℹ [2026/01/21 21:48:36] Fitting model with limma
+✔ [2026/01/21 21:48:36] Created 34 marker genes
+ℹ [2026/01/21 21:48:36] Running PIPET correlation analysis...
+ℹ [2026/01/21 21:48:37] The classification of markers is: group_0: 6 and group_1: 8
+ℹ [2026/01/21 21:48:37] Normalize count data with CPM and log1p
+ℹ [2026/01/21 21:48:38] Scale features with z-score normalization
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 1.1 GiB
+Prediction ■■                                 3% |  ETA: 46s
+Prediction ■■■■■                             13% |  ETA: 25s
+Prediction ■■■■■■■■■                         27% |  ETA: 19s
+Prediction ■■■■■■■■■■■■■                     39% |  ETA: 15s
+Prediction ■■■■■■■■■■■■■■■■■                 52% |  ETA: 12s
+Prediction ■■■■■■■■■■■■■■■■■■■■              65% |  ETA:  9s
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■          78% |  ETA:  5s
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      91% |  ETA:  2s
+ℹ [2026/01/21 21:49:09] Organize the computed results
+✔ [2026/01/21 21:49:09] PIPET screening done.
+Warning: Some expressions had a GC in every iteration; so filtering is disabled.
+4   50000
+ℹ `label_type` not specified or not of length 1, using "PIPET"
+ℹ [2026/01/21 21:51:15] Starting PIPET screen
+ℹ [2026/01/21 21:51:15] Creating marker genes from bulk data...
+ℹ [2026/01/21 21:51:16] Fitting model with limma
+✔ [2026/01/21 21:51:16] Created 34 marker genes
+ℹ [2026/01/21 21:51:16] Running PIPET correlation analysis...
+ℹ [2026/01/21 21:51:18] The classification of markers is: group_0: 6 and group_1: 8
+ℹ [2026/01/21 21:51:18] Normalize count data with CPM and log1p
+ℹ [2026/01/21 21:51:27] Scale features with z-score normalization
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.7 GiB
+Prediction ■■                                 3% |  ETA:  2m
+Prediction ■■■                                5% |  ETA:  2m
+Prediction ■■■                                8% |  ETA:  2m
+Prediction ■■■■                              10% |  ETA:  2m
+Prediction ■■■■■                             13% |  ETA:  2m
+Prediction ■■■■■■                            15% |  ETA:  2m
+Prediction ■■■■■■                            18% |  ETA:  2m
+Prediction ■■■■■■■                           20% |  ETA:  2m
+Prediction ■■■■■■■■                          23% |  ETA:  2m
+Prediction ■■■■■■■■■                         25% |  ETA:  1m
+Prediction ■■■■■■■■■                         28% |  ETA:  1m
+Prediction ■■■■■■■■■■                        30% |  ETA:  1m
+Prediction ■■■■■■■■■■■                       33% |  ETA:  1m
+Prediction ■■■■■■■■■■■                       34% |  ETA:  1m
+Prediction ■■■■■■■■■■■■                      36% |  ETA:  1m
+Prediction ■■■■■■■■■■■■■                     39% |  ETA:  1m
+Prediction ■■■■■■■■■■■■■                     42% |  ETA:  1m
+Prediction ■■■■■■■■■■■■■■                    44% |  ETA:  1m
+Prediction ■■■■■■■■■■■■■■■                   46% |  ETA:  1m
+Prediction ■■■■■■■■■■■■■■■■                  49% |  ETA:  1m
+Prediction ■■■■■■■■■■■■■■■■                  52% |  ETA:  1m
+Prediction ■■■■■■■■■■■■■■■■■                 54% |  ETA:  1m
+Prediction ■■■■■■■■■■■■■■■■■■                57% |  ETA:  1m
+Prediction ■■■■■■■■■■■■■■■■■■■               59% |  ETA: 50s
+Prediction ■■■■■■■■■■■■■■■■■■■■              62% |  ETA: 46s
+Prediction ■■■■■■■■■■■■■■■■■■■■              64% |  ETA: 43s
+Prediction ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 40s
+Prediction ■■■■■■■■■■■■■■■■■■■■■■            69% |  ETA: 37s
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■           72% |  ETA: 34s
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■           74% |  ETA: 31s
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■          77% |  ETA: 28s
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■         79% |  ETA: 25s
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■        82% |  ETA: 22s
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■        84% |  ETA: 19s
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■       87% |  ETA: 16s
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      89% |  ETA: 13s
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     92% |  ETA: 10s
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     94% |  ETA:  7s
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    97% |  ETA:  4s
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■   99% |  ETA:  1s
+ℹ [2026/01/21 21:54:02] Organize the computed results
+✔ [2026/01/21 21:54:02] PIPET screening done.
+Warning: Some expressions had a GC in every iteration; so filtering is disabled.
+ℹ Finished benchmarking PIPET!

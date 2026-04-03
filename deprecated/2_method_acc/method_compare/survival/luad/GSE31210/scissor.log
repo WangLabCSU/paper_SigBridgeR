@@ -1,0 +1,45 @@
+nohup: ignoring input
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+
+Attaching package: ‘data.table’
+
+The following objects are masked from ‘package:dplyr’:
+
+    between, first, last
+
+ℹ Updating SigBridgeR documentation
+ℹ Loading SigBridgeR
+✔ SigBridgeR v2.5.4 loaded
+ℹ [2025/11/24 14:15:32] Scissor start...
+ℹ [2025/11/24 14:15:32] Start from raw data...
+ℹ Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 7.7 GiB
+ℹ [2025/11/24 14:15:42] Normalizing quantiles of data
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.4 GiB
+ℹ [2025/11/24 14:16:34] Subsetting data
+ℹ [2025/11/24 14:16:38] Calculating correlation
+----------------------------------------
+Five-number summary of correlations:
+0.306305 0.340797 0.354798 0.366863 0.39628
+----------------------------------------
+ℹ [2025/11/24 14:17:16] Perform cox regression on the given clinical outcomes...
+✔ [2025/11/24 14:18:48] Statistics data saved to 'Scissor_inputs.RData'.
+ℹ [2025/11/24 14:18:49] Screening...
+
+── At alpha = 0.005 ──
+
+Scissor identified 4663 Scissor+ cells and 311 Scissor- cells.
+The percentage of selected cell is: 15.458%
+ℹ [2025/11/24 14:41:35] Scissor Ended.

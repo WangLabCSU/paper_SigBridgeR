@@ -1,0 +1,42 @@
+nohup: ignoring input
+✔ Successfully merged 2 objects.
+Calculate differential gene set : AUCell
+Finish!
+Calculate differential gene set : UCell
+Finish!
+Calculate differential gene set : singscore
+Finish!
+Calculate differential gene set : ssgsea
+Finish!
+The following `from` values were not present in `x`: GOBP-POSITIVE-REGULATION-OF-MONOCYTE-EXTRAVASATION
+✔ skip scissor due to no Positive cells!
+Calculate differential gene set : AUCell
+Finish!
+Calculate differential gene set : UCell
+Finish!
+Calculate differential gene set : singscore
+Finish!
+Calculate differential gene set : ssgsea
+Finish!
+The following `from` values were not present in `x`: GOBP-REGULATION-OF-MONOCYTE-EXTRAVASATION, GOBP-RHOMBOMERE-DEVELOPMENT
+✔ skip scPAS due to no Positive cells!
+Calculate differential gene set : AUCell
+Finish!
+Calculate differential gene set : UCell
+Finish!
+Calculate differential gene set : singscore
+Finish!
+Calculate differential gene set : ssgsea
+Finish!
+✔ Done!
+Calculate differential gene set : AUCell
+Finish!
+Calculate differential gene set : UCell
+Finish!
+Calculate differential gene set : singscore
+Finish!
+Calculate differential gene set : ssgsea
+Finish!
+✔ Skip scPP due to no label provided!
+
+── All Done! ───────────────────────────────────────────────────────────────────

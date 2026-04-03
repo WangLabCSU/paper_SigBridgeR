@@ -1,0 +1,79 @@
+nohup: ignoring input
+Loading required package: SeuratObject
+Loading required package: sp
+‘SeuratObject’ was built under R 4.5.0 but the current version is
+4.5.1; it is recomended that you reinstall ‘SeuratObject’ as the ABI
+for R may have changed
+‘SeuratObject’ was built with package ‘Matrix’ 1.7.3 but the current
+version is 1.7.4; it is recomended that you reinstall ‘SeuratObject’ as
+the ABI for ‘Matrix’ may have changed
+
+Attaching package: ‘SeuratObject’
+
+The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+Loading required package: grid
+========================================
+ComplexHeatmap version 2.24.1
+Bioconductor page: http://bioconductor.org/packages/ComplexHeatmap/
+Github page: https://github.com/jokergoo/ComplexHeatmap
+Documentation: http://jokergoo.github.io/ComplexHeatmap-reference
+
+If you use it in published research, please cite either one:
+- Gu, Z. Complex Heatmap Visualization. iMeta 2022.
+- Gu, Z. Complex heatmaps reveal patterns and correlations in multidimensional 
+    genomic data. Bioinformatics 2016.
+
+
+The new InteractiveComplexHeatmap package can directly export static 
+complex heatmaps into an interactive Shiny app with zero effort. Have a try!
+
+This message can be suppressed by:
+  suppressPackageStartupMessages(library(ComplexHeatmap))
+========================================
+
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:data.table’:
+
+    between, first, last
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.9 GiB
+ℹ GSVA version 2.2.1
+ℹ Calculating GSVA ranks
+ℹ kcdf='auto' (default)
+ℹ GSVA dense (classical) algorithm
+ℹ Direct row-wise ECDFs estimation
+Estimating ECDFs ■■                                 2% |  ETA:  1m
+Estimating ECDFs ■■■■                               9% |  ETA: 46s
+Estimating ECDFs ■■■■■■                            16% |  ETA: 38s
+Estimating ECDFs ■■■■■■■■■                         26% |  ETA: 30s
+Estimating ECDFs ■■■■■■■■■■■■                      36% |  ETA: 24s
+Estimating ECDFs ■■■■■■■■■■■■■■                    44% |  ETA: 21s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■                 55% |  ETA: 16s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■              63% |  ETA: 13s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■■           73% |  ETA: 10s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■■■■■        84% |  ETA:  5s
+Estimating ECDFs ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    96% |  ETA:  1s
+ℹ Calculating GSVA column ranks
+ℹ Calculating GSVA scores
+Calculating GSVA scores ■■■                                7% | ETA: 13s
+Calculating GSVA scores ■■■■■■                            16% | ETA: 14s
+Calculating GSVA scores ■■■■■■■■■■■■■                     39% | ETA:  9s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■■■■■              62% | ETA:  5s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■■■■■■■■■■■■       85% | ETA:  2s
+Calculating GSVA scores ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+✔ Calculations finished
+✔ ssGSEA done!

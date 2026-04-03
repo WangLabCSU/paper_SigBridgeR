@@ -1,0 +1,38 @@
+nohup: ignoring input
+Calculate differential gene set : AUCell
+Warning: The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead.
+ℹ The deprecated feature was likely used in the Seurat package.
+  Please report the issue at <https://github.com/satijalab/seurat/issues>.
+Warning: `PackageCheck()` was deprecated in SeuratObject 5.0.0.
+ℹ Please use `rlang::check_installed()` instead.
+ℹ The deprecated feature was likely used in the Seurat package.
+  Please report the issue at <https://github.com/satijalab/seurat/issues>.
+Finish!
+Calculate differential gene set : UCell
+Finish!
+Calculate differential gene set : singscore
+Finish!
+Calculate differential gene set : ssgsea
+Finish!
+✔ Done!
+Calculate differential gene set : AUCell
+Finish!
+Calculate differential gene set : UCell
+Finish!
+Calculate differential gene set : singscore
+Finish!
+Calculate differential gene set : ssgsea
+Finish!
+✔ Done!
+Calculate differential gene set : AUCell
+Finish!
+Calculate differential gene set : UCell
+Finish!
+Calculate differential gene set : singscore
+Finish!
+Calculate differential gene set : ssgsea
+Finish!
+✔ Done!
+✔ Skip scPP due to no Positive cells available!
+✔ All done!

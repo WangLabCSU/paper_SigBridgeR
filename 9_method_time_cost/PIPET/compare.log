@@ -1,0 +1,50 @@
+nohup: ignoring input
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+✔ SigBridgeR v3.2.0 loaded
+[1] 15201 50865
+[1] 11620
+Running with:
+  n_cells
+1    1000
+ℹ `label_type` not specified or not of length 1, using "PIPET"
+ℹ [2026/01/22 13:23:51] Starting PIPET screen
+ℹ [2026/01/22 13:23:51] Creating marker genes from bulk data...
+ℹ [2026/01/22 13:23:51] Fitting model with limma
+Warning: No markers found, please try different `lg2FC` and `p.adjust`
+ℹ [2026/01/22 13:23:53] Running PIPET correlation analysis...
+Warning in min(table(markers$class)) :
+  no non-missing arguments to min; returning Inf
+Warning: ✖ No overlapping genes between markers and single-cell data, returning NULL
+Error in `Seurat::AddMetaData()`:
+! No metadata name provided and could not infer it from metadata object
+Backtrace:
+     ▆
+  1. ├─... %>% mutate(n_cells = as.factor(n_cells))
+  2. ├─dplyr::mutate(., n_cells = as.factor(n_cells))
+  3. ├─bench::press(...)
+  4. │ └─base::lapply(seq_len(nrow(parameters)), eval_one)
+  5. │   └─bench (local) FUN(X[[i]], ...)
+  6. │     └─rlang::eval_tidy(args[[which(unnamed)]], data = env)
+  7. ├─bench::mark(...)
+  8. │ └─bench (local) eval_one(exprs[[i]], memory)
+  9. │   └─base::eval(e, env)
+ 10. │     └─base::eval(e, env)
+ 11. │       └─SigBridgeR::Screen(...)
+ 12. │         ├─rlang::exec(method_config$executor, !!!params)
+ 13. │         └─SigBridgeR (local) `<fn>`(...)
+ 14. │           ├─... %>% ...
+ 15. │           ├─Seurat::AddMetaData(sc_data, metadata = pipet_result)
+ 16. │           └─SeuratObject:::AddMetaData.Seurat(sc_data, metadata = pipet_result)
+ 17. │             └─rlang::abort(message = "No metadata name provided and could not infer it from metadata object")
+ 18. └─SigBridgeRUtils::AddMisc(...)
+Execution halted

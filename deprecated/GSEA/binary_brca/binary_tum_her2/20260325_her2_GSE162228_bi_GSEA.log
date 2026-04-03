@@ -1,0 +1,23 @@
+nohup: ignoring input
+✔ Setting active project to "/home/yyx/R/Project/R_code/paper_SigBridgeR".
+✔ Successfully merged 2 objects.
+ℹ skip scissor
+ℹ skip scpas
+ℹ skip scab
+Calculate differential gene set : AUCell
+Finish!
+Calculate differential gene set : UCell
+Finish!
+Calculate differential gene set : singscore
+Finish!
+Calculate differential gene set : ssgsea
+Finish!
+
+── scPP Done! ──
+
+ℹ LP_SGL has only 1 group
+ℹ skip lp_sgl
+ℹ DEGAS has only 1 group
+ℹ skip degas
+ℹ skip pipet
+✔ All done!

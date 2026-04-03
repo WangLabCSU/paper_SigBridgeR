@@ -3,8 +3,12 @@ draw_umap <- function(
   group.by = character(),
   label = TRUE,
   label.size = 2.5,
+  pt.size = 0.6,
   cols = NULL,
   title = NULL,
+  save_path = NULL,
+  width = 6,
+  height = 6,
   ...
 ) {
   cluster_color <- cols %||%
@@ -51,14 +55,14 @@ draw_umap <- function(
       "#F5E0B8"
     )
 
-  Seurat::DimPlot(
+  p <- Seurat::DimPlot(
     seurat,
     reduction = "umap",
     label = label,
     label.size = label.size,
     group.by = group.by,
     cols = cluster_color,
-    pt.size = 0.6,
+    pt.size = pt.size,
     ...
   ) +
     Seurat::NoAxes() +
@@ -66,4 +70,9 @@ draw_umap <- function(
     tidydr::theme_dr() +
     ggplot2::theme(panel.grid = ggplot2::element_blank()) +
     ggplot2::ggtitle(title)
+
+  if (!is.null(save_path)) {
+    ggplot2::ggsave(p, save_path, width = width, height = height, dpi = 400)
+  }
+  p
 }

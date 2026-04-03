@@ -1,0 +1,2333 @@
+nohup: ignoring input
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+
+Attaching package: ‘data.table’
+
+The following objects are masked from ‘package:dplyr’:
+
+    between, first, last
+
+Loading required package: SeuratObject
+Loading required package: sp
+
+Attaching package: ‘SeuratObject’
+
+The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+ℹ Updating SigBridgeR documentation
+ℹ Loading SigBridgeR
+✔ SigBridgeR v3.4.0 loaded
+[1] TRUE
+  OpenMP version (_OPENMP)       201511
+  omp_get_num_procs()            192
+  R_DATATABLE_NUM_PROCS_PERCENT  unset (default 50)
+  R_DATATABLE_NUM_THREADS        unset
+  R_DATATABLE_THROTTLE           unset (default 1024)
+  omp_get_thread_limit()         2147483647
+  omp_get_max_threads()          192
+  OMP_THREAD_LIMIT               unset
+  OMP_NUM_THREADS                8
+  RestoreAfterFork               true
+  data.table is using 8 threads with throttle==1024. See ?setDTthreads.
+
+── System-Level Configuration ──
+
+• OMP_NUM_THREADS: 1 -> 8
+• data.table: 96 -> 8
+
+── TensorFlow Configuration ──
+
+• TF_XLA_FLAGS: 1 -> --tf_xla_auto_jit=2 --tf_xla_cpu_global_jit
+• TF_XLA_CPU_GLOBAL_JIT: 1 -> 1
+• TF_NUM_INTEROP_THREADS: unset -> 8
+• TF_NUM_INTRAOP_THREADS: unset -> 8
+ℹ [2026/02/23 11:34:13] Starting DEGAS Screen
+ℹ [2026/02/23 11:34:20] Setting up Environment...
+ℹ [2026/02/23 11:34:22] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 11:34:23] Training DEGAS model...
+ℹ [2026/02/23 11:34:23] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 11:34:43] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 11:34:43] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/util/dispatch.py:201: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+2026-02-23 11:35:22.113225: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2026-02-23 11:35:22.113548: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-02-23 11:35:22.124310: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:196] None of the MLIR optimization passes are enabled (registered 0 passes)
+2026-02-23 11:35:22.130655: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 2595145000 Hz
+2026-02-23 11:35:22.469508: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x74060410a400 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2026-02-23 11:35:22.469590: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2026-02-23 11:35:22.505700: I tensorflow/compiler/jit/xla_compilation_cache.cc:333] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+Starting training...
+Step       Total Loss      Cox Loss        MMD Loss       
+-------------------------------------------------------
+0          10.4576         0.6535          0.8587         
+50         4.0972          0.9322          0.2041         
+100        3.9520          0.8940          0.2057         
+150        3.3659          0.6067          0.2174         
+200        4.0561          0.9574          0.2119         
+250        3.8352          0.8002          0.2047         
+300        3.6721          0.7747          0.2034         
+350        3.4439          0.6821          0.1977         
+400        4.4478          1.1169          0.2126         
+450        3.7623          0.8218          0.1957         
+500        3.6424          0.7714          0.1981         
+550        3.6385          0.8079          0.2090         
+600        4.4064          1.1653          0.2146         
+650        4.4054          1.1351          0.2156         
+700        3.1897          0.4932          0.2044         
+750        3.5993          0.7746          0.2121         
+800        4.3831          1.1634          0.2095         
+850        4.3523          1.1604          0.2127         
+900        4.1960          1.0455          0.2077         
+950        4.1549          1.0603          0.2162         
+1000       3.4638          0.7038          0.1947         
+1050       3.6538          0.7720          0.2176         
+1100       4.1961          1.0603          0.2086         
+1150       3.1691          0.5427          0.2077         
+1200       3.8182          0.8370          0.2040         
+1250       4.4140          1.1762          0.2070         
+1300       4.3081          1.1407          0.2031         
+1350       4.2280          1.0778          0.2242         
+1400       4.0637          0.9211          0.2059         
+1450       4.0571          1.0231          0.2138         
+1500       3.4236          0.6693          0.2024         
+1550       4.1772          1.0390          0.2131         
+1600       3.7556          0.7845          0.2035         
+1650       4.2585          1.0515          0.2205         
+1700       4.2723          1.0672          0.2094         
+1750       2.4948          0.2104          0.2113         
+1800       4.6130          1.2006          0.2197         
+1850       3.4342          0.6792          0.2101         
+1900       3.0995          0.5434          0.1952         
+1950       3.9393          0.8970          0.2043         
+2000       3.8711          0.8475          0.2043         
+ ■■■■■■■                           20% |  ETA: 12m
+ℹ [2026/02/23 11:37:37] Training progress: 2/5...
+ ■■■■■■■                           20% |  ETA: 12mWARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/util/dispatch.py:201: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+2026-02-23 11:38:16.288189: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2026-02-23 11:38:16.288542: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-02-23 11:38:16.299304: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:196] None of the MLIR optimization passes are enabled (registered 0 passes)
+2026-02-23 11:38:16.305572: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 2595145000 Hz
+2026-02-23 11:38:16.642942: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x74ab8c009f30 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2026-02-23 11:38:16.643044: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2026-02-23 11:38:16.678625: I tensorflow/compiler/jit/xla_compilation_cache.cc:333] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+Starting training...
+Step       Total Loss      Cox Loss        MMD Loss       
+-------------------------------------------------------
+0          12.6180         1.0540          0.9841         
+50         4.5291          1.0793          0.2095         
+100        3.2635          0.5544          0.2113         
+150        4.4390          1.1121          0.2048         
+200        3.6878          0.8028          0.2073         
+250        4.2571          1.1199          0.2079         
+300        3.8215          0.8685          0.2093         
+350        3.9560          0.9609          0.2208         
+400        4.0472          0.9582          0.2126         
+450        4.0060          0.9402          0.2019         
+500        4.0975          0.9313          0.2100         
+550        4.1609          0.9757          0.2090         
+600        3.5644          0.7236          0.2025         
+650        3.2287          0.6045          0.2041         
+700        3.1732          0.5192          0.2269         
+750        3.9189          0.8511          0.2099         
+800        3.6755          0.8263          0.2053         
+850        3.4408          0.6629          0.2078         
+900        4.1862          1.0388          0.2085         
+950        4.2815          1.0446          0.2020         
+1000       3.8272          0.8731          0.2121         
+1050       3.5675          0.7724          0.2102         
+1100       3.9551          0.8804          0.2010         
+1150       3.8711          0.9149          0.2009         
+1200       3.4230          0.7063          0.2144         
+1250       3.8095          0.8750          0.1979         
+1300       3.7539          0.8540          0.2173         
+1350       3.4980          0.7293          0.2186         
+1400       3.6595          0.7912          0.2081         
+1450       4.0035          0.9630          0.2177         
+1500       2.9109          0.3885          0.2105         
+1550       4.6042          1.2719          0.2094         
+1600       3.8562          0.9383          0.2031         
+1650       3.4237          0.6964          0.2070         
+1700       4.0373          0.9776          0.2214         
+1750       3.2833          0.6185          0.2093         
+1800       3.3496          0.5974          0.2135         
+1850       3.0928          0.5278          0.2015         
+1900       4.0113          0.9763          0.2153         
+1950       3.5805          0.7014          0.2123         
+2000       4.0778          1.0114          0.2104         
+ ■■■■■■■■■■■■■                     40% |  ETA:  9m
+ℹ [2026/02/23 11:40:32] Training progress: 3/5...
+ ■■■■■■■■■■■■■                     40% |  ETA:  9mWARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/util/dispatch.py:201: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+2026-02-23 11:41:11.979086: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2026-02-23 11:41:11.979434: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-02-23 11:41:11.990318: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:196] None of the MLIR optimization passes are enabled (registered 0 passes)
+2026-02-23 11:41:11.996584: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 2595145000 Hz
+2026-02-23 11:41:12.344325: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x74247c009af0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2026-02-23 11:41:12.344390: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2026-02-23 11:41:12.363856: I tensorflow/compiler/jit/xla_compilation_cache.cc:333] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+Starting training...
+Step       Total Loss      Cox Loss        MMD Loss       
+-------------------------------------------------------
+0          12.3692         0.6250          1.1105         
+50         3.8123          0.8213          0.2093         
+100        3.7386          0.7202          0.2017         
+150        3.5685          0.7435          0.2099         
+200        3.9353          0.9531          0.1987         
+250        3.4491          0.6269          0.2148         
+300        3.9879          0.9564          0.2170         
+350        4.1311          1.0470          0.2085         
+400        3.9071          0.8687          0.2033         
+450        3.9414          0.8750          0.2119         
+500        4.0110          0.9399          0.2014         
+550        4.2334          1.1094          0.2010         
+600        3.4256          0.6927          0.2035         
+650        3.7929          0.8318          0.2060         
+700        4.2236          1.0744          0.2173         
+750        3.7066          0.8348          0.2106         
+800        3.7720          0.7990          0.1952         
+850        3.6383          0.7866          0.2018         
+900        3.6182          0.7832          0.2063         
+950        4.1272          0.9891          0.2148         
+1000       3.0266          0.4926          0.2155         
+1050       4.3345          1.1460          0.2032         
+1100       3.7513          0.7894          0.2181         
+1150       3.3642          0.6312          0.2090         
+1200       3.3146          0.6141          0.2107         
+1250       3.2543          0.5888          0.2039         
+1300       4.0950          0.9796          0.2098         
+1350       4.2174          1.0746          0.1986         
+1400       4.3680          1.1317          0.2128         
+1450       3.6708          0.8274          0.2012         
+1500       3.6647          0.8070          0.2005         
+1550       3.5290          0.7250          0.2118         
+1600       4.0353          1.0157          0.2086         
+1650       3.6956          0.8188          0.2067         
+1700       4.2028          1.0639          0.2023         
+1750       3.8117          0.8710          0.2054         
+1800       3.8850          0.8819          0.2024         
+1850       4.1837          0.9797          0.2087         
+1900       3.8940          0.8623          0.1958         
+1950       3.6500          0.8019          0.2194         
+2000       3.5298          0.6616          0.2004         
+ ■■■■■■■■■■■■■■■■■■■               60% |  ETA:  6m
+ℹ [2026/02/23 11:43:39] Training progress: 4/5...
+ ■■■■■■■■■■■■■■■■■■■               60% |  ETA:  6mWARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/util/dispatch.py:201: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+2026-02-23 11:44:17.862606: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2026-02-23 11:44:17.863211: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-02-23 11:44:17.874322: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:196] None of the MLIR optimization passes are enabled (registered 0 passes)
+2026-02-23 11:44:17.881289: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 2595145000 Hz
+2026-02-23 11:44:18.231002: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7be7180097c0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2026-02-23 11:44:18.231087: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2026-02-23 11:44:18.269818: I tensorflow/compiler/jit/xla_compilation_cache.cc:333] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+Starting training...
+Step       Total Loss      Cox Loss        MMD Loss       
+-------------------------------------------------------
+0          13.6719         1.3487          1.0525         
+50         3.8426          0.7995          0.2141         
+100        3.6235          0.6645          0.2129         
+150        4.0809          0.9231          0.2060         
+200        3.6636          0.8633          0.2093         
+250        4.2073          1.0647          0.2140         
+300        4.3054          1.0384          0.2169         
+350        3.6777          0.7719          0.2103         
+400        4.4481          1.1576          0.2075         
+450        4.0253          0.9708          0.2048         
+500        3.7136          0.8224          0.1991         
+550        3.2017          0.5654          0.2095         
+600        3.7566          0.7931          0.2125         
+650        4.3828          1.1226          0.2120         
+700        3.5860          0.7749          0.2196         
+750        4.5786          1.2714          0.2033         
+800        4.0031          1.0088          0.2243         
+850        3.4850          0.6754          0.1958         
+900        3.3086          0.6454          0.2059         
+950        3.7585          0.8813          0.2044         
+1000       3.6767          0.7737          0.2104         
+1050       4.2977          1.0706          0.2087         
+1100       4.1583          1.0323          0.2149         
+1150       3.6568          0.7453          0.2081         
+1200       3.3660          0.6450          0.2023         
+1250       3.4822          0.6888          0.2129         
+1300       2.9846          0.3787          0.2103         
+1350       3.5671          0.7235          0.2068         
+1400       4.2989          1.1411          0.2120         
+1450       3.6042          0.7952          0.2059         
+1500       3.8720          0.8825          0.2147         
+1550       4.0164          0.9761          0.2011         
+1600       4.3465          1.1187          0.2067         
+1650       3.6818          0.8080          0.2034         
+1700       3.8731          0.8935          0.2174         
+1750       3.9984          0.9231          0.2031         
+1800       3.2496          0.5749          0.2085         
+1850       4.4527          1.1831          0.2193         
+1900       3.8607          0.8181          0.2052         
+1950       4.0012          0.9000          0.2026         
+2000       4.0344          0.9025          0.2083         
+ ■■■■■■■■■■■■■■■■■■■■■■■■■         80% |  ETA:  3m
+ℹ [2026/02/23 11:46:18] Training progress: 5/5...
+ ■■■■■■■■■■■■■■■■■■■■■■■■■         80% |  ETA:  3mWARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/util/dispatch.py:201: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+2026-02-23 11:46:57.794289: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2026-02-23 11:46:57.794877: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-02-23 11:46:57.806002: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:196] None of the MLIR optimization passes are enabled (registered 0 passes)
+2026-02-23 11:46:57.813505: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 2595145000 Hz
+2026-02-23 11:46:58.164136: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7f268c00a1d0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2026-02-23 11:46:58.164226: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2026-02-23 11:46:58.201046: I tensorflow/compiler/jit/xla_compilation_cache.cc:333] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+Starting training...
+Step       Total Loss      Cox Loss        MMD Loss       
+-------------------------------------------------------
+0          12.0157         0.8742          1.0367         
+50         4.2319          1.0807          0.2106         
+100        3.5242          0.6274          0.2147         
+150        3.5329          0.6958          0.2026         
+200        4.4815          1.1683          0.2056         
+250        4.2529          1.0605          0.2135         
+300        3.6925          0.7139          0.2112         
+350        4.1090          0.9941          0.2045         
+400        4.1675          1.0220          0.2076         
+450        3.4186          0.6449          0.2020         
+500        3.7566          0.8474          0.2084         
+550        3.9207          0.8496          0.2153         
+600        4.0022          1.0042          0.2171         
+650        3.6259          0.7450          0.2090         
+700        3.6327          0.7722          0.2124         
+750        4.2163          1.0675          0.2082         
+800        3.1701          0.5725          0.2124         
+850        3.5075          0.7486          0.2086         
+900        3.3475          0.6283          0.2119         
+950        3.4829          0.7027          0.2171         
+1000       3.6412          0.7788          0.2138         
+1050       4.2081          1.0874          0.2085         
+1100       3.9032          0.8703          0.1942         
+1150       4.6298          1.2990          0.2094         
+1200       3.5760          0.7448          0.2117         
+1250       3.6245          0.7886          0.2051         
+1300       4.1494          1.0641          0.2043         
+1350       4.1776          1.0580          0.2122         
+1400       3.8786          0.8894          0.2079         
+1450       3.7970          0.8773          0.2043         
+1500       4.4894          1.2089          0.2085         
+1550       3.7411          0.8142          0.2055         
+1600       4.2118          1.0562          0.2025         
+1650       4.4062          1.1247          0.2126         
+1700       4.1229          1.0460          0.2124         
+1750       3.2564          0.5999          0.2128         
+1800       4.0372          0.9779          0.2078         
+1850       4.6619          1.2810          0.2081         
+1900       3.8503          0.8804          0.2131         
+1950       3.8586          0.9367          0.2101         
+2000       3.8155          0.8834          0.2064         
+ℹ [2026/02/23 11:49:03] Predicting and Labeling
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 11:50:09] Labeling screened cells
+ℹ [2026/02/23 11:50:09] Searching for survival-associated cells 
+ℹ Scores over 0.5168 are considered `Positive`.
+ℹ [2026/02/23 11:50:09] DEGAS Screen done.
+ℹ [2026/02/23 11:50:11] Starting DEGAS Screen
+ℹ [2026/02/23 11:50:16] Setting up Environment...
+ℹ [2026/02/23 11:50:18] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 11:50:19] Training DEGAS model...
+ℹ [2026/02/23 11:50:19] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 11:50:40] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 11:50:40] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/util/dispatch.py:201: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+2026-02-23 11:51:18.842961: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2026-02-23 11:51:18.843317: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-02-23 11:51:18.854471: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:196] None of the MLIR optimization passes are enabled (registered 0 passes)
+2026-02-23 11:51:18.860811: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 2595145000 Hz
+2026-02-23 11:51:19.200692: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x798334009e30 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2026-02-23 11:51:19.200784: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2026-02-23 11:51:19.237779: I tensorflow/compiler/jit/xla_compilation_cache.cc:333] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+Starting training...
+Step       Total Loss      Cox Loss        MMD Loss       
+-------------------------------------------------------
+0          8.7437          0.6535          0.8682         
+50         3.6770          0.9372          0.2053         
+100        3.5216          0.8945          0.2068         
+150        2.9492          0.6051          0.2187         
+200        3.6568          0.9581          0.2128         
+250        3.4242          0.8017          0.2065         
+300        3.2623          0.7757          0.2043         
+350        3.0390          0.6844          0.1968         
+400        4.0121          1.1201          0.2133         
+450        3.3347          0.8214          0.1951         
+500        3.2304          0.7717          0.1978         
+550        3.2421          0.8077          0.2091         
+600        3.9931          1.1660          0.2133         
+650        3.9708          1.1350          0.2155         
+700        2.7527          0.4932          0.2045         
+750        3.1787          0.7745          0.2126         
+800        3.9673          1.1636          0.2101         
+850        3.9387          1.1604          0.2124         
+900        3.7743          1.0456          0.2068         
+950        3.7385          1.0602          0.2171         
+1000       3.0541          0.7038          0.1958         
+1050       3.2285          0.7720          0.2187         
+1100       3.7917          1.0602          0.2087         
+1150       2.7537          0.5427          0.2078         
+1200       3.3912          0.8369          0.2035         
+1250       4.0036          1.1762          0.2062         
+1300       3.9039          1.1409          0.2039         
+1350       3.8141          1.0779          0.2240         
+1400       3.6235          0.9213          0.2050         
+1450       3.6512          1.0231          0.2143         
+1500       3.0094          0.6693          0.2025         
+1550       3.7509          1.0389          0.2127         
+1600       3.3078          0.7845          0.2040         
+1650       3.8127          1.0512          0.2212         
+1700       3.8470          1.0673          0.2091         
+1750       2.0834          0.2105          0.2116         
+1800       4.1710          1.2006          0.2194         
+1850       3.0128          0.6792          0.2098         
+1900       2.6972          0.5435          0.1953         
+1950       3.5044          0.8967          0.2038         
+2000       3.4415          0.8476          0.2043         
+ ■■■■■■■                           20% |  ETA: 12m
+ℹ [2026/02/23 11:53:36] Training progress: 2/5...
+ ■■■■■■■                           20% |  ETA: 12mWARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/util/dispatch.py:201: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+2026-02-23 11:54:15.439228: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2026-02-23 11:54:15.439557: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-02-23 11:54:15.450570: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:196] None of the MLIR optimization passes are enabled (registered 0 passes)
+2026-02-23 11:54:15.457004: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 2595145000 Hz
+2026-02-23 11:54:15.798029: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x76bc70009e00 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2026-02-23 11:54:15.798105: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2026-02-23 11:54:15.822734: I tensorflow/compiler/jit/xla_compilation_cache.cc:333] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+Starting training...
+Step       Total Loss      Cox Loss        MMD Loss       
+-------------------------------------------------------
+0          10.5907         1.0555          0.9908         
+50         4.0706          1.0905          0.2103         
+100        2.8140          0.5546          0.2127         
+150        4.0455          1.1114          0.2051         
+200        3.2618          0.8026          0.2077         
+250        3.8540          1.1247          0.2078         
+300        3.4322          0.8787          0.2097         
+350        3.5368          0.9613          0.2204         
+400        3.6153          0.9583          0.2126         
+450        3.5860          0.9428          0.2025         
+500        3.6679          0.9336          0.2103         
+550        3.7295          0.9767          0.2078         
+600        3.1459          0.7264          0.2021         
+650        2.8292          0.6046          0.2047         
+700        2.7343          0.5191          0.2283         
+750        3.4766          0.8507          0.2090         
+800        3.2636          0.8266          0.2048         
+850        3.0086          0.6629          0.2069         
+900        3.7639          1.0388          0.2088         
+950        3.8388          1.0446          0.2036         
+1000       3.4165          0.8732          0.2122         
+1050       3.1691          0.7724          0.2116         
+1100       3.5404          0.8807          0.2006         
+1150       3.4645          0.9144          0.2012         
+1200       3.0333          0.7065          0.2157         
+1250       3.4051          0.8750          0.1969         
+1300       3.3488          0.8540          0.2187         
+1350       3.0873          0.7292          0.2202         
+1400       3.2366          0.7913          0.2083         
+1450       3.5920          0.9632          0.2184         
+1500       2.4845          0.3891          0.2102         
+1550       4.1873          1.2720          0.2089         
+1600       3.4619          0.9382          0.2034         
+1650       3.0102          0.6967          0.2050         
+1700       3.6212          0.9777          0.2218         
+1750       2.8816          0.6185          0.2083         
+1800       2.9140          0.5975          0.2123         
+1850       2.6846          0.5278          0.2013         
+1900       3.5969          0.9764          0.2151         
+1950       3.1390          0.7013          0.2136         
+2000       3.6660          1.0115          0.2101         
+ ■■■■■■■■■■■■■                     40% |  ETA:  8m
+ℹ [2026/02/23 11:56:19] Training progress: 3/5...
+ ■■■■■■■■■■■■■                     40% |  ETA:  8mWARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/util/dispatch.py:201: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+2026-02-23 11:56:57.828022: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2026-02-23 11:56:57.828346: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-02-23 11:56:57.839071: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:196] None of the MLIR optimization passes are enabled (registered 0 passes)
+2026-02-23 11:56:57.845360: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 2595145000 Hz
+2026-02-23 11:56:58.184458: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7f92cc009a20 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2026-02-23 11:56:58.184545: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2026-02-23 11:56:58.219517: I tensorflow/compiler/jit/xla_compilation_cache.cc:333] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+Starting training...
+Step       Total Loss      Cox Loss        MMD Loss       
+-------------------------------------------------------
+0          10.1775         0.6271          1.1083         
+50         3.4170          0.8200          0.2122         
+100        3.3174          0.7296          0.2046         
+150        3.1687          0.7445          0.2101         
+200        3.5527          0.9472          0.1989         
+250        3.0306          0.6327          0.2145         
+300        3.5773          0.9542          0.2167         
+350        3.7142          1.0528          0.2093         
+400        3.4897          0.8682          0.2039         
+450        3.4956          0.8763          0.2115         
+500        3.5691          0.9368          0.2017         
+550        3.8319          1.1079          0.2019         
+600        3.0199          0.6953          0.2041         
+650        3.3639          0.8325          0.2067         
+700        3.8064          1.0736          0.2162         
+750        3.3023          0.8350          0.2113         
+800        3.3399          0.7990          0.1948         
+850        3.2252          0.7864          0.2023         
+900        3.2163          0.7830          0.2071         
+950        3.6943          0.9889          0.2149         
+1000       2.6262          0.4927          0.2154         
+1050       3.9324          1.1458          0.2032         
+1100       3.3153          0.7893          0.2176         
+1150       2.9415          0.6312          0.2082         
+1200       2.8859          0.6143          0.2106         
+1250       2.8365          0.5889          0.2040         
+1300       3.6664          0.9801          0.2104         
+1350       3.8054          1.0745          0.1982         
+1400       3.9455          1.1314          0.2129         
+1450       3.2652          0.8274          0.2010         
+1500       3.2590          0.8070          0.2005         
+1550       3.1264          0.7249          0.2114         
+1600       3.6270          1.0155          0.2075         
+1650       3.2802          0.8182          0.2069         
+1700       3.7847          1.0638          0.2027         
+1750       3.4109          0.8710          0.2056         
+1800       3.4618          0.8818          0.2023         
+1850       3.7450          0.9797          0.2092         
+1900       3.4640          0.8622          0.1966         
+1950       3.2379          0.8018          0.2186         
+2000       3.0761          0.6615          0.2001         
+ ■■■■■■■■■■■■■■■■■■■               60% |  ETA:  6m
+ℹ [2026/02/23 11:59:05] Training progress: 4/5...
+ ■■■■■■■■■■■■■■■■■■■               60% |  ETA:  6mWARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/util/dispatch.py:201: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+2026-02-23 11:59:44.049793: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2026-02-23 11:59:44.050457: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-02-23 11:59:44.061988: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:196] None of the MLIR optimization passes are enabled (registered 0 passes)
+2026-02-23 11:59:44.069207: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 2595145000 Hz
+2026-02-23 11:59:44.424540: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x78245c009e80 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2026-02-23 11:59:44.424621: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2026-02-23 11:59:44.462740: I tensorflow/compiler/jit/xla_compilation_cache.cc:333] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+Starting training...
+Step       Total Loss      Cox Loss        MMD Loss       
+-------------------------------------------------------
+0          11.5390         1.3487          1.0595         
+50         3.4135          0.7966          0.2146         
+100        3.1788          0.6678          0.2138         
+150        3.6591          0.9231          0.2053         
+200        3.2709          0.8641          0.2109         
+250        3.8015          1.0671          0.2142         
+300        3.8635          1.0390          0.2155         
+350        3.2530          0.7712          0.2116         
+400        4.0185          1.1579          0.2066         
+450        3.6105          0.9709          0.2052         
+500        3.3027          0.8223          0.1977         
+550        2.7863          0.5652          0.2092         
+600        3.3249          0.7932          0.2109         
+650        3.9544          1.1223          0.2113         
+700        3.1722          0.7751          0.2210         
+750        4.1735          1.2716          0.2030         
+800        3.6103          1.0088          0.2238         
+850        3.0728          0.6754          0.1959         
+900        2.9085          0.6451          0.2057         
+950        3.3556          0.8813          0.2036         
+1000       3.2555          0.7738          0.2097         
+1050       3.8625          1.0703          0.2093         
+1100       3.7564          1.0324          0.2130         
+1150       3.2284          0.7453          0.2087         
+1200       2.9583          0.6449          0.2029         
+1250       3.0490          0.6889          0.2132         
+1300       2.5369          0.3789          0.2103         
+1350       3.1350          0.7233          0.2068         
+1400       3.8934          1.1410          0.2121         
+1450       3.2053          0.7953          0.2051         
+1500       3.4522          0.8825          0.2147         
+1550       3.6044          0.9759          0.2010         
+1600       3.9230          1.1187          0.2075         
+1650       3.2696          0.8079          0.2036         
+1700       3.4517          0.8934          0.2166         
+1750       3.5563          0.9233          0.2024         
+1800       2.8312          0.5750          0.2081         
+1850       4.0353          1.1830          0.2193         
+1900       3.4132          0.8181          0.2048         
+1950       3.5583          0.9000          0.2019         
+2000       3.5882          0.9025          0.2087         
+ ■■■■■■■■■■■■■■■■■■■■■■■■■         80% |  ETA:  3m
+ℹ [2026/02/23 12:01:44] Training progress: 5/5...
+ ■■■■■■■■■■■■■■■■■■■■■■■■■         80% |  ETA:  3mWARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/util/dispatch.py:201: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+2026-02-23 12:02:23.459366: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2026-02-23 12:02:23.459732: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-02-23 12:02:23.470976: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:196] None of the MLIR optimization passes are enabled (registered 0 passes)
+2026-02-23 12:02:23.477343: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 2595145000 Hz
+2026-02-23 12:02:23.818729: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x758444009880 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2026-02-23 12:02:23.818811: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2026-02-23 12:02:23.856524: I tensorflow/compiler/jit/xla_compilation_cache.cc:333] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+Starting training...
+Step       Total Loss      Cox Loss        MMD Loss       
+-------------------------------------------------------
+0          10.0471         0.8744          1.0419         
+50         3.8255          1.0794          0.2101         
+100        3.0901          0.6277          0.2160         
+150        3.1262          0.6950          0.2028         
+200        4.0677          1.1687          0.2055         
+250        3.8495          1.0620          0.2130         
+300        3.2466          0.7130          0.2113         
+350        3.7022          0.9930          0.2060         
+400        3.7437          1.0220          0.2083         
+450        2.9980          0.6461          0.2017         
+500        3.3557          0.8483          0.2096         
+550        3.4829          0.8497          0.2145         
+600        3.6108          1.0041          0.2192         
+650        3.1911          0.7450          0.2106         
+700        3.2161          0.7722          0.2133         
+750        3.8047          1.0674          0.2079         
+800        2.7564          0.5725          0.2124         
+850        3.1199          0.7486          0.2098         
+900        2.9257          0.6284          0.2125         
+950        3.0694          0.7028          0.2164         
+1000       3.2223          0.7787          0.2143         
+1050       3.8005          1.0873          0.2082         
+1100       3.4757          0.8701          0.1943         
+1150       4.2260          1.2991          0.2085         
+1200       3.1642          0.7447          0.2118         
+1250       3.2117          0.7886          0.2043         
+1300       3.7452          1.0641          0.2045         
+1350       3.7630          1.0581          0.2119         
+1400       3.4535          0.8895          0.2079         
+1450       3.3957          0.8774          0.2042         
+1500       4.0789          1.2089          0.2085         
+1550       3.3300          0.8140          0.2059         
+1600       3.7843          1.0561          0.2029         
+1650       3.9741          1.1247          0.2123         
+1700       3.7103          1.0459          0.2131         
+1750       2.8509          0.5999          0.2118         
+1800       3.6206          0.9780          0.2066         
+1850       4.2486          1.2811          0.2086         
+1900       3.4327          0.8804          0.2130         
+1950       3.4679          0.9365          0.2099         
+2000       3.4152          0.8834          0.2057         
+ℹ [2026/02/23 12:04:34] Predicting and Labeling
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 12:05:45] Labeling screened cells
+ℹ [2026/02/23 12:05:45] Searching for survival-associated cells 
+ℹ Scores over 0.5156 are considered `Positive`.
+ℹ [2026/02/23 12:05:45] DEGAS Screen done.
+ℹ [2026/02/23 12:05:47] Starting DEGAS Screen
+ℹ [2026/02/23 12:05:53] Setting up Environment...
+ℹ [2026/02/23 12:05:55] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 12:05:56] Training DEGAS model...
+ℹ [2026/02/23 12:05:56] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 12:06:17] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 12:06:17] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/util/dispatch.py:201: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+2026-02-23 12:06:56.597649: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2026-02-23 12:06:56.597972: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-02-23 12:06:56.608672: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:196] None of the MLIR optimization passes are enabled (registered 0 passes)
+2026-02-23 12:06:56.614964: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 2595145000 Hz
+2026-02-23 12:06:56.951965: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7e848c009910 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2026-02-23 12:06:56.952059: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2026-02-23 12:06:56.989632: I tensorflow/compiler/jit/xla_compilation_cache.cc:333] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+Starting training...
+Step       Total Loss      Cox Loss        MMD Loss       
+-------------------------------------------------------
+0          4.3065          0.6536          0.8989         
+50         2.6264          0.9337          0.2190         
+100        2.7495          0.8992          0.2949         
+150        1.8947          0.6008          0.2199         
+200        2.5722          0.9515          0.2143         
+250        2.3519          0.8038          0.2062         
+300        2.1832          0.7758          0.2058         
+350        2.0102          0.6805          0.1966         
+400        2.9186          1.1275          0.2123         
+450        2.2776          0.8211          0.1961         
+500        2.1866          0.7710          0.1963         
+550        2.2261          0.8077          0.2087         
+600        2.9442          1.1656          0.2132         
+650        2.9148          1.1349          0.2153         
+700        1.6477          0.4933          0.2048         
+750        2.1645          0.7744          0.2117         
+800        2.9427          1.1637          0.2106         
+850        2.9207          1.1603          0.2121         
+900        2.7263          1.0458          0.2071         
+950        2.7298          1.0604          0.2168         
+1000       2.0257          0.7036          0.1961         
+1050       2.1803          0.7720          0.2181         
+1100       2.7525          1.0602          0.2085         
+1150       1.7146          0.5426          0.2080         
+1200       2.3239          0.8368          0.2041         
+1250       2.9676          1.1762          0.2067         
+1300       2.8887          1.1409          0.2036         
+1350       2.7795          1.0779          0.2237         
+1400       2.5091          0.9215          0.2055         
+1450       2.6513          1.0234          0.2144         
+1500       1.9700          0.6692          0.2017         
+1550       2.7035          1.0390          0.2148         
+1600       2.2305          0.7839          0.2034         
+1650       2.7427          1.0512          0.2208         
+1700       2.7703          1.0672          0.2091         
+1750       1.0442          0.2106          0.2114         
+1800       3.0652          1.2006          0.2201         
+1850       1.9828          0.6793          0.2100         
+1900       1.6897          0.5435          0.1954         
+1950       2.4314          0.8967          0.2041         
+2000       2.3580          0.8475          0.2054         
+ ■■■■■■■                           20% |  ETA: 11m
+ℹ [2026/02/23 12:09:01] Training progress: 2/5...
+ ■■■■■■■                           20% |  ETA: 11mWARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/util/dispatch.py:201: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+2026-02-23 12:09:39.963908: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2026-02-23 12:09:39.964214: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-02-23 12:09:39.974901: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:196] None of the MLIR optimization passes are enabled (registered 0 passes)
+2026-02-23 12:09:39.981177: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 2595145000 Hz
+2026-02-23 12:09:40.316201: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7023c810a220 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2026-02-23 12:09:40.316295: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2026-02-23 12:09:40.351249: I tensorflow/compiler/jit/xla_compilation_cache.cc:333] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+Starting training...
+Step       Total Loss      Cox Loss        MMD Loss       
+-------------------------------------------------------
+0          5.4232          1.0552          0.9765         
+50         3.0456          1.0752          0.2155         
+100        1.7533          0.5572          0.2147         
+150        2.9570          1.1222          0.2067         
+200        2.2550          0.7849          0.2065         
+250        2.8320          1.1194          0.2091         
+300        2.3993          0.8576          0.2096         
+350        2.5658          0.9463          0.2229         
+400        2.5689          0.9573          0.2137         
+450        2.5576          0.9432          0.2023         
+500        2.5425          0.9340          0.2102         
+550        2.6202          0.9803          0.2090         
+600        2.0900          0.7278          0.2030         
+650        1.8258          0.6051          0.2050         
+700        1.6753          0.5203          0.2273         
+750        2.3739          0.8535          0.2107         
+800        2.2495          0.8253          0.2048         
+850        1.9590          0.6629          0.2068         
+900        2.7077          1.0388          0.2083         
+950        2.7471          1.0445          0.2034         
+1000       2.3745          0.8731          0.2126         
+1050       2.1558          0.7726          0.2130         
+1100       2.4252          0.8807          0.2013         
+1150       2.4438          0.9146          0.2012         
+1200       2.0208          0.7065          0.2160         
+1250       2.3765          0.8751          0.1971         
+1300       2.3184          0.8540          0.2189         
+1350       2.0717          0.7293          0.2186         
+1400       2.2037          0.7914          0.2077         
+1450       2.5502          0.9624          0.2180         
+1500       1.4221          0.3890          0.2116         
+1550       3.1566          1.2721          0.2101         
+1600       2.4663          0.9381          0.2037         
+1650       2.0049          0.6966          0.2067         
+1700       2.5762          0.9775          0.2215         
+1750       1.8543          0.6184          0.2079         
+1800       1.8441          0.5975          0.2121         
+1850       1.6677          0.5278          0.2017         
+1900       2.5657          0.9763          0.2153         
+1950       2.0556          0.7013          0.2123         
+2000       2.6360          1.0115          0.2107         
+ ■■■■■■■■■■■■■                     40% |  ETA:  8m
+ℹ [2026/02/23 12:11:44] Training progress: 3/5...
+ ■■■■■■■■■■■■■                     40% |  ETA:  8mWARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/util/dispatch.py:201: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+2026-02-23 12:12:23.631177: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2026-02-23 12:12:23.631532: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-02-23 12:12:23.642565: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:196] None of the MLIR optimization passes are enabled (registered 0 passes)
+2026-02-23 12:12:23.648868: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 2595145000 Hz
+2026-02-23 12:12:23.987282: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7bfdb4009930 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2026-02-23 12:12:23.987375: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2026-02-23 12:12:24.023355: I tensorflow/compiler/jit/xla_compilation_cache.cc:333] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+Starting training...
+Step       Total Loss      Cox Loss        MMD Loss       
+-------------------------------------------------------
+0          4.7223          0.6287          1.1155         
+50         2.3602          0.8152          0.2295         
+100        2.2078          0.7299          0.2047         
+150        2.1374          0.7441          0.2099         
+200        2.5533          0.9470          0.1992         
+250        2.0010          0.6329          0.2140         
+300        2.5446          0.9547          0.2176         
+350        2.6752          1.0532          0.2085         
+400        2.4088          0.8683          0.2033         
+450        2.4298          0.8764          0.2111         
+500        2.4901          0.9369          0.2017         
+550        2.8265          1.1079          0.2005         
+600        2.0173          0.6952          0.2043         
+650        2.3086          0.8324          0.2067         
+700        2.7675          1.0737          0.2159         
+750        2.2850          0.8350          0.2111         
+800        2.2501          0.7990          0.1955         
+850        2.1942          0.7864          0.2017         
+900        2.1884          0.7830          0.2066         
+950        2.6212          0.9889          0.2153         
+1000       1.5983          0.4927          0.2160         
+1050       2.9096          1.1458          0.2035         
+1100       2.2284          0.7892          0.2173         
+1150       1.8921          0.6312          0.2091         
+1200       1.8463          0.6143          0.2107         
+1250       1.7941          0.5889          0.2036         
+1300       2.6037          0.9801          0.2096         
+1350       2.7737          1.0745          0.1985         
+1400       2.8876          1.1314          0.2129         
+1450       2.2647          0.8274          0.2012         
+1500       2.2293          0.8070          0.2010         
+1550       2.0765          0.7249          0.2102         
+1600       2.6326          1.0155          0.2074         
+1650       2.2544          0.8183          0.2074         
+1700       2.7499          1.0638          0.2022         
+1750       2.3699          0.8710          0.2056         
+1800       2.4034          0.8819          0.2022         
+1850       2.6290          0.9797          0.2090         
+1900       2.3770          0.8622          0.1955         
+1950       2.2270          0.8018          0.2191         
+2000       1.9809          0.6615          0.2001         
+ ■■■■■■■■■■■■■■■■■■■               60% |  ETA:  5m
+ℹ [2026/02/23 12:14:29] Training progress: 4/5...
+ ■■■■■■■■■■■■■■■■■■■               60% |  ETA:  5mWARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/util/dispatch.py:201: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+2026-02-23 12:15:07.672933: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2026-02-23 12:15:07.673260: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-02-23 12:15:07.683918: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:196] None of the MLIR optimization passes are enabled (registered 0 passes)
+2026-02-23 12:15:07.690226: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 2595145000 Hz
+2026-02-23 12:15:08.029853: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x778cf00099e0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2026-02-23 12:15:08.029942: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2026-02-23 12:15:08.053758: I tensorflow/compiler/jit/xla_compilation_cache.cc:333] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+Starting training...
+Step       Total Loss      Cox Loss        MMD Loss       
+-------------------------------------------------------
+0          6.1420          1.3488          1.0701         
+50         2.3557          0.8008          0.2196         
+100        2.0832          0.6725          0.2170         
+150        2.5908          0.9222          0.2088         
+200        2.2788          0.8607          0.2129         
+250        2.7869          1.0625          0.2154         
+300        2.7564          1.0385          0.2164         
+350        2.1803          0.7696          0.2110         
+400        2.9675          1.1589          0.2089         
+450        2.5646          0.9713          0.2057         
+500        2.2648          0.8225          0.1976         
+550        1.7533          0.5654          0.2084         
+600        2.2316          0.7931          0.2112         
+650        2.8942          1.1224          0.2115         
+700        2.1667          0.7750          0.2200         
+750        3.1527          1.2713          0.2052         
+800        2.6165          1.0087          0.2234         
+850        1.9980          0.6754          0.1953         
+900        1.9079          0.6453          0.2052         
+950        2.3601          0.8814          0.2034         
+1000       2.1903          0.7735          0.2115         
+1050       2.7903          1.0705          0.2091         
+1100       2.6985          1.0322          0.2144         
+1150       2.1478          0.7453          0.2089         
+1200       1.9142          0.6450          0.2035         
+1250       2.0069          0.6889          0.2130         
+1300       1.4248          0.3789          0.2103         
+1350       2.0848          0.7235          0.2072         
+1400       2.8845          1.1411          0.2112         
+1450       2.1976          0.7952          0.2054         
+1500       2.4022          0.8824          0.2158         
+1550       2.5698          0.9760          0.2016         
+1600       2.8752          1.1187          0.2068         
+1650       2.2397          0.8079          0.2039         
+1700       2.4168          0.8935          0.2166         
+1750       2.4960          0.9232          0.2028         
+1800       1.7767          0.5750          0.2089         
+1850       2.9945          1.1830          0.2196         
+1900       2.3059          0.8182          0.2049         
+1950       2.4616          0.9000          0.2022         
+2000       2.4684          0.9026          0.2087         
+ ■■■■■■■■■■■■■■■■■■■■■■■■■         80% |  ETA:  3m
+ℹ [2026/02/23 12:17:12] Training progress: 5/5...
+ ■■■■■■■■■■■■■■■■■■■■■■■■■         80% |  ETA:  3mWARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/util/dispatch.py:201: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+2026-02-23 12:17:50.865604: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2026-02-23 12:17:50.865921: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-02-23 12:17:50.876596: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:196] None of the MLIR optimization passes are enabled (registered 0 passes)
+2026-02-23 12:17:50.882870: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 2595145000 Hz
+2026-02-23 12:17:51.221452: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x78b2a010a260 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2026-02-23 12:17:51.221540: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2026-02-23 12:17:51.259536: I tensorflow/compiler/jit/xla_compilation_cache.cc:333] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+Starting training...
+Step       Total Loss      Cox Loss        MMD Loss       
+-------------------------------------------------------
+0          4.9488          0.8749          1.0542         
+50         2.8348          1.0845          0.2191         
+100        2.0388          0.6345          0.2209         
+150        2.1076          0.6930          0.2026         
+200        2.9970          1.1599          0.2049         
+250        2.8375          1.0605          0.2130         
+300        2.1479          0.7120          0.2127         
+350        2.6383          0.9935          0.2052         
+400        2.7051          1.0235          0.2081         
+450        1.9321          0.6444          0.2032         
+500        2.3291          0.8473          0.2108         
+550        2.3727          0.8497          0.2163         
+600        2.5966          1.0036          0.2178         
+650        2.1263          0.7447          0.2097         
+700        2.1657          0.7719          0.2121         
+750        2.7649          1.0675          0.2083         
+800        1.7532          0.5725          0.2136         
+850        2.1079          0.7485          0.2087         
+900        1.8830          0.6283          0.2127         
+950        2.0336          0.7028          0.2183         
+1000       2.1844          0.7787          0.2131         
+1050       2.7889          1.0878          0.2084         
+1100       2.3868          0.8699          0.1949         
+1150       3.2090          1.2989          0.2084         
+1200       2.1251          0.7448          0.2122         
+1250       2.1919          0.7886          0.2044         
+1300       2.7275          1.0641          0.2051         
+1350       2.7415          1.0581          0.2128         
+1400       2.4198          0.8894          0.2076         
+1450       2.3692          0.8772          0.2038         
+1500       3.0397          1.2088          0.2085         
+1550       2.2682          0.8138          0.2062         
+1600       2.7390          1.0560          0.2028         
+1650       2.8995          1.1247          0.2122         
+1700       2.6996          1.0462          0.2132         
+1750       1.8208          0.5999          0.2109         
+1800       2.5742          0.9782          0.2068         
+1850       3.2025          1.2809          0.2077         
+1900       2.3875          0.8805          0.2123         
+1950       2.4740          0.9367          0.2098         
+2000       2.3914          0.8834          0.2069         
+ℹ [2026/02/23 12:19:55] Predicting and Labeling
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 12:21:02] Labeling screened cells
+ℹ [2026/02/23 12:21:02] Searching for survival-associated cells 
+ℹ Scores over 0.5209 are considered `Positive`.
+ℹ [2026/02/23 12:21:02] DEGAS Screen done.
+ℹ [2026/02/23 12:21:03] Starting DEGAS Screen
+ℹ [2026/02/23 12:21:09] Setting up Environment...
+ℹ [2026/02/23 12:21:11] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 12:21:12] Training DEGAS model...
+ℹ [2026/02/23 12:21:12] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 12:21:31] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 12:21:31] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/util/dispatch.py:201: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+2026-02-23 12:22:10.777514: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2026-02-23 12:22:10.777847: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-02-23 12:22:10.788298: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:196] None of the MLIR optimization passes are enabled (registered 0 passes)
+2026-02-23 12:22:10.794600: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 2595145000 Hz
+2026-02-23 12:22:11.131404: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7a05780097a0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2026-02-23 12:22:11.131465: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2026-02-23 12:22:11.149240: I tensorflow/compiler/jit/xla_compilation_cache.cc:333] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+Starting training...
+Step       Total Loss      Cox Loss        MMD Loss       
+-------------------------------------------------------
+0          5.2164          0.6535          0.8921         
+50         2.8169          0.9312          0.2109         
+100        2.7191          0.9018          0.2077         
+150        2.1155          0.5980          0.2194         
+200        2.7771          0.9563          0.2137         
+250        2.5519          0.8043          0.2072         
+300        2.3880          0.7727          0.2041         
+350        2.2168          0.6796          0.1969         
+400        3.1313          1.1242          0.2127         
+450        2.4933          0.8202          0.1957         
+500        2.3951          0.7701          0.1974         
+550        2.4261          0.8070          0.2081         
+600        3.1547          1.1651          0.2133         
+650        3.1233          1.1348          0.2164         
+700        1.8689          0.4933          0.2039         
+750        2.3644          0.7745          0.2102         
+800        3.1477          1.1635          0.2104         
+850        3.1241          1.1604          0.2112         
+900        2.9385          1.0458          0.2069         
+950        2.9357          1.0604          0.2156         
+1000       2.2314          0.7037          0.1960         
+1050       2.3941          0.7720          0.2181         
+1100       2.9615          1.0602          0.2086         
+1150       1.9197          0.5427          0.2087         
+1200       2.5372          0.8369          0.2044         
+1250       3.1763          1.1761          0.2063         
+1300       3.0917          1.1409          0.2041         
+1350       2.9851          1.0779          0.2240         
+1400       2.7319          0.9214          0.2062         
+1450       2.8506          1.0232          0.2145         
+1500       2.1771          0.6692          0.2026         
+1550       2.9169          1.0390          0.2148         
+1600       2.4499          0.7841          0.2029         
+1650       2.9611          1.0515          0.2218         
+1700       2.9832          1.0672          0.2087         
+1750       1.2514          0.2105          0.2112         
+1800       3.2841          1.2004          0.2196         
+1850       2.1914          0.6793          0.2102         
+1900       1.8905          0.5433          0.1952         
+1950       2.6483          0.8970          0.2042         
+2000       2.5740          0.8475          0.2050         
+ ■■■■■■■                           20% |  ETA: 12m
+ℹ [2026/02/23 12:24:31] Training progress: 2/5...
+ ■■■■■■■                           20% |  ETA: 12mWARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/util/dispatch.py:201: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+2026-02-23 12:25:10.569810: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2026-02-23 12:25:10.570123: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-02-23 12:25:10.580850: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:196] None of the MLIR optimization passes are enabled (registered 0 passes)
+2026-02-23 12:25:10.587103: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 2595145000 Hz
+2026-02-23 12:25:10.923207: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x73c1ec009a50 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2026-02-23 12:25:10.923302: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2026-02-23 12:25:10.958614: I tensorflow/compiler/jit/xla_compilation_cache.cc:333] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+Starting training...
+Step       Total Loss      Cox Loss        MMD Loss       
+-------------------------------------------------------
+0          6.4525          1.0552          0.9762         
+50         3.1683          1.0904          0.2134         
+100        1.9908          0.5584          0.2114         
+150        3.1987          1.1127          0.2061         
+200        2.4375          0.8045          0.2083         
+250        3.0299          1.1305          0.2080         
+300        2.6055          0.8753          0.2102         
+350        2.7228          0.9602          0.2207         
+400        2.7645          0.9606          0.2134         
+450        2.7618          0.9449          0.2031         
+500        2.7677          0.9323          0.2088         
+550        2.8543          0.9760          0.2084         
+600        2.3100          0.7266          0.2029         
+650        2.0250          0.6056          0.2040         
+700        1.8891          0.5192          0.2263         
+750        2.5926          0.8510          0.2098         
+800        2.4574          0.8265          0.2045         
+850        2.1706          0.6629          0.2075         
+900        2.9154          1.0389          0.2079         
+950        2.9612          1.0446          0.2029         
+1000       2.5801          0.8730          0.2129         
+1050       2.3599          0.7723          0.2130         
+1100       2.6445          0.8805          0.2004         
+1150       2.6466          0.9144          0.2008         
+1200       2.2248          0.7066          0.2151         
+1250       2.5829          0.8749          0.1972         
+1300       2.5243          0.8540          0.2183         
+1350       2.2758          0.7292          0.2200         
+1400       2.4084          0.7916          0.2087         
+1450       2.7569          0.9633          0.2170         
+1500       1.6345          0.3890          0.2103         
+1550       3.3608          1.2718          0.2096         
+1600       2.6660          0.9381          0.2039         
+1650       2.2050          0.6966          0.2056         
+1700       2.7894          0.9778          0.2227         
+1750       2.0574          0.6185          0.2085         
+1800       2.0662          0.5975          0.2130         
+1850       1.8729          0.5278          0.2015         
+1900       2.7718          0.9764          0.2143         
+1950       2.2730          0.7013          0.2127         
+2000       2.8411          1.0115          0.2106         
+ ■■■■■■■■■■■■■                     40% |  ETA:  9m
+ℹ [2026/02/23 12:27:35] Training progress: 3/5...
+ ■■■■■■■■■■■■■                     40% |  ETA:  9mWARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/util/dispatch.py:201: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+2026-02-23 12:28:14.406447: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2026-02-23 12:28:14.406783: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-02-23 12:28:14.417183: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:196] None of the MLIR optimization passes are enabled (registered 0 passes)
+2026-02-23 12:28:14.423538: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 2595145000 Hz
+2026-02-23 12:28:14.760885: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7e2e5c009a50 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2026-02-23 12:28:14.760977: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2026-02-23 12:28:14.797124: I tensorflow/compiler/jit/xla_compilation_cache.cc:333] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+Starting training...
+Step       Total Loss      Cox Loss        MMD Loss       
+-------------------------------------------------------
+0          5.8103          0.6287          1.1110         
+50         2.5700          0.8165          0.2237         
+100        2.4343          0.7278          0.2044         
+150        2.3489          0.7463          0.2101         
+200        2.7509          0.9482          0.1985         
+250        2.2040          0.6286          0.2142         
+300        2.7479          0.9521          0.2174         
+350        2.8861          1.0536          0.2069         
+400        2.6266          0.8701          0.2030         
+450        2.6464          0.8743          0.2127         
+500        2.7076          0.9380          0.2015         
+550        3.0284          1.1083          0.2007         
+600        2.2149          0.6948          0.2041         
+650        2.5177          0.8321          0.2070         
+700        2.9733          1.0737          0.2168         
+750        2.4892          0.8351          0.2114         
+800        2.4695          0.7992          0.1954         
+850        2.3999          0.7864          0.2023         
+900        2.3970          0.7832          0.2079         
+950        2.8347          0.9890          0.2138         
+1000       1.8049          0.4927          0.2161         
+1050       3.1134          1.1458          0.2029         
+1100       2.4477          0.7894          0.2176         
+1150       2.1044          0.6313          0.2091         
+1200       2.0599          0.6142          0.2102         
+1250       2.0039          0.5889          0.2040         
+1300       2.8162          0.9800          0.2099         
+1350       2.9785          1.0744          0.1979         
+1400       3.1011          1.1316          0.2134         
+1450       2.4656          0.8274          0.2012         
+1500       2.4372          0.8069          0.2008         
+1550       2.2826          0.7249          0.2117         
+1600       2.8316          1.0153          0.2088         
+1650       2.4620          0.8184          0.2074         
+1700       2.9582          1.0639          0.2027         
+1750       2.5764          0.8710          0.2062         
+1800       2.6129          0.8819          0.2027         
+1850       2.8516          0.9797          0.2093         
+1900       2.5925          0.8622          0.1968         
+1950       2.4311          0.8018          0.2185         
+2000       2.1989          0.6616          0.1996         
+ ■■■■■■■■■■■■■■■■■■■               60% |  ETA:  6m
+ℹ [2026/02/23 12:30:19] Training progress: 4/5...
+ ■■■■■■■■■■■■■■■■■■■               60% |  ETA:  6mWARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/util/dispatch.py:201: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+2026-02-23 12:30:58.985590: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2026-02-23 12:30:58.985902: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-02-23 12:30:58.996306: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:196] None of the MLIR optimization passes are enabled (registered 0 passes)
+2026-02-23 12:30:59.002599: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 2595145000 Hz
+2026-02-23 12:30:59.340235: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x70bf74009b60 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2026-02-23 12:30:59.340350: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2026-02-23 12:30:59.375572: I tensorflow/compiler/jit/xla_compilation_cache.cc:333] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+Starting training...
+Step       Total Loss      Cox Loss        MMD Loss       
+-------------------------------------------------------
+0          7.2320          1.3501          1.0708         
+50         2.5621          0.8006          0.2163         
+100        2.3079          0.6725          0.2159         
+150        2.8085          0.9221          0.2074         
+200        2.4808          0.8615          0.2126         
+250        2.9913          1.0624          0.2157         
+300        2.9850          1.0387          0.2162         
+350        2.3926          0.7695          0.2109         
+400        3.1807          1.1588          0.2071         
+450        2.7755          0.9713          0.2054         
+500        2.4738          0.8225          0.1978         
+550        1.9590          0.5654          0.2082         
+600        2.4522          0.7931          0.2106         
+650        3.1065          1.1223          0.2125         
+700        2.3702          0.7751          0.2206         
+750        3.3617          1.2713          0.2039         
+800        2.8155          1.0086          0.2239         
+850        2.2112          0.6754          0.1959         
+900        2.1079          0.6454          0.2049         
+950        2.5599          0.8813          0.2044         
+1000       2.4012          0.7735          0.2100         
+1050       3.0016          1.0705          0.2093         
+1100       2.9029          1.0322          0.2145         
+1150       2.3670          0.7453          0.2084         
+1200       2.1215          0.6450          0.2032         
+1250       2.2173          0.6889          0.2126         
+1300       1.6468          0.3789          0.2099         
+1350       2.2920          0.7235          0.2071         
+1400       3.0884          1.1411          0.2104         
+1450       2.3969          0.7952          0.2058         
+1500       2.6108          0.8824          0.2140         
+1550       2.7791          0.9760          0.2015         
+1600       3.0873          1.1187          0.2073         
+1650       2.4441          0.8080          0.2033         
+1700       2.6249          0.8935          0.2155         
+1750       2.7080          0.9232          0.2030         
+1800       1.9879          0.5750          0.2088         
+1850       3.2052          1.1830          0.2195         
+1900       2.5291          0.8182          0.2052         
+1950       2.6844          0.9000          0.2013         
+2000       2.6900          0.9026          0.2086         
+ ■■■■■■■■■■■■■■■■■■■■■■■■■         80% |  ETA:  3m
+ℹ [2026/02/23 12:32:59] Training progress: 5/5...
+ ■■■■■■■■■■■■■■■■■■■■■■■■■         80% |  ETA:  3mWARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 2322 at row 34252; use `usecols` to select a subset and avoid this error
+✖ In index: 5.
+ℹ [2026/02/23 12:33:28] Starting DEGAS Screen
+ℹ [2026/02/23 12:33:34] Setting up Environment...
+ℹ [2026/02/23 12:33:35] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 12:33:36] Training DEGAS model...
+ℹ [2026/02/23 12:33:36] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 12:33:54] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 12:33:54] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 374 at row 24770; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+ℹ [2026/02/23 12:34:17] Starting DEGAS Screen
+ℹ [2026/02/23 12:34:23] Setting up Environment...
+ℹ [2026/02/23 12:34:25] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 12:34:26] Training DEGAS model...
+ℹ [2026/02/23 12:34:26] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 12:34:46] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 12:34:46] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 2916 at row 23378; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+ℹ [2026/02/23 12:35:07] Starting DEGAS Screen
+ℹ [2026/02/23 12:35:13] Setting up Environment...
+ℹ [2026/02/23 12:35:15] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 12:35:16] Training DEGAS model...
+ℹ [2026/02/23 12:35:16] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 12:35:35] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 12:35:35] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 2920 at row 30834; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+ℹ [2026/02/23 12:36:02] Starting DEGAS Screen
+ℹ [2026/02/23 12:36:08] Setting up Environment...
+ℹ [2026/02/23 12:36:10] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 12:36:11] Training DEGAS model...
+ℹ [2026/02/23 12:36:11] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 12:36:31] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 12:36:31] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 1978 at row 24487; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+ℹ [2026/02/23 12:36:53] Starting DEGAS Screen
+ℹ [2026/02/23 12:36:59] Setting up Environment...
+ℹ [2026/02/23 12:37:01] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 12:37:02] Training DEGAS model...
+ℹ [2026/02/23 12:37:02] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 12:37:21] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 12:37:21] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 1229 at row 21499; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+ℹ [2026/02/23 12:37:42] Starting DEGAS Screen
+ℹ [2026/02/23 12:37:48] Setting up Environment...
+ℹ [2026/02/23 12:37:50] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 12:37:51] Training DEGAS model...
+ℹ [2026/02/23 12:37:51] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 12:38:13] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 12:38:13] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 2084 at row 24866; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+ℹ [2026/02/23 12:38:36] Starting DEGAS Screen
+ℹ [2026/02/23 12:38:42] Setting up Environment...
+ℹ [2026/02/23 12:38:44] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 12:38:45] Training DEGAS model...
+ℹ [2026/02/23 12:38:45] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 12:39:06] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 12:39:06] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 3989 at row 30206; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+ℹ [2026/02/23 12:39:33] Starting DEGAS Screen
+ℹ [2026/02/23 12:39:39] Setting up Environment...
+ℹ [2026/02/23 12:39:41] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 12:39:42] Training DEGAS model...
+ℹ [2026/02/23 12:39:42] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 12:40:05] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 12:40:05] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 2835 at row 23852; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+ℹ [2026/02/23 12:40:27] Starting DEGAS Screen
+ℹ [2026/02/23 12:40:34] Setting up Environment...
+ℹ [2026/02/23 12:40:35] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 12:40:36] Training DEGAS model...
+ℹ [2026/02/23 12:40:36] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 12:40:58] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 12:40:58] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 801 at row 24347; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+ℹ [2026/02/23 12:41:21] Starting DEGAS Screen
+ℹ [2026/02/23 12:41:27] Setting up Environment...
+ℹ [2026/02/23 12:41:29] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 12:41:30] Training DEGAS model...
+ℹ [2026/02/23 12:41:30] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 12:41:50] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 12:41:50] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 2608 at row 21831; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+ℹ [2026/02/23 12:42:11] Starting DEGAS Screen
+ℹ [2026/02/23 12:42:16] Setting up Environment...
+ℹ [2026/02/23 12:42:18] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 12:42:20] Training DEGAS model...
+ℹ [2026/02/23 12:42:20] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 12:42:39] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 12:42:39] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 375 at row 30516; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+ℹ [2026/02/23 12:43:06] Starting DEGAS Screen
+ℹ [2026/02/23 12:43:12] Setting up Environment...
+ℹ [2026/02/23 12:43:14] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 12:43:15] Training DEGAS model...
+ℹ [2026/02/23 12:43:15] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 12:43:37] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 12:43:37] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 441 at row 22856; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+ℹ [2026/02/23 12:43:59] Starting DEGAS Screen
+ℹ [2026/02/23 12:44:05] Setting up Environment...
+ℹ [2026/02/23 12:44:07] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 12:44:08] Training DEGAS model...
+ℹ [2026/02/23 12:44:08] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 12:44:29] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 12:44:29] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 793 at row 23920; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+ℹ [2026/02/23 12:44:51] Starting DEGAS Screen
+ℹ [2026/02/23 12:44:57] Setting up Environment...
+ℹ [2026/02/23 12:44:59] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 12:45:00] Training DEGAS model...
+ℹ [2026/02/23 12:45:00] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 12:45:21] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 12:45:21] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 3645 at row 21599; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+ℹ [2026/02/23 12:45:42] Starting DEGAS Screen
+ℹ [2026/02/23 12:45:47] Setting up Environment...
+ℹ [2026/02/23 12:45:50] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 12:45:51] Training DEGAS model...
+ℹ [2026/02/23 12:45:51] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 12:46:11] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 12:46:11] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 1385 at row 24202; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+ℹ [2026/02/23 12:46:33] Starting DEGAS Screen
+ℹ [2026/02/23 12:46:39] Setting up Environment...
+ℹ [2026/02/23 12:46:41] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 12:46:42] Training DEGAS model...
+ℹ [2026/02/23 12:46:42] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 12:47:04] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 12:47:04] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 4104 at row 23423; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+ℹ [2026/02/23 12:47:26] Starting DEGAS Screen
+ℹ [2026/02/23 12:47:32] Setting up Environment...
+ℹ [2026/02/23 12:47:34] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 12:47:35] Training DEGAS model...
+ℹ [2026/02/23 12:47:35] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 12:47:56] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 12:47:56] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 2600 at row 25713; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+ℹ [2026/02/23 12:48:19] Starting DEGAS Screen
+ℹ [2026/02/23 12:48:24] Setting up Environment...
+ℹ [2026/02/23 12:48:26] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 12:48:27] Training DEGAS model...
+ℹ [2026/02/23 12:48:27] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 12:48:48] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 12:48:48] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 3971 at row 26985; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+ℹ [2026/02/23 12:49:12] Starting DEGAS Screen
+ℹ [2026/02/23 12:49:18] Setting up Environment...
+ℹ [2026/02/23 12:49:20] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 12:49:21] Training DEGAS model...
+ℹ [2026/02/23 12:49:21] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 12:49:40] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 12:49:40] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 3817 at row 23778; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+ℹ [2026/02/23 12:50:02] Starting DEGAS Screen
+ℹ [2026/02/23 12:50:08] Setting up Environment...
+ℹ [2026/02/23 12:50:10] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 12:50:11] Training DEGAS model...
+ℹ [2026/02/23 12:50:11] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 12:50:30] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 12:50:30] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 4567 at row 25709; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+ℹ [2026/02/23 12:50:54] Starting DEGAS Screen
+ℹ [2026/02/23 12:51:00] Setting up Environment...
+ℹ [2026/02/23 12:51:02] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 12:51:03] Training DEGAS model...
+ℹ [2026/02/23 12:51:03] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 12:51:24] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 12:51:24] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 1340 at row 25955; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+ℹ [2026/02/23 12:51:47] Starting DEGAS Screen
+ℹ [2026/02/23 12:51:53] Setting up Environment...
+ℹ [2026/02/23 12:51:55] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 12:51:56] Training DEGAS model...
+ℹ [2026/02/23 12:51:56] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 12:52:16] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 12:52:16] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 2721 at row 22266; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+ℹ [2026/02/23 12:52:38] Starting DEGAS Screen
+ℹ [2026/02/23 12:52:43] Setting up Environment...
+ℹ [2026/02/23 12:52:45] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 12:52:46] Training DEGAS model...
+ℹ [2026/02/23 12:52:46] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 12:53:06] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 12:53:06] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 4945 at row 22028; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+ℹ [2026/02/23 12:53:26] Starting DEGAS Screen
+ℹ [2026/02/23 12:53:33] Setting up Environment...
+ℹ [2026/02/23 12:53:35] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 12:53:36] Training DEGAS model...
+ℹ [2026/02/23 12:53:36] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 12:53:55] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 12:53:55] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 2150 at row 19483; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+ℹ [2026/02/23 12:54:14] Starting DEGAS Screen
+ℹ [2026/02/23 12:54:20] Setting up Environment...
+ℹ [2026/02/23 12:54:22] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 12:54:23] Training DEGAS model...
+ℹ [2026/02/23 12:54:23] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 12:54:41] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 12:54:41] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 955 at row 17503; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+ℹ [2026/02/23 12:54:59] Starting DEGAS Screen
+ℹ [2026/02/23 12:55:05] Setting up Environment...
+ℹ [2026/02/23 12:55:06] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 12:55:08] Training DEGAS model...
+ℹ [2026/02/23 12:55:08] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 12:55:25] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 12:55:25] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 5447 at row 19035; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+ℹ [2026/02/23 12:55:44] Starting DEGAS Screen
+ℹ [2026/02/23 12:55:49] Setting up Environment...
+ℹ [2026/02/23 12:55:51] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 12:55:52] Training DEGAS model...
+ℹ [2026/02/23 12:55:52] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 12:56:10] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 12:56:10] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 842 at row 22525; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+ℹ [2026/02/23 12:56:31] Starting DEGAS Screen
+ℹ [2026/02/23 12:56:37] Setting up Environment...
+ℹ [2026/02/23 12:56:39] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 12:56:40] Training DEGAS model...
+ℹ [2026/02/23 12:56:40] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 12:56:59] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 12:56:59] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 1050 at row 21006; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+ℹ [2026/02/23 12:57:20] Starting DEGAS Screen
+ℹ [2026/02/23 12:57:26] Setting up Environment...
+ℹ [2026/02/23 12:57:28] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 12:57:29] Training DEGAS model...
+ℹ [2026/02/23 12:57:29] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 12:57:48] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 12:57:48] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 2771 at row 17365; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+ℹ [2026/02/23 12:58:06] Starting DEGAS Screen
+ℹ [2026/02/23 12:58:12] Setting up Environment...
+ℹ [2026/02/23 12:58:13] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 12:58:15] Training DEGAS model...
+ℹ [2026/02/23 12:58:15] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 12:58:35] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 12:58:35] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 1355 at row 17397; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+ℹ [2026/02/23 12:58:53] Starting DEGAS Screen
+ℹ [2026/02/23 12:58:59] Setting up Environment...
+ℹ [2026/02/23 12:59:01] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 12:59:02] Training DEGAS model...
+ℹ [2026/02/23 12:59:02] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 12:59:21] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 12:59:21] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 2601 at row 17215; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+ℹ [2026/02/23 12:59:39] Starting DEGAS Screen
+ℹ [2026/02/23 12:59:44] Setting up Environment...
+ℹ [2026/02/23 12:59:46] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 12:59:47] Training DEGAS model...
+ℹ [2026/02/23 12:59:47] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 13:00:05] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 13:00:05] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 5019 at row 21057; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+ℹ [2026/02/23 13:00:25] Starting DEGAS Screen
+ℹ [2026/02/23 13:00:31] Setting up Environment...
+ℹ [2026/02/23 13:00:33] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 13:00:34] Training DEGAS model...
+ℹ [2026/02/23 13:00:34] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 13:00:55] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 13:00:55] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 1698 at row 19718; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+ℹ [2026/02/23 13:01:14] Starting DEGAS Screen
+ℹ [2026/02/23 13:01:20] Setting up Environment...
+ℹ [2026/02/23 13:01:21] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 13:01:23] Training DEGAS model...
+ℹ [2026/02/23 13:01:23] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 13:01:43] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 13:01:43] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 1795 at row 18925; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+ℹ [2026/02/23 13:02:02] Starting DEGAS Screen
+ℹ [2026/02/23 13:02:08] Setting up Environment...
+ℹ [2026/02/23 13:02:10] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 13:02:11] Training DEGAS model...
+ℹ [2026/02/23 13:02:11] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 13:02:31] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 13:02:31] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 3362 at row 18966; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+ℹ [2026/02/23 13:02:49] Starting DEGAS Screen
+ℹ [2026/02/23 13:02:56] Setting up Environment...
+ℹ [2026/02/23 13:02:58] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 13:02:59] Training DEGAS model...
+ℹ [2026/02/23 13:02:59] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 13:03:18] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 13:03:18] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 2423 at row 19174; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+ℹ [2026/02/23 13:03:37] Starting DEGAS Screen
+ℹ [2026/02/23 13:03:43] Setting up Environment...
+ℹ [2026/02/23 13:03:45] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 13:03:46] Training DEGAS model...
+ℹ [2026/02/23 13:03:46] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 13:04:04] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 13:04:04] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 8451 at row 19417; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+ℹ [2026/02/23 13:04:23] Starting DEGAS Screen
+ℹ [2026/02/23 13:04:29] Setting up Environment...
+ℹ [2026/02/23 13:04:30] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 13:04:31] Training DEGAS model...
+ℹ [2026/02/23 13:04:31] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 13:04:49] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 13:04:49] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 3307 at row 22504; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+ℹ [2026/02/23 13:05:10] Starting DEGAS Screen
+ℹ [2026/02/23 13:05:16] Setting up Environment...
+ℹ [2026/02/23 13:05:18] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 13:05:19] Training DEGAS model...
+ℹ [2026/02/23 13:05:19] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 13:05:38] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 13:05:38] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 2328 at row 18010; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+ℹ [2026/02/23 13:05:57] Starting DEGAS Screen
+ℹ [2026/02/23 13:06:03] Setting up Environment...
+ℹ [2026/02/23 13:06:04] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 13:06:05] Training DEGAS model...
+ℹ [2026/02/23 13:06:05] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 13:06:25] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 13:06:25] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 2044 at row 18222; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+ℹ [2026/02/23 13:06:43] Starting DEGAS Screen
+ℹ [2026/02/23 13:06:49] Setting up Environment...
+ℹ [2026/02/23 13:06:51] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 13:06:52] Training DEGAS model...
+ℹ [2026/02/23 13:06:52] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 13:07:12] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 13:07:12] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 1627 at row 14477; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+ℹ [2026/02/23 13:07:27] Starting DEGAS Screen
+ℹ [2026/02/23 13:07:33] Setting up Environment...
+ℹ [2026/02/23 13:07:35] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 13:07:36] Training DEGAS model...
+ℹ [2026/02/23 13:07:36] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 13:07:57] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 13:07:57] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 3511 at row 15069; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+ℹ [2026/02/23 13:08:13] Starting DEGAS Screen
+ℹ [2026/02/23 13:08:19] Setting up Environment...
+ℹ [2026/02/23 13:08:20] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 13:08:21] Training DEGAS model...
+ℹ [2026/02/23 13:08:21] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 13:08:41] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 13:08:41] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 1815 at row 17884; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+ℹ [2026/02/23 13:08:59] Starting DEGAS Screen
+ℹ [2026/02/23 13:09:05] Setting up Environment...
+ℹ [2026/02/23 13:09:07] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 13:09:08] Training DEGAS model...
+ℹ [2026/02/23 13:09:08] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 13:09:29] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 13:09:29] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 3024 at row 20808; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+ℹ [2026/02/23 13:09:50] Starting DEGAS Screen
+ℹ [2026/02/23 13:09:56] Setting up Environment...
+ℹ [2026/02/23 13:09:58] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 13:09:59] Training DEGAS model...
+ℹ [2026/02/23 13:09:59] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 13:10:19] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 13:10:19] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 1824 at row 19220; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+ℹ [2026/02/23 13:10:38] Starting DEGAS Screen
+ℹ [2026/02/23 13:10:44] Setting up Environment...
+ℹ [2026/02/23 13:10:45] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 13:10:47] Training DEGAS model...
+ℹ [2026/02/23 13:10:47] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 13:11:07] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 13:11:07] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 1493 at row 17851; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+ℹ [2026/02/23 13:11:25] Starting DEGAS Screen
+ℹ [2026/02/23 13:11:30] Setting up Environment...
+ℹ [2026/02/23 13:11:32] Existing environment "r-reticulate-degas" found
+ℹ [2026/02/23 13:11:33] Training DEGAS model...
+ℹ [2026/02/23 13:11:33] 3-layer DenseNet BlankCox DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/02/23 13:11:52] Python check passed, using Python 3.9.15 
+ℹ [2026/02/23 13:11:52] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/cross_args_ite/GSE165897/GSE140082/tmp/BlankCoxMTL.py", line 378, in <module>
+    Xsc = np.loadtxt(data_folder + "scExp.csv", delimiter=",", skiprows=1)
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1338, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/numpy/lib/npyio.py", line 999, in _read
+    arr = _load_from_filelike(
+ValueError: the number of columns changed from 11620 to 745 at row 16580; use `usecols` to select a subset and avoid this error
+✖ In index: 1.
+            used   (Mb) gc trigger    (Mb)   max used    (Mb)
+Ncells   4139935  221.1    7522182   401.8    7522182   401.8
+Vcells 399522016 3048.2 1478877072 11283.0 2623990022 20019.5
+✔ DEGAS random search completed.

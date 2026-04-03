@@ -1,0 +1,98 @@
+nohup: ignoring input
+Loading required package: SeuratObject
+Loading required package: sp
+‘SeuratObject’ was built with package ‘Matrix’ 1.7.3 but the current
+version is 1.7.4; it is recomended that you reinstall ‘SeuratObject’ as
+the ABI for ‘Matrix’ may have changed
+
+Attaching package: ‘SeuratObject’
+
+The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+ℹ Updating SigBridgeR documentation
+ℹ Loading SigBridgeR
+Loading required package: Matrix
+✔ SigBridgeR v2.3.2 loaded
+ℹ [2025/09/11 14:42:27] Start scPAS screening.
+[1] "Step 1:Quantile normalization of bulk data."
+[1] "Step 2: Extracting single-cell expression profiles...."
+Warning: The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead.
+ℹ The deprecated feature was likely used in the scPAS package.
+  Please report the issue to the authors.
+[1] "Step 3: Constructing a gene-gene similarity by single cell data...."
+Building SNN based on a provided distance matrix
+Computing SNN
+[1] "Step 4: Optimizing the network-regularized sparse regression model...."
+[1] "Current phenotype contains 181 bevacizumab_or_standard and 199 NA samples."
+[1] "Perform logistic regression on the given phenotypes:"
+[1] "alpha = 0.01"
+[1] "lambda = 6.18882258666841"
+[1] "scPAS identified 10 rick+ features and 15 rick- features."
+[1] "The percentage of selected feature is: 1.001%"
+
+[1] "|**************************************************|"
+[1] "Step 5: calculating quantified risk scores...."
+[1] "Step 6: qualitative identification by permutation test program with 2000 times random perturbations"
+[1] "Finished."
+✔ [2025/09/11 14:44:09] scPAS screening done.
+ℹ [2025/09/11 14:44:18] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/11 15:06:46] Selecting K...
+ℹ [2025/09/11 15:12:15] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/11 15:49:40] Screening cells...
+Warning in multimode::locmodes(x, mod0 = 2) :
+  If the density function has an unbounded support, artificial modes may have been created in the tails
+ℹ [2025/09/11 15:49:41] scAB screening done.
+ℹ [2025/09/11 15:49:50] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/11 16:12:16] Selecting K...
+ℹ [2025/09/11 16:19:04] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/11 16:52:11] Screening cells...
+ℹ [2025/09/11 16:52:11] scAB screening done.
+ℹ [2025/09/11 16:52:22] Start scPP screening.
+ℹ [2025/09/11 16:52:22] Finding markers...
+ℹ [2025/09/11 16:52:41] Screening...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	1484 (59% of 2524)
+	gene_neg: 	2534 (72% of 3532)
+Warning: `PackageCheck()` was deprecated in SeuratObject 5.0.0.
+ℹ Please use `rlang::check_installed()` instead.
+ℹ The deprecated feature was likely used in the Seurat package.
+  Please report the issue at <https://github.com/satijalab/seurat/issues>.
+✔ [2025/09/11 16:53:43] scPP screening done.
+ℹ [2025/09/11 16:53:51] Start scPP screening.
+ℹ [2025/09/11 16:53:51] Finding markers...
+ℹ [2025/09/11 16:53:56] Screening...
+Warning in .AUCell_calcAUC(geneSets = geneSets, rankings = rankings, nCores = nCores,  :
+  The following gene sets will be excluded from the analysis(less than 20% of their genes are available):
+gene_neg
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	6 (67% of 9)
+✖ [2025/09/11 16:54:35] subscript out of bounds
+ℹ [2025/09/11 16:54:35] scPP screening exit.
+Error in DoscPP(sc_data = sc_data, matched_bulk = matched_bulk, phenotype = phenotype,  : 
+  object 'scPP_result' not found
+Calls: Screen -> DoscPP -> <Anonymous>
+Execution halted

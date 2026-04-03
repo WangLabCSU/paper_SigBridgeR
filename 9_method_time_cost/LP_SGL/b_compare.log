@@ -1,0 +1,87 @@
+nohup: ignoring input
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+✔ SigBridgeR v3.2.0 loaded
+[1] 15201 50865
+[1] 11620
+Running with:
+  n_cells
+1    1000
+ℹ `label_type` not specified or not of length 1, using "LP_SGL"
+ℹ [2026/01/24 18:06:45] Starting LP-SGL screen
+ℹ [2026/01/24 18:06:45] Fetch graph from Seurat object
+ℹ [2026/01/24 18:06:45] Run Leiden clustering
+ℹ [2026/01/24 18:06:45] Calculating correlation matrix...
+
+ℹ [2026/01/24 18:06:49] Fitting SGL model with alpha = 0.5, this may take a while
+Warning in Sol$intercept : partial match of 'intercept' to 'intercepts'
+ℹ [2026/01/24 18:07:01] Running 5-fold cross-validation
+ℹ [2026/01/24 18:08:05] Optimal lambda index: 20 (error = 161.719655549085)
+ℹ [2026/01/24 18:08:05] Identified 35 lp_sgl negative cells, 938 lp_sgl neutral cells, and 27 lp_sgl positive cells
+✔ [2026/01/24 18:08:05] LP-SGL screening done.
+2    5000
+ℹ `label_type` not specified or not of length 1, using "LP_SGL"
+ℹ [2026/01/24 18:12:10] Starting LP-SGL screen
+ℹ [2026/01/24 18:12:10] Fetch graph from Seurat object
+ℹ [2026/01/24 18:12:10] Run Leiden clustering
+ℹ [2026/01/24 18:12:11] Calculating correlation matrix...
+ℹ [2026/01/24 18:12:12] Fitting SGL model with alpha = 0.5, this may take a while
+Warning in Sol$intercept : partial match of 'intercept' to 'intercepts'
+ℹ [2026/01/24 18:12:32] Running 5-fold cross-validation
+ℹ [2026/01/24 18:14:45] Optimal lambda index: 20 (error = 163.522457599635)
+ℹ [2026/01/24 18:14:45] Identified 272 lp_sgl negative cells, 4644 lp_sgl neutral cells, and 84 lp_sgl positive cells
+✔ [2026/01/24 18:14:45] LP-SGL screening done.
+Warning: Some expressions had a GC in every iteration; so filtering is disabled.
+3   10000
+ℹ `label_type` not specified or not of length 1, using "LP_SGL"
+ℹ [2026/01/24 18:22:41] Starting LP-SGL screen
+ℹ [2026/01/24 18:22:41] Fetch graph from Seurat object
+ℹ [2026/01/24 18:22:41] Run Leiden clustering
+ℹ [2026/01/24 18:22:43] Calculating correlation matrix...
+ℹ [2026/01/24 18:22:45] Fitting SGL model with alpha = 0.5, this may take a while
+Warning in Sol$intercept : partial match of 'intercept' to 'intercepts'
+ℹ [2026/01/24 18:23:30] Running 5-fold cross-validation
+ℹ [2026/01/24 18:31:06] Optimal lambda index: 20 (error = 164.354522757849)
+ℹ [2026/01/24 18:31:06] Identified 911 lp_sgl negative cells, 8879 lp_sgl neutral cells, and 210 lp_sgl positive cells
+✔ [2026/01/24 18:31:06] LP-SGL screening done.
+Warning: Some expressions had a GC in every iteration; so filtering is disabled.
+4   50000
+ℹ `label_type` not specified or not of length 1, using "LP_SGL"
+ℹ [2026/01/24 18:56:35] Starting LP-SGL screen
+ℹ [2026/01/24 18:56:35] Fetch graph from Seurat object
+ℹ [2026/01/24 18:56:35] Run Leiden clustering
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.3 GiB
+ℹ [2026/01/24 18:56:54] Calculating correlation matrix...
+ℹ [2026/01/24 18:57:07] Fitting SGL model with alpha = 0.5, this may take a while
+
+ *** caught segfault ***
+address 0x5d91f6382990, cause 'memory not mapped'
+
+Traceback:
+ 1: oneDimLogit(data, index, thresh = thresh, inner.iter = maxit,     outer.iter = maxit, outer.thresh = thresh, min.frac = min.frac,     nlam = nlam, lambdas = lambdas, gamma = gamma, verbose = verbose,     step = step, alpha = alpha, reset = reset)
+ 2: SGL::SGL(data, cluster_membership, type = type, alpha = alpha)
+ 3: LPSGL::label_cell(seurat_obj = sc_data, bulk_dataset = matched_bulk,     phenotype = phenotype, cluster_membership = leiden_results,     alpha = alpha, nfold = nfold, type = family, verbose = verbose,     seed = seed)
+ 4: (function (matched_bulk, sc_data, phenotype, label_type = "LP_SGL",     family = c("logit", "cox", "linear"), resolution = 0.6, alpha = 0.5,     nfold = 5, dge_analysis = list(run = FALSE, logFC_threshold = 1,         pval_threshold = 0.05), ...) {    chk::chk_is(matched_bulk, c("matrix", "data.frame"))    chk::chk_is(sc_data, c("Seurat"))    chk::chk_list(dge_analysis)    family <- SigBridgeRUtils::MatchArg(family, c("logit", "cox",         "linear"), NULL)    dots <- rlang::list2(...)    verbose <- dots$verbose %||% getFuncOption("verbose")    seed <- dots$seed %||% getFuncOption("seed")    if (verbose) {        ts_cli$cli_alert_info(cli::col_green("Starting LP-SGL screen"))    }    leiden_results <- LPSGL::run_leiden_clustering(seurat_obj = sc_data,         graph_name = "RNA_snn", resolution = resolution, verbose = verbose,         seed = seed)    lpsgl_res <- LPSGL::label_cell(seurat_obj = sc_data, bulk_dataset = matched_bulk,   ...
+ 5: rlang::exec(method_config$executor, !!!params)
+ 6: Screen(matched_bulk = bulk_bi, sc_data = seurat_obj, phenotype = pheno_bi,     phenotype_class = "binary", screen_method = "LP_SGL")
+ 7: eval(e, env)
+ 8: eval(e, env)
+ 9: eval_one(exprs[[i]], memory)
+10: mark(Screen(matched_bulk = bulk_bi, sc_data = seurat_obj, phenotype = pheno_bi,     phenotype_class = "binary", screen_method = "LP_SGL"), check = FALSE,     iterations = 3)
+11: rlang::eval_tidy(args[[which(unnamed)]], data = env)
+12: FUN(X[[i]], ...)
+13: lapply(seq_len(nrow(parameters)), eval_one)
+14: press(n_cells = c(1000, 5000, 10000, 50000), {    seurat_obj <- switch(as.character(n_cells), `1000` = seurat_1k,         `5000` = seurat_5k, `10000` = seurat_10k, `50000` = seurat_50k)    mark(Screen(matched_bulk = bulk_bi, sc_data = seurat_obj,         phenotype = pheno_bi, phenotype_class = "binary", screen_method = "LP_SGL"),         check = FALSE, iterations = 3)})
+15: mutate(., n_cells = as.factor(n_cells))
+16: press(n_cells = c(1000, 5000, 10000, 50000), {    seurat_obj <- switch(as.character(n_cells), `1000` = seurat_1k,         `5000` = seurat_5k, `10000` = seurat_10k, `50000` = seurat_50k)    mark(Screen(matched_bulk = bulk_bi, sc_data = seurat_obj,         phenotype = pheno_bi, phenotype_class = "binary", screen_method = "LP_SGL"),         check = FALSE, iterations = 3)}) %>% mutate(n_cells = as.factor(n_cells))
+An irrecoverable exception occurred. R is aborting now ...

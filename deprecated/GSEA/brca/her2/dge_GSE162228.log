@@ -1,0 +1,31 @@
+nohup: ignoring input
+✔ Successfully merged 2 objects.
+Calculate differential gene set : AUCell
+Warning: The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead.
+ℹ The deprecated feature was likely used in the Seurat package.
+  Please report the issue at <https://github.com/satijalab/seurat/issues>.
+Warning: `PackageCheck()` was deprecated in SeuratObject 5.0.0.
+ℹ Please use `rlang::check_installed()` instead.
+ℹ The deprecated feature was likely used in the Seurat package.
+  Please report the issue at <https://github.com/satijalab/seurat/issues>.
+Finish!
+Calculate differential gene set : UCell
+Finish!
+Calculate differential gene set : singscore
+Finish!
+Calculate differential gene set : ssgsea
+Finish!
+The following `from` values were not present in `x`: GOBP-HEPOXILIN-METABOLIC-PROCESS, GOMF-NEUROLIGIN-FAMILY-PROTEIN-BINDING, HP-PERMANENT-ATRIAL-FIBRILLATION
+✔ Done!
+Calculate differential gene set : AUCell
+Finish!
+Calculate differential gene set : UCell
+Finish!
+Calculate differential gene set : singscore
+Finish!
+Calculate differential gene set : ssgsea
+Finish!
+The following `from` values were not present in `x`: GOCC-PROTEIN-COMPLEX-INVOLVED-IN-CELL-CELL-ADHESION
+✔ Done!
+✔ scissor has been skipped due to no positive cells available!

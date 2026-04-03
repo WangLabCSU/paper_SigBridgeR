@@ -1,0 +1,345 @@
+nohup: ignoring input
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+
+Attaching package: ‘data.table’
+
+The following objects are masked from ‘package:dplyr’:
+
+    between, first, last
+
+ℹ Updating SigBridgeR documentation
+ℹ Loading SigBridgeR
+✔ SigBridgeR v2.5.4 loaded
+  |                                                                              |                                                                      |   0%ℹ [2025/12/15 15:34:04] Start scPAS screening.
+ℹ [2025/12/15 15:34:11] Quantile normalizing bulk data
+ℹ [2025/12/15 15:34:11] Imputation of missing values in single cell RNA-sequencing data with "ALRA"
+ℹ [2025/12/15 15:34:12] Read matrix with 31872 cells and 12231 genes
+ℹ [2025/12/15 15:34:50] Chose k = 65
+ℹ [2025/12/15 15:34:50] Getting nonzeros
+ℹ [2025/12/15 15:34:51] Randomized SVD
+ℹ [2025/12/15 15:36:19] Find the 0.001 quantile of each gene
+ℹ [2025/12/15 15:36:27] Sweeping
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.9 GiB
+Warning in .sparse2dense(if (.M.shape(x) == "t") .M2gen(x) else x) :
+  sparse->dense coercion: allocating vector of size 1.5 GiB
+ℹ [2025/12/15 15:37:06] Scaling all except for 0 columns
+ℹ [2025/12/15 15:37:28] 0.023% of the values became negative in the scaling process and were set to zero
+ℹ [2025/12/15 15:37:41] The matrix went from 14.414% nonzero to 57.03% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/12/15 15:38:05] Extracting single-cell expression profiles...
+ℹ [2025/12/15 15:38:10] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/15 15:38:13] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/15 15:38:13] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 32.0432074029075
+scPAS identified 449 risk+ features and 324 risk- features.
+The percentage of selected feature is: 68.956%
+
+── At alpha = 0.005 ──
+
+lambda = 4.41722798414937
+scPAS identified 371 risk+ features and 337 risk- features.
+The percentage of selected feature is: 63.158%
+
+── At alpha = 0.01 ──
+
+lambda = 3.5167380567129
+scPAS identified 279 risk+ features and 232 risk- features.
+The percentage of selected feature is: 45.584%
+
+── At alpha = 0.05 ──
+
+lambda = 1.34895760131677
+scPAS identified 105 risk+ features and 78 risk- features.
+The percentage of selected feature is: 16.325%
+ℹ [2025/12/15 15:39:49] Calculating quantified risk scores...
+ℹ [2025/12/15 15:39:50] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/15 15:39:58] scPAS screening done.
+
+  |                                                                              |=======                                                               |  10%ℹ [2025/12/15 15:39:58] Start scPAS screening.
+ℹ [2025/12/15 15:40:04] Quantile normalizing bulk data
+ℹ [2025/12/15 15:40:04] Extracting single-cell expression profiles...
+ℹ [2025/12/15 15:40:05] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/15 15:40:11] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/15 15:40:11] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 17.0025763147917
+scPAS identified 825 risk+ features and 722 risk- features.
+The percentage of selected feature is: 75.316%
+
+── At alpha = 0.005 ──
+
+lambda = 7.15775867047738
+scPAS identified 508 risk+ features and 431 risk- features.
+The percentage of selected feature is: 45.716%
+
+── At alpha = 0.01 ──
+
+lambda = 4.95634121623523
+scPAS identified 370 risk+ features and 290 risk- features.
+The percentage of selected feature is: 32.132%
+
+── At alpha = 0.05 ──
+
+lambda = 1.65353508906976
+scPAS identified 130 risk+ features and 87 risk- features.
+The percentage of selected feature is: 10.565%
+ℹ [2025/12/15 15:57:08] Calculating quantified risk scores...
+ℹ [2025/12/15 15:57:11] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/15 15:57:23] scPAS screening done.
+
+  |                                                                              |==============                                                        |  20%ℹ [2025/12/15 15:34:04] Start scPAS screening.
+ℹ [2025/12/15 15:34:11] Quantile normalizing bulk data
+ℹ [2025/12/15 15:34:11] Extracting single-cell expression profiles...
+ℹ [2025/12/15 15:34:12] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/15 15:34:25] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/15 15:34:25] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 17.9606919872678
+scPAS identified 1389 risk+ features and 1227 risk- features.
+The percentage of selected feature is: 69.006%
+
+── At alpha = 0.005 ──
+
+lambda = 8.69343566673058
+scPAS identified 720 risk+ features and 570 risk- features.
+The percentage of selected feature is: 34.028%
+
+── At alpha = 0.01 ──
+
+lambda = 5.74610516469668
+scPAS identified 465 risk+ features and 348 risk- features.
+The percentage of selected feature is: 21.446%
+
+── At alpha = 0.05 ──
+
+lambda = 1.74671378472711
+scPAS identified 156 risk+ features and 96 risk- features.
+The percentage of selected feature is: 6.647%
+ℹ [2025/12/15 16:29:22] Calculating quantified risk scores...
+ℹ [2025/12/15 16:29:28] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/15 16:29:42] scPAS screening done.
+
+  |                                                                              |=====================                                                 |  30%ℹ [2025/12/15 16:29:42] Start scPAS screening.
+ℹ [2025/12/15 16:29:48] Quantile normalizing bulk data
+ℹ [2025/12/15 16:29:48] Imputation of missing values in single cell RNA-sequencing data with "ALRA"
+ℹ [2025/12/15 16:29:49] Read matrix with 31872 cells and 12231 genes
+ℹ [2025/12/15 16:30:28] Chose k = 64
+ℹ [2025/12/15 16:30:28] Getting nonzeros
+ℹ [2025/12/15 16:30:29] Randomized SVD
+ℹ [2025/12/15 16:31:56] Find the 0.001 quantile of each gene
+ℹ [2025/12/15 16:32:04] Sweeping
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.9 GiB
+Warning in .sparse2dense(if (.M.shape(x) == "t") .M2gen(x) else x) :
+  sparse->dense coercion: allocating vector of size 1.5 GiB
+ℹ [2025/12/15 16:32:43] Scaling all except for 0 columns
+ℹ [2025/12/15 16:33:05] 0.024% of the values became negative in the scaling process and were set to zero
+ℹ [2025/12/15 16:33:19] The matrix went from 14.414% nonzero to 57.106% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/12/15 16:33:43] Extracting single-cell expression profiles...
+ℹ [2025/12/15 16:33:50] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/15 16:33:53] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/15 16:33:53] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 24.4233244595807
+scPAS identified 509 risk+ features and 370 risk- features.
+The percentage of selected feature is: 72.525%
+
+── At alpha = 0.005 ──
+
+lambda = 4.24843241786616
+scPAS identified 399 risk+ features and 360 risk- features.
+The percentage of selected feature is: 62.624%
+
+── At alpha = 0.01 ──
+
+lambda = 3.22861975854566
+scPAS identified 308 risk+ features and 256 risk- features.
+The percentage of selected feature is: 46.535%
+
+── At alpha = 0.05 ──
+
+lambda = 1.23844059319065
+scPAS identified 119 risk+ features and 91 risk- features.
+The percentage of selected feature is: 17.327%
+ℹ [2025/12/15 16:35:38] Calculating quantified risk scores...
+ℹ [2025/12/15 16:35:40] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/15 16:35:50] scPAS screening done.
+
+  |                                                                              |============================                                          |  40%ℹ [2025/12/15 16:35:50] Start scPAS screening.
+ℹ [2025/12/15 16:35:56] Quantile normalizing bulk data
+ℹ [2025/12/15 16:35:56] Extracting single-cell expression profiles...
+ℹ [2025/12/15 16:35:57] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/15 16:36:01] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/15 16:36:01] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 31.0133891712671
+scPAS identified 517 risk+ features and 354 risk- features.
+The percentage of selected feature is: 66.794%
+
+── At alpha = 0.005 ──
+
+lambda = 5.39477285990134
+scPAS identified 405 risk+ features and 330 risk- features.
+The percentage of selected feature is: 56.365%
+
+── At alpha = 0.01 ──
+
+lambda = 3.91344585929685
+scPAS identified 304 risk+ features and 237 risk- features.
+The percentage of selected feature is: 41.488%
+
+── At alpha = 0.05 ──
+
+lambda = 1.50112759440903
+scPAS identified 102 risk+ features and 73 risk- features.
+The percentage of selected feature is: 13.42%
+ℹ [2025/12/15 16:41:55] Calculating quantified risk scores...
+ℹ [2025/12/15 16:41:57] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/15 16:42:06] scPAS screening done.
+
+  |                                                                              |===================================                                   |  50%ℹ [2025/12/15 16:42:06] Start scPAS screening.
+ℹ [2025/12/15 16:42:12] Quantile normalizing bulk data
+ℹ [2025/12/15 16:42:12] Imputation of missing values in single cell RNA-sequencing data with "KNN"
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/12/15 16:42:48] Extracting single-cell expression profiles...
+ℹ [2025/12/15 16:42:53] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/15 16:42:57] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/15 16:42:57] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 22.3941760218583
+scPAS identified 554 risk+ features and 395 risk- features.
+The percentage of selected feature is: 72.776%
+
+── At alpha = 0.005 ──
+
+lambda = 5.92075655385716
+scPAS identified 400 risk+ features and 325 risk- features.
+The percentage of selected feature is: 55.598%
+
+── At alpha = 0.01 ──
+
+lambda = 4.09978752988887
+scPAS identified 296 risk+ features and 233 risk- features.
+The percentage of selected feature is: 40.567%
+
+── At alpha = 0.05 ──
+
+lambda = 1.50112759440903
+scPAS identified 101 risk+ features and 73 risk- features.
+The percentage of selected feature is: 13.344%
+ℹ [2025/12/15 16:45:37] Calculating quantified risk scores...
+ℹ [2025/12/15 16:45:39] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/15 16:45:48] scPAS screening done.
+
+  |                                                                              |==========================================                            |  60%ℹ [2025/12/15 16:45:48] Start scPAS screening.
+ℹ [2025/12/15 16:45:54] Quantile normalizing bulk data
+ℹ [2025/12/15 16:45:54] Imputation of missing values in single cell RNA-sequencing data with "KNN"
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/12/15 16:46:31] Extracting single-cell expression profiles...
+ℹ [2025/12/15 16:46:35] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/15 16:46:39] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/15 16:46:39] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 35.0124277208888
+scPAS identified 409 risk+ features and 284 risk- features.
+The percentage of selected feature is: 67.544%
+
+── At alpha = 0.005 ──
+
+lambda = 4.82654166223334
+scPAS identified 350 risk+ features and 290 risk- features.
+The percentage of selected feature is: 62.378%
+
+── At alpha = 0.01 ──
+
+lambda = 3.66795708238127
+scPAS identified 262 risk+ features and 207 risk- features.
+The percentage of selected feature is: 45.712%
+
+── At alpha = 0.05 ──
+
+lambda = 1.28197183429412
+scPAS identified 106 risk+ features and 81 risk- features.
+The percentage of selected feature is: 18.226%
+ℹ [2025/12/15 16:48:30] Calculating quantified risk scores...
+ℹ [2025/12/15 16:48:31] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/15 16:48:39] scPAS screening done.
+
+  |                                                                              |=================================================                     |  70%ℹ [2025/12/15 16:48:39] Start scPAS screening.
+ℹ [2025/12/15 16:48:45] Quantile normalizing bulk data
+ℹ [2025/12/15 16:48:45] Extracting single-cell expression profiles...
+ℹ [2025/12/15 16:48:46] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/15 16:48:52] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/15 16:48:52] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 16.2154818300362
+scPAS identified 776 risk+ features and 642 risk- features.
+The percentage of selected feature is: 75.951%
+
+── At alpha = 0.005 ──
+
+lambda = 7.15145148915042
+scPAS identified 472 risk+ features and 393 risk- features.
+The percentage of selected feature is: 46.331%
+
+── At alpha = 0.01 ──
+
+lambda = 5.18776581423853
+scPAS identified 345 risk+ features and 254 risk- features.
+The percentage of selected feature is: 32.084%
+
+── At alpha = 0.05 ──
+
+lambda = 1.65207804837903
+scPAS identified 125 risk+ features and 81 risk- features.
+The percentage of selected feature is: 11.034%
+ℹ [2025/12/15 17:02:27] Calculating quantified risk scores...
+ℹ [2025/12/15 17:02:29] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/15 17:02:40] scPAS screening done.
+
+  |                                                                              |========================================================              |  80%

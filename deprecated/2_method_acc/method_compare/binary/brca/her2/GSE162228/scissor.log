@@ -1,0 +1,45 @@
+nohup: ignoring input
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+
+Attaching package: ‘data.table’
+
+The following objects are masked from ‘package:dplyr’:
+
+    between, first, last
+
+ℹ Updating SigBridgeR documentation
+ℹ Loading SigBridgeR
+✔ SigBridgeR v2.5.4 loaded
+ℹ [2025/12/04 16:55:55] Scissor start...
+ℹ [2025/12/04 16:55:55] Start from raw data...
+ℹ Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 7.6 GiB
+ℹ [2025/12/04 16:56:03] Normalizing quantiles of data
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.7 GiB
+ℹ [2025/12/04 16:56:54] Subsetting data
+ℹ [2025/12/04 16:56:57] Calculating correlation
+----------------------------------------
+Five-number summary of correlations:
+0.406719 0.449469 0.461075 0.471802 0.500627
+----------------------------------------
+ℹ Current phenotype contains 111 relapse_Negative and 22 relapse_Positive samples.
+ℹ [2025/12/04 16:58:19] Perform logistic regression on the given phenotypes...
+ℹ [2025/12/04 16:58:20] Screening...
+
+── At alpha = 0.005 ──
+
+Scissor identified 0 Scissor+ cells and 1 Scissor- cells.
+The percentage of selected cell is: 0.003%
+ℹ [2025/12/04 17:10:56] Scissor Ended.

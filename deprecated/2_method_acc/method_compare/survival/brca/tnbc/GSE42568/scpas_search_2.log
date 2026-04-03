@@ -1,0 +1,120 @@
+nohup: ignoring input
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+
+Attaching package: ‘data.table’
+
+The following objects are masked from ‘package:dplyr’:
+
+    between, first, last
+
+ℹ Updating SigBridgeR documentation
+ℹ Loading SigBridgeR
+✔ SigBridgeR v2.5.4 loaded
+ℹ [2025/12/15 15:25:45] Start scPAS screening.
+ℹ [2025/12/15 15:25:55] Quantile normalizing bulk data
+ℹ [2025/12/15 15:25:55] Extracting single-cell expression profiles...
+ℹ [2025/12/15 15:25:58] Constructing a gene-gene similarity by single cell data
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.4 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/15 15:26:12] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/15 15:26:12] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 62.3984908376306
+scPAS identified 759 risk+ features and 582 risk- features.
+The percentage of selected feature is: 40.428%
+
+── At alpha = 0.005 ──
+
+lambda = 18.1059052483899
+scPAS identified 343 risk+ features and 242 risk- features.
+The percentage of selected feature is: 17.636%
+ℹ [2025/12/15 15:51:06] Calculating quantified risk scores...
+ℹ [2025/12/15 15:51:14] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/15 15:51:52] scPAS screening done.
+ℹ [2025/12/15 15:51:52] Start scPAS screening.
+ℹ [2025/12/15 15:52:02] Quantile normalizing bulk data
+ℹ [2025/12/15 15:52:03] Imputation of missing values in single cell RNA-sequencing data with "ALRA"
+ℹ [2025/12/15 15:52:04] Read matrix with 54650 cells and 13188 genes
+ℹ [2025/12/15 15:53:07] Chose k = 67
+ℹ [2025/12/15 15:53:07] Getting nonzeros
+ℹ [2025/12/15 15:53:08] Randomized SVD
+ℹ [2025/12/15 15:55:43] Find the 0.001 quantile of each gene
+ℹ [2025/12/15 15:55:57] Sweeping
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.4 GiB
+Warning in .sparse2dense(if (.M.shape(x) == "t") .M2gen(x) else x) :
+  sparse->dense coercion: allocating vector of size 2.7 GiB
+ℹ [2025/12/15 15:57:19] Scaling all except for 0 columns
+ℹ [2025/12/15 15:58:00] 0.016% of the values became negative in the scaling process and were set to zero
+ℹ [2025/12/15 15:58:25] The matrix went from 13.156% nonzero to 58.192% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/12/15 15:59:21] Extracting single-cell expression profiles...
+ℹ [2025/12/15 15:59:29] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/15 15:59:46] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/15 15:59:46] Perform cox regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 18.5054536924006
+scPAS identified 932 risk+ features and 790 risk- features.
+The percentage of selected feature is: 71.512%
+
+── At alpha = 0.005 ──
+
+lambda = 7.79044123464185
+scPAS identified 524 risk+ features and 463 risk- features.
+The percentage of selected feature is: 40.988%
+
+── At alpha = 0.01 ──
+
+lambda = 5.39443794650018
+scPAS identified 362 risk+ features and 296 risk- features.
+The percentage of selected feature is: 27.326%
+
+── At alpha = 0.05 ──
+
+lambda = 1.88538670271764
+scPAS identified 100 risk+ features and 65 risk- features.
+The percentage of selected feature is: 6.852%
+ℹ [2025/12/15 16:03:35] Calculating quantified risk scores...
+ℹ [2025/12/15 16:03:41] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/15 16:03:59] scPAS screening done.
+ℹ [2025/12/15 16:03:59] Start scPAS screening.
+ℹ [2025/12/15 16:04:09] Quantile normalizing bulk data
+ℹ [2025/12/15 16:04:09] Imputation of missing values in single cell RNA-sequencing data with "ALRA"
+ℹ [2025/12/15 16:04:10] Read matrix with 54650 cells and 13188 genes
+ℹ [2025/12/15 16:05:12] Chose k = 73
+ℹ [2025/12/15 16:05:12] Getting nonzeros
+ℹ [2025/12/15 16:05:13] Randomized SVD
+ℹ [2025/12/15 16:07:57] Find the 0.001 quantile of each gene
+ℹ [2025/12/15 16:08:15] Sweeping
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.4 GiB
+Warning in .sparse2dense(if (.M.shape(x) == "t") .M2gen(x) else x) :
+  sparse->dense coercion: allocating vector of size 2.7 GiB
+ℹ [2025/12/15 16:09:19] Scaling all except for 0 columns
+ℹ [2025/12/15 16:10:04] 0.014% of the values became negative in the scaling process and were set to zero
+ℹ [2025/12/15 16:10:25] The matrix went from 13.156% nonzero to 57.616% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/12/15 16:11:20] Extracting single-cell expression profiles...
+ℹ [2025/12/15 16:11:27] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/15 16:11:37] Optimizing the network-regu larized sparse regression model
+ℹ [2025/12/15 16:11:37] Perform cox regression on the given phenotypes...

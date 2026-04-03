@@ -1,0 +1,34 @@
+nohup: ignoring input
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+✔ SigBridgeR v3.0.2 loaded
+[1] 15201 50865
+
+── Starting Robust Benchmark (TicToc + peakRAM) ────────────────────────────────
+ℹ Testing n_cells: 1000
+-> Warming up with small subset...
+ℹ `label_type` not specified or not of length 1, using "Scissor"
+ℹ [2026/01/11 10:42:32] Scissor start...
+ℹ [2026/01/11 10:42:32] Start from raw data...
+ℹ Using "RNA_snn" graph for network.
+ℹ [2026/01/11 10:42:32] Normalizing quantiles of data
+ℹ [2026/01/11 10:42:35] Subsetting data
+ℹ [2026/01/11 10:42:37] Calculating correlation
+
+----------------------------------------
+Five-number summary of correlations:
+0.363214 0.391255 0.398897 0.406162 0.430223
+----------------------------------------
+ℹ Current phenotype contains 18 Scissor_Negative and 267 Scissor_Positive samples.
+ℹ [2026/01/11 10:42:41] Perform logistic regression on the given phenotypes...
+✔ [2026/01/11 10:42:44] Statistics data saved to 'Scissor_inputs.RData'.
+ℹ [2026/01/11 10:42:44] Screening...

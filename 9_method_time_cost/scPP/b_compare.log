@@ -1,0 +1,82 @@
+nohup: ignoring input
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+✔ SigBridgeR v3.0.2 loaded
+[1] 15201 50865
+Running with:
+  n_cells
+1    1000
+ℹ `label_type` not specified or not of length "1", using "scPP"
+ℹ [2026/01/02 14:49:47] Start scPP screening.
+ℹ [2026/01/02 14:49:47] Finding overall markers...
+ℹ [2026/01/02 14:49:48] Screening...
+ℹ [2026/01/02 14:49:49] Running fixed threshold mode with prob = 0.2
+ℹ [2026/01/02 14:49:49] Computing AUC scores...
+Registered S3 methods overwritten by 'Seqinfo':
+  method                from        
+  as.data.frame.Seqinfo GenomeInfoDb
+  merge.Seqinfo         GenomeInfoDb
+  summary.Seqinfo       GenomeInfoDb
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	1484 (59% of 2524)
+	gene_neg: 	2534 (72% of 3532)
+✔ [2026/01/02 14:49:57] Classified 25 Positive, 52 Negative cells
+ℹ [2026/01/02 14:49:57] Finding markers between `Positive` and `Negative` group...
+✔ [2026/01/02 14:49:57] Found 57 positive markers, 174 negative markers
+✔ [2026/01/02 14:49:57] scPP screening done.
+Warning: stack imbalance in '{', 39 then 41
+2    5000
+ℹ `label_type` not specified or not of length "1", using "scPP"
+ℹ [2026/01/02 14:50:38] Start scPP screening.
+ℹ [2026/01/02 14:50:38] Finding overall markers...
+ℹ [2026/01/02 14:50:39] Screening...
+ℹ [2026/01/02 14:50:39] Running fixed threshold mode with prob = 0.2
+ℹ [2026/01/02 14:50:39] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	1484 (59% of 2524)
+	gene_neg: 	2534 (72% of 3532)
+✔ [2026/01/02 14:50:43] Classified 147 Positive, 202 Negative cells
+ℹ [2026/01/02 14:50:43] Finding markers between `Positive` and `Negative` group...
+✔ [2026/01/02 14:50:44] Found 264 positive markers, 1561 negative markers
+✔ [2026/01/02 14:50:44] scPP screening done.
+3   10000
+ℹ `label_type` not specified or not of length "1", using "scPP"
+ℹ [2026/01/02 14:51:25] Start scPP screening.
+ℹ [2026/01/02 14:51:25] Finding overall markers...
+ℹ [2026/01/02 14:51:25] Screening...
+ℹ [2026/01/02 14:51:25] Running fixed threshold mode with prob = 0.2
+ℹ [2026/01/02 14:51:25] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	1484 (59% of 2524)
+	gene_neg: 	2534 (72% of 3532)
+✔ [2026/01/02 14:51:35] Classified 278 Positive, 375 Negative cells
+ℹ [2026/01/02 14:51:35] Finding markers between `Positive` and `Negative` group...
+✔ [2026/01/02 14:51:35] Found 458 positive markers, 2056 negative markers
+✔ [2026/01/02 14:51:35] scPP screening done.
+Warning: Some expressions had a GC in every iteration; so filtering is disabled.
+4   50000
+ℹ `label_type` not specified or not of length "1", using "scPP"
+ℹ [2026/01/02 14:52:52] Start scPP screening.
+ℹ [2026/01/02 14:52:52] Finding overall markers...
+ℹ [2026/01/02 14:52:53] Screening...
+ℹ [2026/01/02 14:52:53] Running fixed threshold mode with prob = 0.2
+ℹ [2026/01/02 14:52:54] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	1484 (59% of 2524)
+	gene_neg: 	2534 (72% of 3532)
+✔ [2026/01/02 14:53:47] Classified 1413 Positive, 1916 Negative cells
+ℹ [2026/01/02 14:53:47] Finding markers between `Positive` and `Negative` group...
+✔ [2026/01/02 14:53:51] Found 1079 positive markers, 3513 negative markers
+✔ [2026/01/02 14:53:51] scPP screening done.
+Warning: Some expressions had a GC in every iteration; so filtering is disabled.
+Warning: stack imbalance in 'lapply', 25 then 27
+ℹ Finished benchmarking scPP!

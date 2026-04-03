@@ -1,0 +1,33 @@
+nohup: ignoring input
+✔ Setting active project to "/home/yyx/R/Project/R_code/paper_SigBridgeR".
+ℹ Data loaded
+ℹ skip scissor
+ℹ skip scpas
+ℹ skip scab
+ℹ skip scpp
+Calculate differential gene set : AUCell
+Finish!
+Calculate differential gene set : UCell
+Finish!
+Calculate differential gene set : singscore
+Finish!
+Calculate differential gene set : ssgsea
+Finish!
+The following `from` values were not present in `x`: HP-NONSPHEROCYTIC-HEMOLYTIC-ANEMIA
+
+── LP_SGL Done! ──
+
+ℹ DEGAS has only 1 group
+ℹ skip degas
+Calculate differential gene set : AUCell
+Finish!
+Calculate differential gene set : UCell
+Finish!
+Calculate differential gene set : singscore
+Finish!
+Calculate differential gene set : ssgsea
+Finish!
+
+── PIPET Done! ──
+
+✔ All done!

@@ -1,0 +1,585 @@
+nohup: ignoring input
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Loading required package: SeuratObject
+Loading required package: sp
+‘SeuratObject’ was built with package ‘Matrix’ 1.7.3 but the current
+version is 1.7.4; it is recomended that you reinstall ‘SeuratObject’ as
+the ABI for ‘Matrix’ may have changed
+
+Attaching package: ‘SeuratObject’
+
+The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+ℹ Updating SigBridgeR documentation
+ℹ Loading SigBridgeR
+Loading required package: Matrix
+✔ SigBridgeR v2.4.1 loaded
+Writing 'BulkPreProcess.Rd'
+[1] TRUE
+Warning: The `TimeStamp()` function is deprecated test.
+ℹ The deprecated feature was likely used in the calling package.
+  Please report the issue to the authors.
+This warning is displayed once every 8 hours.
+Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.
+ℹ [2025/09/26 14:44:48] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/26 15:25:11] Selecting K...
+ℹ [2025/09/26 15:36:08] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/26 16:10:58] Screening cells...
+ℹ [2025/09/26 16:10:58] scAB screening done.
+ℹ [2025/09/26 16:10:58] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/26 16:51:08] Selecting K...
+ℹ [2025/09/26 17:00:22] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/26 17:31:45] Screening cells...
+ℹ [2025/09/26 17:31:45] scAB screening done.
+ℹ [2025/09/26 17:31:45] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/26 18:03:36] Selecting K...
+ℹ [2025/09/26 18:10:31] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/26 18:50:44] Screening cells...
+ℹ [2025/09/26 18:50:45] scAB screening done.
+ℹ [2025/09/26 18:50:45] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/26 19:24:52] Selecting K...
+ℹ [2025/09/26 19:32:02] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/26 20:04:52] Screening cells...
+ℹ [2025/09/26 20:04:52] scAB screening done.
+ℹ [2025/09/26 20:04:52] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/26 20:42:58] Selecting K...
+ℹ [2025/09/26 20:53:11] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/26 21:32:43] Screening cells...
+ℹ [2025/09/26 21:32:43] scAB screening done.
+ℹ [2025/09/26 21:32:43] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/26 22:00:55] Selecting K...
+ℹ [2025/09/26 22:08:26] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+Warning: The `TimeStamp()` function is deprecated test.
+ℹ The deprecated feature was likely used in the calling package.
+  Please report the issue to the authors.
+This warning is displayed once every 8 hours.
+Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.
+ℹ [2025/09/26 22:45:01] Screening cells...
+ℹ [2025/09/26 22:45:02] scAB screening done.
+ℹ [2025/09/26 22:45:02] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/26 23:11:07] Selecting K...
+ℹ [2025/09/26 23:18:28] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/26 23:48:48] Screening cells...
+ℹ [2025/09/26 23:48:48] scAB screening done.
+ℹ [2025/09/26 23:48:48] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/27 00:17:52] Selecting K...
+ℹ [2025/09/27 00:24:28] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/27 00:54:34] Screening cells...
+ℹ [2025/09/27 00:54:34] scAB screening done.
+ℹ [2025/09/27 00:54:34] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/27 01:31:47] Selecting K...
+ℹ [2025/09/27 01:40:38] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/27 02:16:57] Screening cells...
+ℹ [2025/09/27 02:16:57] scAB screening done.
+ℹ [2025/09/27 02:16:57] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/27 02:54:08] Selecting K...
+ℹ [2025/09/27 03:01:59] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/27 03:37:49] Screening cells...
+ℹ [2025/09/27 03:37:49] scAB screening done.
+ℹ [2025/09/27 03:37:49] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/27 04:15:01] Selecting K...
+ℹ [2025/09/27 04:23:15] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/27 04:57:18] Screening cells...
+ℹ [2025/09/27 04:57:18] scAB screening done.
+ℹ [2025/09/27 04:57:18] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/27 05:32:49] Selecting K...
+ℹ [2025/09/27 05:42:09] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/27 06:13:18] Screening cells...
+ℹ [2025/09/27 06:13:18] scAB screening done.
+ℹ [2025/09/27 06:13:18] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+Warning: The `TimeStamp()` function is deprecated test.
+ℹ The deprecated feature was likely used in the calling package.
+  Please report the issue to the authors.
+This warning is displayed once every 8 hours.
+Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.
+ℹ [2025/09/27 06:51:52] Selecting K...
+ℹ [2025/09/27 07:00:41] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/27 07:41:37] Screening cells...
+ℹ [2025/09/27 07:41:37] scAB screening done.
+ℹ [2025/09/27 07:41:37] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/27 08:14:56] Selecting K...
+ℹ [2025/09/27 08:21:50] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/27 08:56:37] Screening cells...
+ℹ [2025/09/27 08:56:37] scAB screening done.
+ℹ [2025/09/27 08:56:37] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/27 09:29:25] Selecting K...
+ℹ [2025/09/27 09:37:17] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/27 10:08:03] Screening cells...
+ℹ [2025/09/27 10:08:03] scAB screening done.
+ℹ [2025/09/27 10:08:03] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/27 10:36:47] Selecting K...
+ℹ [2025/09/27 10:43:38] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/27 11:24:43] Screening cells...
+ℹ [2025/09/27 11:24:43] scAB screening done.
+ℹ [2025/09/27 11:24:43] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/27 11:58:55] Selecting K...
+ℹ [2025/09/27 12:05:08] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/27 12:38:38] Screening cells...
+ℹ [2025/09/27 12:38:38] scAB screening done.
+ℹ [2025/09/27 12:38:38] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/27 13:16:58] Selecting K...
+ℹ [2025/09/27 13:24:59] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/27 14:05:57] Screening cells...
+ℹ [2025/09/27 14:05:57] scAB screening done.
+ℹ [2025/09/27 14:05:57] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/27 14:37:12] Selecting K...
+ℹ [2025/09/27 14:44:11] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+Warning: The `TimeStamp()` function is deprecated test.
+ℹ The deprecated feature was likely used in the calling package.
+  Please report the issue to the authors.
+This warning is displayed once every 8 hours.
+Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.
+ℹ [2025/09/27 15:21:30] Screening cells...
+ℹ [2025/09/27 15:21:30] scAB screening done.
+ℹ [2025/09/27 15:21:30] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/27 15:48:53] Selecting K...
+ℹ [2025/09/27 15:55:16] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/27 16:42:50] Screening cells...
+ℹ [2025/09/27 16:42:50] scAB screening done.
+ℹ [2025/09/27 16:42:50] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/27 17:11:27] Selecting K...
+ℹ [2025/09/27 17:18:26] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/27 17:55:04] Screening cells...
+ℹ [2025/09/27 17:55:04] scAB screening done.
+ℹ [2025/09/27 17:55:04] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/27 18:19:43] Selecting K...
+ℹ [2025/09/27 18:25:47] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/27 19:01:21] Screening cells...
+ℹ [2025/09/27 19:01:21] scAB screening done.
+ℹ [2025/09/27 19:01:21] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/27 19:25:56] Selecting K...
+ℹ [2025/09/27 19:32:09] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/27 20:05:53] Screening cells...
+ℹ [2025/09/27 20:05:53] scAB screening done.
+ℹ [2025/09/27 20:05:53] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/27 20:30:15] Selecting K...
+ℹ [2025/09/27 20:36:12] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/27 21:13:09] Screening cells...
+ℹ [2025/09/27 21:13:09] scAB screening done.
+ℹ [2025/09/27 21:13:09] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/27 21:37:47] Selecting K...
+ℹ [2025/09/27 21:43:38] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/27 22:16:18] Screening cells...
+ℹ [2025/09/27 22:16:18] scAB screening done.
+
+Warning: The `TimeStamp()` function is deprecated test.
+ℹ The deprecated feature was likely used in the calling package.
+  Please report the issue to the authors.
+This warning is displayed once every 8 hours.
+Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.
+ℹ [2025/09/26 14:44:48] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/26 15:25:53] Selecting K...
+ℹ [2025/09/26 15:36:36] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/26 16:10:26] Screening cells...
+ℹ [2025/09/26 16:10:26] scAB screening done.
+ℹ [2025/09/26 16:10:26] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/26 16:50:34] Selecting K...
+ℹ [2025/09/26 16:59:11] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/26 17:38:43] Screening cells...
+ℹ [2025/09/26 17:38:43] scAB screening done.
+ℹ [2025/09/26 17:38:43] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/26 18:10:23] Selecting K...
+ℹ [2025/09/26 18:17:31] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/26 18:56:30] Screening cells...
+ℹ [2025/09/26 18:56:31] scAB screening done.
+ℹ [2025/09/26 18:56:31] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/26 19:29:50] Selecting K...
+ℹ [2025/09/26 19:36:37] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/26 20:05:52] Screening cells...
+ℹ [2025/09/26 20:05:52] scAB screening done.
+ℹ [2025/09/26 20:05:52] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/26 20:45:15] Selecting K...
+ℹ [2025/09/26 20:53:18] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/26 21:20:31] Screening cells...
+ℹ [2025/09/26 21:20:31] scAB screening done.
+ℹ [2025/09/26 21:20:31] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/26 21:52:08] Selecting K...
+ℹ [2025/09/26 21:59:11] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/26 22:30:22] Screening cells...
+ℹ [2025/09/26 22:30:22] scAB screening done.
+ℹ [2025/09/26 22:30:22] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+Warning: The `TimeStamp()` function is deprecated test.
+ℹ The deprecated feature was likely used in the calling package.
+  Please report the issue to the authors.
+This warning is displayed once every 8 hours.
+Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.
+ℹ [2025/09/26 22:55:58] Selecting K...
+ℹ [2025/09/26 23:04:33] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/26 23:40:33] Screening cells...
+ℹ [2025/09/26 23:40:33] scAB screening done.
+ℹ [2025/09/26 23:40:33] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/27 00:11:30] Selecting K...
+ℹ [2025/09/27 00:16:59] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/27 00:56:53] Screening cells...
+ℹ [2025/09/27 00:56:53] scAB screening done.
+ℹ [2025/09/27 00:56:53] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/27 01:34:09] Selecting K...
+ℹ [2025/09/27 01:43:33] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/27 02:19:11] Screening cells...
+ℹ [2025/09/27 02:19:11] scAB screening done.
+ℹ [2025/09/27 02:19:11] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/27 02:56:31] Selecting K...
+ℹ [2025/09/27 03:03:55] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/27 03:35:29] Screening cells...
+ℹ [2025/09/27 03:35:30] scAB screening done.
+ℹ [2025/09/27 03:35:30] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/27 04:13:35] Selecting K...
+ℹ [2025/09/27 04:21:29] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/27 04:53:12] Screening cells...
+ℹ [2025/09/27 04:53:12] scAB screening done.
+ℹ [2025/09/27 04:53:12] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/27 05:29:03] Selecting K...
+ℹ [2025/09/27 05:38:15] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/27 06:14:21] Screening cells...
+ℹ [2025/09/27 06:14:21] scAB screening done.
+ℹ [2025/09/27 06:14:21] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/27 06:53:00] Selecting K...
+Warning: The `TimeStamp()` function is deprecated test.
+ℹ The deprecated feature was likely used in the calling package.
+  Please report the issue to the authors.
+This warning is displayed once every 8 hours.
+Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.
+ℹ [2025/09/27 07:02:18] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/27 07:36:17] Screening cells...
+ℹ [2025/09/27 07:36:17] scAB screening done.
+ℹ [2025/09/27 07:36:17] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/27 08:10:35] Selecting K...
+ℹ [2025/09/27 08:17:26] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/27 08:50:16] Screening cells...
+ℹ [2025/09/27 08:50:16] scAB screening done.
+ℹ [2025/09/27 08:50:16] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/27 09:24:36] Selecting K...
+ℹ [2025/09/27 09:33:01] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/27 10:17:22] Screening cells...
+ℹ [2025/09/27 10:17:22] scAB screening done.
+ℹ [2025/09/27 10:17:22] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/27 10:44:41] Selecting K...
+ℹ [2025/09/27 10:51:53] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/27 11:29:44] Screening cells...
+ℹ [2025/09/27 11:29:45] scAB screening done.
+ℹ [2025/09/27 11:29:45] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/27 12:03:05] Selecting K...
+ℹ [2025/09/27 12:11:06] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/27 12:40:24] Screening cells...
+ℹ [2025/09/27 12:40:24] scAB screening done.
+ℹ [2025/09/27 12:40:24] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/27 13:18:14] Selecting K...
+ℹ [2025/09/27 13:25:48] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/27 13:59:28] Screening cells...
+ℹ [2025/09/27 13:59:29] scAB screening done.
+ℹ [2025/09/27 13:59:29] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/27 14:32:05] Selecting K...
+ℹ [2025/09/27 14:39:06] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+Warning: The `TimeStamp()` function is deprecated test.
+ℹ The deprecated feature was likely used in the calling package.
+  Please report the issue to the authors.
+This warning is displayed once every 8 hours.
+Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.
+ℹ [2025/09/27 15:11:34] Screening cells...
+ℹ [2025/09/27 15:11:34] scAB screening done.
+ℹ [2025/09/27 15:11:34] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/27 15:41:22] Selecting K...
+ℹ [2025/09/27 15:46:58] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/27 16:20:25] Screening cells...
+ℹ [2025/09/27 16:20:25] scAB screening done.
+ℹ [2025/09/27 16:20:25] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/27 16:44:42] Selecting K...
+ℹ [2025/09/27 16:54:42] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/27 17:27:39] Screening cells...
+ℹ [2025/09/27 17:27:39] scAB screening done.
+ℹ [2025/09/27 17:27:39] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/27 17:52:41] Selecting K...
+ℹ [2025/09/27 17:59:39] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/27 18:29:17] Screening cells...
+ℹ [2025/09/27 18:29:17] scAB screening done.
+ℹ [2025/09/27 18:29:17] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/27 18:53:29] Selecting K...
+ℹ [2025/09/27 18:59:24] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/27 19:32:31] Screening cells...
+ℹ [2025/09/27 19:32:31] scAB screening done.
+ℹ [2025/09/27 19:32:31] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/27 19:57:01] Selecting K...
+ℹ [2025/09/27 20:03:45] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/27 20:36:08] Screening cells...
+ℹ [2025/09/27 20:36:08] scAB screening done.
+ℹ [2025/09/27 20:36:08] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/27 21:00:40] Selecting K...
+ℹ [2025/09/27 21:08:02] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/27 21:42:49] Screening cells...
+ℹ [2025/09/27 21:42:49] scAB screening done.
+ℹ [2025/09/27 21:42:49] Start scAB screening.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ  Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+ℹ [2025/09/27 22:07:57] Selecting K...
+ℹ [2025/09/27 22:15:26] Run NMF with phenotype and cell-cell similarity regularization at K = 2.
+ℹ [2025/09/27 22:51:58] Screening cells...
+ℹ [2025/09/27 22:51:58] scAB screening done.
+
+✔ scAB random search completed.
+[1] 99497
+Error while shutting down parallel: unable to terminate some child processes

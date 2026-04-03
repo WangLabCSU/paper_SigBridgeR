@@ -1,0 +1,1462 @@
+nohup: ignoring input
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+
+Attaching package: ‘data.table’
+
+The following objects are masked from ‘package:dplyr’:
+
+    between, first, last
+
+ℹ Updating SigBridgeR documentation
+ℹ Loading SigBridgeR
+✔ SigBridgeR v2.5.4 loaded
+ℹ [2025/12/11 19:27:20] Start scPAS screening.
+ℹ [2025/12/11 19:27:31] Quantile normalizing bulk data
+ℹ [2025/12/11 19:27:31] Imputation of missing values in single cell RNA-sequencing data with "KNN"
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/12/11 19:28:36] Extracting single-cell expression profiles...
+ℹ [2025/12/11 19:28:45] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 19:28:52] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 19:28:52] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 19:28:52] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 116.004699358442
+scPAS identified 0 risk+ features and 0 risk- features.
+The percentage of selected feature is: 0%
+ℹ [2025/12/11 19:28:58] Calculating quantified risk scores...
+ℹ [2025/12/11 19:29:02] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 19:29:05] scPAS screening done.
+ℹ [2025/12/11 19:29:06] Start scPAS screening.
+ℹ [2025/12/11 19:29:16] Quantile normalizing bulk data
+ℹ [2025/12/11 19:29:16] Extracting single-cell expression profiles...
+ℹ [2025/12/11 19:29:17] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 19:29:23] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 19:29:23] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 19:29:23] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 25.0727458408265
+scPAS identified 300 risk+ features and 284 risk- features.
+The percentage of selected feature is: 48.667%
+
+── At alpha = 0.005 ──
+
+lambda = 6.04004222585682
+scPAS identified 185 risk+ features and 166 risk- features.
+The percentage of selected feature is: 29.25%
+
+── At alpha = 0.01 ──
+
+lambda = 3.16382169166118
+scPAS identified 147 risk+ features and 123 risk- features.
+The percentage of selected feature is: 22.5%
+
+── At alpha = 0.05 ──
+
+lambda = 0.66289388864038
+scPAS identified 78 risk+ features and 60 risk- features.
+The percentage of selected feature is: 11.5%
+ℹ [2025/12/11 19:30:06] Calculating quantified risk scores...
+ℹ [2025/12/11 19:30:08] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 19:30:21] scPAS screening done.
+ℹ [2025/12/11 19:30:22] Start scPAS screening.
+ℹ [2025/12/11 19:30:31] Quantile normalizing bulk data
+ℹ [2025/12/11 19:30:31] Imputation of missing values in single cell RNA-sequencing data with "ALRA"
+ℹ [2025/12/11 19:30:32] Read matrix with 54650 cells and 13188 genes
+ℹ [2025/12/11 19:31:35] Chose k = 62
+ℹ [2025/12/11 19:31:35] Getting nonzeros
+ℹ [2025/12/11 19:31:36] Randomized SVD
+ℹ [2025/12/11 19:33:59] Find the 0.001 quantile of each gene
+ℹ [2025/12/11 19:34:11] Sweeping
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.4 GiB
+Warning in .sparse2dense(if (.M.shape(x) == "t") .M2gen(x) else x) :
+  sparse->dense coercion: allocating vector of size 2.7 GiB
+ℹ [2025/12/11 19:35:30] Scaling all except for 0 columns
+ℹ [2025/12/11 19:36:21] 0.017% of the values became negative in the scaling process and were set to zero
+ℹ [2025/12/11 19:36:52] The matrix went from 13.156% nonzero to 58.748% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/12/11 19:37:59] Extracting single-cell expression profiles...
+ℹ [2025/12/11 19:38:07] Constructing a gene-gene similarity by single cell data
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.3 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 19:38:29] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 19:38:29] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 19:38:29] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 115.556476324747
+scPAS identified 1 risk+ features and 0 risk- features.
+The percentage of selected feature is: 0.032%
+ℹ [2025/12/11 19:38:42] Calculating quantified risk scores...
+ℹ [2025/12/11 19:38:51] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 19:38:57] scPAS screening done.
+ℹ [2025/12/11 19:38:57] Start scPAS screening.
+ℹ [2025/12/11 19:39:08] Quantile normalizing bulk data
+ℹ [2025/12/11 19:39:08] Imputation of missing values in single cell RNA-sequencing data with "ALRA"
+ℹ [2025/12/11 19:39:09] Read matrix with 54650 cells and 13188 genes
+ℹ [2025/12/11 19:40:12] Chose k = 61
+ℹ [2025/12/11 19:40:12] Getting nonzeros
+ℹ [2025/12/11 19:40:13] Randomized SVD
+ℹ [2025/12/11 19:42:35] Find the 0.001 quantile of each gene
+ℹ [2025/12/11 19:42:52] Sweeping
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.4 GiB
+Warning in .sparse2dense(if (.M.shape(x) == "t") .M2gen(x) else x) :
+  sparse->dense coercion: allocating vector of size 2.7 GiB
+ℹ [2025/12/11 19:44:10] Scaling all except for 0 columns
+ℹ [2025/12/11 19:44:59] 0.018% of the values became negative in the scaling process and were set to zero
+ℹ [2025/12/11 19:45:23] The matrix went from 13.156% nonzero to 58.893% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/12/11 19:46:21] Extracting single-cell expression profiles...
+ℹ [2025/12/11 19:46:31] Constructing a gene-gene similarity by single cell data
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.9 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 19:47:06] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 19:47:06] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 19:47:06] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 115.960439400265
+scPAS identified 0 risk+ features and 0 risk- features.
+The percentage of selected feature is: 0%
+ℹ [2025/12/11 19:47:25] Calculating quantified risk scores...
+ℹ [2025/12/11 19:47:38] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 19:47:42] scPAS screening done.
+ℹ [2025/12/11 19:47:43] Start scPAS screening.
+ℹ [2025/12/11 19:47:50] Quantile normalizing bulk data
+ℹ [2025/12/11 19:47:50] Extracting single-cell expression profiles...
+ℹ [2025/12/11 19:47:51] Constructing a gene-gene similarity by single cell data
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.5 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 19:48:06] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 19:48:06] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 19:48:06] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 115.92559949193
+scPAS identified 0 risk+ features and 0 risk- features.
+The percentage of selected feature is: 0%
+ℹ [2025/12/11 19:50:22] Calculating quantified risk scores...
+ℹ [2025/12/11 19:50:31] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 19:50:35] scPAS screening done.
+ℹ [2025/12/11 19:50:36] Start scPAS screening.
+ℹ [2025/12/11 19:50:46] Quantile normalizing bulk data
+ℹ [2025/12/11 19:50:46] Imputation of missing values in single cell RNA-sequencing data with "ALRA"
+ℹ [2025/12/11 19:50:47] Read matrix with 54650 cells and 13188 genes
+ℹ [2025/12/11 19:51:50] Chose k = 68
+ℹ [2025/12/11 19:51:50] Getting nonzeros
+ℹ [2025/12/11 19:51:50] Randomized SVD
+ℹ [2025/12/11 19:54:27] Find the 0.001 quantile of each gene
+ℹ [2025/12/11 19:54:42] Sweeping
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.4 GiB
+Warning in .sparse2dense(if (.M.shape(x) == "t") .M2gen(x) else x) :
+  sparse->dense coercion: allocating vector of size 2.7 GiB
+ℹ [2025/12/11 19:56:05] Scaling all except for 0 columns
+ℹ [2025/12/11 19:56:52] 0.015% of the values became negative in the scaling process and were set to zero
+ℹ [2025/12/11 19:57:20] The matrix went from 13.156% nonzero to 58.123% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/12/11 19:58:27] Extracting single-cell expression profiles...
+ℹ [2025/12/11 19:58:34] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 19:58:40] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 19:58:40] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 19:58:40] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 114.175331344195
+scPAS identified 0 risk+ features and 0 risk- features.
+The percentage of selected feature is: 0%
+ℹ [2025/12/11 19:58:44] Calculating quantified risk scores...
+ℹ [2025/12/11 19:58:46] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 19:58:50] scPAS screening done.
+ℹ [2025/12/11 19:58:50] Start scPAS screening.
+ℹ [2025/12/11 19:59:00] Quantile normalizing bulk data
+ℹ [2025/12/11 19:59:00] Extracting single-cell expression profiles...
+ℹ [2025/12/11 19:59:02] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 19:59:10] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 19:59:10] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 19:59:10] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 115.348953943144
+scPAS identified 1 risk+ features and 0 risk- features.
+The percentage of selected feature is: 0.049%
+ℹ [2025/12/11 19:59:46] Calculating quantified risk scores...
+ℹ [2025/12/11 19:59:51] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 19:59:56] scPAS screening done.
+ℹ [2025/12/11 19:59:56] Start scPAS screening.
+ℹ [2025/12/11 20:00:06] Quantile normalizing bulk data
+ℹ [2025/12/11 20:00:06] Imputation of missing values in single cell RNA-sequencing data with "ALRA"
+ℹ [2025/12/11 20:00:07] Read matrix with 54650 cells and 13188 genes
+ℹ [2025/12/11 20:01:08] Chose k = 68
+ℹ [2025/12/11 20:01:08] Getting nonzeros
+ℹ [2025/12/11 20:01:09] Randomized SVD
+ℹ [2025/12/11 20:03:45] Find the 0.001 quantile of each gene
+ℹ [2025/12/11 20:03:58] Sweeping
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.4 GiB
+Warning in .sparse2dense(if (.M.shape(x) == "t") .M2gen(x) else x) :
+  sparse->dense coercion: allocating vector of size 2.7 GiB
+ℹ [2025/12/11 20:05:18] Scaling all except for 0 columns
+ℹ [2025/12/11 20:06:07] 0.015% of the values became negative in the scaling process and were set to zero
+ℹ [2025/12/11 20:06:31] The matrix went from 13.156% nonzero to 58.134% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/12/11 20:07:30] Extracting single-cell expression profiles...
+ℹ [2025/12/11 20:07:38] Constructing a gene-gene similarity by single cell data
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.1 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 20:07:58] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 20:07:58] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 20:07:58] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 115.469820391396
+scPAS identified 0 risk+ features and 0 risk- features.
+The percentage of selected feature is: 0%
+ℹ [2025/12/11 20:08:08] Calculating quantified risk scores...
+ℹ [2025/12/11 20:08:15] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 20:08:19] scPAS screening done.
+ℹ [2025/12/11 20:08:19] Start scPAS screening.
+ℹ [2025/12/11 20:08:30] Quantile normalizing bulk data
+ℹ [2025/12/11 20:08:30] Imputation of missing values in single cell RNA-sequencing data with "ALRA"
+ℹ [2025/12/11 20:08:31] Read matrix with 54650 cells and 13188 genes
+ℹ [2025/12/11 20:09:34] Chose k = 64
+ℹ [2025/12/11 20:09:34] Getting nonzeros
+ℹ [2025/12/11 20:09:35] Randomized SVD
+ℹ [2025/12/11 20:12:02] Find the 0.001 quantile of each gene
+ℹ [2025/12/11 20:12:19] Sweeping
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.4 GiB
+Warning in .sparse2dense(if (.M.shape(x) == "t") .M2gen(x) else x) :
+  sparse->dense coercion: allocating vector of size 2.7 GiB
+ℹ [2025/12/11 20:13:30] Scaling all except for 0 columns
+ℹ [2025/12/11 20:14:09] 0.016% of the values became negative in the scaling process and were set to zero
+ℹ [2025/12/11 20:14:31] The matrix went from 13.156% nonzero to 58.507% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/12/11 20:15:30] Extracting single-cell expression profiles...
+ℹ [2025/12/11 20:15:38] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 20:15:46] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 20:15:46] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 20:15:46] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 116.377377122791
+scPAS identified 1 risk+ features and 0 risk- features.
+The percentage of selected feature is: 0.083%
+ℹ [2025/12/11 20:15:50] Calculating quantified risk scores...
+ℹ [2025/12/11 20:15:52] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 20:15:55] scPAS screening done.
+ℹ [2025/12/11 20:15:58] Start scPAS screening.
+ℹ [2025/12/11 20:16:08] Quantile normalizing bulk data
+ℹ [2025/12/11 20:16:08] Extracting single-cell expression profiles...
+ℹ [2025/12/11 20:16:09] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 20:16:15] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 20:16:15] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 20:16:15] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 116.164635554804
+scPAS identified 0 risk+ features and 0 risk- features.
+The percentage of selected feature is: 0%
+ℹ [2025/12/11 20:16:28] Calculating quantified risk scores...
+ℹ [2025/12/11 20:16:30] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 20:16:34] scPAS screening done.
+ℹ [2025/12/11 20:16:34] Start scPAS screening.
+ℹ [2025/12/11 20:16:44] Quantile normalizing bulk data
+ℹ [2025/12/11 20:16:44] Imputation of missing values in single cell RNA-sequencing data with "KNN"
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/12/11 20:17:49] Extracting single-cell expression profiles...
+ℹ [2025/12/11 20:17:57] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 20:18:04] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 20:18:04] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 20:18:04] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 116.164635554804
+scPAS identified 0 risk+ features and 0 risk- features.
+The percentage of selected feature is: 0%
+ℹ [2025/12/11 20:18:09] Calculating quantified risk scores...
+ℹ [2025/12/11 20:18:12] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 20:18:17] scPAS screening done.
+ℹ [2025/12/11 20:18:17] Start scPAS screening.
+ℹ [2025/12/11 20:18:27] Quantile normalizing bulk data
+ℹ [2025/12/11 20:18:27] Imputation of missing values in single cell RNA-sequencing data with "KNN"
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/12/11 20:19:32] Extracting single-cell expression profiles...
+ℹ [2025/12/11 20:19:41] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 20:19:48] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 20:19:48] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 20:19:48] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 114.916948791849
+scPAS identified 0 risk+ features and 0 risk- features.
+The percentage of selected feature is: 0%
+ℹ [2025/12/11 20:19:52] Calculating quantified risk scores...
+ℹ [2025/12/11 20:19:54] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 20:19:58] scPAS screening done.
+ℹ [2025/12/11 20:19:58] Start scPAS screening.
+ℹ [2025/12/11 20:20:08] Quantile normalizing bulk data
+ℹ [2025/12/11 20:20:08] Extracting single-cell expression profiles...
+ℹ [2025/12/11 20:20:10] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 20:20:18] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 20:20:18] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 20:20:18] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 114.894651926286
+scPAS identified 1 risk+ features and 0 risk- features.
+The percentage of selected feature is: 0.054%
+ℹ [2025/12/11 20:20:47] Calculating quantified risk scores...
+ℹ [2025/12/11 20:20:51] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 20:20:55] scPAS screening done.
+ℹ [2025/12/11 20:20:56] Start scPAS screening.
+ℹ [2025/12/11 20:21:06] Quantile normalizing bulk data
+ℹ [2025/12/11 20:21:06] Extracting single-cell expression profiles...
+ℹ [2025/12/11 20:21:07] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 20:21:11] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 20:21:11] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 20:21:11] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 20.9182265407804
+scPAS identified 238 risk+ features and 221 risk- features.
+The percentage of selected feature is: 55.168%
+
+── At alpha = 0.005 ──
+
+lambda = 4.38285272890888
+scPAS identified 181 risk+ features and 151 risk- features.
+The percentage of selected feature is: 39.904%
+
+── At alpha = 0.01 ──
+
+lambda = 2.29577278048106
+scPAS identified 144 risk+ features and 125 risk- features.
+The percentage of selected feature is: 32.332%
+
+── At alpha = 0.05 ──
+
+lambda = 0.481017545931537
+scPAS identified 92 risk+ features and 69 risk- features.
+The percentage of selected feature is: 19.351%
+ℹ [2025/12/11 20:21:32] Calculating quantified risk scores...
+ℹ [2025/12/11 20:21:33] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 20:21:46] scPAS screening done.
+ℹ [2025/12/11 20:21:47] Start scPAS screening.
+ℹ [2025/12/11 20:21:57] Quantile normalizing bulk data
+ℹ [2025/12/11 20:21:57] Imputation of missing values in single cell RNA-sequencing data with "KNN"
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/12/11 20:23:03] Extracting single-cell expression profiles...
+ℹ [2025/12/11 20:23:15] Constructing a gene-gene similarity by single cell data
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.5 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 20:23:38] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 20:23:38] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 20:23:38] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 115.910418563433
+scPAS identified 0 risk+ features and 0 risk- features.
+The percentage of selected feature is: 0%
+ℹ [2025/12/11 20:24:09] Calculating quantified risk scores...
+ℹ [2025/12/11 20:24:21] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 20:24:25] scPAS screening done.
+ℹ [2025/12/11 20:24:26] Start scPAS screening.
+ℹ [2025/12/11 20:24:36] Quantile normalizing bulk data
+ℹ [2025/12/11 20:24:36] Extracting single-cell expression profiles...
+ℹ [2025/12/11 20:24:39] Constructing a gene-gene similarity by single cell data
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.8 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 20:24:59] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 20:24:59] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 20:24:59] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 115.855427628131
+scPAS identified 0 risk+ features and 0 risk- features.
+The percentage of selected feature is: 0%
+ℹ [2025/12/11 20:28:10] Calculating quantified risk scores...
+ℹ [2025/12/11 20:28:23] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 20:28:27] scPAS screening done.
+ℹ [2025/12/11 20:28:28] Start scPAS screening.
+ℹ [2025/12/11 20:28:38] Quantile normalizing bulk data
+ℹ [2025/12/11 20:28:38] Imputation of missing values in single cell RNA-sequencing data with "ALRA"
+ℹ [2025/12/11 20:28:39] Read matrix with 54650 cells and 13188 genes
+ℹ [2025/12/11 20:29:41] Chose k = 61
+ℹ [2025/12/11 20:29:41] Getting nonzeros
+ℹ [2025/12/11 20:29:42] Randomized SVD
+ℹ [2025/12/11 20:32:03] Find the 0.001 quantile of each gene
+ℹ [2025/12/11 20:32:16] Sweeping
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.4 GiB
+Warning in .sparse2dense(if (.M.shape(x) == "t") .M2gen(x) else x) :
+  sparse->dense coercion: allocating vector of size 2.7 GiB
+ℹ [2025/12/11 20:33:31] Scaling all except for 0 columns
+ℹ [2025/12/11 20:34:17] 0.018% of the values became negative in the scaling process and were set to zero
+ℹ [2025/12/11 20:34:43] The matrix went from 13.156% nonzero to 58.903% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/12/11 20:35:44] Extracting single-cell expression profiles...
+ℹ [2025/12/11 20:35:54] Constructing a gene-gene similarity by single cell data
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.7 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 20:36:24] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 20:36:24] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 20:36:24] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 115.937572866132
+scPAS identified 0 risk+ features and 0 risk- features.
+The percentage of selected feature is: 0%
+ℹ [2025/12/11 20:36:40] Calculating quantified risk scores...
+ℹ [2025/12/11 20:36:53] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 20:36:59] scPAS screening done.
+ℹ [2025/12/11 20:36:59] Start scPAS screening.
+ℹ [2025/12/11 20:37:10] Quantile normalizing bulk data
+ℹ [2025/12/11 20:37:10] Imputation of missing values in single cell RNA-sequencing data with "KNN"
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/12/11 20:38:15] Extracting single-cell expression profiles...
+ℹ [2025/12/11 20:38:22] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 20:38:32] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 20:38:32] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 20:38:32] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 115.848783304796
+scPAS identified 0 risk+ features and 0 risk- features.
+The percentage of selected feature is: 0%
+ℹ [2025/12/11 20:38:39] Calculating quantified risk scores...
+ℹ [2025/12/11 20:38:43] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 20:38:48] scPAS screening done.
+ℹ [2025/12/11 20:38:48] Start scPAS screening.
+ℹ [2025/12/11 20:38:58] Quantile normalizing bulk data
+ℹ [2025/12/11 20:38:59] Imputation of missing values in single cell RNA-sequencing data with "ALRA"
+ℹ [2025/12/11 20:39:00] Read matrix with 54650 cells and 13188 genes
+ℹ [2025/12/11 20:40:02] Chose k = 64
+ℹ [2025/12/11 20:40:02] Getting nonzeros
+ℹ [2025/12/11 20:40:03] Randomized SVD
+ℹ [2025/12/11 20:42:30] Find the 0.001 quantile of each gene
+ℹ [2025/12/11 20:42:47] Sweeping
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.4 GiB
+Warning in .sparse2dense(if (.M.shape(x) == "t") .M2gen(x) else x) :
+  sparse->dense coercion: allocating vector of size 2.7 GiB
+ℹ [2025/12/11 20:44:01] Scaling all except for 0 columns
+ℹ [2025/12/11 20:44:45] 0.017% of the values became negative in the scaling process and were set to zero
+ℹ [2025/12/11 20:45:07] The matrix went from 13.156% nonzero to 58.513% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/12/11 20:46:04] Extracting single-cell expression profiles...
+ℹ [2025/12/11 20:46:14] Constructing a gene-gene similarity by single cell data
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.5 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 20:46:38] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 20:46:38] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 20:46:38] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 115.910418563433
+scPAS identified 0 risk+ features and 0 risk- features.
+The percentage of selected feature is: 0%
+ℹ [2025/12/11 20:46:53] Calculating quantified risk scores...
+ℹ [2025/12/11 20:47:00] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 20:47:03] scPAS screening done.
+ℹ [2025/12/11 20:47:05] Start scPAS screening.
+ℹ [2025/12/11 20:47:15] Quantile normalizing bulk data
+ℹ [2025/12/11 20:47:15] Extracting single-cell expression profiles...
+ℹ [2025/12/11 20:47:16] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 20:47:25] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 20:47:25] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 20:47:25] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 115.348953943144
+scPAS identified 1 risk+ features and 0 risk- features.
+The percentage of selected feature is: 0.049%
+ℹ [2025/12/11 20:48:01] Calculating quantified risk scores...
+ℹ [2025/12/11 20:48:06] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 20:48:10] scPAS screening done.
+ℹ [2025/12/11 20:48:10] Start scPAS screening.
+ℹ [2025/12/11 20:48:21] Quantile normalizing bulk data
+ℹ [2025/12/11 20:48:21] Imputation of missing values in single cell RNA-sequencing data with "KNN"
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/12/11 20:49:26] Extracting single-cell expression profiles...
+ℹ [2025/12/11 20:49:35] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 20:49:50] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 20:49:50] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 20:49:50] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 115.267465626458
+scPAS identified 1 risk+ features and 0 risk- features.
+The percentage of selected feature is: 0.042%
+ℹ [2025/12/11 20:50:05] Calculating quantified risk scores...
+ℹ [2025/12/11 20:50:12] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 20:50:16] scPAS screening done.
+ℹ [2025/12/11 20:50:17] Start scPAS screening.
+ℹ [2025/12/11 20:50:27] Quantile normalizing bulk data
+ℹ [2025/12/11 20:50:27] Extracting single-cell expression profiles...
+ℹ [2025/12/11 20:50:28] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 20:50:32] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 20:50:32] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 20:50:32] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 19.1697404822012
+scPAS identified 212 risk+ features and 178 risk- features.
+The percentage of selected feature is: 60.185%
+
+── At alpha = 0.005 ──
+
+lambda = 4.20775330280761
+scPAS identified 151 risk+ features and 132 risk- features.
+The percentage of selected feature is: 43.673%
+
+── At alpha = 0.01 ──
+
+lambda = 1.91697404822012
+scPAS identified 129 risk+ features and 122 risk- features.
+The percentage of selected feature is: 38.735%
+
+── At alpha = 0.05 ──
+
+lambda = 0.530958246739156
+scPAS identified 69 risk+ features and 53 risk- features.
+The percentage of selected feature is: 18.827%
+ℹ [2025/12/11 20:50:45] Calculating quantified risk scores...
+ℹ [2025/12/11 20:50:46] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 20:50:57] scPAS screening done.
+ℹ [2025/12/11 20:50:57] Start scPAS screening.
+ℹ [2025/12/11 20:51:07] Quantile normalizing bulk data
+ℹ [2025/12/11 20:51:08] Imputation of missing values in single cell RNA-sequencing data with "ALRA"
+ℹ [2025/12/11 20:51:09] Read matrix with 54650 cells and 13188 genes
+ℹ [2025/12/11 20:52:11] Chose k = 61
+ℹ [2025/12/11 20:52:11] Getting nonzeros
+ℹ [2025/12/11 20:52:12] Randomized SVD
+ℹ [2025/12/11 20:54:32] Find the 0.001 quantile of each gene
+ℹ [2025/12/11 20:54:44] Sweeping
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.4 GiB
+Warning in .sparse2dense(if (.M.shape(x) == "t") .M2gen(x) else x) :
+  sparse->dense coercion: allocating vector of size 2.7 GiB
+ℹ [2025/12/11 20:55:59] Scaling all except for 0 columns
+ℹ [2025/12/11 20:56:47] 0.018% of the values became negative in the scaling process and were set to zero
+ℹ [2025/12/11 20:57:13] The matrix went from 13.156% nonzero to 58.86% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/12/11 20:58:23] Extracting single-cell expression profiles...
+ℹ [2025/12/11 20:58:31] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 20:58:42] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 20:58:42] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 20:58:42] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 115.287585806662
+scPAS identified 0 risk+ features and 0 risk- features.
+The percentage of selected feature is: 0%
+ℹ [2025/12/11 20:58:49] Calculating quantified risk scores...
+ℹ [2025/12/11 20:58:54] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 20:58:58] scPAS screening done.
+ℹ [2025/12/11 20:58:59] Start scPAS screening.
+ℹ [2025/12/11 20:59:09] Quantile normalizing bulk data
+ℹ [2025/12/11 20:59:09] Imputation of missing values in single cell RNA-sequencing data with "KNN"
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/12/11 21:00:14] Extracting single-cell expression profiles...
+ℹ [2025/12/11 21:00:22] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 21:00:30] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 21:00:30] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 21:00:30] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 116.164635554804
+scPAS identified 0 risk+ features and 0 risk- features.
+The percentage of selected feature is: 0%
+ℹ [2025/12/11 21:00:35] Calculating quantified risk scores...
+ℹ [2025/12/11 21:00:38] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 21:00:43] scPAS screening done.
+ℹ [2025/12/11 21:00:43] Start scPAS screening.
+ℹ [2025/12/11 21:00:53] Quantile normalizing bulk data
+ℹ [2025/12/11 21:00:54] Extracting single-cell expression profiles...
+ℹ [2025/12/11 21:00:55] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 21:01:03] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 21:01:03] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 21:01:03] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 114.894651926286
+scPAS identified 1 risk+ features and 0 risk- features.
+The percentage of selected feature is: 0.054%
+ℹ [2025/12/11 21:01:32] Calculating quantified risk scores...
+ℹ [2025/12/11 21:01:36] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 21:01:41] scPAS screening done.
+
+ℹ [2025/12/11 19:27:20] Start scPAS screening.
+ℹ [2025/12/11 19:27:31] Quantile normalizing bulk data
+ℹ [2025/12/11 19:27:31] Imputation of missing values in single cell RNA-sequencing data with "KNN"
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/12/11 19:28:37] Extracting single-cell expression profiles...
+ℹ [2025/12/11 19:28:45] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 19:28:49] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 19:28:49] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 19:28:49] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 19.1697404822012
+scPAS identified 211 risk+ features and 175 risk- features.
+The percentage of selected feature is: 59.568%
+
+── At alpha = 0.005 ──
+
+lambda = 4.20775330280761
+scPAS identified 157 risk+ features and 132 risk- features.
+The percentage of selected feature is: 44.599%
+
+── At alpha = 0.01 ──
+
+lambda = 2.30900202766534
+scPAS identified 120 risk+ features and 106 risk- features.
+The percentage of selected feature is: 34.877%
+
+── At alpha = 0.05 ──
+
+lambda = 0.530958246739156
+scPAS identified 68 risk+ features and 52 risk- features.
+The percentage of selected feature is: 18.519%
+ℹ [2025/12/11 19:28:59] Calculating quantified risk scores...
+ℹ [2025/12/11 19:29:00] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 19:29:11] scPAS screening done.
+ℹ [2025/12/11 19:29:11] Start scPAS screening.
+ℹ [2025/12/11 19:29:21] Quantile normalizing bulk data
+ℹ [2025/12/11 19:29:21] Imputation of missing values in single cell RNA-sequencing data with "ALRA"
+ℹ [2025/12/11 19:29:23] Read matrix with 54650 cells and 13188 genes
+ℹ [2025/12/11 19:30:26] Chose k = 62
+ℹ [2025/12/11 19:30:26] Getting nonzeros
+ℹ [2025/12/11 19:30:27] Randomized SVD
+ℹ [2025/12/11 19:32:52] Find the 0.001 quantile of each gene
+ℹ [2025/12/11 19:33:08] Sweeping
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.4 GiB
+Warning in .sparse2dense(if (.M.shape(x) == "t") .M2gen(x) else x) :
+  sparse->dense coercion: allocating vector of size 2.7 GiB
+ℹ [2025/12/11 19:34:33] Scaling all except for 0 columns
+ℹ [2025/12/11 19:35:25] 0.017% of the values became negative in the scaling process and were set to zero
+ℹ [2025/12/11 19:35:55] The matrix went from 13.156% nonzero to 58.724% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/12/11 19:37:02] Extracting single-cell expression profiles...
+ℹ [2025/12/11 19:37:12] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 19:37:31] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 19:37:31] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 19:37:31] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 115.404522922744
+scPAS identified 0 risk+ features and 0 risk- features.
+The percentage of selected feature is: 0%
+ℹ [2025/12/11 19:37:40] Calculating quantified risk scores...
+ℹ [2025/12/11 19:37:46] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 19:37:51] scPAS screening done.
+ℹ [2025/12/11 19:37:51] Start scPAS screening.
+ℹ [2025/12/11 19:38:01] Quantile normalizing bulk data
+ℹ [2025/12/11 19:38:01] Imputation of missing values in single cell RNA-sequencing data with "ALRA"
+ℹ [2025/12/11 19:38:02] Read matrix with 54650 cells and 13188 genes
+ℹ [2025/12/11 19:39:08] Chose k = 66
+ℹ [2025/12/11 19:39:08] Getting nonzeros
+ℹ [2025/12/11 19:39:08] Randomized SVD
+ℹ [2025/12/11 19:41:41] Find the 0.001 quantile of each gene
+ℹ [2025/12/11 19:42:03] Sweeping
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.4 GiB
+Warning in .sparse2dense(if (.M.shape(x) == "t") .M2gen(x) else x) :
+  sparse->dense coercion: allocating vector of size 2.7 GiB
+ℹ [2025/12/11 19:43:33] Scaling all except for 0 columns
+ℹ [2025/12/11 19:44:22] 0.016% of the values became negative in the scaling process and were set to zero
+ℹ [2025/12/11 19:44:51] The matrix went from 13.156% nonzero to 58.324% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/12/11 19:45:57] Extracting single-cell expression profiles...
+ℹ [2025/12/11 19:46:07] Constructing a gene-gene similarity by single cell data
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.0 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 19:46:23] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 19:46:23] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 19:46:23] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 115.403724707852
+scPAS identified 1 risk+ features and 0 risk- features.
+The percentage of selected feature is: 0.04%
+ℹ [2025/12/11 19:46:32] Calculating quantified risk scores...
+ℹ [2025/12/11 19:46:39] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 19:46:43] scPAS screening done.
+ℹ [2025/12/11 19:46:44] Start scPAS screening.
+ℹ [2025/12/11 19:46:55] Quantile normalizing bulk data
+ℹ [2025/12/11 19:46:55] Imputation of missing values in single cell RNA-sequencing data with "KNN"
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/12/11 19:48:02] Extracting single-cell expression profiles...
+ℹ [2025/12/11 19:48:10] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 19:48:18] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 19:48:18] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 19:48:18] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 33.144694432019
+scPAS identified 238 risk+ features and 220 risk- features.
+The percentage of selected feature is: 38.167%
+
+── At alpha = 0.005 ──
+
+lambda = 5.76551298486394
+scPAS identified 195 risk+ features and 174 risk- features.
+The percentage of selected feature is: 30.75%
+
+── At alpha = 0.01 ──
+
+lambda = 3.16382169166118
+scPAS identified 151 risk+ features and 122 risk- features.
+The percentage of selected feature is: 22.75%
+
+── At alpha = 0.05 ──
+
+lambda = 0.632764338332236
+scPAS identified 86 risk+ features and 64 risk- features.
+The percentage of selected feature is: 12.5%
+ℹ [2025/12/11 19:48:39] Calculating quantified risk scores...
+ℹ [2025/12/11 19:48:42] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 19:48:55] scPAS screening done.
+ℹ [2025/12/11 19:48:56] Start scPAS screening.
+ℹ [2025/12/11 19:49:06] Quantile normalizing bulk data
+ℹ [2025/12/11 19:49:06] Imputation of missing values in single cell RNA-sequencing data with "ALRA"
+ℹ [2025/12/11 19:49:07] Read matrix with 54650 cells and 13188 genes
+ℹ [2025/12/11 19:50:10] Chose k = 63
+ℹ [2025/12/11 19:50:10] Getting nonzeros
+ℹ [2025/12/11 19:50:11] Randomized SVD
+ℹ [2025/12/11 19:52:37] Find the 0.001 quantile of each gene
+ℹ [2025/12/11 19:52:51] Sweeping
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.4 GiB
+Warning in .sparse2dense(if (.M.shape(x) == "t") .M2gen(x) else x) :
+  sparse->dense coercion: allocating vector of size 2.7 GiB
+ℹ [2025/12/11 19:54:06] Scaling all except for 0 columns
+ℹ [2025/12/11 19:54:50] 0.017% of the values became negative in the scaling process and were set to zero
+ℹ [2025/12/11 19:55:18] The matrix went from 13.156% nonzero to 58.609% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/12/11 19:56:15] Extracting single-cell expression profiles...
+ℹ [2025/12/11 19:56:22] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 19:56:32] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 19:56:32] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 19:56:32] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 20.0870467475994
+scPAS identified 232 risk+ features and 194 risk- features.
+The percentage of selected feature is: 57.568%
+
+── At alpha = 0.005 ──
+
+lambda = 4.61904450298674
+scPAS identified 156 risk+ features and 135 risk- features.
+The percentage of selected feature is: 39.324%
+
+── At alpha = 0.01 ──
+
+lambda = 2.53469781989272
+scPAS identified 127 risk+ features and 112 risk- features.
+The percentage of selected feature is: 32.297%
+
+── At alpha = 0.05 ──
+
+lambda = 0.610610499509399
+scPAS identified 69 risk+ features and 53 risk- features.
+The percentage of selected feature is: 16.486%
+ℹ [2025/12/11 19:56:41] Calculating quantified risk scores...
+ℹ [2025/12/11 19:56:43] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 19:56:52] scPAS screening done.
+ℹ [2025/12/11 19:56:53] Start scPAS screening.
+ℹ [2025/12/11 19:57:03] Quantile normalizing bulk data
+ℹ [2025/12/11 19:57:03] Imputation of missing values in single cell RNA-sequencing data with "ALRA"
+ℹ [2025/12/11 19:57:04] Read matrix with 54650 cells and 13188 genes
+ℹ [2025/12/11 19:58:08] Chose k = 66
+ℹ [2025/12/11 19:58:08] Getting nonzeros
+ℹ [2025/12/11 19:58:09] Randomized SVD
+ℹ [2025/12/11 20:00:38] Find the 0.001 quantile of each gene
+ℹ [2025/12/11 20:00:55] Sweeping
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.4 GiB
+Warning in .sparse2dense(if (.M.shape(x) == "t") .M2gen(x) else x) :
+  sparse->dense coercion: allocating vector of size 2.7 GiB
+ℹ [2025/12/11 20:02:09] Scaling all except for 0 columns
+ℹ [2025/12/11 20:02:54] 0.016% of the values became negative in the scaling process and were set to zero
+ℹ [2025/12/11 20:03:15] The matrix went from 13.156% nonzero to 58.325% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/12/11 20:04:16] Extracting single-cell expression profiles...
+ℹ [2025/12/11 20:04:23] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 20:04:28] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 20:04:28] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 20:04:28] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 21.0435065998075
+scPAS identified 229 risk+ features and 190 risk- features.
+The percentage of selected feature is: 56.622%
+
+── At alpha = 0.005 ──
+
+lambda = 4.61904450298674
+scPAS identified 157 risk+ features and 137 risk- features.
+The percentage of selected feature is: 39.73%
+
+── At alpha = 0.01 ──
+
+lambda = 2.53469781989272
+scPAS identified 126 risk+ features and 111 risk- features.
+The percentage of selected feature is: 32.027%
+
+── At alpha = 0.05 ──
+
+lambda = 0.610610499509399
+scPAS identified 70 risk+ features and 53 risk- features.
+The percentage of selected feature is: 16.622%
+ℹ [2025/12/11 20:04:38] Calculating quantified risk scores...
+ℹ [2025/12/11 20:04:39] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 20:04:49] scPAS screening done.
+ℹ [2025/12/11 20:04:49] Start scPAS screening.
+ℹ [2025/12/11 20:04:59] Quantile normalizing bulk data
+ℹ [2025/12/11 20:04:59] Extracting single-cell expression profiles...
+ℹ [2025/12/11 20:05:02] Constructing a gene-gene similarity by single cell data
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.6 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 20:05:18] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 20:05:18] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 20:05:18] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 115.970980221038
+scPAS identified 0 risk+ features and 0 risk- features.
+The percentage of selected feature is: 0%
+ℹ [2025/12/11 20:07:40] Calculating quantified risk scores...
+ℹ [2025/12/11 20:07:50] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 20:07:54] scPAS screening done.
+ℹ [2025/12/11 20:07:55] Start scPAS screening.
+ℹ [2025/12/11 20:08:05] Quantile normalizing bulk data
+ℹ [2025/12/11 20:08:05] Extracting single-cell expression profiles...
+ℹ [2025/12/11 20:08:07] Constructing a gene-gene similarity by single cell data
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.8 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 20:08:26] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 20:08:26] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 20:08:26] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 115.855427628131
+scPAS identified 0 risk+ features and 0 risk- features.
+The percentage of selected feature is: 0%
+ℹ [2025/12/11 20:11:37] Calculating quantified risk scores...
+ℹ [2025/12/11 20:11:49] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 20:11:54] scPAS screening done.
+ℹ [2025/12/11 20:11:54] Start scPAS screening.
+ℹ [2025/12/11 20:12:04] Quantile normalizing bulk data
+ℹ [2025/12/11 20:12:04] Imputation of missing values in single cell RNA-sequencing data with "ALRA"
+ℹ [2025/12/11 20:12:06] Read matrix with 54650 cells and 13188 genes
+ℹ [2025/12/11 20:13:07] Chose k = 70
+ℹ [2025/12/11 20:13:07] Getting nonzeros
+ℹ [2025/12/11 20:13:08] Randomized SVD
+ℹ [2025/12/11 20:15:46] Find the 0.001 quantile of each gene
+ℹ [2025/12/11 20:16:00] Sweeping
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.4 GiB
+Warning in .sparse2dense(if (.M.shape(x) == "t") .M2gen(x) else x) :
+  sparse->dense coercion: allocating vector of size 2.7 GiB
+ℹ [2025/12/11 20:17:24] Scaling all except for 0 columns
+ℹ [2025/12/11 20:18:14] 0.014% of the values became negative in the scaling process and were set to zero
+ℹ [2025/12/11 20:18:39] The matrix went from 13.156% nonzero to 57.851% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/12/11 20:19:35] Extracting single-cell expression profiles...
+ℹ [2025/12/11 20:19:48] Constructing a gene-gene similarity by single cell data
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.0 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 20:20:00] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 20:20:00] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 20:20:00] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 115.403724707852
+scPAS identified 1 risk+ features and 0 risk- features.
+The percentage of selected feature is: 0.04%
+ℹ [2025/12/11 20:20:10] Calculating quantified risk scores...
+ℹ [2025/12/11 20:20:17] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 20:20:21] scPAS screening done.
+ℹ [2025/12/11 20:20:21] Start scPAS screening.
+ℹ [2025/12/11 20:20:31] Quantile normalizing bulk data
+ℹ [2025/12/11 20:20:31] Extracting single-cell expression profiles...
+ℹ [2025/12/11 20:20:33] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 20:20:40] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 20:20:40] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 20:20:40] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 115.584275718451
+scPAS identified 0 risk+ features and 0 risk- features.
+The percentage of selected feature is: 0%
+ℹ [2025/12/11 20:21:06] Calculating quantified risk scores...
+ℹ [2025/12/11 20:21:10] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 20:21:14] scPAS screening done.
+ℹ [2025/12/11 20:21:14] Start scPAS screening.
+ℹ [2025/12/11 20:21:24] Quantile normalizing bulk data
+ℹ [2025/12/11 20:21:24] Extracting single-cell expression profiles...
+ℹ [2025/12/11 20:21:26] Constructing a gene-gene similarity by single cell data
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.4 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 20:21:39] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 20:21:39] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 20:21:39] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 115.711536038396
+scPAS identified 0 risk+ features and 0 risk- features.
+The percentage of selected feature is: 0%
+ℹ [2025/12/11 20:23:24] Calculating quantified risk scores...
+ℹ [2025/12/11 20:23:32] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 20:23:37] scPAS screening done.
+ℹ [2025/12/11 20:23:37] Start scPAS screening.
+ℹ [2025/12/11 20:23:47] Quantile normalizing bulk data
+ℹ [2025/12/11 20:23:47] Imputation of missing values in single cell RNA-sequencing data with "ALRA"
+ℹ [2025/12/11 20:23:48] Read matrix with 54650 cells and 13188 genes
+ℹ [2025/12/11 20:24:51] Chose k = 67
+ℹ [2025/12/11 20:24:51] Getting nonzeros
+ℹ [2025/12/11 20:24:51] Randomized SVD
+ℹ [2025/12/11 20:27:24] Find the 0.001 quantile of each gene
+ℹ [2025/12/11 20:27:38] Sweeping
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.4 GiB
+Warning in .sparse2dense(if (.M.shape(x) == "t") .M2gen(x) else x) :
+  sparse->dense coercion: allocating vector of size 2.7 GiB
+ℹ [2025/12/11 20:28:53] Scaling all except for 0 columns
+ℹ [2025/12/11 20:29:44] 0.016% of the values became negative in the scaling process and were set to zero
+ℹ [2025/12/11 20:30:12] The matrix went from 13.156% nonzero to 58.208% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/12/11 20:31:07] Extracting single-cell expression profiles...
+ℹ [2025/12/11 20:31:15] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 20:31:32] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 20:31:32] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 20:31:32] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 115.267465626458
+scPAS identified 1 risk+ features and 0 risk- features.
+The percentage of selected feature is: 0.042%
+ℹ [2025/12/11 20:31:42] Calculating quantified risk scores...
+ℹ [2025/12/11 20:31:48] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 20:31:53] scPAS screening done.
+ℹ [2025/12/11 20:31:53] Start scPAS screening.
+ℹ [2025/12/11 20:32:03] Quantile normalizing bulk data
+ℹ [2025/12/11 20:32:03] Imputation of missing values in single cell RNA-sequencing data with "ALRA"
+ℹ [2025/12/11 20:32:04] Read matrix with 54650 cells and 13188 genes
+ℹ [2025/12/11 20:33:06] Chose k = 69
+ℹ [2025/12/11 20:33:06] Getting nonzeros
+ℹ [2025/12/11 20:33:07] Randomized SVD
+ℹ [2025/12/11 20:35:42] Find the 0.001 quantile of each gene
+ℹ [2025/12/11 20:36:00] Sweeping
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.4 GiB
+Warning in .sparse2dense(if (.M.shape(x) == "t") .M2gen(x) else x) :
+  sparse->dense coercion: allocating vector of size 2.7 GiB
+ℹ [2025/12/11 20:37:18] Scaling all except for 0 columns
+ℹ [2025/12/11 20:38:05] 0.015% of the values became negative in the scaling process and were set to zero
+ℹ [2025/12/11 20:38:33] The matrix went from 13.156% nonzero to 58.042% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/12/11 20:39:28] Extracting single-cell expression profiles...
+ℹ [2025/12/11 20:39:38] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 20:39:48] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 20:39:48] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 20:39:48] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 115.848783304796
+scPAS identified 0 risk+ features and 0 risk- features.
+The percentage of selected feature is: 0%
+ℹ [2025/12/11 20:39:54] Calculating quantified risk scores...
+ℹ [2025/12/11 20:39:58] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 20:40:02] scPAS screening done.
+ℹ [2025/12/11 20:40:02] Start scPAS screening.
+ℹ [2025/12/11 20:40:12] Quantile normalizing bulk data
+ℹ [2025/12/11 20:40:13] Extracting single-cell expression profiles...
+ℹ [2025/12/11 20:40:15] Constructing a gene-gene similarity by single cell data
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.5 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 20:40:32] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 20:40:32] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 20:40:32] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 115.910418563433
+scPAS identified 0 risk+ features and 0 risk- features.
+The percentage of selected feature is: 0%
+ℹ [2025/12/11 20:42:33] Calculating quantified risk scores...
+ℹ [2025/12/11 20:42:42] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 20:42:47] scPAS screening done.
+ℹ [2025/12/11 20:42:47] Start scPAS screening.
+ℹ [2025/12/11 20:42:57] Quantile normalizing bulk data
+ℹ [2025/12/11 20:42:57] Imputation of missing values in single cell RNA-sequencing data with "KNN"
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/12/11 20:44:02] Extracting single-cell expression profiles...
+ℹ [2025/12/11 20:44:11] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 20:44:25] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 20:44:25] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 20:44:25] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 115.404522922744
+scPAS identified 0 risk+ features and 0 risk- features.
+The percentage of selected feature is: 0%
+ℹ [2025/12/11 20:44:39] Calculating quantified risk scores...
+ℹ [2025/12/11 20:44:45] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 20:44:50] scPAS screening done.
+ℹ [2025/12/11 20:44:50] Start scPAS screening.
+ℹ [2025/12/11 20:45:00] Quantile normalizing bulk data
+ℹ [2025/12/11 20:45:00] Extracting single-cell expression profiles...
+ℹ [2025/12/11 20:45:02] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 20:45:07] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 20:45:07] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 20:45:07] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 25.0224604129652
+scPAS identified 248 risk+ features and 215 risk- features.
+The percentage of selected feature is: 49.946%
+
+── At alpha = 0.005 ──
+
+lambda = 5.49242388256563
+scPAS identified 172 risk+ features and 140 risk- features.
+The percentage of selected feature is: 33.657%
+
+── At alpha = 0.01 ──
+
+lambda = 2.50224604129652
+scPAS identified 147 risk+ features and 127 risk- features.
+The percentage of selected feature is: 29.558%
+
+── At alpha = 0.05 ──
+
+lambda = 0.549242388256563
+scPAS identified 91 risk+ features and 66 risk- features.
+The percentage of selected feature is: 16.936%
+ℹ [2025/12/11 20:45:32] Calculating quantified risk scores...
+ℹ [2025/12/11 20:45:34] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 20:45:46] scPAS screening done.
+ℹ [2025/12/11 20:45:46] Start scPAS screening.
+ℹ [2025/12/11 20:45:56] Quantile normalizing bulk data
+ℹ [2025/12/11 20:45:56] Extracting single-cell expression profiles...
+ℹ [2025/12/11 20:45:58] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 20:46:04] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 20:46:04] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 20:46:04] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 115.501171590927
+scPAS identified 0 risk+ features and 0 risk- features.
+The percentage of selected feature is: 0%
+ℹ [2025/12/11 20:46:27] Calculating quantified risk scores...
+ℹ [2025/12/11 20:46:30] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 20:46:35] scPAS screening done.
+ℹ [2025/12/11 20:46:35] Start scPAS screening.
+ℹ [2025/12/11 20:46:45] Quantile normalizing bulk data
+ℹ [2025/12/11 20:46:45] Extracting single-cell expression profiles...
+ℹ [2025/12/11 20:46:47] Constructing a gene-gene similarity by single cell data
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.1 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 20:46:57] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 20:46:57] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 20:46:57] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 115.469820391396
+scPAS identified 0 risk+ features and 0 risk- features.
+The percentage of selected feature is: 0%
+ℹ [2025/12/11 20:47:58] Calculating quantified risk scores...
+ℹ [2025/12/11 20:48:04] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 20:48:09] scPAS screening done.
+ℹ [2025/12/11 20:48:10] Start scPAS screening.
+ℹ [2025/12/11 20:48:20] Quantile normalizing bulk data
+ℹ [2025/12/11 20:48:20] Imputation of missing values in single cell RNA-sequencing data with "KNN"
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/12/11 20:49:25] Extracting single-cell expression profiles...
+ℹ [2025/12/11 20:49:33] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 20:49:36] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 20:49:36] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 20:49:36] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 17.5894637542183
+scPAS identified 165 risk+ features and 138 risk- features.
+The percentage of selected feature is: 65.87%
+
+── At alpha = 0.005 ──
+
+lambda = 2.31453852156205
+scPAS identified 151 risk+ features and 134 risk- features.
+The percentage of selected feature is: 61.957%
+
+── At alpha = 0.01 ──
+
+lambda = 1.5298418556813
+scPAS identified 114 risk+ features and 97 risk- features.
+The percentage of selected feature is: 45.87%
+
+── At alpha = 0.05 ──
+
+lambda = 0.386088295118789
+scPAS identified 61 risk+ features and 59 risk- features.
+The percentage of selected feature is: 26.087%
+
+── At alpha = 0.1 ──
+
+lambda = 0.202236089967074
+scPAS identified 53 risk+ features and 44 risk- features.
+The percentage of selected feature is: 21.087%
+
+── At alpha = 0.2 ──
+
+lambda = 0.121797043166717
+scPAS identified 37 risk+ features and 25 risk- features.
+The percentage of selected feature is: 13.478%
+ℹ [2025/12/11 20:49:43] Calculating quantified risk scores...
+ℹ [2025/12/11 20:49:44] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 20:49:51] scPAS screening done.
+ℹ [2025/12/11 20:49:52] Start scPAS screening.
+ℹ [2025/12/11 20:50:02] Quantile normalizing bulk data
+ℹ [2025/12/11 20:50:02] Imputation of missing values in single cell RNA-sequencing data with "KNN"
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/12/11 20:51:08] Extracting single-cell expression profiles...
+ℹ [2025/12/11 20:51:18] Constructing a gene-gene similarity by single cell data
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.3 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 20:51:37] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 20:51:37] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 20:51:37] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 115.400552644367
+scPAS identified 0 risk+ features and 0 risk- features.
+The percentage of selected feature is: 0%
+ℹ [2025/12/11 20:52:03] Calculating quantified risk scores...
+ℹ [2025/12/11 20:52:13] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 20:52:18] scPAS screening done.
+ℹ [2025/12/11 20:52:18] Start scPAS screening.
+ℹ [2025/12/11 20:52:28] Quantile normalizing bulk data
+ℹ [2025/12/11 20:52:28] Imputation of missing values in single cell RNA-sequencing data with "KNN"
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/12/11 20:53:33] Extracting single-cell expression profiles...
+ℹ [2025/12/11 20:53:40] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 20:53:46] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 20:53:46] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 20:53:46] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 23.0952225149337
+scPAS identified 212 risk+ features and 182 risk- features.
+The percentage of selected feature is: 53.243%
+
+── At alpha = 0.005 ──
+
+lambda = 4.83898378416542
+scPAS identified 156 risk+ features and 130 risk- features.
+The percentage of selected feature is: 38.649%
+
+── At alpha = 0.01 ──
+
+lambda = 2.41949189208271
+scPAS identified 132 risk+ features and 113 risk- features.
+The percentage of selected feature is: 33.108%
+
+── At alpha = 0.05 ──
+
+lambda = 0.556365545646039
+scPAS identified 73 risk+ features and 56 risk- features.
+The percentage of selected feature is: 17.432%
+ℹ [2025/12/11 20:53:57] Calculating quantified risk scores...
+ℹ [2025/12/11 20:53:58] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 20:54:08] scPAS screening done.
+ℹ [2025/12/11 20:54:09] Start scPAS screening.
+ℹ [2025/12/11 20:54:19] Quantile normalizing bulk data
+ℹ [2025/12/11 20:54:19] Extracting single-cell expression profiles...
+ℹ [2025/12/11 20:54:21] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 20:54:29] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 20:54:29] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 20:54:29] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 115.348953943144
+scPAS identified 1 risk+ features and 0 risk- features.
+The percentage of selected feature is: 0.049%
+ℹ [2025/12/11 20:55:05] Calculating quantified risk scores...
+ℹ [2025/12/11 20:55:09] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 20:55:14] scPAS screening done.
+ℹ [2025/12/11 20:55:14] Start scPAS screening.
+ℹ [2025/12/11 20:55:24] Quantile normalizing bulk data
+ℹ [2025/12/11 20:55:24] Extracting single-cell expression profiles...
+ℹ [2025/12/11 20:55:26] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 20:55:29] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 20:55:29] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 20:55:29] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 22.0455090078916
+scPAS identified 218 risk+ features and 190 risk- features.
+The percentage of selected feature is: 55.135%
+
+── At alpha = 0.005 ──
+
+lambda = 4.83898378416542
+scPAS identified 157 risk+ features and 129 risk- features.
+The percentage of selected feature is: 38.649%
+
+── At alpha = 0.01 ──
+
+lambda = 2.65538936468123
+scPAS identified 119 risk+ features and 109 risk- features.
+The percentage of selected feature is: 30.811%
+
+── At alpha = 0.05 ──
+
+lambda = 0.582857309928208
+scPAS identified 72 risk+ features and 54 risk- features.
+The percentage of selected feature is: 17.027%
+ℹ [2025/12/11 20:55:46] Calculating quantified risk scores...
+ℹ [2025/12/11 20:55:47] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 20:55:57] scPAS screening done.
+ℹ [2025/12/11 20:55:58] Start scPAS screening.
+ℹ [2025/12/11 20:56:08] Quantile normalizing bulk data
+ℹ [2025/12/11 20:56:08] Imputation of missing values in single cell RNA-sequencing data with "KNN"
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/12/11 20:57:13] Extracting single-cell expression profiles...
+ℹ [2025/12/11 20:57:21] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 20:57:31] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 20:57:31] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 20:57:31] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 115.848783304796
+scPAS identified 0 risk+ features and 0 risk- features.
+The percentage of selected feature is: 0%
+ℹ [2025/12/11 20:57:38] Calculating quantified risk scores...
+ℹ [2025/12/11 20:57:42] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 20:57:46] scPAS screening done.
+ℹ [2025/12/11 20:57:46] Start scPAS screening.
+ℹ [2025/12/11 20:57:56] Quantile normalizing bulk data
+ℹ [2025/12/11 20:57:57] Imputation of missing values in single cell RNA-sequencing data with "ALRA"
+ℹ [2025/12/11 20:57:58] Read matrix with 54650 cells and 13188 genes
+ℹ [2025/12/11 20:59:01] Chose k = 60
+ℹ [2025/12/11 20:59:01] Getting nonzeros
+ℹ [2025/12/11 20:59:02] Randomized SVD
+ℹ [2025/12/11 21:01:22] Find the 0.001 quantile of each gene
+ℹ [2025/12/11 21:01:36] Sweeping
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.4 GiB
+Warning in .sparse2dense(if (.M.shape(x) == "t") .M2gen(x) else x) :
+  sparse->dense coercion: allocating vector of size 2.7 GiB
+ℹ [2025/12/11 21:02:52] Scaling all except for 0 columns
+ℹ [2025/12/11 21:03:36] 0.018% of the values became negative in the scaling process and were set to zero
+ℹ [2025/12/11 21:04:02] The matrix went from 13.156% nonzero to 59.001% nonzero
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/12/11 21:04:58] Extracting single-cell expression profiles...
+ℹ [2025/12/11 21:05:05] Constructing a gene-gene similarity by single cell data
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.1 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 21:05:24] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 21:05:24] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 21:05:24] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 115.73848646868
+scPAS identified 0 risk+ features and 0 risk- features.
+The percentage of selected feature is: 0%
+ℹ [2025/12/11 21:05:35] Calculating quantified risk scores...
+ℹ [2025/12/11 21:05:40] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 21:05:45] scPAS screening done.
+ℹ [2025/12/11 21:05:45] Start scPAS screening.
+ℹ [2025/12/11 21:05:52] Quantile normalizing bulk data
+ℹ [2025/12/11 21:05:52] Imputation of missing values in single cell RNA-sequencing data with "KNN"
+Warning: Layer counts isn't present in the assay object; returning NULL
+ℹ [2025/12/11 21:06:55] Extracting single-cell expression profiles...
+ℹ [2025/12/11 21:07:09] Constructing a gene-gene similarity by single cell data
+Warning in .M2v(x) :
+  sparse->dense coercion: allocating vector of size 1.8 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2025/12/11 21:07:37] Optimizing the network-regularized sparse regression model
+ℹ [2025/12/11 21:07:37] Current phenotype contains 111 Tumor and 22 NA samples.
+ℹ [2025/12/11 21:07:37] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 115.878616093084
+scPAS identified 0 risk+ features and 0 risk- features.
+The percentage of selected feature is: 0%
+ℹ [2025/12/11 21:08:22] Calculating quantified risk scores...
+ℹ [2025/12/11 21:08:37] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2025/12/11 21:08:42] scPAS screening done.
+
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells   4098223  218.9    7935964  423.9   7935964  423.9
+Vcells 423970223 3234.7  579862383 4424.0 438983926 3349.2
+✔ scPAS random search completed.

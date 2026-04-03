@@ -1,116 +1,83 @@
-library(Seurat)
-library(ggplot2)
-library(patchwork)
 library(zeallot)
 library(dplyr)
 
-setwd("/home/yyx/R/Project/R_code/SigBridgeR/Tmp/benchmark_binary/brca/TNBC")
+setwd(file.path(usethis::proj_path(), "1_bench_screen/binary/brca_TNBC"))
 
-data_path = "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/benchmark_data/brca"
+source("../../draw_umap.R")
 
+data_path <- "/home/data/sigbridger/benchmark_binary/brca/TNBC"
+bulk_name <- "GSE162228"
+save_path <- file.path("plot", bulk_name)
 
-GSE162228_pheno = qs::qread(file.path(data_path, "brca_pheno_GSE162228.qs"))
-
-seurat_merged = qs::qread("GSE162228_tnbc_merged_seurat.qs")
-
-set.seed(123)
-my_color = randomcoloR::distinctColorPalette(
-  length(unique(seurat_merged$seurat_clusters)),
-  runTsne = TRUE
+dir.create(
+  save_path,
+  recursive = TRUE,
+  showWarnings = FALSE
 )
 
-# 更新Seurat对象
-# counts <- LayerData(seurat_merged, assay = "RNA", layer = "counts")
-# counts <- GetAssayData(seurat_merged, assay = "RNA", slot = "counts")
+seurat_merged <- qs::qread(
+  file.path(data_path, paste0("binary_TNBC_", bulk_name, "_merged_seurat.rqs")),
+  nthreads = 8L
+)
 
-# metadata <- seurat_merged@meta.data
-
-# seurat_merged = CreateSeuratObject(
-#     counts = counts,
-#     meta.data = metadata
-# ) %>%
-#     NormalizeData() %>%
-#     FindVariableFeatures(selection.method = "vst", nfeatures = 2000) %>%
-#     ScaleData() %>%
-#     RunPCA(features = VariableFeatures(.)) %>%
-#     RunUMAP(dims = 1:30)
-
-seurat_tnbc_tumor = readRDS(
+seurat_TNBC_tumor <- readRDS(
   "/home/data/data-resource/single-cell/BRCA/GSE161529_Seurat/SeuratObject_TNBCTum.rds"
 )
 seurat_merged$is_tumor = ifelse(
-  colnames(seurat_merged) %in% rownames(seurat_tnbc_tumor@meta.data),
+  colnames(seurat_merged) %in% rownames(seurat_TNBC_tumor@meta.data),
   "TRUE",
   "FALSE"
 )
 
-umap_cluster = DimPlot(
-  seurat_merged,
-  reduction = "umap",
-  group.by = "seurat_clusters",
-  pt.size = 0.05,
-  label = FALSE,
-  label.size = 5,
-  cols = my_color
+umap_cluster <- draw_umap(
+  seurat = seurat_merged,
+  group_by = "seurat_clusters",
+  title = "GSE161529 TNBC seurat_clusters",
+  save_path = file.path(save_path, "GSE161529_TNBC_seurat_clusters_UMAP.png")
 )
 
-umap_tumor = DimPlot(
-  seurat_merged,
-  reduction = "umap",
+umap_tumor <- draw_umap(
+  seurat = seurat_merged,
   group.by = "is_tumor",
-  pt.size = 0.05,
-  cols = c("FALSE" = "#386c9b", "TRUE" = "#ff3333")
+  cols = c("FALSE" = "#386c9b", "TRUE" = "#a02020"),
+  save_path = file.path(save_path, "GSE161529_TNBC_tumor_UMAP.png")
 )
 
 
 c(
   umap_scissor,
   umap_scpas,
+  umap_scipac,
   umap_scpp,
   umap_scab,
+  umap_degas,
   umap_lp_sgl,
-  umap_degas
+  umap_pipet
 ) %<-%
   purrr::map(
     c(
       "scissor",
       "scPAS",
+      "SCIPAC",
       "scPP",
       'scAB',
+      "DEGAS",
       "LP_SGL",
-      "DEGAS"
+      "PIPET"
     ),
-    ~ Seurat::DimPlot(
-      seurat_merged,
+    ~ draw_umap(
+      seurat = seurat_merged,
       group.by = .x,
-      label.size = 8,
-      pt.size = 0.05,
-      reduction = "umap",
       cols = c(
         "Other" = "#CECECE",
         "Neutral" = "#CECECE",
-        "Positive" = "#ff3333",
+        "Positive" = "#a02020",
         "Negative" = "#386c9b"
+      ),
+      title = paste0("sc: GSE161529 TNBC\nbulk: ", bulk_name, "\nmethod: ", .x),
+      save_path = file.path(
+        save_path,
+        paste0("GSE161529_TNBC_", bulk_name, "_", .x, "_UMAP.png")
       )
-    ) +
-      ggplot2::ggtitle(.x)
+    )
   )
-
-umaps =
-  umap_cluster +
-  umap_tumor +
-  umap_scab +
-  umap_scissor +
-  umap_scpas +
-  umap_scpp +
-  umap_degas +
-  umap_lp_sgl +
-  plot_layout(ncol = 3)
-
-ggsave(
-  umaps,
-  filename = "GSE162228_UMAP_screened.png",
-  width = 15,
-  height = 14,
-  dpi = 400
-)

@@ -1,0 +1,83 @@
+library(zeallot)
+library(dplyr)
+
+setwd(file.path(usethis::proj_path(), "1_bench_screen/binary/brca_TNBC"))
+
+source("../../draw_umap.R")
+
+data_path <- "/home/data/sigbridger/benchmark_binary/brca/TNBC"
+bulk_name <- "TCGA_BRCA"
+save_path <- file.path("plot", bulk_name)
+
+dir.create(
+  save_path,
+  recursive = TRUE,
+  showWarnings = FALSE
+)
+
+seurat_merged <- qs::qread(
+  file.path(data_path, paste0("binary_TNBC_", bulk_name, "_merged_seurat.rqs")),
+  nthreads = 8L
+)
+
+seurat_TNBC_tumor <- readRDS(
+  "/home/data/data-resource/single-cell/BRCA/GSE161529_Seurat/SeuratObject_TNBCTum.rds"
+)
+seurat_merged$is_tumor = ifelse(
+  colnames(seurat_merged) %in% rownames(seurat_TNBC_tumor@meta.data),
+  "TRUE",
+  "FALSE"
+)
+
+umap_cluster <- draw_umap(
+  seurat = seurat_merged,
+  group_by = "seurat_clusters",
+  title = "GSE161529 TNBC seurat_clusters",
+  save_path = file.path(save_path, "GSE161529_TNBC_seurat_clusters_UMAP.png")
+)
+
+umap_tumor <- draw_umap(
+  seurat = seurat_merged,
+  group.by = "is_tumor",
+  cols = c("FALSE" = "#386c9b", "TRUE" = "#a02020"),
+  save_path = file.path(save_path, "GSE161529_TNBC_tumor_UMAP.png")
+)
+
+
+c(
+  umap_scissor,
+  umap_scpas,
+  umap_scipac,
+  umap_scpp,
+  umap_scab,
+  umap_degas,
+  umap_lp_sgl,
+  umap_pipet
+) %<-%
+  purrr::map(
+    c(
+      "scissor",
+      "scPAS",
+      "SCIPAC",
+      "scPP",
+      'scAB',
+      "DEGAS",
+      "LP_SGL",
+      "PIPET"
+    ),
+    ~ draw_umap(
+      seurat = seurat_merged,
+      group.by = .x,
+      cols = c(
+        "Other" = "#CECECE",
+        "Neutral" = "#CECECE",
+        "Positive" = "#a02020",
+        "Negative" = "#386c9b"
+      ),
+      title = paste0("sc: GSE161529 TNBC\nbulk: ", bulk_name, "\nmethod: ", .x),
+      save_path = file.path(
+        save_path,
+        paste0("GSE161529_TNBC_", bulk_name, "_", .x, "_UMAP.png")
+      )
+    )
+  )

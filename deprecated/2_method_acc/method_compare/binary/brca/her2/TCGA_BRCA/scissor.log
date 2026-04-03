@@ -1,0 +1,61 @@
+nohup: ignoring input
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+
+Attaching package: ‘data.table’
+
+The following objects are masked from ‘package:dplyr’:
+
+    between, first, last
+
+ℹ Updating SigBridgeR documentation
+ℹ Loading SigBridgeR
+✔ SigBridgeR v2.5.4 loaded
+ℹ [2025/12/05 08:29:04] Scissor start...
+ℹ [2025/12/05 08:29:04] Start from raw data...
+ℹ Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 7.6 GiB
+ℹ [2025/12/05 08:29:14] Normalizing quantiles of data
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.9 GiB
+ℹ [2025/12/05 08:30:09] Subsetting data
+ℹ [2025/12/05 08:30:13] Calculating correlation
+----------------------------------------
+Five-number summary of correlations:
+0.098889 0.192599 0.230148 0.273661 0.499937
+----------------------------------------
+ℹ Current phenotype contains 113 tumor_Negative and 1089 tumor_Positive samples.
+ℹ [2025/12/05 08:42:45] Perform logistic regression on the given phenotypes...
+✔ [2025/12/05 08:44:29] Statistics data saved to 'Scissor_inputs.RData'.
+ℹ [2025/12/05 08:44:30] Screening...
+
+── At alpha = 0.005 ──
+
+Scissor identified 10191 Scissor+ cells and 5738 Scissor- cells.
+The percentage of selected cell is: 49.978%
+
+── At alpha = 0.01 ──
+
+Scissor identified 8895 Scissor+ cells and 4011 Scissor- cells.
+The percentage of selected cell is: 40.493%
+
+── At alpha = 0.05 ──
+
+Scissor identified 4738 Scissor+ cells and 1786 Scissor- cells.
+The percentage of selected cell is: 20.469%
+
+── At alpha = 0.1 ──
+
+Scissor identified 3218 Scissor+ cells and 1183 Scissor- cells.
+The percentage of selected cell is: 13.808%
+ℹ [2025/12/05 09:24:24] Scissor Ended.

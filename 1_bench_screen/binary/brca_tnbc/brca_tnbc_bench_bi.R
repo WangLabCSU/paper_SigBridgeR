@@ -1,410 +1,174 @@
 # ! sc - GSE161529
-# ! bulk - GSE42568
-# ! bulk - GSE162228
+# ! bulk - GSE42568, GSE162228, TCGA_BRCA
 # ! binary
 # ! TNBC
 
+# ==============================================================================
+# 1. Environment & Dependencies
+# ==============================================================================
+library(SigBridgeR)
 library(Seurat)
 library(dplyr)
+library(rlang)
+library(cli)
+library(qs)
 
-library(SigBridgeR)
+# 设置工作目录（建议后续改用 here:: 或 usethis::proj_path() 直接拼接绝对路径）
+setwd(file.path(usethis::proj_path(), "1_bench_screen/binary/brca_tnbc"))
+data_path <- "/home/data/sigbridger/benchmark_data/brca"
+save_path <- "/home/data/sigbridger/benchmark_binary/brca/TNBC"
 
-setwd("/home/yyx/R/Project/R_code/SigBridgeR/Tmp/benchmark_binary/brca/TNBC")
+# 确保输出目录存在
+dir.create(save_path, recursive = TRUE, showWarnings = FALSE)
 
-data_path = "/home/data/sigbridger/benchmark_data/brca"
-save_path = "/home/data/sigbridger/benchmark_binary/brca/TNBC"
-
-# ? ---- Single cell data preparation ----
-
-# ! BRCA GSE161529-sc
-seurat_tnbc = qs::qread(file.path(data_path, "seurat_tnbc.qs"), nthreads = 4)
-
-# # ? ---- Bulk data preparation ----
-
-# * bulk data
-brca_bulkdata_GSE42568 = qs::qread(
-  file.path(data_path, "brca_bulkdata_GSE42568.qs"),
-  nthreads = 4
-)
-
-# > dim(brca_bulkdata_GSE42568 )
-# [1] 54675   121
-
-# * phenotype
-brca_pheno_GSE42568 = qs::qread(
-  file.path(data_path, "brca_pheno_GSE42568.qs"),
-  nthreads = 4
-)
-# * binary variables
-brca_bi_GSE42568 = setNames(
-  case_when(
-    brca_pheno_GSE42568$`tissue:ch1` == "breast cancer" ~ 1,
-    brca_pheno_GSE42568$`tissue:ch1` == "normal breast" ~ 0
+# ==============================================================================
+# 2. Configuration (集中管理数据集参数)
+# ==============================================================================
+bulk_configs <- list(
+  GSE42568 = list(
+    bulk_qs = "brca_bulkdata_GSE42568.qs",
+    pheno_qs = "brca_pheno_GSE42568.qs",
+    id_col = "geo_accession",
+    label_col = "tissue:ch1",
+    label_map = c("breast cancer" = 1L, "normal breast" = 0L)
   ),
-  brca_pheno_GSE42568$geo_accession
-)
-
-# > brca_pheno_GSE42568$`tissue:ch1` |> table()
-# breast cancer normal breast
-#           104            17
-# table(brca_bi_GSE42568)
-# brca_bi_GSE42568
-#   0   1
-#  17 104
-
-filtered_bulk_GSE42568 = brca_bulkdata_GSE42568[, names(brca_bi_GSE42568)]
-
-# > dim(filtered_bulk_GSE42568)
-# [1] 54675   104
-
-# scissor_result = Screen(
-#     matched_bulk = filtered_bulk_GSE42568,
-#     sc_data = seurat_tnbc,
-#     phenotype = brca_bi_GSE42568,
-#     label_type = "scissor_binary",
-#     phenotype_class = "binary",
-#     screen_method = "Scissor",
-#     path2save_scissor_inputs = "binary_GSE42568_Scissor_inputs.RData",
-# )
-
-# qs::qsave(
-#     scissor_result,
-#     file = "binary_GSE42568_tnbc_scissor_result.qs",
-#     nthreads = 4
-# )
-
-# scpas_result = Screen(
-#     matched_bulk = filtered_bulk_GSE42568,
-#     sc_data = seurat_tnbc,
-#     phenotype = brca_bi_GSE42568,
-#     label_type = "scPAS_binary",
-#     phenotype_class = "binary",
-#     screen_method = "scPAS"
-# )
-
-# qs::qsave(
-#     scpas_result,
-#     file = "binary_GSE42568_tnbc_scpas_result.qs",
-#     nthreads = 4
-# )
-
-# scab_result = Screen(
-#     matched_bulk = filtered_bulk_GSE42568,
-#     sc_data = seurat_tnbc,
-#     phenotype = brca_bi_GSE42568,
-#     label_type = "scAB_binary",
-#     phenotype_class = "binary",
-#     screen_method = "scAB"
-# )
-
-# qs::qsave(
-#     scab_result,
-#     file = file.path(save_path, "binary_GSE42568_tnbc_scab_result.qs"),
-#     nthreads = 4
-# )
-
-# scpp_result = Screen(
-#     matched_bulk = filtered_bulk_GSE42568,
-#     sc_data = seurat_tnbc,
-#     phenotype = brca_bi_GSE42568,
-#     label_type = "scPP_binary",
-#     phenotype_class = "binary",
-#     screen_method = "scPP"
-# )
-
-# qs::qsave(
-#     scpp_result,
-#     file = "binary_GSE42568_tnbc_scpp_result.qs",
-#     nthreads = 4
-# )
-
-for (method in c(
-  "Scissor",
-  "scAB",
-  "scPAS",
-  "scPP",
-  "DEGAS",
-  "PIPET",
-  "LP_SGL"
-)) {
-  rlang::try_fetch(
-    {
-      res <- Screen(
-        filtered_bulk_GSE42568,
-        seurat_tnbc,
-        brca_bi_GSE42568,
-        label_type = paste0(method, "_binary"),
-        phenotype_class = "binary",
-        screen_method = method,
-        path2save_scissor_inputs = NULL
-      )
-
-      qs::qsave(
-        res,
-        file.path(
-          data_path,
-          "TNBC",
-          paste0("binary_GSE42568_tnbc_", tolower(method), "_result.qs")
-        ),
-        nthreads = 4
-      )
-    },
-    error = function(e) {
-      print(e$message)
-      cli::cli_h1("{method} failed")
-    }
-  )
-}
-
-# ? ---- Another bulk data ----
-
-brca_bulkdata_GSE162228 = qs::qread(
-  file.path(data_path, "brca_bulkdata_GSE162228.qs"),
-  nthreads = 4
-)
-
-brca_pheno_GSE162228 = qs::qread(
-  file.path(data_path, "brca_pheno_GSE162228.qs"),
-  nthreads = 4
-)
-brca_bi_GSE162228 = setNames(
-  case_when(
-    brca_pheno_GSE162228$`relapse status:ch1` == "relapse" ~ 1,
-    brca_pheno_GSE162228$`relapse status:ch1` == "non-relapse" ~ 0
+  GSE162228 = list(
+    bulk_qs = "brca_bulkdata_GSE162228.qs",
+    pheno_qs = "brca_pheno_GSE162228.qs",
+    id_col = "geo_accession",
+    label_col = "relapse status:ch1",
+    label_map = c("relapse" = 1L, "non-relapse" = 0L)
   ),
-  brca_pheno_GSE162228$geo_accession
+  TCGA_BRCA = list(
+    bulk_qs = "brca_bulkdata_TCGA.qs",
+    pheno_qs = "brca_pheno_TCGA.qs",
+    is_tcga = TRUE,
+    log_transform = TRUE
+  )
 )
-# brca_bi_GSE162228 |> table()
-# # brca_bi_GSE162228
-# #   0   1
-# # 111  22
 
-# scissor_result = Screen(
-#     matched_bulk = brca_bulkdata_GSE162228,
-#     sc_data = seurat_tnbc,
-#     phenotype = brca_bi_GSE162228,
-#     label_type = "scissor_binary",
-#     phenotype_class = "binary",
-#     screen_method = "Scissor",
-#     path2save_scissor_inputs = "binary_GSE162228_Scissor_inputs.RData",
-# )
-
-# qs::qsave(
-#     scissor_result,
-#     file = "binary_GSE162228_tnbc_scissor_result.qs",
-#     nthreads = 4
-# )
-
-# scpas_result = Screen(
-#     matched_bulk = brca_bulkdata_GSE162228,
-#     sc_data = seurat_tnbc,
-#     phenotype = brca_bi_GSE162228,
-#     label_type = "scPAS_binary",
-#     phenotype_class = "binary",
-#     screen_method = "scPAS"
-# )
-
-# qs::qsave(
-#     scpas_result,
-#     file = "binary_GSE162228_tnbc_scpas_result.qs",
-#     nthreads = 4
-# )
-
-# scab_result = Screen(
-#     matched_bulk = brca_bulkdata_GSE162228,
-#     sc_data = seurat_tnbc,
-#     phenotype = brca_bi_GSE162228,
-#     label_type = "scAB_binary",
-#     phenotype_class = "binary",
-#     screen_method = "scAB"
-# )
-
-# qs::qsave(
-#     scab_result,
-#     file = file.path(save_path, "binary_GSE162228_tnbc_scab_result.qs"),
-#     nthreads = 4
-# )
-
-# scpp_result = Screen(
-#     matched_bulk = brca_bulkdata_GSE162228,
-#     sc_data = seurat_tnbc,
-#     phenotype = brca_bi_GSE162228,
-#     label_type = "scPP_binary",
-#     phenotype_class = "binary",
-#     screen_method = "scPP"
-# )
-
-# qs::qsave(
-#     scpp_result,
-#     file = "binray_GSE162228_tnbc_scpp_result.qs",
-#     nthreads = 4
-# )
-
-# PID=2543637
-
-for (method in c(
+methods <- c(
   "Scissor",
   "scAB",
+  "SCIPAC",
   "scPAS",
   "scPP",
   "DEGAS",
-  "PIPET",
-  "LP_SGL"
-)) {
-  rlang::try_fetch(
-    {
-      res <- Screen(
-        brca_bulkdata_GSE162228,
-        seurat_tnbc,
-        brca_bi_GSE162228,
-        label_type = paste0(method, "_binary"),
-        phenotype_class = "binary",
-        screen_method = method,
-        path2save_scissor_inputs = NULL
-      )
+  "LP_SGL",
+  "PIPET"
+)
 
-      qs::qsave(
-        res,
-        file.path(
-          data_path,
-          "TNBC",
-          paste0("binary_GSE162228_tnbc_", tolower(method), "_result.qs")
-        ),
-        nthreads = 4
-      )
-    },
-    error = function(e) {
-      print(e$message)
-      cli::cli_h1("{method} failed")
-    }
+# ==============================================================================
+# 3. Core Pipeline Function
+# ==============================================================================
+run_screening_pipeline <- function(
+  config_name,
+  config,
+  sc_data,
+  methods,
+  data_path,
+  save_path
+) {
+  cli::cli_h2("Starting pipeline for {.val {config_name}}")
+
+  # 1. Load Bulk Data
+  bulk <- qs::qread(file.path(data_path, config$bulk_qs), nthreads = 4)
+  if (isTRUE(config$log_transform)) {
+    bulk <- log2(bulk + 1)
+  }
+
+  # 2. Process Phenotype & Extract Binary Labels
+  pheno <- qs::qread(file.path(data_path, config$pheno_qs), nthreads = 4)
+
+  if (isTRUE(config$is_tcga)) {
+    cm_samples <- intersect(pheno$sample, colnames(bulk))
+    labels <- pheno %>%
+      mutate(sample_type = substr(sample, 14, 15)) %>%
+      filter(sample_type %in% c("01", "11"), sample %in% cm_samples) %>%
+      mutate(sample_type = as.integer(sample_type == "01")) %>%
+      {
+        setNames(.$sample_type, .$sample)
+      }
+  } else {
+    # 通用映射：利用命名向量索引，比 case_when 更高效且不易出错
+    labels <- setNames(
+      config$label_map[pheno[[config$label_col]]],
+      pheno[[config$id_col]]
+    )
+    labels <- labels[!is.na(labels)] # 剔除未匹配的样本
+  }
+
+  # 3. Align Bulk Matrix with Labels
+  bulk <- bulk[, names(labels), drop = FALSE]
+  cli::cli_alert_info(
+    "Aligned bulk matrix: {nrow(bulk)} genes x {ncol(bulk)} samples"
   )
+
+  # 4. Run Screening Methods
+  results <- vector("list", length(methods))
+  for (m in methods) {
+    cli::cli_alert("Running {.val {m}}...")
+    results[[m]] <- rlang::try_fetch(
+      SigBridgeR::Screen(
+        bulk,
+        sc_data,
+        labels,
+        label_type = paste0(m, "_binary"),
+        phenotype_class = "binary",
+        screen_method = m,
+        alpha = NULL,
+        alpha_2 = NULL,
+        path2save_scissor_inputs = NULL
+      ),
+      error = function(e) {
+        cli::cli_warn("{.fn {m}} failed: {.message {e$message}}")
+        NULL
+      }
+    )
+  }
+
+  # 5. Merge & Save
+
+  merged_res <- do.call(SigBridgeR::MergeResult, valid_results)
+  out_file <- file.path(
+    save_path,
+    paste0("binary_TNBC_", config_name, "_merged_seurat.qs")
+  )
+  qs::qsave(merged_res, out_file, nthreads = 8L)
+  cli::cli_success("Saved to {.path {out_file}}\n")
+
+  invisible(merged_res)
 }
 
+# ==============================================================================
+# 4. Execution
+# ==============================================================================
+# 1. Load scRNA-seq data once
+cli::cli_h1("Loading scRNA-seq reference...")
+seurat_TNBC <- qs::qread(file.path(data_path, "seurat_tnbc.qs"), nthreads = 4)
 
-# ? ---- Another bulk data ----
-
-tcga_bulkdata = qs::qread(
-  file.path(data_path, "brca_bulkdata_TCGA.qs"),
-  nthreads = 4
-)
-tcga_pheno = qs::qread(
-  file.path(data_path, "brca_pheno_TCGA.qs"),
-  nthreads = 4
-)
-cm_samples = intersect(tcga_pheno$sample, colnames(tcga_bulkdata))
-
-brca_bi_tcga = mutate(
-  tcga_pheno,
-  sample_type = substr(tcga_pheno$sample, 14, 15)
-) %>%
-  select(sample, sample_type) %>%
-  filter(sample_type %in% c("01", "11"), sample %in% cm_samples) %>%
-  mutate(sample_type = ifelse(sample_type == "01", 1, 0))
-brca_bi_tcga = setNames(brca_bi_tcga$sample_type, brca_bi_tcga$sample)
-
-tcga_bulkdata = tcga_bulkdata[, names(brca_bi_tcga)]
-
-# table(brca_bi_tcga)
-# # brca_bi_tcga
-# #    0    1
-# #  113 1089
-
-# scissor_result = Screen(
-#     matched_bulk = tcga_bulkdata,
-#     sc_data = seurat_tnbc,
-#     phenotype = brca_bi_tcga,
-#     label_type = "binary_scissor",
-#     phenotype_class = "binary",
-#     screen_method = "Scissor",
-#     path2save_scissor_inputs = "binary_tcga_Scissor_inputs.RData",
-# )
-
-# qs::qsave(
-#     scissor_result,
-#     file = file.path(save_path, "binary_tnbc_tcga_scissor_result.qs"),
-#     nthreads = 4
-# )
-
-# scpas_result = Screen(
-#     matched_bulk = tcga_bulkdata,
-#     sc_data = seurat_tnbc,
-#     phenotype = brca_bi_tcga,
-#     label_type = "scPAS_binary",
-#     phenotype_class = "binary",
-#     screen_method = "scPAS"
-# )
-
-# qs::qsave(
-#     scpas_result,
-#     file = file.path(save_path, "binary_tnbc_tcga_scpas_result.qs"),
-#     nthreads = 4
-# )
-
-# scab_result = Screen(
-#     matched_bulk = tcga_bulkdata,
-#     sc_data = seurat_tnbc,
-#     phenotype = brca_bi_tcga,
-#     label_type = "scAB_binary",
-#     phenotype_class = "binary",
-#     screen_method = "scAB"
-# )
-
-# qs::qsave(
-#     scab_result,
-#     file = file.path(save_path, "binary_tnbc_tcga_scab_result.qs"),
-#     nthreads = 4
-# )
-
-# scpp_result = Screen(
-#   matched_bulk = tcga_bulkdata,
-#   sc_data = seurat_tnbc,
-#   phenotype = brca_bi_tcga,
-#   label_type = "scPP_binary",
-#   phenotype_class = "binary",
-#   screen_method = "scPP"
-# )
-
-# qs::qsave(
-#   scpp_result,
-#   file = file.path(save_path, "binary_tnbc_tcga_scpp_result.qs"),
-#   nthreads = 4
-# )
-# # 266009
-
-for (method in c(
-  "Scissor",
-  "scAB",
-  "scPAS",
-  "scPP",
-  "DEGAS",
-  "PIPET",
-  "LP_SGL"
-)) {
-  rlang::try_fetch(
-    {
-      res <- Screen(
-        tcga_bulkdata,
-        seurat_tnbc,
-        brca_bi_tcga,
-        label_type = paste0(method, "_binary"),
-        phenotype_class = "binary",
-        screen_method = method,
-        path2save_scissor_inputs = NULL
-      )
-
-      qs::qsave(
-        res,
-        file.path(
-          data_path,
-          "TNBC",
-          paste0("binary_tcga_tnbc_", tolower(method), "_result.qs")
-        ),
-        nthreads = 4
-      )
-    },
-    error = function(e) {
-      print(e$message)
-      cli::cli_h1("{method} failed")
-    }
+# 2. Set computational threads (TensorFlow & OpenMP)
+SigBridgeR::setThreads(
+  8L,
+  tf_config = list(
+    xla_flag = "--tf_xla_auto_jit=2 --tf_xla_cpu_global_jit",
+    xla_device = NULL,
+    inter_op = 8L,
+    intra_op = 8L
   )
-}
+)
+
+# 3. Run pipeline for all datasets sequentially
+# (如需并行，可替换为 future.apply::future_lapply 或 parallel::mclapply)
+lapply(names(bulk_configs), function(name) {
+  run_screening_pipeline(
+    name,
+    bulk_configs[[name]],
+    seurat_TNBC,
+    methods,
+    data_path,
+    save_path
+  )
+})
+
+cli::cli_h1("✅ All screening tasks completed.")
