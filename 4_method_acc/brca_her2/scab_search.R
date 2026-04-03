@@ -4,9 +4,7 @@ library(data.table)
 library(scAB)
 # library(SigBridgeR)
 
-setwd(
-  "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/method_compare/binary/brca/her2/TCGA_BRCA"
-)
+setwd(usethis::project_path(), "4_method_acc/brca_her2")
 
 data_path = "/home/data/sigbridger/benchmark_data/brca"
 # devtools::document("~/R/Project/R_code/SigBridgeR")

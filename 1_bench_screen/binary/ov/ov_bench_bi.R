@@ -4,7 +4,7 @@
 library(Seurat)
 library(dplyr)
 
-devtools::document("/home/yyx/R/Project/R_code/SigBridgeR")
+library(SigBridgeR)
 
 setwd("~/R/Project/R_code/SigBridgeR/Tmp/benchmark_binary/ov/GSE165897")
 

@@ -61,7 +61,7 @@ compute_metrics <- function(dt) {
   result <- data.table::transpose(result)
 
   # 重命名以匹配进程列名
-  data.table::setnames(result, 1:ncol(result), process_cols)
+  data.table::setnames(result, seq_len(ncol(result)), process_cols)
 
   # 设置行名
   rownames(result) <- c("TPR", "FPR", "TNR", "FNR", "F1", "Accuracy")

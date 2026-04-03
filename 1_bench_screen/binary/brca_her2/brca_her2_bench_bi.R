@@ -1,27 +1,26 @@
 # ! sc - GSE161529
-# ! bulk - GSE42568 , GSE162228
+# ! bulk - GSE42568 , GSE162228 , TCGA_BRCA
 # ! binary
 # ! 20250910
 
 library(Seurat)
 library(dplyr)
-
-devtools::document("/home/yyx/R/Project/R_code/SigBridgeR")
+library(SigBridgeR)
 
 setwd("/home/yyx/R/Project/R_code/SigBridgeR/Tmp/benchmark_binary/brca/HER2")
 
-data_path = "/home/data/sigbridger/benchmark_data/brca"
-save_path = "/home/data/sigbridger/benchmark_binary/brca/HER2"
+data_path <- "/home/data/sigbridger/benchmark_data/brca"
+save_path <- "/home/data/sigbridger/benchmark_binary/brca/HER2"
 
 # ? ---- Single cell data preparation ----
 
 # ! BRCA HER2 GSE161529-sc
-seurat_her2 = qs::qread(file.path(data_path, "seurat_her2.qs"), nthreads = 4)
+seurat_her2 <- qs::qread(file.path(data_path, "seurat_her2.qs"), nthreads = 4)
 
 # ? ---- Bulk data preparation ----
 
 # *bulk data
-brca_bulkdata_GSE42568 = qs::qread(
+brca_bulkdata_GSE42568 <- qs::qread(
   file.path(data_path, "brca_bulkdata_GSE42568.qs"),
   nthreads = 4
 )
@@ -30,13 +29,13 @@ brca_bulkdata_GSE42568 = qs::qread(
 # [1] 54675   121
 
 # *phenotype
-brca_pheno_GSE42568 = qs::qread(
+brca_pheno_GSE42568 <- qs::qread(
   file.path(data_path, "brca_pheno_GSE42568.qs"),
   nthreads = 4
 )
 
 # * binary variables
-brca_bi_GSE42568 = setNames(
+brca_bi_GSE42568 <- setNames(
   case_when(
     brca_pheno_GSE42568$`tissue:ch1` == "breast cancer" ~ 1,
     brca_pheno_GSE42568$`tissue:ch1` == "normal breast" ~ 0
@@ -52,7 +51,7 @@ brca_bi_GSE42568 = setNames(
 #   0   1
 #  17 104
 
-filtered_bulk_GSE42568 = brca_bulkdata_GSE42568[, names(brca_bi_GSE42568)]
+filtered_bulk_GSE42568 <- brca_bulkdata_GSE42568[, names(brca_bi_GSE42568)]
 
 # > dim(filtered_bulk_GSE42568)
 # [1] 54675   104
@@ -159,16 +158,16 @@ for (method in c(
 
 # ? ---- Another bulk data ----
 
-brca_bulkdata_GSE162228 = qs::qread(
+brca_bulkdata_GSE162228 <- qs::qread(
   file.path(data_path, "brca_bulkdata_GSE162228.qs"),
   nthreads = 4
 )
 
-brca_pheno_GSE162228 = qs::qread(
+brca_pheno_GSE162228 <- qs::qread(
   file.path(data_path, "brca_pheno_GSE162228.qs"),
   nthreads = 4
 )
-brca_bi_GSE162228 = setNames(
+brca_bi_GSE162228 <- setNames(
   case_when(
     brca_pheno_GSE162228$`relapse status:ch1` == "relapse" ~ 1,
     brca_pheno_GSE162228$`relapse status:ch1` == "non-relapse" ~ 0
@@ -284,26 +283,26 @@ for (method in c(
 
 # ? ---- Another bulk data ----
 
-tcga_bulkdata = qs::qread(
+tcga_bulkdata <- qs::qread(
   file.path(data_path, "brca_bulkdata_TCGA.qs"),
   nthreads = 4
 )
-tcga_pheno = qs::qread(
+tcga_pheno <- qs::qread(
   file.path(data_path, "brca_pheno_TCGA.qs"),
   nthreads = 4
 )
-cm_samples = intersect(tcga_pheno$sample, colnames(tcga_bulkdata))
+cm_samples <- intersect(tcga_pheno$sample, colnames(tcga_bulkdata))
 
-brca_bi_tcga = mutate(
+brca_bi_tcga <- mutate(
   tcga_pheno,
   sample_type = substr(tcga_pheno$sample, 14, 15)
 ) %>%
   select(sample, sample_type) %>%
   filter(sample_type %in% c("01", "11"), sample %in% cm_samples) %>%
-  mutate(sample_type = ifelse(sample_type == "01", 1, 0))
-brca_bi_tcga = setNames(brca_bi_tcga$sample_type, brca_bi_tcga$sample)
+  mutate(sample_type = as.integer(sample_type == "01"))
+brca_bi_tcga <- setNames(brca_bi_tcga$sample_type, brca_bi_tcga$sample)
 
-tcga_bulkdata = tcga_bulkdata[, names(brca_bi_tcga)]
+tcga_bulkdata <- tcga_bulkdata[, names(brca_bi_tcga)]
 
 # table(brca_bi_tcga)
 # # brca_bi_tcga
