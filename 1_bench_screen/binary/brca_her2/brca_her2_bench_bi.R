@@ -116,7 +116,7 @@ run_screening_pipeline <- function(
         label_type = paste0(m, "_binary"),
         phenotype_class = "binary",
         screen_method = m,
-        alpha = NULL,
+        alpha = if (m != "LP_SGL") NULL else 0.5,
         alpha_2 = NULL,
         path2save_scissor_inputs = NULL
       ),

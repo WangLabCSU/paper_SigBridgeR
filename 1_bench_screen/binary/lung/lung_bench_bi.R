@@ -1,145 +1,164 @@
-# ! LUAD bulk-UMI count TCGA-LUAD, scRNA-seq data- GSE123902
+# ! sc - GSE123902
+# ! bulk - TCGA_LUAD
+# ! binary
+# ! LUAD
+
+# ==============================================================================
+# 1. Environment & Dependencies
+# ==============================================================================
+library(SigBridgeR)
+library(Seurat)
 library(dplyr)
+library(rlang)
+library(cli)
+library(qs)
 
-# setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-setwd(
-  "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/benchmark_binary/lung/TCGA-LUAD"
-)
-data_path = "/home/data/sigbridger/benchmark_data/lung"
-save_path = "/home/data/sigbridger/benchmark_binary/lung/TCGA-LUAD"
-devtools::document("~/R/Project/R_code/SigBridgeR")
+# 设置工作目录（建议后续改用 here:: 或 usethis::proj_path() 直接拼接绝对路径）
+setwd(file.path(usethis::proj_path(), "1_bench_screen/binary/lung"))
+data_path <- "/home/data/sigbridger/benchmark_data/lung"
+save_path <- "/home/data/sigbridger/benchmark_binary/lung/"
 
+# 确保输出目录存在
+dir.create(save_path, recursive = TRUE, showWarnings = FALSE)
 
-# Load bulk data & phenotype
-bulkdata_ok = qs::qread(file.path(data_path, "TCGA_LUAD_bulkdata.qs"))
-
-pheno = qs::qread(file.path(data_path, "TCGA_LUAD_pheno.qs"))
-
-# table(sample_type)
-# sample_type
-#  01  02  11
-# 504   2  59
-
-pheno_ok = mutate(pheno, sample_type = substr(pheno$sample, 14, 15)) %>%
-  select(sample, sample_type) %>%
-  filter(sample_type %in% c("01", "11")) %>%
-  mutate(sample_type = ifelse(sample_type == "01", 1, 0))
-pheno_ok = setNames(pheno_ok$sample_type, pheno_ok$sample)
-# TCGA-05-4244-01 TCGA-05-4250-01 TCGA-05-4382-01 TCGA-05-4384-01 TCGA-05-4389-01 TCGA-05-4390-01
-#               1               1               1               1               1               1
-
-bulkdata_ok = bulkdata_ok[, names(pheno_ok)]
-
-
-# #  check
-# bulkdata_ok = BulkPreProcess(
-#     bulkdata,
-#     gene_symbol_conversion = FALSE,
-#     check = FALSE,
-#     min_count_threshold = 10,
-#     min_gene_expressed = 3,
-#     min_total_reads = 1e+05,
-#     min_genes_detected = 10000,
-#     min_correlation = 0.8,
-#     n_top_genes = 500,
-#     show_plot_results = TRUE,
-#     verbose = TRUE
-# )
-
-all(colnames(bulkdata_ok) == names(pheno_ok))
-
-
-# load single-cell data
-scdata_ok = qs::qread(
-  file.path(data_path, "luad_GSE123902_seurat.qs"),
-  nthreads = 4
+# ==============================================================================
+# 2. Configuration (集中管理数据集参数)
+# ==============================================================================
+bulk_configs <- list(
+  TCGA_LUAD = list(
+    bulk_qs = "TCGA_LUAD_bulkdata.qs",
+    pheno_qs = "TCGA_LUAD_pheno.qs",
+    is_tcga = TRUE,
+    log_transform = TRUE
+  )
 )
 
-# scissor_result = Screen(
-#     bulkdata_ok,
-#     scdata_ok,
-#     pheno_ok,
-#     label_type = "scissor_binary",
-#     phenotype_class = "binary",
-#     screen_method = "Scissor"
-# )
-
-# qs::qsave(scissor_result, "binary_luad_tcga_scissor.qs", nthreads = 4)
-
-# scpas_result = Screen(
-#     bulkdata_ok,
-#     scdata_ok,
-#     pheno_ok,
-#     label_type = "scpas_binary",
-#     phenotype_class = "binary",
-#     screen_method = "scPAS"
-# )
-
-# qs::qsave(scpas_result, "binary_luad_tcga_scpas.qs", nthreads = 4)
-
-# scab_result = Screen(
-#     bulkdata_ok,
-#     scdata_ok,
-#     pheno_ok,
-#     label_type = "scab_binary",
-#     phenotype_class = "binary",
-#     screen_method = "scAB"
-# )
-
-# qs::qsave(
-#     scab_result,
-#     file.path(save_path, "binary_luad_tcga_scab.qs"),
-#     nthreads = 4
-# )
-
-# scpp_result = Screen(
-#     bulkdata_ok,
-#     scdata_ok,
-#     pheno_ok,
-#     label_type = "scpp_binary",
-#     phenotype_class = "binary",
-#     screen_method = "scPP"
-# )
-
-# qs::qsave(scpp_result, "binary_luad_tcga_scpp.qs", nthreads = 4)
-
-# PID = 205041
-
-SigBridgeR::setThreads(
-  8L,
-  tf_config = list(xla = TRUE, intra_op = 8L, inter_op = 8L)
-)
-
-for (method in c(
+methods <- c(
   "Scissor",
   "scAB",
+  "SCIPAC",
   "scPAS",
   "scPP",
   "DEGAS",
   "LP_SGL",
   "PIPET"
-)) {
-  rlang::try_fetch(
-    {
-      res <- Screen(
-        bulkdata_ok,
-        scdata_ok,
-        pheno_ok,
-        label_type = paste0(method, "_survival"),
-        phenotype_class = "binary",
-        screen_method = method,
-        path2save_scissor_inputs = NULL
-      )
+)
 
-      qs::qsave(
-        res,
-        file.path(save_path, paste0("luad_TCGA_LUAD_", tolower(method), ".qs")),
-        nthreads = 4
-      )
-    },
-    error = function(e) {
-      print(e$message)
-      cli::cli_h1("{method} failed")
-    }
+# ==============================================================================
+# 3. Core Pipeline Function
+# ==============================================================================
+run_screening_pipeline <- function(
+  config_name,
+  config,
+  sc_data,
+  methods,
+  data_path,
+  save_path
+) {
+  cli::cli_h2("Starting pipeline for {.val {config_name}}")
+
+  # 1. Load Bulk Data
+  bulk <- qs::qread(file.path(data_path, config$bulk_qs), nthreads = 4)
+  if (isTRUE(config$log_transform)) {
+    bulk <- log2(bulk + 1)
+  }
+
+  # 2. Process Phenotype & Extract Binary Labels
+  pheno <- qs::qread(file.path(data_path, config$pheno_qs), nthreads = 4)
+
+  if (isTRUE(config$is_tcga)) {
+    cm_samples <- intersect(pheno$sample, colnames(bulk))
+    labels <- pheno %>%
+      mutate(sample_type = substr(sample, 14, 15)) %>%
+      filter(sample_type %in% c("01", "11"), sample %in% cm_samples) %>%
+      mutate(sample_type = as.integer(sample_type == "01")) %>%
+      {
+        setNames(.$sample_type, .$sample)
+      }
+  } else {
+    # 通用映射：利用命名向量索引，比 case_when 更高效且不易出错
+    labels <- setNames(
+      config$label_map[pheno[[config$label_col]]],
+      pheno[[config$id_col]]
+    )
+    labels <- labels[!is.na(labels)] # 剔除未匹配的样本
+  }
+
+  # 3. Align Bulk Matrix with Labels
+  bulk <- bulk[, names(labels), drop = FALSE]
+  cli::cli_alert_info(
+    "Aligned bulk matrix: {nrow(bulk)} genes x {ncol(bulk)} samples"
   )
+
+  # 4. Run Screening Methods
+  results <- vector("list", length(methods))
+  for (m in methods) {
+    cli::cli_alert("Running {.val {m}}...")
+    results[[m]] <- rlang::try_fetch(
+      SigBridgeR::Screen(
+        bulk,
+        sc_data,
+        labels,
+        label_type = paste0(m, "_binary"),
+        phenotype_class = "binary",
+        screen_method = m,
+        alpha = if (m != "LP_SGL") NULL else 0.5,
+        alpha_2 = NULL,
+        path2save_scissor_inputs = NULL
+      ),
+      error = function(e) {
+        cli::cli_warn("{.fn {m}} failed: {.message {e$message}}")
+        NULL
+      }
+    )
+  }
+
+  # 5. Merge & Save
+
+  merged_res <- do.call(SigBridgeR::MergeResult, valid_results)
+  out_file <- file.path(
+    save_path,
+    paste0("binary_lung_", config_name, "_merged_seurat.qs")
+  )
+  qs::qsave(merged_res, out_file, nthreads = 8L)
+  cli::cli_success("Saved to {.path {out_file}}\n")
+
+  invisible(merged_res)
 }
+
+
+# ==============================================================================
+# 4. Execution
+# ==============================================================================
+# 1. Load scRNA-seq data once
+cli::cli_h1("Loading scRNA-seq reference...")
+seurat_luad <- qs::qread(
+  file.path(data_path, "luad_GSE123902_seurat.qs"),
+  nthreads = 8L
+)
+
+# 2. Set computational threads (TensorFlow & OpenMP)
+SigBridgeR::setThreads(
+  8L,
+  tf_config = list(
+    xla_flag = "--tf_xla_auto_jit=2 --tf_xla_cpu_global_jit",
+    xla_device = NULL,
+    inter_op = 8L,
+    intra_op = 8L
+  )
+)
+
+# 3. Run pipeline for all datasets sequentially
+# (如需并行，可替换为 future.apply::future_lapply 或 parallel::mclapply)
+lapply(names(bulk_configs), function(name) {
+  run_screening_pipeline(
+    name,
+    bulk_configs[[name]],
+    seurat_luad,
+    methods,
+    data_path,
+    save_path
+  )
+})
+
+cli::cli_h1("✅ All screening tasks completed.")

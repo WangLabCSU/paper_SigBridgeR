@@ -1,6 +1,0 @@
-nohup: ignoring input
-Warning: Cannot find cell-level meta data named  scpp
-✔ Successfully merged 2 objects.
-Error in irGSEA::irGSEA.integrate(object = labeled_irgsea, group.by = "scissor",  : 
-  Please imput correct `method`.
-Execution halted

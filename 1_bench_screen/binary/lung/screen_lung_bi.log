@@ -1,0 +1,105 @@
+nohup: ignoring input
+✔ SigBridgeR v3.5.0 loaded
+Loading required package: SeuratObject
+Loading required package: sp
+
+Attaching package: ‘SeuratObject’
+
+The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+qs 0.27.3. Announcement: https://github.com/qsbase/qs/issues/103
+✔ Setting active project to "/home/yyx/R/Project/R_code/paper_SigBridgeR".
+
+── Loading scRNA-seq reference... ──────────────────────────────────────────────
+  OpenMP version (_OPENMP)       201511
+  omp_get_num_procs()            192
+  R_DATATABLE_NUM_PROCS_PERCENT  unset (default 50)
+  R_DATATABLE_NUM_THREADS        unset
+  R_DATATABLE_THROTTLE           unset (default 1024)
+  omp_get_thread_limit()         2147483647
+  omp_get_max_threads()          192
+  OMP_THREAD_LIMIT               unset
+  OMP_NUM_THREADS                8
+  RestoreAfterFork               true
+  data.table is using 8 threads with throttle==1024. See ?setDTthreads.
+
+── System-Level Configuration ──
+
+• OMP_NUM_THREADS: unset -> 8
+• data.table: 96 -> 8
+
+── TensorFlow Configuration ──
+
+• TF_XLA_FLAGS: unset -> --tf_xla_auto_jit=2 --tf_xla_cpu_global_jit
+• TF_XLA_CPU_GLOBAL_JIT: unset -> 1
+• TF_NUM_INTEROP_THREADS: unset -> 8
+• TF_NUM_INTRAOP_THREADS: unset -> 8
+
+── Starting pipeline for "TCGA_LUAD" ──
+
+ℹ Aligned bulk matrix: 60660 genes x 563 samples
+→ Running "Scissor"...
+ℹ [2026/04/03 14:48:06] Scissor start...
+ℹ [2026/04/03 14:48:06] Start from raw data...
+ℹ Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 7.7 GiB
+ℹ [2026/04/03 14:48:15] Normalizing quantiles of data
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.8 GiB
+ℹ [2026/04/03 14:49:10] Subsetting data
+ℹ [2026/04/03 14:49:14] Calculating correlation
+----------------------------------------
+Five-number summary of correlations:
+0.18724 0.362851 0.38794 0.416241 0.524109
+----------------------------------------
+ℹ Current phenotype contains 59 Scissor_binary_Negative and 504 Scissor_binary_Positive samples.
+ℹ [2026/04/03 14:49:25] Perform logistic regression on the given phenotypes...
+ℹ [2026/04/03 14:49:26] Screening...
+
+── At alpha = 0.005 ──
+
+Scissor identified 2820 Scissor+ cells and 3079 Scissor- cells.
+The percentage of selected cell is: 18.301%
+ℹ [2026/04/03 14:57:10] Scissor Ended.
+→ Running "scAB"...
+ℹ [2026/04/03 14:57:11] Start scAB screening.
+ℹ  Using "RNA_snn" graph for network.
+ℹ [2026/04/03 14:57:11] Calculating L, D and A
+ℹ [2026/04/03 14:57:16] Normalizing quantiles of data
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.8 GiB
+ℹ [2026/04/03 14:58:14] Calculating correlation
+ℹ [2026/04/03 14:58:23] Guanranking
+ℹ [2026/04/03 14:58:23] Selecting K
+loss of 2: 0.00179652
+loss of 3: 0.00189493
+ℹ [2026/04/03 15:10:45] Run NMF with phenotype and cell-cell similarity regularization at K = 2
+ℹ [2026/04/03 15:10:45] Selecting optimal `alpha` and `alpha_2`, this would take a while
+Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■                           20% | ETA:  5m
+Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■                     40% | ETA:  4m
+Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  2m
+Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA:  1m
+Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.005, alpha_2 = 0.01 ■■■■■■■                           20% | ETA:  3m
+Alpha = 0.005, alpha_2 = 0.01 ■■■■■■■■■■■■■                     40% | ETA:  3m
+Alpha = 0.005, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  2m
+Alpha = 0.005, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA:  1m
+Alpha = 0.005, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.001, alpha_2 = 0.01 ■■■■■■■                           20% | ETA:  3m
+Alpha = 0.001, alpha_2 = 0.01 ■■■■■■■■■■■■■                     40% | ETA:  3m
+Alpha = 0.001, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  2m
+Alpha = 0.001, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA:  1m

@@ -1,322 +1,182 @@
-# ! GSE165897-sc
-# ! GSE9891-GSE140082-bulk, GSE32062没有合适的二元变量数据
+# ! sc - GSE165897
+# ! bulk - GSE9891, GSE140082
+# ! binary
+# ! ov
+# ! sc - GSE123902
+# ! bulk - TCGA_LUAD
+# ! binary
+# ! LUAD
 
+# ==============================================================================
+# 1. Environment & Dependencies
+# ==============================================================================
+library(SigBridgeR)
 library(Seurat)
 library(dplyr)
+library(rlang)
+library(cli)
+library(qs)
 
-library(SigBridgeR)
+# 设置工作目录（建议后续改用 here:: 或 usethis::proj_path() 直接拼接绝对路径）
+setwd(file.path(usethis::proj_path(), "1_bench_screen/binary/ov"))
+data_path <- "/home/data/sigbridger/benchmark_data/ov"
+save_path <- "/home/data/sigbridger/benchmark_binary/ov/"
 
-setwd("~/R/Project/R_code/SigBridgeR/Tmp/benchmark_binary/ov/GSE165897")
+# 确保输出目录存在
+dir.create(save_path, recursive = TRUE, showWarnings = FALSE)
 
-data_path = "/home/data/sigbridger/benchmark_data/ov"
-save_path = "/home/data/sigbridger/benchmark_binary/ov/GSE165897"
-# *sc
-GSE165897_seurat = qs::qread(
-  file.path(data_path, "hgsoc_GSE165897_seurat.qs"),
-  nthreads = 4
-)
-
-
-# *pheno
-GSE9891_pheno_raw = qs::qread(
-  file.path(data_path, "ov_pheno_GSE9891.qs"),
-  nthreads = 4
-)
-
-# *binary data for screen
-GSE9891_pheno = setNames(
-  case_when(
-    GSE9891_pheno_raw$characteristics_ch1.1 == "Type : LMP" ~ 0,
-    GSE9891_pheno_raw$characteristics_ch1.1 == "Type : Malignant" ~ 1
+# ==============================================================================
+# 2. Configuration (集中管理数据集参数)
+# ==============================================================================
+bulk_configs <- list(
+  GSE9891 = list(
+    bulk_qs = "ov_bulkdata_GSE9891.qs",
+    pheno_qs = "ov_pheno_GSE9891.qs"
   ),
-  GSE9891_pheno_raw$geo_accession
-)
-# > table(GSE9891_pheno_raw$characteristics_ch1.1)
-#       Type : LMP Type : Malignant
-#               18              267
-# > table(GSE9891_pheno)
-# GSE9891_pheno
-#   0   1
-#  18 267
-
-# *bulk
-GSE9891_bulk = qs::qread(
-  file.path(data_path, "ov_bulkdata_GSE9891.qs"),
-  nthreads = 4
-)[,
-  names(GSE9891_pheno)
-]
-
-# * bulk
-# ! GSE32062表型没有好的二元变量数据
-# GSE32062_bulk = qs::qread(
-#     "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/benchmark_data/ov/ov_bulkdata_GSE32062_GPL6480.qs",
-#     nthreads = 4
-# )
-GSE140082_bulk = qs::qread(
-  file.path(data_path, "ov_bulkdata_GSE140082.qs"),
-  nthreads = 4
-)
-# GSM4153781 has NA values, find median and replace NA
-
-# # * pheno
-# # ! GSE32062表型没有好的二元变量数据
-# GSE32062_pheno = qs::qread(
-#     "/home/data/sigbridger/benchmark_data/ov/ov_pheno_GSE32062.qs",
-#     nthreads = 4
-# )
-
-GSE140082_pheno_raw = qs::qread(
-  file.path(data_path, "ov_pheno_GSE140082.qs"),
-  nthreads = 4
-)
-GSE140082_pheno_raw = GSE140082_pheno_raw[
-  GSE140082_pheno_raw$`newgrade:ch1` != "NA" &
-    !is.na(GSE140082_pheno_raw$`newgrade:ch1`),
-]
-GSE140082_pheno = setNames(
-  case_when(
-    GSE140082_pheno_raw$`newgrade:ch1` == "high.grade" ~ 1,
-    GSE140082_pheno_raw$`newgrade:ch1` == "low.grade" ~ 0
-  ),
-  GSE140082_pheno_raw$geo_accession
+  GSE140082 = list(
+    bulk_qs = "ov_bulkdata_GSE140082.qs",
+    pheno_qs = "ov_pheno_GSE140082.qs"
+  )
 )
 
-# ! 匹配
-GSE140082_bulk = GSE140082_bulk[, names(GSE140082_pheno)]
-
-# GSM4153781 has NA values, find median and replace NA
-median = median(GSE140082_bulk[, "GSM4153781"], na.rm = TRUE)
-na_indices <- which(is.na(GSE140082_bulk[, "GSM4153781"]))
-GSE140082_bulk[na_indices, "GSM4153781"] <- median
-
-# --------------------------------------------------------------------
-
-# # * screen
-# scissor_result = SigBridgeR::Screen(
-#     matched_bulk = GSE9891_bulk,
-#     sc_data = GSE165897_seurat,
-#     phenotype = GSE9891_pheno,
-#     label_type = "Malignant_or_LMP",
-#     phenotype_class = "binary",
-#     screen_method = "Scissor",
-#     path2save_scissor_inputs = "GSE165897_GSE9891_Scissor_inputs.RData",
-# )
-
-# qs::qsave(scissor_result, "GSE165897_GSE9891_Scissor_result.qs")
-
-# scissor_result = SigBridgeR::Screen(
-#     matched_bulk = GSE32062_bulk,
-#     sc_data = GSE165897_seurat,
-#     phenotype = GSE32062_pheno,
-#     label_type = "scissor",
-#     phenotype_class = "binary",
-#     screen_method = "Scissor",
-#     path2save_scissor_inputs = "GSE165897_GSE32062_Scissor_inputs.RData",
-# )
-
-# qs::qsave(scissor_result, "GSE165897_GSE32062_Scissor_result.qs")
-
-# scissor_result = SigBridgeR::Screen(
-#     matched_bulk = GSE140082_bulk,
-#     sc_data = GSE165897_seurat,
-#     phenotype = GSE140082_pheno,
-#     label_type = "bevacizumab_or_standard",
-#     phenotype_class = "binary",
-#     screen_method = "Scissor",
-#     path2save_scissor_inputs = "GSE165897_GSE140082_Scissor_inputs.RData",
-# )
-
-# qs::qsave(scissor_result, "GSE165897_GSE140082_Scissor_result.qs")
-
-# # # *scPAS
-# scpas_result = Screen(
-#     matched_bulk = GSE9891_bulk,
-#     sc_data = GSE165897_seurat,
-#     phenotype = GSE9891_pheno,
-#     label_type = "Malignant_or_LMP",
-#     phenotype_class = "binary",
-#     screen_method = "scPAS"
-# )
-
-# qs::qsave(
-#     scpas_result,
-#     file = "GSE165897_GSE9891_scPAS_result.qs",
-#     nthreads = 4
-# )
-
-# scpas_result = Screen(
-#     matched_bulk = GSE32062_bulk,
-#     sc_data = GSE165897_seurat,
-#     phenotype = GSE32062_pheno,
-#     label_type = "scPAS",
-#     phenotype_class = "binary",
-#     screen_method = "scPAS"
-# )
-
-# qs::qsave(
-#     scpas_result,
-#     file = "GSE165897_GSE32062_scPAS_result.qs",
-#     nthreads = 4
-# )
-
-# scpas_result = Screen(
-#     matched_bulk = GSE140082_bulk,
-#     sc_data = GSE165897_seurat,
-#     phenotype = GSE140082_pheno,
-#     label_type = "bevacizumab_or_standard",
-#     phenotype_class = "binary",
-#     screen_method = "scPAS"
-# )
-
-# qs::qsave(
-#     scpas_result,
-#     file = "GSE165897_GSE140082_scPAS_result.qs",
-#     nthreads = 4
-# )
-
-# *scAB
-# scab_result = Screen(
-#   matched_bulk = GSE9891_bulk,
-#   sc_data = GSE165897_seurat,
-#   phenotype = GSE9891_pheno,
-#   label_type = "Malignant_or_LMP",
-#   phenotype_class = "binary",
-#   screen_method = "scAB"
-# )
-
-# qs::qsave(
-#   scab_result,
-#   file = file.path(save_path, "GSE165897_GSE9891_scAB_result.qs"),
-#   nthreads = 4
-# )
-
-# scab_result = Screen(
-#   matched_bulk = GSE140082_bulk,
-#   sc_data = GSE165897_seurat,
-#   phenotype = GSE140082_pheno,
-#   label_type = "bevacizumab_or_standard",
-#   phenotype_class = "binary",
-#   screen_method = "scAB"
-# )
-
-# qs::qsave(
-#   scab_result,
-#   file = file.path(save_path, "GSE165897_GSE140082_scAB_result.qs"),
-#   nthreads = 4
-# )
-
-# # *scPP
-# scpp_result = Screen(
-#     matched_bulk = GSE9891_bulk,
-#     sc_data = GSE165897_seurat,
-#     phenotype = GSE9891_pheno,
-#     label_type = "Malignant_or_LMP",
-#     phenotype_class = "binary",
-#     screen_method = "scPP"
-# )
-
-# qs::qsave(
-#     scpp_result,
-#     file = "GSE165897_GSE9891_scPP_result.qs",
-#     nthreads = 4
-# )
-
-# scpp_result = Screen(
-#     matched_bulk = GSE140082_bulk,
-#     sc_data = GSE165897_seurat,
-#     phenotype = GSE140082_pheno,
-#     label_type = "bevacizumab_or_standard",
-#     phenotype_class = "binary",
-#     screen_method = "scPP"
-# )
-
-# qs::qsave(
-#     scpp_result,
-#     file = "GSE165897_GSE140082_scpp_result.qs",
-#     nthreads = 4
-# )
-
-# # ! scPP is not supported in GSE32062
-# scpp_result = Screen(
-#     matched_bulk = GSE32062_bulk,
-#     sc_data = GSE165897_seurat,
-#     phenotype = GSE32062_pheno,
-#     label_type = "scPP",
-#     phenotype_class = "binary",
-#     screen_method = "scPP"
-# )
-
-# qs::qsave(
-#     scpp_result,
-#     file = "GSE165897_GSE32062_scPP_result.qs",
-#     nthreads = 4
-# )
-
-# PID=283845
-
-SigBridgeR::setThreads(
-  4L,
-  tf_config = list(xla = TRUE, inter_op = 4L, intra_op = 4L)
-)
-
-for (method in c(
+methods <- c(
   "Scissor",
   "scAB",
-  #   "scPAS",
+  "SCIPAC",
+  "scPAS",
   "scPP",
   "DEGAS",
-  #   "PIPET",
-  "LP_SGL"
-)) {
-  #   rlang::try_fetch(
-  #     {
-  #       screen_9891 = Screen(
-  #         matched_bulk = GSE9891_bulk,
-  #         sc_data = GSE165897_seurat,
-  #         phenotype = GSE9891_pheno,
-  #         label_type = method,
-  #         phenotype_class = "binary",
-  #         screen_method = method
-  #       )
-  #       qs::qsave(
-  #         screen_9891,
-  #         file = file.path(
-  #           save_path,
-  #           paste0("GSE165897_GSE9891_", method, "_result.qs")
-  #         ),
-  #         nthreads = 4
-  #       )
-  #     },
-  #     error = function(e) {
-  #       cli::cli_h1("{method} failed")
-  #     }
-  #   )
+  "LP_SGL",
+  "PIPET"
+)
 
-  rlang::try_fetch(
-    {
-      screen_140082 = Screen(
-        matched_bulk = GSE140082_bulk,
-        sc_data = GSE165897_seurat,
-        phenotype = GSE140082_pheno,
-        label_type = method,
-        phenotype_class = "binary",
-        screen_method = method
-      )
+# ==============================================================================
+# 3. Core Pipeline Function
+# ==============================================================================
+run_screening_pipeline <- function(
+  config_name,
+  config,
+  sc_data,
+  methods,
+  data_path,
+  save_path
+) {
+  cli::cli_h2("Starting pipeline for {.val {config_name}}")
 
-      qs::qsave(
-        screen_140082,
-        file = file.path(
-          save_path,
-          paste0("GSE165897_GSE140082_", method, "_result.qs")
-        ),
-        nthreads = 4
-      )
-    },
-    error = function(e) {
-      print(e$message)
-      cli::cli_h1("{method} failed")
-    }
+  # 1. Load Bulk Data
+  bulk <- qs::qread(file.path(data_path, config$bulk_qs), nthreads = 4)
+  if (isTRUE(config$log_transform)) {
+    bulk <- log2(bulk + 1)
+  }
+
+  # 2. Process Phenotype & Extract Binary Labels
+  pheno <- qs::qread(file.path(data_path, config$pheno_qs), nthreads = 4)
+
+  if (config_name == "GSE140082") {
+    cli::cli_h1("GSE140082")
+    pheno <- pheno[
+      pheno$`newgrade:ch1` != "NA" &
+        !is.na(pheno$`newgrade:ch1`),
+    ]
+
+    labels <- setNames(
+      case_when(
+        pheno$`newgrade:ch1` == "high.grade" ~ 1,
+        pheno$`newgrade:ch1` == "low.grade" ~ 0
+      ),
+      pheno$geo_accession
+    )
+
+    # Handle NA in GSM4153781
+    median_val <- median(bulk[, "GSM4153781"], na.rm = TRUE)
+    na_indices <- which(is.na(bulk[, "GSM4153781"]))
+    bulk[na_indices, "GSM4153781"] <- median_val
+  } else if (config_name == "GSE9891") {
+    cli::cli_h1("GSE9891")
+    labels <- setNames(
+      case_when(
+        pheno$characteristics_ch1.1 == "Type : LMP" ~ 0,
+        pheno$characteristics_ch1.1 == "Type : Malignant" ~ 1
+      ),
+      pheno$geo_accession
+    )
+  }
+
+  # 3. Align Bulk Matrix with Labels
+  bulk <- bulk[, names(labels), drop = FALSE]
+  cli::cli_alert_info(
+    "Aligned bulk matrix: {nrow(bulk)} genes x {ncol(bulk)} samples"
   )
+
+  # 4. Run Screening Methods
+  results <- vector("list", length(methods))
+  for (m in methods) {
+    cli::cli_alert("Running {.val {m}}...")
+    results[[m]] <- rlang::try_fetch(
+      SigBridgeR::Screen(
+        bulk,
+        sc_data,
+        labels,
+        label_type = paste0(m, "_binary"),
+        phenotype_class = "binary",
+        screen_method = m,
+        alpha = if (m != "LP_SGL") NULL else 0.5,
+        alpha_2 = NULL,
+        path2save_scissor_inputs = NULL
+      ),
+      error = function(e) {
+        cli::cli_warn("{.fn {m}} failed: {.message {e$message}}")
+        NULL
+      }
+    )
+  }
+
+  # 5. Merge & Save
+
+  merged_res <- do.call(SigBridgeR::MergeResult, valid_results)
+  out_file <- file.path(
+    save_path,
+    paste0("binary_ov_", config_name, "_merged_seurat.qs")
+  )
+  qs::qsave(merged_res, out_file, nthreads = 8L)
+  cli::cli_success("Saved to {.path {out_file}}\n")
+
+  invisible(merged_res)
 }
-# PID = 2588004
+
+
+# ==============================================================================
+# 4. Execution
+# ==============================================================================
+# 1. Load scRNA-seq data once
+cli::cli_h1("Loading scRNA-seq reference...")
+seurat_ov <- qs::qread(
+  file.path(data_path, "hgsoc_GSE165897_seurat.qs"),
+  nthreads = 8L
+)
+
+# 2. Set computational threads (TensorFlow & OpenMP)
+SigBridgeR::setThreads(
+  8L,
+  tf_config = list(
+    xla_flag = "--tf_xla_auto_jit=2 --tf_xla_cpu_global_jit",
+    xla_device = NULL,
+    inter_op = 8L,
+    intra_op = 8L
+  )
+)
+
+# 3. Run pipeline for all datasets sequentially
+# (如需并行，可替换为 future.apply::future_lapply 或 parallel::mclapply)
+lapply(names(bulk_configs), function(name) {
+  run_screening_pipeline(
+    name,
+    bulk_configs[[name]],
+    seurat_ov,
+    methods,
+    data_path,
+    save_path
+  )
+})
+
+cli::cli_h1("✅ All screening tasks completed.")

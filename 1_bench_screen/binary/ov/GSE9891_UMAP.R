@@ -1,35 +1,44 @@
-library(Seurat)
-library(ggplot2)
-library(patchwork)
 library(zeallot)
 library(dplyr)
 
-# setwd("/home/yyx/R/Project/R_code/SigBridgeR/Tmp/benchmark_data//ov/GSE165897")
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+setwd(file.path(usethis::proj_path(), "1_bench_screen/binary/ov"))
 
-seurat_merged = qs::qread("GSE9891_hgsoc_merged_seurat.qs", nthreads = 4)
-set.seed(123)
-my_color = randomcoloR::distinctColorPalette(
-  k = 27,
-  runTsne = TRUE
+source("../../draw_umap.R")
+
+data_path <- "/home/data/sigbridger/benchmark_binary/ov"
+bulk_name <- "GSE9891"
+save_path <- file.path("plot", bulk_name)
+
+dir.create(
+  save_path,
+  recursive = TRUE,
+  showWarnings = FALSE
 )
 
-
-umap_treatment = DimPlot(
-  seurat_merged,
-  reduction = "umap",
-  group.by = "treatment_phase",
-  pt.size = 0.5,
-  label.size = 7,
-  cols = c(
-    "#ff3333",
-    "#386c9b"
-  )
+seurat_merged <- qs::qread(
+  file.path(data_path, paste0("binary_ov_", bulk_name, "_merged_seurat.rqs")),
+  nthreads = 8L
 )
+
+umap_cluster <- draw_umap(
+  seurat = seurat_merged,
+  group_by = "seurat_clusters",
+  title = "GSE165897 seurat_clusters",
+  save_path = file.path(save_path, "GSE165897_seurat_clusters_UMAP.png")
+)
+
+umap_tumor <- draw_umap(
+  seurat = seurat_merged,
+  group.by = "cnv_status",
+  cols = c("normal" = "#386c9b", "tumor" = "#a02020"),
+  save_path = file.path(save_path, "GSE165897_tumor_UMAP.png")
+)
+
 
 c(
   umap_scissor,
   umap_scpas,
+  umap_scipac,
   umap_scpp,
   umap_scab,
   umap_degas,
@@ -37,58 +46,29 @@ c(
   umap_pipet
 ) %<-%
   purrr::map(
-    c("scissor", "scPAS", "scPP", "scAB", "DEGAS", "LP_SGL", "PIPET"),
-    ~ Seurat::DimPlot(
-      seurat_merged,
-      group.by = .x,
-      pt.size = 0.5,
-      reduction = "umap",
-      cols = c(
-        "Neutral" = "#CECECE",
-        "Positive" = "#ff3333",
-        "Negative" = "#386c9b",
-        "Other" = "#CECECE"
-      )
-    ) +
-      ggplot2::ggtitle(.x)
-  )
-
-c(umap_cluster, umap_location, umap_celltype, umap_subtype) %<-%
-  purrr::map(
     c(
-      "seurat_clusters",
-      "anatomical_location",
-      "cell_type",
-      "cell_subtype"
+      "scissor",
+      "scPAS",
+      "SCIPAC",
+      "scPP",
+      'scAB',
+      "DEGAS",
+      "LP_SGL",
+      "PIPET"
     ),
-    ~ Seurat::DimPlot(
-      seurat_merged,
+    ~ draw_umap(
+      seurat = seurat_merged,
       group.by = .x,
-      pt.size = 0.5,
-      reduction = "umap",
-      cols = my_color
-    ) +
-      ggplot2::ggtitle(.x)
+      cols = c(
+        "Other" = "#CECECE",
+        "Neutral" = "#CECECE",
+        "Positive" = "#a02020",
+        "Negative" = "#386c9b"
+      ),
+      title = paste0("sc: GSE165897\nbulk: ", bulk_name, "\nmethod: ", .x),
+      save_path = file.path(
+        save_path,
+        paste0("GSE165897_", bulk_name, "_", .x, "_UMAP.png")
+      )
+    )
   )
-
-umaps = umap_cluster +
-  umap_location +
-  umap_treatment +
-  umap_scissor +
-  umap_scpas +
-  umap_scpp +
-  umap_scab +
-  umap_degas +
-  umap_lp_sgl +
-  umap_pipet +
-  umap_celltype +
-  umap_subtype +
-  plot_layout(ncol = 3)
-
-ggplot2::ggsave(
-  umaps,
-  filename = "GSE9891_UMAP_screened.png",
-  width = 15,
-  height = 14,
-  dpi = 400
-)
