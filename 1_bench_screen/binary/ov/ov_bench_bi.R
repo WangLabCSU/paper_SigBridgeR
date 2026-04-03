@@ -133,7 +133,7 @@ run_screening_pipeline <- function(
 
   # 5. Merge & Save
 
-  merged_res <- do.call(SigBridgeR::MergeResult, valid_results)
+  merged_res <- do.call(SigBridgeR::MergeResult, results)
   out_file <- file.path(
     save_path,
     paste0("binary_ov_", config_name, "_merged_seurat.qs")

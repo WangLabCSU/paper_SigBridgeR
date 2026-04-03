@@ -52,45 +52,45 @@ qs 0.27.3. Announcement: https://github.com/qsbase/qs/issues/103
 
 ℹ Aligned bulk matrix: 60660 genes x 563 samples
 → Running "Scissor"...
-ℹ [2026/04/03 14:48:06] Scissor start...
-ℹ [2026/04/03 14:48:06] Start from raw data...
+ℹ [2026/04/03 19:03:42] Scissor start...
+ℹ [2026/04/03 19:03:42] Start from raw data...
 ℹ Using "RNA_snn" graph for network.
 Warning in asMethod(object) :
   sparse->dense coercion: allocating vector of size 7.7 GiB
-ℹ [2026/04/03 14:48:15] Normalizing quantiles of data
+ℹ [2026/04/03 19:03:51] Normalizing quantiles of data
 Warning in asMethod(object) :
   sparse->dense coercion: allocating vector of size 2.8 GiB
-ℹ [2026/04/03 14:49:10] Subsetting data
-ℹ [2026/04/03 14:49:14] Calculating correlation
+ℹ [2026/04/03 19:04:45] Subsetting data
+ℹ [2026/04/03 19:04:49] Calculating correlation
 ----------------------------------------
 Five-number summary of correlations:
 0.18724 0.362851 0.38794 0.416241 0.524109
 ----------------------------------------
 ℹ Current phenotype contains 59 Scissor_binary_Negative and 504 Scissor_binary_Positive samples.
-ℹ [2026/04/03 14:49:25] Perform logistic regression on the given phenotypes...
-ℹ [2026/04/03 14:49:26] Screening...
+ℹ [2026/04/03 19:05:01] Perform logistic regression on the given phenotypes...
+ℹ [2026/04/03 19:05:02] Screening...
 
 ── At alpha = 0.005 ──
 
 Scissor identified 2820 Scissor+ cells and 3079 Scissor- cells.
 The percentage of selected cell is: 18.301%
-ℹ [2026/04/03 14:57:10] Scissor Ended.
+ℹ [2026/04/03 19:12:46] Scissor Ended.
 → Running "scAB"...
-ℹ [2026/04/03 14:57:11] Start scAB screening.
+ℹ [2026/04/03 19:12:46] Start scAB screening.
 ℹ  Using "RNA_snn" graph for network.
-ℹ [2026/04/03 14:57:11] Calculating L, D and A
-ℹ [2026/04/03 14:57:16] Normalizing quantiles of data
+ℹ [2026/04/03 19:12:46] Calculating L, D and A
+ℹ [2026/04/03 19:12:52] Normalizing quantiles of data
 Warning in asMethod(object) :
   sparse->dense coercion: allocating vector of size 2.8 GiB
-ℹ [2026/04/03 14:58:14] Calculating correlation
-ℹ [2026/04/03 14:58:23] Guanranking
-ℹ [2026/04/03 14:58:23] Selecting K
+ℹ [2026/04/03 19:13:51] Calculating correlation
+ℹ [2026/04/03 19:14:00] Guanranking
+ℹ [2026/04/03 19:14:00] Selecting K
 loss of 2: 0.00179652
 loss of 3: 0.00189493
-ℹ [2026/04/03 15:10:45] Run NMF with phenotype and cell-cell similarity regularization at K = 2
-ℹ [2026/04/03 15:10:45] Selecting optimal `alpha` and `alpha_2`, this would take a while
+ℹ [2026/04/03 19:26:00] Run NMF with phenotype and cell-cell similarity regularization at K = 2
+ℹ [2026/04/03 19:26:00] Selecting optimal `alpha` and `alpha_2`, this would take a while
 Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■                           20% | ETA:  5m
-Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■                     40% | ETA:  4m
+Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■                     40% | ETA:  3m
 Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  2m
 Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA:  1m
 Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
@@ -100,6 +100,4 @@ Alpha = 0.005, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■�
 Alpha = 0.005, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA:  1m
 Alpha = 0.005, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
 Alpha = 0.001, alpha_2 = 0.01 ■■■■■■■                           20% | ETA:  3m
-Alpha = 0.001, alpha_2 = 0.01 ■■■■■■■■■■■■■                     40% | ETA:  3m
-Alpha = 0.001, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  2m
-Alpha = 0.001, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA:  1m
+Alpha = 0.001, alpha_2 = 0.01 ■■■■■■■■■■■■■                     40% | ETA:  2m

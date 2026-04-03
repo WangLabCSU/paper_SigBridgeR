@@ -1,4 +1,4 @@
-# ! GSE42568
+# ! TCGA_BRCA
 
 setwd(file.path(usethis::proj_path(), "2_method_acc/brca_tnbc"))
 
@@ -8,23 +8,24 @@ data_dir <- "/home/data/sigbridger/benchmark_data/brca"
 
 sc_data <- qs::qread(file.path(data_dir, "seurat_tnbc.qs"), nthreads = 8L)
 
-bulk <- qs::qread(
-  file.path(data_dir, "brca_bulkdata_GSE42568.qs"),
-  nthreads = 2L
-)
-
+bulk <- qs::qread(file.path(data_dir, "brca_bulkdata_TCGA.qs"), nthreads = 2L)
+bulk <- log2(bulk + 1)
 cli::cli_alert_info("bulk data loaded: dim = ({.val {dim(bulk)}})")
 
-pheno <- qs::qread(file.path(data_dir, "brca_pheno_GSE42568.qs"))
+pheno <- qs::qread(file.path(data_dir, "brca_pheno_TCGA.qs"))
 
-cm_samples <- intersect(rownames(pheno), colnames(bulk))
+cm_samples <- intersect(pheno$sample, colnames(bulk))
 
+pheno_bi <- pheno %>%
+  mutate(sample_type = substr(sample, 14, 15)) %>%
+  filter(sample_type %in% c("01", "11"), sample %in% cm_samples) %>%
+  mutate(sample_type = as.integer(sample_type == "01")) %>%
+  {
+    setNames(.$sample_type, .$sample)
+  }
 
 bulk <- bulk[, names(pheno_bi)]
-pheno_bi <- setNames(
-  ifelse(pheno$`tissue:ch1` == "breast cancer", 1L, 0L),
-  cm_samples
-)
+
 
 cli::cli_alert_info("pheno data loaded: 1~tumor, 0~normal")
 table(pheno_bi)
