@@ -76,7 +76,7 @@ survival_tweaked <- press(
         phenotype = surv,
         phenotype_class = "survival",
         screen_method = "SCIPAC",
-        ncore =1L
+        ncore = 1L
       ),
       check = FALSE,
       iterations = 3
@@ -126,7 +126,8 @@ binary_tweaked <- press(
         sc_data = seurat_obj,
         phenotype = pheno_bi,
         phenotype_class = "binary",
-        screen_method = "SCIPAC"
+        screen_method = "SCIPAC",
+        ncore = 1L
       ),
       check = FALSE,
       iterations = 3

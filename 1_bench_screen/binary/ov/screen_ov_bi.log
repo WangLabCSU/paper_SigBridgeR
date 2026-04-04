@@ -80,3 +80,8 @@ The percentage of selected cell is: 74.538%
 
 Scissor identified 12717 Scissor+ cells and 21009 Scissor- cells.
 The percentage of selected cell is: 66.305%
+
+── At alpha = 0.05 ──
+
+Scissor identified 43993 Scissor+ cells and 6785 Scissor- cells.
+The percentage of selected cell is: 99.829%
