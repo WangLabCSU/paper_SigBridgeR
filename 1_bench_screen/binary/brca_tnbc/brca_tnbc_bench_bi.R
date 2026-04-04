@@ -30,33 +30,53 @@ bulk_configs <- list(
     pheno_qs = "brca_pheno_GSE42568.qs",
     id_col = "geo_accession",
     label_col = "tissue:ch1",
-    label_map = c("breast cancer" = 1L, "normal breast" = 0L)
+    label_map = c("breast cancer" = 1L, "normal breast" = 0L),
+    methods = c(
+      "Scissor",
+      "scAB",
+      "SCIPAC",
+      "scPAS",
+      "scPP",
+      "DEGAS",
+      "LP_SGL",
+      "PIPET"
+    )
   ),
   GSE162228 = list(
     bulk_qs = "brca_bulkdata_GSE162228.qs",
     pheno_qs = "brca_pheno_GSE162228.qs",
     id_col = "geo_accession",
     label_col = "relapse status:ch1",
-    label_map = c("relapse" = 1L, "non-relapse" = 0L)
+    label_map = c("relapse" = 1L, "non-relapse" = 0L),
+    methods = c(
+      "Scissor",
+      "scAB",
+      "SCIPAC",
+      "scPAS",
+      "scPP",
+      "DEGAS",
+      "LP_SGL",
+      "PIPET"
+    )
   ),
   TCGA_BRCA = list(
     bulk_qs = "brca_bulkdata_TCGA.qs",
     pheno_qs = "brca_pheno_TCGA.qs",
     is_tcga = TRUE,
-    log_transform = TRUE
+    log_transform = TRUE,
+    methods = c(
+      "Scissor",
+      "scAB",
+      "SCIPAC",
+      "scPAS",
+      "scPP",
+      "DEGAS",
+      "LP_SGL",
+      "PIPET"
+    )
   )
 )
 
-methods <- c(
-  "Scissor",
-  "scAB",
-  "SCIPAC",
-  "scPAS",
-  "scPP",
-  "DEGAS",
-  "LP_SGL",
-  "PIPET"
-)
 
 # ==============================================================================
 # 3. Core Pipeline Function
@@ -106,25 +126,39 @@ run_screening_pipeline <- function(
 
   # 4. Run Screening Methods
   results <- vector("list", length(methods))
+
   for (m in methods) {
-    cli::cli_alert("Running {.val {m}}...")
-    results[[m]] <- rlang::try_fetch(
-      SigBridgeR::Screen(
-        bulk,
-        sc_data,
-        labels,
-        label_type = paste0(m, "_binary"),
-        phenotype_class = "binary",
-        screen_method = m,
-        alpha = if (m != "LP_SGL") NULL else 0.5,
-        alpha_2 = NULL,
-        path2save_scissor_inputs = NULL
-      ),
-      error = function(e) {
-        cli::cli_warn("{.fn {m}} failed: {.message {e$message}}")
-        NULL
-      }
+    single_save_path <- file.path(
+      save_path,
+      paste0(config_name, "_", m, "_seurat.qs")
     )
+    if (file.exists(single_save_path)) {
+      cli::cli_alert_info(
+        "Load result method: {.val {m}}, bulk: {.val {config_name}} (already exists)"
+      )
+      results[[m]] <- qs::qread(single_save_path, nthreads = 4L)
+      next
+    }
+
+    screen_res <- SigBridgeR::Screen(
+      bulk,
+      sc_data,
+      labels,
+      label_type = paste0(m, "_binary"),
+      phenotype_class = "binary",
+      screen_method = m,
+      alpha = if (m != "LP_SGL") NULL else 0.5,
+      alpha_2 = NULL,
+      path2save_scissor_inputs = NULL
+    )
+
+    # ? save directly for reproductivity and time saving
+    qs::qsave(
+      x = screen_res$scRNA_data, # a seurat object
+      file = single_save_path
+    )
+
+    results[[m]] <- screen_res$scRNA_data
   }
 
   # 5. Merge & Save
@@ -161,11 +195,20 @@ SigBridgeR::setThreads(
 # 3. Run pipeline for all datasets sequentially
 # (如需并行，可替换为 future.apply::future_lapply 或 parallel::mclapply)
 lapply(names(bulk_configs), function(name) {
+  if (
+    file.exists(file.path(
+      save_path,
+      paste0("binary_TNBC_", name, "_merged_seurat.qs")
+    ))
+  ) {
+    cli::cli_alert_info("Skipping {.val {name}} (already exists)")
+    return(NULL)
+  }
   run_screening_pipeline(
     name,
     bulk_configs[[name]],
     seurat_TNBC,
-    methods,
+    bulk_configs[[name]]$methods,
     data_path,
     save_path
   )
