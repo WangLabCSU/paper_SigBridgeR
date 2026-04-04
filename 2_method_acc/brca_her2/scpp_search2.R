@@ -22,7 +22,7 @@ cm_samples <- intersect(rownames(pheno), colnames(bulk))
 
 bulk <- bulk[, names(pheno_bi)]
 pheno_bi <- setNames(
-  ifelse(pheno$`tissue:ch1` == "breast cancer", 1L, 0L),
+  as.integer(pheno$`tissue:ch1` == "breast cancer"),
   cm_samples
 )
 
@@ -40,3 +40,7 @@ tumor_cells <- rownames(seurat_tumor@meta.data)
 benchmark_label <- colnames(sc_data) %in% tumor_cells
 
 # * Screen
+
+
+
+# ! GSE42568

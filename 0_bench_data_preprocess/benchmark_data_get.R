@@ -346,6 +346,10 @@ qs::qsave(
 
 # ! partial empty data
 # ! OK
+ov_bulkdata_GSE32062 = exprs(
+  ov_bulk_GSE32062$`GSE32062-GPL6480_series_matrix.txt.gz`
+)
+
 ov_bulk_GSE32062$`GSE32062-GPL6480_series_matrix.txt.gz` |> fData() |> View()
 ov_bulk_GSE32062$`GSE32062-GPL6480_series_matrix.txt.gz` |> pData() |> View()
 

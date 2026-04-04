@@ -1,5 +1,5 @@
 nohup: ignoring input
-✔ SigBridgeR v3.5.0 loaded
+✔ SigBridgeR v3.6.0 loaded
 Loading required package: SeuratObject
 Loading required package: sp
 
@@ -52,25 +52,35 @@ qs 0.27.3. Announcement: https://github.com/qsbase/qs/issues/103
 
 ℹ Aligned bulk matrix: 54675 genes x 121 samples
 → Running "Scissor"...
-ℹ [2026/04/03 19:03:09] Scissor start...
-ℹ [2026/04/03 19:03:09] Start from raw data...
+ℹ [2026/04/04 10:08:44] Scissor start...
+ℹ [2026/04/04 10:08:44] Start from raw data...
 ℹ Using "RNA_snn" graph for network.
 Warning in asMethod(object) :
   sparse->dense coercion: allocating vector of size 22.3 GiB
-ℹ [2026/04/03 19:03:33] Normalizing quantiles of data
+ℹ [2026/04/04 10:09:05] Normalizing quantiles of data
 Warning in asMethod(object) :
   sparse->dense coercion: allocating vector of size 5.0 GiB
-ℹ [2026/04/03 19:05:07] Subsetting data
-ℹ [2026/04/03 19:05:14] Calculating correlation
+ℹ [2026/04/04 10:10:38] Subsetting data
+ℹ [2026/04/04 10:10:45] Calculating correlation
 ----------------------------------------
 Five-number summary of correlations:
 0.329022 0.407891 0.422383 0.434149 0.470962
 ----------------------------------------
 ℹ Current phenotype contains 17 Scissor_binary_Negative and 104 Scissor_binary_Positive samples.
-ℹ [2026/04/03 19:05:33] Perform logistic regression on the given phenotypes...
-ℹ [2026/04/03 19:05:34] Screening...
+ℹ [2026/04/04 10:11:02] Perform logistic regression on the given phenotypes...
+ℹ [2026/04/04 10:11:03] Screening...
 
 ── At alpha = 0.005 ──
 
 Scissor identified 10306 Scissor+ cells and 22150 Scissor- cells.
 The percentage of selected cell is: 59.389%
+
+── At alpha = 0.01 ──
+
+Scissor identified 9250 Scissor+ cells and 16092 Scissor- cells.
+The percentage of selected cell is: 46.371%
+
+── At alpha = 0.05 ──
+
+Scissor identified 5469 Scissor+ cells and 6652 Scissor- cells.
+The percentage of selected cell is: 22.179%

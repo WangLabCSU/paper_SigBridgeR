@@ -77,13 +77,13 @@ run_screening_pipeline <- function(
     bulk <- log2(bulk + 1)
   }
 
-  # 2. Process Phenotype & Extract Binary Labels
+  # 2. Process Phenotype & Extract Survival Labels
   pheno <- qs::qread(file.path(data_path, config$pheno_qs), nthreads = 4)
 
   if (config_name == "TCGA_BRCA") {
     surv_data <- pheno
   } else if (config_name == "GSE42568") {
-    surv_data <- GSE42568_pheno %>%
+    surv_data <- pheno %>%
       dplyr::select(
         `overall survival time_days:ch1`,
         `overall survival event:ch1`
@@ -95,7 +95,7 @@ run_screening_pipeline <- function(
       ) %>%
       dplyr::rename(time = 1, status = 2)
   } else if (config_name == "GSE162228") {
-    surv_data <- GSE162228_pheno %>%
+    surv_data <- pheno %>%
       dplyr::select(`overall survival (years):ch1`, `alive:ch1`) %>%
       dplyr::rename(time = 1, status = 2) %>%
       dplyr::mutate(

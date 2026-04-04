@@ -1,3 +1,5 @@
+# ! TCGA_BRCA
+
 setwd(file.path(usethis::proj_path(), "2_method_acc/brca_her2"))
 
 
@@ -40,7 +42,6 @@ benchmark_label <- colnames(sc_data) %in% tumor_cells
 
 # * Screen
 
-# ! scAB
 set.seed(123)
 alpha_samples <- Reduce(`*`, rep(c(2, 5), 2), init = 5e-4, accumulate = TRUE)
 tred <- 1:10
@@ -70,22 +71,28 @@ scab_res = scAB::scAB.optimized(
   alpha_2 = alpha_samples
 )
 
-combind_res <- data.table::data.table(
-  cell_id = colnames(sc_data),
-  benchmark = benchmark_label
-)
+combind_res <- data.frame()
 for (i in tred) {
-  seurat_screened = scAB::findSubset.optimized(
+  seurat_screened <- scAB::findSubset.optimized(
     Object = sc_data,
     scAB_Object = scab_res,
     tred = i
   )
 
-  label <- data.table::data.table(
+  label <- data.frame(
     seurat_screened$scAB == "Positive"
   )
   colnames(label) <- paste("process", i, sep = "_")
   combind_res <- cbind(combind_res, label)
+  gc()
 }
 
-data.table::fwrite(combind_res, "stats/scAB_search_res.csv")
+rownames(combind_res) <- colnames(sc_data)
+
+data.table::fwrite(
+  all_results,
+  file = "stats/scab_label_mat1.csv",
+  row.names = TRUE
+)
+
+cli::cli_alert_success(crayon::green("(1)scab random search completed."))

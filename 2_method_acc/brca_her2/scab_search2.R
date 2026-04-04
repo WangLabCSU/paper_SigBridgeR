@@ -40,3 +40,58 @@ tumor_cells <- rownames(seurat_tumor@meta.data)
 benchmark_label <- colnames(sc_data) %in% tumor_cells
 
 # * Screen
+
+set.seed(123)
+alpha_samples <- Reduce(`*`, rep(c(2, 5), 2), init = 5e-4, accumulate = TRUE)
+tred <- 1:10
+
+save_path = '/home/data/sigbridger/method_compare/binary/brca/her2/TCGA_BRCA'
+
+scAB_obj <- scAB::create_scAB.v5(
+  Object = sc_data,
+  bulk_dataset = bulk,
+  phenotype = pheno_bi,
+  method = "binary"
+)
+
+k <- scAB::select_K.optimized(
+  Object = scAB_obj,
+  K_max = 20L,
+  repeat_times = 10L,
+  maxiter = 2000L, # default in scAB
+  seed = seed,
+  verbose = verbose
+)
+
+scab_res = scAB::scAB.optimized(
+  Object = scab_obj,
+  K = k,
+  alpha = alpha_samples,
+  alpha_2 = alpha_samples
+)
+
+combind_res <- data.frame()
+for (i in tred) {
+  seurat_screened <- scAB::findSubset.optimized(
+    Object = sc_data,
+    scAB_Object = scab_res,
+    tred = i
+  )
+
+  label <- data.frame(
+    seurat_screened$scAB == "Positive"
+  )
+  colnames(label) <- paste("process", i, sep = "_")
+  combind_res <- cbind(combind_res, label)
+  gc()
+}
+
+rownames(combind_res) <- colnames(sc_data)
+
+data.table::fwrite(
+  all_results,
+  file = "stats/scab_label_mat2.csv",
+  row.names = TRUE
+)
+
+cli::cli_alert_success(crayon::green("(2)scab random search completed."))

@@ -19,7 +19,7 @@ bulk <- qs::qread(
   nthreads = 2L
 )
 # GSM4153781 has NA values, find median and replace NA
-median = median(bulk[, "GSM4153781"], na.rm = TRUE)
+median <- median(bulk[, "GSM4153781"], na.rm = TRUE)
 na_indices <- which(is.na(bulk[, "GSM4153781"]))
 bulk[na_indices, "GSM4153781"] <- median
 
@@ -39,7 +39,7 @@ intersect(rownames(seurat), rownames(bulk)) |> length()
 
 # -------------------------------- Output ------------------------------------------------
 
-output_dir <- "/home/data/sigbridger/method_time_cost/DEGAS"
+output_dir <- "/home/data/sigbridger/method_time_cost/SCIPAC"
 if (!dir.exists(output_dir)) {
   dir.create(output_dir, recursive = TRUE)
 }
@@ -75,7 +75,8 @@ survival_tweaked <- press(
         sc_data = seurat_obj,
         phenotype = surv,
         phenotype_class = "survival",
-        screen_method = "DEGAS"
+        screen_method = "SCIPAC",
+        ncore =1L
       ),
       check = FALSE,
       iterations = 3
@@ -86,10 +87,59 @@ survival_tweaked <- press(
 
 qs::qsave(
   survival_tweaked,
-  file.path(output_dir, "DEGAS_survival_bench.qs"),
+  file.path(output_dir, "SCIPAC_survival_bench.qs"),
   nthreads = 2L
 )
 
 gc()
 
-cli::cli_alert_info("Finished benchmarking DEGAS!")
+# -----------------------------------------------------------------------------------------------
+# binary
+
+pheno_bi <- pheno[pheno$`newgrade:ch1` != "NA" & !is.na(pheno$`newgrade:ch1`), ]
+pheno_bi <- setNames(
+  case_when(
+    pheno_bi$`newgrade:ch1` == "high.grade" ~ 1,
+    pheno_bi$`newgrade:ch1` == "low.grade" ~ 0
+  ),
+  pheno_bi$geo_accession
+)
+
+bulk_bi <- bulk[, names(pheno_bi)]
+
+#  ----------------- Benchmark -----------------------
+
+binary_tweaked <- press(
+  n_cells = c(1e3, 5e3, 1e4, 5e4),
+  {
+    seurat_obj <- switch(
+      as.character(n_cells),
+      "1000" = seurat_1k,
+      "5000" = seurat_5k,
+      "10000" = seurat_10k,
+      "50000" = seurat_50k
+    )
+
+    mark(
+      Screen(
+        matched_bulk = bulk_bi,
+        sc_data = seurat_obj,
+        phenotype = pheno_bi,
+        phenotype_class = "binary",
+        screen_method = "SCIPAC"
+      ),
+      check = FALSE,
+      iterations = 3
+    )
+  }
+) %>%
+  mutate(n_cells = as.factor(n_cells))
+
+qs::qsave(
+  binary_tweaked,
+  file.path(output_dir, "SCIPAC_binary_bench.qs"),
+  nthreads = 2L
+)
+
+
+cli::cli_alert_info("Finished benchmarking SCIPAC!")

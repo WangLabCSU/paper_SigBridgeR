@@ -40,3 +40,54 @@ tumor_cells <- rownames(seurat_tumor@meta.data)
 benchmark_label <- colnames(sc_data) %in% tumor_cells
 
 # * Screen
+
+# ? warmup
+
+tmp <- SigBridgeR::Screen(
+  matched_bulk = bulk,
+  sc_data = sc_data,
+  phenotype = pheno_bi,
+  label_type = "tumor",
+  phenotype_class = "binary",
+  screen_method = "Scissor",
+  alpha = 0.9,
+  cutoff = 0.2,
+  path2save_scissor_inputs = "TCGA_BRCA_her2_scissor_cache.RData"
+)
+rm(tmp)
+
+
+alpha <- c(0.001, seq(0.05, 0.95, 0.05))
+cutoff <- seq(0.05, 0.5, 0.05)
+
+results <- lapply(cutoff, \(c) {
+  res <- SigBridgeR::Screen(
+    matched_bulk = bulk,
+    sc_data = sc_data,
+    phenotype = pheno_bi,
+    label_type = glue::glue("process_{c}"),
+    phenotype_class = "binary",
+    screen_method = "scissor",
+    alpha = alpha,
+    cutoff = c,
+    path2load_scissor_cache = "TCGA_BRCA_her2_scissor_cache.RData"
+  )
+
+  pos = (res$scRNA_data$scissor == "Positive")
+  pos = data.frame(pos = pos_ratio)
+  colnames(pos) <- glue::glue("process_{c}")
+})
+
+results <- dplyr::bind_cols(results)
+rownames(results) = colnames(seurat)
+
+
+data.table::fwrite(
+  res,
+  file = "stats/scissor_label_mat2.csv",
+  row.names = TRUE
+)
+
+cli::cli_alert_info("scissor_label_mat2.csv saved")
+
+# ! GSE42568
