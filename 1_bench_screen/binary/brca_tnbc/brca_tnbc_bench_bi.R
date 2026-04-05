@@ -145,6 +145,7 @@ run_screening_pipeline <- function(
       results[[m]] <- qs::qread(single_save_path, nthreads = 4L)
       next
     }
+    gc(verbose = FALSE)
 
     screen_res <- SigBridgeR::Screen(
       bulk,

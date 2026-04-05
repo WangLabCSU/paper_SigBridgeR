@@ -138,6 +138,7 @@ run_screening_pipeline <- function(
       results[[m]] <- qs::qread(single_save_path, nthreads = 4L)
       next
     }
+    gc(verbose = FALSE)
 
     screen_res <- SigBridgeR::Screen(
       bulk,
@@ -162,7 +163,7 @@ run_screening_pipeline <- function(
 
   # 5. Merge & Save
 
-  merged_res <- rlang::exec(SigBridgeR::MergeResult,!!!results)
+  merged_res <- rlang::exec(SigBridgeR::MergeResult, !!!results)
   out_file <- file.path(
     save_path,
     paste0("binary_her2_", config_name, "_merged_seurat.qs")
