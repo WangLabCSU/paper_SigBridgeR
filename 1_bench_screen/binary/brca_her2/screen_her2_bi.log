@@ -68,3 +68,169 @@ Five-number summary of correlations:
 ℹ Current phenotype contains 17 Scissor_binary_Negative and 104 Scissor_binary_Positive samples.
 ℹ [2026/04/05 09:21:21] Perform logistic regression on the given phenotypes...
 ℹ [2026/04/05 09:21:22] Screening...
+
+── At alpha = 0.005 ──
+
+Scissor identified 12931 Scissor+ cells and 6846 Scissor- cells.
+The percentage of selected cell is: 62.051%
+
+── At alpha = 0.01 ──
+
+Scissor identified 10731 Scissor+ cells and 5776 Scissor- cells.
+The percentage of selected cell is: 51.792%
+
+── At alpha = 0.05 ──
+
+Scissor identified 6115 Scissor+ cells and 3654 Scissor- cells.
+The percentage of selected cell is: 30.651%
+
+── At alpha = 0.1 ──
+
+Scissor identified 4431 Scissor+ cells and 2693 Scissor- cells.
+The percentage of selected cell is: 22.352%
+
+── At alpha = 0.2 ──
+
+Scissor identified 2760 Scissor+ cells and 1810 Scissor- cells.
+The percentage of selected cell is: 14.339%
+ℹ [2026/04/05 10:05:41] Scissor Ended.
+ℹ [2026/04/05 10:05:53] Start scAB screening.
+ℹ  Using "RNA_snn" graph for network.
+ℹ [2026/04/05 10:05:53] Calculating L, D and A
+ℹ [2026/04/05 10:05:58] Normalizing quantiles of data
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.7 GiB
+ℹ [2026/04/05 10:06:54] Calculating correlation
+ℹ [2026/04/05 10:07:02] Guanranking
+ℹ [2026/04/05 10:07:02] Selecting K
+loss of 2: 0.00123199
+loss of 3: 0.00130042
+ℹ [2026/04/05 10:07:24] Run NMF with phenotype and cell-cell similarity regularization at K = 2
+ℹ [2026/04/05 10:07:24] Selecting optimal `alpha` and `alpha_2`, this would take a while
+Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■                           20% | ETA:  1m
+Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■                     40% | ETA: 40s
+Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■               60% | ETA: 25s
+Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 13s
+Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.005, alpha_2 = 0.01 ■■■■■■■                           20% | ETA:  1m
+Alpha = 0.005, alpha_2 = 0.01 ■■■■■■■■■■■■■                     40% | ETA: 44s
+Alpha = 0.005, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■               60% | ETA: 27s
+Alpha = 0.005, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 14s
+Alpha = 0.005, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.001, alpha_2 = 0.01 ■■■■■■■                           20% | ETA: 41s
+Alpha = 0.001, alpha_2 = 0.01 ■■■■■■■■■■■■■                     40% | ETA: 30s
+Alpha = 0.001, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■               60% | ETA: 19s
+Alpha = 0.001, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA:  9s
+Alpha = 0.001, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.01, alpha_2 = 0.005 ■■■■■■■                           20% | ETA:  1m
+Alpha = 0.01, alpha_2 = 0.005 ■■■■■■■■■■■■■                     40% | ETA: 45s
+Alpha = 0.01, alpha_2 = 0.005 ■■■■■■■■■■■■■■■■■■■               60% | ETA: 28s
+Alpha = 0.01, alpha_2 = 0.005 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 13s
+Alpha = 0.01, alpha_2 = 0.005 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.005, alpha_2 = 0.005 ■■■■■■■                           20% | ETA: 42s
+Alpha = 0.005, alpha_2 = 0.005 ■■■■■■■■■■■■■                     40% | ETA: 31s
+Alpha = 0.005, alpha_2 = 0.005 ■■■■■■■■■■■■■■■■■■■               60% | ETA: 21s
+Alpha = 0.005, alpha_2 = 0.005 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 11s
+Alpha = 0.005, alpha_2 = 0.005 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.001, alpha_2 = 0.005 ■■■■■■■                           20% | ETA: 38s
+Alpha = 0.001, alpha_2 = 0.005 ■■■■■■■■■■■■■                     40% | ETA: 28s
+Alpha = 0.001, alpha_2 = 0.005 ■■■■■■■■■■■■■■■■■■■               60% | ETA: 19s
+Alpha = 0.001, alpha_2 = 0.005 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA:  9s
+Alpha = 0.001, alpha_2 = 0.005 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.01, alpha_2 = 0.001 ■■■■■■■                           20% | ETA: 38s
+Alpha = 0.01, alpha_2 = 0.001 ■■■■■■■■■■■■■                     40% | ETA: 29s
+Alpha = 0.01, alpha_2 = 0.001 ■■■■■■■■■■■■■■■■■■■               60% | ETA: 19s
+Alpha = 0.01, alpha_2 = 0.001 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA:  9s
+Alpha = 0.01, alpha_2 = 0.001 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.005, alpha_2 = 0.001 ■■■■■■■                           20% | ETA: 38s
+Alpha = 0.005, alpha_2 = 0.001 ■■■■■■■■■■■■■                     40% | ETA: 29s
+Alpha = 0.005, alpha_2 = 0.001 ■■■■■■■■■■■■■■■■■■■               60% | ETA: 19s
+Alpha = 0.005, alpha_2 = 0.001 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 10s
+Alpha = 0.005, alpha_2 = 0.001 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.001, alpha_2 = 0.001 ■■■■■■■                           20% | ETA: 38s
+Alpha = 0.001, alpha_2 = 0.001 ■■■■■■■■■■■■■                     40% | ETA: 29s
+Alpha = 0.001, alpha_2 = 0.001 ■■■■■■■■■■■■■■■■■■■               60% | ETA: 19s
+Alpha = 0.001, alpha_2 = 0.001 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 10s
+Alpha = 0.001, alpha_2 = 0.001 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+✔ [2026/04/05 10:15:43] Best `alpha` and `alpha_2` are 0.001 and 0.005
+ℹ [2026/04/05 10:15:58] Screening cells...
+Warning in multimode::locmodes(x, mod0 = 2) :
+  If the density function has an unbounded support, artificial modes may have been created in the tails
+ℹ [2026/04/05 10:15:58] scAB screening done.
+ℹ [2026/04/05 10:16:09] Start SCIPAC screening
+ℹ [2026/04/05 10:16:09] Find common variable geme (hvg = 1000)
+Normalizing layer: counts
+Performing log-normalization
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Finding variable features for layer counts
+Calculating gene variances
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Calculating feature variances of standardized and clipped values
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+ℹ [2026/04/05 10:16:27] Running PCA (n_pc = 60)
+ℹ [2026/04/05 10:16:28] Clustering (resolution = 2)
+Warning: Data is of class matrix. Coercing to dgCMatrix.
+Computing nearest neighbor graph
+Computing SNN
+Modularity Optimizer version 1.3.0 by Ludo Waltman and Nees Jan van Eck
+
+Number of nodes: 31872
+Number of edges: 1491565
+
+Running Louvain algorithm...
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Maximum modularity in 10 random starts: 0.8732
+Number of communities: 45
+Elapsed time: 7 seconds
+ℹ [2026/04/05 10:16:46] Screening ("50 bootstrap")
+ℹ [2026/04/05 10:16:51] SCIPAC screening done
+ℹ [2026/04/05 10:17:01] Start scPAS screening.
+ℹ [2026/04/05 10:17:06] Quantile normalizing bulk data
+ℹ [2026/04/05 10:17:06] Extracting single-cell expression profiles...
+ℹ [2026/04/05 10:17:08] Constructing a gene-gene similarity by single cell data
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2026/04/05 10:17:12] Optimizing the network-regularized sparse regression model
+ℹ [2026/04/05 10:17:12] Current phenotype contains 17 scPAS_binary_Positive and 104 scPAS_binary_Negative samples.
+ℹ [2026/04/05 10:17:12] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 3.06847161422132
+scPAS identified 805 risk+ features and 1335 risk- features.
+The percentage of selected feature is: 76.758%
+
+── At alpha = 0.005 ──
+
+lambda = 0.585800968733122
+scPAS identified 525 risk+ features and 832 risk- features.
+The percentage of selected feature is: 48.673%
+
+── At alpha = 0.01 ──
+
+lambda = 0.292900484366561
+scPAS identified 386 risk+ features and 632 risk- features.
+The percentage of selected feature is: 36.514%
+
+── At alpha = 0.05 ──
+
+lambda = 0.0585800968733122
+scPAS identified 136 risk+ features and 303 risk- features.
+The percentage of selected feature is: 15.746%
+ℹ [2026/04/05 10:19:10] Calculating quantified risk scores...
+ℹ [2026/04/05 10:19:14] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2026/04/05 10:19:33] scPAS screening done.
+ℹ [2026/04/05 10:19:43] Start scPP screening.
+ℹ [2026/04/05 10:19:43] Finding overall markers...
+Error in paste(deparse(sys.calls()), collapse = "") : 
+  result would exceed 2^31-1 bytes
+Calls: lapply ... <Anonymous> -> <Anonymous> -> <Anonymous> -> showWarning -> paste
+Execution halted

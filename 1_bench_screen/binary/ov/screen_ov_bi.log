@@ -69,3 +69,13 @@ Five-number summary of correlations:
 ℹ Current phenotype contains 18 Scissor_binary_Negative and 267 Scissor_binary_Positive samples.
 ℹ [2026/04/05 09:24:07] Perform logistic regression on the given phenotypes...
 ℹ [2026/04/05 09:24:08] Screening...
+
+── At alpha = 0.005 ──
+
+Scissor identified 13860 Scissor+ cells and 24054 Scissor- cells.
+The percentage of selected cell is: 74.538%
+
+── At alpha = 0.01 ──
+
+Scissor identified 12717 Scissor+ cells and 21009 Scissor- cells.
+The percentage of selected cell is: 66.305%

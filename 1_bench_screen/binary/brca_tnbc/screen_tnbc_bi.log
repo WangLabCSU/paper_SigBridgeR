@@ -68,3 +68,55 @@ Five-number summary of correlations:
 ℹ Current phenotype contains 17 Scissor_binary_Negative and 104 Scissor_binary_Positive samples.
 ℹ [2026/04/05 09:22:03] Perform logistic regression on the given phenotypes...
 ℹ [2026/04/05 09:22:04] Screening...
+
+── At alpha = 0.005 ──
+
+Scissor identified 10306 Scissor+ cells and 22150 Scissor- cells.
+The percentage of selected cell is: 59.389%
+
+── At alpha = 0.01 ──
+
+Scissor identified 9250 Scissor+ cells and 16092 Scissor- cells.
+The percentage of selected cell is: 46.371%
+
+── At alpha = 0.05 ──
+
+Scissor identified 5469 Scissor+ cells and 6652 Scissor- cells.
+The percentage of selected cell is: 22.179%
+
+── At alpha = 0.1 ──
+
+Scissor identified 3839 Scissor+ cells and 4196 Scissor- cells.
+The percentage of selected cell is: 14.703%
+ℹ [2026/04/05 10:34:26] Scissor Ended.
+ℹ [2026/04/05 10:34:43] Start scAB screening.
+ℹ  Using "RNA_snn" graph for network.
+ℹ [2026/04/05 10:34:43] Calculating L, D and A
+ℹ [2026/04/05 10:34:58] Normalizing quantiles of data
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.0 GiB
+ℹ [2026/04/05 10:36:37] Calculating correlation
+ℹ [2026/04/05 10:36:50] Guanranking
+ℹ [2026/04/05 10:36:50] Selecting K
+loss of 2: 0.000980748
+loss of 3: 0.001015
+ℹ [2026/04/05 10:37:20] Run NMF with phenotype and cell-cell similarity regularization at K = 2
+ℹ [2026/04/05 10:37:20] Selecting optimal `alpha` and `alpha_2`, this would take a while
+Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■                           20% | ETA:  1m
+Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■                     40% | ETA:  1m
+Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■               60% | ETA: 42s
+Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 21s
+Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.005, alpha_2 = 0.01 ■■■■■■■                           20% | ETA:  1m
+Alpha = 0.005, alpha_2 = 0.01 ■■■■■■■■■■■■■                     40% | ETA:  1m
+Alpha = 0.005, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■               60% | ETA: 38s
+Alpha = 0.005, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 19s
+Alpha = 0.005, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.001, alpha_2 = 0.01 ■■■■■■■                           20% | ETA:  1m
+Alpha = 0.001, alpha_2 = 0.01 ■■■■■■■■■■■■■                     40% | ETA: 46s
+Alpha = 0.001, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■               60% | ETA: 31s
+Alpha = 0.001, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 15s
+Alpha = 0.001, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.01, alpha_2 = 0.005 ■■■■■■■                           20% | ETA:  1m
+Alpha = 0.01, alpha_2 = 0.005 ■■■■■■■■■■■■■                     40% | ETA:  1m
+Alpha = 0.01, alpha_2 = 0.005 ■■■■■■■■■■■■■■■■■■■               60% | ETA: 40s
