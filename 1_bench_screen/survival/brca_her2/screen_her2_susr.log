@@ -51,20 +51,33 @@ qs 0.27.3. Announcement: https://github.com/qsbase/qs/issues/103
 ── Starting pipeline for "GSE42568" ──
 
 ℹ Aligned bulk matrix: 54675 genes x 121 samples
-ℹ [2026/04/05 09:20:10] Scissor start...
-ℹ [2026/04/05 09:20:10] Start from raw data...
+ℹ [2026/04/04 20:07:40] Scissor start...
+ℹ [2026/04/04 20:07:40] Start from raw data...
 ℹ Using "RNA_snn" graph for network.
 Warning in asMethod(object) :
   sparse->dense coercion: allocating vector of size 7.6 GiB
-ℹ [2026/04/05 09:20:18] Normalizing quantiles of data
+ℹ [2026/04/04 20:07:50] Normalizing quantiles of data
 Warning in asMethod(object) :
   sparse->dense coercion: allocating vector of size 2.7 GiB
-ℹ [2026/04/05 09:21:09] Subsetting data
-ℹ [2026/04/05 09:21:13] Calculating correlation
+ℹ [2026/04/04 20:08:42] Subsetting data
+ℹ [2026/04/04 20:08:46] Calculating correlation
 ----------------------------------------
 Five-number summary of correlations:
 0.33853 0.417747 0.435946 0.449353 0.483695
 ----------------------------------------
-ℹ Current phenotype contains 17 Scissor_binary_Negative and 104 Scissor_binary_Positive samples.
-ℹ [2026/04/05 09:21:21] Perform logistic regression on the given phenotypes...
-ℹ [2026/04/05 09:21:22] Screening...
+Error in `FamilyProcessor[[family]]()`:
+✖ The size of survival data is wrong. Please check Scissor inputs and
+  selected regression type.
+Backtrace:
+     ▆
+  1. └─base::lapply(...)
+  2.   └─global FUN(X[[i]], ...)
+  3.     └─global run_screening_pipeline(...)
+  4.       └─SigBridgeR::Screen(...)
+  5.         ├─rlang::exec(method_config$executor, !!!params)
+  6.         └─SigBridgeR (local) `<fn>`(...)
+  7.           └─Scissor::Scissor.v5.optimized(...)
+  8.             └─FamilyProcessor[[family]]()
+  9.               └─cli::cli_abort(c(x = "The size of survival data is wrong. Please check Scissor inputs and selected regression type."))
+ 10.                 └─rlang::abort(...)
+Execution halted

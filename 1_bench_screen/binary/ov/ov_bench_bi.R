@@ -155,13 +155,13 @@ run_screening_pipeline <- function(
 
   # 5. Merge & Save
 
-  merged_res <- do.call(SigBridgeR::MergeResult, results)
+  merged_res <- rlang::exec(SigBridgeR::MergeResult,!!!results)
   out_file <- file.path(
     save_path,
     paste0("binary_ov_", config_name, "_merged_seurat.qs")
   )
   qs::qsave(merged_res, out_file, nthreads = 8L)
-  cli::cli_success("Saved to {.path {out_file}}\n")
+  cli::cli_alert_success("Saved to {.path {out_file}}\n")
 
   invisible(merged_res)
 }

@@ -75,8 +75,7 @@ survival_tweaked <- press(
         sc_data = seurat_obj,
         phenotype = surv,
         phenotype_class = "survival",
-        screen_method = "PIPET",
-        log2FC = 0.585
+        screen_method = "PIPET"
       ),
       check = FALSE,
       iterations = 3

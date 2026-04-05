@@ -52,36 +52,20 @@ qs 0.27.3. Announcement: https://github.com/qsbase/qs/issues/103
 
 ── GSE9891 ─────────────────────────────────────────────────────────────────────
 ℹ Aligned bulk matrix: 54621 genes x 285 samples
-→ Running "Scissor"...
-ℹ [2026/04/04 10:09:27] Scissor start...
-ℹ [2026/04/04 10:09:27] Start from raw data...
+ℹ [2026/04/05 09:21:48] Scissor start...
+ℹ [2026/04/05 09:21:48] Start from raw data...
 ℹ Using "RNA_snn" graph for network.
 Warning in asMethod(object) :
   sparse->dense coercion: allocating vector of size 19.3 GiB
-ℹ [2026/04/04 10:09:46] Normalizing quantiles of data
+ℹ [2026/04/05 09:22:06] Normalizing quantiles of data
 Warning in asMethod(object) :
   sparse->dense coercion: allocating vector of size 5.0 GiB
-ℹ [2026/04/04 10:11:18] Subsetting data
-ℹ [2026/04/04 10:11:25] Calculating correlation
+ℹ [2026/04/05 09:23:40] Subsetting data
+ℹ [2026/04/05 09:23:48] Calculating correlation
 ----------------------------------------
 Five-number summary of correlations:
 0.429641 0.461918 0.471032 0.479383 0.504757
 ----------------------------------------
 ℹ Current phenotype contains 18 Scissor_binary_Negative and 267 Scissor_binary_Positive samples.
-ℹ [2026/04/04 10:11:42] Perform logistic regression on the given phenotypes...
-ℹ [2026/04/04 10:11:43] Screening...
-
-── At alpha = 0.005 ──
-
-Scissor identified 13860 Scissor+ cells and 24054 Scissor- cells.
-The percentage of selected cell is: 74.538%
-
-── At alpha = 0.01 ──
-
-Scissor identified 12717 Scissor+ cells and 21009 Scissor- cells.
-The percentage of selected cell is: 66.305%
-
-── At alpha = 0.05 ──
-
-Scissor identified 43993 Scissor+ cells and 6785 Scissor- cells.
-The percentage of selected cell is: 99.829%
+ℹ [2026/04/05 09:24:07] Perform logistic regression on the given phenotypes...
+ℹ [2026/04/05 09:24:08] Screening...

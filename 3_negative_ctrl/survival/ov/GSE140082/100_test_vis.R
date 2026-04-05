@@ -101,13 +101,14 @@ PlotGroupMeanScores <- function(
     ) +
     geom_signif(
       comparisons = list(c("A", "B"), c("A", "D")), # 设置需要比较的组
-      map_signif_level = T, #是否使用星号显示
+      map_signif_level = TRUE, #是否使用星号显示
       test = t.test, ##计算方法
       y_position = c(25, 28), #图中横线位置设置
       tip_length = c(c(0.7, 0.3), c(0.8, 0.3)), #横线下方的竖线设置
       size = 1,
       color = "black"
-    )  +scale_fill_manual(values = palette, guide = "none") +
+    ) +
+    scale_fill_manual(values = palette, guide = "none") +
     scale_color_manual(values = palette, guide = "none") +
     cowplot::theme_cowplot() +
     theme(

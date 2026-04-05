@@ -470,13 +470,13 @@ purrr::walk(
         fontface = "bold"
       ) +
       scale_x_continuous(
-        breaks = c(1:length(unique(plot_df2[["bulk"]]))) + 0.5,
+        breaks = seq_along(unique(plot_df2[["bulk"]])) + 0.5,
         expand = c(0, 0),
         labels = sort(unique(plot_df2[["bulk"]]))
       ) +
       scale_y_continuous(
         expand = c(0, 0),
-        breaks = c(1:length(unique(plot_df2[["comparison"]]))) + 0.5,
+        breaks = seq_along(unique(plot_df2[["comparison"]])) + 0.5,
         labels = sort(unique(plot_df2[["comparison"]])),
         sec.axis = dup_axis()
       ) +

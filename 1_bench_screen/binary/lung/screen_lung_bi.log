@@ -51,200 +51,38 @@ qs 0.27.3. Announcement: https://github.com/qsbase/qs/issues/103
 ── Starting pipeline for "TCGA_LUAD" ──
 
 ℹ Aligned bulk matrix: 60660 genes x 563 samples
-→ Running "Scissor"...
-ℹ [2026/04/04 10:09:06] Scissor start...
-ℹ [2026/04/04 10:09:06] Start from raw data...
-ℹ Using "RNA_snn" graph for network.
-Warning in asMethod(object) :
-  sparse->dense coercion: allocating vector of size 7.7 GiB
-ℹ [2026/04/04 10:09:15] Normalizing quantiles of data
-Warning in asMethod(object) :
-  sparse->dense coercion: allocating vector of size 2.8 GiB
-ℹ [2026/04/04 10:10:09] Subsetting data
-ℹ [2026/04/04 10:10:13] Calculating correlation
-----------------------------------------
-Five-number summary of correlations:
-0.18724 0.362851 0.38794 0.416241 0.524109
-----------------------------------------
-ℹ Current phenotype contains 59 Scissor_binary_Negative and 504 Scissor_binary_Positive samples.
-ℹ [2026/04/04 10:10:25] Perform logistic regression on the given phenotypes...
-ℹ [2026/04/04 10:10:26] Screening...
-
-── At alpha = 0.005 ──
-
-Scissor identified 2820 Scissor+ cells and 3079 Scissor- cells.
-The percentage of selected cell is: 18.301%
-ℹ [2026/04/04 10:18:22] Scissor Ended.
-→ Running "scAB"...
-ℹ [2026/04/04 10:18:22] Start scAB screening.
-ℹ  Using "RNA_snn" graph for network.
-ℹ [2026/04/04 10:18:22] Calculating L, D and A
-ℹ [2026/04/04 10:18:27] Normalizing quantiles of data
+ℹ Load result method: "Scissor", bulk: "TCGA_LUAD" (already exists)
+ℹ Load result method: "scAB", bulk: "TCGA_LUAD" (already exists)
+ℹ Load result method: "SCIPAC", bulk: "TCGA_LUAD" (already exists)
+ℹ Load result method: "scPAS", bulk: "TCGA_LUAD" (already exists)
+ℹ [2026/04/04 19:09:41] Starting DEGAS Screen
+ℹ [2026/04/04 19:09:46] Setting up Environment...
+ℹ [2026/04/04 19:09:49] Existing environment "r-reticulate-degas" found
+ℹ [2026/04/04 19:09:50] Training DEGAS model...
+ℹ [2026/04/04 19:09:50] 3-layer DenseNet BlankClass DEGAS model
 Warning in asMethod(object) :
   sparse->dense coercion: allocating vector of size 2.8 GiB
-ℹ [2026/04/04 10:19:26] Calculating correlation
-ℹ [2026/04/04 10:19:35] Guanranking
-ℹ [2026/04/04 10:19:35] Selecting K
-loss of 2: 0.00179652
-loss of 3: 0.00189493
-ℹ [2026/04/04 10:31:59] Run NMF with phenotype and cell-cell similarity regularization at K = 2
-ℹ [2026/04/04 10:31:59] Selecting optimal `alpha` and `alpha_2`, this would take a while
-Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■                           20% | ETA:  5m
-Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■                     40% | ETA:  4m
-Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  2m
-Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA:  1m
-Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
-Alpha = 0.005, alpha_2 = 0.01 ■■■■■■■                           20% | ETA:  4m
-Alpha = 0.005, alpha_2 = 0.01 ■■■■■■■■■■■■■                     40% | ETA:  3m
-Alpha = 0.005, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  2m
-Alpha = 0.005, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA:  1m
-Alpha = 0.005, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
-Alpha = 0.001, alpha_2 = 0.01 ■■■■■■■                           20% | ETA:  3m
-Alpha = 0.001, alpha_2 = 0.01 ■■■■■■■■■■■■■                     40% | ETA:  2m
-Alpha = 0.001, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  2m
-Alpha = 0.001, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA:  1m
-Alpha = 0.001, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
-Alpha = 0.01, alpha_2 = 0.005 ■■■■■■■                           20% | ETA:  4m
-Alpha = 0.01, alpha_2 = 0.005 ■■■■■■■■■■■■■                     40% | ETA:  3m
-Alpha = 0.01, alpha_2 = 0.005 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  2m
-Alpha = 0.01, alpha_2 = 0.005 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA:  1m
-Alpha = 0.01, alpha_2 = 0.005 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
-Alpha = 0.005, alpha_2 = 0.005 ■■■■■■■                           20% | ETA:  3m
-Alpha = 0.005, alpha_2 = 0.005 ■■■■■■■■■■■■■                     40% | ETA:  3m
-Alpha = 0.005, alpha_2 = 0.005 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  2m
-Alpha = 0.005, alpha_2 = 0.005 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA:  1m
-Alpha = 0.005, alpha_2 = 0.005 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
-Alpha = 0.001, alpha_2 = 0.005 ■■■■■■■                           20% | ETA:  3m
-Alpha = 0.001, alpha_2 = 0.005 ■■■■■■■■■■■■■                     40% | ETA:  3m
-Alpha = 0.001, alpha_2 = 0.005 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  2m
-Alpha = 0.001, alpha_2 = 0.005 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA:  1m
-Alpha = 0.001, alpha_2 = 0.005 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
-Alpha = 0.01, alpha_2 = 0.001 ■■■■■■■                           20% | ETA:  3m
-Alpha = 0.01, alpha_2 = 0.001 ■■■■■■■■■■■■■                     40% | ETA:  2m
-Alpha = 0.01, alpha_2 = 0.001 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  2m
-Alpha = 0.01, alpha_2 = 0.001 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA:  1m
-Alpha = 0.01, alpha_2 = 0.001 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
-Alpha = 0.005, alpha_2 = 0.001 ■■■■■■■                           20% | ETA:  3m
-Alpha = 0.005, alpha_2 = 0.001 ■■■■■■■■■■■■■                     40% | ETA:  2m
-Alpha = 0.005, alpha_2 = 0.001 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  2m
-Alpha = 0.005, alpha_2 = 0.001 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA:  1m
-Alpha = 0.005, alpha_2 = 0.001 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
-Alpha = 0.001, alpha_2 = 0.001 ■■■■■■■                           20% | ETA:  3m
-Alpha = 0.001, alpha_2 = 0.001 ■■■■■■■■■■■■■                     40% | ETA:  2m
-Alpha = 0.001, alpha_2 = 0.001 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  2m
-Alpha = 0.001, alpha_2 = 0.001 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA:  1m
-Alpha = 0.001, alpha_2 = 0.001 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
-✔ [2026/04/04 11:22:22] Best `alpha` and `alpha_2` are 0.005 and 0.001
-ℹ [2026/04/04 11:23:35] Screening cells...
-Warning in multimode::locmodes(x, mod0 = 2) :
-  If the density function has an unbounded support, artificial modes may have been created in the tails
-ℹ [2026/04/04 11:23:36] scAB screening done.
-→ Running "SCIPAC"...
-ℹ [2026/04/04 11:23:36] Start SCIPAC screening
-ℹ [2026/04/04 11:23:36] Find common variable geme (hvg = 1000)
-Normalizing layer: counts
-Performing log-normalization
-0%   10   20   30   40   50   60   70   80   90   100%
-[----|----|----|----|----|----|----|----|----|----|
-**************************************************|
-Finding variable features for layer counts
-Calculating gene variances
-0%   10   20   30   40   50   60   70   80   90   100%
-[----|----|----|----|----|----|----|----|----|----|
-**************************************************|
-Calculating feature variances of standardized and clipped values
-0%   10   20   30   40   50   60   70   80   90   100%
-[----|----|----|----|----|----|----|----|----|----|
-**************************************************|
-ℹ [2026/04/04 11:23:54] Running PCA (n_pc = 60)
-ℹ [2026/04/04 11:23:55] Clustering (resolution = 2)
-Warning: Data is of class matrix. Coercing to dgCMatrix.
-Computing nearest neighbor graph
-Computing SNN
-Modularity Optimizer version 1.3.0 by Ludo Waltman and Nees Jan van Eck
-
-Number of nodes: 32234
-Number of edges: 1342526
-
-Running Louvain algorithm...
-0%   10   20   30   40   50   60   70   80   90   100%
-[----|----|----|----|----|----|----|----|----|----|
-**************************************************|
-Maximum modularity in 10 random starts: 0.8766
-Number of communities: 50
-Elapsed time: 7 seconds
-ℹ [2026/04/04 11:24:14] Screening ("50 bootstrap")
-ℹ [2026/04/04 11:24:22] SCIPAC screening done
-→ Running "scPAS"...
-ℹ [2026/04/04 11:24:22] Start scPAS screening.
-ℹ [2026/04/04 11:24:27] Quantile normalizing bulk data
-ℹ [2026/04/04 11:24:28] Extracting single-cell expression profiles...
-ℹ [2026/04/04 11:24:29] Constructing a gene-gene similarity by single cell data
-Building SNN based on a provided distance matrix
-Computing SNN
-ℹ [2026/04/04 11:24:35] Optimizing the network-regularized sparse regression model
-ℹ [2026/04/04 11:24:35] Current phenotype contains 59 scPAS_binary_Positive and 504 scPAS_binary_Negative samples.
-ℹ [2026/04/04 11:24:35] Perform logistic regression on the given phenotypes...
-
-── At alpha = 0.001 ──
-
-lambda = 2.20923726203737
-scPAS identified 1115 risk+ features and 1103 risk- features.
-The percentage of selected feature is: 74.33%
-
-── At alpha = 0.005 ──
-
-lambda = 0.441847452407474
-scPAS identified 755 risk+ features and 773 risk- features.
-The percentage of selected feature is: 51.206%
-
-── At alpha = 0.01 ──
-
-lambda = 0.220923726203737
-scPAS identified 589 risk+ features and 592 risk- features.
-The percentage of selected feature is: 39.578%
-
-── At alpha = 0.05 ──
-
-lambda = 0.0441847452407474
-scPAS identified 261 risk+ features and 268 risk- features.
-The percentage of selected feature is: 17.728%
-ℹ [2026/04/04 11:28:19] Calculating quantified risk scores...
-ℹ [2026/04/04 11:28:23] Qualitative identification by permutation test program with 2000 times random perturbations...
-✔ [2026/04/04 11:28:44] scPAS screening done.
-→ Running "scPP"...
-ℹ [2026/04/04 11:28:45] Start scPP screening.
-ℹ [2026/04/04 11:28:45] Finding overall markers...
-Warning: `scPP()` failed: result would exceed 2^31-1 bytes
-→ Running "DEGAS"...
-ℹ [2026/04/04 11:44:55] Starting DEGAS Screen
-ℹ [2026/04/04 11:45:00] Setting up Environment...
-ℹ [2026/04/04 11:45:04] Existing environment "r-reticulate-degas" found
-ℹ [2026/04/04 11:45:05] Training DEGAS model...
-ℹ [2026/04/04 11:45:05] 3-layer DenseNet BlankClass DEGAS model
-Warning in asMethod(object) :
-  sparse->dense coercion: allocating vector of size 2.8 GiB
-ℹ [2026/04/04 11:45:42] Python check passed, using Python 3.9.15 
-ℹ [2026/04/04 11:45:42] Training progress: 1/5...
+ℹ [2026/04/04 19:10:07] Python check passed, using Python 3.9.15 
+ℹ [2026/04/04 19:10:07] Training progress: 1/5...
 WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
 Instructions for updating:
 non-resource variables are not supported in the long term
 WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/util/dispatch.py:201: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
 Instructions for updating:
 Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
-2026-04-04 11:46:12.282796: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
-2026-04-04 11:46:12.283132: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+2026-04-04 19:10:35.106213: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2026-04-04 19:10:35.106578: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
 To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
-2026-04-04 11:46:12.294193: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:196] None of the MLIR optimization passes are enabled (registered 0 passes)
-2026-04-04 11:46:12.300197: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 2595145000 Hz
-2026-04-04 11:46:12.629364: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x70eb14009b40 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
-2026-04-04 11:46:12.629442: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
-2026-04-04 11:46:12.665779: I tensorflow/compiler/jit/xla_compilation_cache.cc:333] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+2026-04-04 19:10:35.116931: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:196] None of the MLIR optimization passes are enabled (registered 0 passes)
+2026-04-04 19:10:35.122965: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 2595145000 Hz
+2026-04-04 19:10:35.469479: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7499cc009940 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2026-04-04 19:10:35.469566: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2026-04-04 19:10:35.506643: I tensorflow/compiler/jit/xla_compilation_cache.cc:333] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
 Starting training...
 Step       Total Loss      Label Loss      MMD Loss       
 -------------------------------------------------------
 0          4.808400        0.718805        0.989753       
-50         1.761313        0.588058        0.137118       
+50         1.761313        0.588058        0.137116       
 100        1.593761        0.505764        0.134035       
 150        1.632169        0.435474        0.122423       
 200        1.260961        0.436896        0.130575       
@@ -284,22 +122,22 @@ Step       Total Loss      Label Loss      MMD Loss
 1900       1.036378        0.328520        0.125824       
 1950       1.112462        0.359380        0.123016       
 2000       1.081994        0.352993        0.128090       
- ■■■■■■■                           20% |  ETA: 13m
-ℹ [2026/04/04 11:48:59] Training progress: 2/5...
- ■■■■■■■                           20% |  ETA: 13mWARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+ ■■■■■■■                           20% |  ETA: 12m
+ℹ [2026/04/04 19:13:04] Training progress: 2/5...
+ ■■■■■■■                           20% |  ETA: 12mWARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
 Instructions for updating:
 non-resource variables are not supported in the long term
 WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/util/dispatch.py:201: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
 Instructions for updating:
 Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
-2026-04-04 11:49:28.662803: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
-2026-04-04 11:49:28.663145: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+2026-04-04 19:13:32.626741: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2026-04-04 19:13:32.627096: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
 To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
-2026-04-04 11:49:28.673602: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:196] None of the MLIR optimization passes are enabled (registered 0 passes)
-2026-04-04 11:49:28.679579: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 2595145000 Hz
-2026-04-04 11:49:29.008322: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x748da8009a40 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
-2026-04-04 11:49:29.008439: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
-2026-04-04 11:49:29.045369: I tensorflow/compiler/jit/xla_compilation_cache.cc:333] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+2026-04-04 19:13:32.638831: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:196] None of the MLIR optimization passes are enabled (registered 0 passes)
+2026-04-04 19:13:32.645076: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 2595145000 Hz
+2026-04-04 19:13:32.984074: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x708d60009900 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2026-04-04 19:13:32.984141: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2026-04-04 19:13:33.008066: I tensorflow/compiler/jit/xla_compilation_cache.cc:333] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
 Starting training...
 Step       Total Loss      Label Loss      MMD Loss       
 -------------------------------------------------------
@@ -344,27 +182,27 @@ Step       Total Loss      Label Loss      MMD Loss
 1900       1.068170        0.330929        0.133290       
 1950       1.122392        0.365239        0.125838       
 2000       1.134630        0.374707        0.127036       
- ■■■■■■■■■■■■■                     40% |  ETA: 10m
-ℹ [2026/04/04 11:52:09] Training progress: 3/5...
- ■■■■■■■■■■■■■                     40% |  ETA: 10mWARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+ ■■■■■■■■■■■■■                     40% |  ETA:  9m
+ℹ [2026/04/04 19:16:07] Training progress: 3/5...
+ ■■■■■■■■■■■■■                     40% |  ETA:  9mWARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
 Instructions for updating:
 non-resource variables are not supported in the long term
 WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/util/dispatch.py:201: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
 Instructions for updating:
 Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
-2026-04-04 11:52:37.519830: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
-2026-04-04 11:52:37.520165: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+2026-04-04 19:16:35.310244: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2026-04-04 19:16:35.310630: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
 To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
-2026-04-04 11:52:37.530853: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:196] None of the MLIR optimization passes are enabled (registered 0 passes)
-2026-04-04 11:52:37.536882: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 2595145000 Hz
-2026-04-04 11:52:37.866119: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7feb98009b00 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
-2026-04-04 11:52:37.866220: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
-2026-04-04 11:52:37.903963: I tensorflow/compiler/jit/xla_compilation_cache.cc:333] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+2026-04-04 19:16:35.323106: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:196] None of the MLIR optimization passes are enabled (registered 0 passes)
+2026-04-04 19:16:35.330679: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 2595145000 Hz
+2026-04-04 19:16:35.675000: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7219ec00a810 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2026-04-04 19:16:35.675063: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2026-04-04 19:16:35.714119: I tensorflow/compiler/jit/xla_compilation_cache.cc:333] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
 Starting training...
 Step       Total Loss      Label Loss      MMD Loss       
 -------------------------------------------------------
 0          5.075127        0.874815        0.876243       
-50         1.826236        0.658008        0.129773       
+50         1.826236        0.658008        0.129771       
 100        1.808973        0.584262        0.125951       
 150        1.787963        0.671661        0.129604       
 200        1.642975        0.468649        0.130335       
@@ -405,21 +243,21 @@ Step       Total Loss      Label Loss      MMD Loss
 1950       1.094886        0.359117        0.121753       
 2000       1.115866        0.372628        0.124204       
  ■■■■■■■■■■■■■■■■■■■               60% |  ETA:  6m
-ℹ [2026/04/04 11:55:21] Training progress: 4/5...
+ℹ [2026/04/04 19:19:08] Training progress: 4/5...
  ■■■■■■■■■■■■■■■■■■■               60% |  ETA:  6mWARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
 Instructions for updating:
 non-resource variables are not supported in the long term
 WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/util/dispatch.py:201: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
 Instructions for updating:
 Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
-2026-04-04 11:55:49.542247: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
-2026-04-04 11:55:49.542619: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+2026-04-04 19:19:36.770617: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2026-04-04 19:19:36.770968: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
 To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
-2026-04-04 11:55:49.553121: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:196] None of the MLIR optimization passes are enabled (registered 0 passes)
-2026-04-04 11:55:49.559144: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 2595145000 Hz
-2026-04-04 11:55:49.889766: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7c0610009be0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
-2026-04-04 11:55:49.889863: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
-2026-04-04 11:55:49.926058: I tensorflow/compiler/jit/xla_compilation_cache.cc:333] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+2026-04-04 19:19:36.782585: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:196] None of the MLIR optimization passes are enabled (registered 0 passes)
+2026-04-04 19:19:36.788742: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 2595145000 Hz
+2026-04-04 19:19:37.135172: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7ff068009be0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2026-04-04 19:19:37.135253: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2026-04-04 19:19:37.179819: I tensorflow/compiler/jit/xla_compilation_cache.cc:333] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
 Starting training...
 Step       Total Loss      Label Loss      MMD Loss       
 -------------------------------------------------------
@@ -465,21 +303,21 @@ Step       Total Loss      Label Loss      MMD Loss
 1950       1.058790        0.349641        0.129881       
 2000       1.159487        0.382578        0.126209       
  ■■■■■■■■■■■■■■■■■■■■■■■■■         80% |  ETA:  3m
-ℹ [2026/04/04 11:58:38] Training progress: 5/5...
+ℹ [2026/04/04 19:22:34] Training progress: 5/5...
  ■■■■■■■■■■■■■■■■■■■■■■■■■         80% |  ETA:  3mWARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
 Instructions for updating:
 non-resource variables are not supported in the long term
 WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/util/dispatch.py:201: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
 Instructions for updating:
 Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
-2026-04-04 11:59:06.368467: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
-2026-04-04 11:59:06.368800: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+2026-04-04 19:23:02.144530: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2026-04-04 19:23:02.144896: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
 To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
-2026-04-04 11:59:06.379109: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:196] None of the MLIR optimization passes are enabled (registered 0 passes)
-2026-04-04 11:59:06.385087: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 2595145000 Hz
-2026-04-04 11:59:06.714495: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7158a4009810 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
-2026-04-04 11:59:06.714581: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
-2026-04-04 11:59:06.750436: I tensorflow/compiler/jit/xla_compilation_cache.cc:333] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+2026-04-04 19:23:02.156545: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:196] None of the MLIR optimization passes are enabled (registered 0 passes)
+2026-04-04 19:23:02.163075: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 2595145000 Hz
+2026-04-04 19:23:02.512697: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7b910c009b70 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2026-04-04 19:23:02.512757: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2026-04-04 19:23:02.551131: I tensorflow/compiler/jit/xla_compilation_cache.cc:333] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
 Starting training...
 Step       Total Loss      Label Loss      MMD Loss       
 -------------------------------------------------------
@@ -524,7 +362,7 @@ Step       Total Loss      Label Loss      MMD Loss
 1900       1.158281        0.387192        0.126184       
 1950       1.141519        0.392408        0.129048       
 2000       1.155867        0.389334        0.127568       
-ℹ [2026/04/04 12:01:50] Predicting and Labeling
+ℹ [2026/04/04 19:25:38] Predicting and Labeling
 Warning in asMethod(object) :
   sparse->dense coercion: allocating vector of size 2.8 GiB
 Warning in asMethod(object) :
@@ -555,38 +393,1239 @@ Warning in asMethod(object) :
   sparse->dense coercion: allocating vector of size 2.8 GiB
 Warning in asMethod(object) :
   sparse->dense coercion: allocating vector of size 2.8 GiB
-ℹ [2026/04/04 12:03:45] Labeling screened cells
+ℹ [2026/04/04 19:26:23] Labeling screened cells
 ℹ Using "DEGAS_binary0" as reference group
 ℹ Original threshold 0.0105 below minimum 0.4, using 0.4 instead
 ℹ Scores over 0.4 are considered `Positive`.
 ✔ Labeled 0 cells as Positive (0% of total).
-ℹ [2026/04/04 12:03:45] DEGAS Screen done.
-→ Running "LP_SGL"...
-ℹ [2026/04/04 12:04:12] Starting LP-SGL screen
-ℹ [2026/04/04 12:04:12] Fetch graph from Seurat object
-ℹ [2026/04/04 12:04:13] Run Leiden clustering
+ℹ [2026/04/04 19:26:24] DEGAS Screen done.
+ℹ [2026/04/04 19:26:58] Starting LP-SGL screen
+ℹ [2026/04/04 19:26:58] Fetch graph from Seurat object
+ℹ [2026/04/04 19:26:58] Run Leiden clustering
 Warning in asMethod(object) :
   sparse->dense coercion: allocating vector of size 2.8 GiB
-ℹ [2026/04/04 12:04:25] Calculating correlation matrix...
-ℹ [2026/04/04 12:04:34] Fitting SGL model with alpha = 0.5, this may take a while
+ℹ [2026/04/04 19:27:10] Calculating correlation matrix...
+ℹ [2026/04/04 19:27:19] Fitting SGL model with alpha = 0.5, this may take a while
+Warning in Sol$intercept : partial match of 'intercept' to 'intercepts'
+ℹ [2026/04/04 19:28:39] Running 5-fold cross-validation
+ℹ [2026/04/04 20:01:17] Optimal lambda index: 13 (error = 108.78813245373)
+ℹ [2026/04/04 20:01:18] Identified 224 lp_sgl_binary negative cells, 30754 lp_sgl_binary neutral cells, and 1256 lp_sgl_binary positive cells
+✔ [2026/04/04 20:01:18] LP-SGL screening done.
+ℹ [2026/04/04 20:01:48] Starting PIPET screen
+ℹ [2026/04/04 20:01:48] Creating marker genes from bulk data...
+ℹ [2026/04/04 20:01:48] Fitting model with limma
+ℹ Use two-class contrast: case:"group_1" - ref:"group_0"
+✔ [2026/04/04 20:01:50] Created 8444 marker genes
+ℹ [2026/04/04 20:01:50] Running PIPET correlation analysis...
+ℹ [2026/04/04 20:01:51] The classification of markers is: 
+group_0: 702 and group_1: 1724
+ℹ [2026/04/04 20:01:51] Normalize count data with CPM and log1p
+ℹ [2026/04/04 20:01:58] Scale features with z-score normalization
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.8 GiB
+Prediction ■                                  0% |  ETA:  1h
+Prediction ■                                  0% |  ETA:  1h
+Prediction ■                                  0% |  ETA:  1h
+Prediction ■                                  0% |  ETA:  1h
+Prediction ■                                  0% |  ETA:  1h
+Prediction ■                                  0% |  ETA:  1h
+Prediction ■                                  0% |  ETA:  1h
+Prediction ■                                  0% |  ETA:  1h
+Prediction ■                                  1% |  ETA:  1h
+Prediction ■                                  1% |  ETA:  1h
+Prediction ■                                  1% |  ETA:  1h
+Prediction ■                                  1% |  ETA:  1h
+Prediction ■                                  1% |  ETA:  1h
+Prediction ■                                  1% |  ETA:  1h
+Prediction ■                                  1% |  ETA:  1h
+Prediction ■                                  1% |  ETA:  1h
+Prediction ■                                  1% |  ETA:  1h
+Prediction ■                                  1% |  ETA:  1h
+Prediction ■                                  1% |  ETA:  1h
+Prediction ■                                  1% |  ETA:  1h
+Prediction ■                                  1% |  ETA:  1h
+Prediction ■                                  2% |  ETA:  1h
+Prediction ■                                  2% |  ETA:  1h
+Prediction ■■                                 2% |  ETA:  1h
+Prediction ■■                                 2% |  ETA:  1h
+Prediction ■■                                 2% |  ETA:  1h
+Prediction ■■                                 2% |  ETA:  1h
+Prediction ■■                                 2% |  ETA:  1h
+Prediction ■■                                 2% |  ETA:  1h
+Prediction ■■                                 2% |  ETA:  1h
+Prediction ■■                                 2% |  ETA:  1h
+Prediction ■■                                 2% |  ETA:  1h
+Prediction ■■                                 2% |  ETA:  1h
+Prediction ■■                                 3% |  ETA:  1h
+Prediction ■■                                 3% |  ETA:  1h
+Prediction ■■                                 3% |  ETA:  1h
+Prediction ■■                                 3% |  ETA:  1h
+Prediction ■■                                 3% |  ETA:  1h
+Prediction ■■                                 3% |  ETA:  1h
+Prediction ■■                                 3% |  ETA:  1h
+Prediction ■■                                 3% |  ETA:  1h
+Prediction ■■                                 3% |  ETA:  1h
+Prediction ■■                                 3% |  ETA:  1h
+Prediction ■■                                 3% |  ETA:  1h
+Prediction ■■                                 4% |  ETA:  1h
+Prediction ■■                                 4% |  ETA:  1h
+Prediction ■■                                 4% |  ETA:  1h
+Prediction ■■                                 4% |  ETA:  1h
+Prediction ■■                                 4% |  ETA:  1h
+Prediction ■■                                 4% |  ETA:  1h
+Prediction ■■                                 4% |  ETA:  1h
+Prediction ■■                                 4% |  ETA:  1h
+Prediction ■■                                 4% |  ETA:  1h
+Prediction ■■                                 4% |  ETA:  1h
+Prediction ■■                                 4% |  ETA:  1h
+Prediction ■■                                 4% |  ETA:  1h
+Prediction ■■                                 5% |  ETA:  1h
+Prediction ■■                                 5% |  ETA:  1h
+Prediction ■■                                 5% |  ETA:  1h
+Prediction ■■                                 5% |  ETA:  1h
+Prediction ■■                                 5% |  ETA:  1h
+Prediction ■■■                                5% |  ETA:  1h
+Prediction ■■■                                5% |  ETA:  1h
+Prediction ■■■                                5% |  ETA:  1h
+Prediction ■■■                                5% |  ETA:  1h
+Prediction ■■■                                5% |  ETA:  1h
+Prediction ■■■                                5% |  ETA:  1h
+Prediction ■■■                                6% |  ETA:  1h
+Prediction ■■■                                6% |  ETA:  1h
+Prediction ■■■                                6% |  ETA:  1h
+Prediction ■■■                                6% |  ETA:  1h
+Prediction ■■■                                6% |  ETA:  1h
+Prediction ■■■                                6% |  ETA:  1h
+Prediction ■■■                                6% |  ETA:  1h
+Prediction ■■■                                6% |  ETA:  1h
+Prediction ■■■                                6% |  ETA:  1h
+Prediction ■■■                                6% |  ETA:  1h
+Prediction ■■■                                6% |  ETA:  1h
+Prediction ■■■                                7% |  ETA:  1h
+Prediction ■■■                                7% |  ETA:  1h
+Prediction ■■■                                7% |  ETA:  1h
+Prediction ■■■                                7% |  ETA:  1h
+Prediction ■■■                                7% |  ETA:  1h
+Prediction ■■■                                7% |  ETA:  1h
+Prediction ■■■                                7% |  ETA:  1h
+Prediction ■■■                                7% |  ETA:  1h
+Prediction ■■■                                7% |  ETA:  1h
+Prediction ■■■                                7% |  ETA:  1h
+Prediction ■■■                                7% |  ETA:  1h
+Prediction ■■■                                8% |  ETA:  1h
+Prediction ■■■                                8% |  ETA:  1h
+Prediction ■■■                                8% |  ETA:  1h
+Prediction ■■■                                8% |  ETA:  1h
+Prediction ■■■                                8% |  ETA:  1h
+Prediction ■■■                                8% |  ETA:  1h
+Prediction ■■■                                8% |  ETA:  1h
+Prediction ■■■                                8% |  ETA:  1h
+Prediction ■■■                                8% |  ETA:  1h
+Prediction ■■■                                8% |  ETA:  1h
+Prediction ■■■■                               8% |  ETA:  1h
+Prediction ■■■■                               8% |  ETA:  1h
+Prediction ■■■■                               9% |  ETA:  1h
+Prediction ■■■■                               9% |  ETA:  1h
+Prediction ■■■■                               9% |  ETA:  1h
+Prediction ■■■■                               9% |  ETA:  1h
+Prediction ■■■■                               9% |  ETA:  1h
+Prediction ■■■■                               9% |  ETA:  1h
+Prediction ■■■■                               9% |  ETA:  1h
+Prediction ■■■■                               9% |  ETA:  1h
+Prediction ■■■■                               9% |  ETA:  1h
+Prediction ■■■■                               9% |  ETA:  1h
+Prediction ■■■■                               9% |  ETA:  1h
+Prediction ■■■■                              10% |  ETA:  1h
+Prediction ■■■■                              10% |  ETA:  1h
+Prediction ■■■■                              10% |  ETA:  1h
+Prediction ■■■■                              10% |  ETA:  1h
+Prediction ■■■■                              10% |  ETA:  1h
+Prediction ■■■■                              10% |  ETA:  1h
+Prediction ■■■■                              10% |  ETA:  1h
+Prediction ■■■■                              10% |  ETA:  1h
+Prediction ■■■■                              10% |  ETA:  1h
+Prediction ■■■■                              10% |  ETA:  1h
+Prediction ■■■■                              10% |  ETA:  1h
+Prediction ■■■■                              10% |  ETA:  1h
+Prediction ■■■■                              11% |  ETA:  1h
+Prediction ■■■■                              11% |  ETA:  1h
+Prediction ■■■■                              11% |  ETA:  1h
+Prediction ■■■■                              11% |  ETA:  1h
+Prediction ■■■■                              11% |  ETA:  1h
+Prediction ■■■■                              11% |  ETA:  1h
+Prediction ■■■■                              11% |  ETA:  1h
+Prediction ■■■■                              11% |  ETA:  1h
+Prediction ■■■■                              11% |  ETA:  1h
+Prediction ■■■■                              11% |  ETA:  1h
+Prediction ■■■■                              11% |  ETA:  1h
+Prediction ■■■■                              12% |  ETA:  1h
+Prediction ■■■■                              12% |  ETA:  1h
+Prediction ■■■■■                             12% |  ETA:  1h
+Prediction ■■■■■                             12% |  ETA:  1h
+Prediction ■■■■■                             12% |  ETA:  1h
+Prediction ■■■■■                             12% |  ETA:  1h
+Prediction ■■■■■                             12% |  ETA:  1h
+Prediction ■■■■■                             12% |  ETA:  1h
+Prediction ■■■■■                             12% |  ETA:  1h
+Prediction ■■■■■                             12% |  ETA:  1h
+Prediction ■■■■■                             12% |  ETA:  1h
+Prediction ■■■■■                             12% |  ETA:  1h
+Prediction ■■■■■                             13% |  ETA:  1h
+Prediction ■■■■■                             13% |  ETA:  1h
+Prediction ■■■■■                             13% |  ETA:  1h
+Prediction ■■■■■                             13% |  ETA:  1h
+Prediction ■■■■■                             13% |  ETA:  1h
+Prediction ■■■■■                             13% |  ETA:  1h
+Prediction ■■■■■                             13% |  ETA:  1h
+Prediction ■■■■■                             13% |  ETA:  1h
+Prediction ■■■■■                             13% |  ETA:  1h
+Prediction ■■■■■                             13% |  ETA:  1h
+Prediction ■■■■■                             13% |  ETA:  1h
+Prediction ■■■■■                             13% |  ETA:  1h
+Prediction ■■■■■                             14% |  ETA:  1h
+Prediction ■■■■■                             14% |  ETA:  1h
+Prediction ■■■■■                             14% |  ETA:  1h
+Prediction ■■■■■                             14% |  ETA:  1h
+Prediction ■■■■■                             14% |  ETA:  1h
+Prediction ■■■■■                             14% |  ETA:  1h
+Prediction ■■■■■                             14% |  ETA:  1h
+Prediction ■■■■■                             14% |  ETA:  1h
+Prediction ■■■■■                             14% |  ETA:  1h
+Prediction ■■■■■                             14% |  ETA:  1h
+Prediction ■■■■■                             14% |  ETA:  1h
+Prediction ■■■■■                             14% |  ETA:  1h
+Prediction ■■■■■                             14% |  ETA:  1h
+Prediction ■■■■■                             15% |  ETA:  1h
+Prediction ■■■■■                             15% |  ETA:  1h
+Prediction ■■■■■                             15% |  ETA:  1h
+Prediction ■■■■■                             15% |  ETA:  1h
+Prediction ■■■■■                             15% |  ETA:  1h
+Prediction ■■■■■■                            15% |  ETA:  1h
+Prediction ■■■■■■                            15% |  ETA:  1h
+Prediction ■■■■■■                            15% |  ETA:  1h
+Prediction ■■■■■■                            15% |  ETA: 50m
+Prediction ■■■■■■                            15% |  ETA: 50m
+Prediction ■■■■■■                            15% |  ETA: 50m
+Prediction ■■■■■■                            16% |  ETA: 50m
+Prediction ■■■■■■                            16% |  ETA: 50m
+Prediction ■■■■■■                            16% |  ETA: 50m
+Prediction ■■■■■■                            16% |  ETA: 50m
+Prediction ■■■■■■                            16% |  ETA: 50m
+Prediction ■■■■■■                            16% |  ETA: 50m
+Prediction ■■■■■■                            16% |  ETA: 50m
+Prediction ■■■■■■                            16% |  ETA: 50m
+Prediction ■■■■■■                            16% |  ETA: 49m
+Prediction ■■■■■■                            16% |  ETA: 49m
+Prediction ■■■■■■                            16% |  ETA: 49m
+Prediction ■■■■■■                            16% |  ETA: 49m
+Prediction ■■■■■■                            17% |  ETA: 49m
+Prediction ■■■■■■                            17% |  ETA: 49m
+Prediction ■■■■■■                            17% |  ETA: 49m
+Prediction ■■■■■■                            17% |  ETA: 49m
+Prediction ■■■■■■                            17% |  ETA: 49m
+Prediction ■■■■■■                            17% |  ETA: 49m
+Prediction ■■■■■■                            17% |  ETA: 49m
+Prediction ■■■■■■                            17% |  ETA: 49m
+Prediction ■■■■■■                            17% |  ETA: 49m
+Prediction ■■■■■■                            17% |  ETA: 49m
+Prediction ■■■■■■                            17% |  ETA: 49m
+Prediction ■■■■■■                            18% |  ETA: 49m
+Prediction ■■■■■■                            18% |  ETA: 49m
+Prediction ■■■■■■                            18% |  ETA: 49m
+Prediction ■■■■■■                            18% |  ETA: 49m
+Prediction ■■■■■■                            18% |  ETA: 49m
+Prediction ■■■■■■                            18% |  ETA: 49m
+Prediction ■■■■■■                            18% |  ETA: 49m
+Prediction ■■■■■■                            18% |  ETA: 49m
+Prediction ■■■■■■                            18% |  ETA: 49m
+Prediction ■■■■■■                            18% |  ETA: 49m
+Prediction ■■■■■■                            18% |  ETA: 48m
+Prediction ■■■■■■■                           18% |  ETA: 48m
+Prediction ■■■■■■■                           18% |  ETA: 48m
+Prediction ■■■■■■■                           18% |  ETA: 48m
+Prediction ■■■■■■■                           19% |  ETA: 48m
+Prediction ■■■■■■■                           19% |  ETA: 48m
+Prediction ■■■■■■■                           19% |  ETA: 49m
+Prediction ■■■■■■■                           19% |  ETA: 48m
+Prediction ■■■■■■■                           19% |  ETA: 48m
+Prediction ■■■■■■■                           19% |  ETA: 48m
+Prediction ■■■■■■■                           19% |  ETA: 49m
+Prediction ■■■■■■■                           19% |  ETA: 49m
+Prediction ■■■■■■■                           19% |  ETA: 49m
+Prediction ■■■■■■■                           19% |  ETA: 48m
+Prediction ■■■■■■■                           19% |  ETA: 48m
+Prediction ■■■■■■■                           19% |  ETA: 48m
+Prediction ■■■■■■■                           19% |  ETA: 48m
+Prediction ■■■■■■■                           19% |  ETA: 48m
+Prediction ■■■■■■■                           20% |  ETA: 48m
+Prediction ■■■■■■■                           20% |  ETA: 48m
+Prediction ■■■■■■■                           20% |  ETA: 48m
+Prediction ■■■■■■■                           20% |  ETA: 48m
+Prediction ■■■■■■■                           20% |  ETA: 48m
+Prediction ■■■■■■■                           20% |  ETA: 48m
+Prediction ■■■■■■■                           20% |  ETA: 48m
+Prediction ■■■■■■■                           20% |  ETA: 48m
+Prediction ■■■■■■■                           20% |  ETA: 48m
+Prediction ■■■■■■■                           20% |  ETA: 48m
+Prediction ■■■■■■■                           20% |  ETA: 48m
+Prediction ■■■■■■■                           21% |  ETA: 48m
+Prediction ■■■■■■■                           21% |  ETA: 48m
+Prediction ■■■■■■■                           21% |  ETA: 48m
+Prediction ■■■■■■■                           21% |  ETA: 48m
+Prediction ■■■■■■■                           21% |  ETA: 48m
+Prediction ■■■■■■■                           21% |  ETA: 48m
+Prediction ■■■■■■■                           21% |  ETA: 48m
+Prediction ■■■■■■■                           21% |  ETA: 47m
+Prediction ■■■■■■■                           21% |  ETA: 47m
+Prediction ■■■■■■■                           21% |  ETA: 47m
+Prediction ■■■■■■■                           21% |  ETA: 47m
+Prediction ■■■■■■■                           21% |  ETA: 47m
+Prediction ■■■■■■■                           21% |  ETA: 47m
+Prediction ■■■■■■■                           22% |  ETA: 47m
+Prediction ■■■■■■■                           22% |  ETA: 47m
+Prediction ■■■■■■■■                          22% |  ETA: 47m
+Prediction ■■■■■■■■                          22% |  ETA: 47m
+Prediction ■■■■■■■■                          22% |  ETA: 47m
+Prediction ■■■■■■■■                          22% |  ETA: 47m
+Prediction ■■■■■■■■                          22% |  ETA: 47m
+Prediction ■■■■■■■■                          22% |  ETA: 47m
+Prediction ■■■■■■■■                          22% |  ETA: 46m
+Prediction ■■■■■■■■                          22% |  ETA: 46m
+Prediction ■■■■■■■■                          22% |  ETA: 46m
+Prediction ■■■■■■■■                          23% |  ETA: 46m
+Prediction ■■■■■■■■                          23% |  ETA: 46m
+Prediction ■■■■■■■■                          23% |  ETA: 46m
+Prediction ■■■■■■■■                          23% |  ETA: 46m
+Prediction ■■■■■■■■                          23% |  ETA: 46m
+Prediction ■■■■■■■■                          23% |  ETA: 46m
+Prediction ■■■■■■■■                          23% |  ETA: 46m
+Prediction ■■■■■■■■                          23% |  ETA: 46m
+Prediction ■■■■■■■■                          23% |  ETA: 46m
+Prediction ■■■■■■■■                          23% |  ETA: 46m
+Prediction ■■■■■■■■                          23% |  ETA: 46m
+Prediction ■■■■■■■■                          23% |  ETA: 46m
+Prediction ■■■■■■■■                          24% |  ETA: 46m
+Prediction ■■■■■■■■                          24% |  ETA: 46m
+Prediction ■■■■■■■■                          24% |  ETA: 46m
+Prediction ■■■■■■■■                          24% |  ETA: 45m
+Prediction ■■■■■■■■                          24% |  ETA: 45m
+Prediction ■■■■■■■■                          24% |  ETA: 45m
+Prediction ■■■■■■■■                          24% |  ETA: 45m
+Prediction ■■■■■■■■                          24% |  ETA: 45m
+Prediction ■■■■■■■■                          24% |  ETA: 45m
+Prediction ■■■■■■■■                          24% |  ETA: 45m
+Prediction ■■■■■■■■                          24% |  ETA: 45m
+Prediction ■■■■■■■■                          25% |  ETA: 45m
+Prediction ■■■■■■■■                          25% |  ETA: 45m
+Prediction ■■■■■■■■                          25% |  ETA: 45m
+Prediction ■■■■■■■■                          25% |  ETA: 45m
+Prediction ■■■■■■■■                          25% |  ETA: 45m
+Prediction ■■■■■■■■■                         25% |  ETA: 45m
+Prediction ■■■■■■■■■                         25% |  ETA: 44m
+Prediction ■■■■■■■■■                         25% |  ETA: 44m
+Prediction ■■■■■■■■■                         25% |  ETA: 44m
+Prediction ■■■■■■■■■                         25% |  ETA: 44m
+Prediction ■■■■■■■■■                         26% |  ETA: 44m
+Prediction ■■■■■■■■■                         26% |  ETA: 44m
+Prediction ■■■■■■■■■                         26% |  ETA: 44m
+Prediction ■■■■■■■■■                         26% |  ETA: 44m
+Prediction ■■■■■■■■■                         26% |  ETA: 44m
+Prediction ■■■■■■■■■                         26% |  ETA: 44m
+Prediction ■■■■■■■■■                         26% |  ETA: 44m
+Prediction ■■■■■■■■■                         26% |  ETA: 44m
+Prediction ■■■■■■■■■                         26% |  ETA: 44m
+Prediction ■■■■■■■■■                         26% |  ETA: 44m
+Prediction ■■■■■■■■■                         26% |  ETA: 44m
+Prediction ■■■■■■■■■                         26% |  ETA: 44m
+Prediction ■■■■■■■■■                         26% |  ETA: 44m
+Prediction ■■■■■■■■■                         27% |  ETA: 44m
+Prediction ■■■■■■■■■                         27% |  ETA: 44m
+Prediction ■■■■■■■■■                         27% |  ETA: 44m
+Prediction ■■■■■■■■■                         27% |  ETA: 44m
+Prediction ■■■■■■■■■                         27% |  ETA: 44m
+Prediction ■■■■■■■■■                         27% |  ETA: 44m
+Prediction ■■■■■■■■■                         27% |  ETA: 43m
+Prediction ■■■■■■■■■                         27% |  ETA: 43m
+Prediction ■■■■■■■■■                         27% |  ETA: 43m
+Prediction ■■■■■■■■■                         27% |  ETA: 43m
+Prediction ■■■■■■■■■                         27% |  ETA: 43m
+Prediction ■■■■■■■■■                         27% |  ETA: 43m
+Prediction ■■■■■■■■■                         28% |  ETA: 43m
+Prediction ■■■■■■■■■                         28% |  ETA: 43m
+Prediction ■■■■■■■■■                         28% |  ETA: 43m
+Prediction ■■■■■■■■■                         28% |  ETA: 43m
+Prediction ■■■■■■■■■                         28% |  ETA: 43m
+Prediction ■■■■■■■■■                         28% |  ETA: 43m
+Prediction ■■■■■■■■■                         28% |  ETA: 43m
+Prediction ■■■■■■■■■                         28% |  ETA: 43m
+Prediction ■■■■■■■■■                         28% |  ETA: 43m
+Prediction ■■■■■■■■■■                        28% |  ETA: 43m
+Prediction ■■■■■■■■■■                        28% |  ETA: 42m
+Prediction ■■■■■■■■■■                        29% |  ETA: 42m
+Prediction ■■■■■■■■■■                        29% |  ETA: 42m
+Prediction ■■■■■■■■■■                        29% |  ETA: 42m
+Prediction ■■■■■■■■■■                        29% |  ETA: 42m
+Prediction ■■■■■■■■■■                        29% |  ETA: 42m
+Prediction ■■■■■■■■■■                        29% |  ETA: 42m
+Prediction ■■■■■■■■■■                        29% |  ETA: 42m
+Prediction ■■■■■■■■■■                        29% |  ETA: 42m
+Prediction ■■■■■■■■■■                        29% |  ETA: 42m
+Prediction ■■■■■■■■■■                        29% |  ETA: 42m
+Prediction ■■■■■■■■■■                        29% |  ETA: 42m
+Prediction ■■■■■■■■■■                        29% |  ETA: 42m
+Prediction ■■■■■■■■■■                        29% |  ETA: 42m
+Prediction ■■■■■■■■■■                        29% |  ETA: 42m
+Prediction ■■■■■■■■■■                        29% |  ETA: 42m
+Prediction ■■■■■■■■■■                        30% |  ETA: 42m
+Prediction ■■■■■■■■■■                        30% |  ETA: 42m
+Prediction ■■■■■■■■■■                        30% |  ETA: 42m
+Prediction ■■■■■■■■■■                        30% |  ETA: 42m
+Prediction ■■■■■■■■■■                        30% |  ETA: 42m
+Prediction ■■■■■■■■■■                        30% |  ETA: 42m
+Prediction ■■■■■■■■■■                        30% |  ETA: 42m
+Prediction ■■■■■■■■■■                        30% |  ETA: 42m
+Prediction ■■■■■■■■■■                        30% |  ETA: 42m
+Prediction ■■■■■■■■■■                        30% |  ETA: 42m
+Prediction ■■■■■■■■■■                        30% |  ETA: 42m
+Prediction ■■■■■■■■■■                        31% |  ETA: 42m
+Prediction ■■■■■■■■■■                        31% |  ETA: 41m
+Prediction ■■■■■■■■■■                        31% |  ETA: 41m
+Prediction ■■■■■■■■■■                        31% |  ETA: 41m
+Prediction ■■■■■■■■■■                        31% |  ETA: 41m
+Prediction ■■■■■■■■■■                        31% |  ETA: 41m
+Prediction ■■■■■■■■■■                        31% |  ETA: 41m
+Prediction ■■■■■■■■■■                        31% |  ETA: 41m
+Prediction ■■■■■■■■■■                        31% |  ETA: 41m
+Prediction ■■■■■■■■■■                        31% |  ETA: 41m
+Prediction ■■■■■■■■■■                        31% |  ETA: 41m
+Prediction ■■■■■■■■■■                        31% |  ETA: 41m
+Prediction ■■■■■■■■■■                        32% |  ETA: 41m
+Prediction ■■■■■■■■■■■                       32% |  ETA: 41m
+Prediction ■■■■■■■■■■■                       32% |  ETA: 41m
+Prediction ■■■■■■■■■■■                       32% |  ETA: 41m
+Prediction ■■■■■■■■■■■                       32% |  ETA: 41m
+Prediction ■■■■■■■■■■■                       32% |  ETA: 40m
+Prediction ■■■■■■■■■■■                       32% |  ETA: 40m
+Prediction ■■■■■■■■■■■                       32% |  ETA: 40m
+Prediction ■■■■■■■■■■■                       32% |  ETA: 40m
+Prediction ■■■■■■■■■■■                       32% |  ETA: 40m
+Prediction ■■■■■■■■■■■                       32% |  ETA: 40m
+Prediction ■■■■■■■■■■■                       32% |  ETA: 40m
+Prediction ■■■■■■■■■■■                       33% |  ETA: 40m
+Prediction ■■■■■■■■■■■                       33% |  ETA: 40m
+Prediction ■■■■■■■■■■■                       33% |  ETA: 40m
+Prediction ■■■■■■■■■■■                       33% |  ETA: 40m
+Prediction ■■■■■■■■■■■                       33% |  ETA: 40m
+Prediction ■■■■■■■■■■■                       33% |  ETA: 40m
+Prediction ■■■■■■■■■■■                       33% |  ETA: 40m
+Prediction ■■■■■■■■■■■                       33% |  ETA: 40m
+Prediction ■■■■■■■■■■■                       33% |  ETA: 40m
+Prediction ■■■■■■■■■■■                       33% |  ETA: 40m
+Prediction ■■■■■■■■■■■                       33% |  ETA: 40m
+Prediction ■■■■■■■■■■■                       34% |  ETA: 40m
+Prediction ■■■■■■■■■■■                       34% |  ETA: 40m
+Prediction ■■■■■■■■■■■                       34% |  ETA: 39m
+Prediction ■■■■■■■■■■■                       34% |  ETA: 39m
+Prediction ■■■■■■■■■■■                       34% |  ETA: 39m
+Prediction ■■■■■■■■■■■                       34% |  ETA: 39m
+Prediction ■■■■■■■■■■■                       34% |  ETA: 39m
+Prediction ■■■■■■■■■■■                       34% |  ETA: 39m
+Prediction ■■■■■■■■■■■                       34% |  ETA: 39m
+Prediction ■■■■■■■■■■■                       34% |  ETA: 39m
+Prediction ■■■■■■■■■■■                       34% |  ETA: 39m
+Prediction ■■■■■■■■■■■                       34% |  ETA: 39m
+Prediction ■■■■■■■■■■■                       34% |  ETA: 39m
+Prediction ■■■■■■■■■■■                       35% |  ETA: 39m
+Prediction ■■■■■■■■■■■                       35% |  ETA: 39m
+Prediction ■■■■■■■■■■■                       35% |  ETA: 39m
+Prediction ■■■■■■■■■■■                       35% |  ETA: 39m
+Prediction ■■■■■■■■■■■                       35% |  ETA: 39m
+Prediction ■■■■■■■■■■■                       35% |  ETA: 39m
+Prediction ■■■■■■■■■■■                       35% |  ETA: 39m
+Prediction ■■■■■■■■■■■■                      35% |  ETA: 39m
+Prediction ■■■■■■■■■■■■                      35% |  ETA: 39m
+Prediction ■■■■■■■■■■■■                      35% |  ETA: 39m
+Prediction ■■■■■■■■■■■■                      35% |  ETA: 39m
+Prediction ■■■■■■■■■■■■                      35% |  ETA: 39m
+Prediction ■■■■■■■■■■■■                      35% |  ETA: 39m
+Prediction ■■■■■■■■■■■■                      36% |  ETA: 39m
+Prediction ■■■■■■■■■■■■                      36% |  ETA: 38m
+Prediction ■■■■■■■■■■■■                      36% |  ETA: 38m
+Prediction ■■■■■■■■■■■■                      36% |  ETA: 38m
+Prediction ■■■■■■■■■■■■                      36% |  ETA: 38m
+Prediction ■■■■■■■■■■■■                      36% |  ETA: 38m
+Prediction ■■■■■■■■■■■■                      36% |  ETA: 38m
+Prediction ■■■■■■■■■■■■                      36% |  ETA: 38m
+Prediction ■■■■■■■■■■■■                      36% |  ETA: 38m
+Prediction ■■■■■■■■■■■■                      36% |  ETA: 38m
+Prediction ■■■■■■■■■■■■                      36% |  ETA: 38m
+Prediction ■■■■■■■■■■■■                      36% |  ETA: 38m
+Prediction ■■■■■■■■■■■■                      37% |  ETA: 38m
+Prediction ■■■■■■■■■■■■                      37% |  ETA: 38m
+Prediction ■■■■■■■■■■■■                      37% |  ETA: 38m
+Prediction ■■■■■■■■■■■■                      37% |  ETA: 38m
+Prediction ■■■■■■■■■■■■                      37% |  ETA: 38m
+Prediction ■■■■■■■■■■■■                      37% |  ETA: 38m
+Prediction ■■■■■■■■■■■■                      37% |  ETA: 38m
+Prediction ■■■■■■■■■■■■                      37% |  ETA: 38m
+Prediction ■■■■■■■■■■■■                      37% |  ETA: 38m
+Prediction ■■■■■■■■■■■■                      37% |  ETA: 37m
+Prediction ■■■■■■■■■■■■                      37% |  ETA: 37m
+Prediction ■■■■■■■■■■■■                      38% |  ETA: 37m
+Prediction ■■■■■■■■■■■■                      38% |  ETA: 37m
+Prediction ■■■■■■■■■■■■                      38% |  ETA: 37m
+Prediction ■■■■■■■■■■■■                      38% |  ETA: 37m
+Prediction ■■■■■■■■■■■■                      38% |  ETA: 37m
+Prediction ■■■■■■■■■■■■                      38% |  ETA: 37m
+Prediction ■■■■■■■■■■■■                      38% |  ETA: 37m
+Prediction ■■■■■■■■■■■■                      38% |  ETA: 37m
+Prediction ■■■■■■■■■■■■                      38% |  ETA: 37m
+Prediction ■■■■■■■■■■■■                      38% |  ETA: 37m
+Prediction ■■■■■■■■■■■■■                     38% |  ETA: 37m
+Prediction ■■■■■■■■■■■■■                     38% |  ETA: 37m
+Prediction ■■■■■■■■■■■■■                     38% |  ETA: 37m
+Prediction ■■■■■■■■■■■■■                     39% |  ETA: 37m
+Prediction ■■■■■■■■■■■■■                     39% |  ETA: 37m
+Prediction ■■■■■■■■■■■■■                     39% |  ETA: 37m
+Prediction ■■■■■■■■■■■■■                     39% |  ETA: 37m
+Prediction ■■■■■■■■■■■■■                     39% |  ETA: 37m
+Prediction ■■■■■■■■■■■■■                     39% |  ETA: 37m
+Prediction ■■■■■■■■■■■■■                     39% |  ETA: 37m
+Prediction ■■■■■■■■■■■■■                     39% |  ETA: 37m
+Prediction ■■■■■■■■■■■■■                     39% |  ETA: 37m
+Prediction ■■■■■■■■■■■■■                     39% |  ETA: 37m
+Prediction ■■■■■■■■■■■■■                     39% |  ETA: 37m
+Prediction ■■■■■■■■■■■■■                     39% |  ETA: 37m
+Prediction ■■■■■■■■■■■■■                     39% |  ETA: 37m
+Prediction ■■■■■■■■■■■■■                     39% |  ETA: 36m
+Prediction ■■■■■■■■■■■■■                     40% |  ETA: 36m
+Prediction ■■■■■■■■■■■■■                     40% |  ETA: 36m
+Prediction ■■■■■■■■■■■■■                     40% |  ETA: 36m
+Prediction ■■■■■■■■■■■■■                     40% |  ETA: 36m
+Prediction ■■■■■■■■■■■■■                     40% |  ETA: 36m
+Prediction ■■■■■■■■■■■■■                     40% |  ETA: 36m
+Prediction ■■■■■■■■■■■■■                     40% |  ETA: 36m
+Prediction ■■■■■■■■■■■■■                     40% |  ETA: 36m
+Prediction ■■■■■■■■■■■■■                     40% |  ETA: 36m
+Prediction ■■■■■■■■■■■■■                     40% |  ETA: 36m
+Prediction ■■■■■■■■■■■■■                     40% |  ETA: 36m
+Prediction ■■■■■■■■■■■■■                     40% |  ETA: 36m
+Prediction ■■■■■■■■■■■■■                     40% |  ETA: 36m
+Prediction ■■■■■■■■■■■■■                     41% |  ETA: 36m
+Prediction ■■■■■■■■■■■■■                     41% |  ETA: 36m
+Prediction ■■■■■■■■■■■■■                     41% |  ETA: 36m
+Prediction ■■■■■■■■■■■■■                     41% |  ETA: 36m
+Prediction ■■■■■■■■■■■■■                     41% |  ETA: 36m
+Prediction ■■■■■■■■■■■■■                     41% |  ETA: 35m
+Prediction ■■■■■■■■■■■■■                     41% |  ETA: 35m
+Prediction ■■■■■■■■■■■■■                     41% |  ETA: 35m
+Prediction ■■■■■■■■■■■■■                     41% |  ETA: 35m
+Prediction ■■■■■■■■■■■■■                     41% |  ETA: 35m
+Prediction ■■■■■■■■■■■■■                     41% |  ETA: 35m
+Prediction ■■■■■■■■■■■■■                     42% |  ETA: 35m
+Prediction ■■■■■■■■■■■■■■                    42% |  ETA: 35m
+Prediction ■■■■■■■■■■■■■■                    42% |  ETA: 35m
+Prediction ■■■■■■■■■■■■■■                    42% |  ETA: 35m
+Prediction ■■■■■■■■■■■■■■                    42% |  ETA: 35m
+Prediction ■■■■■■■■■■■■■■                    42% |  ETA: 35m
+Prediction ■■■■■■■■■■■■■■                    42% |  ETA: 35m
+Prediction ■■■■■■■■■■■■■■                    42% |  ETA: 35m
+Prediction ■■■■■■■■■■■■■■                    42% |  ETA: 35m
+Prediction ■■■■■■■■■■■■■■                    42% |  ETA: 35m
+Prediction ■■■■■■■■■■■■■■                    42% |  ETA: 34m
+Prediction ■■■■■■■■■■■■■■                    43% |  ETA: 34m
+Prediction ■■■■■■■■■■■■■■                    43% |  ETA: 34m
+Prediction ■■■■■■■■■■■■■■                    43% |  ETA: 34m
+Prediction ■■■■■■■■■■■■■■                    43% |  ETA: 34m
+Prediction ■■■■■■■■■■■■■■                    43% |  ETA: 34m
+Prediction ■■■■■■■■■■■■■■                    43% |  ETA: 34m
+Prediction ■■■■■■■■■■■■■■                    43% |  ETA: 34m
+Prediction ■■■■■■■■■■■■■■                    43% |  ETA: 34m
+Prediction ■■■■■■■■■■■■■■                    43% |  ETA: 34m
+Prediction ■■■■■■■■■■■■■■                    43% |  ETA: 34m
+Prediction ■■■■■■■■■■■■■■                    43% |  ETA: 34m
+Prediction ■■■■■■■■■■■■■■                    44% |  ETA: 34m
+Prediction ■■■■■■■■■■■■■■                    44% |  ETA: 34m
+Prediction ■■■■■■■■■■■■■■                    44% |  ETA: 34m
+Prediction ■■■■■■■■■■■■■■                    44% |  ETA: 34m
+Prediction ■■■■■■■■■■■■■■                    44% |  ETA: 34m
+Prediction ■■■■■■■■■■■■■■                    44% |  ETA: 33m
+Prediction ■■■■■■■■■■■■■■                    44% |  ETA: 33m
+Prediction ■■■■■■■■■■■■■■                    44% |  ETA: 33m
+Prediction ■■■■■■■■■■■■■■                    44% |  ETA: 33m
+Prediction ■■■■■■■■■■■■■■                    44% |  ETA: 33m
+Prediction ■■■■■■■■■■■■■■                    44% |  ETA: 33m
+Prediction ■■■■■■■■■■■■■■                    45% |  ETA: 33m
+Prediction ■■■■■■■■■■■■■■                    45% |  ETA: 33m
+Prediction ■■■■■■■■■■■■■■                    45% |  ETA: 33m
+Prediction ■■■■■■■■■■■■■■                    45% |  ETA: 33m
+Prediction ■■■■■■■■■■■■■■                    45% |  ETA: 33m
+Prediction ■■■■■■■■■■■■■■                    45% |  ETA: 33m
+Prediction ■■■■■■■■■■■■■■■                   45% |  ETA: 33m
+Prediction ■■■■■■■■■■■■■■■                   45% |  ETA: 33m
+Prediction ■■■■■■■■■■■■■■■                   45% |  ETA: 33m
+Prediction ■■■■■■■■■■■■■■■                   45% |  ETA: 33m
+Prediction ■■■■■■■■■■■■■■■                   45% |  ETA: 33m
+Prediction ■■■■■■■■■■■■■■■                   45% |  ETA: 33m
+Prediction ■■■■■■■■■■■■■■■                   46% |  ETA: 33m
+Prediction ■■■■■■■■■■■■■■■                   46% |  ETA: 32m
+Prediction ■■■■■■■■■■■■■■■                   46% |  ETA: 32m
+Prediction ■■■■■■■■■■■■■■■                   46% |  ETA: 32m
+Prediction ■■■■■■■■■■■■■■■                   46% |  ETA: 32m
+Prediction ■■■■■■■■■■■■■■■                   46% |  ETA: 32m
+Prediction ■■■■■■■■■■■■■■■                   46% |  ETA: 32m
+Prediction ■■■■■■■■■■■■■■■                   46% |  ETA: 32m
+Prediction ■■■■■■■■■■■■■■■                   46% |  ETA: 32m
+Prediction ■■■■■■■■■■■■■■■                   46% |  ETA: 32m
+Prediction ■■■■■■■■■■■■■■■                   46% |  ETA: 32m
+Prediction ■■■■■■■■■■■■■■■                   47% |  ETA: 32m
+Prediction ■■■■■■■■■■■■■■■                   47% |  ETA: 32m
+Prediction ■■■■■■■■■■■■■■■                   47% |  ETA: 32m
+Prediction ■■■■■■■■■■■■■■■                   47% |  ETA: 32m
+Prediction ■■■■■■■■■■■■■■■                   47% |  ETA: 32m
+Prediction ■■■■■■■■■■■■■■■                   47% |  ETA: 32m
+Prediction ■■■■■■■■■■■■■■■                   47% |  ETA: 32m
+Prediction ■■■■■■■■■■■■■■■                   47% |  ETA: 32m
+Prediction ■■■■■■■■■■■■■■■                   47% |  ETA: 32m
+Prediction ■■■■■■■■■■■■■■■                   47% |  ETA: 31m
+Prediction ■■■■■■■■■■■■■■■                   47% |  ETA: 31m
+Prediction ■■■■■■■■■■■■■■■                   47% |  ETA: 31m
+Prediction ■■■■■■■■■■■■■■■                   48% |  ETA: 31m
+Prediction ■■■■■■■■■■■■■■■                   48% |  ETA: 31m
+Prediction ■■■■■■■■■■■■■■■                   48% |  ETA: 31m
+Prediction ■■■■■■■■■■■■■■■                   48% |  ETA: 31m
+Prediction ■■■■■■■■■■■■■■■                   48% |  ETA: 31m
+Prediction ■■■■■■■■■■■■■■■                   48% |  ETA: 31m
+Prediction ■■■■■■■■■■■■■■■                   48% |  ETA: 31m
+Prediction ■■■■■■■■■■■■■■■                   48% |  ETA: 31m
+Prediction ■■■■■■■■■■■■■■■                   48% |  ETA: 31m
+Prediction ■■■■■■■■■■■■■■■                   48% |  ETA: 31m
+Prediction ■■■■■■■■■■■■■■■■                  48% |  ETA: 31m
+Prediction ■■■■■■■■■■■■■■■■                  48% |  ETA: 31m
+Prediction ■■■■■■■■■■■■■■■■                  49% |  ETA: 31m
+Prediction ■■■■■■■■■■■■■■■■                  49% |  ETA: 31m
+Prediction ■■■■■■■■■■■■■■■■                  49% |  ETA: 31m
+Prediction ■■■■■■■■■■■■■■■■                  49% |  ETA: 30m
+Prediction ■■■■■■■■■■■■■■■■                  49% |  ETA: 30m
+Prediction ■■■■■■■■■■■■■■■■                  49% |  ETA: 30m
+Prediction ■■■■■■■■■■■■■■■■                  49% |  ETA: 30m
+Prediction ■■■■■■■■■■■■■■■■                  49% |  ETA: 30m
+Prediction ■■■■■■■■■■■■■■■■                  49% |  ETA: 30m
+Prediction ■■■■■■■■■■■■■■■■                  49% |  ETA: 30m
+Prediction ■■■■■■■■■■■■■■■■                  49% |  ETA: 30m
+Prediction ■■■■■■■■■■■■■■■■                  49% |  ETA: 30m
+Prediction ■■■■■■■■■■■■■■■■                  50% |  ETA: 30m
+Prediction ■■■■■■■■■■■■■■■■                  50% |  ETA: 30m
+Prediction ■■■■■■■■■■■■■■■■                  50% |  ETA: 30m
+Prediction ■■■■■■■■■■■■■■■■                  50% |  ETA: 30m
+Prediction ■■■■■■■■■■■■■■■■                  50% |  ETA: 30m
+Prediction ■■■■■■■■■■■■■■■■                  50% |  ETA: 30m
+Prediction ■■■■■■■■■■■■■■■■                  50% |  ETA: 30m
+Prediction ■■■■■■■■■■■■■■■■                  50% |  ETA: 30m
+Prediction ■■■■■■■■■■■■■■■■                  50% |  ETA: 30m
+Prediction ■■■■■■■■■■■■■■■■                  50% |  ETA: 30m
+Prediction ■■■■■■■■■■■■■■■■                  50% |  ETA: 30m
+Prediction ■■■■■■■■■■■■■■■■                  51% |  ETA: 29m
+Prediction ■■■■■■■■■■■■■■■■                  51% |  ETA: 29m
+Prediction ■■■■■■■■■■■■■■■■                  51% |  ETA: 29m
+Prediction ■■■■■■■■■■■■■■■■                  51% |  ETA: 29m
+Prediction ■■■■■■■■■■■■■■■■                  51% |  ETA: 29m
+Prediction ■■■■■■■■■■■■■■■■                  51% |  ETA: 29m
+Prediction ■■■■■■■■■■■■■■■■                  51% |  ETA: 29m
+Prediction ■■■■■■■■■■■■■■■■                  51% |  ETA: 29m
+Prediction ■■■■■■■■■■■■■■■■                  51% |  ETA: 29m
+Prediction ■■■■■■■■■■■■■■■■                  51% |  ETA: 29m
+Prediction ■■■■■■■■■■■■■■■■                  51% |  ETA: 29m
+Prediction ■■■■■■■■■■■■■■■■                  52% |  ETA: 29m
+Prediction ■■■■■■■■■■■■■■■■                  52% |  ETA: 29m
+Prediction ■■■■■■■■■■■■■■■■                  52% |  ETA: 29m
+Prediction ■■■■■■■■■■■■■■■■■                 52% |  ETA: 29m
+Prediction ■■■■■■■■■■■■■■■■■                 52% |  ETA: 29m
+Prediction ■■■■■■■■■■■■■■■■■                 52% |  ETA: 29m
+Prediction ■■■■■■■■■■■■■■■■■                 52% |  ETA: 29m
+Prediction ■■■■■■■■■■■■■■■■■                 52% |  ETA: 29m
+Prediction ■■■■■■■■■■■■■■■■■                 52% |  ETA: 29m
+Prediction ■■■■■■■■■■■■■■■■■                 52% |  ETA: 29m
+Prediction ■■■■■■■■■■■■■■■■■                 52% |  ETA: 29m
+Prediction ■■■■■■■■■■■■■■■■■                 52% |  ETA: 28m
+Prediction ■■■■■■■■■■■■■■■■■                 52% |  ETA: 28m
+Prediction ■■■■■■■■■■■■■■■■■                 52% |  ETA: 28m
+Prediction ■■■■■■■■■■■■■■■■■                 53% |  ETA: 28m
+Prediction ■■■■■■■■■■■■■■■■■                 53% |  ETA: 28m
+Prediction ■■■■■■■■■■■■■■■■■                 53% |  ETA: 28m
+Prediction ■■■■■■■■■■■■■■■■■                 53% |  ETA: 28m
+Prediction ■■■■■■■■■■■■■■■■■                 53% |  ETA: 28m
+Prediction ■■■■■■■■■■■■■■■■■                 53% |  ETA: 28m
+Prediction ■■■■■■■■■■■■■■■■■                 53% |  ETA: 28m
+Prediction ■■■■■■■■■■■■■■■■■                 53% |  ETA: 28m
+Prediction ■■■■■■■■■■■■■■■■■                 53% |  ETA: 28m
+Prediction ■■■■■■■■■■■■■■■■■                 53% |  ETA: 28m
+Prediction ■■■■■■■■■■■■■■■■■                 53% |  ETA: 28m
+Prediction ■■■■■■■■■■■■■■■■■                 54% |  ETA: 28m
+Prediction ■■■■■■■■■■■■■■■■■                 54% |  ETA: 28m
+Prediction ■■■■■■■■■■■■■■■■■                 54% |  ETA: 28m
+Prediction ■■■■■■■■■■■■■■■■■                 54% |  ETA: 27m
+Prediction ■■■■■■■■■■■■■■■■■                 54% |  ETA: 27m
+Prediction ■■■■■■■■■■■■■■■■■                 54% |  ETA: 27m
+Prediction ■■■■■■■■■■■■■■■■■                 54% |  ETA: 27m
+Prediction ■■■■■■■■■■■■■■■■■                 54% |  ETA: 27m
+Prediction ■■■■■■■■■■■■■■■■■                 54% |  ETA: 27m
+Prediction ■■■■■■■■■■■■■■■■■                 54% |  ETA: 27m
+Prediction ■■■■■■■■■■■■■■■■■                 54% |  ETA: 27m
+Prediction ■■■■■■■■■■■■■■■■■                 55% |  ETA: 27m
+Prediction ■■■■■■■■■■■■■■■■■                 55% |  ETA: 27m
+Prediction ■■■■■■■■■■■■■■■■■                 55% |  ETA: 27m
+Prediction ■■■■■■■■■■■■■■■■■                 55% |  ETA: 27m
+Prediction ■■■■■■■■■■■■■■■■■                 55% |  ETA: 27m
+Prediction ■■■■■■■■■■■■■■■■■■                55% |  ETA: 27m
+Prediction ■■■■■■■■■■■■■■■■■■                55% |  ETA: 27m
+Prediction ■■■■■■■■■■■■■■■■■■                55% |  ETA: 27m
+Prediction ■■■■■■■■■■■■■■■■■■                55% |  ETA: 27m
+Prediction ■■■■■■■■■■■■■■■■■■                55% |  ETA: 26m
+Prediction ■■■■■■■■■■■■■■■■■■                56% |  ETA: 26m
+Prediction ■■■■■■■■■■■■■■■■■■                56% |  ETA: 26m
+Prediction ■■■■■■■■■■■■■■■■■■                56% |  ETA: 26m
+Prediction ■■■■■■■■■■■■■■■■■■                56% |  ETA: 26m
+Prediction ■■■■■■■■■■■■■■■■■■                56% |  ETA: 26m
+Prediction ■■■■■■■■■■■■■■■■■■                56% |  ETA: 26m
+Prediction ■■■■■■■■■■■■■■■■■■                56% |  ETA: 26m
+Prediction ■■■■■■■■■■■■■■■■■■                56% |  ETA: 26m
+Prediction ■■■■■■■■■■■■■■■■■■                56% |  ETA: 26m
+Prediction ■■■■■■■■■■■■■■■■■■                56% |  ETA: 26m
+Prediction ■■■■■■■■■■■■■■■■■■                56% |  ETA: 26m
+Prediction ■■■■■■■■■■■■■■■■■■                56% |  ETA: 26m
+Prediction ■■■■■■■■■■■■■■■■■■                57% |  ETA: 26m
+Prediction ■■■■■■■■■■■■■■■■■■                57% |  ETA: 26m
+Prediction ■■■■■■■■■■■■■■■■■■                57% |  ETA: 26m
+Prediction ■■■■■■■■■■■■■■■■■■                57% |  ETA: 26m
+Prediction ■■■■■■■■■■■■■■■■■■                57% |  ETA: 26m
+Prediction ■■■■■■■■■■■■■■■■■■                57% |  ETA: 26m
+Prediction ■■■■■■■■■■■■■■■■■■                57% |  ETA: 26m
+Prediction ■■■■■■■■■■■■■■■■■■                57% |  ETA: 26m
+Prediction ■■■■■■■■■■■■■■■■■■                57% |  ETA: 25m
+Prediction ■■■■■■■■■■■■■■■■■■                57% |  ETA: 25m
+Prediction ■■■■■■■■■■■■■■■■■■                57% |  ETA: 25m
+Prediction ■■■■■■■■■■■■■■■■■■                57% |  ETA: 25m
+Prediction ■■■■■■■■■■■■■■■■■■                58% |  ETA: 25m
+Prediction ■■■■■■■■■■■■■■■■■■                58% |  ETA: 25m
+Prediction ■■■■■■■■■■■■■■■■■■                58% |  ETA: 25m
+Prediction ■■■■■■■■■■■■■■■■■■                58% |  ETA: 25m
+Prediction ■■■■■■■■■■■■■■■■■■                58% |  ETA: 25m
+Prediction ■■■■■■■■■■■■■■■■■■                58% |  ETA: 25m
+Prediction ■■■■■■■■■■■■■■■■■■                58% |  ETA: 25m
+Prediction ■■■■■■■■■■■■■■■■■■                58% |  ETA: 25m
+Prediction ■■■■■■■■■■■■■■■■■■                58% |  ETA: 25m
+Prediction ■■■■■■■■■■■■■■■■■■                58% |  ETA: 25m
+Prediction ■■■■■■■■■■■■■■■■■■■               58% |  ETA: 25m
+Prediction ■■■■■■■■■■■■■■■■■■■               59% |  ETA: 25m
+Prediction ■■■■■■■■■■■■■■■■■■■               59% |  ETA: 25m
+Prediction ■■■■■■■■■■■■■■■■■■■               59% |  ETA: 25m
+Prediction ■■■■■■■■■■■■■■■■■■■               59% |  ETA: 24m
+Prediction ■■■■■■■■■■■■■■■■■■■               59% |  ETA: 24m
+Prediction ■■■■■■■■■■■■■■■■■■■               59% |  ETA: 24m
+Prediction ■■■■■■■■■■■■■■■■■■■               59% |  ETA: 24m
+Prediction ■■■■■■■■■■■■■■■■■■■               59% |  ETA: 24m
+Prediction ■■■■■■■■■■■■■■■■■■■               59% |  ETA: 24m
+Prediction ■■■■■■■■■■■■■■■■■■■               59% |  ETA: 24m
+Prediction ■■■■■■■■■■■■■■■■■■■               59% |  ETA: 24m
+Prediction ■■■■■■■■■■■■■■■■■■■               59% |  ETA: 24m
+Prediction ■■■■■■■■■■■■■■■■■■■               60% |  ETA: 24m
+Prediction ■■■■■■■■■■■■■■■■■■■               60% |  ETA: 24m
+Prediction ■■■■■■■■■■■■■■■■■■■               60% |  ETA: 24m
+Prediction ■■■■■■■■■■■■■■■■■■■               60% |  ETA: 24m
+Prediction ■■■■■■■■■■■■■■■■■■■               60% |  ETA: 24m
+Prediction ■■■■■■■■■■■■■■■■■■■               60% |  ETA: 24m
+Prediction ■■■■■■■■■■■■■■■■■■■               60% |  ETA: 24m
+Prediction ■■■■■■■■■■■■■■■■■■■               60% |  ETA: 24m
+Prediction ■■■■■■■■■■■■■■■■■■■               60% |  ETA: 24m
+Prediction ■■■■■■■■■■■■■■■■■■■               60% |  ETA: 24m
+Prediction ■■■■■■■■■■■■■■■■■■■               60% |  ETA: 23m
+Prediction ■■■■■■■■■■■■■■■■■■■               61% |  ETA: 23m
+Prediction ■■■■■■■■■■■■■■■■■■■               61% |  ETA: 23m
+Prediction ■■■■■■■■■■■■■■■■■■■               61% |  ETA: 23m
+Prediction ■■■■■■■■■■■■■■■■■■■               61% |  ETA: 23m
+Prediction ■■■■■■■■■■■■■■■■■■■               61% |  ETA: 23m
+Prediction ■■■■■■■■■■■■■■■■■■■               61% |  ETA: 23m
+Prediction ■■■■■■■■■■■■■■■■■■■               61% |  ETA: 23m
+Prediction ■■■■■■■■■■■■■■■■■■■               61% |  ETA: 23m
+Prediction ■■■■■■■■■■■■■■■■■■■               61% |  ETA: 23m
+Prediction ■■■■■■■■■■■■■■■■■■■               61% |  ETA: 23m
+Prediction ■■■■■■■■■■■■■■■■■■■               61% |  ETA: 23m
+Prediction ■■■■■■■■■■■■■■■■■■■               61% |  ETA: 23m
+Prediction ■■■■■■■■■■■■■■■■■■■               62% |  ETA: 23m
+Prediction ■■■■■■■■■■■■■■■■■■■               62% |  ETA: 23m
+Prediction ■■■■■■■■■■■■■■■■■■■■              62% |  ETA: 23m
+Prediction ■■■■■■■■■■■■■■■■■■■■              62% |  ETA: 23m
+Prediction ■■■■■■■■■■■■■■■■■■■■              62% |  ETA: 23m
+Prediction ■■■■■■■■■■■■■■■■■■■■              62% |  ETA: 23m
+Prediction ■■■■■■■■■■■■■■■■■■■■              62% |  ETA: 22m
+Prediction ■■■■■■■■■■■■■■■■■■■■              62% |  ETA: 22m
+Prediction ■■■■■■■■■■■■■■■■■■■■              62% |  ETA: 22m
+Prediction ■■■■■■■■■■■■■■■■■■■■              62% |  ETA: 22m
+Prediction ■■■■■■■■■■■■■■■■■■■■              62% |  ETA: 22m
+Prediction ■■■■■■■■■■■■■■■■■■■■              62% |  ETA: 22m
+Prediction ■■■■■■■■■■■■■■■■■■■■              63% |  ETA: 22m
+Prediction ■■■■■■■■■■■■■■■■■■■■              63% |  ETA: 22m
+Prediction ■■■■■■■■■■■■■■■■■■■■              63% |  ETA: 22m
+Prediction ■■■■■■■■■■■■■■■■■■■■              63% |  ETA: 22m
+Prediction ■■■■■■■■■■■■■■■■■■■■              63% |  ETA: 22m
+Prediction ■■■■■■■■■■■■■■■■■■■■              63% |  ETA: 22m
+Prediction ■■■■■■■■■■■■■■■■■■■■              63% |  ETA: 22m
+Prediction ■■■■■■■■■■■■■■■■■■■■              63% |  ETA: 22m
+Prediction ■■■■■■■■■■■■■■■■■■■■              63% |  ETA: 22m
+Prediction ■■■■■■■■■■■■■■■■■■■■              63% |  ETA: 22m
+Prediction ■■■■■■■■■■■■■■■■■■■■              63% |  ETA: 22m
+Prediction ■■■■■■■■■■■■■■■■■■■■              64% |  ETA: 22m
+Prediction ■■■■■■■■■■■■■■■■■■■■              64% |  ETA: 22m
+Prediction ■■■■■■■■■■■■■■■■■■■■              64% |  ETA: 21m
+Prediction ■■■■■■■■■■■■■■■■■■■■              64% |  ETA: 21m
+Prediction ■■■■■■■■■■■■■■■■■■■■              64% |  ETA: 21m
+Prediction ■■■■■■■■■■■■■■■■■■■■              64% |  ETA: 21m
+Prediction ■■■■■■■■■■■■■■■■■■■■              64% |  ETA: 21m
+Prediction ■■■■■■■■■■■■■■■■■■■■              64% |  ETA: 21m
+Prediction ■■■■■■■■■■■■■■■■■■■■              64% |  ETA: 21m
+Prediction ■■■■■■■■■■■■■■■■■■■■              64% |  ETA: 21m
+Prediction ■■■■■■■■■■■■■■■■■■■■              64% |  ETA: 21m
+Prediction ■■■■■■■■■■■■■■■■■■■■              64% |  ETA: 21m
+Prediction ■■■■■■■■■■■■■■■■■■■■              65% |  ETA: 21m
+Prediction ■■■■■■■■■■■■■■■■■■■■              65% |  ETA: 21m
+Prediction ■■■■■■■■■■■■■■■■■■■■              65% |  ETA: 21m
+Prediction ■■■■■■■■■■■■■■■■■■■■              65% |  ETA: 21m
+Prediction ■■■■■■■■■■■■■■■■■■■■              65% |  ETA: 21m
+Prediction ■■■■■■■■■■■■■■■■■■■■              65% |  ETA: 21m
+Prediction ■■■■■■■■■■■■■■■■■■■■■             65% |  ETA: 21m
+Prediction ■■■■■■■■■■■■■■■■■■■■■             65% |  ETA: 21m
+Prediction ■■■■■■■■■■■■■■■■■■■■■             65% |  ETA: 21m
+Prediction ■■■■■■■■■■■■■■■■■■■■■             65% |  ETA: 20m
+Prediction ■■■■■■■■■■■■■■■■■■■■■             65% |  ETA: 20m
+Prediction ■■■■■■■■■■■■■■■■■■■■■             66% |  ETA: 20m
+Prediction ■■■■■■■■■■■■■■■■■■■■■             66% |  ETA: 20m
+Prediction ■■■■■■■■■■■■■■■■■■■■■             66% |  ETA: 20m
+Prediction ■■■■■■■■■■■■■■■■■■■■■             66% |  ETA: 20m
+Prediction ■■■■■■■■■■■■■■■■■■■■■             66% |  ETA: 20m
+Prediction ■■■■■■■■■■■■■■■■■■■■■             66% |  ETA: 20m
+Prediction ■■■■■■■■■■■■■■■■■■■■■             66% |  ETA: 20m
+Prediction ■■■■■■■■■■■■■■■■■■■■■             66% |  ETA: 20m
+Prediction ■■■■■■■■■■■■■■■■■■■■■             66% |  ETA: 20m
+Prediction ■■■■■■■■■■■■■■■■■■■■■             66% |  ETA: 20m
+Prediction ■■■■■■■■■■■■■■■■■■■■■             66% |  ETA: 20m
+Prediction ■■■■■■■■■■■■■■■■■■■■■             66% |  ETA: 20m
+Prediction ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 20m
+Prediction ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 20m
+Prediction ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 20m
+Prediction ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 20m
+Prediction ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 20m
+Prediction ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 20m
+Prediction ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 19m
+Prediction ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 19m
+Prediction ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 19m
+Prediction ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 19m
+Prediction ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 19m
+Prediction ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 19m
+Prediction ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 19m
+Prediction ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 19m
+Prediction ■■■■■■■■■■■■■■■■■■■■■             68% |  ETA: 19m
+Prediction ■■■■■■■■■■■■■■■■■■■■■             68% |  ETA: 19m
+Prediction ■■■■■■■■■■■■■■■■■■■■■             68% |  ETA: 19m
+Prediction ■■■■■■■■■■■■■■■■■■■■■             68% |  ETA: 19m
+Prediction ■■■■■■■■■■■■■■■■■■■■■             68% |  ETA: 19m
+Prediction ■■■■■■■■■■■■■■■■■■■■■             68% |  ETA: 19m
+Prediction ■■■■■■■■■■■■■■■■■■■■■             68% |  ETA: 19m
+Prediction ■■■■■■■■■■■■■■■■■■■■■             68% |  ETA: 19m
+Prediction ■■■■■■■■■■■■■■■■■■■■■             68% |  ETA: 19m
+Prediction ■■■■■■■■■■■■■■■■■■■■■             68% |  ETA: 19m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■            68% |  ETA: 19m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■            68% |  ETA: 19m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■            69% |  ETA: 19m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■            69% |  ETA: 19m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■            69% |  ETA: 19m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■            69% |  ETA: 18m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■            69% |  ETA: 18m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■            69% |  ETA: 18m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■            69% |  ETA: 18m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■            69% |  ETA: 18m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■            69% |  ETA: 18m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■            69% |  ETA: 18m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■            69% |  ETA: 18m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■            70% |  ETA: 18m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■            70% |  ETA: 18m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■            70% |  ETA: 18m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■            70% |  ETA: 18m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■            70% |  ETA: 18m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■            70% |  ETA: 18m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■            70% |  ETA: 18m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■            70% |  ETA: 18m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■            70% |  ETA: 18m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■            70% |  ETA: 18m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■            70% |  ETA: 18m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■            71% |  ETA: 17m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■            71% |  ETA: 17m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■            71% |  ETA: 17m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■            71% |  ETA: 17m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■            71% |  ETA: 17m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■            71% |  ETA: 17m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■            71% |  ETA: 17m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■            71% |  ETA: 17m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■            71% |  ETA: 17m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■            71% |  ETA: 17m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■            71% |  ETA: 17m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■            71% |  ETA: 17m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■            71% |  ETA: 17m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■            72% |  ETA: 17m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■            72% |  ETA: 17m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■           72% |  ETA: 17m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■           72% |  ETA: 17m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■           72% |  ETA: 17m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■           72% |  ETA: 17m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■           72% |  ETA: 17m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■           72% |  ETA: 17m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■           72% |  ETA: 17m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■           72% |  ETA: 16m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■           72% |  ETA: 16m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■           72% |  ETA: 16m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■           73% |  ETA: 16m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■           73% |  ETA: 16m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■           73% |  ETA: 16m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■           73% |  ETA: 16m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■           73% |  ETA: 16m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■           73% |  ETA: 16m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■           73% |  ETA: 16m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■           73% |  ETA: 16m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■           73% |  ETA: 16m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■           73% |  ETA: 16m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■           73% |  ETA: 16m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■           74% |  ETA: 16m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■           74% |  ETA: 16m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■           74% |  ETA: 16m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■           74% |  ETA: 16m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■           74% |  ETA: 15m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■           74% |  ETA: 15m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■           74% |  ETA: 15m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■           74% |  ETA: 15m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■           74% |  ETA: 15m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■           74% |  ETA: 15m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■           74% |  ETA: 15m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■           75% |  ETA: 15m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■           75% |  ETA: 15m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■           75% |  ETA: 15m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■           75% |  ETA: 15m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■           75% |  ETA: 15m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■           75% |  ETA: 15m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■          75% |  ETA: 15m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■          75% |  ETA: 15m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■          75% |  ETA: 15m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■          75% |  ETA: 15m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■          75% |  ETA: 15m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■          76% |  ETA: 14m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■          76% |  ETA: 14m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■          76% |  ETA: 14m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■          76% |  ETA: 14m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■          76% |  ETA: 14m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■          76% |  ETA: 14m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■          76% |  ETA: 14m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■          76% |  ETA: 14m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■          76% |  ETA: 14m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■          76% |  ETA: 14m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■          76% |  ETA: 14m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■          76% |  ETA: 14m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■          77% |  ETA: 14m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■          77% |  ETA: 14m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■          77% |  ETA: 14m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■          77% |  ETA: 14m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■          77% |  ETA: 14m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■          77% |  ETA: 14m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■          77% |  ETA: 14m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■          77% |  ETA: 14m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■          77% |  ETA: 14m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■          77% |  ETA: 13m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■          77% |  ETA: 13m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■          77% |  ETA: 13m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■          77% |  ETA: 13m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■          78% |  ETA: 13m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■          78% |  ETA: 13m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■          78% |  ETA: 13m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■          78% |  ETA: 13m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■          78% |  ETA: 13m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■          78% |  ETA: 13m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■          78% |  ETA: 13m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■          78% |  ETA: 13m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■          78% |  ETA: 13m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■         78% |  ETA: 13m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■         78% |  ETA: 13m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■         79% |  ETA: 13m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■         79% |  ETA: 13m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■         79% |  ETA: 13m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■         79% |  ETA: 13m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■         79% |  ETA: 12m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■         79% |  ETA: 12m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■         79% |  ETA: 12m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■         79% |  ETA: 12m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■         79% |  ETA: 12m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■         79% |  ETA: 12m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■         79% |  ETA: 12m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■         79% |  ETA: 12m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■         80% |  ETA: 12m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■         80% |  ETA: 12m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■         80% |  ETA: 12m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■         80% |  ETA: 12m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■         80% |  ETA: 12m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■         80% |  ETA: 12m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■         80% |  ETA: 12m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■         80% |  ETA: 12m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■         80% |  ETA: 12m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■         80% |  ETA: 12m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■         80% |  ETA: 12m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■         81% |  ETA: 12m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■         81% |  ETA: 11m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■         81% |  ETA: 11m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■         81% |  ETA: 11m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■         81% |  ETA: 11m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■         81% |  ETA: 11m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■         81% |  ETA: 11m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■         81% |  ETA: 11m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■         81% |  ETA: 11m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■         81% |  ETA: 11m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■         81% |  ETA: 11m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■         81% |  ETA: 11m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■         82% |  ETA: 11m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■         82% |  ETA: 11m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■        82% |  ETA: 11m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■        82% |  ETA: 11m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■        82% |  ETA: 11m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■        82% |  ETA: 11m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■        82% |  ETA: 11m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■        82% |  ETA: 11m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■        82% |  ETA: 10m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■        82% |  ETA: 10m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■        82% |  ETA: 10m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA: 10m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA: 10m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA: 10m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA: 10m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA: 10m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA: 10m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA: 10m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA: 10m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA: 10m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA: 10m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA: 10m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■        84% |  ETA: 10m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■        84% |  ETA: 10m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■        84% |  ETA: 10m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■        84% |  ETA: 10m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■        84% |  ETA:  9m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■        84% |  ETA:  9m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■        84% |  ETA:  9m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■        84% |  ETA:  9m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■        84% |  ETA:  9m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■        84% |  ETA:  9m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■        84% |  ETA:  9m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■        84% |  ETA:  9m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■        85% |  ETA:  9m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■        85% |  ETA:  9m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■        85% |  ETA:  9m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■        85% |  ETA:  9m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■        85% |  ETA:  9m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■       85% |  ETA:  9m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■       85% |  ETA:  9m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■       85% |  ETA:  9m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■       85% |  ETA:  9m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■       85% |  ETA:  9m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■       85% |  ETA:  9m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■       86% |  ETA:  9m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■       86% |  ETA:  8m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■       86% |  ETA:  8m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■       86% |  ETA:  8m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■       86% |  ETA:  8m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■       86% |  ETA:  8m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■       86% |  ETA:  8m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■       86% |  ETA:  8m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■       86% |  ETA:  8m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■       86% |  ETA:  8m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■       87% |  ETA:  8m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■       87% |  ETA:  8m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■       87% |  ETA:  8m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■       87% |  ETA:  8m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■       87% |  ETA:  8m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■       87% |  ETA:  8m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■       87% |  ETA:  8m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■       87% |  ETA:  8m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■       87% |  ETA:  8m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■       87% |  ETA:  8m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■       87% |  ETA:  7m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■       87% |  ETA:  7m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■       88% |  ETA:  7m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■       88% |  ETA:  7m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■       88% |  ETA:  7m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■       88% |  ETA:  7m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■       88% |  ETA:  7m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■       88% |  ETA:  7m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■       88% |  ETA:  7m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■       88% |  ETA:  7m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■       88% |  ETA:  7m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■       88% |  ETA:  7m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■       88% |  ETA:  7m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      88% |  ETA:  7m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      88% |  ETA:  7m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      89% |  ETA:  7m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      89% |  ETA:  7m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      89% |  ETA:  7m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      89% |  ETA:  7m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      89% |  ETA:  7m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      89% |  ETA:  7m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      89% |  ETA:  6m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      89% |  ETA:  6m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      89% |  ETA:  6m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      89% |  ETA:  6m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      89% |  ETA:  6m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      89% |  ETA:  6m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      90% |  ETA:  6m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      90% |  ETA:  6m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      90% |  ETA:  6m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      90% |  ETA:  6m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      90% |  ETA:  6m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      90% |  ETA:  6m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      90% |  ETA:  6m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      90% |  ETA:  6m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      90% |  ETA:  6m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      90% |  ETA:  6m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      90% |  ETA:  6m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      90% |  ETA:  6m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      90% |  ETA:  6m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      90% |  ETA:  6m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      90% |  ETA:  6m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      90% |  ETA:  6m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      91% |  ETA:  6m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      91% |  ETA:  6m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      91% |  ETA:  5m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      91% |  ETA:  5m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      91% |  ETA:  5m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      91% |  ETA:  5m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      91% |  ETA:  5m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      91% |  ETA:  5m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      91% |  ETA:  5m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      91% |  ETA:  5m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      91% |  ETA:  5m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      92% |  ETA:  5m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      92% |  ETA:  5m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     92% |  ETA:  5m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     92% |  ETA:  5m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     92% |  ETA:  5m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     92% |  ETA:  5m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     92% |  ETA:  5m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     92% |  ETA:  5m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     92% |  ETA:  5m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     92% |  ETA:  5m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     92% |  ETA:  5m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     92% |  ETA:  4m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     93% |  ETA:  4m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     93% |  ETA:  4m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     93% |  ETA:  4m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     93% |  ETA:  4m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     93% |  ETA:  4m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     93% |  ETA:  4m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     93% |  ETA:  4m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     93% |  ETA:  4m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     93% |  ETA:  4m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     93% |  ETA:  4m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     93% |  ETA:  4m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     94% |  ETA:  4m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     94% |  ETA:  4m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     94% |  ETA:  4m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     94% |  ETA:  4m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     94% |  ETA:  4m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     94% |  ETA:  4m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     94% |  ETA:  3m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     94% |  ETA:  3m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     94% |  ETA:  3m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     94% |  ETA:  3m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     94% |  ETA:  3m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     95% |  ETA:  3m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     95% |  ETA:  3m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     95% |  ETA:  3m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     95% |  ETA:  3m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     95% |  ETA:  3m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     95% |  ETA:  3m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    95% |  ETA:  3m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    95% |  ETA:  3m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    95% |  ETA:  3m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    95% |  ETA:  3m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    95% |  ETA:  3m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    95% |  ETA:  3m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    96% |  ETA:  3m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    96% |  ETA:  3m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    96% |  ETA:  3m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    96% |  ETA:  2m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    96% |  ETA:  2m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    96% |  ETA:  2m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    96% |  ETA:  2m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    96% |  ETA:  2m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    96% |  ETA:  2m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    96% |  ETA:  2m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    96% |  ETA:  2m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    97% |  ETA:  2m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    97% |  ETA:  2m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    97% |  ETA:  2m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    97% |  ETA:  2m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    97% |  ETA:  2m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    97% |  ETA:  2m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    97% |  ETA:  2m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    97% |  ETA:  2m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    97% |  ETA:  2m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    97% |  ETA:  2m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    97% |  ETA:  1m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    98% |  ETA:  1m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    98% |  ETA:  1m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    98% |  ETA:  1m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    98% |  ETA:  1m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    98% |  ETA:  1m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    98% |  ETA:  1m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    98% |  ETA:  1m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    98% |  ETA:  1m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    98% |  ETA:  1m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    98% |  ETA:  1m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■   98% |  ETA:  1m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■   98% |  ETA:  1m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■   99% |  ETA:  1m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■   99% |  ETA: 48s
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■   99% |  ETA: 44s
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■   99% |  ETA: 41s
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■   99% |  ETA: 38s
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■   99% |  ETA: 35s
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■   99% |  ETA: 32s
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■   99% |  ETA: 28s
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■   99% |  ETA: 25s
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■   99% |  ETA: 22s
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■   99% |  ETA: 19s
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% |  ETA: 15s
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% |  ETA: 12s
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% |  ETA:  9s
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% |  ETA:  5s
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% |  ETA:  2s
+ℹ [2026/04/04 21:01:14] Organize the computed results
+✔ [2026/04/04 21:01:14] PIPET screening done.
+Warning: Skipping object of class `NULL` - not a Seurat object or a list with Seurat
+object
+Warning: Skipping object of class `NULL` - not a Seurat object or a list with Seurat
+object
+Warning: Skipping object of class `NULL` - not a Seurat object or a list with Seurat
+object
+Warning: Skipping object of class `NULL` - not a Seurat object or a list with Seurat
+object
+Warning: Skipping object of class `NULL` - not a Seurat object or a list with Seurat
+object
+Warning: Skipping object of class `NULL` - not a Seurat object or a list with Seurat
+object
+Warning: Skipping object of class `NULL` - not a Seurat object or a list with Seurat
+object
+✔ Successfully merged 7 objects.
+✔ Saved to '/home/data/sigbridger/benchmark_binary/lung//binary_lung_TCGA_LUAD_merged_seurat.qs'
+[[1]]
+An object of class Seurat 
+11591 features across 32234 samples within 1 assay 
+Active assay: RNA (11591 features, 2000 variable features)
+ 3 layers present: counts, data, scale.data
+ 2 dimensional reductions calculated: pca, umap
 
- *** caught segfault ***
-address 0x5ea86c9cd3e0, cause 'memory not mapped'
 
-Traceback:
- 1: oneDimLogit(data, index, thresh = thresh, inner.iter = maxit,     outer.iter = maxit, outer.thresh = thresh, min.frac = min.frac,     nlam = nlam, lambdas = lambdas, gamma = gamma, verbose = verbose,     step = step, alpha = alpha, reset = reset)
- 2: SGL::SGL(data, cluster_membership, type = type, alpha = alpha)
- 3: LPSGL::label_cell(seurat_obj = sc_data, bulk_dataset = matched_bulk,     phenotype = phenotype, cluster_membership = leiden_results,     alpha = alpha, nfold = nfold, type = family, verbose = verbose,     seed = seed)
- 4: (function (matched_bulk, sc_data, phenotype, label_type = "LP_SGL",     family = c("logit", "cox", "linear"), resolution = 0.6, alpha = 0.5,     nfold = 5, dge_analysis = list(run = FALSE, logFC_threshold = 1,         pval_threshold = 0.05), ...) {    CheckInstalled("Exceret/LPSGL")    chk::chk_is(matched_bulk, c("matrix", "data.frame"))    chk::chk_is(sc_data, c("Seurat"))    chk::chk_list(dge_analysis)    family <- SigBridgeRUtils::MatchArg(family, c("logit", "cox",         "linear"), NULL)    dots <- rlang::list2(...)    verbose <- dots$verbose %||% getFuncOption("verbose")    seed <- dots$seed %||% getFuncOption("seed")    assay <- dots$assay %||% "RNA"    if (ncol(sc_data) > 50000) {        cli::cli_warn("The number of cells in the scRNA-seq data is too large (>50k), \\\n       this may result in segmentation fault")    }    if (verbose) {        ts_cli$cli_alert_info(cli::col_green("Starting LP-SGL screen"))  ...
- 5: rlang::exec(method_config$executor, !!!params)
- 6: SigBridgeR::Screen(bulk, sc_data, labels, label_type = paste0(m,     "_binary"), phenotype_class = "binary", screen_method = m,     alpha = if (m != "LP_SGL") NULL else 0.5, alpha_2 = NULL,     path2save_scissor_inputs = NULL)
- 7: withCallingHandlers(expr, condition = function(cnd) {    {        .__handler_frame__. <- TRUE        .__setup_frame__. <- frame        if (inherits(cnd, "message")) {            except <- c("warning", "error")        }        else if (inherits(cnd, "warning")) {            except <- "error"        }        else {            except <- ""        }    }    while (!is_null(cnd)) {        if (inherits(cnd, "error")) {            out <- handlers[[1L]](cnd)            if (!inherits(out, "rlang_zap"))                 throw(out)        }  ...
- 8: doTryCatch(return(expr), name, parentenv, handler)
- 9: tryCatchOne(expr, names, parentenv, handlers[[1L]])
-10: tryCatchList(expr, classes, parentenv, handlers)
-11: tryCatch(withCallingHandlers(expr, condition = function(cnd) {    {        .__handler_frame__. <- TRUE        .__setup_frame__. <- frame        if (inherits(cnd, "message")) {            except <- c("warning", "error")        }        else if (inherits(cnd, "warning")) {            except <- "error"        }        else {            except <- ""        }    }    while (!is_null(cnd)) {        if (inherits(cnd, "error")) {            out <- handlers[[1L]](cnd)            if (!inherits(out, "rlang_zap"))                 throw(out)        }  ...
-12: rlang::try_fetch(SigBridgeR::Screen(bulk, sc_data, labels, label_type = paste0(m,     "_binary"), phenotype_class = "binary", screen_method = m,     alpha = if (m != "LP_SGL") NULL else 0.5, alpha_2 = NULL,     path2save_scissor_inputs = NULL), error = function(e) {    cli::cli_warn("{.fn {m}} failed: {.message {e$message}}")    NULL})
-13: run_screening_pipeline(name, bulk_configs[[name]], seurat_luad,     methods, data_path, save_path)
-14: FUN(X[[i]], ...)
-15: lapply(names(bulk_configs), function(name) {    run_screening_pipeline(name, bulk_configs[[name]], seurat_luad,         methods, data_path, save_path)})
-An irrecoverable exception occurred. R is aborting now ...
+── ✅ All screening tasks completed. ───────────────────────────────────────────

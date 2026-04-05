@@ -1,0 +1,22 @@
+nohup: ignoring input
+✔ Setting active project to "/home/yyx/R/Project/R_code/paper_SigBridgeR".
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+reading ■■■■■                             12% |  ETA: 28s
+reading ■■■■■■■■■                         25% |  ETA: 28s
+Warning: (survivl) Files not found for method: PIPET, skipping...
+reading ■■■■■■■■■■■■                      38% |  ETA: 24s
+reading ■■■■■■■■■■■■■■■■■■■■              62% |  ETA:  1m
+reading ■■■■■■■■■■■■■■■■■■■■■■■           75% |  ETA: 40s
+reading ■■■■■■■■■■■■■■■■■■■■■■■■■■■       88% |  ETA: 18s
+
+── All done! ───────────────────────────────────────────────────────────────────

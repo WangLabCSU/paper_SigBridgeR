@@ -100,26 +100,36 @@ run_screening_pipeline <- function(
   # 2. Process Phenotype & Extract Binary Labels
   pheno <- qs::qread(file.path(data_path, config$pheno_qs), nthreads = 4)
 
-  if (isTRUE(config$is_tcga)) {
-    cm_samples <- intersect(pheno$sample, colnames(bulk))
-    labels <- pheno %>%
-      mutate(sample_type = substr(sample, 14, 15)) %>%
-      filter(sample_type %in% c("01", "11"), sample %in% cm_samples) %>%
-      mutate(sample_type = as.integer(sample_type == "01")) %>%
-      {
-        setNames(.$sample_type, .$sample)
-      }
-  } else {
-    # 通用映射：利用命名向量索引，比 case_when 更高效且不易出错
-    labels <- setNames(
-      config$label_map[pheno[[config$label_col]]],
-      pheno[[config$id_col]]
-    )
-    labels <- labels[!is.na(labels)] # 剔除未匹配的样本
+  if (config_name == "GSE42568") {
+    surv_data <- pheno %>%
+      dplyr::select(
+        `overall survival time_days:ch1`,
+        `overall survival event:ch1`
+      ) %>%
+      dplyr::filter(
+        !is.na(`overall survival time_days:ch1`) &
+          !is.na(`overall survival event:ch1`) &
+          `overall survival time_days:ch1` != "NA"
+      ) %>%
+      dplyr::rename(time = 1, status = 2)
+  } else if (config_name == "GSE162228") {
+    surv_data <- pheno %>%
+      dplyr::select(`overall survival (years):ch1`, `alive:ch1`) %>%
+      dplyr::rename(time = 1, status = 2) %>%
+      dplyr::mutate(
+        status = dplyr::case_when(
+          status == "Alive" ~ 1L,
+          status == "Death" ~ 0L
+        )
+      )
+  } else if (config_name == "TCGA_BRCA") {
+    surv_data <- qs::qread(file.path(data_path, "brca_surv_TCGA.qs"))
   }
 
   # 3. Align Bulk Matrix with Labels
-  bulk <- bulk[, names(labels), drop = FALSE]
+  cm_samples <- intersect(colnames(bulk), rownames(surv_data))
+  bulk <- bulk[, cm_samples, drop = FALSE]
+  surv_data <- surv_data[cm_samples, , drop = FALSE]
   cli::cli_alert_info(
     "Aligned bulk matrix: {nrow(bulk)} genes x {ncol(bulk)} samples"
   )
@@ -143,7 +153,7 @@ run_screening_pipeline <- function(
     screen_res <- SigBridgeR::Screen(
       bulk,
       sc_data,
-      labels,
+      surv_data,
       label_type = paste0(m, "_survival"),
       phenotype_class = "survival",
       screen_method = m,
@@ -163,13 +173,13 @@ run_screening_pipeline <- function(
 
   # 5. Merge & Save
 
-  merged_res <- do.call(SigBridgeR::MergeResult, results)
+  merged_res <- rlang::exec(SigBridgeR::MergeResult, !!!results)
   out_file <- file.path(
     save_path,
     paste0("survival_TNBC_", config_name, "_merged_seurat.qs")
   )
   qs::qsave(merged_res, out_file, nthreads = 8L)
-  cli::cli_success("Saved to {.path {out_file}}\n")
+  cli::cli_alert_success("Saved to {.path {out_file}}\n")
 
   invisible(merged_res)
 }

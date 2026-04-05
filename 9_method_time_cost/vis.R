@@ -1,4 +1,5 @@
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+# setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+setwd(file.path(usethis::proj_path(), "9_method_time_cost"))
 
 library(bench) # ! This is necessary
 library(ggplot2)
@@ -25,7 +26,7 @@ purrr::walk(
       return(NULL)
     }
 
-    b <- qs::qread(b_path, nthreads = 2L)
+    b <- qs::qread(b_path, nthreads = 8L)
     # add a column to identify method
     b$method <- method
 
@@ -42,7 +43,7 @@ purrr::walk(
       return(NULL)
     }
 
-    s <- qs::qread(s_path, nthreads = 2L)
+    s <- qs::qread(s_path, nthreads = 8L)
     s$method <- method
     assign(
       paste0(method, "_survival_tweaked"),
