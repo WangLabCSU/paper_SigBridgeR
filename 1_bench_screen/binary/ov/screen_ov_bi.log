@@ -79,3 +79,566 @@ The percentage of selected cell is: 74.538%
 
 Scissor identified 12717 Scissor+ cells and 21009 Scissor- cells.
 The percentage of selected cell is: 66.305%
+
+── At alpha = 0.05 ──
+
+Scissor identified 43993 Scissor+ cells and 6785 Scissor- cells.
+The percentage of selected cell is: 99.829%
+
+── At alpha = 0.1 ──
+
+Scissor identified 17261 Scissor+ cells and 33251 Scissor- cells.
+The percentage of selected cell is: 99.306%
+
+── At alpha = 0.2 ──
+
+Scissor identified 21045 Scissor+ cells and 28879 Scissor- cells.
+The percentage of selected cell is: 98.15%
+
+── At alpha = 0.3 ──
+
+Scissor identified 20288 Scissor+ cells and 29309 Scissor- cells.
+The percentage of selected cell is: 97.507%
+
+── At alpha = 0.4 ──
+
+Scissor identified 18192 Scissor+ cells and 31345 Scissor- cells.
+The percentage of selected cell is: 97.389%
+
+── At alpha = 0.5 ──
+
+Scissor identified 30442 Scissor+ cells and 18449 Scissor- cells.
+The percentage of selected cell is: 96.119%
+
+── At alpha = 0.6 ──
+
+Scissor identified 18925 Scissor+ cells and 27826 Scissor- cells.
+The percentage of selected cell is: 91.912%
+
+── At alpha = 0.7 ──
+
+Scissor identified 23743 Scissor+ cells and 23545 Scissor- cells.
+The percentage of selected cell is: 92.968%
+
+── At alpha = 0.8 ──
+
+Scissor identified 16115 Scissor+ cells and 28804 Scissor- cells.
+The percentage of selected cell is: 88.31%
+
+── At alpha = 0.9 ──
+
+Scissor identified 17038 Scissor+ cells and 25304 Scissor- cells.
+The percentage of selected cell is: 83.244%
+ℹ [2026/04/06 16:38:20] Start scAB screening.
+ℹ  Using "RNA_snn" graph for network.
+ℹ [2026/04/06 16:38:20] Calculating L, D and A
+ℹ [2026/04/06 16:38:29] Normalizing quantiles of data
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.0 GiB
+ℹ [2026/04/06 16:40:15] Calculating correlation
+ℹ [2026/04/06 16:40:29] Guanranking
+ℹ [2026/04/06 16:40:30] Selecting K
+loss of 2: 0.000624726
+loss of 3: 0.000711346
+ℹ [2026/04/06 16:41:45] Run NMF with phenotype and cell-cell similarity regularization at K = 2
+ℹ [2026/04/06 16:41:45] Selecting optimal `alpha` and `alpha_2`, this would take a while
+Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■                           20% | ETA:  2m
+Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■                     40% | ETA:  2m
+Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  1m
+Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 35s
+Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.005, alpha_2 = 0.01 ■■■■■■■                           20% | ETA:  2m
+Alpha = 0.005, alpha_2 = 0.01 ■■■■■■■■■■■■■                     40% | ETA:  2m
+Alpha = 0.005, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  1m
+Alpha = 0.005, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 32s
+Alpha = 0.005, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.001, alpha_2 = 0.01 ■■■■■■■                           20% | ETA:  2m
+Alpha = 0.001, alpha_2 = 0.01 ■■■■■■■■■■■■■                     40% | ETA:  1m
+Alpha = 0.001, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  1m
+Alpha = 0.001, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 27s
+Alpha = 0.001, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.01, alpha_2 = 0.005 ■■■■■■■                           20% | ETA:  2m
+Alpha = 0.01, alpha_2 = 0.005 ■■■■■■■■■■■■■                     40% | ETA:  2m
+Alpha = 0.01, alpha_2 = 0.005 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  1m
+Alpha = 0.01, alpha_2 = 0.005 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 31s
+Alpha = 0.01, alpha_2 = 0.005 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.005, alpha_2 = 0.005 ■■■■■■■                           20% | ETA:  2m
+Alpha = 0.005, alpha_2 = 0.005 ■■■■■■■■■■■■■                     40% | ETA:  1m
+Alpha = 0.005, alpha_2 = 0.005 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  1m
+Alpha = 0.005, alpha_2 = 0.005 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 29s
+Alpha = 0.005, alpha_2 = 0.005 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.001, alpha_2 = 0.005 ■■■■■■■                           20% | ETA:  2m
+Alpha = 0.001, alpha_2 = 0.005 ■■■■■■■■■■■■■                     40% | ETA:  1m
+Alpha = 0.001, alpha_2 = 0.005 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  1m
+Alpha = 0.001, alpha_2 = 0.005 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 26s
+Alpha = 0.001, alpha_2 = 0.005 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.01, alpha_2 = 0.001 ■■■■■■■                           20% | ETA:  2m
+Alpha = 0.01, alpha_2 = 0.001 ■■■■■■■■■■■■■                     40% | ETA:  1m
+Alpha = 0.01, alpha_2 = 0.001 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  1m
+Alpha = 0.01, alpha_2 = 0.001 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 27s
+Alpha = 0.01, alpha_2 = 0.001 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.005, alpha_2 = 0.001 ■■■■■■■                           20% | ETA:  2m
+Alpha = 0.005, alpha_2 = 0.001 ■■■■■■■■■■■■■                     40% | ETA:  1m
+Alpha = 0.005, alpha_2 = 0.001 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  1m
+Alpha = 0.005, alpha_2 = 0.001 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 26s
+Alpha = 0.005, alpha_2 = 0.001 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.001, alpha_2 = 0.001 ■■■■■■■                           20% | ETA:  2m
+Alpha = 0.001, alpha_2 = 0.001 ■■■■■■■■■■■■■                     40% | ETA:  1m
+Alpha = 0.001, alpha_2 = 0.001 ■■■■■■■■■■■■■■■■■■■               60% | ETA:  1m
+Alpha = 0.001, alpha_2 = 0.001 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 26s
+Alpha = 0.001, alpha_2 = 0.001 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+✔ [2026/04/06 17:03:31] Best `alpha` and `alpha_2` are 0.01 and 0.01
+ℹ [2026/04/06 17:04:45] Screening cells...
+Warning in multimode::locmodes(x, mod0 = 2) :
+  If the density function has an unbounded support, artificial modes may have been created in the tails
+ℹ [2026/04/06 17:04:45] scAB screening done.
+ℹ [2026/04/06 17:05:03] Start SCIPAC screening
+ℹ [2026/04/06 17:05:03] Find common variable geme (hvg = 1000)
+Normalizing layer: counts
+Performing log-normalization
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Finding variable features for layer counts
+Calculating gene variances
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Calculating feature variances of standardized and clipped values
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+ℹ [2026/04/06 17:05:34] Running PCA (n_pc = 60)
+ℹ [2026/04/06 17:05:36] Clustering (resolution = 2)
+Warning: Data is of class matrix. Coercing to dgCMatrix.
+Computing nearest neighbor graph
+Computing SNN
+Modularity Optimizer version 1.3.0 by Ludo Waltman and Nees Jan van Eck
+
+Number of nodes: 50865
+Number of edges: 2004345
+
+Running Louvain algorithm...
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Maximum modularity in 10 random starts: 0.8335
+Number of communities: 40
+Elapsed time: 15 seconds
+1 singletons identified. 39 final clusters.
+ℹ [2026/04/06 17:06:09] Screening ("50 bootstrap")
+ℹ [2026/04/06 17:06:16] SCIPAC screening done
+ℹ [2026/04/06 17:06:33] Start scPAS screening.
+ℹ [2026/04/06 17:06:43] Quantile normalizing bulk data
+ℹ [2026/04/06 17:06:43] Extracting single-cell expression profiles...
+ℹ [2026/04/06 17:06:45] Constructing a gene-gene similarity by single cell data
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 1.0 GiB
+Building SNN based on a provided distance matrix
+Computing SNN
+ℹ [2026/04/06 17:06:52] Optimizing the network-regularized sparse regression model
+ℹ [2026/04/06 17:06:52] Current phenotype contains 18 scPAS_binary_Positive and 267 scPAS_binary_Negative samples.
+ℹ [2026/04/06 17:06:52] Perform logistic regression on the given phenotypes...
+
+── At alpha = 0.001 ──
+
+lambda = 1.7450817431482
+scPAS identified 1234 risk+ features and 903 risk- features.
+The percentage of selected feature is: 79.324%
+
+── At alpha = 0.005 ──
+
+lambda = 0.349016348629641
+scPAS identified 765 risk+ features and 680 risk- features.
+The percentage of selected feature is: 53.638%
+
+── At alpha = 0.01 ──
+
+lambda = 0.17450817431482
+scPAS identified 1446 risk+ features and 1184 risk- features.
+The percentage of selected feature is: 97.624%
+
+── At alpha = 0.05 ──
+
+lambda = 0.0383045011757925
+scPAS identified 208 risk+ features and 252 risk- features.
+The percentage of selected feature is: 17.075%
+ℹ [2026/04/06 18:05:59] Calculating quantified risk scores...
+ℹ [2026/04/06 18:06:05] Qualitative identification by permutation test program with 2000 times random perturbations...
+✔ [2026/04/06 18:06:34] scPAS screening done.
+ℹ [2026/04/06 18:06:52] Start scPP screening.
+ℹ [2026/04/06 18:06:52] Finding overall markers...
+ℹ [2026/04/06 18:06:53] Screening...
+ℹ [2026/04/06 18:06:53] Running fixed threshold mode with prob = 0.2
+ℹ [2026/04/06 18:06:54] Computing AUC scores...
+Registered S3 methods overwritten by 'bit64':
+  method               from  
+  as.double.integer64  cheapr
+  as.integer.integer64 cheapr
+Registered S3 methods overwritten by 'Seqinfo':
+  method                from        
+  as.data.frame.Seqinfo GenomeInfoDb
+  merge.Seqinfo         GenomeInfoDb
+  summary.Seqinfo       GenomeInfoDb
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	219 (13% of 1737)
+	gene_neg: 	579 (25% of 2315)
+✔ [2026/04/06 18:07:48] Classified 2543 Positive, 2612 Negative cells
+ℹ [2026/04/06 18:07:48] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/06 18:07:52] Found 1071 positive markers, 3697 negative markers
+✔ [2026/04/06 18:07:52] scPP screening done.
+ℹ [2026/04/06 18:08:09] Starting DEGAS Screen
+ℹ [2026/04/06 18:08:16] Setting up Environment...
+ℹ [2026/04/06 18:08:19] Existing environment "r-reticulate-degas" found
+ℹ [2026/04/06 18:08:20] Training DEGAS model...
+ℹ [2026/04/06 18:08:20] 3-layer DenseNet BlankClass DEGAS model
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.0 GiB
+ℹ [2026/04/06 18:08:42] Python check passed, using Python 3.9.15 
+ℹ [2026/04/06 18:08:42] Training progress: 1/5...
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/util/dispatch.py:201: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+2026-04-06 18:09:25.592850: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2026-04-06 18:09:25.593219: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-04-06 18:09:25.603727: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:196] None of the MLIR optimization passes are enabled (registered 0 passes)
+2026-04-06 18:09:25.609709: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 2595145000 Hz
+2026-04-06 18:09:25.945729: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7090f4009d20 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2026-04-06 18:09:25.945817: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2026-04-06 18:09:25.981693: I tensorflow/compiler/jit/xla_compilation_cache.cc:333] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+Starting training...
+Step       Total Loss      Label Loss      MMD Loss       
+-------------------------------------------------------
+0          4.446912        0.698430        0.886457       
+50         1.854930        0.591788        0.136280       
+100        1.595695        0.435605        0.134241       
+150        1.359304        0.388519        0.125596       
+200        1.252964        0.428926        0.132004       
+250        1.193466        0.397735        0.122500       
+300        1.074825        0.348195        0.135849       
+350        1.119596        0.374337        0.130910       
+400        1.106492        0.372498        0.124335       
+450        1.169496        0.388206        0.125253       
+500        1.112280        0.384531        0.131259       
+550        1.186847        0.404203        0.125517       
+600        1.101104        0.377163        0.126758       
+650        1.129834        0.372222        0.123998       
+700        1.125729        0.369028        0.120766       
+750        1.119296        0.378068        0.125897       
+800        1.093742        0.381480        0.121641       
+850        1.146348        0.406698        0.129142       
+900        1.076704        0.362426        0.130552       
+950        1.083016        0.363485        0.120904       
+1000       1.102388        0.358144        0.124782       
+1050       1.126196        0.370803        0.130979       
+1100       1.219196        0.408206        0.125332       
+1150       1.056304        0.331965        0.124520       
+1200       1.115184        0.365868        0.129156       
+1250       1.134879        0.376896        0.130463       
+1300       1.089390        0.358314        0.125585       
+1350       1.102359        0.362943        0.126145       
+1400       1.093299        0.362984        0.121061       
+1450       1.093749        0.360516        0.123856       
+1500       1.131792        0.356853        0.127667       
+1550       1.110790        0.353256        0.127539       
+1600       1.177530        0.400720        0.131989       
+1650       1.055098        0.336935        0.124048       
+1700       1.157282        0.381115        0.134691       
+1750       1.137487        0.383613        0.126192       
+1800       1.126352        0.372921        0.121703       
+1850       1.090510        0.360774        0.126315       
+1900       1.138343        0.373960        0.125296       
+1950       1.141320        0.369930        0.124239       
+2000       1.088500        0.353519        0.128628       
+ ■■■■■■■                           20% |  ETA: 15m
+ℹ [2026/04/06 18:12:20] Training progress: 2/5...
+ ■■■■■■■                           20% |  ETA: 15mWARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/util/dispatch.py:201: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+2026-04-06 18:13:03.060299: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2026-04-06 18:13:03.060611: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-04-06 18:13:03.071255: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:196] None of the MLIR optimization passes are enabled (registered 0 passes)
+2026-04-06 18:13:03.077269: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 2595145000 Hz
+2026-04-06 18:13:03.409525: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7de738009cb0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2026-04-06 18:13:03.409619: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2026-04-06 18:13:03.445509: I tensorflow/compiler/jit/xla_compilation_cache.cc:333] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+Starting training...
+Step       Total Loss      Label Loss      MMD Loss       
+-------------------------------------------------------
+0          6.009191        0.864345        1.289300       
+50         1.849363        0.704524        0.130715       
+100        1.997878        0.586965        0.133748       
+150        1.833954        0.667998        0.129762       
+200        1.582221        0.531585        0.132584       
+250        1.276577        0.479238        0.129504       
+300        1.076210        0.345768        0.127532       
+350        1.149753        0.382532        0.122325       
+400        1.089997        0.361525        0.130877       
+450        1.114018        0.367195        0.124804       
+500        1.134937        0.376286        0.127932       
+550        1.104437        0.361511        0.124991       
+600        1.154698        0.378396        0.123168       
+650        1.138455        0.380320        0.123158       
+700        1.105960        0.371668        0.125190       
+750        1.207143        0.407024        0.122020       
+800        1.132502        0.380809        0.123465       
+850        1.099490        0.374891        0.124883       
+900        1.132965        0.382602        0.131954       
+950        1.170677        0.397683        0.125798       
+1000       1.123076        0.378617        0.129751       
+1050       1.180062        0.390935        0.123438       
+1100       1.140435        0.378906        0.128205       
+1150       1.138563        0.362138        0.127030       
+1200       1.130777        0.380668        0.127273       
+1250       1.076695        0.352487        0.119604       
+1300       1.181558        0.396864        0.119159       
+1350       1.095453        0.375239        0.120486       
+1400       1.079974        0.353516        0.120834       
+1450       1.181084        0.398386        0.121791       
+1500       1.114980        0.376004        0.122503       
+1550       1.104022        0.364847        0.116715       
+1600       1.116019        0.373423        0.126499       
+1650       1.145071        0.375447        0.120589       
+1700       1.053088        0.353306        0.125090       
+1750       1.156540        0.398108        0.126231       
+1800       1.108404        0.369000        0.132584       
+1850       1.093798        0.350178        0.123616       
+1900       1.146424        0.378206        0.133424       
+1950       1.098977        0.361634        0.126615       
+2000       1.188258        0.409551        0.126219       
+ ■■■■■■■■■■■■■                     40% |  ETA: 11m
+ℹ [2026/04/06 18:16:05] Training progress: 3/5...
+ ■■■■■■■■■■■■■                     40% |  ETA: 11mWARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/util/dispatch.py:201: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+2026-04-06 18:16:49.030385: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2026-04-06 18:16:49.030942: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-04-06 18:16:49.041802: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:196] None of the MLIR optimization passes are enabled (registered 0 passes)
+2026-04-06 18:16:49.048525: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 2595145000 Hz
+2026-04-06 18:16:49.389850: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7bc71800ab90 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2026-04-06 18:16:49.389938: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2026-04-06 18:16:49.426687: I tensorflow/compiler/jit/xla_compilation_cache.cc:333] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+Starting training...
+Step       Total Loss      Label Loss      MMD Loss       
+-------------------------------------------------------
+0          5.041877        0.885778        0.875465       
+50         2.101995        0.657165        0.135105       
+100        1.663025        0.519620        0.125736       
+150        1.605995        0.557044        0.125148       
+200        1.726425        0.425706        0.131204       
+250        1.365055        0.446825        0.124316       
+300        1.183306        0.396855        0.122667       
+350        1.178624        0.410383        0.127274       
+400        1.168663        0.383134        0.130674       
+450        1.216356        0.409393        0.124956       
+500        1.108314        0.357827        0.126872       
+550        1.096188        0.367867        0.126164       
+600        1.064099        0.346319        0.124914       
+650        1.078197        0.364476        0.126510       
+700        1.167104        0.395917        0.130059       
+750        1.134871        0.385047        0.126746       
+800        1.223659        0.413497        0.125810       
+850        1.131396        0.370546        0.127731       
+900        1.089726        0.356968        0.123853       
+950        1.097283        0.363687        0.128088       
+1000       1.159535        0.387021        0.124514       
+1050       1.108287        0.377856        0.122858       
+1100       1.147098        0.385363        0.123534       
+1150       1.085655        0.357846        0.126242       
+1200       1.134377        0.375259        0.129855       
+1250       1.067876        0.337160        0.122940       
+1300       1.084632        0.351152        0.124155       
+1350       1.139511        0.384252        0.141131       
+1400       1.144495        0.382885        0.125987       
+1450       1.126949        0.383122        0.126707       
+1500       1.134144        0.375257        0.126011       
+1550       1.156967        0.385118        0.128309       
+1600       1.129244        0.383585        0.121279       
+1650       1.102355        0.348760        0.125421       
+1700       1.049948        0.336775        0.122962       
+1750       1.181582        0.400440        0.124573       
+1800       1.134340        0.371440        0.121800       
+1850       1.102317        0.370609        0.124770       
+1900       1.160941        0.381116        0.125228       
+1950       1.128958        0.364571        0.121648       
+2000       1.157879        0.385716        0.123957       
+ ■■■■■■■■■■■■■■■■■■■               60% |  ETA:  7m
+ℹ [2026/04/06 18:19:54] Training progress: 4/5...
+ ■■■■■■■■■■■■■■■■■■■               60% |  ETA:  7mWARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/util/dispatch.py:201: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+2026-04-06 18:20:36.646565: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2026-04-06 18:20:36.646909: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-04-06 18:20:36.657465: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:196] None of the MLIR optimization passes are enabled (registered 0 passes)
+2026-04-06 18:20:36.663503: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 2595145000 Hz
+2026-04-06 18:20:36.996164: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7363c4009eb0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2026-04-06 18:20:36.996261: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2026-04-06 18:20:37.033454: I tensorflow/compiler/jit/xla_compilation_cache.cc:333] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+Starting training...
+Step       Total Loss      Label Loss      MMD Loss       
+-------------------------------------------------------
+0          4.282843        0.660364        0.837381       
+50         1.796301        0.529489        0.140752       
+100        1.713531        0.544208        0.121368       
+150        1.252772        0.515661        0.124365       
+200        1.282334        0.427629        0.123805       
+250        1.178512        0.390684        0.126699       
+300        1.144675        0.358676        0.129367       
+350        1.141475        0.385126        0.125196       
+400        1.139654        0.375016        0.126013       
+450        1.176677        0.394700        0.122993       
+500        1.142452        0.380630        0.129088       
+550        1.118155        0.370193        0.122740       
+600        1.196721        0.416220        0.132966       
+650        1.120086        0.375858        0.123519       
+700        1.161522        0.382801        0.127523       
+750        1.196676        0.393917        0.124554       
+800        1.127849        0.373699        0.121646       
+850        1.157216        0.401730        0.126057       
+900        1.089976        0.365234        0.126324       
+950        1.163773        0.388776        0.130467       
+1000       1.137991        0.378986        0.125393       
+1050       1.076150        0.342563        0.123000       
+1100       1.070053        0.363523        0.128011       
+1150       1.182819        0.381775        0.121798       
+1200       1.173328        0.388180        0.125287       
+1250       1.203694        0.417449        0.128350       
+1300       1.082771        0.356415        0.127807       
+1350       1.144970        0.396338        0.124841       
+1400       1.171679        0.394078        0.136420       
+1450       1.089842        0.357013        0.127391       
+1500       1.079469        0.361610        0.127700       
+1550       1.112264        0.363942        0.119922       
+1600       1.077332        0.351490        0.122829       
+1650       1.177172        0.394737        0.129644       
+1700       1.129613        0.374369        0.127894       
+1750       1.088324        0.345489        0.133264       
+1800       1.130808        0.377716        0.128079       
+1850       1.123341        0.361575        0.123051       
+1900       1.191356        0.402282        0.126912       
+1950       1.115363        0.380600        0.129932       
+2000       1.126927        0.361667        0.126528       
+ ■■■■■■■■■■■■■■■■■■■■■■■■■         80% |  ETA:  4m
+ℹ [2026/04/06 18:23:35] Training progress: 5/5...
+ ■■■■■■■■■■■■■■■■■■■■■■■■■         80% |  ETA:  4mWARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+WARNING:tensorflow:From /home/yyx/miniconda3/envs/r-reticulate-degas/lib/python3.9/site-packages/tensorflow/python/util/dispatch.py:201: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+2026-04-06 18:24:18.718291: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2026-04-06 18:24:18.718621: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-04-06 18:24:18.729297: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:196] None of the MLIR optimization passes are enabled (registered 0 passes)
+2026-04-06 18:24:18.735389: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 2595145000 Hz
+2026-04-06 18:24:19.068768: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7ff8d80098c0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2026-04-06 18:24:19.068856: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2026-04-06 18:24:19.109478: I tensorflow/compiler/jit/xla_compilation_cache.cc:333] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+Starting training...
+Step       Total Loss      Label Loss      MMD Loss       
+-------------------------------------------------------
+0          4.232860        0.737461        0.849012       
+50         1.883809        0.606476        0.184109       
+100        1.754288        0.610891        0.129272       
+150        1.721955        0.499703        0.129829       
+200        1.347973        0.411797        0.122837       
+250        1.346586        0.378577        0.126727       
+300        1.183472        0.375433        0.130847       
+350        1.149166        0.382752        0.123571       
+400        1.126381        0.369714        0.119927       
+450        1.145890        0.371129        0.124109       
+500        1.154706        0.376302        0.123535       
+550        1.151338        0.369563        0.126348       
+600        1.203918        0.402116        0.122603       
+650        1.176121        0.383967        0.119755       
+700        1.148484        0.383466        0.132509       
+750        1.103943        0.362928        0.127444       
+800        1.176444        0.403315        0.127512       
+850        1.128462        0.389261        0.124780       
+900        1.124660        0.376463        0.129607       
+950        1.172872        0.386225        0.125508       
+1000       1.152674        0.375475        0.122257       
+1050       1.128938        0.368819        0.125933       
+1100       1.112497        0.351445        0.135510       
+1150       1.135129        0.374450        0.119500       
+1200       1.182124        0.392803        0.121260       
+1250       1.133006        0.385640        0.125762       
+1300       1.099042        0.355145        0.123499       
+1350       1.202656        0.405773        0.119583       
+1400       1.148766        0.386517        0.123790       
+1450       1.132054        0.382387        0.127555       
+1500       1.120354        0.374845        0.125895       
+1550       1.096813        0.368647        0.130445       
+1600       1.111410        0.354791        0.122875       
+1650       1.104983        0.363771        0.125953       
+1700       1.094859        0.381162        0.121268       
+1750       1.100378        0.365042        0.129288       
+1800       1.046327        0.332315        0.121160       
+1850       1.123851        0.372744        0.128360       
+1900       1.156290        0.386807        0.125510       
+1950       1.105785        0.377675        0.129969       
+2000       1.101546        0.368888        0.129713       
+ℹ [2026/04/06 18:27:16] Predicting and Labeling
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.0 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.0 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.0 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.0 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.0 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.0 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.0 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.0 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.0 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.0 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.0 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.0 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.0 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.0 GiB
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.0 GiB
+ℹ [2026/04/06 18:28:32] Labeling screened cells
+ℹ Using "DEGAS_binary0" as reference group
+ℹ Original threshold -0.016 below minimum 0.4, using 0.4 instead
+ℹ Scores over 0.4 are considered `Positive`.
+✔ Labeled 0 cells as Positive (0% of total).
+ℹ [2026/04/06 18:28:32] DEGAS Screen done.
+Warning: The number of cells in the scRNA-seq data is too large (>50k), this may result
+in segmentation fault
+ℹ [2026/04/06 18:28:52] Starting LP-SGL screen
+ℹ [2026/04/06 18:28:52] Fetch graph from Seurat object
+ℹ [2026/04/06 18:28:52] Run Leiden clustering
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.0 GiB
+ℹ [2026/04/06 18:29:10] Calculating correlation matrix...
+ℹ [2026/04/06 18:29:24] Fitting SGL model with alpha = 0.5, this may take a while
+Warning in Sol$intercept : partial match of 'intercept' to 'intercepts'
+ℹ [2026/04/06 18:31:36] Running 5-fold cross-validation

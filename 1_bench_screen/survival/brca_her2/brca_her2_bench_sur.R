@@ -27,7 +27,7 @@ dir.create(save_path, recursive = TRUE, showWarnings = FALSE)
 bulk_configs <- list(
   GSE42568 = list(
     bulk_qs = "brca_bulkdata_GSE42568.qs",
-    pheno_qs = "brca_pheno_GSE42568.qs",
+    pheno_qs = "GSE42568_surv_pheno.qs",
     methods = c(
       "Scissor",
       "scAB",
@@ -41,7 +41,7 @@ bulk_configs <- list(
   ),
   GSE162228 = list(
     bulk_qs = "brca_bulkdata_GSE162228.qs",
-    pheno_qs = "brca_pheno_GSE162228.qs",
+    pheno_qs = "GSE162228_surv_pheno.qs",
     methods = c(
       "Scissor",
       "scAB",
@@ -55,7 +55,7 @@ bulk_configs <- list(
   ),
   TCGA_BRCA = list(
     bulk_qs = "brca_bulkdata_TCGA.qs",
-    pheno_qs = "brca_pheno_TCGA.qs",
+    pheno_qs = "brca_surv_TCGA.qs",
     is_tcga = TRUE,
     log_transform = TRUE,
     methods = c(
@@ -91,38 +91,13 @@ run_screening_pipeline <- function(
   }
 
   # 2. Process Phenotype & Extract Binary Labels
-  pheno <- qs::qread(file.path(data_path, config$pheno_qs), nthreads = 4)
-
-  if (config_name == "GSE42568") {
-    surv_data <- pheno %>%
-      dplyr::select(
-        `overall survival time_days:ch1`,
-        `overall survival event:ch1`
-      ) %>%
-      dplyr::filter(
-        !is.na(`overall survival time_days:ch1`) &
-          !is.na(`overall survival event:ch1`) &
-          `overall survival time_days:ch1` != "NA"
-      ) %>%
-      dplyr::rename(time = 1, status = 2)
-  } else if (config_name == "GSE162228") {
-    surv_data <- pheno %>%
-      dplyr::select(`overall survival (years):ch1`, `alive:ch1`) %>%
-      dplyr::rename(time = 1, status = 2) %>%
-      dplyr::mutate(
-        status = dplyr::case_when(
-          status == "Alive" ~ 1L,
-          status == "Death" ~ 0L
-        )
-      )
-  } else if (config_name == "TCGA_BRCA") {
-    surv_data <- qs::qread(file.path(data_path, "brca_surv_TCGA.qs"))
-  }
+  surv_data <- qs::qread(file.path(data_path, config$pheno_qs), nthreads = 4)
 
   # 3. Align Bulk Matrix with Labels
   cm_samples <- intersect(colnames(bulk), rownames(surv_data))
-  bulk <- bulk[, cm_samples, drop = FALSE]
-  surv_data <- surv_data[cm_samples, , drop = FALSE]
+  bulk <- bulk[, cm_samples]
+  surv_data <- surv_data[cm_samples, ]
+  surv_data <- dplyr::mutate_all(surv_data, as.numeric)
   cli::cli_alert_info(
     "Aligned bulk matrix: {nrow(bulk)} genes x {ncol(bulk)} samples"
   )

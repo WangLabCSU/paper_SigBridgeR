@@ -1,4 +1,4 @@
-data_path <- "/home/data/sigbridger/benchmark_data/brca"
+data_dir <- "/home/data/sigbridger/benchmark_data/brca"
 
 GSE42568_pheno <- qs::qread(file.path(data_path, "brca_pheno_GSE42568.qs"))
 GSE42568_bulk <- qs::qread(file.path(data_path, "brca_bulkdata_GSE42568.qs"))
@@ -15,6 +15,8 @@ surv_data <- GSE42568_pheno %>%
   ) %>%
   dplyr::rename(time = 1, status = 2)
 
+qs::qsave(surv_data, file.path(data_dir, "GSE42568_surv_pheno.qs"))
+
 
 GSE162228_pheno <- qs::qread(file.path(data_path, "brca_pheno_GSE162228.qs"))
 GSE162228_bulk <- qs::qread(file.path(data_path, "brca_bulkdata_GSE162228.qs"))
@@ -25,3 +27,5 @@ surv_data2 <- GSE162228_pheno %>%
   dplyr::mutate(
     status = dplyr::case_when(status == "Alive" ~ 1L, status == "Death" ~ 0L)
   )
+
+qs::qsave(surv_data2, file.path(data_dir, "GSE162228_surv_pheno.qs"))

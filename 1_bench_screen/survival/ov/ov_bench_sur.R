@@ -16,7 +16,7 @@ library(qs)
 # 设置工作目录（建议后续改用 here:: 或 usethis::proj_path() 直接拼接绝对路径）
 setwd(file.path(usethis::proj_path(), "1_bench_screen/survival/ov"))
 data_path <- "/home/data/sigbridger/benchmark_data/ov"
-save_path <- "/home/data/sigbridger/benchmark_survival/ov"
+save_path <- "/home/data/sigbridger/benchmark_data/ov"
 
 # 确保输出目录存在
 dir.create(save_path, recursive = TRUE, showWarnings = FALSE)
@@ -93,6 +93,7 @@ run_screening_pipeline <- function(
   cm_samples <- intersect(colnames(bulk), rownames(surv_data))
   bulk <- bulk[, cm_samples, drop = FALSE]
   surv_data <- surv_data[cm_samples, , drop = FALSE]
+  surv_data <- dplyr::mutate_all(surv_data, as.numeric)
   cli::cli_alert_info(
     "Aligned bulk matrix: {nrow(bulk)} genes x {ncol(bulk)} samples"
   )

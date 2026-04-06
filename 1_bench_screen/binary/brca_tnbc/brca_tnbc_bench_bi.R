@@ -55,8 +55,8 @@ bulk_configs <- list(
       "scPAS",
       "scPP",
       "DEGAS",
-      "LP_SGL",
-      "PIPET"
+      "LP_SGL"
+      #   ,      "PIPET" # Warning: No markers found, please try different `lg2FC` and `p.adjust`
     )
   ),
   TCGA_BRCA = list(

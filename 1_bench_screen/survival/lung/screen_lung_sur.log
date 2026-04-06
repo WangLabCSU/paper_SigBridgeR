@@ -1,0 +1,56 @@
+nohup: ignoring input
+✔ SigBridgeR v3.6.0 loaded
+Loading required package: SeuratObject
+Loading required package: sp
+
+Attaching package: ‘SeuratObject’
+
+The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+qs 0.27.3. Announcement: https://github.com/qsbase/qs/issues/103
+✔ Setting active project to "/home/yyx/R/Project/R_code/paper_SigBridgeR".
+
+── Loading scRNA-seq reference... ──────────────────────────────────────────────
+  OpenMP version (_OPENMP)       201511
+  omp_get_num_procs()            192
+  R_DATATABLE_NUM_PROCS_PERCENT  unset (default 50)
+  R_DATATABLE_NUM_THREADS        unset
+  R_DATATABLE_THROTTLE           unset (default 1024)
+  omp_get_thread_limit()         2147483647
+  omp_get_max_threads()          192
+  OMP_THREAD_LIMIT               unset
+  OMP_NUM_THREADS                8
+  RestoreAfterFork               true
+  data.table is using 8 threads with throttle==1024. See ?setDTthreads.
+
+── System-Level Configuration ──
+
+• OMP_NUM_THREADS: unset -> 8
+• data.table: 96 -> 8
+
+── TensorFlow Configuration ──
+
+• TF_XLA_FLAGS: unset -> --tf_xla_auto_jit=2 --tf_xla_cpu_global_jit
+• TF_XLA_CPU_GLOBAL_JIT: unset -> 1
+• TF_NUM_INTEROP_THREADS: unset -> 8
+• TF_NUM_INTRAOP_THREADS: unset -> 8
+
+── Starting pipeline for "GSE3141" ──
+
+Error in run_screening_pipeline(name, bulk_configs[[name]], seurat_luad,  : 
+  object 'surv_data' not found
+Calls: lapply ... intersect.default -> <Anonymous> -> rownames -> %||%
+Execution halted
