@@ -16,7 +16,7 @@ library(qs)
 # 设置工作目录（建议后续改用 here:: 或 usethis::proj_path() 直接拼接绝对路径）
 setwd(file.path(usethis::proj_path(), "1_bench_screen/survival/lung"))
 data_path <- "/home/data/sigbridger/benchmark_data/lung"
-save_path <- "/home/data/sigbridger/benchmark_data/lung"
+save_path <- "/home/data/sigbridger/benchmark_data/lung/luad"
 
 # 确保输出目录存在
 dir.create(save_path, recursive = TRUE, showWarnings = FALSE)
@@ -107,7 +107,7 @@ run_screening_pipeline <- function(
   }
 
   # 2. Process Phenotype & Extract Survival Labels
-  surv <- qs::qread(file.path(data_path, config$pheno_qs), nthreads = 4)
+  surv_data <- qs::qread(file.path(data_path, config$pheno_qs), nthreads = 4)
 
   # 3. Align Bulk Matrix with Labels
   cm_samples <- intersect(colnames(bulk), rownames(surv_data))
@@ -138,9 +138,9 @@ run_screening_pipeline <- function(
     screen_res <- SigBridgeR::Screen(
       bulk,
       sc_data,
-      labels,
-      label_type = paste0(m, "_binary"),
-      phenotype_class = "binary",
+      surv_data,
+      label_type = paste0(m, "_survival"),
+      phenotype_class = "survival",
       screen_method = m,
       alpha = if (m != "LP_SGL") NULL else 0.5,
       alpha_2 = NULL,

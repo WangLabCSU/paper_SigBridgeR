@@ -16,7 +16,7 @@ library(qs)
 # 设置工作目录（建议后续改用 here:: 或 usethis::proj_path() 直接拼接绝对路径）
 setwd(file.path(usethis::proj_path(), "1_bench_screen/survival/ov"))
 data_path <- "/home/data/sigbridger/benchmark_data/ov"
-save_path <- "/home/data/sigbridger/benchmark_data/ov"
+save_path <- "/home/data/sigbridger/benchmark_data/ov/ov"
 
 # 确保输出目录存在
 dir.create(save_path, recursive = TRUE, showWarnings = FALSE)
@@ -118,9 +118,9 @@ run_screening_pipeline <- function(
     screen_res <- SigBridgeR::Screen(
       bulk,
       sc_data,
-      labels,
-      label_type = paste0(m, "_binary"),
-      phenotype_class = "binary",
+      surv_data,
+      label_type = paste0(m, "_survival"),
+      phenotype_class = "survival",
       screen_method = m,
       alpha = if (m != "LP_SGL") NULL else 0.5,
       alpha_2 = NULL,

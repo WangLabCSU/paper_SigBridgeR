@@ -50,7 +50,12 @@ qs 0.27.3. Announcement: https://github.com/qsbase/qs/issues/103
 
 ── Starting pipeline for "GSE3141" ──
 
-Error in run_screening_pipeline(name, bulk_configs[[name]], seurat_luad,  : 
-  object 'surv_data' not found
-Calls: lapply ... intersect.default -> <Anonymous> -> rownames -> %||%
-Execution halted
+ℹ Aligned bulk matrix: 17786 genes x 58 samples
+ℹ [2026/04/07 09:33:21] Scissor start...
+ℹ [2026/04/07 09:33:21] Start from raw data...
+ℹ Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 7.7 GiB
+ℹ [2026/04/07 09:33:29] Normalizing quantiles of data
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.3 GiB
