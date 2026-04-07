@@ -16,24 +16,23 @@ dir.create(
 )
 
 seurat_merged <- qs::qread(
-  file.path(data_path, paste0("binary_ov_", bulk_name, "_merged_seurat.rqs")),
+  file.path(data_path, paste0("binary_ov_", bulk_name, "_merged_seurat.qs")),
   nthreads = 8L
 )
 
-umap_cluster <- draw_umap(
-  seurat = seurat_merged,
-  group_by = "seurat_clusters",
-  title = "GSE165897 seurat_clusters",
-  save_path = file.path(save_path, "GSE165897_seurat_clusters_UMAP.png")
-)
+# umap_cluster <- draw_umap(
+#   seurat = seurat_merged,
+#   group_by = "seurat_clusters",
+#   title = "GSE165897 seurat_clusters",
+#   save_path = file.path(save_path, "GSE165897_seurat_clusters_UMAP.png")
+# )
 
-umap_tumor <- draw_umap(
-  seurat = seurat_merged,
-  group.by = "cnv_status",
-  cols = c("normal" = "#386c9b", "tumor" = "#a02020"),
-  save_path = file.path(save_path, "GSE165897_tumor_UMAP.png")
-)
-
+# umap_tumor <- draw_umap(
+#   seurat = seurat_merged,
+#   group.by = "cnv_status",
+#   cols = c("normal" = "#386c9b", "tumor" = "#a02020"),
+#   save_path = file.path(save_path, "GSE165897_tumor_UMAP.png")
+# )
 
 c(
   umap_scissor,
@@ -62,9 +61,10 @@ c(
       cols = c(
         "Other" = "#CECECE",
         "Neutral" = "#CECECE",
-        "Positive" = "#a02020",
-        "Negative" = "#386c9b"
+        "Positive" = "#c24b4b",
+        "Negative" = "#5189bb"
       ),
+      label = FALSE,
       title = paste0("sc: GSE165897\nbulk: ", bulk_name, "\nmethod: ", .x),
       save_path = file.path(
         save_path,

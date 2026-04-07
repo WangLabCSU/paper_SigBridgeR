@@ -181,6 +181,7 @@ lapply(names(bulk_configs), function(name) {
     data_path,
     save_path
   )
+  NULL
 })
 
 cli::cli_h1("✅ All screening tasks completed.")

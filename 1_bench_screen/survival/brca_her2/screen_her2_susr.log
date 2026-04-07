@@ -122,3 +122,6 @@ Warning in asMethod(object) :
 ℹ [2026/04/07 09:54:41] Selecting K
 loss of 2: 0.00321396
 loss of 3: 0.00310623
+loss of 4: 0.00299841
+loss of 5: 0.00192062
+loss of 6: 0.00178119

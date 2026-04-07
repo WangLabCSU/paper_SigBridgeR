@@ -70,3 +70,106 @@ Warning in asMethod(object) :
 ℹ [2026/04/07 10:17:27] Fitting SGL model with alpha = 0.5, this may take a while
 Warning in Sol$intercept : partial match of 'intercept' to 'intercepts'
 ℹ [2026/04/07 10:21:15] Running 5-fold cross-validation
+ℹ [2026/04/07 11:54:46] Optimal lambda index: 20 (error = 162.360356960736)
+ℹ [2026/04/07 11:54:46] Identified 7139 lp_sgl_binary negative cells, 42115 lp_sgl_binary neutral cells, and 1611 lp_sgl_binary positive cells
+✔ [2026/04/07 11:54:46] LP-SGL screening done.
+ℹ [2026/04/07 11:55:15] Starting PIPET screen
+ℹ [2026/04/07 11:55:15] Creating marker genes from bulk data...
+ℹ [2026/04/07 11:55:15] Fitting model with limma
+ℹ Use two-class contrast: case:"group_1" - ref:"group_0"
+✔ [2026/04/07 11:55:17] Created 34 marker genes
+ℹ [2026/04/07 11:55:17] Running PIPET correlation analysis...
+ℹ [2026/04/07 11:55:18] The classification of markers is: 
+group_0: 6 and group_1: 8
+ℹ [2026/04/07 11:55:18] Normalize count data with CPM and log1p
+ℹ [2026/04/07 11:55:32] Scale features with z-score normalization
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.8 GiB
+Prediction ■                                  0% |  ETA:  9m
+Prediction ■                                  2% |  ETA:  4m
+Prediction ■■                                 3% |  ETA:  3m
+Prediction ■■■                                5% |  ETA:  3m
+Prediction ■■■                                7% |  ETA:  3m
+Prediction ■■■■                               9% |  ETA:  3m
+Prediction ■■■■                              10% |  ETA:  3m
+Prediction ■■■■■                             12% |  ETA:  3m
+Prediction ■■■■■                             14% |  ETA:  3m
+Prediction ■■■■■■                            16% |  ETA:  2m
+Prediction ■■■■■■                            18% |  ETA:  2m
+Prediction ■■■■■■■                           20% |  ETA:  2m
+Prediction ■■■■■■■                           21% |  ETA:  2m
+Prediction ■■■■■■■■                          23% |  ETA:  2m
+Prediction ■■■■■■■■                          25% |  ETA:  2m
+Prediction ■■■■■■■■■                         27% |  ETA:  2m
+Prediction ■■■■■■■■■                         28% |  ETA:  2m
+Prediction ■■■■■■■■■■                        30% |  ETA:  2m
+Prediction ■■■■■■■■■■                        31% |  ETA:  2m
+Prediction ■■■■■■■■■■■                       33% |  ETA:  2m
+Prediction ■■■■■■■■■■■                       35% |  ETA:  2m
+Prediction ■■■■■■■■■■■■                      37% |  ETA:  2m
+Prediction ■■■■■■■■■■■■■                     38% |  ETA:  2m
+Prediction ■■■■■■■■■■■■■                     40% |  ETA:  2m
+Prediction ■■■■■■■■■■■■■■                    42% |  ETA:  2m
+Prediction ■■■■■■■■■■■■■■                    44% |  ETA:  2m
+Prediction ■■■■■■■■■■■■■■■                   45% |  ETA:  2m
+Prediction ■■■■■■■■■■■■■■■                   47% |  ETA:  2m
+Prediction ■■■■■■■■■■■■■■■■                  49% |  ETA:  1m
+Prediction ■■■■■■■■■■■■■■■■                  51% |  ETA:  1m
+Prediction ■■■■■■■■■■■■■■■■■                 52% |  ETA:  1m
+Prediction ■■■■■■■■■■■■■■■■■                 54% |  ETA:  1m
+Prediction ■■■■■■■■■■■■■■■■■■                56% |  ETA:  1m
+Prediction ■■■■■■■■■■■■■■■■■■                58% |  ETA:  1m
+Prediction ■■■■■■■■■■■■■■■■■■■               59% |  ETA:  1m
+Prediction ■■■■■■■■■■■■■■■■■■■               61% |  ETA:  1m
+Prediction ■■■■■■■■■■■■■■■■■■■■              63% |  ETA:  1m
+Prediction ■■■■■■■■■■■■■■■■■■■■              65% |  ETA:  1m
+Prediction ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA:  1m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■            69% |  ETA:  1m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■            71% |  ETA:  1m
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■           73% |  ETA: 47s
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■           75% |  ETA: 43s
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■          77% |  ETA: 39s
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■         78% |  ETA: 37s
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■         80% |  ETA: 33s
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■        82% |  ETA: 30s
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■        84% |  ETA: 27s
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■       86% |  ETA: 24s
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■       88% |  ETA: 21s
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      89% |  ETA: 18s
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      91% |  ETA: 15s
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     93% |  ETA: 12s
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     95% |  ETA:  9s
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    97% |  ETA:  6s
+Prediction ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    98% |  ETA:  3s
+ℹ [2026/04/07 11:59:06] Organize the computed results
+✔ [2026/04/07 11:59:07] PIPET screening done.
+Warning: Skipping object of class `NULL` - not a Seurat object or a list with Seurat
+object
+Warning: Skipping object of class `NULL` - not a Seurat object or a list with Seurat
+object
+Warning: Skipping object of class `NULL` - not a Seurat object or a list with Seurat
+object
+Warning: Skipping object of class `NULL` - not a Seurat object or a list with Seurat
+object
+Warning: Skipping object of class `NULL` - not a Seurat object or a list with Seurat
+object
+Warning: Skipping object of class `NULL` - not a Seurat object or a list with Seurat
+object
+Warning: Skipping object of class `NULL` - not a Seurat object or a list with Seurat
+object
+Warning: Skipping object of class `NULL` - not a Seurat object or a list with Seurat
+object
+✔ Successfully merged 8 objects.
+✔ Saved to '/home/data/sigbridger/benchmark_binary/ov//binary_ov_GSE140082_merged_seurat.qs'
+[[1]]
+NULL
+
+[[2]]
+An object of class Seurat 
+15201 features across 50865 samples within 1 assay 
+Active assay: RNA (15201 features, 2000 variable features)
+ 3 layers present: counts, data, scale.data
+ 3 dimensional reductions calculated: pca, tsne, umap
+
+
+── ✅ All screening tasks completed. ───────────────────────────────────────────
