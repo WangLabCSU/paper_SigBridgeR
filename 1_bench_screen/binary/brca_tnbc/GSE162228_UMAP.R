@@ -1,7 +1,7 @@
 library(zeallot)
 library(dplyr)
 
-setwd(file.path(usethis::proj_path(), "1_bench_screen/binary/brca_TNBC"))
+setwd(file.path(usethis::proj_path(), "1_bench_screen/binary/brca_tnbc"))
 
 source("../../draw_umap.R")
 
@@ -16,7 +16,7 @@ dir.create(
 )
 
 seurat_merged <- qs::qread(
-  file.path(data_path, paste0("binary_TNBC_", bulk_name, "_merged_seurat.rqs")),
+  file.path(data_path, paste0("binary_TNBC_", bulk_name, "_merged_seurat.qs")),
   nthreads = 8L
 )
 
@@ -29,20 +29,19 @@ seurat_merged$is_tumor = ifelse(
   "FALSE"
 )
 
-umap_cluster <- draw_umap(
-  seurat = seurat_merged,
-  group_by = "seurat_clusters",
-  title = "GSE161529 TNBC seurat_clusters",
-  save_path = file.path(save_path, "GSE161529_TNBC_seurat_clusters_UMAP.png")
-)
+# umap_cluster <- draw_umap(
+#   seurat = seurat_merged,
+#   group_by = "seurat_clusters",
+#   title = "GSE161529 TNBC seurat_clusters",
+#   save_path = file.path(save_path, "GSE161529_TNBC_seurat_clusters_UMAP.png")
+# )
 
-umap_tumor <- draw_umap(
-  seurat = seurat_merged,
-  group.by = "is_tumor",
-  cols = c("FALSE" = "#386c9b", "TRUE" = "#a02020"),
-  save_path = file.path(save_path, "GSE161529_TNBC_tumor_UMAP.png")
-)
-
+# umap_tumor <- draw_umap(
+#   seurat = seurat_merged,
+#   group.by = "is_tumor",
+#   cols = c("FALSE" = "#386c9b", "TRUE" = "#a02020"),
+#   save_path = file.path(save_path, "GSE161529_TNBC_tumor_UMAP.png")
+# )
 
 c(
   umap_scissor,
@@ -51,8 +50,8 @@ c(
   umap_scpp,
   umap_scab,
   umap_degas,
-  umap_lp_sgl,
-  umap_pipet
+  umap_lp_sgl
+  #   ,  umap_pipet
 ) %<-%
   purrr::map(
     c(
@@ -62,22 +61,24 @@ c(
       "scPP",
       'scAB',
       "DEGAS",
-      "LP_SGL",
-      "PIPET"
+      "LP_SGL"
+      #   ,      "PIPET"
     ),
     ~ draw_umap(
       seurat = seurat_merged,
       group.by = .x,
+      label = FALSE,
       cols = c(
         "Other" = "#CECECE",
         "Neutral" = "#CECECE",
-        "Positive" = "#a02020",
-        "Negative" = "#386c9b"
+        "Positive" = "#c24b4b",
+        "Negative" = "#5189bb"
       ),
       title = paste0("sc: GSE161529 TNBC\nbulk: ", bulk_name, "\nmethod: ", .x),
       save_path = file.path(
         save_path,
         paste0("GSE161529_TNBC_", bulk_name, "_", .x, "_UMAP.png")
       )
-    )
+    ),
+    .progress = "drawing"
   )

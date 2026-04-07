@@ -1,7 +1,7 @@
 library(zeallot)
 library(dplyr)
 
-setwd(file.path(usethis::proj_path(), "1_bench_screen/binary/brca_TNBC"))
+setwd(file.path(usethis::proj_path(), "1_bench_screen/binary/brca_tnbc"))
 
 source("../../draw_umap.R")
 
@@ -16,7 +16,7 @@ dir.create(
 )
 
 seurat_merged <- qs::qread(
-  file.path(data_path, paste0("binary_TNBC_", bulk_name, "_merged_seurat.rqs")),
+  file.path(data_path, paste0("binary_TNBC_", bulk_name, "_merged_seurat.qs")),
   nthreads = 8L
 )
 
@@ -31,7 +31,8 @@ seurat_merged$is_tumor = ifelse(
 
 umap_cluster <- draw_umap(
   seurat = seurat_merged,
-  group_by = "seurat_clusters",
+  group.by = "seurat_clusters",
+  label.size = 4,
   title = "GSE161529 TNBC seurat_clusters",
   save_path = file.path(save_path, "GSE161529_TNBC_seurat_clusters_UMAP.png")
 )
@@ -39,7 +40,9 @@ umap_cluster <- draw_umap(
 umap_tumor <- draw_umap(
   seurat = seurat_merged,
   group.by = "is_tumor",
-  cols = c("FALSE" = "#386c9b", "TRUE" = "#a02020"),
+  label = FALSE,
+  cols = c("FALSE" = "#5189bb", "TRUE" = "#c24b4b"),
+  title = "GSE161529 TNBC is tumor cell",
   save_path = file.path(save_path, "GSE161529_TNBC_tumor_UMAP.png")
 )
 
@@ -71,13 +74,15 @@ c(
       cols = c(
         "Other" = "#CECECE",
         "Neutral" = "#CECECE",
-        "Positive" = "#a02020",
-        "Negative" = "#386c9b"
+        "Positive" = "#c24b4b",
+        "Negative" = "#5189bb"
       ),
+      label = FALSE,
       title = paste0("sc: GSE161529 TNBC\nbulk: ", bulk_name, "\nmethod: ", .x),
       save_path = file.path(
         save_path,
         paste0("GSE161529_TNBC_", bulk_name, "_", .x, "_UMAP.png")
       )
-    )
+    ),
+    .progress = "Drawing"
   )

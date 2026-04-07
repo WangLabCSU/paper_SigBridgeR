@@ -95,3 +95,29 @@ Five-number summary of correlations:
 ----------------------------------------
 ℹ [2026/04/07 09:22:48] Perform cox regression on the given clinical outcomes...
 ℹ [2026/04/07 09:22:49] Screening...
+
+── At alpha = 0.005 ──
+
+Scissor identified 8086 Scissor+ cells and 9737 Scissor- cells.
+The percentage of selected cell is: 55.921%
+
+── At alpha = 0.01 ──
+
+Scissor identified 4309 Scissor+ cells and 5977 Scissor- cells.
+The percentage of selected cell is: 32.273%
+
+── At alpha = 0.05 ──
+
+Scissor identified 167 Scissor+ cells and 1009 Scissor- cells.
+The percentage of selected cell is: 3.69%
+ℹ [2026/04/07 09:53:05] Scissor Ended.
+ℹ [2026/04/07 09:53:20] Start scAB screening.
+ℹ  Using "RNA_snn" graph for network.
+ℹ [2026/04/07 09:53:20] Calculating L, D and A
+ℹ [2026/04/07 09:53:26] Normalizing quantiles of data
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.9 GiB
+ℹ [2026/04/07 09:54:26] Calculating correlation
+ℹ [2026/04/07 09:54:41] Guanranking
+ℹ [2026/04/07 09:54:41] Selecting K
+loss of 2: 0.00321396

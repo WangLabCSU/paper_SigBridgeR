@@ -72,7 +72,13 @@ draw_umap <- function(
     ggplot2::ggtitle(title)
 
   if (!is.null(save_path)) {
-    ggplot2::ggsave(p, save_path, width = width, height = height, dpi = 400)
+    ggplot2::ggsave(
+      plot = p,
+      filename = save_path,
+      width = width,
+      height = height,
+      dpi = 400
+    )
   }
   p
 }
