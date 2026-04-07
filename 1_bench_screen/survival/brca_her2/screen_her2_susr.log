@@ -121,3 +121,4 @@ Warning in asMethod(object) :
 ℹ [2026/04/07 09:54:41] Guanranking
 ℹ [2026/04/07 09:54:41] Selecting K
 loss of 2: 0.00321396
+loss of 3: 0.00310623

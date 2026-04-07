@@ -16,13 +16,14 @@ dir.create(
 )
 
 seurat_merged <- qs::qread(
-  file.path(data_path, paste0("binary_lung_", bulk_name, "_merged_seurat.rqs")),
+  file.path(data_path, paste0("binary_lung_", bulk_name, "_merged_seurat.qs")),
   nthreads = 8L
 )
 
 umap_cluster <- draw_umap(
   seurat = seurat_merged,
-  group_by = "seurat_clusters",
+  group.by = "seurat_clusters",
+  label.size = 4,
   title = "GSE123902 seurat_clusters",
   save_path = file.path(save_path, "GSE123902_seurat_clusters_UMAP.png")
 )
@@ -30,7 +31,9 @@ umap_cluster <- draw_umap(
 umap_tumor <- draw_umap(
   seurat = seurat_merged,
   group.by = "cnv_status",
-  cols = c("normal" = "#386c9b", "tumor" = "#a02020"),
+  label = FALSE,
+  cols = c("normal" = "#5189bb", "tumor" = "#c24b4b"),
+  title = "GSE123902 luad is tumor cell",
   save_path = file.path(save_path, "GSE123902_tumor_UMAP.png")
 )
 
@@ -62,13 +65,15 @@ c(
       cols = c(
         "Other" = "#CECECE",
         "Neutral" = "#CECECE",
-        "Positive" = "#a02020",
-        "Negative" = "#386c9b"
+        "Positive" = "#c24b4b",
+        "Negative" = "#5189bb"
       ),
+      label = FALSE,
       title = paste0("sc: GSE123902\nbulk: ", bulk_name, "\nmethod: ", .x),
       save_path = file.path(
         save_path,
         paste0("GSE123902_", bulk_name, "_", .x, "_UMAP.png")
       )
-    )
+    ),
+    .progress = "Drawing"
   )

@@ -117,3 +117,6 @@ The percentage of selected cell is: 2.088%
 ℹ [2026/04/07 10:38:15] Normalizing quantiles of data
 Warning in asMethod(object) :
   sparse->dense coercion: allocating vector of size 5.3 GiB
+ℹ [2026/04/07 10:40:07] Calculating correlation
+ℹ [2026/04/07 10:40:34] Guanranking
+ℹ [2026/04/07 10:40:35] Selecting K

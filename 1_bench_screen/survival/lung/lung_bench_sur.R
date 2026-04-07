@@ -32,7 +32,7 @@ bulk_configs <- list(
     methods = c(
       "Scissor",
       "scAB",
-      "SCIPAC",
+      #   "SCIPAC", # (n_pc = 60) Error in sc.dat.rot[, 1:n.pc] : subscript out of bounds
       "scPAS",
       "scPP",
       "DEGAS",
