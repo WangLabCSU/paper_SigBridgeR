@@ -1,5 +1,6 @@
 setwd(file.path(usethis::proj_path(), "2_method_acc/brca_her2"))
-
+library(dplyr)
+library(SigBridgeR)
 
 # * Load Data
 data_dir <- "/home/data/sigbridger/benchmark_data/brca"
@@ -51,11 +52,12 @@ arg_samples <- data.frame(
   dplyr::add_row(alpha = 0.5, resolution = 0.6, nfold = 5) # default parameters
 
 
-# * run scab with error handling
+# * run LP_SGL with error handling
 res_list <- lapply(
   seq_len(nrow(arg_samples)),
   function(i) {
-    result = Screen(
+    cli::cli_h1("{i} / {nrow(arg_samples)}")
+    result <- Screen(
       matched_bulk = bulk,
       sc_data = sc_data,
       phenotype = pheno_bi,
@@ -72,10 +74,12 @@ res_list <- lapply(
     #     file = glue::glue("scAB_results/scab_result_{i}.qs")
     # )
 
-    data = data.frame(
+    data <- data.frame(
       pos_cell = (result$scRNA_data$LP_SGL == "Positive")
     )
     colnames(data) = glue::glue("process_{i}")
+
+    gc(verbose = FALSE)
 
     # 返回包含索引和结果的数据框
     return(data)
@@ -94,3 +98,5 @@ data.table::fwrite(
 )
 
 cli::cli_alert_success(crayon::green("(1)lpsgl random search completed."))
+
+# ! TCGA_BRCA

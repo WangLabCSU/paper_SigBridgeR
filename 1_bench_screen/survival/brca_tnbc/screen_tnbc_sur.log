@@ -1,5 +1,5 @@
 nohup: ignoring input
-✔ SigBridgeR v3.6.0 loaded
+✔ SigBridgeR v3.6.1 loaded
 Loading required package: SeuratObject
 Loading required package: sp
 
@@ -48,103 +48,39 @@ qs 0.27.3. Announcement: https://github.com/qsbase/qs/issues/103
 • TF_NUM_INTEROP_THREADS: unset -> 8
 • TF_NUM_INTRAOP_THREADS: unset -> 8
 ℹ Skipping "GSE42568" (already exists)
-
-── Starting pipeline for "GSE162228" ──
-
-ℹ Aligned bulk matrix: 54675 genes x 133 samples
-ℹ Load result method: "Scissor", bulk: "GSE162228" (already exists)
-ℹ Load result method: "scAB", bulk: "GSE162228" (already exists)
-ℹ Load result method: "SCIPAC", bulk: "GSE162228" (already exists)
-ℹ Load result method: "scPAS", bulk: "GSE162228" (already exists)
-ℹ Load result method: "scPP", bulk: "GSE162228" (already exists)
-ℹ Load result method: "DEGAS", bulk: "GSE162228" (already exists)
-ℹ Load result method: "LP_SGL", bulk: "GSE162228" (already exists)
-Warning: Skipping object of class `NULL` - not a Seurat object or a list with Seurat
-object
-Warning: Skipping object of class `NULL` - not a Seurat object or a list with Seurat
-object
-Warning: Skipping object of class `NULL` - not a Seurat object or a list with Seurat
-object
-Warning: Skipping object of class `NULL` - not a Seurat object or a list with Seurat
-object
-Warning: Skipping object of class `NULL` - not a Seurat object or a list with Seurat
-object
-Warning: Skipping object of class `NULL` - not a Seurat object or a list with Seurat
-object
-Warning: Skipping object of class `NULL` - not a Seurat object or a list with Seurat
-object
-✔ Successfully merged 7 objects.
-✔ Saved to '/home/data/sigbridger/benchmark_data/brca/TNBC/survival_TNBC_GSE162228_merged_seurat.qs'
+ℹ Skipping "GSE162228" (already exists)
 
 ── Starting pipeline for "TCGA_BRCA" ──
 
 ℹ Aligned bulk matrix: 60660 genes x 1210 samples
-ℹ [2026/04/07 09:22:18] Scissor start...
-ℹ [2026/04/07 09:22:18] Start from raw data...
-ℹ Using "RNA_snn" graph for network.
-Warning in asMethod(object) :
-  sparse->dense coercion: allocating vector of size 22.3 GiB
-ℹ [2026/04/07 09:22:44] Normalizing quantiles of data
-Warning in asMethod(object) :
-  sparse->dense coercion: allocating vector of size 5.3 GiB
-ℹ [2026/04/07 09:24:33] Subsetting data
-ℹ [2026/04/07 09:24:42] Calculating correlation
-----------------------------------------
-Five-number summary of correlations:
-0.173713 0.320081 0.350151 0.382922 0.498671
-----------------------------------------
-ℹ [2026/04/07 09:25:10] Perform cox regression on the given clinical outcomes...
-ℹ [2026/04/07 09:25:11] Screening...
+ℹ Load result method: "Scissor", bulk: "TCGA_BRCA" (already exists)
+ℹ Load result method: "scAB", bulk: "TCGA_BRCA" (already exists)
+ℹ Load result method: "scPAS", bulk: "TCGA_BRCA" (already exists)
+ℹ Load result method: "scPP", bulk: "TCGA_BRCA" (already exists)
+ℹ Load result method: "DEGAS", bulk: "TCGA_BRCA" (already exists)
+ℹ Load result method: "LP_SGL", bulk: "TCGA_BRCA" (already exists)
+Warning: Skipping object of class `NULL` - not a Seurat object or a list with Seurat
+object
+Warning: Skipping object of class `NULL` - not a Seurat object or a list with Seurat
+object
+Warning: Skipping object of class `NULL` - not a Seurat object or a list with Seurat
+object
+Warning: Skipping object of class `NULL` - not a Seurat object or a list with Seurat
+object
+Warning: Skipping object of class `NULL` - not a Seurat object or a list with Seurat
+object
+Warning: Skipping object of class `NULL` - not a Seurat object or a list with Seurat
+object
+✔ Successfully merged 6 objects.
+✔ Saved to '/home/data/sigbridger/benchmark_data/brca/TNBC/survival_TNBC_TCGA_BRCA_merged_seurat.qs'
+[[1]]
+NULL
 
-── At alpha = 0.005 ──
+[[2]]
+NULL
 
-Scissor identified 10964 Scissor+ cells and 13346 Scissor- cells.
-The percentage of selected cell is: 44.483%
+[[3]]
+NULL
 
-── At alpha = 0.01 ──
 
-Scissor identified 4761 Scissor+ cells and 7409 Scissor- cells.
-The percentage of selected cell is: 22.269%
-
-── At alpha = 0.05 ──
-
-Scissor identified 174 Scissor+ cells and 967 Scissor- cells.
-The percentage of selected cell is: 2.088%
-ℹ [2026/04/07 10:37:32] Scissor Ended.
-ℹ [2026/04/07 10:38:06] Start scAB screening.
-ℹ  Using "RNA_snn" graph for network.
-ℹ [2026/04/07 10:38:06] Calculating L, D and A
-ℹ [2026/04/07 10:38:15] Normalizing quantiles of data
-Warning in asMethod(object) :
-  sparse->dense coercion: allocating vector of size 5.3 GiB
-ℹ [2026/04/07 10:40:07] Calculating correlation
-ℹ [2026/04/07 10:40:34] Guanranking
-ℹ [2026/04/07 10:40:35] Selecting K
-loss of 2: 0.00238623
-loss of 3: 0.00247424
-ℹ [2026/04/07 12:06:35] Run NMF with phenotype and cell-cell similarity regularization at K = 2
-ℹ [2026/04/07 12:06:35] Selecting optimal `alpha` and `alpha_2`, this would take a while
-Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■                           20% | ETA: 39m
-Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■                     40% | ETA: 28m
-Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■               60% | ETA: 17m
-Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA:  9m
-Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
-Alpha = 0.005, alpha_2 = 0.01 ■■■■■■■                           20% | ETA: 25m
-Alpha = 0.005, alpha_2 = 0.01 ■■■■■■■■■■■■■                     40% | ETA: 19m
-Alpha = 0.005, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■               60% | ETA: 12m
-Alpha = 0.005, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA:  7m
-Alpha = 0.005, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
-Alpha = 0.001, alpha_2 = 0.01 ■■■■■■■                           20% | ETA: 24m
-Alpha = 0.001, alpha_2 = 0.01 ■■■■■■■■■■■■■                     40% | ETA: 18m
-Alpha = 0.001, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■               60% | ETA: 12m
-Alpha = 0.001, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA:  7m
-Alpha = 0.001, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
-Alpha = 0.01, alpha_2 = 0.005 ■■■■■■■                           20% | ETA: 25m
-Alpha = 0.01, alpha_2 = 0.005 ■■■■■■■■■■■■■                     40% | ETA: 19m
-Alpha = 0.01, alpha_2 = 0.005 ■■■■■■■■■■■■■■■■■■■               60% | ETA: 12m
-Alpha = 0.01, alpha_2 = 0.005 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA:  7m
-Alpha = 0.01, alpha_2 = 0.005 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
-Alpha = 0.005, alpha_2 = 0.005 ■■■■■■■                           20% | ETA: 24m
-Alpha = 0.005, alpha_2 = 0.005 ■■■■■■■■■■■■■                     40% | ETA: 18m
-Alpha = 0.005, alpha_2 = 0.005 ■■■■■■■■■■■■■■■■■■■               60% | ETA: 12m
-Alpha = 0.005, alpha_2 = 0.005 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA:  6m
+── ✅ All screening tasks completed. ───────────────────────────────────────────

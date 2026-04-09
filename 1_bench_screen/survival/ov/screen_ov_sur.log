@@ -47,40 +47,29 @@ qs 0.27.3. Announcement: https://github.com/qsbase/qs/issues/103
 • TF_XLA_CPU_GLOBAL_JIT: unset -> 1
 • TF_NUM_INTEROP_THREADS: unset -> 8
 • TF_NUM_INTRAOP_THREADS: unset -> 8
-ℹ Skipping "GSE42568" (already exists)
-ℹ Skipping "GSE162228" (already exists)
+ℹ Skipping "GSE32062" (already exists)
 
-── Starting pipeline for "TCGA_BRCA" ──
+── Starting pipeline for "GSE140082" ──
 
-ℹ Aligned bulk matrix: 60660 genes x 1210 samples
-ℹ Load result method: "Scissor", bulk: "TCGA_BRCA" (already exists)
-ℹ Load result method: "scAB", bulk: "TCGA_BRCA" (already exists)
-ℹ Load result method: "scPAS", bulk: "TCGA_BRCA" (already exists)
-ℹ Load result method: "scPP", bulk: "TCGA_BRCA" (already exists)
-ℹ Load result method: "DEGAS", bulk: "TCGA_BRCA" (already exists)
-ℹ Load result method: "LP_SGL", bulk: "TCGA_BRCA" (already exists)
-Warning: Skipping object of class `NULL` - not a Seurat object or a list with Seurat
-object
-Warning: Skipping object of class `NULL` - not a Seurat object or a list with Seurat
-object
-Warning: Skipping object of class `NULL` - not a Seurat object or a list with Seurat
-object
-Warning: Skipping object of class `NULL` - not a Seurat object or a list with Seurat
-object
-Warning: Skipping object of class `NULL` - not a Seurat object or a list with Seurat
-object
-Warning: Skipping object of class `NULL` - not a Seurat object or a list with Seurat
-object
-✔ Successfully merged 6 objects.
-✔ Saved to '/home/data/sigbridger/benchmark_data/brca/HER2/survival_her2_TCGA_BRCA_merged_seurat.qs'
-[[1]]
-NULL
+ℹ Aligned bulk matrix: 29377 genes x 380 samples
+ℹ [2026/04/09 09:01:54] Scissor start...
+ℹ [2026/04/09 09:01:54] Start from raw data...
+ℹ Using "RNA_snn" graph for network.
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 19.3 GiB
+ℹ [2026/04/09 09:02:11] Normalizing quantiles of data
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.4 GiB
+ℹ [2026/04/09 09:03:35] Subsetting data
+ℹ [2026/04/09 09:03:40] Calculating correlation
+----------------------------------------
+Five-number summary of correlations:
+0.067509 0.141566 0.152311 0.165095 0.221777
+----------------------------------------
+ℹ [2026/04/09 09:03:58] Perform cox regression on the given clinical outcomes...
+ℹ [2026/04/09 09:03:58] Screening...
 
-[[2]]
-NULL
+── At alpha = 0.005 ──
 
-[[3]]
-NULL
-
-
-── ✅ All screening tasks completed. ───────────────────────────────────────────
+Scissor identified 3575 Scissor+ cells and 12052 Scissor- cells.
+The percentage of selected cell is: 30.723%

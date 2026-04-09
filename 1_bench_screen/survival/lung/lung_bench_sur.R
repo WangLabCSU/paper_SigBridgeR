@@ -36,8 +36,8 @@ bulk_configs <- list(
       "scPAS",
       "scPP",
       "DEGAS",
-      "LP_SGL",
-      "PIPET"
+      "LP_SGL"
+      #   ,      "PIPET" # Warning: No markers found, please try different `lg2FC` and `p.adjust`
     )
   ),
   GSE8894 = list(
@@ -50,8 +50,8 @@ bulk_configs <- list(
       "scPAS",
       "scPP",
       "DEGAS",
-      "LP_SGL",
-      "PIPET"
+      "LP_SGL"
+      #   ,       "PIPET" # Warning: No markers found, please try different `lg2FC` and `p.adjust`
     )
   ),
   GSE31210 = list(
@@ -63,10 +63,10 @@ bulk_configs <- list(
       "scAB",
       "SCIPAC",
       "scPAS",
-      "scPP",
+      #   "scPP", # Warning: There are no genes negatively correlated with patients' prognosis in this bulk dataset.
       "DEGAS",
-      "LP_SGL",
-      "PIPET"
+      "LP_SGL"
+      #   ,      "PIPET" # Warning: ✖ No overlapping genes between markers and single-cell data, returning NULL
     )
   ),
   TCGA_LUAD = list(

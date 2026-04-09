@@ -1,6 +1,8 @@
 # ! GSE42568
 
 setwd(file.path(usethis::proj_path(), "2_method_acc/brca_her2"))
+library(dplyr)
+library(SigBridgeR)
 
 
 # * Load Data
@@ -64,6 +66,8 @@ arg_samples <- data.frame(
 res_list <- lapply(
   seq_len(nrow(arg_samples)),
   function(i) {
+    cli::cli_h1("{i} / {nrow(arg_samples)}")
+
     tryCatch(
       {
         arch <- arg_samples[i, "arch"][[1]]
@@ -128,6 +132,8 @@ arg_samples2 <- data.frame(
 res_list <- lapply(
   seq_len(nrow(arg_samples2)),
   function(i) {
+    cli::cli_h1("{i} / {nrow(arg_samples2)}")
+
     tryCatch(
       {
         lamb1 <- arg_samples2[i, "lamb1"][[1]]
@@ -183,7 +189,7 @@ data.table::fwrite(
 
 # -------------------------------------------------------------------------------------------------
 
-arg_samples <- data.frame(
+arg_samples3 <- data.frame(
   scbatch_sz = sample(50:500, 50, replace = TRUE),
   patbatch_sz = sample(25:100, 50, replace = TRUE),
   hidden_feats = sample(25:100, 50, replace = TRUE),
@@ -197,38 +203,51 @@ arg_samples <- data.frame(
   )
 
 res_list <- lapply(
-  seq_len(nrow(arg_samples)),
+  seq_len(nrow(arg_samples3)),
   function(i) {
-    scbatch_sz <- arg_samples[i, "scbatch_sz"][[1]]
-    patbatch_sz <- arg_samples[i, "patbatch_sz"][[1]]
-    hidden_feats <- arg_samples[i, "hidden_feats"][[1]]
-    do_prc <- arg_samples[i, "do_prc"][[1]]
+    cli::cli_h1("{i} / {nrow(arg_samples3)}")
+    tryCatch(
+      {
+        scbatch_sz <- arg_samples3[i, "scbatch_sz"][[1]]
+        patbatch_sz <- arg_samples3[i, "patbatch_sz"][[1]]
+        hidden_feats <- arg_samples3[i, "hidden_feats"][[1]]
+        do_prc <- arg_samples3[i, "do_prc"][[1]]
 
-    result <- Screen(
-      matched_bulk = bulk,
-      sc_data = sc_data,
-      phenotype = pheno_bi,
-      label_type = glue::glue("process_{i}"),
-      phenotype_class = "binary",
-      screen_method = "DEGAS",
-      degas_params = list(
-        DEGAS.scbatch_sz = scbatch_sz,
-        DEGAS.patbatch_sz = patbatch_sz,
-        DEGAS.hidden_feats = hidden_feats,
-        DEGAS.do_prc = do_prc
-      )
+        result <- Screen(
+          matched_bulk = bulk,
+          sc_data = sc_data,
+          phenotype = pheno_bi,
+          label_type = glue::glue("process_{i}"),
+          phenotype_class = "binary",
+          screen_method = "DEGAS",
+          degas_params = list(
+            DEGAS.scbatch_sz = scbatch_sz,
+            DEGAS.patbatch_sz = patbatch_sz,
+            DEGAS.hidden_feats = hidden_feats,
+            DEGAS.do_prc = do_prc
+          )
+        )
+
+        pos <- (result$scRNA_data$DEGAS == "Positive")
+
+        data <- data.frame(
+          pos_cell = pos
+        )
+        colnames(data) = glue::glue("process_{i}")
+        gc()
+
+        # 返回包含索引和结果的数据框
+        return(data)
+      },
+      error = function(e) {
+        cli::cli_alert_danger("ERROR {i}: {e$message}")
+        data <- data.frame(
+          pos_cell = FALSE
+        )
+        colnames(data) = glue::glue("process_{i}")
+        return(data)
+      }
     )
-
-    pos <- (result$scRNA_data$DEGAS == "Positive")
-
-    data <- data.frame(
-      pos_cell = pos
-    )
-    colnames(data) = glue::glue("process_{i}")
-    gc()
-
-    # 返回包含索引和结果的数据框
-    return(data)
   }
 )
 

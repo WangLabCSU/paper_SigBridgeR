@@ -1,6 +1,8 @@
 # ! GSE42568
 
 setwd(file.path(usethis::proj_path(), "2_method_acc/brca_her2"))
+library(dplyr)
+library(SigBridgeR)
 
 
 # * Load Data
@@ -56,6 +58,8 @@ arg_samples <- data.frame(
 res_list <- lapply(
   seq_len(nrow(arg_samples)),
   function(i) {
+    cli::cli_h1("{i} / {nrow(arg_samples)}")
+
     result = Screen(
       matched_bulk = bulk,
       sc_data = sc_data,
@@ -77,6 +81,7 @@ res_list <- lapply(
       pos_cell = (result$scRNA_data$LP_SGL == "Positive")
     )
     colnames(data) = glue::glue("process_{i}")
+    gc(verbose = FALSE)
 
     # 返回包含索引和结果的数据框
     return(data)
@@ -95,3 +100,5 @@ data.table::fwrite(
 )
 
 cli::cli_alert_success(crayon::green("(2)lpsgl random search completed."))
+
+# GSE42568

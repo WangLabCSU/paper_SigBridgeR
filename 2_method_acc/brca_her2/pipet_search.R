@@ -1,4 +1,6 @@
 setwd(file.path(usethis::proj_path(), "2_method_acc/brca_her2"))
+library(dplyr)
+library(SigBridgeR)
 
 
 # * Load Data
@@ -96,3 +98,5 @@ data.table::fwrite(
 )
 
 cli::cli_alert_success(crayon::green("(1)pipet random search completed."))
+
+# ! TCGA_BRCA

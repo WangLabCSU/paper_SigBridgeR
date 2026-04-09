@@ -33,10 +33,10 @@ bulk_configs <- list(
       "scAB",
       "SCIPAC",
       "scPAS",
-      "scPP",
+      #   "scPP", # Warning: There are no genes positively correlated with patients' prognosis in this bulk dataset.
       "DEGAS",
-      "LP_SGL",
-      "PIPET"
+      "LP_SGL"
+      #   ,      "PIPET" # Warning: ✖ No overlapping genes between markers and single-cell data, returning NULL
     )
   ),
   GSE140082 = list(
@@ -74,6 +74,9 @@ run_screening_pipeline <- function(
     bulk <- log2(bulk + 1)
   }
 
+  # 2. Process Phenotype & Extract Survival Labels
+  pheno <- qs::qread(file.path(data_path, config$pheno_qs), nthreads = 4)
+
   if (config_name == "GSE32062") {
     surv_data <- pheno %>%
       tibble::column_to_rownames("Sample_ID") %>%
@@ -84,10 +87,11 @@ run_screening_pipeline <- function(
       dplyr::select(`final_ostm:ch1`, `final_osid:ch1`) %>%
       dplyr::rename(time = 1, status = 2) %>%
       dplyr::mutate_all(as.integer)
-  }
 
-  # 2. Process Phenotype & Extract Survival Labels
-  surv <- qs::qread(file.path(data_path, config$pheno_qs), nthreads = 4)
+    median_val <- median(bulk[, "GSM4153781"], na.rm = TRUE)
+    na_indices <- which(is.na(bulk[, "GSM4153781"]))
+    bulk[na_indices, "GSM4153781"] <- median_val
+  }
 
   # 3. Align Bulk Matrix with Labels
   cm_samples <- intersect(colnames(bulk), rownames(surv_data))
@@ -190,6 +194,8 @@ lapply(names(bulk_configs), function(name) {
     data_path,
     save_path
   )
+
+  NULL
 })
 
 cli::cli_h1("✅ All screening tasks completed.")

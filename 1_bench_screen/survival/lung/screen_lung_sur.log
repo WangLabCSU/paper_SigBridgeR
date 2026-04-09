@@ -1,5 +1,5 @@
 nohup: ignoring input
-✔ SigBridgeR v3.6.0 loaded
+✔ SigBridgeR v3.6.1 loaded
 Loading required package: SeuratObject
 Loading required package: sp
 
@@ -47,120 +47,74 @@ qs 0.27.3. Announcement: https://github.com/qsbase/qs/issues/103
 • TF_XLA_CPU_GLOBAL_JIT: unset -> 1
 • TF_NUM_INTEROP_THREADS: unset -> 8
 • TF_NUM_INTRAOP_THREADS: unset -> 8
+ℹ Skipping "GSE3141" (already exists)
+ℹ Skipping "GSE8894" (already exists)
 
-── Starting pipeline for "GSE3141" ──
+── Starting pipeline for "GSE31210" ──
 
-ℹ Aligned bulk matrix: 17786 genes x 58 samples
-ℹ [2026/04/07 09:33:21] Scissor start...
-ℹ [2026/04/07 09:33:21] Start from raw data...
+ℹ Aligned bulk matrix: 17725 genes x 62 samples
+ℹ Load result method: "Scissor", bulk: "GSE31210" (already exists)
+ℹ Load result method: "scAB", bulk: "GSE31210" (already exists)
+ℹ Load result method: "SCIPAC", bulk: "GSE31210" (already exists)
+ℹ Load result method: "scPAS", bulk: "GSE31210" (already exists)
+ℹ Load result method: "DEGAS", bulk: "GSE31210" (already exists)
+ℹ Load result method: "LP_SGL", bulk: "GSE31210" (already exists)
+Warning: Skipping object of class `NULL` - not a Seurat object or a list with Seurat
+object
+Warning: Skipping object of class `NULL` - not a Seurat object or a list with Seurat
+object
+Warning: Skipping object of class `NULL` - not a Seurat object or a list with Seurat
+object
+Warning: Skipping object of class `NULL` - not a Seurat object or a list with Seurat
+object
+Warning: Skipping object of class `NULL` - not a Seurat object or a list with Seurat
+object
+Warning: Skipping object of class `NULL` - not a Seurat object or a list with Seurat
+object
+✔ Successfully merged 6 objects.
+✔ Saved to '/home/data/sigbridger/benchmark_data/lung/luad/survival_lung_GSE31210_merged_seurat.qs'
+
+── Starting pipeline for "TCGA_LUAD" ──
+
+ℹ Aligned bulk matrix: 60660 genes x 565 samples
+ℹ [2026/04/09 09:14:44] Scissor start...
+ℹ [2026/04/09 09:14:44] Start from raw data...
 ℹ Using "RNA_snn" graph for network.
 Warning in asMethod(object) :
   sparse->dense coercion: allocating vector of size 7.7 GiB
-ℹ [2026/04/07 09:33:29] Normalizing quantiles of data
+ℹ [2026/04/09 09:14:53] Normalizing quantiles of data
 Warning in asMethod(object) :
-  sparse->dense coercion: allocating vector of size 2.3 GiB
-ℹ [2026/04/07 09:34:14] Subsetting data
-ℹ [2026/04/07 09:34:19] Calculating correlation
+  sparse->dense coercion: allocating vector of size 2.8 GiB
+ℹ [2026/04/09 09:15:47] Subsetting data
+ℹ [2026/04/09 09:15:51] Calculating correlation
 ----------------------------------------
 Five-number summary of correlations:
-0.326742 0.375431 0.39463 0.411199 0.456693
+0.187245 0.36283 0.387789 0.416116 0.5241
 ----------------------------------------
-ℹ [2026/04/07 09:34:27] Perform cox regression on the given clinical outcomes...
-ℹ [2026/04/07 09:34:28] Screening...
+ℹ [2026/04/09 09:16:03] Perform cox regression on the given clinical outcomes...
+ℹ [2026/04/09 09:16:04] Screening...
 
 ── At alpha = 0.005 ──
 
-Scissor identified 9054 Scissor+ cells and 6529 Scissor- cells.
-The percentage of selected cell is: 48.343%
+Scissor identified 8270 Scissor+ cells and 7240 Scissor- cells.
+The percentage of selected cell is: 48.117%
 
 ── At alpha = 0.01 ──
 
-Scissor identified 5416 Scissor+ cells and 3203 Scissor- cells.
-The percentage of selected cell is: 26.739%
+Scissor identified 5980 Scissor+ cells and 4839 Scissor- cells.
+The percentage of selected cell is: 33.564%
 
 ── At alpha = 0.05 ──
 
-Scissor identified 1360 Scissor+ cells and 256 Scissor- cells.
-The percentage of selected cell is: 5.013%
-ℹ [2026/04/07 10:23:27] Scissor Ended.
-ℹ [2026/04/07 10:24:03] Start scAB screening.
+Scissor identified 623 Scissor+ cells and 834 Scissor- cells.
+The percentage of selected cell is: 4.52%
+ℹ [2026/04/09 09:36:28] Scissor Ended.
+ℹ [2026/04/09 09:37:04] Start scAB screening.
 ℹ  Using "RNA_snn" graph for network.
-ℹ [2026/04/07 10:24:03] Calculating L, D and A
-ℹ [2026/04/07 10:24:07] Normalizing quantiles of data
+ℹ [2026/04/09 09:37:04] Calculating L, D and A
+ℹ [2026/04/09 09:37:09] Normalizing quantiles of data
 Warning in asMethod(object) :
-  sparse->dense coercion: allocating vector of size 2.3 GiB
-ℹ [2026/04/07 10:24:54] Calculating correlation
-ℹ [2026/04/07 10:25:00] Guanranking
-ℹ [2026/04/07 10:25:00] Selecting K
-loss of 2: 0.00169843
-loss of 3: 0.00173986
-ℹ [2026/04/07 10:25:13] Run NMF with phenotype and cell-cell similarity regularization at K = 2
-ℹ [2026/04/07 10:25:13] Selecting optimal `alpha` and `alpha_2`, this would take a while
-Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■                           20% | ETA: 33s
-Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■                     40% | ETA: 28s
-Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■               60% | ETA: 18s
-Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA:  9s
-Alpha = 0.01, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
-Alpha = 0.005, alpha_2 = 0.01 ■■■■■■■                           20% | ETA: 34s
-Alpha = 0.005, alpha_2 = 0.01 ■■■■■■■■■■■■■                     40% | ETA: 30s
-Alpha = 0.005, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■               60% | ETA: 19s
-Alpha = 0.005, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 10s
-Alpha = 0.005, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
-Alpha = 0.001, alpha_2 = 0.01 ■■■■■■■                           20% | ETA: 34s
-Alpha = 0.001, alpha_2 = 0.01 ■■■■■■■■■■■■■                     40% | ETA: 24s
-Alpha = 0.001, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■               60% | ETA: 16s
-Alpha = 0.001, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA:  8s
-Alpha = 0.001, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
-Alpha = 0.01, alpha_2 = 0.005 ■■■■■■■                           20% | ETA: 38s
-Alpha = 0.01, alpha_2 = 0.005 ■■■■■■■■■■■■■                     40% | ETA: 32s
-Alpha = 0.01, alpha_2 = 0.005 ■■■■■■■■■■■■■■■■■■■               60% | ETA: 22s
-Alpha = 0.01, alpha_2 = 0.005 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 11s
-Alpha = 0.01, alpha_2 = 0.005 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
-Alpha = 0.005, alpha_2 = 0.005 ■■■■■■■                           20% | ETA: 38s
-Alpha = 0.005, alpha_2 = 0.005 ■■■■■■■■■■■■■                     40% | ETA: 32s
-Alpha = 0.005, alpha_2 = 0.005 ■■■■■■■■■■■■■■■■■■■               60% | ETA: 21s
-Alpha = 0.005, alpha_2 = 0.005 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 11s
-Alpha = 0.005, alpha_2 = 0.005 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
-Alpha = 0.001, alpha_2 = 0.005 ■■■■■■■                           20% | ETA: 35s
-Alpha = 0.001, alpha_2 = 0.005 ■■■■■■■■■■■■■                     40% | ETA: 28s
-Alpha = 0.001, alpha_2 = 0.005 ■■■■■■■■■■■■■■■■■■■               60% | ETA: 18s
-Alpha = 0.001, alpha_2 = 0.005 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA:  9s
-Alpha = 0.001, alpha_2 = 0.005 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
-Alpha = 0.01, alpha_2 = 0.001 ■■■■■■■                           20% | ETA: 41s
-Alpha = 0.01, alpha_2 = 0.001 ■■■■■■■■■■■■■                     40% | ETA: 29s
-Alpha = 0.01, alpha_2 = 0.001 ■■■■■■■■■■■■■■■■■■■               60% | ETA: 21s
-Alpha = 0.01, alpha_2 = 0.001 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 10s
-Alpha = 0.01, alpha_2 = 0.001 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
-Alpha = 0.005, alpha_2 = 0.001 ■■■■■■■                           20% | ETA: 41s
-Alpha = 0.005, alpha_2 = 0.001 ■■■■■■■■■■■■■                     40% | ETA: 28s
-Alpha = 0.005, alpha_2 = 0.001 ■■■■■■■■■■■■■■■■■■■               60% | ETA: 20s
-Alpha = 0.005, alpha_2 = 0.001 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA: 10s
-Alpha = 0.005, alpha_2 = 0.001 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
-Alpha = 0.001, alpha_2 = 0.001 ■■■■■■■                           20% | ETA: 38s
-Alpha = 0.001, alpha_2 = 0.001 ■■■■■■■■■■■■■                     40% | ETA: 29s
-Alpha = 0.001, alpha_2 = 0.001 ■■■■■■■■■■■■■■■■■■■               60% | ETA: 18s
-Alpha = 0.001, alpha_2 = 0.001 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA:  9s
-Alpha = 0.001, alpha_2 = 0.001 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
-✔ [2026/04/07 10:32:39] Best `alpha` and `alpha_2` are 0.005 and 0.005
-ℹ [2026/04/07 10:32:55] Screening cells...
-ℹ [2026/04/07 10:32:55] scAB screening done.
-ℹ [2026/04/07 10:33:30] Start SCIPAC screening
-ℹ [2026/04/07 10:33:30] Find common variable geme (hvg = 1000)
-Normalizing layer: counts
-Performing log-normalization
-0%   10   20   30   40   50   60   70   80   90   100%
-[----|----|----|----|----|----|----|----|----|----|
-**************************************************|
-Finding variable features for layer counts
-Calculating gene variances
-0%   10   20   30   40   50   60   70   80   90   100%
-[----|----|----|----|----|----|----|----|----|----|
-**************************************************|
-Calculating feature variances of standardized and clipped values
-0%   10   20   30   40   50   60   70   80   90   100%
-[----|----|----|----|----|----|----|----|----|----|
-**************************************************|
-ℹ [2026/04/07 10:33:46] Running PCA (n_pc = 60)
-Error in sc.dat.rot[, 1:n.pc] : subscript out of bounds
-Calls: lapply ... <Anonymous> -> <Anonymous> -> <Anonymous> -> <Anonymous>
-Execution halted
+  sparse->dense coercion: allocating vector of size 2.8 GiB
+ℹ [2026/04/09 09:38:07] Calculating correlation
+ℹ [2026/04/09 09:38:16] Guanranking
+ℹ [2026/04/09 09:38:16] Selecting K

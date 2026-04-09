@@ -61,12 +61,13 @@ bulk_configs <- list(
     methods = c(
       "Scissor",
       "scAB",
-      "SCIPAC",
+      #   "SCIPAC", # Error in classifier.Lambda(bulk.dat, y, family, ct.res, ela.net.alpha = ela.net.alpha,  :
+      #   All bootstrap samples failed. First error: Error in response.coxnet(y): Non-positive event times encountered; not permitted for Cox family
       "scPAS",
       "scPP",
       "DEGAS",
-      "LP_SGL",
-      "PIPET"
+      "LP_SGL"
+      #   ,      "PIPET" # Warning: ✖ Some classes have fewer than 2 marker genes, returning NULL
     )
   )
 )

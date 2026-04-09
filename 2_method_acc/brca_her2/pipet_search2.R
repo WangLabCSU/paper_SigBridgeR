@@ -1,6 +1,8 @@
 # ! GSE42568
 
 setwd(file.path(usethis::proj_path(), "2_method_acc/brca_her2"))
+library(dplyr)
+library(SigBridgeR)
 
 
 # * Load Data
@@ -54,6 +56,8 @@ arg_samples <- data.frame(
 res_list <- lapply(
   seq_len(nrow(arg_samples)),
   function(i) {
+    cli::cli_h1("{i} / {nrow(arg_samples)}")
+
     result <- Screen(
       matched_bulk = bulk,
       sc_data = sc_data,

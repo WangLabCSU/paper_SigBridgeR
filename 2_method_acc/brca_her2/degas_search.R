@@ -1,4 +1,6 @@
 setwd(file.path(usethis::proj_path(), "2_method_acc/brca_her2"))
+library(dplyr)
+library(SigBridgeR)
 
 
 # * Load Data
@@ -63,6 +65,8 @@ arg_samples <- data.frame(
 res_list <- lapply(
   seq_len(nrow(arg_samples)),
   function(i) {
+    cli::cli_h1("{i} / {nrow(arg_samples)}")
+
     tryCatch(
       {
         arch <- arg_samples[i, "arch"][[1]]
@@ -127,6 +131,8 @@ arg_samples2 <- data.frame(
 res_list <- lapply(
   seq_len(nrow(arg_samples2)),
   function(i) {
+    cli::cli_h1("{i} / {nrow(arg_samples2)}")
+
     tryCatch(
       {
         lamb1 <- arg_samples2[i, "lamb1"][[1]]
@@ -182,7 +188,7 @@ data.table::fwrite(
 
 # -------------------------------------------------------------------------------------------------
 
-arg_samples <- data.frame(
+arg_samples3 <- data.frame(
   scbatch_sz = sample(50:500, 50, replace = TRUE),
   patbatch_sz = sample(25:100, 50, replace = TRUE),
   hidden_feats = sample(25:100, 50, replace = TRUE),
@@ -196,12 +202,14 @@ arg_samples <- data.frame(
   )
 
 res_list <- lapply(
-  seq_len(nrow(arg_samples)),
+  seq_len(nrow(arg_samples3)),
   function(i) {
-    scbatch_sz <- arg_samples[i, "scbatch_sz"][[1]]
-    patbatch_sz <- arg_samples[i, "patbatch_sz"][[1]]
-    hidden_feats <- arg_samples[i, "hidden_feats"][[1]]
-    do_prc <- arg_samples[i, "do_prc"][[1]]
+    cli::cli_h1("{i} / {nrow(arg_samples3)}")
+
+    scbatch_sz <- arg_samples3[i, "scbatch_sz"][[1]]
+    patbatch_sz <- arg_samples3[i, "patbatch_sz"][[1]]
+    hidden_feats <- arg_samples3[i, "hidden_feats"][[1]]
+    do_prc <- arg_samples3[i, "do_prc"][[1]]
 
     result <- Screen(
       matched_bulk = bulk,
