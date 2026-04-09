@@ -600,3 +600,4 @@ Warning in asMethod(object) :
   sparse->dense coercion: allocating vector of size 4.4 GiB
 ℹ [2026/04/09 12:35:16] Calculating correlation matrix...
 ℹ [2026/04/09 12:35:29] Fitting SGL model with alpha = 0.5, this may take a while
+ℹ [2026/04/09 13:22:11] Running 5-fold cross-validation

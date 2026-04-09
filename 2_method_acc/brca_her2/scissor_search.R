@@ -43,19 +43,20 @@ benchmark_label <- colnames(sc_data) %in% tumor_cells
 
 # ? warmup
 
-tmp <- SigBridgeR::Screen(
-  matched_bulk = bulk,
-  sc_data = sc_data,
-  phenotype = pheno_bi,
-  label_type = "tumor",
-  phenotype_class = "binary",
-  screen_method = "Scissor",
-  alpha = 0.9,
-  cutoff = 0.2,
-  path2save_scissor_inputs = "TCGA_BRCA_her2_scissor_cache.RData"
-)
-rm(tmp)
-
+if (!file.exists("TCGA_BRCA_her2_scissor_cache.RData")) {
+  tmp <- SigBridgeR::Screen(
+    matched_bulk = bulk,
+    sc_data = sc_data,
+    phenotype = pheno_bi,
+    label_type = "tumor",
+    phenotype_class = "binary",
+    screen_method = "Scissor",
+    alpha = 0.9,
+    cutoff = 0.2,
+    path2save_scissor_inputs = "TCGA_BRCA_her2_scissor_cache.RData"
+  )
+  rm(tmp)
+}
 
 alpha <- c(0.001, seq(0.05, 0.95, 0.05))
 cutoff <- seq(0.05, 0.5, 0.05)
@@ -67,7 +68,7 @@ results <- lapply(cutoff, \(c) {
     phenotype = pheno_bi,
     label_type = glue::glue("process_{c}"),
     phenotype_class = "binary",
-    screen_method = "scissor",
+    screen_method = "Scissor",
     alpha = alpha,
     cutoff = c,
     path2load_scissor_cache = "TCGA_BRCA_her2_scissor_cache.RData"

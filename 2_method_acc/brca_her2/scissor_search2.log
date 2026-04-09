@@ -16,19 +16,11 @@ The following objects are masked from ‘package:base’:
 pheno_bi
   0   1 
  17 104 
-ℹ [2026/04/09 12:34:37] Scissor start...
-ℹ [2026/04/09 12:34:37] Start from raw data...
-ℹ Using "RNA_snn" graph for network.
-Warning in asMethod(object) :
-  sparse->dense coercion: allocating vector of size 7.6 GiB
-ℹ [2026/04/09 12:34:47] Normalizing quantiles of data
-Warning in asMethod(object) :
-  sparse->dense coercion: allocating vector of size 2.7 GiB
-ℹ [2026/04/09 12:35:38] Subsetting data
-ℹ [2026/04/09 12:35:41] Calculating correlation
-----------------------------------------
-Five-number summary of correlations:
-0.33853 0.417747 0.435946 0.449353 0.483695
-----------------------------------------
-ℹ Current phenotype contains 17 tumor_Negative and 104 tumor_Positive samples.
-ℹ [2026/04/09 12:35:50] Perform logistic regression on the given phenotypes...
+ℹ [2026/04/09 16:11:22] Scissor start...
+ℹ [2026/04/09 16:11:22] Loading data from 'TCGA_BRCA_her2_scissor_cache2.RData'
+ℹ [2026/04/09 16:12:03] Screening...
+
+── At alpha = 0.001 ──
+
+Scissor identified 14759 Scissor+ cells and 11522 Scissor- cells.
+The percentage of selected cell is: 82.458%
