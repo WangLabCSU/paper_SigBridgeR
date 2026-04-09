@@ -1,4 +1,5 @@
 setwd(file.path(usethis::proj_path(), "2_method_acc/brca_her2"))
+library(dplyr)
 
 
 # * Load Data
@@ -72,13 +73,14 @@ results <- lapply(cutoff, \(c) {
     path2load_scissor_cache = "TCGA_BRCA_her2_scissor_cache.RData"
   )
 
-  pos = (res$scRNA_data$scissor == "Positive")
+  pos_ratio = (res$scRNA_data$scissor == "Positive")
   pos = data.frame(pos = pos_ratio)
   colnames(pos) <- glue::glue("process_{c}")
+  pos
 })
 
 results <- dplyr::bind_cols(results)
-rownames(results) = colnames(seurat)
+rownames(results) = colnames(sc_data)
 
 
 data.table::fwrite(

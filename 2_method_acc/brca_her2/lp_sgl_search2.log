@@ -1,0 +1,73 @@
+nohup: ignoring input
+✔ Setting active project to "/home/yyx/R/Project/R_code/paper_SigBridgeR".
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+✔ SigBridgeR v3.6.1 loaded
+ℹ bulk data loaded: dim = (54675 and 121)
+ℹ pheno data loaded: 1~tumor, 0~normal
+pheno_bi
+  0   1 
+ 17 104 
+
+── 1 / 51 ──────────────────────────────────────────────────────────────────────
+ℹ [2026/04/09 09:51:57] Starting LP-SGL screen
+ℹ [2026/04/09 09:51:57] Fetch graph from Seurat object
+ℹ [2026/04/09 09:51:57] Run Leiden clustering
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.7 GiB
+ℹ [2026/04/09 09:52:10] Calculating correlation matrix...
+ℹ [2026/04/09 09:52:18] Fitting SGL model with alpha = 0.0019, this may take a while
+Warning in Sol$intercept : partial match of 'intercept' to 'intercepts'
+ℹ [2026/04/09 09:52:25] Running 20-fold cross-validation
+ℹ [2026/04/09 10:03:25] Optimal lambda index: 11 (error = 36.3126960457034)
+ℹ [2026/04/09 10:03:25] Identified 384 process_1 negative cells, 30984 process_1 neutral cells, and 504 process_1 positive cells
+✔ [2026/04/09 10:03:25] LP-SGL screening done.
+
+── 2 / 51 ──────────────────────────────────────────────────────────────────────
+ℹ [2026/04/09 10:03:27] Starting LP-SGL screen
+ℹ [2026/04/09 10:03:27] Fetch graph from Seurat object
+ℹ [2026/04/09 10:03:27] Run Leiden clustering
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.7 GiB
+ℹ [2026/04/09 10:03:40] Calculating correlation matrix...
+ℹ [2026/04/09 10:03:49] Fitting SGL model with alpha = 0.0189, this may take a while
+Warning in Sol$intercept : partial match of 'intercept' to 'intercepts'
+ℹ [2026/04/09 10:03:56] Running 18-fold cross-validation
+ℹ [2026/04/09 10:06:42] Optimal lambda index: 12 (error = 36.4946795023914)
+ℹ [2026/04/09 10:06:43] Identified 401 process_2 negative cells, 30950 process_2 neutral cells, and 521 process_2 positive cells
+✔ [2026/04/09 10:06:43] LP-SGL screening done.
+
+── 3 / 51 ──────────────────────────────────────────────────────────────────────
+ℹ [2026/04/09 10:06:44] Starting LP-SGL screen
+ℹ [2026/04/09 10:06:44] Fetch graph from Seurat object
+ℹ [2026/04/09 10:06:44] Run Leiden clustering
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.7 GiB
+ℹ [2026/04/09 10:06:55] Calculating correlation matrix...
+ℹ [2026/04/09 10:07:02] Fitting SGL model with alpha = 0.0033, this may take a while
+Warning in Sol$intercept : partial match of 'intercept' to 'intercepts'
+ℹ [2026/04/09 10:07:14] Running 16-fold cross-validation
+
+ *** caught segfault ***
+address 0x5f81a00bd350, cause 'memory not mapped'
+
+Traceback:
+ 1: oneDimLogit(data, index, thresh = thresh, inner.iter = maxit,     outer.iter = maxit, outer.thresh = thresh, min.frac = min.frac,     nlam = nlam, lambdas = lambdas, gamma = gamma, step = step,     reset = reset, alpha = alpha)
+ 2: logitCrossVal(data, index, nfold = nfold, maxit = maxit, thresh = thresh,     min.frac = min.frac, nlam = nlam, lambdas = lambdas, gamma = gamma,     verbose = verbose, step = step, alpha = alpha, reset = reset,     foldid = foldid)
+ 3: SGL::cvSGL(data = data, index = cluster_membership, type = type,     nfold = nfold, alpha = alpha, lambdas = lam)
+ 4: LPSGL::label_cell(seurat_obj = sc_data, bulk_dataset = matched_bulk,     phenotype = phenotype, cluster_membership = leiden_results,     alpha = alpha, nfold = nfold, type = family, verbose = verbose,     seed = seed)
+ 5: (function (matched_bulk, sc_data, phenotype, label_type = "LP_SGL",     family = c("logit", "cox", "linear"), resolution = 0.6, alpha = 0.5,     nfold = 5, dge_analysis = list(run = FALSE, logFC_threshold = 1,         pval_threshold = 0.05), ...) {    CheckInstalled("Exceret/LPSGL")    chk::chk_is(matched_bulk, c("matrix", "data.frame"))    chk::chk_is(sc_data, c("Seurat"))    chk::chk_list(dge_analysis)    family <- SigBridgeRUtils::MatchArg(family, c("logit", "cox",         "linear"), NULL)    dots <- rlang::list2(...)    verbose <- dots$verbose %||% getFuncOption("verbose")    seed <- dots$seed %||% getFuncOption("seed")    assay <- dots$assay %||% "RNA"    if (ncol(sc_data) > 50000) {        cli::cli_warn("The number of cells in the scRNA-seq data is too large (>50k), \\\n       this may result in segmentation fault")    }    if (verbose) {        ts_cli$cli_alert_info(cli::col_green("Starting LP-SGL screen"))  ...
+ 6: rlang::exec(method_config$executor, !!!params)
+ 7: Screen(matched_bulk = bulk, sc_data = sc_data, phenotype = pheno_bi,     label_type = glue::glue("process_{i}"), phenotype_class = "binary",     screen_method = "LP_SGL", alpha = arg_samples$alpha[i], resolution = arg_samples$resolution[i],     nfold = as.integer(arg_samples$nfold[i]))
+ 8: FUN(X[[i]], ...)
+ 9: lapply(seq_len(nrow(arg_samples)), function(i) {    cli::cli_h1("{i} / {nrow(arg_samples)}")    result = Screen(matched_bulk = bulk, sc_data = sc_data, phenotype = pheno_bi,         label_type = glue::glue("process_{i}"), phenotype_class = "binary",         screen_method = "LP_SGL", alpha = arg_samples$alpha[i],         resolution = arg_samples$resolution[i], nfold = as.integer(arg_samples$nfold[i]))    data = data.frame(pos_cell = (result$scRNA_data$LP_SGL ==         "Positive"))    colnames(data) = glue::glue("process_{i}")    gc(verbose = FALSE)    return(data)})
+An irrecoverable exception occurred. R is aborting now ...

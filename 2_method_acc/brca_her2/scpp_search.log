@@ -1,0 +1,32 @@
+nohup: ignoring input
+✔ Setting active project to "/home/yyx/R/Project/R_code/paper_SigBridgeR".
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+ℹ bulk data loaded: dim = (60660 and 1210)
+ℹ pheno data loaded: 1~tumor, 0~normal
+pheno_bi
+   0    1 
+ 113 1089 
+ℹ [2026/04/09 12:35:20] Start scPP screening.
+ℹ [2026/04/09 12:35:20] Finding overall markers...
+ℹ [2026/04/09 12:35:27] Screening...
+ℹ [2026/04/09 12:35:27] Running optimization mode: testing 6 thresholds
+ℹ [2026/04/09 12:35:29] Computing AUC scores...
+Registered S3 methods overwritten by 'Seqinfo':
+  method                from        
+  as.data.frame.Seqinfo GenomeInfoDb
+  merge.Seqinfo         GenomeInfoDb
+  summary.Seqinfo       GenomeInfoDb
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	2128 (54% of 3940)
+	gene_neg: 	5485 (79% of 6918)
+ℹ [2026/04/09 12:36:02] Testing thresholds and computing NES differences...

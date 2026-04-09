@@ -1,4 +1,5 @@
 setwd(file.path(usethis::proj_path(), "2_method_acc/brca_her2"))
+library(dplyr)
 
 
 # * Load Data
@@ -112,7 +113,7 @@ res_list <- lapply(
 # *visualize
 gc()
 all_results <- do.call(cbind, res_list)
-rownames(all_results) = colnames(seurat)
+rownames(all_results) = colnames(sc_data)
 
 data.table::fwrite(
   all_results,

@@ -89,7 +89,7 @@ res_list <- lapply(
 
 # 合并所有结果
 all_results <- do.call(cbind, res_list)
-rownames(all_results) = colnames(seurat) # each cell is a row
+rownames(all_results) = colnames(sc_data) # each cell is a row
 
 data.table::fwrite(
   all_results,

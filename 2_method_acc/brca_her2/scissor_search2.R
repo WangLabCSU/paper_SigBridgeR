@@ -1,6 +1,7 @@
 # ! GSE42568
 
 setwd(file.path(usethis::proj_path(), "2_method_acc/brca_her2"))
+library(dplyr)
 
 
 # * Load Data
@@ -20,11 +21,12 @@ pheno <- qs::qread(file.path(data_dir, "brca_pheno_GSE42568.qs"))
 cm_samples <- intersect(rownames(pheno), colnames(bulk))
 
 
-bulk <- bulk[, names(pheno_bi)]
 pheno_bi <- setNames(
   ifelse(pheno$`tissue:ch1` == "breast cancer", 1L, 0L),
   cm_samples
 )
+bulk <- bulk[, names(pheno_bi)]
+
 
 cli::cli_alert_info("pheno data loaded: 1~tumor, 0~normal")
 table(pheno_bi)
@@ -73,13 +75,14 @@ results <- lapply(cutoff, \(c) {
     path2load_scissor_cache = "TCGA_BRCA_her2_scissor_cache.RData"
   )
 
-  pos = (res$scRNA_data$scissor == "Positive")
+  pos_ratio = (res$scRNA_data$scissor == "Positive")
   pos = data.frame(pos = pos_ratio)
   colnames(pos) <- glue::glue("process_{c}")
+  pos
 })
 
 results <- dplyr::bind_cols(results)
-rownames(results) = colnames(seurat)
+rownames(results) = colnames(sc_data)
 
 
 data.table::fwrite(
