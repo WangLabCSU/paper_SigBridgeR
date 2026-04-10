@@ -1,6 +1,5 @@
 setwd(file.path(usethis::proj_path(), "2_method_acc/brca_her2"))
 library(dplyr)
-library(SigBridgeR)
 
 
 # * Load Data
@@ -64,25 +63,40 @@ arg_samples <- data.frame(
 res_list <- lapply(
   seq_len(nrow(arg_samples)),
   function(i) {
-    result <- Screen(
-      matched_bulk = bulk,
-      sc_data = sc_data,
-      phenotype = pheno_bi,
-      label_type = glue::glue("process_{i}"),
-      phenotype_class = "binary",
-      screen_method = "PIPET",
-      distance = arg_samples$distance[i], # select_alpha will be used
-      nPerm = as.integer(arg_samples$nPerm[i]),
-      log2FC = arg_samples$log2FC[i]
-    )
+    cli::cli_h1("{i} / {nrow(arg_samples)}")
 
-    data <- data.frame(
-      pos_cell = (result$scRNA_data$PIPET == "Positive")
-    )
-    colnames(data) <- glue::glue("process_{i}")
+    tryCatch(
+      {
+        result <- suppressWarnings(SigBridgeR::Screen(
+          matched_bulk = bulk,
+          sc_data = sc_data,
+          phenotype = pheno_bi,
+          label_type = glue::glue("process_{i}"),
+          phenotype_class = "binary",
+          screen_method = "PIPET",
+          distance = arg_samples$distance[i], # select_alpha will be used
+          nPerm = as.integer(arg_samples$nPerm[i]),
+          log2FC = arg_samples$log2FC[i],
+          verbose = FALSE
+        ))
 
-    # 返回包含索引和结果的数据框
-    return(data)
+        data <- data.frame(
+          pos_cell = (result$scRNA_data$PIPET == "Positive")
+        )
+        colnames(data) <- glue::glue("process_{i}")
+
+        # 返回包含索引和结果的数据框
+        return(data)
+      },
+      error = function(e) {
+        cli::cli_alert_danger("ERROR {i}: {e$message}")
+        data <- data.frame(
+          pos_cell = rep(FALSE, ncol(sc_data))
+        )
+        colnames(data) = glue::glue("process_{i}")
+        return(data)
+      }
+    )
   }
 )
 
@@ -97,6 +111,6 @@ data.table::fwrite(
   row.names = TRUE
 )
 
-cli::cli_alert_success(crayon::green("(1)pipet random search completed."))
+cli::cli_alert_success(crayon::green("(1) pipet random search completed."))
 
 # ! TCGA_BRCA

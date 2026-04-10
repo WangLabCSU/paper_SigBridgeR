@@ -49,8 +49,8 @@ bulk_configs <- list(
       "scPAS",
       "scPP",
       "DEGAS",
-      "LP_SGL",
-      "PIPET"
+      "LP_SGL"
+      #   ,      "PIPET" # Warning: ✖ No overlapping genes between markers and single-cell data, returning NULL
     )
   )
 )

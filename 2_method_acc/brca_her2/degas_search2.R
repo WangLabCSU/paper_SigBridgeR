@@ -22,11 +22,12 @@ pheno <- qs::qread(file.path(data_dir, "brca_pheno_GSE42568.qs"))
 cm_samples <- intersect(rownames(pheno), colnames(bulk))
 
 
-bulk <- bulk[, names(pheno_bi)]
 pheno_bi <- setNames(
   ifelse(pheno$`tissue:ch1` == "breast cancer", 1L, 0L),
   cm_samples
 )
+bulk <- bulk[, names(pheno_bi)]
+
 
 cli::cli_alert_info("pheno data loaded: 1~tumor, 0~normal")
 table(pheno_bi)
@@ -76,7 +77,7 @@ res_list <- lapply(
 
         result <- Screen(
           matched_bulk = bulk,
-          sc_data = seurat,
+          sc_data = sc_data,
           phenotype = pheno_bi,
           label_type = glue::glue("process_{i}"),
           phenotype_class = "binary",
@@ -111,7 +112,7 @@ res_list <- lapply(
 
 gc()
 all_results <- do.call(cbind, res_list)
-rownames(all_results) <- colnames(seurat)
+rownames(all_results) <- colnames(sc_data)
 
 data.table::fwrite(
   all_results,
@@ -142,7 +143,7 @@ res_list <- lapply(
 
         result <- Screen(
           matched_bulk = bulk,
-          sc_data = seurat,
+          sc_data = sc_data,
           phenotype = pheno_bi,
           label_type = glue::glue("process_{i}"),
           phenotype_class = "binary",
@@ -179,7 +180,7 @@ res_list <- lapply(
 
 gc()
 all_results <- do.call(cbind, res_list)
-rownames(all_results) <- colnames(seurat)
+rownames(all_results) <- colnames(sc_data)
 
 data.table::fwrite(
   all_results,
@@ -253,7 +254,7 @@ res_list <- lapply(
 
 gc()
 all_results <- do.call(cbind, res_list)
-rownames(all_results) = colnames(seurat)
+rownames(all_results) = colnames(sc_data)
 
 data.table::fwrite(
   all_results,

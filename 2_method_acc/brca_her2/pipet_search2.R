@@ -22,11 +22,12 @@ pheno <- qs::qread(file.path(data_dir, "brca_pheno_GSE42568.qs"))
 cm_samples <- intersect(rownames(pheno), colnames(bulk))
 
 
-bulk <- bulk[, names(pheno_bi)]
 pheno_bi <- setNames(
   ifelse(pheno$`tissue:ch1` == "breast cancer", 1L, 0L),
   cm_samples
 )
+bulk <- bulk[, names(pheno_bi)]
+
 
 cli::cli_alert_info("pheno data loaded: 1~tumor, 0~normal")
 table(pheno_bi)
@@ -42,7 +43,14 @@ tumor_cells <- rownames(seurat_tumor@meta.data)
 benchmark_label <- colnames(sc_data) %in% tumor_cells
 
 # * Screen
-
+distance_choices <- c(
+  "cosine",
+  "pearson",
+  "spearman",
+  "kendall",
+  "euclidean",
+  "maximum"
+)
 # * random search, 50 times
 set.seed(123)
 arg_samples <- data.frame(
@@ -58,7 +66,7 @@ res_list <- lapply(
   function(i) {
     cli::cli_h1("{i} / {nrow(arg_samples)}")
 
-    result <- Screen(
+    result <- suppressWarnings(Screen(
       matched_bulk = bulk,
       sc_data = sc_data,
       phenotype = pheno_bi,
@@ -67,8 +75,9 @@ res_list <- lapply(
       screen_method = "PIPET",
       distance = arg_samples$distance[i], # select_alpha will be used
       nPerm = as.integer(arg_samples$nPerm[i]),
-      log2FC = arg_samples$log2FC[i]
-    )
+      log2FC = arg_samples$log2FC[i],
+      verbose = FALSE
+    ))
 
     data <- data.frame(
       pos_cell = (result$scRNA_data$PIPET == "Positive")
@@ -92,3 +101,5 @@ data.table::fwrite(
 )
 
 cli::cli_alert_success(crayon::green("(2)pipet random search completed."))
+
+# ! GSE42568

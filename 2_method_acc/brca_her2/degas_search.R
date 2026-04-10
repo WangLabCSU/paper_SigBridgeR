@@ -75,7 +75,7 @@ res_list <- lapply(
 
         result <- Screen(
           matched_bulk = bulk,
-          sc_data = seurat,
+          sc_data = sc_data,
           phenotype = pheno_bi,
           label_type = glue::glue("process_{i}"),
           phenotype_class = "binary",
@@ -110,7 +110,7 @@ res_list <- lapply(
 
 gc()
 all_results <- do.call(cbind, res_list)
-rownames(all_results) <- colnames(seurat)
+rownames(all_results) <- colnames(sc_data)
 
 data.table::fwrite(
   all_results,
@@ -141,7 +141,7 @@ res_list <- lapply(
 
         result <- Screen(
           matched_bulk = bulk,
-          sc_data = seurat,
+          sc_data = sc_data,
           phenotype = pheno_bi,
           label_type = glue::glue("process_{i}"),
           phenotype_class = "binary",
@@ -178,7 +178,7 @@ res_list <- lapply(
 
 gc()
 all_results <- do.call(cbind, res_list)
-rownames(all_results) <- colnames(seurat)
+rownames(all_results) <- colnames(sc_data)
 
 data.table::fwrite(
   all_results,
@@ -241,7 +241,7 @@ res_list <- lapply(
 
 gc()
 all_results <- do.call(cbind, res_list)
-rownames(all_results) = colnames(seurat)
+rownames(all_results) = colnames(sc_data)
 
 data.table::fwrite(
   all_results,
