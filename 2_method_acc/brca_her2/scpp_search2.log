@@ -16,1974 +16,710 @@ The following objects are masked from ‘package:base’:
 pheno_bi
   0   1 
  17 104 
-ℹ [2026/04/09 12:35:31] Start scPP screening.
-ℹ [2026/04/09 12:35:31] Finding overall markers...
-ℹ [2026/04/09 12:35:32] Screening...
-ℹ [2026/04/09 12:35:32] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 12:35:33] Computing AUC scores...
+
+── 1 / 51 ──────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 15:40:41] Start scPP screening.
+ℹ [2026/04/10 15:40:41] Finding overall markers...
+ℹ [2026/04/10 15:40:42] Screening...
+ℹ [2026/04/10 15:40:42] Running fixed threshold mode with prob = 0.13
+ℹ [2026/04/10 15:40:44] Computing AUC scores...
 Registered S3 methods overwritten by 'Seqinfo':
   method                from        
   as.data.frame.Seqinfo GenomeInfoDb
   merge.Seqinfo         GenomeInfoDb
   summary.Seqinfo       GenomeInfoDb
 Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	597 (18% of 3388)
-	gene_neg: 	850 (29% of 2903)
-ℹ [2026/04/09 12:36:07] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 20s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 17s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 15s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 10s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  6s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.721, process_1
-ℹ [2026/04/09 12:36:44] Start scPP screening.
-ℹ [2026/04/09 12:36:44] Finding overall markers...
-ℹ [2026/04/09 12:36:45] Screening...
-ℹ [2026/04/09 12:36:45] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 12:36:46] Computing AUC scores...
+	gene_pos: 	934 (19% of 5014)
+	gene_neg: 	1112 (28% of 3909)
+✔ [2026/04/10 15:41:28] Classified 1731 Positive, 2517 Negative cells
+ℹ [2026/04/10 15:41:28] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 15:41:32] Found 4713 positive markers, 1155 negative markers
+✔ [2026/04/10 15:41:32] scPP screening done.
+
+── 2 / 51 ──────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 15:41:35] Start scPP screening.
+ℹ [2026/04/10 15:41:35] Finding overall markers...
+ℹ [2026/04/10 15:41:35] Screening...
+! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = 0.5, Log2FC_cutoff = 0.237, process_2
+
+── 3 / 51 ──────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 15:41:35] Start scPP screening.
+ℹ [2026/04/10 15:41:35] Finding overall markers...
+ℹ [2026/04/10 15:41:36] Screening...
+ℹ [2026/04/10 15:41:36] Running fixed threshold mode with prob = 0.15
+ℹ [2026/04/10 15:41:37] Computing AUC scores...
 Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	456 (17% of 2651)
-	gene_neg: 	747 (31% of 2411)
-ℹ [2026/04/09 12:37:12] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 18s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 18s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 15s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 11s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  6s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.876, process_2
-ℹ [2026/04/09 12:37:49] Start scPP screening.
-ℹ [2026/04/09 12:37:49] Finding overall markers...
-ℹ [2026/04/09 12:37:50] Screening...
-ℹ [2026/04/09 12:37:50] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 12:37:50] Computing AUC scores...
+	gene_pos: 	526 (17% of 3026)
+	gene_neg: 	805 (30% of 2693)
+✔ [2026/04/10 15:42:06] Classified 1383 Positive, 2589 Negative cells
+ℹ [2026/04/10 15:42:06] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 15:42:10] Found 4393 positive markers, 1052 negative markers
+✔ [2026/04/10 15:42:10] scPP screening done.
+
+── 4 / 51 ──────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 15:42:12] Start scPP screening.
+ℹ [2026/04/10 15:42:12] Finding overall markers...
+ℹ [2026/04/10 15:42:13] Screening...
+ℹ [2026/04/10 15:42:13] Running fixed threshold mode with prob = 0.25
+ℹ [2026/04/10 15:42:13] Computing AUC scores...
 Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	561 (18% of 3171)
-	gene_neg: 	823 (30% of 2784)
-ℹ [2026/04/09 12:38:17] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 17s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 16s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 15s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 10s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  6s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.761, process_3
-ℹ [2026/04/09 12:38:55] Start scPP screening.
-ℹ [2026/04/09 12:38:55] Finding overall markers...
-ℹ [2026/04/09 12:38:56] Screening...
-ℹ [2026/04/09 12:38:56] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 12:38:56] Computing AUC scores...
+	gene_pos: 	1098 (19% of 5704)
+	gene_neg: 	1367 (31% of 4463)
+✔ [2026/04/10 15:42:46] Classified 4505 Positive, 5425 Negative cells
+ℹ [2026/04/10 15:42:46] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 15:42:52] Found 4112 positive markers, 1292 negative markers
+✔ [2026/04/10 15:42:52] scPP screening done.
+
+── 5 / 51 ──────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 15:42:55] Start scPP screening.
+ℹ [2026/04/10 15:42:55] Finding overall markers...
+ℹ [2026/04/10 15:42:55] Screening...
+ℹ [2026/04/10 15:42:55] Running fixed threshold mode with prob = 0.27
+ℹ [2026/04/10 15:42:56] Computing AUC scores...
 Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	447 (17% of 2606)
-	gene_neg: 	742 (31% of 2382)
-ℹ [2026/04/09 12:39:23] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 19s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 16s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 13s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 10s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  5s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.886, process_4
-ℹ [2026/04/09 12:39:59] Start scPP screening.
-ℹ [2026/04/09 12:39:59] Finding overall markers...
-ℹ [2026/04/09 12:39:59] Screening...
-ℹ [2026/04/09 12:39:59] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 12:40:00] Computing AUC scores...
+	gene_pos: 	364 (16% of 2216)
+	gene_neg: 	682 (32% of 2122)
+✔ [2026/04/10 15:43:22] Classified 3572 Positive, 5281 Negative cells
+ℹ [2026/04/10 15:43:22] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 15:43:27] Found 3974 positive markers, 1190 negative markers
+✔ [2026/04/10 15:43:27] scPP screening done.
+
+── 6 / 51 ──────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 15:43:29] Start scPP screening.
+ℹ [2026/04/10 15:43:29] Finding overall markers...
+ℹ [2026/04/10 15:43:30] Screening...
+ℹ [2026/04/10 15:43:30] Running fixed threshold mode with prob = 0.23
+ℹ [2026/04/10 15:43:31] Computing AUC scores...
 Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	901 (18% of 4879)
-	gene_neg: 	1093 (28% of 3837)
-ℹ [2026/04/09 12:40:30] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 20s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 17s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 14s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 10s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  6s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.456, process_5
-ℹ [2026/04/09 12:41:06] Start scPP screening.
-ℹ [2026/04/09 12:41:06] Finding overall markers...
-ℹ [2026/04/09 12:41:07] Screening...
-ℹ [2026/04/09 12:41:07] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 12:41:07] Computing AUC scores...
+	gene_pos: 	566 (18% of 3193)
+	gene_neg: 	827 (30% of 2796)
+✔ [2026/04/10 15:43:58] Classified 3029 Positive, 4485 Negative cells
+ℹ [2026/04/10 15:43:58] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 15:44:03] Found 4088 positive markers, 1181 negative markers
+✔ [2026/04/10 15:44:03] scPP screening done.
+
+── 7 / 51 ──────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 15:44:05] Start scPP screening.
+ℹ [2026/04/10 15:44:05] Finding overall markers...
+ℹ [2026/04/10 15:44:05] Screening...
+ℹ [2026/04/10 15:44:05] Running fixed threshold mode with prob = 0.28
+ℹ [2026/04/10 15:44:06] Computing AUC scores...
 Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	1145 (20% of 5834)
-	gene_neg: 	1718 (35% of 4971)
-ℹ [2026/04/09 12:41:40] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 25s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 21s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 18s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 12s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  7s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.166, process_6
-ℹ [2026/04/09 12:42:21] Start scPP screening.
-ℹ [2026/04/09 12:42:21] Finding overall markers...
-ℹ [2026/04/09 12:42:22] Screening...
-ℹ [2026/04/09 12:42:22] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 12:42:23] Computing AUC scores...
+	gene_pos: 	366 (16% of 2232)
+	gene_neg: 	686 (32% of 2139)
+✔ [2026/04/10 15:44:32] Classified 3844 Positive, 5506 Negative cells
+ℹ [2026/04/10 15:44:32] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 15:44:37] Found 3919 positive markers, 1200 negative markers
+✔ [2026/04/10 15:44:38] scPP screening done.
+
+── 8 / 51 ──────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 15:44:40] Start scPP screening.
+ℹ [2026/04/10 15:44:40] Finding overall markers...
+ℹ [2026/04/10 15:44:40] Screening...
+ℹ [2026/04/10 15:44:40] Running fixed threshold mode with prob = 0.1
+ℹ [2026/04/10 15:44:41] Computing AUC scores...
 Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	1045 (19% of 5515)
-	gene_neg: 	1243 (29% of 4260)
-ℹ [2026/04/09 12:42:53] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 19s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 17s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 15s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 11s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  6s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.325, process_7
-ℹ [2026/04/09 12:43:32] Start scPP screening.
-ℹ [2026/04/09 12:43:32] Finding overall markers...
-ℹ [2026/04/09 12:43:32] Screening...
-ℹ [2026/04/09 12:43:32] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 12:43:33] Computing AUC scores...
+	gene_pos: 	1125 (19% of 5778)
+	gene_neg: 	1483 (32% of 4638)
+✔ [2026/04/10 15:45:13] Classified 1469 Positive, 1848 Negative cells
+ℹ [2026/04/10 15:45:13] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 15:45:16] Found 5024 positive markers, 1136 negative markers
+✔ [2026/04/10 15:45:16] scPP screening done.
+
+── 9 / 51 ──────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 15:45:18] Start scPP screening.
+ℹ [2026/04/10 15:45:18] Finding overall markers...
+ℹ [2026/04/10 15:45:19] Screening...
+ℹ [2026/04/10 15:45:19] Running fixed threshold mode with prob = 0.31
+ℹ [2026/04/10 15:45:20] Computing AUC scores...
 Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	829 (18% of 4589)
-	gene_neg: 	1043 (28% of 3677)
-ℹ [2026/04/09 12:44:00] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 20s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 19s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 15s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 11s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  6s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.509, process_8
-ℹ [2026/04/09 12:44:39] Start scPP screening.
-ℹ [2026/04/09 12:44:39] Finding overall markers...
-ℹ [2026/04/09 12:44:39] Screening...
-ℹ [2026/04/09 12:44:39] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 12:44:40] Computing AUC scores...
-Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	593 (18% of 3357)
-	gene_neg: 	845 (29% of 2883)
-ℹ [2026/04/09 12:45:09] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 17s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 15s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 13s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 10s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  5s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.728, process_9
-ℹ [2026/04/09 12:45:44] Start scPP screening.
-ℹ [2026/04/09 12:45:44] Finding overall markers...
-ℹ [2026/04/09 12:45:45] Screening...
-ℹ [2026/04/09 12:45:45] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 12:45:46] Computing AUC scores...
-Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	361 (16% of 2201)
-	gene_neg: 	680 (32% of 2112)
-ℹ [2026/04/09 12:46:11] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 17s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 14s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 12s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA:  9s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  5s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.99, process_10
-ℹ [2026/04/09 12:46:46] Start scPP screening.
-ℹ [2026/04/09 12:46:46] Finding overall markers...
-ℹ [2026/04/09 12:46:47] Screening...
-ℹ [2026/04/09 12:46:47] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 12:46:48] Computing AUC scores...
-Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	1153 (20% of 5854)
-	gene_neg: 	2875 (44% of 6486)
-ℹ [2026/04/09 12:47:19] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 19s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 18s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 14s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 10s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  6s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.035, process_11
-ℹ [2026/04/09 12:47:56] Start scPP screening.
-ℹ [2026/04/09 12:47:56] Finding overall markers...
-ℹ [2026/04/09 12:47:56] Screening...
-ℹ [2026/04/09 12:47:56] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 12:47:57] Computing AUC scores...
+	gene_pos: 	386 (16% of 2347)
+	gene_neg: 	699 (31% of 2220)
+✔ [2026/04/10 15:45:46] Classified 4673 Positive, 6195 Negative cells
+ℹ [2026/04/10 15:45:46] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 15:45:52] Found 3878 positive markers, 1232 negative markers
+✔ [2026/04/10 15:45:52] scPP screening done.
+
+── 10 / 51 ─────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 15:45:54] Start scPP screening.
+ℹ [2026/04/10 15:45:54] Finding overall markers...
+ℹ [2026/04/10 15:45:55] Screening...
+ℹ [2026/04/10 15:45:55] Running fixed threshold mode with prob = 0.23
+ℹ [2026/04/10 15:45:55] Computing AUC scores...
 Genes in the gene sets NOT available in the dataset: 
 	gene_pos: 	1149 (20% of 5841)
-	gene_neg: 	1808 (35% of 5096)
-ℹ [2026/04/09 12:48:28] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 20s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 18s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 15s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 11s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  6s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.152, process_12
-ℹ [2026/04/09 12:49:07] Start scPP screening.
-ℹ [2026/04/09 12:49:07] Finding overall markers...
-ℹ [2026/04/09 12:49:08] Screening...
-ℹ [2026/04/09 12:49:08] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 12:49:08] Computing AUC scores...
+	gene_neg: 	1821 (36% of 5119)
+✔ [2026/04/10 15:46:26] Classified 3935 Positive, 4868 Negative cells
+ℹ [2026/04/10 15:46:26] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 15:46:32] Found 4186 positive markers, 1294 negative markers
+✔ [2026/04/10 15:46:32] scPP screening done.
+
+── 11 / 51 ─────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 15:46:34] Start scPP screening.
+ℹ [2026/04/10 15:46:34] Finding overall markers...
+ℹ [2026/04/10 15:46:35] Screening...
+ℹ [2026/04/10 15:46:35] Running fixed threshold mode with prob = 0.01
+ℹ [2026/04/10 15:46:36] Computing AUC scores...
 Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	586 (18% of 3299)
-	gene_neg: 	838 (29% of 2854)
-ℹ [2026/04/09 12:49:36] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 16s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 16s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 13s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 10s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  5s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.736, process_13
-ℹ [2026/04/09 12:50:11] Start scPP screening.
-ℹ [2026/04/09 12:50:11] Finding overall markers...
-ℹ [2026/04/09 12:50:11] Screening...
-ℹ [2026/04/09 12:50:11] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 12:50:12] Computing AUC scores...
+	gene_pos: 	727 (18% of 4054)
+	gene_neg: 	949 (29% of 3320)
+✔ [2026/04/10 15:47:05] Classified 57 Positive, 79 Negative cells
+ℹ [2026/04/10 15:47:05] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 15:47:07] Found 598 positive markers, 229 negative markers
+✔ [2026/04/10 15:47:07] scPP screening done.
+
+── 12 / 51 ─────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 15:47:09] Start scPP screening.
+ℹ [2026/04/10 15:47:09] Finding overall markers...
+ℹ [2026/04/10 15:47:09] Screening...
+ℹ [2026/04/10 15:47:09] Running fixed threshold mode with prob = 0.21
+ℹ [2026/04/10 15:47:10] Computing AUC scores...
 Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	1153 (20% of 5854)
-	gene_neg: 	3107 (46% of 6789)
-ℹ [2026/04/09 12:50:43] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 18s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 18s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 14s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 10s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  6s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.001, process_14
-ℹ [2026/04/09 12:51:19] Start scPP screening.
-ℹ [2026/04/09 12:51:19] Finding overall markers...
-ℹ [2026/04/09 12:51:20] Screening...
-ℹ [2026/04/09 12:51:20] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 12:51:20] Computing AUC scores...
+	gene_pos: 	392 (17% of 2361)
+	gene_neg: 	704 (31% of 2235)
+✔ [2026/04/10 15:47:36] Classified 2360 Positive, 3830 Negative cells
+ℹ [2026/04/10 15:47:36] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 15:47:40] Found 4235 positive markers, 1144 negative markers
+✔ [2026/04/10 15:47:40] scPP screening done.
+
+── 13 / 51 ─────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 15:47:42] Start scPP screening.
+ℹ [2026/04/10 15:47:42] Finding overall markers...
+ℹ [2026/04/10 15:47:42] Screening...
+ℹ [2026/04/10 15:47:42] Running fixed threshold mode with prob = 0.1
+ℹ [2026/04/10 15:47:43] Computing AUC scores...
 Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	980 (19% of 5234)
-	gene_neg: 	1158 (29% of 4060)
-ℹ [2026/04/09 12:51:49] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 19s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 17s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 14s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 10s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  6s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.391, process_15
-ℹ [2026/04/09 12:52:27] Start scPP screening.
-ℹ [2026/04/09 12:52:27] Finding overall markers...
-ℹ [2026/04/09 12:52:27] Screening...
-ℹ [2026/04/09 12:52:27] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 12:52:29] Computing AUC scores...
+	gene_pos: 	632 (18% of 3567)
+	gene_neg: 	878 (29% of 3000)
+✔ [2026/04/10 15:48:09] Classified 857 Positive, 1677 Negative cells
+ℹ [2026/04/10 15:48:09] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 15:48:11] Found 4666 positive markers, 976 negative markers
+✔ [2026/04/10 15:48:11] scPP screening done.
+
+── 14 / 51 ─────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 15:48:13] Start scPP screening.
+ℹ [2026/04/10 15:48:13] Finding overall markers...
+ℹ [2026/04/10 15:48:13] Screening...
+ℹ [2026/04/10 15:48:13] Running fixed threshold mode with prob = 0.37
+ℹ [2026/04/10 15:48:14] Computing AUC scores...
 Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	891 (18% of 4850)
-	gene_neg: 	1086 (28% of 3819)
-ℹ [2026/04/09 12:52:57] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 19s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 16s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 14s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 10s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  6s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.462, process_16
-ℹ [2026/04/09 12:53:33] Start scPP screening.
-ℹ [2026/04/09 12:53:33] Finding overall markers...
-ℹ [2026/04/09 12:53:33] Screening...
-ℹ [2026/04/09 12:53:34] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 12:53:36] Computing AUC scores...
+	gene_pos: 	836 (18% of 4617)
+	gene_neg: 	1045 (28% of 3688)
+✔ [2026/04/10 15:48:42] Classified 7353 Positive, 8167 Negative cells
+ℹ [2026/04/10 15:48:42] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 15:48:50] Found 3596 positive markers, 1211 negative markers
+✔ [2026/04/10 15:48:50] scPP screening done.
+
+── 15 / 51 ─────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 15:48:52] Start scPP screening.
+ℹ [2026/04/10 15:48:52] Finding overall markers...
+ℹ [2026/04/10 15:48:52] Screening...
+ℹ [2026/04/10 15:48:52] Running fixed threshold mode with prob = 0.38
+ℹ [2026/04/10 15:48:53] Computing AUC scores...
 Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	985 (19% of 5252)
-	gene_neg: 	1163 (29% of 4067)
-ℹ [2026/04/09 12:54:03] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 19s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 17s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 14s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 10s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  6s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.388, process_17
-ℹ [2026/04/09 12:54:40] Start scPP screening.
-ℹ [2026/04/09 12:54:40] Finding overall markers...
-ℹ [2026/04/09 12:54:41] Screening...
-ℹ [2026/04/09 12:54:41] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 12:54:42] Computing AUC scores...
+	gene_pos: 	1001 (19% of 5324)
+	gene_neg: 	1181 (29% of 4113)
+✔ [2026/04/10 15:49:22] Classified 7819 Positive, 8410 Negative cells
+ℹ [2026/04/10 15:49:22] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 15:49:30] Found 3526 positive markers, 1201 negative markers
+✔ [2026/04/10 15:49:30] scPP screening done.
+
+── 16 / 51 ─────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 15:49:32] Start scPP screening.
+ℹ [2026/04/10 15:49:32] Finding overall markers...
+ℹ [2026/04/10 15:49:32] Screening...
+ℹ [2026/04/10 15:49:32] Running fixed threshold mode with prob = 0.29
+ℹ [2026/04/10 15:49:33] Computing AUC scores...
 Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	973 (19% of 5185)
-	gene_neg: 	1149 (29% of 4027)
-ℹ [2026/04/09 12:55:12] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 19s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 20s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 15s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 11s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  6s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.402, process_18
-ℹ [2026/04/09 12:55:50] Start scPP screening.
-ℹ [2026/04/09 12:55:50] Finding overall markers...
-ℹ [2026/04/09 12:55:51] Screening...
-ℹ [2026/04/09 12:55:51] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 12:55:53] Computing AUC scores...
+	gene_pos: 	1038 (19% of 5480)
+	gene_neg: 	1232 (29% of 4233)
+✔ [2026/04/10 15:50:07] Classified 5515 Positive, 6291 Negative cells
+ℹ [2026/04/10 15:50:07] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 15:50:14] Found 3918 positive markers, 1271 negative markers
+✔ [2026/04/10 15:50:14] scPP screening done.
+
+── 17 / 51 ─────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 15:50:17] Start scPP screening.
+ℹ [2026/04/10 15:50:17] Finding overall markers...
+ℹ [2026/04/10 15:50:18] Screening...
+ℹ [2026/04/10 15:50:18] Running fixed threshold mode with prob = 0.09
+ℹ [2026/04/10 15:50:19] Computing AUC scores...
 Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	1142 (20% of 5826)
-	gene_neg: 	1648 (34% of 4871)
-ℹ [2026/04/09 12:56:22] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 19s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 20s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 16s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 11s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  6s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.179, process_19
-ℹ [2026/04/09 12:57:00] Start scPP screening.
-ℹ [2026/04/09 12:57:00] Finding overall markers...
-ℹ [2026/04/09 12:57:00] Screening...
-ℹ [2026/04/09 12:57:00] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 12:57:01] Computing AUC scores...
+	gene_pos: 	1153 (20% of 5853)
+	gene_neg: 	2762 (44% of 6332)
+✔ [2026/04/10 15:50:52] Classified 1144 Positive, 1477 Negative cells
+ℹ [2026/04/10 15:50:52] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 15:50:54] Found 4897 positive markers, 1081 negative markers
+✔ [2026/04/10 15:50:54] scPP screening done.
+
+── 18 / 51 ─────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 15:50:57] Start scPP screening.
+ℹ [2026/04/10 15:50:57] Finding overall markers...
+ℹ [2026/04/10 15:50:58] Screening...
+ℹ [2026/04/10 15:50:58] Running fixed threshold mode with prob = 0.16
+ℹ [2026/04/10 15:50:58] Computing AUC scores...
 Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	384 (16% of 2337)
-	gene_neg: 	696 (31% of 2213)
-ℹ [2026/04/09 12:57:25] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 15s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 14s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 12s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 10s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  5s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.952, process_20
-ℹ [2026/04/09 12:58:00] Start scPP screening.
-ℹ [2026/04/09 12:58:00] Finding overall markers...
-ℹ [2026/04/09 12:58:00] Screening...
-ℹ [2026/04/09 12:58:00] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 12:58:01] Computing AUC scores...
+	gene_pos: 	712 (18% of 3964)
+	gene_neg: 	934 (29% of 3251)
+✔ [2026/04/10 15:51:27] Classified 1988 Positive, 3154 Negative cells
+ℹ [2026/04/10 15:51:27] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 15:51:31] Found 4511 positive markers, 1151 negative markers
+✔ [2026/04/10 15:51:31] scPP screening done.
+
+── 19 / 51 ─────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 15:51:33] Start scPP screening.
+ℹ [2026/04/10 15:51:33] Finding overall markers...
+ℹ [2026/04/10 15:51:33] Screening...
+ℹ [2026/04/10 15:51:33] Running fixed threshold mode with prob = 0.31
+ℹ [2026/04/10 15:51:34] Computing AUC scores...
 Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	903 (18% of 4890)
-	gene_neg: 	1093 (28% of 3843)
-ℹ [2026/04/09 12:58:29] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 18s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 16s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 14s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 10s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  6s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.454, process_21
-ℹ [2026/04/09 12:59:05] Start scPP screening.
-ℹ [2026/04/09 12:59:05] Finding overall markers...
-ℹ [2026/04/09 12:59:06] Screening...
-ℹ [2026/04/09 12:59:06] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 12:59:06] Computing AUC scores...
+	gene_pos: 	379 (16% of 2299)
+	gene_neg: 	691 (32% of 2186)
+✔ [2026/04/10 15:52:00] Classified 4654 Positive, 6224 Negative cells
+ℹ [2026/04/10 15:52:00] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 15:52:06] Found 3854 positive markers, 1239 negative markers
+✔ [2026/04/10 15:52:06] scPP screening done.
+
+── 20 / 51 ─────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 15:52:08] Start scPP screening.
+ℹ [2026/04/10 15:52:08] Finding overall markers...
+ℹ [2026/04/10 15:52:08] Screening...
+ℹ [2026/04/10 15:52:08] Running fixed threshold mode with prob = 0.39
+ℹ [2026/04/10 15:52:09] Computing AUC scores...
 Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	1045 (19% of 5509)
-	gene_neg: 	1242 (29% of 4257)
-ℹ [2026/04/09 12:59:36] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 20s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 17s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 14s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 10s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  6s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.327, process_22
-ℹ [2026/04/09 13:00:14] Start scPP screening.
-ℹ [2026/04/09 13:00:14] Finding overall markers...
-ℹ [2026/04/09 13:00:15] Screening...
-ℹ [2026/04/09 13:00:15] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 13:00:15] Computing AUC scores...
+	gene_pos: 	669 (18% of 3757)
+	gene_neg: 	905 (29% of 3120)
+✔ [2026/04/10 15:52:37] Classified 7673 Positive, 8599 Negative cells
+ℹ [2026/04/10 15:52:38] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 15:52:45] Found 3533 positive markers, 1238 negative markers
+✔ [2026/04/10 15:52:46] scPP screening done.
+
+── 21 / 51 ─────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 15:52:48] Start scPP screening.
+ℹ [2026/04/10 15:52:48] Finding overall markers...
+ℹ [2026/04/10 15:52:48] Screening...
+ℹ [2026/04/10 15:52:48] Running fixed threshold mode with prob = 0.38
+ℹ [2026/04/10 15:52:49] Computing AUC scores...
 Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	377 (16% of 2286)
-	gene_neg: 	690 (32% of 2178)
-ℹ [2026/04/09 13:00:40] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 16s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 14s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 12s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA:  9s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  5s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.965, process_23
-ℹ [2026/04/09 13:01:14] Start scPP screening.
-ℹ [2026/04/09 13:01:14] Finding overall markers...
-ℹ [2026/04/09 13:01:14] Screening...
-ℹ [2026/04/09 13:01:14] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 13:01:15] Computing AUC scores...
+	gene_pos: 	829 (18% of 4585)
+	gene_neg: 	1043 (28% of 3673)
+✔ [2026/04/10 15:53:19] Classified 7705 Positive, 8459 Negative cells
+ℹ [2026/04/10 15:53:19] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 15:53:27] Found 3566 positive markers, 1214 negative markers
+✔ [2026/04/10 15:53:27] scPP screening done.
+
+── 22 / 51 ─────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 15:53:29] Start scPP screening.
+ℹ [2026/04/10 15:53:29] Finding overall markers...
+ℹ [2026/04/10 15:53:30] Screening...
+ℹ [2026/04/10 15:53:30] Running fixed threshold mode with prob = 0.37
+ℹ [2026/04/10 15:53:30] Computing AUC scores...
 Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	614 (18% of 3474)
-	gene_neg: 	862 (29% of 2948)
-ℹ [2026/04/09 13:01:42] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 16s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 15s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 13s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 10s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  5s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.707, process_24
-ℹ [2026/04/09 13:02:17] Start scPP screening.
-ℹ [2026/04/09 13:02:17] Finding overall markers...
-ℹ [2026/04/09 13:02:18] Screening...
-ℹ [2026/04/09 13:02:18] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 13:02:18] Computing AUC scores...
-Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	677 (18% of 3809)
-	gene_neg: 	917 (29% of 3159)
-ℹ [2026/04/09 13:02:45] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 17s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 16s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 14s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 10s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  6s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.645, process_25
-ℹ [2026/04/09 13:03:23] Start scPP screening.
-ℹ [2026/04/09 13:03:23] Finding overall markers...
-ℹ [2026/04/09 13:03:24] Screening...
-ℹ [2026/04/09 13:03:24] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 13:03:24] Computing AUC scores...
-Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	982 (19% of 5240)
-	gene_neg: 	1160 (29% of 4063)
-ℹ [2026/04/09 13:03:52] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 18s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 20s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 15s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 11s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  6s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.39, process_26
-ℹ [2026/04/09 13:04:30] Start scPP screening.
-ℹ [2026/04/09 13:04:30] Finding overall markers...
-ℹ [2026/04/09 13:04:31] Screening...
-ℹ [2026/04/09 13:04:31] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 13:04:31] Computing AUC scores...
-Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	617 (18% of 3509)
-	gene_neg: 	868 (29% of 2971)
-ℹ [2026/04/09 13:04:58] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 18s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 16s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 13s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 10s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  5s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.699, process_27
-ℹ [2026/04/09 13:05:34] Start scPP screening.
-ℹ [2026/04/09 13:05:34] Finding overall markers...
-ℹ [2026/04/09 13:05:34] Screening...
-ℹ [2026/04/09 13:05:34] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 13:05:35] Computing AUC scores...
-Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	791 (18% of 4384)
-	gene_neg: 	1003 (28% of 3528)
-ℹ [2026/04/09 13:06:03] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 18s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 16s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 13s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 10s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  5s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.544, process_28
-ℹ [2026/04/09 13:06:39] Start scPP screening.
-ℹ [2026/04/09 13:06:39] Finding overall markers...
-ℹ [2026/04/09 13:06:40] Screening...
-ℹ [2026/04/09 13:06:40] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 13:06:41] Computing AUC scores...
-Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	1122 (19% of 5772)
-	gene_neg: 	1461 (32% of 4608)
-ℹ [2026/04/09 13:07:11] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 18s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 18s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 14s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 10s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  6s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.226, process_29
-ℹ [2026/04/09 13:07:49] Start scPP screening.
-ℹ [2026/04/09 13:07:49] Finding overall markers...
-ℹ [2026/04/09 13:07:49] Screening...
-ℹ [2026/04/09 13:07:49] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 13:07:50] Computing AUC scores...
-Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	871 (18% of 4729)
-	gene_neg: 	1066 (28% of 3750)
-ℹ [2026/04/09 13:08:18] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 19s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 17s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 15s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 11s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  6s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.485, process_30
-ℹ [2026/04/09 13:08:56] Start scPP screening.
-ℹ [2026/04/09 13:08:56] Finding overall markers...
-ℹ [2026/04/09 13:08:57] Screening...
-ℹ [2026/04/09 13:08:57] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 13:08:57] Computing AUC scores...
-Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	524 (17% of 3021)
-	gene_neg: 	805 (30% of 2692)
-ℹ [2026/04/09 13:09:24] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 16s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 15s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 13s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 10s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  5s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.793, process_31
-ℹ [2026/04/09 13:09:59] Start scPP screening.
-ℹ [2026/04/09 13:09:59] Finding overall markers...
-ℹ [2026/04/09 13:09:59] Screening...
-ℹ [2026/04/09 13:09:59] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 13:10:00] Computing AUC scores...
-Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	1153 (20% of 5854)
-	gene_neg: 	3085 (46% of 6761)
-ℹ [2026/04/09 13:10:29] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 18s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 16s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 14s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 10s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  6s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.006, process_32
-ℹ [2026/04/09 13:11:06] Start scPP screening.
-ℹ [2026/04/09 13:11:06] Finding overall markers...
-ℹ [2026/04/09 13:11:06] Screening...
-ℹ [2026/04/09 13:11:06] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 13:11:07] Computing AUC scores...
-Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	1137 (20% of 5817)
-	gene_neg: 	1606 (33% of 4812)
-ℹ [2026/04/09 13:11:37] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 19s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 18s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 14s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 10s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  6s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.188, process_33
-ℹ [2026/04/09 13:12:14] Start scPP screening.
-ℹ [2026/04/09 13:12:14] Finding overall markers...
-ℹ [2026/04/09 13:12:15] Screening...
-ℹ [2026/04/09 13:12:15] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 13:12:15] Computing AUC scores...
-Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	637 (18% of 3597)
-	gene_neg: 	883 (29% of 3018)
-ℹ [2026/04/09 13:12:42] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 17s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 16s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 14s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 10s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  6s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.682, process_34
-ℹ [2026/04/09 13:13:18] Start scPP screening.
-ℹ [2026/04/09 13:13:18] Finding overall markers...
-ℹ [2026/04/09 13:13:19] Screening...
-ℹ [2026/04/09 13:13:19] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 13:13:19] Computing AUC scores...
-Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	1004 (19% of 5336)
-	gene_neg: 	1184 (29% of 4122)
-ℹ [2026/04/09 13:13:49] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 19s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 17s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 14s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 10s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  6s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.37, process_35
-ℹ [2026/04/09 13:14:26] Start scPP screening.
-ℹ [2026/04/09 13:14:26] Finding overall markers...
-ℹ [2026/04/09 13:14:27] Screening...
-ℹ [2026/04/09 13:14:27] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 13:14:27] Computing AUC scores...
-Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	1012 (19% of 5368)
-	gene_neg: 	1198 (29% of 4154)
-ℹ [2026/04/09 13:14:57] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 19s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 18s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 14s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 10s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  6s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.362, process_36
-ℹ [2026/04/09 13:15:34] Start scPP screening.
-ℹ [2026/04/09 13:15:34] Finding overall markers...
-ℹ [2026/04/09 13:15:35] Screening...
-ℹ [2026/04/09 13:15:35] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 13:15:36] Computing AUC scores...
+	gene_pos: 	1149 (20% of 5841)
+	gene_neg: 	1816 (36% of 5110)
+✔ [2026/04/10 15:54:03] Classified 7463 Positive, 7949 Negative cells
+ℹ [2026/04/10 15:54:03] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 15:54:11] Found 3509 positive markers, 1235 negative markers
+✔ [2026/04/10 15:54:11] scPP screening done.
+
+── 23 / 51 ─────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 15:54:13] Start scPP screening.
+ℹ [2026/04/10 15:54:13] Finding overall markers...
+ℹ [2026/04/10 15:54:14] Screening...
+ℹ [2026/04/10 15:54:14] Running fixed threshold mode with prob = 0.29
+ℹ [2026/04/10 15:54:15] Computing AUC scores...
 Genes in the gene sets NOT available in the dataset: 
 	gene_pos: 	460 (17% of 2677)
-	gene_neg: 	749 (31% of 2427)
-ℹ [2026/04/09 13:16:02] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 18s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 16s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 14s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 10s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  5s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.869, process_37
-ℹ [2026/04/09 13:16:38] Start scPP screening.
-ℹ [2026/04/09 13:16:38] Finding overall markers...
-ℹ [2026/04/09 13:16:39] Screening...
-ℹ [2026/04/09 13:16:39] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 13:16:40] Computing AUC scores...
+	gene_neg: 	749 (31% of 2426)
+✔ [2026/04/10 15:54:41] Classified 4406 Positive, 5784 Negative cells
+ℹ [2026/04/10 15:54:41] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 15:54:47] Found 3952 positive markers, 1217 negative markers
+✔ [2026/04/10 15:54:47] scPP screening done.
+
+── 24 / 51 ─────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 15:54:50] Start scPP screening.
+ℹ [2026/04/10 15:54:50] Finding overall markers...
+ℹ [2026/04/10 15:54:51] Screening...
+! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = 0, Log2FC_cutoff = 0.514, process_24
+
+── 25 / 51 ─────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 15:54:51] Start scPP screening.
+ℹ [2026/04/10 15:54:51] Finding overall markers...
+ℹ [2026/04/10 15:54:51] Screening...
+ℹ [2026/04/10 15:54:51] Running fixed threshold mode with prob = 0.11
+ℹ [2026/04/10 15:54:52] Computing AUC scores...
 Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	429 (17% of 2547)
-	gene_neg: 	735 (31% of 2335)
-ℹ [2026/04/09 13:17:06] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 18s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 15s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 13s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA:  9s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  5s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.904, process_38
-ℹ [2026/04/09 13:17:42] Start scPP screening.
-ℹ [2026/04/09 13:17:42] Finding overall markers...
-ℹ [2026/04/09 13:17:42] Screening...
-ℹ [2026/04/09 13:17:42] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 13:17:43] Computing AUC scores...
+	gene_pos: 	1153 (20% of 5854)
+	gene_neg: 	3075 (46% of 6746)
+✔ [2026/04/10 15:55:23] Classified 1437 Positive, 1910 Negative cells
+ℹ [2026/04/10 15:55:23] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 15:55:25] Found 4789 positive markers, 1131 negative markers
+✔ [2026/04/10 15:55:25] scPP screening done.
+
+── 26 / 51 ─────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 15:55:27] Start scPP screening.
+ℹ [2026/04/10 15:55:27] Finding overall markers...
+ℹ [2026/04/10 15:55:28] Screening...
+ℹ [2026/04/10 15:55:28] Running fixed threshold mode with prob = 0.19
+ℹ [2026/04/10 15:55:28] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	1153 (20% of 5854)
+	gene_neg: 	3002 (45% of 6656)
+✔ [2026/04/10 15:55:59] Classified 2953 Positive, 3877 Negative cells
+ℹ [2026/04/10 15:55:59] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 15:56:03] Found 4332 positive markers, 1271 negative markers
+✔ [2026/04/10 15:56:03] scPP screening done.
+
+── 27 / 51 ─────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 15:56:05] Start scPP screening.
+ℹ [2026/04/10 15:56:05] Finding overall markers...
+ℹ [2026/04/10 15:56:06] Screening...
+ℹ [2026/04/10 15:56:06] Running fixed threshold mode with prob = 0.07
+ℹ [2026/04/10 15:56:06] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	1149 (20% of 5843)
+	gene_neg: 	1849 (36% of 5159)
+✔ [2026/04/10 15:56:37] Classified 924 Positive, 1073 Negative cells
+ℹ [2026/04/10 15:56:37] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 15:56:39] Found 4962 positive markers, 1016 negative markers
+✔ [2026/04/10 15:56:39] scPP screening done.
+
+── 28 / 51 ─────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 15:56:41] Start scPP screening.
+ℹ [2026/04/10 15:56:41] Finding overall markers...
+ℹ [2026/04/10 15:56:42] Screening...
+ℹ [2026/04/10 15:56:42] Running fixed threshold mode with prob = 0.11
+ℹ [2026/04/10 15:56:42] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	1062 (19% of 5586)
+	gene_neg: 	1273 (29% of 4321)
+✔ [2026/04/10 15:57:14] Classified 1633 Positive, 2109 Negative cells
+ℹ [2026/04/10 15:57:14] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 15:57:17] Found 4929 positive markers, 1182 negative markers
+✔ [2026/04/10 15:57:17] scPP screening done.
+
+── 29 / 51 ─────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 15:57:20] Start scPP screening.
+ℹ [2026/04/10 15:57:20] Finding overall markers...
+ℹ [2026/04/10 15:57:20] Screening...
+ℹ [2026/04/10 15:57:20] Running fixed threshold mode with prob = 0.02
+ℹ [2026/04/10 15:57:21] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	488 (17% of 2873)
+	gene_neg: 	780 (30% of 2582)
+✔ [2026/04/10 15:57:47] Classified 52 Positive, 133 Negative cells
+ℹ [2026/04/10 15:57:47] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 15:57:48] Found 1774 positive markers, 167 negative markers
+✔ [2026/04/10 15:57:48] scPP screening done.
+
+── 30 / 51 ─────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 15:57:51] Start scPP screening.
+ℹ [2026/04/10 15:57:51] Finding overall markers...
+ℹ [2026/04/10 15:57:51] Screening...
+ℹ [2026/04/10 15:57:51] Running fixed threshold mode with prob = 0.08
+ℹ [2026/04/10 15:57:52] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	842 (18% of 4639)
+	gene_neg: 	1049 (28% of 3696)
+✔ [2026/04/10 15:58:21] Classified 865 Positive, 1339 Negative cells
+ℹ [2026/04/10 15:58:21] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 15:58:23] Found 4853 positive markers, 978 negative markers
+✔ [2026/04/10 15:58:23] scPP screening done.
+
+── 31 / 51 ─────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 15:58:25] Start scPP screening.
+ℹ [2026/04/10 15:58:25] Finding overall markers...
+ℹ [2026/04/10 15:58:26] Screening...
+ℹ [2026/04/10 15:58:26] Running fixed threshold mode with prob = 0.13
+ℹ [2026/04/10 15:58:26] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	514 (17% of 2968)
+	gene_neg: 	797 (30% of 2652)
+✔ [2026/04/10 15:58:52] Classified 1116 Positive, 2130 Negative cells
+ℹ [2026/04/10 15:58:52] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 15:58:55] Found 4503 positive markers, 1008 negative markers
+✔ [2026/04/10 15:58:55] scPP screening done.
+
+── 32 / 51 ─────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 15:58:58] Start scPP screening.
+ℹ [2026/04/10 15:58:58] Finding overall markers...
+ℹ [2026/04/10 15:58:58] Screening...
+ℹ [2026/04/10 15:58:58] Running fixed threshold mode with prob = 0.12
+ℹ [2026/04/10 15:58:59] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	1153 (20% of 5853)
+	gene_neg: 	2622 (43% of 6157)
+✔ [2026/04/10 15:59:28] Classified 1622 Positive, 2206 Negative cells
+ℹ [2026/04/10 15:59:28] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 15:59:31] Found 4782 positive markers, 1158 negative markers
+✔ [2026/04/10 15:59:31] scPP screening done.
+
+── 33 / 51 ─────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 15:59:33] Start scPP screening.
+ℹ [2026/04/10 15:59:33] Finding overall markers...
+ℹ [2026/04/10 15:59:34] Screening...
+ℹ [2026/04/10 15:59:34] Running fixed threshold mode with prob = 0.19
+ℹ [2026/04/10 15:59:34] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	411 (17% of 2436)
+	gene_neg: 	713 (31% of 2274)
+✔ [2026/04/10 15:59:59] Classified 1993 Positive, 3361 Negative cells
+ℹ [2026/04/10 15:59:59] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 16:00:03] Found 4329 positive markers, 1135 negative markers
+✔ [2026/04/10 16:00:03] scPP screening done.
+
+── 34 / 51 ─────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 16:00:05] Start scPP screening.
+ℹ [2026/04/10 16:00:05] Finding overall markers...
+ℹ [2026/04/10 16:00:05] Screening...
+ℹ [2026/04/10 16:00:05] Running fixed threshold mode with prob = 0.41
+ℹ [2026/04/10 16:00:06] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	509 (17% of 2950)
+	gene_neg: 	791 (30% of 2635)
+✔ [2026/04/10 16:00:31] Classified 8033 Positive, 8873 Negative cells
+ℹ [2026/04/10 16:00:31] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 16:00:39] Found 3588 positive markers, 1277 negative markers
+✔ [2026/04/10 16:00:39] scPP screening done.
+
+── 35 / 51 ─────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 16:00:41] Start scPP screening.
+ℹ [2026/04/10 16:00:41] Finding overall markers...
+ℹ [2026/04/10 16:00:42] Screening...
+ℹ [2026/04/10 16:00:42] Running fixed threshold mode with prob = 0.15
+ℹ [2026/04/10 16:00:42] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	1153 (20% of 5853)
+	gene_neg: 	2442 (41% of 5923)
+✔ [2026/04/10 16:01:14] Classified 2236 Positive, 2995 Negative cells
+ℹ [2026/04/10 16:01:14] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 16:01:17] Found 4617 positive markers, 1215 negative markers
+✔ [2026/04/10 16:01:17] scPP screening done.
+
+── 36 / 51 ─────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 16:01:19] Start scPP screening.
+ℹ [2026/04/10 16:01:19] Finding overall markers...
+ℹ [2026/04/10 16:01:19] Screening...
+ℹ [2026/04/10 16:01:19] Running fixed threshold mode with prob = 0.15
+ℹ [2026/04/10 16:01:20] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	727 (18% of 4052)
+	gene_neg: 	949 (29% of 3316)
+✔ [2026/04/10 16:01:47] Classified 1814 Positive, 2921 Negative cells
+ℹ [2026/04/10 16:01:47] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 16:01:50] Found 4588 positive markers, 1132 negative markers
+✔ [2026/04/10 16:01:50] scPP screening done.
+
+── 37 / 51 ─────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 16:01:52] Start scPP screening.
+ℹ [2026/04/10 16:01:52] Finding overall markers...
+ℹ [2026/04/10 16:01:52] Screening...
+ℹ [2026/04/10 16:01:52] Running fixed threshold mode with prob = 0.31
+ℹ [2026/04/10 16:01:53] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	605 (18% of 3429)
+	gene_neg: 	858 (29% of 2927)
+✔ [2026/04/10 16:02:19] Classified 5008 Positive, 6328 Negative cells
+ℹ [2026/04/10 16:02:19] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 16:02:24] Found 3857 positive markers, 1213 negative markers
+✔ [2026/04/10 16:02:25] scPP screening done.
+
+── 38 / 51 ─────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 16:02:27] Start scPP screening.
+ℹ [2026/04/10 16:02:27] Finding overall markers...
+ℹ [2026/04/10 16:02:27] Screening...
+ℹ [2026/04/10 16:02:27] Running fixed threshold mode with prob = 0.33
+ℹ [2026/04/10 16:02:28] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	824 (18% of 4559)
+	gene_neg: 	1039 (28% of 3656)
+✔ [2026/04/10 16:02:56] Classified 6176 Positive, 7236 Negative cells
+ℹ [2026/04/10 16:02:56] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 16:03:03] Found 3718 positive markers, 1224 negative markers
+✔ [2026/04/10 16:03:03] scPP screening done.
+
+── 39 / 51 ─────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 16:03:05] Start scPP screening.
+ℹ [2026/04/10 16:03:05] Finding overall markers...
+ℹ [2026/04/10 16:03:05] Screening...
+ℹ [2026/04/10 16:03:05] Running fixed threshold mode with prob = 0.4
+ℹ [2026/04/10 16:03:06] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	598 (18% of 3394)
+	gene_neg: 	853 (29% of 2910)
+✔ [2026/04/10 16:03:33] Classified 7779 Positive, 8649 Negative cells
+ℹ [2026/04/10 16:03:33] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 16:03:41] Found 3572 positive markers, 1249 negative markers
+✔ [2026/04/10 16:03:41] scPP screening done.
+
+── 40 / 51 ─────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 16:03:43] Start scPP screening.
+ℹ [2026/04/10 16:03:43] Finding overall markers...
+ℹ [2026/04/10 16:03:44] Screening...
+ℹ [2026/04/10 16:03:44] Running fixed threshold mode with prob = 0.31
+ℹ [2026/04/10 16:03:44] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	568 (18% of 3220)
+	gene_neg: 	828 (29% of 2818)
+✔ [2026/04/10 16:04:12] Classified 4939 Positive, 6248 Negative cells
+ℹ [2026/04/10 16:04:12] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 16:04:18] Found 3847 positive markers, 1207 negative markers
+✔ [2026/04/10 16:04:18] scPP screening done.
+
+── 41 / 51 ─────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 16:04:21] Start scPP screening.
+ℹ [2026/04/10 16:04:21] Finding overall markers...
+ℹ [2026/04/10 16:04:21] Screening...
+ℹ [2026/04/10 16:04:21] Running fixed threshold mode with prob = 0.24
+ℹ [2026/04/10 16:04:22] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	1152 (20% of 5851)
+	gene_neg: 	2269 (40% of 5693)
+✔ [2026/04/10 16:04:51] Classified 4184 Positive, 5061 Negative cells
+ℹ [2026/04/10 16:04:51] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 16:04:56] Found 4148 positive markers, 1290 negative markers
+✔ [2026/04/10 16:04:56] scPP screening done.
+
+── 42 / 51 ─────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 16:04:58] Start scPP screening.
+ℹ [2026/04/10 16:04:58] Finding overall markers...
+ℹ [2026/04/10 16:04:59] Screening...
+ℹ [2026/04/10 16:04:59] Running fixed threshold mode with prob = 0.35
+ℹ [2026/04/10 16:04:59] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	977 (19% of 5204)
+	gene_neg: 	1151 (29% of 4038)
+✔ [2026/04/10 16:05:28] Classified 6764 Positive, 7617 Negative cells
+ℹ [2026/04/10 16:05:28] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 16:05:35] Found 3663 positive markers, 1221 negative markers
+✔ [2026/04/10 16:05:35] scPP screening done.
+
+── 43 / 51 ─────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 16:05:37] Start scPP screening.
+ℹ [2026/04/10 16:05:37] Finding overall markers...
+ℹ [2026/04/10 16:05:37] Screening...
+ℹ [2026/04/10 16:05:37] Running fixed threshold mode with prob = 0.39
+ℹ [2026/04/10 16:05:38] Computing AUC scores...
+Genes in the gene sets NOT available in the dataset: 
+	gene_pos: 	1071 (19% of 5620)
+	gene_neg: 	1289 (30% of 4354)
+✔ [2026/04/10 16:06:07] Classified 8068 Positive, 8573 Negative cells
+ℹ [2026/04/10 16:06:07] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 16:06:15] Found 3420 positive markers, 1230 negative markers
+✔ [2026/04/10 16:06:15] scPP screening done.
+
+── 44 / 51 ─────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 16:06:17] Start scPP screening.
+ℹ [2026/04/10 16:06:17] Finding overall markers...
+ℹ [2026/04/10 16:06:18] Screening...
+ℹ [2026/04/10 16:06:18] Running fixed threshold mode with prob = 0.1
+ℹ [2026/04/10 16:06:18] Computing AUC scores...
 Genes in the gene sets NOT available in the dataset: 
 	gene_pos: 	712 (18% of 3973)
 	gene_neg: 	936 (29% of 3260)
-ℹ [2026/04/09 13:18:11] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 17s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 16s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 14s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 10s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  6s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.617, process_39
-ℹ [2026/04/09 13:18:49] Start scPP screening.
-ℹ [2026/04/09 13:18:49] Finding overall markers...
-ℹ [2026/04/09 13:18:49] Screening...
-ℹ [2026/04/09 13:18:49] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 13:18:50] Computing AUC scores...
+✔ [2026/04/10 16:06:45] Classified 1042 Positive, 1730 Negative cells
+ℹ [2026/04/10 16:06:45] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 16:06:47] Found 4819 positive markers, 1015 negative markers
+✔ [2026/04/10 16:06:47] scPP screening done.
+
+── 45 / 51 ─────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 16:06:49] Start scPP screening.
+ℹ [2026/04/10 16:06:49] Finding overall markers...
+ℹ [2026/04/10 16:06:50] Screening...
+ℹ [2026/04/10 16:06:50] Running fixed threshold mode with prob = 0.37
+ℹ [2026/04/10 16:06:50] Computing AUC scores...
 Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	1149 (20% of 5843)
-	gene_neg: 	1943 (37% of 5275)
-ℹ [2026/04/09 13:19:19] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 18s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 17s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 15s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 11s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  6s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.134, process_40
-ℹ [2026/04/09 13:19:57] Start scPP screening.
-ℹ [2026/04/09 13:19:57] Finding overall markers...
-ℹ [2026/04/09 13:19:58] Screening...
-ℹ [2026/04/09 13:19:58] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 13:19:59] Computing AUC scores...
+	gene_pos: 	367 (16% of 2248)
+	gene_neg: 	689 (32% of 2157)
+✔ [2026/04/10 16:07:16] Classified 6295 Positive, 7709 Negative cells
+ℹ [2026/04/10 16:07:16] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 16:07:22] Found 3700 positive markers, 1270 negative markers
+✔ [2026/04/10 16:07:22] scPP screening done.
+
+── 46 / 51 ─────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 16:07:25] Start scPP screening.
+ℹ [2026/04/10 16:07:25] Finding overall markers...
+ℹ [2026/04/10 16:07:25] Screening...
+ℹ [2026/04/10 16:07:25] Running fixed threshold mode with prob = 0.08
+ℹ [2026/04/10 16:07:26] Computing AUC scores...
 Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	536 (17% of 3068)
-	gene_neg: 	809 (30% of 2716)
-ℹ [2026/04/09 13:20:26] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 17s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 15s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 13s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA:  9s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  5s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.782, process_41
-ℹ [2026/04/09 13:21:00] Start scPP screening.
-ℹ [2026/04/09 13:21:00] Finding overall markers...
-ℹ [2026/04/09 13:21:01] Screening...
-ℹ [2026/04/09 13:21:01] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 13:21:01] Computing AUC scores...
+	gene_pos: 	712 (18% of 3968)
+	gene_neg: 	936 (29% of 3258)
+✔ [2026/04/10 16:07:55] Classified 766 Positive, 1300 Negative cells
+ℹ [2026/04/10 16:07:55] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 16:07:56] Found 4884 positive markers, 932 negative markers
+✔ [2026/04/10 16:07:56] scPP screening done.
+
+── 47 / 51 ─────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 16:07:58] Start scPP screening.
+ℹ [2026/04/10 16:07:58] Finding overall markers...
+ℹ [2026/04/10 16:07:58] Screening...
+ℹ [2026/04/10 16:07:58] Running fixed threshold mode with prob = 0.04
+ℹ [2026/04/10 16:07:59] Computing AUC scores...
 Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	947 (19% of 5053)
-	gene_neg: 	1117 (28% of 3935)
-ℹ [2026/04/09 13:21:29] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 19s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 16s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 15s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 11s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  6s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.429, process_42
-ℹ [2026/04/09 13:22:07] Start scPP screening.
-ℹ [2026/04/09 13:22:07] Finding overall markers...
-ℹ [2026/04/09 13:22:08] Screening...
-ℹ [2026/04/09 13:22:08] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 13:22:09] Computing AUC scores...
+	gene_pos: 	813 (18% of 4514)
+	gene_neg: 	1034 (28% of 3631)
+✔ [2026/04/10 16:08:27] Classified 354 Positive, 522 Negative cells
+ℹ [2026/04/10 16:08:27] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 16:08:29] Found 4279 positive markers, 649 negative markers
+✔ [2026/04/10 16:08:29] scPP screening done.
+
+── 48 / 51 ─────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 16:08:30] Start scPP screening.
+ℹ [2026/04/10 16:08:30] Finding overall markers...
+ℹ [2026/04/10 16:08:31] Screening...
+ℹ [2026/04/10 16:08:31] Running fixed threshold mode with prob = 0.14
+ℹ [2026/04/10 16:08:31] Computing AUC scores...
 Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	411 (17% of 2438)
-	gene_neg: 	713 (31% of 2278)
-ℹ [2026/04/09 13:22:35] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 16s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 14s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 13s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA:  9s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  5s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.927, process_43
-ℹ [2026/04/09 13:23:09] Start scPP screening.
-ℹ [2026/04/09 13:23:10] Finding overall markers...
-ℹ [2026/04/09 13:23:10] Screening...
-ℹ [2026/04/09 13:23:10] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 13:23:11] Computing AUC scores...
+	gene_pos: 	429 (17% of 2548)
+	gene_neg: 	735 (31% of 2340)
+✔ [2026/04/10 16:08:57] Classified 1180 Positive, 2294 Negative cells
+ℹ [2026/04/10 16:08:57] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 16:09:00] Found 4496 positive markers, 1044 negative markers
+✔ [2026/04/10 16:09:00] scPP screening done.
+
+── 49 / 51 ─────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 16:09:02] Start scPP screening.
+ℹ [2026/04/10 16:09:02] Finding overall markers...
+ℹ [2026/04/10 16:09:02] Screening...
+ℹ [2026/04/10 16:09:02] Running fixed threshold mode with prob = 0.18
+ℹ [2026/04/10 16:09:03] Computing AUC scores...
 Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	547 (18% of 3111)
-	gene_neg: 	814 (30% of 2751)
-ℹ [2026/04/09 13:23:36] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 16s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 15s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 13s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 10s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  5s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.773, process_44
-ℹ [2026/04/09 13:24:13] Start scPP screening.
-ℹ [2026/04/09 13:24:13] Finding overall markers...
-ℹ [2026/04/09 13:24:13] Screening...
-ℹ [2026/04/09 13:24:13] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 13:24:14] Computing AUC scores...
+	gene_pos: 	687 (18% of 3853)
+	gene_neg: 	922 (29% of 3185)
+✔ [2026/04/10 16:09:30] Classified 2197 Positive, 3515 Negative cells
+ℹ [2026/04/10 16:09:30] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 16:09:34] Found 4397 positive markers, 1146 negative markers
+✔ [2026/04/10 16:09:34] scPP screening done.
+
+── 50 / 51 ─────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 16:09:35] Start scPP screening.
+ℹ [2026/04/10 16:09:35] Finding overall markers...
+ℹ [2026/04/10 16:09:36] Screening...
+ℹ [2026/04/10 16:09:36] Running fixed threshold mode with prob = 0.16
+ℹ [2026/04/10 16:09:36] Computing AUC scores...
 Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	1098 (19% of 5703)
-	gene_neg: 	1363 (31% of 4458)
-ℹ [2026/04/09 13:24:43] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 18s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 18s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 14s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 11s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  6s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.26, process_45
-ℹ [2026/04/09 13:25:21] Start scPP screening.
-ℹ [2026/04/09 13:25:21] Finding overall markers...
-ℹ [2026/04/09 13:25:21] Screening...
-ℹ [2026/04/09 13:25:21] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 13:25:22] Computing AUC scores...
-Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	1047 (19% of 5528)
-	gene_neg: 	1252 (29% of 4276)
-ℹ [2026/04/09 13:25:50] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 20s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 18s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 15s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 11s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  6s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.321, process_46
-ℹ [2026/04/09 13:26:29] Start scPP screening.
-ℹ [2026/04/09 13:26:29] Finding overall markers...
-ℹ [2026/04/09 13:26:30] Screening...
-ℹ [2026/04/09 13:26:30] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 13:26:30] Computing AUC scores...
-Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	1153 (20% of 5853)
-	gene_neg: 	2631 (43% of 6171)
-ℹ [2026/04/09 13:26:59] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 20s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 17s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 14s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 10s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  6s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.06, process_47
-ℹ [2026/04/09 13:27:36] Start scPP screening.
-ℹ [2026/04/09 13:27:36] Finding overall markers...
-ℹ [2026/04/09 13:27:36] Screening...
-ℹ [2026/04/09 13:27:36] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 13:27:37] Computing AUC scores...
-Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	1153 (20% of 5853)
-	gene_neg: 	2801 (44% of 6388)
-ℹ [2026/04/09 13:28:07] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 19s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 17s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 14s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 10s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  6s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.043, process_48
-ℹ [2026/04/09 13:28:44] Start scPP screening.
-ℹ [2026/04/09 13:28:44] Finding overall markers...
-ℹ [2026/04/09 13:28:45] Screening...
-ℹ [2026/04/09 13:28:45] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 13:28:46] Computing AUC scores...
-Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	1153 (20% of 5853)
-	gene_neg: 	2704 (43% of 6257)
-ℹ [2026/04/09 13:29:16] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 18s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 17s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 14s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 10s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  6s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.055, process_49
-ℹ [2026/04/09 13:29:53] Start scPP screening.
-ℹ [2026/04/09 13:29:53] Finding overall markers...
-ℹ [2026/04/09 13:29:53] Screening...
-ℹ [2026/04/09 13:29:53] Running optimization mode: testing 6 thresholds
-ℹ [2026/04/09 13:29:54] Computing AUC scores...
-Genes in the gene sets NOT available in the dataset: 
-	gene_pos: 	701 (18% of 3922)
-	gene_neg: 	931 (29% of 3226)
-ℹ [2026/04/09 13:30:22] Testing thresholds and computing NES differences...
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.2 because GSEA failed
- ■■■■■■                            17% |  ETA: 18s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.25 because GSEA failed
- ■■■■■■■■■■■                       33% |  ETA: 16s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.3 because GSEA failed
- ■■■■■■■■■■■■■■■■                  50% |  ETA: 14s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.35 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■             67% |  ETA: 10s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.4 because GSEA failed
- ■■■■■■■■■■■■■■■■■■■■■■■■■■        83% |  ETA:  6s
-Warning in preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
-  There are ties in the preranked stats (0% of the list).
-The order of those tied genes will be arbitrary, which may produce unexpected results.
-Warning: Skipping prob 0.45 because GSEA failed
-! scPP result is not complete, maybe not suitable for this parameter pair, using all FALSE.prob = , Log2FC_cutoff = 0.626, process_50
-ℹ [2026/04/09 13:30:58] Start scPP screening.
-ℹ [2026/04/09 13:30:58] Finding overall markers...
-ℹ [2026/04/09 13:30:59] Screening...
-ℹ [2026/04/09 13:30:59] Running fixed threshold mode with prob = 0.2
-ℹ [2026/04/09 13:30:59] Computing AUC scores...
+	gene_pos: 	461 (17% of 2689)
+	gene_neg: 	754 (31% of 2447)
+✔ [2026/04/10 16:10:01] Classified 1613 Positive, 2727 Negative cells
+ℹ [2026/04/10 16:10:01] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 16:10:05] Found 4404 positive markers, 1106 negative markers
+✔ [2026/04/10 16:10:05] scPP screening done.
+
+── 51 / 51 ─────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 16:10:06] Start scPP screening.
+ℹ [2026/04/10 16:10:06] Finding overall markers...
+ℹ [2026/04/10 16:10:07] Screening...
+ℹ [2026/04/10 16:10:07] Running fixed threshold mode with prob = 0.2
+ℹ [2026/04/10 16:10:07] Computing AUC scores...
 Genes in the gene sets NOT available in the dataset: 
 	gene_pos: 	744 (18% of 4151)
 	gene_neg: 	955 (28% of 3363)
-✔ [2026/04/09 13:31:28] Classified 2756 Positive, 4107 Negative cells
-ℹ [2026/04/09 13:31:28] Finding markers between `Positive` and `Negative` group...
-✔ [2026/04/09 13:31:31] Found 4286 positive markers, 1180 negative markers
-✔ [2026/04/09 13:31:31] scPP screening done.
+✔ [2026/04/10 16:10:34] Classified 2756 Positive, 4107 Negative cells
+ℹ [2026/04/10 16:10:34] Finding markers between `Positive` and `Negative` group...
+✔ [2026/04/10 16:10:38] Found 4286 positive markers, 1180 negative markers
+✔ [2026/04/10 16:10:38] scPP screening done.
             used   (Mb) gc trigger    (Mb)   max used    (Mb)
-Ncells  10425534  556.8   15342304   819.4   15342304   819.4
-Vcells 439747565 3355.1 1341881342 10237.8 1677351663 12797.2
+Ncells  10292057  549.7   15363488   820.5   15363488   820.5
+Vcells 441069285 3365.1 1397778264 10664.3 1397778202 10664.3
 ✔ (2) scpp random search completed.

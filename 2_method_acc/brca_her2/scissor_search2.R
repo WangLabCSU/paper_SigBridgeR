@@ -87,7 +87,7 @@ rownames(results) = colnames(sc_data)
 
 
 data.table::fwrite(
-  res,
+  results,
   file = "stats/scissor_label_mat2.csv",
   row.names = TRUE
 )

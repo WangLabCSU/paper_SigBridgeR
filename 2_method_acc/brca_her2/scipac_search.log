@@ -1,0 +1,246 @@
+nohup: ignoring input
+✔ Setting active project to "/home/yyx/R/Project/R_code/paper_SigBridgeR".
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+✔ SigBridgeR v3.6.1 loaded
+ℹ bulk data loaded: dim = (60660 and 1210)
+ℹ pheno data loaded: 1~tumor, 0~normal
+pheno_bi
+   0    1 
+ 113 1089 
+
+── 1 / 51 ──────────────────────────────────────────────────────────────────────
+→ cache found, loading...
+
+── 2 / 51 ──────────────────────────────────────────────────────────────────────
+→ cache found, loading...
+
+── 3 / 51 ──────────────────────────────────────────────────────────────────────
+→ cache found, loading...
+
+── 4 / 51 ──────────────────────────────────────────────────────────────────────
+→ cache found, loading...
+
+── 5 / 51 ──────────────────────────────────────────────────────────────────────
+→ cache found, loading...
+
+── 6 / 51 ──────────────────────────────────────────────────────────────────────
+→ cache found, loading...
+
+── 7 / 51 ──────────────────────────────────────────────────────────────────────
+→ cache found, loading...
+
+── 8 / 51 ──────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 19:22:28] Start SCIPAC screening
+ℹ [2026/04/10 19:22:28] Find common variable geme (hvg = 1000)
+Normalizing layer: counts
+Performing log-normalization
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Finding variable features for layer counts
+Calculating gene variances
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Calculating feature variances of standardized and clipped values
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+ℹ [2026/04/10 19:22:54] Running PCA (n_pc = 60)
+ℹ [2026/04/10 19:22:57] Clustering (resolution = 1.2)
+Warning: Data is of class matrix. Coercing to dgCMatrix.
+Computing nearest neighbor graph
+Computing SNN
+Modularity Optimizer version 1.3.0 by Ludo Waltman and Nees Jan van Eck
+
+Number of nodes: 31872
+Number of edges: 1356700
+
+Running Louvain algorithm...
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Maximum modularity in 10 random starts: 0.9123
+Number of communities: 38
+Elapsed time: 9 seconds
+ℹ [2026/04/10 19:23:20] Screening ("50 bootstrap")
+ℹ [2026/04/10 19:23:32] SCIPAC screening done
+
+── 9 / 51 ──────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 19:23:34] Start SCIPAC screening
+ℹ [2026/04/10 19:23:34] Find common variable geme (hvg = 1000)
+Normalizing layer: counts
+Performing log-normalization
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Finding variable features for layer counts
+Calculating gene variances
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Calculating feature variances of standardized and clipped values
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+ℹ [2026/04/10 19:23:59] Running PCA (n_pc = 70)
+ℹ [2026/04/10 19:24:02] Clustering (resolution = 2.6)
+Warning: Data is of class matrix. Coercing to dgCMatrix.
+Computing nearest neighbor graph
+Computing SNN
+Modularity Optimizer version 1.3.0 by Ludo Waltman and Nees Jan van Eck
+
+Number of nodes: 31872
+Number of edges: 1400154
+
+Running Louvain algorithm...
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Maximum modularity in 10 random starts: 0.8592
+Number of communities: 54
+Elapsed time: 9 seconds
+ℹ [2026/04/10 19:24:27] Screening ("50 bootstrap")
+ℹ [2026/04/10 19:24:39] SCIPAC screening done
+
+── 10 / 51 ─────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 19:24:40] Start SCIPAC screening
+ℹ [2026/04/10 19:24:40] Find common variable geme (hvg = 1000)
+Normalizing layer: counts
+Performing log-normalization
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Finding variable features for layer counts
+Calculating gene variances
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Calculating feature variances of standardized and clipped values
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+ℹ [2026/04/10 19:25:04] Running PCA (n_pc = 100)
+ℹ [2026/04/10 19:25:06] Clustering (resolution = 2.4)
+Warning: Data is of class matrix. Coercing to dgCMatrix.
+Computing nearest neighbor graph
+Computing SNN
+Modularity Optimizer version 1.3.0 by Ludo Waltman and Nees Jan van Eck
+
+Number of nodes: 31872
+Number of edges: 1524170
+
+Running Louvain algorithm...
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Maximum modularity in 10 random starts: 0.8660
+Number of communities: 51
+Elapsed time: 10 seconds
+ℹ [2026/04/10 19:25:33] Screening ("50 bootstrap")
+ℹ [2026/04/10 19:25:50] SCIPAC screening done
+
+── 11 / 51 ─────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 19:25:51] Start SCIPAC screening
+ℹ [2026/04/10 19:25:51] Find common variable geme (hvg = 1000)
+Normalizing layer: counts
+Performing log-normalization
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Finding variable features for layer counts
+Calculating gene variances
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Calculating feature variances of standardized and clipped values
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+ℹ [2026/04/10 19:26:16] Running PCA (n_pc = 10)
+ℹ [2026/04/10 19:26:19] Clustering (resolution = 3.5)
+Warning: Data is of class matrix. Coercing to dgCMatrix.
+Computing nearest neighbor graph
+Computing SNN
+Modularity Optimizer version 1.3.0 by Ludo Waltman and Nees Jan van Eck
+
+Number of nodes: 31872
+Number of edges: 1035599
+
+Running Louvain algorithm...
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Maximum modularity in 10 random starts: 0.8095
+Number of communities: 49
+Elapsed time: 10 seconds
+ℹ [2026/04/10 19:26:43] Screening ("50 bootstrap")
+ℹ [2026/04/10 19:26:52] SCIPAC screening done
+
+── 12 / 51 ─────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 19:26:53] Start SCIPAC screening
+ℹ [2026/04/10 19:26:53] Find common variable geme (hvg = 1000)
+Normalizing layer: counts
+Performing log-normalization
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Finding variable features for layer counts
+Calculating gene variances
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Calculating feature variances of standardized and clipped values
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+ℹ [2026/04/10 19:27:19] Running PCA (n_pc = 80)
+ℹ [2026/04/10 19:27:21] Clustering (resolution = 0.5)
+Warning: Data is of class matrix. Coercing to dgCMatrix.
+Computing nearest neighbor graph
+Computing SNN
+Modularity Optimizer version 1.3.0 by Ludo Waltman and Nees Jan van Eck
+
+Number of nodes: 31872
+Number of edges: 1443994
+
+Running Louvain algorithm...
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Maximum modularity in 10 random starts: 0.9501
+Number of communities: 22
+Elapsed time: 9 seconds
+ℹ [2026/04/10 19:27:45] Screening ("50 bootstrap")
+ℹ [2026/04/10 19:27:59] SCIPAC screening done
+
+── 13 / 51 ─────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 19:28:00] Start SCIPAC screening
+ℹ [2026/04/10 19:28:00] Find common variable geme (hvg = 1000)
+Normalizing layer: counts
+Performing log-normalization
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Finding variable features for layer counts
+Calculating gene variances
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Calculating feature variances of standardized and clipped values
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+ℹ [2026/04/10 19:28:25] Running PCA (n_pc = 70)
+ℹ [2026/04/10 19:28:27] Clustering (resolution = 0.4)
+Warning: Data is of class matrix. Coercing to dgCMatrix.

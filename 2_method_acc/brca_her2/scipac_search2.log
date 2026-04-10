@@ -1,0 +1,78 @@
+nohup: ignoring input
+✔ Setting active project to "/home/yyx/R/Project/R_code/paper_SigBridgeR".
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+✔ SigBridgeR v3.6.1 loaded
+ℹ bulk data loaded: dim = (54675 and 121)
+ℹ pheno data loaded: 1~tumor, 0~normal
+pheno_bi
+  0   1 
+ 17 104 
+
+── 1 / 51 ──────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 19:26:53] Start SCIPAC screening
+ℹ [2026/04/10 19:26:53] Find common variable geme (hvg = 1000)
+Normalizing layer: counts
+Performing log-normalization
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Finding variable features for layer counts
+Calculating gene variances
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Calculating feature variances of standardized and clipped values
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+ℹ [2026/04/10 19:27:20] Running PCA (n_pc = 30)
+ℹ [2026/04/10 19:27:21] Clustering (resolution = 2.3)
+Warning: Data is of class matrix. Coercing to dgCMatrix.
+Computing nearest neighbor graph
+Computing SNN
+Modularity Optimizer version 1.3.0 by Ludo Waltman and Nees Jan van Eck
+
+Number of nodes: 31872
+Number of edges: 1252976
+
+Running Louvain algorithm...
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Maximum modularity in 10 random starts: 0.8540
+Number of communities: 43
+Elapsed time: 8 seconds
+ℹ [2026/04/10 19:27:43] Screening ("50 bootstrap")
+ℹ [2026/04/10 19:27:48] SCIPAC screening done
+
+── 2 / 51 ──────────────────────────────────────────────────────────────────────
+ℹ [2026/04/10 19:27:49] Start SCIPAC screening
+ℹ [2026/04/10 19:27:49] Find common variable geme (hvg = 1000)
+Normalizing layer: counts
+Performing log-normalization
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Finding variable features for layer counts
+Calculating gene variances
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Calculating feature variances of standardized and clipped values
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+ℹ [2026/04/10 19:28:13] Running PCA (n_pc = 100)
+ℹ [2026/04/10 19:28:14] Clustering (resolution = 3.1)
+Warning: Data is of class matrix. Coercing to dgCMatrix.
+Computing nearest neighbor graph

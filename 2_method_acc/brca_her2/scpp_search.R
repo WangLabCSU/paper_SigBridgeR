@@ -46,22 +46,36 @@ benchmark_label <- colnames(sc_data) %in% tumor_cells
 # * random search, 51 times
 set.seed(12345)
 
-arg_sample <- data.frame(
-  prob = "NULL",
+options(future.globals.maxSize = 20 * 1024^3)
+future::plan(future::multicore, workers = 4L)
+
+# ! To avoid recomputing, file cache is used
+if (!dir.exists("stats/scpp1")) {
+  dir.create("stats/scpp1", recursive = TRUE)
+}
+
+
+arg_samples <- data.frame(
+  prob = sample(seq(0, 0.5, 0.01), 50, replace = TRUE),
   Log2FC_cutoff = round(runif(50), 3)
 ) %>%
-  dplyr::add_row(prob = "0.2", Log2FC_cutoff = 0.585) # default
+  dplyr::add_row(prob = 0.2, Log2FC_cutoff = 0.585) # default
 
 res_list <- lapply(
-  seq_len(nrow(arg_sample)),
+  seq_len(nrow(arg_samples)),
   function(i) {
-    prob_i <- arg_sample$prob[i]
-    if (prob_i == "NULL") {
-      prob_i <- NULL
-    } else {
-      prob_i <- as.numeric(prob_i)
+    cli::cli_h1("{i} / {nrow(arg_samples)}")
+
+    # ! load cache if exists
+    cache_save_path <- file.path("stats/scpp1", glue::glue("process_{i}.csv"))
+    if (file.exists(cache_save_path)) {
+      cli::cli_alert("cache found, loading...")
+      cache <- data.table::fread(cache_save_path)
+      return(cache)
     }
-    Log2FC_cutoff_i <- arg_sample$Log2FC_cutoff[i]
+
+    prob_i <- arg_samples$prob[i]
+    Log2FC_cutoff_i <- arg_samples$Log2FC_cutoff[i]
 
     tryCatch(
       {
@@ -75,7 +89,7 @@ res_list <- lapply(
           ref_group = 0L,
           Log2FC_cutoff = Log2FC_cutoff_i,
           probs = prob_i,
-          parallel = FALSE,
+          parallel = TRUE,
           assay = "RNA"
         )
         pos_cell <- (scpp_result$scRNA_data$scPP == "Positive")
@@ -87,6 +101,9 @@ res_list <- lapply(
         colnames(data) <- glue::glue("process_{i}")
         gc(verbose = FALSE)
 
+        # ! save cache
+        data.table::fwrite(data, cache_save_path)
+
         # 返回包含索引和结果的数据框
         return(data)
       },
@@ -97,6 +114,10 @@ res_list <- lapply(
         ))
         data <- data.frame(pos_cell = rep(FALSE, ncol(sc_data)))
         colnames(data) <- glue::glue("process_{i}")
+
+        # ! save cache
+        data.table::fwrite(data, cache_save_path)
+
         return(data)
       }
     )

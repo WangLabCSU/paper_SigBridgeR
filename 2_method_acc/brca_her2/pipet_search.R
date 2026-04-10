@@ -60,43 +60,52 @@ arg_samples <- data.frame(
   dplyr::add_row(distance = "cosine", nPerm = 1000L, log2FC = 1L) # default parameters
 
 
+options(future.globals.maxSize = 20 * 1024^3)
+future::plan(future::multicore, workers = 8L)
+
+# ! To avoid recomputing, file cache is used
+if (!dir.exists("stats/pipet1")) {
+  dir.create("stats/pipet1", recursive = TRUE)
+}
+
+
 res_list <- lapply(
   seq_len(nrow(arg_samples)),
   function(i) {
     cli::cli_h1("{i} / {nrow(arg_samples)}")
 
-    tryCatch(
-      {
-        result <- suppressWarnings(SigBridgeR::Screen(
-          matched_bulk = bulk,
-          sc_data = sc_data,
-          phenotype = pheno_bi,
-          label_type = glue::glue("process_{i}"),
-          phenotype_class = "binary",
-          screen_method = "PIPET",
-          distance = arg_samples$distance[i], # select_alpha will be used
-          nPerm = as.integer(arg_samples$nPerm[i]),
-          log2FC = arg_samples$log2FC[i],
-          verbose = FALSE
-        ))
+    # ! load cache if exists
+    cache_save_path <- file.path("stats/pipet1", glue::glue("process_{i}.csv"))
+    if (file.exists(cache_save_path)) {
+      cli::cli_alert("cache found, loading...")
+      cache <- data.table::fread(cache_save_path)
+      return(cache)
+    }
 
-        data <- data.frame(
-          pos_cell = (result$scRNA_data$PIPET == "Positive")
-        )
-        colnames(data) <- glue::glue("process_{i}")
+    result <- suppressWarnings(SigBridgeR::Screen(
+      matched_bulk = bulk,
+      sc_data = sc_data,
+      phenotype = pheno_bi,
+      label_type = glue::glue("process_{i}"),
+      phenotype_class = "binary",
+      screen_method = "PIPET",
+      distance = arg_samples$distance[i], # select_alpha will be used
+      nPerm = as.integer(arg_samples$nPerm[i]),
+      log2FC = arg_samples$log2FC[i],
+      verbose = FALSE,
+      parallel = TRUE
+    ))
 
-        # 返回包含索引和结果的数据框
-        return(data)
-      },
-      error = function(e) {
-        cli::cli_alert_danger("ERROR {i}: {e$message}")
-        data <- data.frame(
-          pos_cell = rep(FALSE, ncol(sc_data))
-        )
-        colnames(data) = glue::glue("process_{i}")
-        return(data)
-      }
+    data <- data.frame(
+      pos_cell = (result$scRNA_data$PIPET == "Positive")
     )
+    colnames(data) <- glue::glue("process_{i}")
+
+    # ! save cache
+    data.table::fwrite(data, cache_save_path)
+
+    # 返回包含索引和结果的数据框
+    return(data)
   }
 )
 

@@ -60,11 +60,27 @@ arg_samples <- data.frame(
 ) %>%
   dplyr::add_row(distance = "cosine", nPerm = 1000L, log2FC = 1L) # default parameters
 
+options(future.globals.maxSize = 20 * 1024^3)
+future::plan(future::multicore, workers = 8L)
+
+# ! To avoid recomputing, file cache is used
+if (!dir.exists("stats/pipet2")) {
+  dir.create("stats/pipet2", recursive = TRUE)
+}
+
 
 res_list <- lapply(
   seq_len(nrow(arg_samples)),
   function(i) {
     cli::cli_h1("{i} / {nrow(arg_samples)}")
+
+    # ! load cache if exists
+    cache_save_path <- file.path("stats/pipet2", glue::glue("process_{i}.csv"))
+    if (file.exists(cache_save_path)) {
+      cli::cli_alert("cache found, loading...")
+      cache <- data.table::fread(cache_save_path)
+      return(cache)
+    }
 
     result <- suppressWarnings(Screen(
       matched_bulk = bulk,
@@ -76,13 +92,17 @@ res_list <- lapply(
       distance = arg_samples$distance[i], # select_alpha will be used
       nPerm = as.integer(arg_samples$nPerm[i]),
       log2FC = arg_samples$log2FC[i],
-      verbose = FALSE
+      verbose = FALSE,
+      parallel = TRUE
     ))
 
     data <- data.frame(
       pos_cell = (result$scRNA_data$PIPET == "Positive")
     )
     colnames(data) <- glue::glue("process_{i}")
+
+    # ! save cache
+    data.table::fwrite(data, cache_save_path)
 
     # 返回包含索引和结果的数据框
     return(data)
@@ -100,6 +120,6 @@ data.table::fwrite(
   row.names = TRUE
 )
 
-cli::cli_alert_success(crayon::green("(2)pipet random search completed."))
+cli::cli_alert_success(crayon::green("(2) pipet random search completed."))
 
 # ! GSE42568

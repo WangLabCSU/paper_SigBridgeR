@@ -16,9 +16,9 @@ The following objects are masked from ‘package:base’:
 pheno_bi
    0    1 
  113 1089 
-ℹ [2026/04/09 16:11:09] Scissor start...
-ℹ [2026/04/09 16:11:09] Loading data from 'TCGA_BRCA_her2_scissor_cache.RData'
-ℹ [2026/04/09 16:11:53] Screening...
+ℹ [2026/04/10 09:01:27] Scissor start...
+ℹ [2026/04/10 09:01:27] Loading data from 'TCGA_BRCA_her2_scissor_cache.RData'
+ℹ [2026/04/10 09:02:11] Screening...
 
 ── At alpha = 0.001 ──
 
@@ -74,10 +74,10 @@ The percentage of selected cell is: 5.324%
 
 Scissor identified 1009 Scissor+ cells and 450 Scissor- cells.
 The percentage of selected cell is: 4.578%
-ℹ [2026/04/09 20:13:37] Scissor Ended.
-ℹ [2026/04/09 20:13:37] Scissor start...
-ℹ [2026/04/09 20:13:37] Loading data from 'TCGA_BRCA_her2_scissor_cache.RData'
-ℹ [2026/04/09 20:14:21] Screening...
+ℹ [2026/04/10 13:06:27] Scissor Ended.
+ℹ [2026/04/10 13:06:27] Scissor start...
+ℹ [2026/04/10 13:06:27] Loading data from 'TCGA_BRCA_her2_scissor_cache.RData'
+ℹ [2026/04/10 13:07:11] Screening...
 
 ── At alpha = 0.001 ──
 
@@ -108,10 +108,10 @@ The percentage of selected cell is: 10.859%
 
 Scissor identified 2164 Scissor+ cells and 805 Scissor- cells.
 The percentage of selected cell is: 9.315%
-ℹ [2026/04/09 21:59:21] Scissor Ended.
-ℹ [2026/04/09 21:59:21] Scissor start...
-ℹ [2026/04/09 21:59:21] Loading data from 'TCGA_BRCA_her2_scissor_cache.RData'
-ℹ [2026/04/09 22:00:05] Screening...
+ℹ [2026/04/10 14:55:36] Scissor Ended.
+ℹ [2026/04/10 14:55:36] Scissor start...
+ℹ [2026/04/10 14:55:36] Loading data from 'TCGA_BRCA_her2_scissor_cache.RData'
+ℹ [2026/04/10 14:56:20] Screening...
 
 ── At alpha = 0.001 ──
 
@@ -132,10 +132,10 @@ The percentage of selected cell is: 16.187%
 
 Scissor identified 3084 Scissor+ cells and 1055 Scissor- cells.
 The percentage of selected cell is: 12.986%
-ℹ [2026/04/09 23:01:31] Scissor Ended.
-ℹ [2026/04/09 23:01:31] Scissor start...
-ℹ [2026/04/09 23:01:31] Loading data from 'TCGA_BRCA_her2_scissor_cache.RData'
-ℹ [2026/04/09 23:02:17] Screening...
+ℹ [2026/04/10 16:12:20] Scissor Ended.
+ℹ [2026/04/10 16:12:20] Scissor start...
+ℹ [2026/04/10 16:12:20] Loading data from 'TCGA_BRCA_her2_scissor_cache.RData'
+ℹ [2026/04/10 16:13:06] Screening...
 
 ── At alpha = 0.001 ──
 
@@ -151,10 +151,10 @@ The percentage of selected cell is: 21.79%
 
 Scissor identified 3894 Scissor+ cells and 1265 Scissor- cells.
 The percentage of selected cell is: 16.187%
-ℹ [2026/04/09 23:46:20] Scissor Ended.
-ℹ [2026/04/09 23:46:20] Scissor start...
-ℹ [2026/04/09 23:46:20] Loading data from 'TCGA_BRCA_her2_scissor_cache.RData'
-ℹ [2026/04/09 23:47:04] Screening...
+ℹ [2026/04/10 17:02:23] Scissor Ended.
+ℹ [2026/04/10 17:02:23] Scissor start...
+ℹ [2026/04/10 17:02:23] Loading data from 'TCGA_BRCA_her2_scissor_cache.RData'
+ℹ [2026/04/10 17:03:07] Screening...
 
 ── At alpha = 0.001 ──
 
@@ -165,10 +165,10 @@ The percentage of selected cell is: 56.388%
 
 Scissor identified 5283 Scissor+ cells and 1662 Scissor- cells.
 The percentage of selected cell is: 21.79%
-ℹ [2026/04/10 00:18:05] Scissor Ended.
-ℹ [2026/04/10 00:18:05] Scissor start...
-ℹ [2026/04/10 00:18:05] Loading data from 'TCGA_BRCA_her2_scissor_cache.RData'
-ℹ [2026/04/10 00:18:48] Screening...
+ℹ [2026/04/10 17:42:36] Scissor Ended.
+ℹ [2026/04/10 17:42:36] Scissor start...
+ℹ [2026/04/10 17:42:36] Loading data from 'TCGA_BRCA_her2_scissor_cache.RData'
+ℹ [2026/04/10 17:43:42] Screening...
 
 ── At alpha = 0.001 ──
 
@@ -179,10 +179,10 @@ The percentage of selected cell is: 56.388%
 
 Scissor identified 5283 Scissor+ cells and 1662 Scissor- cells.
 The percentage of selected cell is: 21.79%
-ℹ [2026/04/10 00:47:53] Scissor Ended.
-ℹ [2026/04/10 00:47:53] Scissor start...
-ℹ [2026/04/10 00:47:53] Loading data from 'TCGA_BRCA_her2_scissor_cache.RData'
-ℹ [2026/04/10 00:48:37] Screening...
+ℹ [2026/04/10 18:30:41] Scissor Ended.
+ℹ [2026/04/10 18:30:41] Scissor start...
+ℹ [2026/04/10 18:30:41] Loading data from 'TCGA_BRCA_her2_scissor_cache.RData'
+ℹ [2026/04/10 18:31:35] Screening...
 
 ── At alpha = 0.001 ──
 
@@ -193,48 +193,12 @@ The percentage of selected cell is: 56.388%
 
 Scissor identified 5283 Scissor+ cells and 1662 Scissor- cells.
 The percentage of selected cell is: 21.79%
-ℹ [2026/04/10 01:19:58] Scissor Ended.
-ℹ [2026/04/10 01:19:58] Scissor start...
-ℹ [2026/04/10 01:19:58] Loading data from 'TCGA_BRCA_her2_scissor_cache.RData'
-ℹ [2026/04/10 01:20:41] Screening...
+ℹ [2026/04/10 19:07:27] Scissor Ended.
+ℹ [2026/04/10 19:07:27] Scissor start...
+ℹ [2026/04/10 19:07:27] Loading data from 'TCGA_BRCA_her2_scissor_cache.RData'
+ℹ [2026/04/10 19:08:17] Screening...
 
 ── At alpha = 0.001 ──
 
 Scissor identified 12592 Scissor+ cells and 5380 Scissor- cells.
 The percentage of selected cell is: 56.388%
-
-── At alpha = 0.05 ──
-
-Scissor identified 5283 Scissor+ cells and 1662 Scissor- cells.
-The percentage of selected cell is: 21.79%
-ℹ [2026/04/10 01:48:55] Scissor Ended.
-ℹ [2026/04/10 01:48:56] Scissor start...
-ℹ [2026/04/10 01:48:56] Loading data from 'TCGA_BRCA_her2_scissor_cache.RData'
-ℹ [2026/04/10 01:49:39] Screening...
-
-── At alpha = 0.001 ──
-
-Scissor identified 12592 Scissor+ cells and 5380 Scissor- cells.
-The percentage of selected cell is: 56.388%
-
-── At alpha = 0.05 ──
-
-Scissor identified 5283 Scissor+ cells and 1662 Scissor- cells.
-The percentage of selected cell is: 21.79%
-ℹ [2026/04/10 02:19:08] Scissor Ended.
-ℹ [2026/04/10 02:19:08] Scissor start...
-ℹ [2026/04/10 02:19:08] Loading data from 'TCGA_BRCA_her2_scissor_cache.RData'
-ℹ [2026/04/10 02:19:51] Screening...
-
-── At alpha = 0.001 ──
-
-Scissor identified 12592 Scissor+ cells and 5380 Scissor- cells.
-The percentage of selected cell is: 56.388%
-
-── At alpha = 0.05 ──
-
-Scissor identified 5283 Scissor+ cells and 1662 Scissor- cells.
-The percentage of selected cell is: 21.79%
-ℹ [2026/04/10 02:48:30] Scissor Ended.
-Error: object 'res' not found
-Execution halted

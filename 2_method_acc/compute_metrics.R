@@ -4,11 +4,15 @@ compute_metrics <- function(dt) {
   all_cols <- names(dt)
   # 如果第一列是名称列，则计数大于2；T和F计数必定为2
   if (length(table(dt[, 1])) > 2) {
+    cli::cli_alert("The first column seems to be the name column.")
     process_cols <- all_cols[2:(ncol(dt) - 1)]
   } else {
     process_cols <- all_cols[1:(ncol(dt) - 1)]
   }
 
+  if (which(names(dt) == "benchmark") != ncol(dt)) {
+    cli::cli_abort("The benchmark column is not the last column.")
+  }
   # 提取benchmark列
   benchmark_logical <- as.logical(dt[['benchmark']])
   n_total <- length(benchmark_logical)
@@ -27,6 +31,8 @@ compute_metrics <- function(dt) {
   fpr_vec <- numeric(n_proc)
   tnr_vec <- numeric(n_proc)
   fnr_vec <- numeric(n_proc)
+  precision_vec <- numeric(n_proc)
+  recall_vec <- numeric(n_proc)
   f1_vec <- numeric(n_proc)
   acc_vec <- numeric(n_proc)
 
@@ -45,7 +51,9 @@ compute_metrics <- function(dt) {
     fpr_vec[i] <- ifelse(neg_total > 0, fp / neg_total, 0)
     tnr_vec[i] <- ifelse(neg_total > 0, tn / neg_total, 0)
     fnr_vec[i] <- ifelse(pos_total > 0, fn / pos_total, 0)
-    f1_vec[i] <- ifelse(tp + fp > 0, 2 * tp / (2 * tp + fp + fn), 0)
+    precision_vec[i] <- ifelse(tp + fp > 0, tp / (tp + fp), 0)
+    recall_vec[i] <- ifelse(pos_total > 0, tp / pos_total, 0)
+    f1_vec[i] <- ifelse(2 * tp + fp + fn > 0, 2 * tp / (2 * tp + fp + fn), 0)
     acc_vec[i] <- (tp + tn) / (tp + fp + tn + fn)
   }
 
@@ -55,6 +63,8 @@ compute_metrics <- function(dt) {
     FPR = fpr_vec,
     TNR = tnr_vec,
     FNR = fnr_vec,
+    Precision = precision_vec,
+    Recall = recall_vec,
     F1 = f1_vec,
     Accuracy = acc_vec
   )
@@ -64,7 +74,7 @@ compute_metrics <- function(dt) {
   data.table::setnames(result, seq_len(ncol(result)), process_cols)
 
   # 设置行名
-  rownames(result) <- c("TPR", "FPR", "TNR", "FNR", "F1", "Accuracy")
+  rownames(result) <- c("TPR", "FPR", "TNR", "FNR", "Precision", "Recall", "F1", "Accuracy")
 
   return(result)
 }
