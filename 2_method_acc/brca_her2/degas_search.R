@@ -197,9 +197,9 @@ if (!file.exists("stats/degas_label_mat1_part2.csv")) {
 # -------------------------------------------------------------------------------------------------
 
 arg_samples3 <- data.frame(
-  scbatch_sz = sample(50:500, 50, replace = TRUE),
-  patbatch_sz = sample(25:100, 50, replace = TRUE),
-  hidden_feats = sample(25:100, 50, replace = TRUE),
+  scbatch_sz = sample(seq(50, 500, 10), 50, replace = TRUE),
+  patbatch_sz = sample(seq(25, 100, 5), 50, replace = TRUE),
+  hidden_feats = sample(seq(25, 100, 5), 50, replace = TRUE),
   do_prc = sample(seq(0.1, 0.9, 0.1), 50, replace = TRUE)
 ) %>%
   dplyr::add_row(
@@ -209,22 +209,39 @@ arg_samples3 <- data.frame(
     do_prc = 0.5
   )
 
+# ! To avoid recomputing, file cache is used
+if (!dir.exists("stats/degas/part3")) {
+  dir.create("stats/degas/part3", recursive = TRUE)
+}
+
+
 if (!file.exists("stats/degas_label_mat1_part3.csv")) {
   res_list <- lapply(
     seq_len(nrow(arg_samples3)),
     function(i) {
       cli::cli_h1("{i} / {nrow(arg_samples3)}")
 
+      # ! load cache if exists
+      cache_save_path <- file.path(
+        "stats/degas/part3",
+        glue::glue("process_{i}.csv")
+      )
+      if (file.exists(cache_save_path)) {
+        cli::cli_alert("cache found, loading...")
+        cache <- data.table::fread(cache_save_path)
+        return(cache)
+      }
+
       scbatch_sz <- arg_samples3[i, "scbatch_sz"][[1]]
       patbatch_sz <- arg_samples3[i, "patbatch_sz"][[1]]
       hidden_feats <- arg_samples3[i, "hidden_feats"][[1]]
-      do_prc <- arg_samples3[i, "do_prc"][[1]]
+      do_prc <- round(arg_samples3[i, "do_prc"][[1]], 3)
 
       result <- Screen(
         matched_bulk = bulk,
         sc_data = sc_data,
         phenotype = pheno_bi,
-        label_type = glue::glue("process_{i}"),
+        label_type = "DEGAS_",
         phenotype_class = "binary",
         screen_method = "DEGAS",
         degas_params = list(
@@ -242,6 +259,9 @@ if (!file.exists("stats/degas_label_mat1_part3.csv")) {
       )
       colnames(data) = glue::glue("process_{i}")
       gc()
+
+      # ! save cache
+      data.table::fwrite(data, cache_save_path)
 
       # 返回包含索引和结果的数据框
       return(data)

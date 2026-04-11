@@ -89,11 +89,23 @@ if (!file.exists("stats/scab_label_mat2.csv")) {
         maxiter = 2000L # default in scAB
       )
 
+      para_list <- scAB::select_alpha.optimized(
+        Object = scAB_obj,
+        method = "binary",
+        K = k,
+        cross_k = 5,
+        para_1_list = alpha_samples %||% c(0.01, 0.005, 0.001),
+        para_2_list = alpha_samples %||% c(0.01, 0.005, 0.001)
+      )
+
+      alpha <- para_list$para$alpha_1
+      alpha_2 <- para_list$para$alpha_2
+
       scab_res <- scAB::scAB.optimized(
         Object = scAB_obj,
         K = k,
-        alpha = alpha_samples,
-        alpha_2 = alpha_samples
+        alpha = alpha,
+        alpha_2 = alpha_2
       )
 
       seurat_screened <- scAB::findSubset.optimized(

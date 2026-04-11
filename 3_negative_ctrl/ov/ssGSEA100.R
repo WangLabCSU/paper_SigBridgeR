@@ -1,7 +1,5 @@
 # setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-setwd(
-  "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/ssGSEA_negative_compare/ov"
-)
+setwd(file.path(usethis::proj_path(), "3_negative_ctrl/ov"))
 
 set.seed(123)
 
@@ -26,9 +24,7 @@ expr <- as.matrix(SeuratObject::LayerData(seurat, layer = "data"))
 # 2. 计算各 cluster 的 marker（对比其余所有细胞）
 # ! from Negative control markes
 # ! random selected
-markers <- data.table::fread(
-  "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/ssGSEA_negative_compare/ov/ov_random20_markers_100rep.csv"
-)
+markers <- data.table::fread("ov_random20_markers_100rep.csv")
 
 mat_out <- NULL
 

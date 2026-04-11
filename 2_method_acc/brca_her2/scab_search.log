@@ -40,12 +40,11 @@ pheno_bi
 • TF_NUM_INTEROP_THREADS: unset -> 2
 • TF_NUM_INTRAOP_THREADS: unset -> 1
 ℹ  Using "RNA_snn" graph for network.
-ℹ [2026/04/11 12:51:09] Calculating L, D and A
-ℹ [2026/04/11 12:51:14] Normalizing quantiles of data
+ℹ [2026/04/11 16:22:47] Calculating L, D and A
+ℹ [2026/04/11 16:22:52] Normalizing quantiles of data
 Warning in asMethod(object) :
   sparse->dense coercion: allocating vector of size 2.9 GiB
-ℹ [2026/04/11 12:52:15] Calculating correlation
-ℹ [2026/04/11 12:52:28] Guanranking
+ℹ [2026/04/11 16:23:54] Calculating correlation
+ℹ [2026/04/11 16:24:09] Guanranking
 
 ── 1 / 51 ──────────────────────────────────────────────────────────────────────
-loss of 2: 0.00319682

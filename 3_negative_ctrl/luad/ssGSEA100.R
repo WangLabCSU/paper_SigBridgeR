@@ -1,5 +1,5 @@
 # setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-setwd(usethis::proj_path())
+setwd(usethis::proj_path(), "3_negative_ctrl/luad")
 
 set.seed(123)
 
@@ -25,7 +25,7 @@ expr <- as.matrix(SeuratObject::LayerData(seurat, layer = "data"))
 # ! from Negative control markes
 # ! random selected
 markers <- data.table::fread(
-  "Tmp/ssGSEA_negative_compare/luad/luad_random20_markers_100rep.csv"
+  "luad_random20_markers_100rep.csv"
 )
 
 mat_out <- NULL
@@ -72,6 +72,6 @@ for (i in seq_len(ncol(markers))) {
 # 保存完整的结果矩阵
 qs::qsave(
   t(mat_out),
-  "Tmp/ssGSEA_negative_compare/luad/luad_Sample_100_ssgsea_score.qs"
+  "luad_Sample_100_ssgsea_score.qs"
 )
 # PID=1000308
