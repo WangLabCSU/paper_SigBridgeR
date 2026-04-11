@@ -98,7 +98,7 @@ f1_bubble_heatmap <- function(
       labels = seq(0, 1, by = 0.1)
     ) +
     ggplot2::labs(
-      title = "Validation of the Screening Efficiency of scPAS under Random Parameters",
+      title = "Validation of the Screening Efficiency of scPP under Random Parameters",
       subtitle = "x = prob, y = log2FC_cutoff",
       x = "prob",
       y = "log2FC_cutoff"

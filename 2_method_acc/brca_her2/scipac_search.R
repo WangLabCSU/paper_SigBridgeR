@@ -142,7 +142,7 @@ cli::cli_alert_success(crayon::green(
 arg_samples2 <- data.frame(
   hvg = sample(seq(500L, 5000L, 500L), 50, replace = TRUE),
   bt_size = sample(seq(10L, 100L, 10L), 50, replace = TRUE),
-  nfold = sample(seq(2L, 30L, 2L), 50, replace = TRUE)
+  nfold = sample(seq(3L, 30L, 1L), 50, replace = TRUE)
 ) %>%
   dplyr::add_row(hvg = 1000L, bt_size = 50L, nfold = 10L) # default
 
@@ -169,51 +169,35 @@ res_list <- lapply(
       return(cache)
     }
 
-    hvg_i <- arg_samples2$hvg
-    bt_size_i <- arg_samples2$bt_size
-    nfold_i <- arg_samples2$nfold
+    hvg_i <- arg_samples2$hvg[i]
+    bt_size_i <- arg_samples2$bt_size[i]
+    nfold_i <- arg_samples2$nfold[i]
 
-    tryCatch(
-      {
-        result <- Screen(
-          bulk,
-          sc_data,
-          pheno_bi,
-          screen_method = "SCIPAC",
-          label_type = glue::glue("process_{i}"),
-          phenotype_class = "binary",
-          hvg = hvg_i,
-          bt_size = bt_size_i,
-          nfold = nfold_i
-        )
-        pos_cell <- (result$scRNA_data$SCIPAC == "Positive")
-
-        data <- data.frame(
-          pos_cell = pos_cell
-        )
-
-        colnames(data) <- glue::glue("process_{i}")
-        gc(verbose = FALSE)
-
-        # ! save cache
-        data.table::fwrite(data, cache_save_path)
-
-        # 返回包含索引和结果的数据框
-        return(data)
-      },
-      error = function(e) {
-        cli::cli_alert_warning(c(
-          "x" = "SCIPAC result is not complete, maybe not suitable for this parameter pair, using all FALSE"
-        ))
-        data <- data.frame(pos_cell = rep(FALSE, ncol(sc_data)))
-        colnames(data) <- glue::glue("process_{i}")
-
-        # ! save cache
-        data.table::fwrite(data, cache_save_path)
-
-        return(data)
-      }
+    result <- Screen(
+      bulk,
+      sc_data,
+      pheno_bi,
+      screen_method = "SCIPAC",
+      label_type = glue::glue("process_{i}"),
+      phenotype_class = "binary",
+      hvg = hvg_i,
+      bt_size = bt_size_i,
+      nfold = nfold_i
     )
+    pos_cell <- (result$scRNA_data$SCIPAC == "Positive")
+
+    data <- data.frame(
+      pos_cell = pos_cell
+    )
+
+    colnames(data) <- glue::glue("process_{i}")
+    gc(verbose = FALSE)
+
+    # ! save cache
+    data.table::fwrite(data, cache_save_path)
+
+    # 返回包含索引和结果的数据框
+    return(data)
   }
 )
 

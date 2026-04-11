@@ -1,0 +1,47 @@
+nohup: ignoring input
+✔ Setting active project to "/home/yyx/R/Project/R_code/paper_SigBridgeR".
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+ℹ bulk data loaded: dim = (54675 and 121)
+ℹ pheno data loaded: 1~tumor, 0~normal
+pheno_bi
+  0   1 
+ 17 104 
+  OpenMP version (_OPENMP)       201511
+  omp_get_num_procs()            192
+  R_DATATABLE_NUM_PROCS_PERCENT  unset (default 50)
+  R_DATATABLE_NUM_THREADS        unset
+  R_DATATABLE_THROTTLE           unset (default 1024)
+  omp_get_thread_limit()         2147483647
+  omp_get_max_threads()          192
+  OMP_THREAD_LIMIT               unset
+  OMP_NUM_THREADS                4
+  RestoreAfterFork               true
+  data.table is using 4 threads with throttle==1024. See ?setDTthreads.
+
+── System-Level Configuration ──
+
+• OMP_NUM_THREADS: unset -> 4
+• data.table: 96 -> 4
+
+── TensorFlow Configuration ──
+
+• TF_XLA_FLAGS: unset -> --tf_xla_auto_jit=2 --tf_xla_cpu_global_jit
+• TF_XLA_CPU_GLOBAL_JIT: unset -> 1
+• TF_NUM_INTEROP_THREADS: unset -> 2
+• TF_NUM_INTRAOP_THREADS: unset -> 1
+ℹ  Using "RNA_snn" graph for network.
+ℹ [2026/04/11 13:38:15] Calculating L, D and A
+ℹ [2026/04/11 13:38:20] Normalizing quantiles of data
+Warning in asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.7 GiB
+ℹ [2026/04/11 13:39:16] Calculating correlation
