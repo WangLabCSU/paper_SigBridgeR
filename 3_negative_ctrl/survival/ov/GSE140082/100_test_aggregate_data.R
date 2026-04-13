@@ -1,7 +1,7 @@
-setwd(usethis::proj_path())
+setwd(file.path(usethis::proj_path(), "3_negative_ctrl"))
 
 scores <- qs::qread(
-  "ov_Sample_100_ssgsea_score.qs",
+  "ov/ov_Sample_100_ssgsea_score.qs",
   nthreads = 4L
 )
 
@@ -126,13 +126,13 @@ mean_scores <- CalcGroupMeanScores(
   sample_name = "Sample_100_GSE140082"
 )
 
-dir_out <- "."
+dir_out <- "survival/ov/GSE140082"
 
 data.table::fwrite(
   mean_scores,
   file.path(dir_out, "ov_sur_100reps_neg_ctrl_stat.csv")
 )
-mean_scores <- data.table::fread(file.path(
-  dir_out,
-  "ov_sur_100reps_neg_ctrl_stat.csv"
-))
+# mean_scores <- data.table::fread(file.path(
+#   dir_out,
+#   "ov_sur_100reps_neg_ctrl_stat.csv"
+# ))

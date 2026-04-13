@@ -1,20 +1,23 @@
 # ! Negative Comparison
 # ! Survival
-# ! HER2
+# ! BRCA HER2
 # ! GSE42568
-# ! GSE161529
+# ! GSE161529 HER2
 library(kSamples)
 library(dplyr)
 library(tidyr)
 
-setwd(usethis::proj_path())
+setwd(file.path(
+  usethis::proj_path(),
+  "3_negative_ctrl/survival/brca/her2/GSE42568"
+))
 
 seurat <- qs::qread(
-  "/home/data/sigbridger/benchmark_data/brca/HER2/GSE42568_her2_merged_seurat.qs",
+  "/home/data/sigbridger/benchmark_data/brca/HER2/survival_her2_GSE42568_merged_seurat.qs",
   nthreads = 4L
 )
 scores <- data.table::fread(
-  "Tmp/ssGSEA_negative_compare/survival/brca/her2/GSE42568/her2_sur_100reps_neg_ctrl_stat.csv"
+  "her2_sur_100reps_neg_ctrl_stat.csv"
 )
 
 scores <- tidyr::unite(
@@ -95,5 +98,5 @@ results <- results %>%
 
 data.table::fwrite(
   results,
-  "Tmp/ssGSEA_negative_compare/survival/brca/her2/GSE42568/rep100_ad_results.csv"
+  "rep100_ad_results.csv"
 )

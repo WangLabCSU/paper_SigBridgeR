@@ -1,14 +1,14 @@
-setwd(usethis::proj_path())
+setwd(file.path(usethis::proj_path(), "3_negative_ctrl"))
 
 library(dplyr)
 
 scores <- qs::qread(
-  "Tmp/ssGSEA_negative_compare/brca/her2_Sample_100_ssgsea_score.qs",
+  "brca/her2_Sample_100_ssgsea_score.qs",
   nthreads = 4L
 )
 
 seurat <- qs::qread(
-  "/home/data/sigbridger/benchmark_data/brca/HER2/tcga_her2_merged_seurat.qs",
+  "/home/data/sigbridger/benchmark_data/brca/HER2/survival_her2_TCGA_BRCA_merged_seurat.qs",
   nthreads = 4L
 )
 meta <- seurat[[]]
@@ -128,7 +128,7 @@ mean_scores <- CalcGroupMeanScores(
   sample_name = "Sample_100_TCGA_BRCA"
 )
 
-dir_out <- "Tmp/ssGSEA_negative_compare/survival/brca/her2/TCGA_BRCA"
+dir_out <- "survival/brca/her2/TCGA_BRCA"
 
 data.table::fwrite(
   mean_scores,

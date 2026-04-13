@@ -7,16 +7,14 @@ library(kSamples)
 library(dplyr)
 library(tidyr)
 
-setwd(usethis::proj_path())
+setwd(file.path(usethis::proj_path(), "3_negative_ctrl/survival/luad/GSE31210"))
 
 seurat <- qs::qread(
-  "/home/data/sigbridger/benchmark_data/lung/GSE31210/GSE31210_luad_merged_seurat.qs",
+  "/home/data/sigbridger/benchmark_data/lung/luad/survival_lung_GSE31210_merged_seurat.qs",
   nthreads = 4L
 )
 
-scores <- data.table::fread(
-  "Tmp/ssGSEA_negative_compare/survival/luad/GSE31210/luad_sur_100reps_neg_ctrl_stat.csv"
-)
+scores <- data.table::fread("luad_sur_100reps_neg_ctrl_stat.csv")
 
 scores <- tidyr::unite(
   scores,
@@ -96,5 +94,5 @@ results <- results %>%
 
 data.table::fwrite(
   results,
-  "Tmp/ssGSEA_negative_compare/survival/luad/GSE31210/rep100_ad_results.csv"
+  "rep100_ad_results.csv"
 )

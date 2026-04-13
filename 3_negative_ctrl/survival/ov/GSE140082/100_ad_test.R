@@ -10,12 +10,12 @@ library(tidyr)
 setwd(file.path(usethis::proj_path(), "3_negative_ctrl/survival/ov/GSE140082"))
 
 seurat <- qs::qread(
-  "/home/data/sigbridger/benchmark_data/ov/GSE165897/GSE140082_ov_merged_seurat.qs",
+  "/home/data/sigbridger/benchmark_data/ov/ov/survival_ov_GSE140082_merged_seurat.qs",
   nthreads = 4L
 )
 
 scores <- data.table::fread(
-  "Tmp/ssGSEA_negative_compare/survival/ov/GSE140082/ov_sur_100reps_neg_ctrl_stat.csv"
+  "ov_sur_100reps_neg_ctrl_stat.csv"
 )
 
 scores <- tidyr::unite(

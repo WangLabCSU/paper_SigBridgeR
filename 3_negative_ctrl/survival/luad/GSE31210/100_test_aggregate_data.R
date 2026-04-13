@@ -1,14 +1,14 @@
-setwd(usethis::proj_path())
+setwd(file.path(usethis::proj_path(), "3_negative_ctrl"))
 
 library(dplyr)
 
 scores <- qs::qread(
-  "Tmp/ssGSEA_negative_compare/luad/luad_Sample_100_ssgsea_score.qs",
+  "luad/luad_Sample_100_ssgsea_score.qs",
   nthreads = 4L
 )
 
 seurat <- qs::qread(
-  "/home/data/sigbridger/benchmark_data/lung/GSE31210/GSE31210_luad_merged_seurat.qs",
+  "/home/data/sigbridger/benchmark_data/lung/luad/survival_lung_GSE31210_merged_seurat.qs",
   nthreads = 4L
 )
 meta <- seurat[[]]
@@ -128,14 +128,14 @@ mean_scores <- CalcGroupMeanScores(
   sample_name = "Sample_100_GSE31210"
 )
 
-dir_out <- "Tmp/ssGSEA_negative_compare/survival/luad/GSE31210"
+dir_out <- "survival/luad/GSE31210"
 
 data.table::fwrite(
   mean_scores,
   file.path(dir_out, "luad_sur_100reps_neg_ctrl_stat.csv")
 )
 
-mean_scores <- data.table::fread(file.path(
-  dir_out,
-  "luad_sur_100reps_neg_ctrl_stat.csv"
-))
+# mean_scores <- data.table::fread(file.path(
+#   dir_out,
+#   "luad_sur_100reps_neg_ctrl_stat.csv"
+# ))
