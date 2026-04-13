@@ -7,7 +7,7 @@ library(kSamples)
 library(dplyr)
 library(tidyr)
 
-setwd(usethis::proj_path())
+setwd(file.path(usethis::proj_path(), "3_negative_ctrl/survival/ov/GSE140082"))
 
 seurat <- qs::qread(
   "/home/data/sigbridger/benchmark_data/ov/GSE165897/GSE140082_ov_merged_seurat.qs",
@@ -110,4 +110,7 @@ results <- results %>%
     )
   )
 
-  data.table::fwrite(results,"Tmp/ssGSEA_negative_compare/survival/ov/GSE140082/rep100_ad_results.csv")
+data.table::fwrite(
+  results,
+  "rep100_ad_results.csv"
+)

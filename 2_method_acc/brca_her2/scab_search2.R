@@ -42,9 +42,11 @@ benchmark_label <- colnames(sc_data) %in% tumor_cells
 
 # * Screen
 
-SigBridgeR::setThreads(
-  4L
-)
+future::plan(future::multicore, workers = 5L)
+# ! To avoid recomputing, file cache is used
+if (!dir.exists("stats/scab2")) {
+  dir.create("stats/scab2", recursive = TRUE)
+}
 
 
 set.seed(123)
@@ -95,7 +97,9 @@ if (!file.exists("stats/scab_label_mat2.csv")) {
         K = k,
         cross_k = 5,
         para_1_list = alpha_samples %||% c(0.01, 0.005, 0.001),
-        para_2_list = alpha_samples %||% c(0.01, 0.005, 0.001)
+        para_2_list = alpha_samples %||% c(0.01, 0.005, 0.001),
+        parallel = TRUE,
+        verbose = FALSE
       )
 
       alpha <- para_list$para$alpha_1

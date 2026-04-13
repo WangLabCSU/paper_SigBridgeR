@@ -133,9 +133,9 @@ PlotGroupMeanScores <- function(
   return(p)
 }
 
-mean_scores <- data.table::fread(
-  "Tmp/ssGSEA_negative_compare/survival/ov/GSE140082/ov_sur_100reps_neg_ctrl_stat.csv"
-)
+setwd(file.path(usethis::proj_path(), "3_negative_ctrl/survival/ov/GSE140082"))
+
+mean_scores <- data.table::fread("ov_sur_100reps_neg_ctrl_stat.csv")
 
 mean_scores <- tidyr::unite(
   mean_scores,
@@ -156,7 +156,7 @@ p <- PlotGroupMeanScores(
 p
 
 ggplot2::ggsave(
-  "Tmp/ssGSEA_negative_compare/survival/ov/GSE140082/ov_sur_100reps_neg_ctrl_stat.png",
+  "ov_sur_100reps_neg_ctrl_stat.png",
   p,
   width = 8,
   height = 6,

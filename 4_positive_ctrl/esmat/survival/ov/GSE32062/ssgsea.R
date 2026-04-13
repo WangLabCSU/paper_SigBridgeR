@@ -1,6 +1,6 @@
 # setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 setwd(
-  "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/ssGSEA_positive_compare/esmat/survival/ov/GSE32062"
+  file.path(usethis::proj_path(), "4_positive_ctrl")
 )
 
 library(GSVA)
@@ -33,8 +33,8 @@ gene_list <- list(
 )
 
 # ? run ssGSEA
-seurat_path <- "/home/data/sigbridger/benchmark_data/ov/GSE165897"
-seurat <- qs::qread(file.path(seurat_path, "GSE32062_soc_merged_seurat.qs"))
+seurat_path <- "/home/data/sigbridger/benchmark_data/ov/ov"
+seurat <- qs::qread(file.path(seurat_path, "survival_ov_GSE32062_merged_seurat.qs"))
 
 expr <- as.matrix(SeuratObject::LayerData(
   seurat,
@@ -63,12 +63,6 @@ es_df <- t(esmat_sub) %>% cbind(seurat[[]])
 #   es_df,
 #   file = "ssGSEA_score_GSE32062.csv"
 # )
-qs::qsave(es_df, file = "ssGSEA_score_GSE32062.qs", nthreads = 4L)
+qs::qsave(es_df, file = "esmat/survival/ov/GSE32062/ssGSEA_score_GSE32062.qs", nthreads = 4L)
 
 cli::cli_alert_success("Done!")
-# 3982526
-
-score = qs::qread("ssGSEA_score_GSE32062.qs")
-diff_cols <- grepv("sc|DEGAS|LP_SGL|PIPET", colnames(seurat[[]]))
-score2 <- cbind(score[, c(1, 2)], seurat[[]])
-qs::qsave(score2, file = "ssGSEA_score_GSE32062.qs", nthreads = 4L)

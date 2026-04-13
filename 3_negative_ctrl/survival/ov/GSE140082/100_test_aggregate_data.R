@@ -1,12 +1,12 @@
 setwd(usethis::proj_path())
 
 scores <- qs::qread(
-  "Tmp/ssGSEA_negative_compare/ov/ov_Sample_100_ssgsea_score.qs",
+  "ov_Sample_100_ssgsea_score.qs",
   nthreads = 4L
 )
 
 seurat <- qs::qread(
-  "/home/data/sigbridger/benchmark_data/ov/GSE165897/GSE140082_ov_merged_seurat.qs",
+  "/home/data/sigbridger/benchmark_data/ov/ov/survival_ov_GSE140082_merged_seurat.qs",
   nthreads = 4L
 )
 meta <- seurat[[]]
@@ -126,7 +126,7 @@ mean_scores <- CalcGroupMeanScores(
   sample_name = "Sample_100_GSE140082"
 )
 
-dir_out <- "Tmp/ssGSEA_negative_compare/survival/ov/GSE140082"
+dir_out <- "."
 
 data.table::fwrite(
   mean_scores,
@@ -136,4 +136,3 @@ mean_scores <- data.table::fread(file.path(
   dir_out,
   "ov_sur_100reps_neg_ctrl_stat.csv"
 ))
-
