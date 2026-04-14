@@ -94,7 +94,7 @@ res_list <- lapply(
       distance = arg_samples$distance[i], # select_alpha will be used
       nPerm = as.integer(arg_samples$nPerm[i]),
       log2FC = arg_samples$log2FC[i],
-      verbose = FALSE,
+      verbose = TRUE,
       parallel = FALSE
     ))
 

@@ -3,7 +3,7 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 library(dplyr)
 library(data.table)
 
-esmat_root <- "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/ssGSEA_positive_compare/esmat/survival/brca/her2"
+esmat_root <- "../../../../esmat/survival/brca/her2"
 esmat_files <- list.files(esmat_root, recursive = TRUE) %>%
   grep("ssGSEA_score.*\\.qs", ., value = TRUE)
 
@@ -70,9 +70,12 @@ purrr::walk(
     es_df <- qs::qread(file.path(esmat_root, files_of_bulk_i))
     # get all the methods when using this bulk
     screen_method <- gsub(
-      ".*(scissor|scPAS|scAB|scPP|LP_SGL|DEGAS|PIPET).*",
+      ".*(scissor|scPAS|scAB|scPP|SCIPAC|LP_SGL|DEGAS|PIPET).*",
       "\\1",
-      grepv("scissor|scPAS|scAB|scPP|LP_SGL|DEGAS|PIPET", colnames(es_df))
+      grepv(
+        "scissor|scPAS|scAB|scPP|SCIPAC|LP_SGL|DEGAS|PIPET",
+        colnames(es_df)
+      )
     ) %>%
       unique()
 

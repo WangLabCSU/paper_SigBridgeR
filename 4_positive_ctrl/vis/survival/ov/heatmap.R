@@ -1,11 +1,11 @@
-setwd(usethis::proj_path())
+setwd(file.path(usethis::proj_path(), "4_positive_ctrl"))
 
 library(dplyr)
 library(tidyr)
 library(data.table)
 
 # ? read test results for significance annotation
-diff_path <- "Tmp/ssGSEA_positive_compare/diff_test/survival/ov"
+diff_path <- "diff_test/survival/ov"
 
 test_files <- list.files(diff_path, recursive = TRUE) %>%
   grep(
@@ -31,7 +31,7 @@ purrr::walk(
   }
 )
 
-esmat_root <- "Tmp/ssGSEA_positive_compare/esmat/survival/ov"
+esmat_root <- "esmat/survival/ov"
 esmat_files <- list.files(esmat_root, recursive = TRUE) %>%
   grep("ssGSEA_score.*\\.qs", ., value = TRUE)
 
@@ -69,7 +69,7 @@ purrr::walk(
     )
 
     screen_method <- grepv(
-      "(scissor|scPAS|scAB|scPP|DEGAS|LP_SGL|PIPET)$",
+      "(scissor|scPAS|scAB|scPP|DEGAS|LP_SGL|PIPET|SCIPAC)$",
       colnames(esmat_of_bulk_i)
     ) %>%
       unique()
@@ -155,6 +155,7 @@ purrr::walk(
                 !method_i %in% c("scAB", "DEGAS", "PIPET") &&
                   group_name == "Other"
             ) {
+              cli::cli_warn("{method_i} {group_name} not found")
               return(NULL)
             }
 
@@ -241,7 +242,7 @@ for (bulk_i in bulks) {
 # ? save combined results
 data.table::fwrite(
   combined,
-  file = "Tmp/ssGSEA_positive_compare/vis/survival/ov/survival_ov_test_data.csv"
+  file = "vis/survival/ov/survival_ov_test_data.csv"
 )
 
 cli::cli_alert_success(

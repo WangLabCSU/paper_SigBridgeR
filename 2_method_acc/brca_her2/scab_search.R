@@ -103,7 +103,7 @@ if (!file.exists("stats/scab_label_mat1.csv")) {
         para_1_list = alpha_samples %||% c(0.01, 0.005, 0.001),
         para_2_list = alpha_samples %||% c(0.01, 0.005, 0.001),
         parallel = FALSE,
-        verbose = FALSE
+        verbose = TRUE
       )
 
       alpha <- para_list$para$alpha_1

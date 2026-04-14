@@ -101,8 +101,8 @@ if (!file.exists("stats/scab_label_mat2.csv")) {
         cross_k = 5,
         para_1_list = alpha_samples %||% c(0.01, 0.005, 0.001),
         para_2_list = alpha_samples %||% c(0.01, 0.005, 0.001),
-        parallel = TRUE,
-        verbose = FALSE
+        parallel = FALSE,
+        verbose = TRUE
       )
 
       alpha <- para_list$para$alpha_1

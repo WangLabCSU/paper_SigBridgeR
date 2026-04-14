@@ -1,10 +1,10 @@
-setwd(usethis::proj_path())
+setwd(file.path(usethis::proj_path(), "4_positive_ctrl"))
 library(dplyr)
 library(tidyr)
 library(data.table)
 
 # ? read test results for significance annotation
-diff_path <- "Tmp/ssGSEA_positive_compare/diff_test/survival/luad"
+diff_path <- "diff_test/survival/luad"
 
 test_files <- list.files(diff_path, recursive = TRUE) %>%
   grep(
@@ -30,7 +30,7 @@ purrr::walk(
   }
 )
 
-esmat_root <- "Tmp/ssGSEA_positive_compare/esmat/survival/luad"
+esmat_root <- "esmat/survival/luad"
 esmat_files <- list.files(esmat_root, recursive = TRUE) %>%
   grep("ssGSEA_score.*\\.qs", ., value = TRUE)
 
@@ -68,7 +68,7 @@ purrr::walk(
     )
 
     screen_method <- grepv(
-      "(scissor|scPAS|scAB|scPP|DEGAS|LP_SGL|PIPET)$",
+      "(scissor|scPAS|scAB|scPP|DEGAS|SCIPAC|LP_SGL|PIPET)$",
       colnames(esmat_of_bulk_i)
     ) %>%
       unique()
@@ -121,7 +121,7 @@ purrr::walk(
     )
 
     screen_method <- grepv(
-      "(scissor|scPAS|scAB|scPP|DEGAS|LP_SGL|PIPET)$",
+      "(scissor|scPAS|scAB|scPP|DEGAS|SCIPAC|LP_SGL|PIPET)$",
       colnames(esmat_of_bulk_i)
     ) %>%
       unique()

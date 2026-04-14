@@ -1,13 +1,14 @@
 # setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 setwd(
-  "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/ssGSEA_positive_compare/esmat/binary/luad/TCGA_LUAD"
+  file.path(usethis::proj_path(), "4_positive_ctrl")
 )
+
 
 library(GSVA)
 library(dplyr)
 library(data.table)
 
-data_path <- "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/ssGSEA_positive_compare/luad"
+data_path <- "luad"
 markers_file_names <- "binary_deg_TCGA_LUAD.csv"
 
 # ? read marker file
@@ -31,8 +32,11 @@ gene_list <- list(
 )
 
 # ? run ssGSEA
-seurat_path <- "/home/data/sigbridger/benchmark_binary/lung/TCGA-LUAD"
-seurat <- qs::qread(file.path(seurat_path, "tcga_luad_merged_seurat.qs"))
+seurat_path <- "/home/data/sigbridger/benchmark_binary/lung"
+seurat <- qs::qread(file.path(
+  seurat_path,
+  "binary_lung_TCGA_LUAD_merged_seurat.qs"
+))
 
 expr <- as.matrix(SeuratObject::LayerData(
   seurat,
@@ -61,4 +65,8 @@ es_df <- t(esmat_sub) %>% cbind(seurat[[]])
 #   es_df,
 #   file = "ssGSEA_score_TCGA_LUAD.csv"
 # )
-qs::qsave(es_df, file = "ssGSEA_score_TCGA_LUAD.qs", nthreads = 4L)
+qs::qsave(
+  es_df,
+  file = "esmat/binary/luad/TCGA_LUAD/ssGSEA_score_TCGA_LUAD.qs",
+  nthreads = 4L
+)

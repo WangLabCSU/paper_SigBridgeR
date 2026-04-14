@@ -1,13 +1,13 @@
 # setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 setwd(
-  "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/ssGSEA_positive_compare/esmat/binary/brca/tnbc/GSE42568"
+  file.path(usethis::proj_path(), "4_positive_ctrl")
 )
 
-library(GSVA)
 library(dplyr)
+library(GSVA)
 library(data.table)
 
-data_path <- "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/ssGSEA_positive_compare/brca"
+data_path <- "brca"
 markers_file_names <- "binary_deg_tnbc_GSE42568.csv"
 
 # ? read marker file
@@ -17,7 +17,7 @@ raw_markers <- data.table::fread(file.path(data_path, markers_file_names))
 n_risk <- raw_markers[logFC > 0, .N]
 n_prot <- raw_markers[logFC < 0, .N]
 if (n_risk < 20 || n_prot < 20) {
-  cli::cli_abort("Risk markers:  {n_risk},  Protective markers:  {n_prot}")
+  cli::cli_abort("Risk markers: ", n_risk, "; Protective markers: ", n_prot)
 }
 
 # ? convert to list and use top 20 (P.val < 0.05 first, log FC second)
@@ -32,7 +32,10 @@ gene_list <- list(
 
 # ? run ssGSEA
 seurat_path <- "/home/data/sigbridger/benchmark_binary/brca/TNBC"
-seurat <- qs::qread(file.path(seurat_path, "GSE42568_tnbc_merged_seurat.qs"))
+seurat <- qs::qread(file.path(
+  seurat_path,
+  "binary_TNBC_GSE42568_merged_seurat.qs"
+))
 
 expr <- as.matrix(SeuratObject::LayerData(
   seurat,
@@ -61,9 +64,9 @@ es_df <- t(esmat_sub) %>% cbind(seurat[[]])
 #   es_df,
 #   file = "ssGSEA_score_GSE42568.csv"
 # )
-qs::qsave(es_df, file = "ssGSEA_score_GSE42568.qs", nthreads = 4L)
-
-score = qs::qread("ssGSEA_score_GSE42568.qs", nthreads = 4L)
-score = score[, 1:2]
-score = cbind(score, seurat[[]])
-qs::qsave(score, file = "ssGSEA_score_GSE42568.qs", nthreads = 4L)
+qs::qsave(
+  es_df,
+  file = "esmat/binary/brca/tnbc/GSE42568/ssGSEA_score_GSE42568.qs",
+  nthreads = 4L
+)
+# 138791
