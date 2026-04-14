@@ -1,12 +1,12 @@
 # setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-setwd(usethis::proj_path())
+setwd(file.path(usethis::proj_path(), "4_positive_ctrl"))
 
 library(dplyr)
 library(tidyr)
 library(data.table)
 
 # ? read test results for significance annotation
-diff_path <- "Tmp/ssGSEA_positive_compare/diff_test/binary/brca/her2"
+diff_path <- "diff_test/binary/brca/her2"
 
 test_files <- list.files(diff_path, recursive = TRUE) %>%
   grep(
@@ -32,7 +32,7 @@ purrr::walk(
   }
 )
 
-esmat_root <- "Tmp/ssGSEA_positive_compare/esmat/binary/brca/her2"
+esmat_root <- "esmat/binary/brca/her2"
 esmat_files <- list.files(esmat_root, recursive = TRUE) %>%
   grep("ssGSEA_score.*\\.qs", ., value = TRUE)
 
@@ -70,7 +70,7 @@ purrr::walk(
     )
 
     screen_method <- grepv(
-      "(scissor|scPAS|scAB|scPP|DEGAS|LP_SGL|PIPET)$",
+      "(scissor|scPAS|scAB|SCIPAC|scPP|DEGAS|LP_SGL|PIPET)$",
       colnames(esmat_of_bulk_i)
     ) %>%
       unique()
@@ -241,7 +241,7 @@ for (bulk_i in bulks) {
 # ? save combined results
 data.table::fwrite(
   combined,
-  file = "Tmp/ssGSEA_positive_compare/vis/binary/brca/her2/binary_her2_test_data.csv"
+  file = "vis/binary/brca/her2/binary_her2_test_data.csv"
 )
 
 cli::cli_alert_success(

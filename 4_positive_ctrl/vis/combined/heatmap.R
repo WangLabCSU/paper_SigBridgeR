@@ -30,6 +30,8 @@ data_loaded <- purrr::imap(.x = data_loaded, .f = \(dt, name) {
 data_combined <- data.table::rbindlist(data_loaded)
 data_combined <- data_combined[group.y == "Positive vs Rest"]
 
+data.table::fwrite(data_combined, "data_combined.csv")
+
 # ? all method comparisons, used to complete missing combinations
 method_comparisons <- expand.grid(
   bulk = unique(data_combined$bulk),
@@ -209,6 +211,9 @@ p <- ggplot2::ggplot(plot_df2) +
   ) +
   ggplot2::labs(
     title = "ssGSEA Pos Ctrl",
+    subtitle = "signif: wilcoxon rank sum test -> ssGSEA score\n
+    diff = mean score / mean score\n
+    -log10 (P value) = -log10 (wilcoxon rank sum test p value)"
   ) +
   ggplot2::theme_minimal() +
   ggplot2::theme(
@@ -218,8 +223,8 @@ p <- ggplot2::ggplot(plot_df2) +
     axis.text.x = ggplot2::element_blank(),
     axis.ticks.y.left = ggplot2::element_blank(),
     axis.text.y.right = ggplot2::element_text(size = 10, face = "bold"),
-    strip.text.y = ggplot2::element_text(size = 7),
-    strip.text.x = ggplot2::element_text(size = 7),
+    strip.text.y = ggplot2::element_text(size = 10, face = "bold"),
+    strip.text.x = ggplot2::element_text(size = 8, face = "bold"),
     strip.background.y = ggplot2::element_rect(
       color = "white",
       fill = "#EEEEEE"
@@ -241,7 +246,7 @@ p <- ggplot2::ggplot(plot_df2) +
 ggplot2::ggsave(
   p,
   filename = "heatmap_combined.png",
-  width = 10,
-  height = 10,
-  dpi = 4000
+  width = 13,
+  height = 16,
+  dpi = 400
 )

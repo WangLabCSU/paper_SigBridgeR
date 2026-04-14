@@ -294,7 +294,7 @@ for (bulk_i in bulks) {
 # ? save combined results
 data.table::fwrite(
   combined,
-  file = "Tmp/ssGSEA_positive_compare/vis/survival/luad/survival_luad_test_data.csv"
+  file = "vis/survival/luad/survival_luad_test_data.csv"
 )
 
 cli::cli_alert_success(
