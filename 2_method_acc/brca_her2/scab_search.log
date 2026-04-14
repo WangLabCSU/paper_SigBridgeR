@@ -17,18 +17,20 @@ pheno_bi
    0    1 
  113 1089 
 ℹ  Using "RNA_snn" graph for network.
-ℹ [2026/04/12 17:12:25] Calculating L, D and A
-ℹ [2026/04/12 17:12:30] Normalizing quantiles of data
+ℹ [2026/04/14 08:56:16] Calculating L, D and A
+ℹ [2026/04/14 08:56:21] Normalizing quantiles of data
 Warning in asMethod(object) :
   sparse->dense coercion: allocating vector of size 2.9 GiB
-ℹ [2026/04/12 17:13:32] Calculating correlation
-ℹ [2026/04/12 17:13:44] Guanranking
+ℹ [2026/04/14 08:57:23] Calculating correlation
+ℹ [2026/04/14 08:57:36] Guanranking
 
 ── 1 / 51 ──────────────────────────────────────────────────────────────────────
 → cache found, loading...
 
 ── 2 / 51 ──────────────────────────────────────────────────────────────────────
-Warning in multimode::locmodes(x, mod0 = 2) :
-  If the density function has an unbounded support, artificial modes may have been created in the tails
+→ cache found, loading...
 
 ── 3 / 51 ──────────────────────────────────────────────────────────────────────
+→ cache found, loading...
+
+── 4 / 51 ──────────────────────────────────────────────────────────────────────

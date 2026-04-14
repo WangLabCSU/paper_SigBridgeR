@@ -7,7 +7,7 @@ library(GSVA)
 library(dplyr)
 library(data.table)
 
-data_path <- "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/ssGSEA_positive_compare/ov"
+data_path <- "ov"
 markers_file_names <- "survival_deg_GSE32062_GPL6480.csv"
 
 # ? read marker file

@@ -42,7 +42,10 @@ benchmark_label <- colnames(sc_data) %in% tumor_cells
 
 # * Screen
 
-future::plan(future::multicore, workers = 5L)
+# future::plan(future::multicore, workers = 5L)
+SigBridgeR::setThreads(4L)
+
+
 # ! To avoid recomputing, file cache is used
 if (!dir.exists("stats/scab2")) {
   dir.create("stats/scab2", recursive = TRUE)

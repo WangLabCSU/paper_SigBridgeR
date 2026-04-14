@@ -43,7 +43,9 @@ benchmark_label <- colnames(sc_data) %in% tumor_cells
 
 # * Screen
 
-future::plan(future::multicore, workers = 5L)
+# future::plan(future::multicore, workers = 5L)
+SigBridgeR::setThreads(4L)
+
 
 # ! To avoid recomputing, file cache is used
 if (!dir.exists("stats/scab1")) {
@@ -100,7 +102,7 @@ if (!file.exists("stats/scab_label_mat1.csv")) {
         cross_k = 5,
         para_1_list = alpha_samples %||% c(0.01, 0.005, 0.001),
         para_2_list = alpha_samples %||% c(0.01, 0.005, 0.001),
-        parallel = TRUE,
+        parallel = FALSE,
         verbose = FALSE
       )
 

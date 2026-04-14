@@ -1,14 +1,14 @@
-setwd(usethis::proj_path())
+setwd(file.path(usethis::proj_path(), "3_negative_ctrl"))
 
 library(dplyr)
 
 scores <- qs::qread(
-  "Tmp/ssGSEA_negative_compare/brca/her2_Sample_100_ssgsea_score.qs",
+  "brca/her2_Sample_100_ssgsea_score.qs",
   nthreads = 4L
 )
 
 seurat <- qs::qread(
-  "/home/data/sigbridger/benchmark_binary/brca/HER2/GSE162228_brca_merged_seurat.qs",
+  "/home/data/sigbridger/benchmark_binary/brca/HER2/binary_her2_GSE162228_merged_seurat.qs",
   nthreads = 4L
 )
 meta <- seurat[[]]
@@ -128,7 +128,7 @@ mean_scores <- CalcGroupMeanScores(
   sample_name = "Sample_100_GSE162228"
 )
 
-dir_out <- "Tmp/ssGSEA_negative_compare/binary/brca/her2/GSE162228"
+dir_out <- "binary/brca/her2/GSE162228"
 
 data.table::fwrite(
   mean_scores,

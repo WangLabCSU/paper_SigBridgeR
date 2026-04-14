@@ -1,13 +1,13 @@
 # setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 setwd(
-  "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/ssGSEA_positive_compare/esmat/survival/luad/GSE8894"
+  file.path(usethis::proj_path(), "4_positive_ctrl")
 )
 
-library(GSVA)
 library(dplyr)
+library(GSVA)
 library(data.table)
 
-data_path <- "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/ssGSEA_positive_compare/luad"
+data_path <- "luad"
 markers_file_names <- "survival_deg_GSE8894.csv"
 
 # ? read marker file
@@ -31,9 +31,13 @@ gene_list <- list(
   "survival_GSE8894_pos_ssGSEA" = top_risk,
   "survival_GSE8894_neg_ssGSEA" = top_protective
 )
+
 # ? run ssGSEA
-seurat_path <- "/home/data/sigbridger/benchmark_data/lung/GSE8894"
-seurat <- qs::qread(file.path(seurat_path, "GSE8894_luad_merged_seurat.qs"))
+seurat_path <- "/home/data/sigbridger/benchmark_data/lung/luad"
+seurat <- qs::qread(file.path(
+  seurat_path,
+  "survival_lung_GSE8894_merged_seurat.qs"
+))
 
 expr <- as.matrix(SeuratObject::LayerData(
   seurat,
@@ -63,5 +67,9 @@ es_df <- t(esmat_sub) %>% cbind(seurat[[]])
 #   es_df,
 #   file = "ssGSEA_score_GSE8894.csv"
 # )
-qs::qsave(es_df, file = "ssGSEA_score_GSE8894.qs", nthreads = 4L)
-# 4001286
+qs::qsave(
+  es_df,
+  file = "esmat/survival/luad/GSE8894/ssGSEA_score_GSE8894.qs",
+  nthreads = 4L
+)
+# 3995965

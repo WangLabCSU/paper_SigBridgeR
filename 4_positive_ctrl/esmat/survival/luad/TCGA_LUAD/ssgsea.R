@@ -1,13 +1,13 @@
 # setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 setwd(
-  "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/ssGSEA_positive_compare/esmat/survival/luad/TCGA_LUAD"
+  file.path(usethis::proj_path(), "4_positive_ctrl")
 )
 
 library(GSVA)
 library(dplyr)
 library(data.table)
 
-data_path <- "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/ssGSEA_positive_compare/luad"
+data_path <- "luad"
 markers_file_names <- "survival_deg_TCGA_LUAD.csv"
 
 # ? read marker file
@@ -32,8 +32,11 @@ gene_list <- list(
   "survival_TCGA_LUAD_neg_ssGSEA" = top_protective
 )
 # ? run ssGSEA
-seurat_path <- "/home/data/sigbridger/benchmark_data/lung/TCGA-LUAD"
-seurat <- qs::qread(file.path(seurat_path, "tcga_luad_merged_seurat.qs"))
+seurat_path <- "/home/data/sigbridger/benchmark_data/lung/luad"
+seurat <- qs::qread(file.path(
+  seurat_path,
+  "survival_lung_TCGA_LUAD_merged_seurat.qs"
+))
 
 expr <- as.matrix(SeuratObject::LayerData(
   seurat,
@@ -42,7 +45,7 @@ expr <- as.matrix(SeuratObject::LayerData(
 ))
 
 # ? run ssGSEA
-param <- BiocParallel::MulticoreParam(workers = 2L)
+param <- BiocParallel::MulticoreParam(workers = 3L)
 
 ssgsea_param_sub <- gsvaParam(
   exprData = expr,
@@ -62,10 +65,9 @@ es_df <- t(esmat_sub) %>% cbind(seurat[[]])
 #   es_df,
 #   file = "ssGSEA_score_TCGA_LUAD.csv"
 # )
-qs::qsave(es_df, file = "ssGSEA_score_TCGA_LUAD.qs", nthreads = 4L)
+qs::qsave(
+  es_df,
+  file = "esmat/survival/luad/TCGA_LUAD/ssGSEA_score_TCGA_LUAD.qs",
+  nthreads = 4L
+)
 # 3985244
-
-# score = qs::qread("ssGSEA_score_TCGA_LUAD.qs")
-# diff_cols <- grepv("sc|DEGAS|LP_SGL|PIPET", colnames(seurat[[]]))
-# score2 <- cbind(score[, c(1, 2)], seurat[[]])
-# qs::qsave(score2, file = "ssGSEA_score_TCGA_LUAD.qs", nthreads = 4L)

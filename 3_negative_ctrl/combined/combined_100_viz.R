@@ -81,9 +81,9 @@ x_group_levels <- levels(data_combined$x_group)
 # 根据 x_group 名称自动分配颜色
 palette <- sapply(x_group_levels, function(x) {
   if (grepl("Positive", x)) {
-    return("#d65456ff")
+    return("#c24b4b")
   } else if (grepl("Negative", x)) {
-    return("#386c9b")
+    return("#5189bb")
   } else if (grepl("Neutral", x)) {
     return("#b6b6b6")
   } else if (grepl("Other", x)) {

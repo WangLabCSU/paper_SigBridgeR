@@ -7,14 +7,17 @@ library(kSamples)
 library(dplyr)
 library(tidyr)
 
-setwd(usethis::proj_path())
+setwd(file.path(
+  usethis::proj_path(),
+  "3_negative_ctrl/binary/brca/her2/TCGA_BRCA"
+))
 
 seurat <- qs::qread(
-  "/home/data/sigbridger/benchmark_binary/brca/HER2/tcga_brca_merged_seurat.qs",
+  "/home/data/sigbridger/benchmark_binary/brca/HER2/binary_her2_TCGA_BRCA_merged_seurat.qs",
   nthreads = 4L
 )
 scores <- data.table::fread(
-  "Tmp/ssGSEA_negative_compare/binary/brca/her2/TCGA_BRCA/her2_bi_100reps_neg_ctrl_stat.csv"
+  "her2_bi_100reps_neg_ctrl_stat.csv"
 )
 
 scores <- tidyr::unite(
@@ -95,5 +98,5 @@ results <- results %>%
 
 data.table::fwrite(
   results,
-  "Tmp/ssGSEA_negative_compare/binary/brca/her2/TCGA_BRCA/rep100_ad_results.csv"
+  "rep100_ad_results.csv"
 )

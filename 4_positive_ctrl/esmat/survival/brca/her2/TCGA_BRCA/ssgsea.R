@@ -1,13 +1,13 @@
 # setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 setwd(
-  "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/ssGSEA_positive_compare/esmat/survival/brca/her2/TCGA_BRCA"
+  file.path(usethis::proj_path(), "4_positive_ctrl")
 )
 
 library(GSVA)
 library(dplyr)
 library(data.table)
 
-data_path <- "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/ssGSEA_positive_compare/brca"
+data_path <- "brca"
 markers_file_names <- "survival_deg_her2_TCGA.csv"
 
 # ? read marker file
@@ -34,7 +34,10 @@ gene_list <- list(
 
 # ? run ssGSEA
 seurat_path <- "/home/data/sigbridger/benchmark_data/brca/HER2"
-seurat <- qs::qread(file.path(seurat_path, "tcga_her2_merged_seurat.qs"))
+seurat <- qs::qread(file.path(
+  seurat_path,
+  "survival_her2_TCGA_BRCA_merged_seurat.qs"
+))
 
 expr <- as.matrix(SeuratObject::LayerData(
   seurat,
@@ -64,10 +67,9 @@ es_df <- t(esmat_sub) %>% cbind(seurat[[]])
 #   es_df,
 #   file = "ssGSEA_score_TCGA_BRCA.csv"
 # )
-qs::qsave(es_df, file = "ssGSEA_score_TCGA_BRCA.qs", nthreads = 4L)
+qs::qsave(
+  es_df,
+  file = "esmat/survival/brca/her2/TCGA_BRCA/ssGSEA_score_TCGA_BRCA.qs",
+  nthreads = 4L
+)
 # 4124270
-
-score = qs::qread("ssGSEA_score_TCGA_BRCA.qs")
-score = score[, 1:2]
-score = cbind(score, seurat[[]])
-qs::qsave(score, "ssGSEA_score_TCGA_BRCA.qs", nthreads = 4L)

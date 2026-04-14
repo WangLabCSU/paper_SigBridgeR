@@ -7,15 +7,15 @@ library(kSamples)
 library(dplyr)
 library(tidyr)
 
-setwd(usethis::proj_path())
+setwd(file.path(usethis::proj_path(), "3_negative_ctrl/binary/luad/TCGA_LUAD"))
 
 seurat <- qs::qread(
-  "/home/data/sigbridger/benchmark_binary/lung/TCGA-LUAD/tcga_luad_merged_seurat.qs",
+  "/home/data/sigbridger/benchmark_binary/lung/binary_lung_TCGA_LUAD_merged_seurat.qs",
   nthreads = 4L
 )
 
 scores <- data.table::fread(
-  "Tmp/ssGSEA_negative_compare/binary/luad/TCGA_LUAD/luad_bi_100reps_neg_ctrl_stat.csv"
+  "luad_bi_100reps_neg_ctrl_stat.csv"
 )
 
 scores <- tidyr::unite(
@@ -110,4 +110,7 @@ results <- results %>%
     )
   )
 
-data.table::fwrite(results,"Tmp/ssGSEA_negative_compare/binary/luad/TCGA_LUAD/rep100_ad_results.csv")
+data.table::fwrite(
+  results,
+  "rep100_ad_results.csv"
+)

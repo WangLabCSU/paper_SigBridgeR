@@ -56,12 +56,14 @@ set.seed(123)
 arg_samples <- data.frame(
   distance = sample(distance_choices, 50, replace = TRUE), # 第1维
   nPerm = sample(seq(500, 5000, 100), 50, replace = TRUE),
-  log2FC = sample(seq(0.5, 2, 0.01), 50, replace = TRUE)
+  log2FC = sample(seq(0.58, 3, 0.01), 50, replace = TRUE)
 ) %>%
   dplyr::add_row(distance = "cosine", nPerm = 1000L, log2FC = 1L) # default parameters
 
 options(future.globals.maxSize = 20 * 1024^3)
-future::plan(future::multicore, workers = 8L)
+# future::plan(future::multicore, workers = 8L)
+SigBridgeR::setThreads(4L)
+
 
 # ! To avoid recomputing, file cache is used
 if (!dir.exists("stats/pipet2")) {
@@ -93,7 +95,7 @@ res_list <- lapply(
       nPerm = as.integer(arg_samples$nPerm[i]),
       log2FC = arg_samples$log2FC[i],
       verbose = FALSE,
-      parallel = TRUE
+      parallel = FALSE
     ))
 
     data <- data.frame(

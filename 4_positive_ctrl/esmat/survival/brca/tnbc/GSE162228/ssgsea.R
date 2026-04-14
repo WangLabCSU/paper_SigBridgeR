@@ -1,13 +1,13 @@
 # setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 setwd(
-  "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/ssGSEA_positive_compare/esmat/survival/brca/tnbc/GSE162228"
+  file.path(usethis::proj_path(), "4_positive_ctrl")
 )
 
 library(GSVA)
-library(data.table)
 library(dplyr)
+library(data.table)
 
-data_path <- "/home/yyx/R/Project/R_code/SigBridgeR/Tmp/ssGSEA_positive_compare/brca"
+data_path <- "brca"
 markers_file_names <- "survival_deg_tnbc_GSE162228.csv"
 
 # ? read marker file
@@ -31,9 +31,13 @@ gene_list <- list(
   "survival_GSE162228_pos_ssGSEA" = top_risk,
   "survival_GSE162228_neg_ssGSEA" = top_protective
 )
+
 # ? run ssGSEA
 seurat_path <- "/home/data/sigbridger/benchmark_data/brca/TNBC"
-seurat <- qs::qread(file.path(seurat_path, "GSE162228_tnbc_merged_seurat.qs"))
+seurat <- qs::qread(file.path(
+  seurat_path,
+  "survival_TNBC_GSE162228_merged_seurat.qs"
+))
 
 expr <- as.matrix(SeuratObject::LayerData(
   seurat,
@@ -62,10 +66,9 @@ es_df <- t(esmat_sub) %>% cbind(seurat[[]])
 #   es_df,
 #   file = "ssGSEA_score_GSE162228.csv"
 # )
-qs::qsave(es_df, file = "ssGSEA_score_GSE162228.qs", nthreads = 4L)
-# 4013767
-
-score = qs::qread("ssGSEA_score_GSE162228.qs")
-score = score[, 1:2]
-score = cbind(score, seurat[[]])
-qs::qsave(score, "ssGSEA_score_GSE162228.qs", nthreads = 4L)
+qs::qsave(
+  es_df,
+  file = "esmat/survival/brca/tnbc/GSE162228/ssGSEA_score_GSE162228.qs",
+  nthreads = 4L
+)
+# 4010356

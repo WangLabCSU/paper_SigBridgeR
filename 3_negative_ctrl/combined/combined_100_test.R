@@ -9,7 +9,7 @@ test100_data <- list.files(
 )
 bulk <- dirname(test100_data) %>% basename()
 sc_type <- dirname(dirname(test100_data)) %>% basename()
-pheno_type <- dirname(dirname(dirname(test100_data))) %>% basename()
+pheno_type <- gsub(".*(binary|survival).*", "\\1", dirname(test100_data))
 
 names(test100_data) <- paste0(pheno_type, "_", sc_type, "_", bulk)
 

@@ -1,5 +1,5 @@
 # ! Negative Comparison
-# ! Survival
+# ! binary
 # ! OV
 # ! GSE140082
 # ! GSE165897
@@ -7,15 +7,15 @@ library(kSamples)
 library(dplyr)
 library(tidyr)
 
-setwd(usethis::proj_path())
+setwd(file.path(usethis::proj_path(), "3_negative_ctrl/binary/ov/GSE140082"))
 
 seurat <- qs::qread(
-  "/home/data/sigbridger/benchmark_binary/ov/GSE165897/GSE140082_ov_merged_seurat.qs",
+  "/home/data/sigbridger/benchmark_binary/ov/binary_ov_GSE140082_merged_seurat.qs",
   nthreads = 4L
 )
 
 scores <- data.table::fread(
-  "Tmp/ssGSEA_negative_compare/binary/ov/GSE140082/ov_bi_100reps_neg_ctrl_stat.csv"
+  "ov_bi_100reps_neg_ctrl_stat.csv"
 )
 
 scores <- tidyr::unite(
@@ -110,4 +110,7 @@ results <- results %>%
     )
   )
 
-  data.table::fwrite(results,"Tmp/ssGSEA_negative_compare/binary/ov/GSE140082/rep100_ad_results.csv")
+data.table::fwrite(
+  results,
+  "rep100_ad_results.csv"
+)
