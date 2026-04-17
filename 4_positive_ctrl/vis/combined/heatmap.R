@@ -171,10 +171,11 @@ p <- ggplot2::ggplot(plot_df2) +
       "#FFED99",
       "#85ac61",
       "#8ecde0ff",
-      "#3c3597",
-      "#465d9bff"
+      "#7b74e0",
+      "#4941b9",
+      "#991cb9"
     ))(10),
-    limits = c(0.5, 3),
+    limits = c(0.5, 3.5),
     na.value = "#e9e9e9ff", # ← NA 灰色
     name = "Diff"
   ) +

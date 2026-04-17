@@ -175,7 +175,15 @@ p <- ggplot(
   theme(
     axis.text.x = element_text(angle = 60, hjust = 1, size = 10),
     panel.grid.minor = element_blank(),
-    strip.text = element_text(face = "bold", size = 11)
+    strip.text = element_text(face = "bold", size = 11),
+    strip.background.y = ggplot2::element_rect(
+      color = "white",
+      fill = "#EEEEEE"
+    ),
+    strip.background.x = ggplot2::element_rect(
+      color = "white",
+      fill = "#EEEEEE"
+    ),
   ) +
   ggrepel::geom_text_repel(
     data = label_position,
