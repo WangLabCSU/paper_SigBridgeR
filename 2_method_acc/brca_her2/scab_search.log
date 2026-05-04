@@ -278,3 +278,20 @@ Warning in multimode::locmodes(x, mod0 = 2) :
   If the density function has an unbounded support, artificial modes may have been created in the tails
 
 ── 48 / 51 ─────────────────────────────────────────────────────────────────────
+Warning in multimode::locmodes(x, mod0 = 2) :
+  If the density function has an unbounded support, artificial modes may have been created in the tails
+
+── 49 / 51 ─────────────────────────────────────────────────────────────────────
+Warning in multimode::locmodes(x, mod0 = 2) :
+  If the density function has an unbounded support, artificial modes may have been created in the tails
+
+── 50 / 51 ─────────────────────────────────────────────────────────────────────
+Warning in multimode::locmodes(x, mod0 = 2) :
+  If the density function has an unbounded support, artificial modes may have been created in the tails
+
+── 51 / 51 ─────────────────────────────────────────────────────────────────────
+Warning in multimode::locmodes(x, mod0 = 2) :
+  If the density function has an unbounded support, artificial modes may have been created in the tails
+✔ (1) scab random search completed.
+Error: unexpected symbol in " random search"
+Execution halted

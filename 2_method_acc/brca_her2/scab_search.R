@@ -140,7 +140,7 @@ if (!file.exists("stats/scab_label_mat1.csv")) {
   rownames(all_results) = colnames(sc_data)
 
   data.table::fwrite(
-    res_list,
+    all_results,
     file = "stats/scab_label_mat1.csv",
     row.names = TRUE
   )
