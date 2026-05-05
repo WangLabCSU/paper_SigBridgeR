@@ -54,7 +54,7 @@ distance_choices <- c(
 set.seed(123)
 arg_samples <- data.frame(
   distance = sample(distance_choices, 50, replace = TRUE), # 第1维
-  nPerm = sample(seq(500, 5000, 100), 50, replace = TRUE),
+  nPerm = sample(seq(200, 2500, 100), 50, replace = TRUE),
   log2FC = sample(seq(1.2, 3, 0.01), 50, replace = TRUE)
 ) %>%
   dplyr::add_row(distance = "cosine", nPerm = 1000L, log2FC = 1L) # default parameters
