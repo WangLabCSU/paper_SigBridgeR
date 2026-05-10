@@ -69,7 +69,7 @@ SigBridgeR::setThreads(4L)
 if (!dir.exists("stats/pipet2")) {
   dir.create("stats/pipet2", recursive = TRUE)
 }
-
+future::plan(future::multisession, workers = 8L)
 
 res_list <- lapply(
   seq_len(nrow(arg_samples)),
@@ -94,8 +94,8 @@ res_list <- lapply(
       distance = arg_samples$distance[i], # select_alpha will be used
       nPerm = as.integer(arg_samples$nPerm[i]),
       log2FC = arg_samples$log2FC[i],
-      verbose = TRUE,
-      parallel = FALSE
+      verbose = FALSE,
+      parallel = TRUE
     ))
 
     data <- data.frame(

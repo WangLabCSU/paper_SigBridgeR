@@ -78,7 +78,7 @@ if (!file.exists("stats/degas_label_mat1_part1.csv")) {
             matched_bulk = bulk,
             sc_data = sc_data,
             phenotype = pheno_bi,
-            label_type = glue::glue("process_{i}"),
+            label_type = "DEGAS_",
             phenotype_class = "binary",
             screen_method = "DEGAS",
             degas_params = list(
@@ -148,7 +148,7 @@ if (!file.exists("stats/degas_label_mat1_part2.csv")) {
             matched_bulk = bulk,
             sc_data = sc_data,
             phenotype = pheno_bi,
-            label_type = glue::glue("process_{i}"),
+            label_type = "DEGAS_",
             phenotype_class = "binary",
             screen_method = "DEGAS",
             degas_params = list(
