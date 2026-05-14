@@ -61,15 +61,13 @@ arg_samples <- data.frame(
   dplyr::add_row(distance = "cosine", nPerm = 1000L, log2FC = 1L) # default parameters
 
 options(future.globals.maxSize = 20 * 1024^3)
-# future::plan(future::multicore, workers = 8L)
-SigBridgeR::setThreads(4L)
-
+future::plan(future::multicore, workers = 8L)
+# SigBridgeR::setThreads(4L)
 
 # ! To avoid recomputing, file cache is used
 if (!dir.exists("stats/pipet2")) {
   dir.create("stats/pipet2", recursive = TRUE)
 }
-future::plan(future::multisession, workers = 8L)
 
 res_list <- lapply(
   seq_len(nrow(arg_samples)),

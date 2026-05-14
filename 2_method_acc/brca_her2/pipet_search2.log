@@ -17,29 +17,6 @@ The following objects are masked from ‘package:base’:
 pheno_bi
   0   1 
  17 104 
-  OpenMP version (_OPENMP)       201511
-  omp_get_num_procs()            192
-  R_DATATABLE_NUM_PROCS_PERCENT  unset (default 50)
-  R_DATATABLE_NUM_THREADS        unset
-  R_DATATABLE_THROTTLE           unset (default 1024)
-  omp_get_thread_limit()         2147483647
-  omp_get_max_threads()          192
-  OMP_THREAD_LIMIT               unset
-  OMP_NUM_THREADS                4
-  RestoreAfterFork               true
-  data.table is using 4 threads with throttle==1024. See ?setDTthreads.
-
-── System-Level Configuration ──
-
-• OMP_NUM_THREADS: unset -> 4
-• data.table: 96 -> 4
-
-── TensorFlow Configuration ──
-
-• TF_XLA_FLAGS: unset -> --tf_xla_auto_jit=2 --tf_xla_cpu_global_jit
-• TF_XLA_CPU_GLOBAL_JIT: unset -> 1
-• TF_NUM_INTEROP_THREADS: unset -> 2
-• TF_NUM_INTRAOP_THREADS: unset -> 1
 
 ── 1 / 51 ──────────────────────────────────────────────────────────────────────
 → cache found, loading...
@@ -66,7 +43,5 @@ pheno_bi
 → cache found, loading...
 
 ── 9 / 51 ──────────────────────────────────────────────────────────────────────
-Error in PIPET_SingleAnalysis(sc_data = sc_data, markers = markers, freq_counts = freq_counts,  : 
-  lazy-load database '/home/yyx/R/x86_64-pc-linux-gnu-library/4.5/PIPET/R/PIPET.rdb' is corrupt
-Calls: lapply -> FUN
-Execution halted
+
+── 10 / 51 ─────────────────────────────────────────────────────────────────────

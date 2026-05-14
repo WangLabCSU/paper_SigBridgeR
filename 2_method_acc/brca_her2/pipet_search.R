@@ -61,7 +61,7 @@ arg_samples <- data.frame(
 
 
 options(future.globals.maxSize = 20 * 1024^3)
-# future::plan(future::multicore, workers = 8L)
+future::plan(future::multicore, workers = 8L)
 SigBridgeR::setThreads(4L)
 
 
@@ -94,8 +94,8 @@ res_list <- lapply(
       distance = arg_samples$distance[i], # select_alpha will be used
       nPerm = as.integer(arg_samples$nPerm[i]),
       log2FC = arg_samples$log2FC[i],
-      verbose = TRUE,
-      parallel = FALSE
+      verbose = FALSE,
+      parallel = TRUE
     ))
 
     data <- data.frame(
