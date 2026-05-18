@@ -12,4 +12,4 @@ Activations.csv
 nohup.out
 tmp
 *.log
-*pipet*
+.log

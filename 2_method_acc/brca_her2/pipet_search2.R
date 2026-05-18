@@ -60,8 +60,8 @@ arg_samples <- data.frame(
 ) %>%
   dplyr::add_row(distance = "cosine", nPerm = 1000L, log2FC = 1L) # default parameters
 
-options(future.globals.maxSize = 20 * 1024^3)
-future::plan(future::multicore, workers = 8L)
+options(future.globals.maxSize = 30 * 1024^3)
+future::plan(future.mirai::mirai_multisession(workers = 4L))
 # SigBridgeR::setThreads(4L)
 
 # ! To avoid recomputing, file cache is used
