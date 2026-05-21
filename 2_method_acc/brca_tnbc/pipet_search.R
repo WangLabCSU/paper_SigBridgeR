@@ -61,7 +61,7 @@ arg_samples <- data.frame(
   dplyr::add_row(distance = "cosine", nPerm = 1000L, log2FC = 1L) # default parameters
 
 
-options(future.globals.maxSize = 30 * 1024^3)
+options(future.globals.maxSize = 40 * 1024^3)
 future::plan(future.mirai::mirai_multisession(workers = 3L))
 SigBridgeR::setThreads(4L)
 
