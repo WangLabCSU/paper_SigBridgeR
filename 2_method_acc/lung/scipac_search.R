@@ -1,4 +1,6 @@
 # ! TCGA_LUAD
+library(dplyr)
+
 
 # setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 setwd(
@@ -7,7 +9,7 @@ setwd(
 data_path <- "/home/data/sigbridger/benchmark_data/lung"
 
 # * load data
-seurat <- qs::qread(file.path(data_path, "luad_GSE123902_seurat.qs"))
+sc_data <- qs::qread(file.path(data_path, "luad_GSE123902_seurat.qs"))
 
 bulk <- qs::qread(
   file.path(data_path, "TCGA_LUAD_bulkdata.qs")
@@ -33,3 +35,167 @@ if (anyNA(bulk)) {
 if (anyNA(pheno_bi)) {
   stop("pheno_bi has NA")
 }
+
+# * Screen
+set.seed(12345)
+
+arg_samples1 <- data.frame(
+  n_pc = sample(seq(10L, 100L, 10L), 50, replace = TRUE),
+  resolution = sample(seq(0.1, 4L, 0.1), 50, replace = TRUE),
+  ela_net_alpha = sample(seq(0.1, 1L, 0.1), 50, replace = TRUE)
+) %>%
+  dplyr::add_row(n_pc = 60L, resolution = 2L, ela_net_alpha = 0.4) # default
+
+options(future.globals.maxSize = 20 * 1024^3)
+# future::plan(future::multicore, workers = 8L)
+
+# ! To avoid recomputing, file cache is used
+if (!dir.exists("stats/scipac1/part1")) {
+  dir.create("stats/scipac1/part1", recursive = TRUE)
+}
+
+
+res_list <- lapply(
+  seq_len(nrow(arg_samples1)),
+  function(i) {
+    cli::cli_h1("{i} / {nrow(arg_samples1)}")
+
+    # ! load cache if exists
+    cache_save_path <- file.path(
+      "stats/scipac1/part1",
+      glue::glue("process_{i}.csv")
+    )
+    if (file.exists(cache_save_path)) {
+      cli::cli_alert("cache found, loading...")
+      cache <- data.table::fread(cache_save_path)
+      return(cache)
+    }
+
+    n_pc_i <- arg_samples1$n_pc[i]
+    resolution_i <- arg_samples1$resolution[i]
+    ela_net_alpha_i <- arg_samples1$ela_net_alpha[i]
+
+    result <- SigBridgeR::Screen(
+      bulk,
+      sc_data,
+      pheno_bi,
+      screen_method = "SCIPAC",
+      label_type = glue::glue("process_{i}"),
+      phenotype_class = "binary",
+      n_pc = n_pc_i,
+      resolution = resolution_i,
+      ela_net_alpha = ela_net_alpha_i
+    )
+    pos_cell <- (result$scRNA_data$SCIPAC == "Positive")
+
+    data <- data.frame(
+      pos_cell = pos_cell
+    )
+
+    colnames(data) <- glue::glue("process_{i}")
+    gc(verbose = FALSE)
+
+    # ! save cache
+    data.table::fwrite(data, cache_save_path)
+
+    # 返回包含索引和结果的数据框
+    return(data)
+  }
+)
+
+
+# *visualize
+gc()
+all_results <- do.call(cbind, res_list)
+rownames(all_results) = colnames(sc_data)
+
+data.table::fwrite(
+  all_results,
+  file = "stats/scipac_label_mat1_part1.csv",
+  row.names = TRUE
+)
+
+cli::cli_alert_success(crayon::green(
+  "(1) scipac random search part1 completed."
+))
+
+
+arg_samples2 <- data.frame(
+  hvg = sample(seq(500L, 5000L, 500L), 50, replace = TRUE),
+  bt_size = sample(seq(10L, 100L, 10L), 50, replace = TRUE),
+  nfold = sample(seq(3L, 30L, 1L), 50, replace = TRUE)
+) %>%
+  dplyr::add_row(hvg = 1000L, bt_size = 50L, nfold = 10L) # default
+
+
+# ! To avoid recomputing, file cache is used
+if (!dir.exists("stats/scipac1/part2")) {
+  dir.create("stats/scipac1/part2", recursive = TRUE)
+}
+
+
+res_list <- lapply(
+  seq_len(nrow(arg_samples2)),
+  function(i) {
+    cli::cli_h1("{i} / {nrow(arg_samples2)}")
+
+    # ! load cache if exists
+    cache_save_path <- file.path(
+      "stats/scipac1/part2",
+      glue::glue("process_{i}.csv")
+    )
+    if (file.exists(cache_save_path)) {
+      cli::cli_alert("cache found, loading...")
+      cache <- data.table::fread(cache_save_path)
+      return(cache)
+    }
+
+    hvg_i <- arg_samples2$hvg[i]
+    bt_size_i <- arg_samples2$bt_size[i]
+    nfold_i <- arg_samples2$nfold[i]
+
+    result <- SigBridgeR::Screen(
+      bulk,
+      sc_data,
+      pheno_bi,
+      screen_method = "SCIPAC",
+      label_type = glue::glue("process_{i}"),
+      phenotype_class = "binary",
+      hvg = hvg_i,
+      bt_size = bt_size_i,
+      nfold = nfold_i
+    )
+    pos_cell <- (result$scRNA_data$SCIPAC == "Positive")
+
+    data <- data.frame(
+      pos_cell = pos_cell
+    )
+
+    colnames(data) <- glue::glue("process_{i}")
+    gc(verbose = FALSE)
+
+    # ! save cache
+    data.table::fwrite(data, cache_save_path)
+
+    # 返回包含索引和结果的数据框
+    return(data)
+  }
+)
+
+
+# *visualize
+gc()
+all_results <- do.call(cbind, res_list)
+rownames(all_results) = colnames(sc_data)
+
+data.table::fwrite(
+  all_results,
+  file = "stats/scipac_label_mat1_part2.csv",
+  row.names = TRUE
+)
+
+cli::cli_alert_success(crayon::green(
+  "(1) scipac random search part2 completed."
+))
+
+# ! TCGA_LUAD
