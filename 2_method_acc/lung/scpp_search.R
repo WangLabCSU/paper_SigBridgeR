@@ -9,7 +9,7 @@ setwd(
 data_path <- "/home/data/sigbridger/benchmark_data/lung"
 
 # * load data
-seurat <- qs::qread(file.path(data_path, "luad_GSE123902_seurat.qs"))
+sc_data <- qs::qread(file.path(data_path, "luad_GSE123902_seurat.qs"))
 
 bulk <- qs::qread(
   file.path(data_path, "TCGA_LUAD_bulkdata.qs")
