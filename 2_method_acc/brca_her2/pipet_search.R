@@ -61,7 +61,7 @@ arg_samples <- data.frame(
 
 
 options(future.globals.maxSize = 30 * 1024^3)
-future::plan(future.mirai::mirai_multisession(workers = 4L))
+future::plan(future.mirai::mirai_multisession(workers = 8L))
 SigBridgeR::setThreads(4L)
 
 
