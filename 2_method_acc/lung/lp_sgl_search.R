@@ -1,5 +1,5 @@
 # ! TCGA_LUAD
-
+library(dplyr)
 # setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 setwd(
   file.path(usethis::proj_path(), "2_method_acc/lung")
@@ -7,7 +7,7 @@ setwd(
 data_path <- "/home/data/sigbridger/benchmark_data/lung"
 
 # * load data
-seurat <- qs::qread(file.path(data_path, "luad_GSE123902_seurat.qs"))
+sc_data <- qs::qread(file.path(data_path, "luad_GSE123902_seurat.qs"))
 
 bulk <- qs::qread(
   file.path(data_path, "TCGA_LUAD_bulkdata.qs")
@@ -44,12 +44,25 @@ arg_samples <- data.frame(
 ) %>%
   dplyr::add_row(alpha = 0.5, resolution = 0.6, nfold = 5) # default parameters
 
+# ! To avoid recomputing, file cache is used
+if (!dir.exists("stats/lp_sgl1")) {
+  dir.create("stats/lp_sgl1", recursive = TRUE)
+}
 
 # * run LP_SGL with error handling
 res_list <- lapply(
   seq_len(nrow(arg_samples)),
   function(i) {
     cli::cli_h1("{i} / {nrow(arg_samples)}")
+
+    # ! load cache if exists
+    cache_save_path <- file.path("stats/lp_sgl1", glue::glue("process_{i}.csv"))
+    if (file.exists(cache_save_path)) {
+      cli::cli_alert("cache found, loading...")
+      cache <- data.table::fread(cache_save_path)
+      return(cache)
+    }
+
     result <- SigBridgeR::Screen(
       matched_bulk = bulk,
       sc_data = sc_data,

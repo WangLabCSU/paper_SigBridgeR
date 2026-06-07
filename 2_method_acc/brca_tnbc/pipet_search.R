@@ -62,9 +62,8 @@ arg_samples <- data.frame(
 
 
 options(future.globals.maxSize = 40 * 1024^3)
-future::plan(future.mirai::mirai_multisession(workers = 3L))
-SigBridgeR::setThreads(4L)
-
+future::plan(future.mirai::mirai_multisession(workers = 8L))
+# SigBridgeR::setThreads(4L)
 
 # ! To avoid recomputing, file cache is used
 if (!dir.exists("stats/pipet1")) {
@@ -111,7 +110,7 @@ res_list <- lapply(
     return(data)
   }
 )
-
+future::plan(future::sequential())
 
 # 合并所有结果
 all_results <- do.call(cbind, res_list)
