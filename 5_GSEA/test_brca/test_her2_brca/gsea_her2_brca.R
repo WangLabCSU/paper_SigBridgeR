@@ -58,59 +58,66 @@ methods <- c(
   "LP_SGL"
 )
 
-degs <- lapply(seq_along(labeled_seurat_loaded), function(i) {
-  sc_data <- labeled_seurat_loaded[[i]]
-  existing_cols <- colnames(sc_data[[]])
-  filtered_cols <- existing_cols[existing_cols %in% methods] # available methods
+degs <- if (!file.exists(glue::glue("degs_{tissue}.qs"))) {
+  degs <- lapply(seq_along(labeled_seurat_loaded), function(i) {
+    sc_data <- labeled_seurat_loaded[[i]]
+    existing_cols <- colnames(sc_data[[]])
+    filtered_cols <- existing_cols[existing_cols %in% methods] # available methods
 
-  cli::cli_alert_info(
-    "Available methods for {.val {names(labeled_seurat_loaded)[i]}}: {
+    cli::cli_alert_info(
+      "Available methods for {.val {names(labeled_seurat_loaded)[i]}}: {
     filtered_cols}"
-  )
+    )
 
-  #   res <- furrr::future_map(
-  res <- mirai::mirai_map(
-    filtered_cols,
-    function(method) {
-      # method is a character
-      sc_data[[method]] <- ifelse(
-        sc_data[[method]] == "Positive",
-        "Positive",
-        "non_Positive"
-      )
-      cell_counts <- cheapr::table_(sc_data[[method]])
+    #   res <- furrr::future_map(
+    res <- mirai::mirai_map(
+      filtered_cols,
+      function(method) {
+        # method is a character
+        sc_data[[method]] <- ifelse(
+          sc_data[[method]] == "Positive",
+          "Positive",
+          "non_Positive"
+        )
+        cell_counts <- cheapr::table_(sc_data[[method]])
 
-      if (!"Positive" %in% names(cell_counts)) {
-        cli::cli_warn("{method}: Positive not in cell_counts")
-        return(NULL)
-      }
+        if (!"Positive" %in% names(cell_counts)) {
+          cli::cli_warn("{method}: Positive not in cell_counts")
+          return(NULL)
+        }
 
-      deg_results <- Seurat::FindMarkers(
-        sc_data,
-        ident.1 = "Positive",
-        ident.2 = "non_Positive",
-        group.by = method
-      )
+        deg_results <- Seurat::FindMarkers(
+          sc_data,
+          ident.1 = "Positive",
+          ident.2 = "non_Positive",
+          group.by = method
+        )
 
-      gene_list <- deg_results$avg_log2FC
+        gene_list <- deg_results$avg_log2FC
 
-      # 3. 给向量命名 (基因名)
-      names(gene_list) <- rownames(deg_results)
+        # 3. 给向量命名 (基因名)
+        names(gene_list) <- rownames(deg_results)
 
-      # 4. 按 log2FC 从高到低 降序排序（这是必须执行的一步）
-      gene_list <- sort(gene_list, decreasing = TRUE)
-      gene_list
-    },
-    sc_data = sc_data
-    # .progress = TRUE
-  )
-  res <- res[mirai::.progress]
-  names(res) <- filtered_cols
-  res
-})
-names(degs) <- names(labeled_seurat_loaded)
+        # 4. 按 log2FC 从高到低 降序排序（这是必须执行的一步）
+        gene_list <- sort(gene_list, decreasing = TRUE)
+        gene_list
+      },
+      sc_data = sc_data
+      # .progress = TRUE
+    )
+    res <- res[mirai::.progress]
+    names(res) <- filtered_cols
+    res
+  })
 
-qs::qsave(degs, glue::glue("degs_{tissue}.qs"), nthreads = 4L) # < 5MB
+  names(degs) <- names(labeled_seurat_loaded)
+
+  qs::qsave(degs, glue::glue("degs_{tissue}.qs"), nthreads = 4L) # < 5MB
+  degs
+} else {
+  cli::cli_alert_info("Found cache")
+  qs::qread(glue::glue("degs_{tissue}.qs"), nthreads = 4L)
+}
 
 # * GSEA
 fgsea_res <- lapply(degs, function(one_seurat_deg) {
@@ -136,3 +143,7 @@ mirai::daemons(0L)
 
 # * Save results
 qs::qsave(fgsea_res, glue::glue("gsea_res_{tissue}.qs"), nthreads = 4L) # < 1MB
+
+cli::cli_h1("All done!")
+
+gc()

@@ -3,7 +3,7 @@ setwd(file.path(usethis::proj_path(), "5_GSEA/all_viz"))
 library(dplyr)
 source("plot_gsea_table.R")
 
-future::plan(future.mirai::mirai_multisession(workers = 4L))
+# future::plan(future.mirai::mirai_multisession(workers = 4L))
 
 stats_file <- list.files(
   "..",
@@ -35,13 +35,22 @@ loaded_degs_file <- lapply(degs_file, \(x) {
 
 # * viz
 # * Hallmark gene list
-geneset_hallmark <- msigdbr::msigdbr(species = "Homo sapiens", category = "H")
-gene_list <- split(
-  geneset_hallmark$gene_symbol,
-  geneset_hallmark$gs_description
-)
+gene_list <- if (!file.exists("hallmarks_gene_list.qs")) {
+  geneset_hallmark <- msigdbr::msigdbr(species = "Homo sapiens", category = "H")
+  gene_list <- split(
+    geneset_hallmark$gene_symbol,
+    geneset_hallmark$gs_description
+  )
+  qs::qsave(gene_list, "hallmarks_gene_list.qs", nthreads = 4L) # < 1 MB
+  gene_list
+} else {
+  cli::cli_alert_info("Found existing hallmarks")
+  qs::qread("hallmarks_gene_list.qs", nthreads = 4L)
+}
 
-# ? furrr is not compatible with data.table syntax
+ts_cli <- SigBridgeRUtils::CreateTimeStampCliEnv()
+
+
 dir.create("plot", showWarnings = FALSE)
 # ~ 20 mins
 gsea_plots <- purrr::map2(
@@ -49,18 +58,23 @@ gsea_plots <- purrr::map2(
   loaded_degs_file,
   function(tissue_type, deg_tissue) {
     # 2 lists
-    purrr::map2(
-      tissue_type,
-      deg_tissue,
-      function(data_group, deg_group) {
+    l_tissue <- purrr::pmap(
+      list(tissue_type, deg_tissue, names(tissue_type)),
+      function(data_group, deg_group, group_name) {
+        cli::cli_h2("handling {group_name}")
         # a list
-        purrr::map2(
-          data_group,
-          deg_group,
-          function(dt, deg_method) {
+        l_group <- purrr::pmap(
+          list(data_group, deg_group, names(data_group)),
+          function(dt, deg_method, method_name) {
             if (is.null(dt)) {
+              ts_cli$cli_alert_info(
+                "Skipping {method_name} because no data"
+              )
               return(NULL)
             }
+            ts_cli$cli_alert_info(
+              "Drawing {method_name}"
+            )
             # a data.table
             plot_gsea_table(
               hallmarks = gene_list,
@@ -69,27 +83,32 @@ gsea_plots <- purrr::map2(
             )
           }
         )
+        names(l_group) <- names(data_group)
+        l_group
       }
     )
-  },
-  .progress = "Drawing"
+    names(l_tissue) <- names(tissue_type)
+    l_tissue
+  }
 )
+names(gsea_plots) <- names(loaded_stats_file)
 
 # * save
-purrr::iwalk(
+purrr::walk(
   gsea_plots,
-  function(x, tissue_type) {
-    furrr::future_iwalk(
+  function(x) {
+    purrr::iwalk(
       x,
       function(x, data_group) {
         purrr::iwalk(
           x,
           function(x, method) {
-            file_name <- glue::glue("{tissue_type}_{data_group}_{method}.png")
+            file_name <- glue::glue("{data_group}_{method}.png")
+            ts_cli$cli_alert_info("Saving {file_name}")
             ggplot2::ggsave(
               plot = x,
               filename = paste0("plot/", file_name),
-              width = 10,
+              width = 20,
               height = 10,
               dpi = 400
             )
@@ -97,8 +116,11 @@ purrr::iwalk(
         )
       }
     )
-  },
-  .progress = "Saving plots"
+  }
 )
 
-future::plan(future::sequential())
+# future::plan(future::sequential())
+
+cli::cli_h1("All done!")
+
+gc()

@@ -1,5 +1,5 @@
 {
-    "positron.r.useNativePipe": false,
+    "positron.r.useNativePipe": true,
     "[r]": {
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "Posit.air-vscode"
@@ -8,5 +8,5 @@
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "quarto.quarto"
     },
-    "positron.r.pipe": "%>%"
+    "positron.r.pipe": "|>"
 }

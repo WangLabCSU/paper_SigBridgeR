@@ -3,10 +3,21 @@ plot_gsea_table <- function(
   fgseaRes = data.table::data.table(),
   deg = vector()
 ) {
+  ES <- pval <- pathway <- NULL
+
   # up hallmarks
-  topPathwaysUp <- fgseaRes[ES > 0][head(order(pval), n = 10), pathway]
+  topPathwaysUp <- dtplyr::lazy_dt(fgseaRes) |>
+    dplyr::filter(ES > 0 & !is.na(pval)) |>
+    dplyr::arrange(pval) |>
+    dplyr::slice(1:10) |>
+    dplyr::pull(pathway)
   # down hallmarks
-  topPathwaysDown <- fgseaRes[ES < 0][head(order(pval), n = 10), pathway]
+  topPathwaysDown <- dtplyr::lazy_dt(fgseaRes) |>
+    dplyr::filter(ES < 0 & !is.na(pval)) |>
+    dplyr::arrange(pval) |>
+    dplyr::slice(1:10) |>
+    dplyr::pull(pathway)
+
   topPathways <- c(topPathwaysUp, rev(topPathwaysDown)) # vector
   fgsea::plotGseaTable(
     pathways = hallmarks[topPathways],
@@ -17,7 +28,8 @@ plot_gsea_table <- function(
     pathwayLabelStyle = NULL,
     headerLabelStyle = NULL,
     valueStyle = NULL,
-    axisLabelStyle = NULL,
+    axisLabelStyle = list(size = 6),
     render = NULL
   )
+  # ggplot2
 }
