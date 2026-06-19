@@ -144,6 +144,10 @@ label_position <- esmats_combined_long_filtered[,
   by = list(cluster, sc, pheno, bulk)
 ]
 
+# map her2 label to "brca her2" in facet strips
+esmats_combined_long_filtered[sc == "her2", sc := "brca her2"]
+label_position[sc == "her2", sc := "brca her2"]
+
 p <- ggplot(
   esmats_combined_long_filtered,
   aes(x = cluster, y = ssGSEA_score, fill = cluster)
@@ -196,7 +200,7 @@ p <- ggplot(
     direction = "y", # 主要沿 Y 轴方向排斥
     max.overlaps = Inf # 允许尝试所有重叠情况
   ) +
-  ggplot2::facet_grid(sc + bulk ~ pheno, scales = "free", space = "free")
+  ggplot2::facet_grid(sc + bulk ~ pheno, scales = "free", space = "fixed")
 
 
 ggplot2::ggsave(

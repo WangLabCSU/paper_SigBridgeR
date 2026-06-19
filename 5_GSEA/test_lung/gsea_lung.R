@@ -1,11 +1,11 @@
-setwd(file.path(usethis::proj_path(), "5_GSEA/test_brca/test_her2_brca"))
+setwd(file.path(usethis::proj_path(), "5_GSEA/test_lung"))
 
 library(dplyr)
 
 # * Hyperparameter
-sur_seurat_path <- "/home/data/sigbridger/benchmark_data/brca/HER2"
-bi_seurat_path <- "/home/data/sigbridger/benchmark_binary/brca/HER2"
-tissue <- "brca_her2"
+sur_seurat_path <- "/home/data/sigbridger/benchmark_data/lung/luad"
+bi_seurat_path <- "/home/data/sigbridger/benchmark_binary/lung"
+tissue <- "lung"
 mirai::daemons(3L)
 # future::plan(future.mirai::mirai_multisession(workers = 3L))
 
@@ -112,6 +112,7 @@ names(degs) <- names(labeled_seurat_loaded)
 
 qs::qsave(degs, glue::glue("degs_{tissue}.qs"), nthreads = 4L) # < 5MB
 
+
 # * GSEA
 fgsea_res <- lapply(degs, function(one_seurat_deg) {
   mirai::mirai_map(
@@ -136,3 +137,5 @@ mirai::daemons(0L)
 
 # * Save results
 qs::qsave(fgsea_res, glue::glue("gsea_res_{tissue}.qs"), nthreads = 4L) # < 1MB
+
+cli::cli_h1("All done!")
