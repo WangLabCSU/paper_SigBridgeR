@@ -5,6 +5,7 @@ library(ggplot2)
 # library(ggsignif)
 library(patchwork)
 library(gghalves)
+library(dplyr)
 
 esmats <- list.files(
   "../../esmat",
@@ -139,7 +140,7 @@ esmats_combined_long_filtered <- esmats_combined_long[
 label_position <- esmats_combined_long_filtered[,
   list(
     y_pos = max(ssGSEA_score, na.rm = TRUE),
-    label = paste0("n=", .N)
+    label = paste0("n=", .N / 2)
   ),
   by = list(cluster, sc, pheno, bulk)
 ]

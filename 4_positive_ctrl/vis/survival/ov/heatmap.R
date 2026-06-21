@@ -171,7 +171,7 @@ purrr::walk(
               dplyr::filter(cluster == paste0(method_i, "_", group_name))
 
             tb <- merge(mean_diff, rest_mean, by = "type")
-            tb$diff <- tb$mean_score / tb$rest_mean_score
+            tb$diff <- tb$mean_score / tb$rest_mean_score # ! ATTENTION
 
             combined <<- dplyr::bind_rows(combined, tb)
           }
