@@ -13,7 +13,7 @@ seurat <- qs::qread(
 )
 meta <- seurat[[]]
 screened_label <- meta[, grepv(
-  "sc[a-zA-Z]+$|DEGAS$|LP_SGL$|PIPET$",
+  "sc[a-zA-Z]+$|DEGAS$|LP_SGL$|PIPET$|SCIPAC$",
   colnames(meta)
 )]
 

@@ -39,19 +39,19 @@ results <- scores %>%
       # 确保至少有 2 个分组
       if (length(score_list) < 2) {
         return(tibble(
-          n_samples = NA_real_,
-          n_groups = NA_real_,
-          AS_stat = NA_real_,
-          T_AV_stat = NA_real_,
-          p_value = NA_real_,
-          test_name = NA_real_,
-          n_ties = NA_real_,
-          sig = NA_real_,
-          warning = NA_real_,
-          null_dist1 = NA_real_,
-          null_dist2 = NA_real_,
-          method = NA_real_,
-          n_sim = NA_real_,
+          n_samples = NA,
+          n_groups = NA,
+          AS_stat = NA,
+          T_AV_stat = NA,
+          p_value = NA,
+          test_name = NA,
+          n_ties = NA,
+          sig = NA,
+          warning = NA,
+          null_dist1 = NA,
+          null_dist2 = NA,
+          method = NA,
+          n_sim = NA,
           message = "分组数不足"
         ))
       }
