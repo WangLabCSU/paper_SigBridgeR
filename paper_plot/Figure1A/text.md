@@ -1,0 +1,3 @@
+# Graphical Abstract
+
+首先对经过常规预处理的单细胞Seurat对象数据进行SigBridgeR中整合所有需要评估的算法进行筛选，获得与表型正相关的细胞亚群，这些亚群被标记为“Positive”。其余的细胞，一些算法只归类为表型不相关或弱相关的亚群（标记为“Other”），另外有一些算法额外获取与表型负相关的细胞（标记为“Negative”)，为了研究方便，这两种细胞亚群被归类为“non Positive“。为了评估这些”Positive“的准确性，首先并以真实生物学标签（Tumor vs non-Tumor）作为参考基准，单细胞数据中已有肿瘤细胞和非肿瘤细胞标识，bulk RNA样本有肿瘤和非肿瘤之分，将bulk标签通过算法转移到单细胞层次计算指标，通过F1 score与Accuracy评估亚群划分与真实标签的一致性。随后基于bulk来源的基因集marker，在单细胞层面进行多种打分的 ssGSEA（GSVA、UCell 两种打分），一次评估这些算法的准确性。此外为了确定这些算法受到的技术噪声可以容忍，基于bulk来源的随机基因进行了同样的打分操作，并重复了100次。最后，单细胞数据中以“Positive”和“non Positive“为分组，获取两者枝江的marker，以MSigDB的hallmarks genesets为参考基准，计算每个算法的GSEA品谷，并结合表达矩阵对细胞进行特征刻画。
