@@ -168,22 +168,23 @@ plot_heatmap2 <- function(
     # column_title = "Hallmarks Gene Set",
     # column_title_side = "bottom",
     column_names_gp = grid::gpar(fontsize = 10),
-    row_names_gp = grid::gpar(fontsize = 10),
+    row_names_gp = grid::gpar(fontsize = 7),
 
     row_labels = gsub(".*_", "", dataset_label) %>%
       stringr::str_replace("SGL", "LP_SGL"),
     row_split = stringr::str_replace(rownames(wide_mat_data), "_SGL", "SGL") %>%
-      gsub("_.*", "", .),
-    column_labels = wrap_every_n_chars(colnames(wide_mat_data), width = 16),
+      gsub("_.*", "", .) %>%
+      stringr::str_replace("BRCA", "BRCA HER2"),
+    column_labels = wrap_every_n_chars(colnames(wide_mat_data), width = 60),
 
     heatmap_height = grid::unit(0.1, "npc"),
-    height = grid::unit(0.75, "npc"),
+    height = grid::unit(0.65, "npc"),
   )
 
   Cairo::CairoPNG(
     filename = filename,
     dpi = 400,
-    width = 4000,
+    width = 8000,
     height = 10000
   )
   ComplexHeatmap::draw(htmap)
@@ -191,7 +192,7 @@ plot_heatmap2 <- function(
 }
 
 
-# * Group by row cluster, NA rows not included
+# * NA rows not included, cluster rows & cols
 plot_heatmap3 <- function(
   combined_stats_file,
   metrics = "pval",
@@ -251,10 +252,44 @@ plot_heatmap3 <- function(
     dplyr::mutate(dplyr::across(dplyr::everything(), base::as.numeric)) %>%
     dplyr::filter(!dplyr::if_all(dplyr::everything(), base::is.na)) %>%
     as.matrix()
-
+  # 唯一区分标签
   dataset_label <- rownames(wide_mat_data)
 
-  # 唯一区分标签
+  #   palette_tumor <- c(
+  #     "BRCA_HER2" = "#773232",
+  #     "TNBC" = "#12298f",
+  #     "LUNG" = "#23964f",
+  #     "OV" = "#5a229b"
+  #   )
+
+  bulk_names <- unique(mat_data$bulk)
+  n_bulk <- length(bulk_names)
+  palette_bulk <- setNames(
+    c(
+      "#B8D9A0",
+      "#E8E0DB",
+      "#A8D9D8",
+      "#F5C0A8",
+      "#D5C9E8",
+      "#88D5B0",
+      "#B8A8E5",
+      "#D5E5C0",
+      "#E8D8E8",
+      "#9BBBD9"
+    )[seq_len(n_bulk)],
+    unique(mat_data$bulk)
+  )
+
+  row_anno <- ComplexHeatmap::rowAnnotation(
+    # "Tumor" = stringr::str_extract(dataset_label, "BRCA_HER2|TNBC|LUNG|OV"),
+    "Bulk Data" = stringr::str_extract(dataset_label, "TCGA_[^_]*|GSE[0-9]*"),
+    annotation_name_gp = grid::gpar(fontface = "bold"),
+    col = list(
+      #   "Tumor" = palette_tumor,
+      "Bulk Data" = palette_bulk
+    ),
+    gap = grid::unit(0.6, "mm")
+  )
 
   htmap <- ComplexHeatmap::Heatmap(
     matrix = wide_mat_data,
@@ -321,16 +356,18 @@ plot_heatmap3 <- function(
       ),
       height = grid::unit(5, "cm")
     ),
-    # left_annotation = c(row_anno_bulk),
+    left_annotation = row_anno,
 
     # column_title = "Hallmarks Gene Set",
     # column_title_side = "bottom",
     column_names_gp = grid::gpar(fontsize = 10),
     row_names_gp = grid::gpar(fontsize = 10),
 
-    row_labels = gsub(".*survival_|.*binary_", "", dataset_label),
+    row_labels = gsub(".*_", "", dataset_label) %>%
+      stringr::str_replace("SGL", "LP_SGL"),
     row_split = stringr::str_replace(rownames(wide_mat_data), "_SGL", "SGL") %>%
-      gsub("_.*", "", .),
+      gsub("_.*", "", .) %>%
+      stringr::str_replace("BRCA", "BRCA HER2"),
     column_labels = wrap_every_n_chars(
       colnames(wide_mat_data),
       width = chr_width
@@ -419,6 +456,42 @@ plot_heatmap4 <- function(
   # 唯一区分标签
   dataset_label <- rownames(wide_mat_data)
 
+  #   palette_tumor <- c(
+  #     "BRCA_HER2" = "#773232",
+  #     "TNBC" = "#12298f",
+  #     "LUNG" = "#23964f",
+  #     "OV" = "#5a229b"
+  #   )
+
+  bulk_names <- unique(mat_data$bulk)
+  n_bulk <- length(bulk_names)
+  palette_bulk <- setNames(
+    c(
+      "#B8D9A0",
+      "#E8E0DB",
+      "#A8D9D8",
+      "#F5C0A8",
+      "#D5C9E8",
+      "#88D5B0",
+      "#B8A8E5",
+      "#D5E5C0",
+      "#E8D8E8",
+      "#9BBBD9"
+    )[seq_len(n_bulk)],
+    unique(mat_data$bulk)
+  )
+
+  row_anno <- ComplexHeatmap::rowAnnotation(
+    # "Tumor" = stringr::str_extract(dataset_label, "BRCA_HER2|TNBC|LUNG|OV"),
+    "Bulk Data" = stringr::str_extract(dataset_label, "TCGA_[^_]*|GSE[0-9]*"),
+    annotation_name_gp = grid::gpar(fontface = "bold"),
+    col = list(
+      #   "Tumor" = palette_tumor,
+      "Bulk Data" = palette_bulk
+    ),
+    gap = grid::unit(0.6, "mm")
+  )
+
   # Cap values > 3 (corresponding to padj < 0.001, -log10(0.001) = 3)
   wide_mat_data[wide_mat_data > 3] <- 3
 
@@ -495,16 +568,18 @@ plot_heatmap4 <- function(
       ),
       height = grid::unit(5, "cm")
     ),
-    # left_annotation = c(row_anno_bulk),
+    left_annotation = c(row_anno),
 
     # column_title = "Hallmarks Gene Set",
     # column_title_side = "bottom",
     column_names_gp = grid::gpar(fontsize = 10),
     row_names_gp = grid::gpar(fontsize = 10),
 
-    row_labels = gsub(".*survival_|.*binary_", "", dataset_label),
+    row_labels = gsub(".*_", "", dataset_label) %>%
+      stringr::str_replace("SGL", "LP_SGL"),
     row_split = stringr::str_replace(rownames(wide_mat_data), "_SGL", "SGL") %>%
-      gsub("_.*", "", .),
+      gsub("_.*", "", .) %>%
+      stringr::str_replace("BRCA", "BRCA HER2"),
     column_labels = wrap_every_n_chars(
       colnames(wide_mat_data),
       width = chr_width
