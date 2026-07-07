@@ -45,12 +45,26 @@ combined_stats_file$leadingEdge <- lapply(
   combined_stats_file$leadingEdge,
   \(x) unlist(x) %>% toString()
 )
+
+geneset_hallmark <- msigdbr::msigdbr(species = "Homo sapiens", category = "H")
+
+# Replace pathway (gs_name) with gs_description, and strip "HALLMARK_" prefix
+pathway_map <- setNames(
+  geneset_hallmark$gs_name,
+  geneset_hallmark$gs_description
+)
+combined_stats_file$pathway <- pathway_map[combined_stats_file$pathway]
+combined_stats_file$pathway <- gsub(
+  "^HALLMARK_",
+  "",
+  combined_stats_file$pathway
+)
+
 data.table::fwrite(combined_stats_file, "gsea_res_all_stats.csv")
 
 # ------------------------------------------------------------------------------
 
 combined_stats_file <- data.table::fread("gsea_res_all_stats.csv")
-
 
 # * binary and survival - padj
 plot_heatmap2(
