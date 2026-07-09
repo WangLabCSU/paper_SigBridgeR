@@ -120,6 +120,18 @@ group_stats <- surv_plot_df %>%
   ) %>%
   dplyr::arrange(method, mem_alloc)
 
+# 定义 method 到颜色的固定映射
+method_colors <- c(
+  "scissor" = "#E41A1C",
+  "scAB" = "#377EB8",
+  "scPAS" = "#3f8539",
+  "scPP" = "#984EA3",
+  "DEGAS" = "#4b9fae",
+  "SCIPAC" = "#cf6faa",
+  "LP_SGL" = "#e4c354",
+  "PIPET" = "#82bb3d"
+)
+
 surv_p <- surv_plot_df %>%
   ggplot2::ggplot(ggplot2::aes(
     x = mem_alloc,
@@ -155,7 +167,7 @@ surv_p <- surv_plot_df %>%
     point.padding = 0.3,
     segment.color = "grey50"
   ) +
-
+  ggplot2::scale_color_manual(values = method_colors) +
   bench::scale_color_bench_expr(scales::brewer_pal(
     type = "qual",
     palette = 3
@@ -239,7 +251,7 @@ bin_p <- binary_plot_df %>%
     point.padding = 0.3,
     segment.color = "grey50"
   ) +
-
+  ggplot2::scale_color_manual(values = method_colors) +
   bench::scale_color_bench_expr(scales::brewer_pal(
     type = "qual",
     palette = 3
