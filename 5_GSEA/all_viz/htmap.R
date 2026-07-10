@@ -140,3 +140,42 @@ plot_heatmap4(
   filename = "gsea_res_all_stats_padj_signif_binary.png",
   chr_width = 45L
 )
+
+# * direction - padj
+plot_heatmap_red_blue_padj(
+  combined_stats_file[
+    stringr::str_detect(combined_stats_file$dataset, "binary"),
+  ],
+  metrics = "neg_log10_padj",
+  col_fun = circlize::colorRamp2(c(-80, 0, 80), c("blue", "white", "red")),
+  filename = "gsea_res_all_stats_padj_red_blue_binary.png",
+  chr_width = 30L
+)
+plot_heatmap_red_blue_padj(
+  combined_stats_file[
+    stringr::str_detect(combined_stats_file$dataset, "survival"),
+  ],
+  metrics = "neg_log10_padj",
+  col_fun = circlize::colorRamp2(c(-80, 0, 80), c("blue", "white", "red")),
+  filename = "gsea_res_all_stats_padj_red_blue_survival.png",
+  chr_width = 30L
+)
+
+# * direction - padj  - significance
+plot_heatmap_red_blue_padj_signif(
+  combined_stats_file[
+    stringr::str_detect(combined_stats_file$dataset, "binary"),
+  ],
+  metrics = "neg_log10_padj",
+  filename = "gsea_res_all_stats_padj_red_blue_signif_binary.png",
+  chr_width = 30L
+)
+plot_heatmap_red_blue_padj_signif(
+  combined_stats_file[
+    stringr::str_detect(combined_stats_file$dataset, "survival"),
+  ],
+  metrics = "neg_log10_padj",
+
+  filename = "gsea_res_all_stats_padj_red_blue_signif_survival.png",
+  chr_width = 30L
+)
