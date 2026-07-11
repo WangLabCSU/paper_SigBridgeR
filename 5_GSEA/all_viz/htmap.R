@@ -66,43 +66,43 @@ data.table::fwrite(combined_stats_file, "gsea_res_all_stats.csv")
 
 combined_stats_file <- data.table::fread("gsea_res_all_stats.csv")
 
-# * binary and survival - padj
-plot_heatmap2(
-  combined_stats_file = combined_stats_file,
-  metrics = "padj",
-  col_fun = circlize::colorRamp2(c(0, 80), c("white", "red")),
-  filename = "gsea_res_all_stats_padj.png"
-)
-# * only survival - padj
-plot_heatmap3(
-  combined_stats_file = combined_stats_file[
-    stringr::str_detect(combined_stats_file$dataset, "survival"),
-  ],
-  metrics = "padj",
-  col_fun = circlize::colorRamp2(c(0, 80), c("white", "red")),
-  filename = "gsea_res_all_stats_padj_survival.png",
-  chr_width = 45L
-)
-# * only binary - padj
-plot_heatmap3(
-  combined_stats_file = combined_stats_file[
-    stringr::str_detect(combined_stats_file$dataset, "binary"),
-  ],
-  metrics = "padj",
-  col_fun = circlize::colorRamp2(c(0, 80), c("white", "red")),
-  filename = "gsea_res_all_stats_padj_binary.png",
-  chr_width = 45L
-)
+# # * binary and survival - padj
+# plot_heatmap2(
+#   combined_stats_file = combined_stats_file,
+#   metrics = "padj",
+#   col_fun = circlize::colorRamp2(c(0, 80), c("white", "red")),
+#   filename = "gsea_res_all_stats_padj.png"
+# )
+# # * only survival - padj
+# plot_heatmap3(
+#   combined_stats_file = combined_stats_file[
+#     stringr::str_detect(combined_stats_file$dataset, "survival"),
+#   ],
+#   metrics = "padj",
+#   col_fun = circlize::colorRamp2(c(0, 80), c("white", "red")),
+#   filename = "gsea_res_all_stats_padj_survival.png",
+#   chr_width = 45L
+# )
+# # * only binary - padj
+# plot_heatmap3(
+#   combined_stats_file = combined_stats_file[
+#     stringr::str_detect(combined_stats_file$dataset, "binary"),
+#   ],
+#   metrics = "padj",
+#   col_fun = circlize::colorRamp2(c(0, 80), c("white", "red")),
+#   filename = "gsea_res_all_stats_padj_binary.png",
+#   chr_width = 45L
+# )
 
-# * binary and survival - NES
-plot_heatmap2(
-  combined_stats_file = combined_stats_file,
-  metrics = "NES",
-  col_fun = circlize::colorRamp2(c(-5, 0, 5), c("blue", "white", "red")),
-  filename = "gsea_res_all_stats_nes.png"
-)
+# # * binary and survival - NES
+# plot_heatmap2(
+#   combined_stats_file = combined_stats_file,
+#   metrics = "NES",
+#   col_fun = circlize::colorRamp2(c(-5, 0, 5), c("blue", "white", "red")),
+#   filename = "gsea_res_all_stats_nes.png"
+# )
 # * only survival - NES
-plot_heatmap3(
+nes_sur_htmap <- plot_heatmap3(
   combined_stats_file = combined_stats_file[
     stringr::str_detect(combined_stats_file$dataset, "survival"),
   ],
@@ -112,7 +112,7 @@ plot_heatmap3(
   chr_width = 45L
 )
 # * only binary - NES
-plot_heatmap3(
+nes_bi_htmap <- plot_heatmap3(
   combined_stats_file = combined_stats_file[
     stringr::str_detect(combined_stats_file$dataset, "binary"),
   ],
@@ -122,24 +122,26 @@ plot_heatmap3(
   chr_width = 45L
 )
 
-# * only survival - padj - significance
-plot_heatmap4(
-  combined_stats_file = combined_stats_file[
-    stringr::str_detect(combined_stats_file$dataset, "survival"),
-  ],
-  metrics = "padj",
-  filename = "gsea_res_all_stats_padj_signif_survival.png",
-  chr_width = 45L
-)
-# * only binary - padj - significance
-plot_heatmap4(
-  combined_stats_file = combined_stats_file[
-    stringr::str_detect(combined_stats_file$dataset, "binary"),
-  ],
-  metrics = "padj",
-  filename = "gsea_res_all_stats_padj_signif_binary.png",
-  chr_width = 45L
-)
+col_order_sur <- ComplexHeatmap::column_order(nes_sur_htmap)
+col_order_bi <- ComplexHeatmap::column_order(nes_bi_htmap)
+# # * only survival - padj - significance
+# plot_heatmap4(
+#   combined_stats_file = combined_stats_file[
+#     stringr::str_detect(combined_stats_file$dataset, "survival"),
+#   ],
+#   metrics = "padj",
+#   filename = "gsea_res_all_stats_padj_signif_survival.png",
+#   chr_width = 45L
+# )
+# # * only binary - padj - significance
+# plot_heatmap4(
+#   combined_stats_file = combined_stats_file[
+#     stringr::str_detect(combined_stats_file$dataset, "binary"),
+#   ],
+#   metrics = "padj",
+#   filename = "gsea_res_all_stats_padj_signif_binary.png",
+#   chr_width = 45L
+# )
 
 # * direction - padj
 plot_heatmap_red_blue_padj(
@@ -149,7 +151,8 @@ plot_heatmap_red_blue_padj(
   metrics = "neg_log10_padj",
   col_fun = circlize::colorRamp2(c(-80, 0, 80), c("blue", "white", "red")),
   filename = "gsea_res_all_stats_padj_red_blue_binary.png",
-  chr_width = 30L
+  chr_width = 30L,
+  col_order = col_order_bi
 )
 plot_heatmap_red_blue_padj(
   combined_stats_file[
@@ -158,7 +161,8 @@ plot_heatmap_red_blue_padj(
   metrics = "neg_log10_padj",
   col_fun = circlize::colorRamp2(c(-80, 0, 80), c("blue", "white", "red")),
   filename = "gsea_res_all_stats_padj_red_blue_survival.png",
-  chr_width = 30L
+  chr_width = 30L,
+  col_order = col_order_sur
 )
 
 # * direction - padj  - significance
@@ -168,14 +172,15 @@ plot_heatmap_red_blue_padj_signif(
   ],
   metrics = "neg_log10_padj",
   filename = "gsea_res_all_stats_padj_red_blue_signif_binary.png",
-  chr_width = 30L
+  chr_width = 30L,
+  col_order = col_order_bi
 )
 plot_heatmap_red_blue_padj_signif(
   combined_stats_file[
     stringr::str_detect(combined_stats_file$dataset, "survival"),
   ],
   metrics = "neg_log10_padj",
-
   filename = "gsea_res_all_stats_padj_red_blue_signif_survival.png",
-  chr_width = 30L
+  chr_width = 30L,
+  col_order = col_order_sur
 )

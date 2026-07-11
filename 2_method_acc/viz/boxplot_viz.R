@@ -91,6 +91,10 @@ combined2 <- combined %>%
   )
 
 data.table::fwrite(combined2, "combined.csv")
+
+
+# ----------------------------------------------------------------------------------------------------------
+# * Viz
 combined2 <- data.table::fread("combined.csv")
 
 # 定义完整方法顺序
@@ -208,7 +212,7 @@ p_f1 <- combined2 %>%
 
 ggplot2::ggsave("p_f1.png", p_f1, width = 8, height = 6, dpi = 400)
 
- p_acc <- combined2 %>%
+p_acc <- combined2 %>%
   ggplot2::ggplot(ggplot2::aes(x = method_name, y = Accuracy)) +
   # 极值线：每组最小到最大的范围，带横杠帽（空组返回 NA 避免报错）
   ggplot2::stat_summary(

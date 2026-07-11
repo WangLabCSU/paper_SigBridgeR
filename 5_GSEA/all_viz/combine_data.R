@@ -1,4 +1,3 @@
-# ! run this after `mean_score.R`
 # ! all tissue
 library(dplyr)
 library(data.table)

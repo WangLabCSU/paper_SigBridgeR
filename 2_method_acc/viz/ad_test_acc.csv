@@ -1,0 +1,16 @@
+test.name,k,ns.1,ns.2,N,n.ties,sig,ad.AD,ad.T.AD,AD.aympt. P-value,warning,method,Nsim,group1,group2
+Anderson-Darling,2,765,255,1020,978,0.76007,209,273.41,1.0186e-114,FALSE,asymptotic,1,DEGAS,scAB
+Anderson-Darling,2,765,510,1275,991,0.76026,69.4,90.006,2.7188e-38,FALSE,asymptotic,1,DEGAS,SCIPAC
+Anderson-Darling,2,765,50,815,789,0.76089,36.5,46.643,3.194e-20,FALSE,asymptotic,1,DEGAS,scissor
+Anderson-Darling,2,765,255,1020,892,0.76007,12.1,14.567,7.4223e-07,FALSE,asymptotic,1,DEGAS,scPAS
+Anderson-Darling,2,765,306,1071,824,0.7601,181,237.22,1.226e-99,FALSE,asymptotic,1,DEGAS,scPP
+Anderson-Darling,2,255,510,765,443,0.75954,255,334.91,2.3941e-140,FALSE,asymptotic,1,scAB,SCIPAC
+Anderson-Darling,2,255,50,305,243,0.75741,52.5,68.016,3.962e-29,FALSE,asymptotic,1,scAB,scissor
+Anderson-Darling,2,255,255,510,344,0.75853,115,150.51,1.6689e-63,FALSE,asymptotic,1,scAB,scPAS
+Anderson-Darling,2,255,306,561,275,0.7588,139,182.45,8.1786e-77,FALSE,asymptotic,1,scAB,scPP
+Anderson-Darling,2,510,50,560,254,0.75992,8.12,9.3724,9.4519e-05,FALSE,asymptotic,1,SCIPAC,scissor
+Anderson-Darling,2,510,255,765,361,0.75954,32.1,41.01,7.1067e-18,FALSE,asymptotic,1,SCIPAC,scPAS
+Anderson-Darling,2,510,306,816,290,0.75963,26.2,33.196,1.2824e-14,FALSE,asymptotic,1,SCIPAC,scPP
+Anderson-Darling,2,50,255,305,155,0.75741,17.6,21.852,6.8411e-10,FALSE,asymptotic,1,scissor,scPAS
+Anderson-Darling,2,50,306,356,88,0.75819,6.46,7.2049,0.00053425,FALSE,asymptotic,1,scissor,scPP
+Anderson-Darling,2,255,306,561,189,0.7588,85.3,111.14,4.242e-47,FALSE,asymptotic,1,scPAS,scPP
