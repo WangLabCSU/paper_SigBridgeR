@@ -151,7 +151,7 @@ plot_heatmap_red_blue_padj(
   metrics = "neg_log10_padj",
   col_fun = circlize::colorRamp2(c(-80, 0, 80), c("blue", "white", "red")),
   filename = "gsea_res_all_stats_padj_red_blue_binary.png",
-  chr_width = 30L,
+  chr_width = 35L,
   col_order = col_order_bi
 )
 plot_heatmap_red_blue_padj(
@@ -161,7 +161,7 @@ plot_heatmap_red_blue_padj(
   metrics = "neg_log10_padj",
   col_fun = circlize::colorRamp2(c(-80, 0, 80), c("blue", "white", "red")),
   filename = "gsea_res_all_stats_padj_red_blue_survival.png",
-  chr_width = 30L,
+  chr_width = 35L,
   col_order = col_order_sur
 )
 
@@ -172,7 +172,7 @@ plot_heatmap_red_blue_padj_signif(
   ],
   metrics = "neg_log10_padj",
   filename = "gsea_res_all_stats_padj_red_blue_signif_binary.png",
-  chr_width = 30L,
+  chr_width = 35L,
   col_order = col_order_bi
 )
 plot_heatmap_red_blue_padj_signif(
@@ -181,6 +181,6 @@ plot_heatmap_red_blue_padj_signif(
   ],
   metrics = "neg_log10_padj",
   filename = "gsea_res_all_stats_padj_red_blue_signif_survival.png",
-  chr_width = 30L,
+  chr_width = 35L,
   col_order = col_order_sur
 )

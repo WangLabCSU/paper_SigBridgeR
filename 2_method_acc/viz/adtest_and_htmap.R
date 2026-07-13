@@ -8,6 +8,39 @@ source("ad_p_htmap.R")
 
 combined2 <- data.table::fread("combined.csv")
 
+# stats <- combined2[,
+#   list(
+#     N = .N,
+#     mean_f1 = mean(F1, na.rm = TRUE),
+#     sd_f1 = sd(F1, na.rm = TRUE),
+#     mean_acc = mean(Accuracy, na.rm = TRUE),
+#     sd_acc = sd(Accuracy, na.rm = TRUE),
+#     median_f1 = median(F1, na.rm = TRUE),
+#     median_acc = median(Accuracy, na.rm = TRUE),
+#     min_f1 = min(F1, na.rm = TRUE),
+#     max_f1 = max(F1, na.rm = TRUE),
+#     min_acc = min(Accuracy, na.rm = TRUE),
+#     max_acc = max(Accuracy, na.rm = TRUE)
+#   ),
+#   by = method_name
+# ]
+
+# stats2 <- combined2[,
+#   list(
+#     N = .N,
+#     mean_f1 = mean(F1, na.rm = TRUE),
+#     sd_f1 = sd(F1, na.rm = TRUE),
+#     mean_acc = mean(Accuracy, na.rm = TRUE),
+#     sd_acc = sd(Accuracy, na.rm = TRUE),
+#     median_f1 = median(F1, na.rm = TRUE),
+#     median_acc = median(Accuracy, na.rm = TRUE),
+#     min_f1 = min(F1, na.rm = TRUE),
+#     max_f1 = max(F1, na.rm = TRUE),
+#     min_acc = min(Accuracy, na.rm = TRUE),
+#     max_acc = max(Accuracy, na.rm = TRUE)
+#   ),
+#   by = list(method_name, tissue, screen_method)
+# ]
 
 ad_test_f1 <- pairwise_dist_test(
   dt = combined2,

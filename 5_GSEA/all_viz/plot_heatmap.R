@@ -373,6 +373,7 @@ plot_heatmap3 <- function(
     row_split = stringr::str_replace(rownames(wide_mat_data), "_SGL", "SGL") %>%
       gsub("_.*", "", .) %>%
       stringr::str_replace("BRCA", "BRCA HER2"),
+    show_parent_dend_line = FALSE,
     column_labels = wrap_every_n_chars(
       colnames(wide_mat_data),
       width = chr_width
@@ -593,6 +594,8 @@ plot_heatmap4 <- function(
     row_split = stringr::str_replace(rownames(wide_mat_data), "_SGL", "SGL") %>%
       gsub("_.*", "", .) %>%
       stringr::str_replace("BRCA", "BRCA HER2"),
+    show_parent_dend_line = FALSE,
+
     column_labels = wrap_every_n_chars(
       colnames(wide_mat_data),
       width = chr_width
@@ -802,6 +805,8 @@ plot_heatmap_red_blue_padj <- function(
     row_split = stringr::str_replace(rownames(wide_mat_data), "_SGL", "SGL") %>%
       gsub("_.*", "", .) %>%
       stringr::str_replace("BRCA", "BRCA HER2"),
+    show_parent_dend_line = FALSE,
+
     column_labels = wrap_every_n_chars(
       colnames(wide_mat_data),
       width = chr_width
@@ -1045,6 +1050,8 @@ plot_heatmap_red_blue_padj_signif <- function(
     row_split = stringr::str_replace(rownames(wide_mat_data), "_SGL", "SGL") %>%
       gsub("_.*", "", .) %>%
       stringr::str_replace("BRCA", "BRCA HER2"),
+    show_parent_dend_line = FALSE,
+
     column_labels = wrap_every_n_chars(
       colnames(wide_mat_data),
       width = chr_width
