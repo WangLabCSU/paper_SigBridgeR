@@ -65,6 +65,7 @@ data.table::fwrite(combined_stats_file, "gsea_res_all_stats.csv")
 # ------------------------------------------------------------------------------
 
 combined_stats_file <- data.table::fread("gsea_res_all_stats.csv")
+combined_stats_file[tumor == "lung", tumor := "LUAD"]
 
 # # * binary and survival - padj
 # plot_heatmap2(

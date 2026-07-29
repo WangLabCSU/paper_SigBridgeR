@@ -26,10 +26,9 @@ dir.create(save_path, recursive = TRUE, showWarnings = FALSE)
 # ==============================================================================
 bulk_configs <- list(
   TCGA_LUAD = list(
-    bulk_qs = "TCGA_LUAD_bulkdata.qs",
+    bulk_qs = "TCGA_LUAD_bulkdata_tpm.qs",
     pheno_qs = "TCGA_LUAD_pheno.qs",
     is_tcga = TRUE,
-    log_transform = TRUE,
     methods = c(
       "Scissor",
       "scAB",
@@ -39,7 +38,8 @@ bulk_configs <- list(
       "DEGAS",
       "LP_SGL",
       "PIPET"
-    )
+    ),
+    rerun = TRUE
   )
 )
 
@@ -58,9 +58,6 @@ run_screening_pipeline <- function(
 
   # 1. Load Bulk Data
   bulk <- qs::qread(file.path(data_path, config$bulk_qs), nthreads = 4)
-  if (isTRUE(config$log_transform)) {
-    bulk <- log2(bulk + 1)
-  }
 
   # 2. Process Phenotype & Extract Binary Labels
   pheno <- qs::qread(file.path(data_path, config$pheno_qs), nthreads = 4)
@@ -162,12 +159,13 @@ SigBridgeR::setThreads(
 
 # 3. Run pipeline for all datasets sequentially
 # (如需并行，可替换为 future.apply::future_lapply 或 parallel::mclapply)
-lapply(names(bulk_configs), function(name) {
+purrr::walk(names(bulk_configs), function(name) {
   if (
     file.exists(file.path(
       save_path,
       paste0("binary_lung_", name, "_merged_seurat.qs")
-    ))
+    )) &&
+      !isTRUE(bulk_configs[[name]]$rerun)
   ) {
     cli::cli_alert_info("Skipping {.val {name}} (already exists)")
     return(NULL)

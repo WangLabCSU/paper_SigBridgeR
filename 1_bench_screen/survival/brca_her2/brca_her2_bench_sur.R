@@ -54,10 +54,9 @@ bulk_configs <- list(
     )
   ),
   TCGA_BRCA = list(
-    bulk_qs = "brca_bulkdata_TCGA.qs",
+    bulk_qs = "brca_bulkdata_TCGA_tpm.qs",
     pheno_qs = "brca_surv_TCGA.qs",
     is_tcga = TRUE,
-    log_transform = TRUE,
     methods = c(
       "Scissor",
       "scAB",
@@ -66,9 +65,10 @@ bulk_configs <- list(
       "scPAS",
       "scPP",
       "DEGAS",
-      "LP_SGL"
-      #   ,      "PIPET" # Warning: ✖ Some classes have fewer than 2 marker genes, returning NULL
-    )
+      "LP_SGL",
+      "PIPET"
+    ),
+    rerun = TRUE
   )
 )
 
@@ -87,9 +87,6 @@ run_screening_pipeline <- function(
 
   # 1. Load Bulk Data
   bulk <- qs::qread(file.path(data_path, config$bulk_qs), nthreads = 4)
-  if (isTRUE(config$log_transform)) {
-    bulk <- log2(bulk + 1)
-  }
 
   # 2. Process Phenotype & Extract Binary Labels
   surv_data <- qs::qread(file.path(data_path, config$pheno_qs), nthreads = 4)
@@ -174,12 +171,13 @@ SigBridgeR::setThreads(
 
 # 3. Run pipeline for all datasets sequentially
 # (如需并行，可替换为 future.apply::future_lapply 或 parallel::mclapply)
-lapply(names(bulk_configs), function(name) {
+purrr::walk(names(bulk_configs), function(name) {
   if (
     file.exists(file.path(
       save_path,
       paste0("survival_her2_", name, "_merged_seurat.qs")
-    ))
+    )) &&
+      !isTRUE(bulk_configs[[name]]$rerun)
   ) {
     cli::cli_alert_info("Skipping {.val {name}} (already exists)")
     return(NULL)

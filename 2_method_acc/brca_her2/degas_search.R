@@ -2,14 +2,17 @@ setwd(file.path(usethis::proj_path(), "2_method_acc/brca_her2"))
 library(dplyr)
 library(SigBridgeR)
 
+RERUN <- TRUE
 
 # * Load Data
 data_dir <- "/home/data/sigbridger/benchmark_data/brca"
 
 sc_data <- qs::qread(file.path(data_dir, "seurat_her2.qs"), nthreads = 8L)
 
-bulk <- qs::qread(file.path(data_dir, "brca_bulkdata_TCGA.qs"), nthreads = 2L)
-bulk <- log2(bulk + 1)
+bulk <- qs::qread(
+  file.path(data_dir, "brca_bulkdata_TCGA_tpm.qs"),
+  nthreads = 2L
+)
 cli::cli_alert_info("bulk data loaded: dim = ({.val {dim(bulk)}})")
 
 pheno <- qs::qread(file.path(data_dir, "brca_pheno_TCGA.qs"))
@@ -62,7 +65,7 @@ arg_samples <- data.frame(
   dplyr::add_row(arch = "DenseNet", ff_depth = 3, bag_depth = 5)
 
 # * run DEGAS
-if (!file.exists("stats/degas_label_mat1_part1.csv")) {
+if (!file.exists("stats/degas_label_mat1_part1.csv") || RERUN) {
   res_list <- lapply(
     seq_len(nrow(arg_samples)),
     function(i) {
@@ -132,7 +135,7 @@ arg_samples2 <- data.frame(
   dplyr::add_row(lamb1 = 3, lamb2 = 3, lamb3 = 3)
 
 # * run DEGAS
-if (!file.exists("stats/degas_label_mat1_part2.csv")) {
+if (!file.exists("stats/degas_label_mat1_part2.csv") || RERUN) {
   res_list <- lapply(
     seq_len(nrow(arg_samples2)),
     function(i) {
@@ -215,7 +218,7 @@ if (!dir.exists("stats/degas/part3")) {
 }
 
 
-if (!file.exists("stats/degas_label_mat1_part3.csv")) {
+if (!file.exists("stats/degas_label_mat1_part3.csv") || RERUN) {
   res_list <- lapply(
     seq_len(nrow(arg_samples3)),
     function(i) {
@@ -226,7 +229,7 @@ if (!file.exists("stats/degas_label_mat1_part3.csv")) {
         "stats/degas/part3",
         glue::glue("process_{i}.csv")
       )
-      if (file.exists(cache_save_path)) {
+      if (file.exists(cache_save_path) && !RERUN) {
         cli::cli_alert("cache found, loading...")
         cache <- data.table::fread(cache_save_path)
         return(cache)

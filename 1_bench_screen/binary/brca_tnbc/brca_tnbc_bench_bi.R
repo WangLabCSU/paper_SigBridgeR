@@ -60,10 +60,9 @@ bulk_configs <- list(
     )
   ),
   TCGA_BRCA = list(
-    bulk_qs = "brca_bulkdata_TCGA.qs",
+    bulk_qs = "brca_bulkdata_TCGA_tpm.qs",
     pheno_qs = "brca_pheno_TCGA.qs",
     is_tcga = TRUE,
-    log_transform = TRUE,
     methods = c(
       "Scissor",
       "scAB",
@@ -73,7 +72,8 @@ bulk_configs <- list(
       "DEGAS",
       "LP_SGL",
       "PIPET"
-    )
+    ),
+    rerun = TRUE
   )
 )
 
@@ -93,22 +93,15 @@ run_screening_pipeline <- function(
 
   # 1. Load Bulk Data
   bulk <- qs::qread(file.path(data_path, config$bulk_qs), nthreads = 4)
-  if (isTRUE(config$log_transform)) {
-    bulk <- log2(bulk + 1)
-  }
 
   # 2. Process Phenotype & Extract Binary Labels
   pheno <- qs::qread(file.path(data_path, config$pheno_qs), nthreads = 4)
 
   if (isTRUE(config$is_tcga)) {
     cm_samples <- intersect(pheno$sample, colnames(bulk))
-    labels <- pheno %>%
-      mutate(sample_type = substr(sample, 14, 15)) %>%
-      filter(sample_type %in% c("01", "11"), sample %in% cm_samples) %>%
-      mutate(sample_type = as.integer(sample_type == "01")) %>%
-      {
-        setNames(.$sample_type, .$sample)
-      }
+    cm_samples <- intersect(pheno$sample, colnames(bulk))
+    pheno <- pheno[pheno$sample %in% cm_samples, ]
+    labels <- setNames(pheno$tumor, pheno$sample)
   } else {
     # 通用映射：利用命名向量索引，比 case_when 更高效且不易出错
     labels <- setNames(
@@ -201,12 +194,13 @@ SigBridgeR::setThreads(
 
 # 3. Run pipeline for all datasets sequentially
 # (如需并行，可替换为 future.apply::future_lapply 或 parallel::mclapply)
-lapply(names(bulk_configs), function(name) {
+purrr::walk(names(bulk_configs), function(name) {
   if (
     file.exists(file.path(
       save_path,
       paste0("binary_TNBC_", name, "_merged_seurat.qs")
-    ))
+    )) &&
+      !isTRUE(bulk_configs[[name]]$rerun)
   ) {
     cli::cli_alert_info("Skipping {.val {name}} (already exists)")
     return(NULL)

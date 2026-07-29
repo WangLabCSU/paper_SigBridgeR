@@ -1,4 +1,4 @@
-usethis::proj_activate(".")
+setwd(usethis::proj_path())
 
 her2_scab <- data.table::fread(
   "2_method_acc/brca_her2/arg_samples/scab_arg_samples1.csv"

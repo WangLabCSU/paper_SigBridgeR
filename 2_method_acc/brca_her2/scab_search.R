@@ -2,15 +2,18 @@
 
 setwd(file.path(usethis::proj_path(), "2_method_acc/brca_her2"))
 library(dplyr)
-
+RERUN <- TRUE
 
 # * Load Data
 data_dir <- "/home/data/sigbridger/benchmark_data/brca"
 
 sc_data <- qs::qread(file.path(data_dir, "seurat_her2.qs"), nthreads = 8L)
 
-bulk <- qs::qread(file.path(data_dir, "brca_bulkdata_TCGA.qs"), nthreads = 2L)
-bulk <- log2(bulk + 1)
+bulk <- qs::qread(
+  file.path(data_dir, "brca_bulkdata_TCGA_tpm.qs"),
+  nthreads = 2L
+)
+
 cli::cli_alert_info("bulk data loaded: dim = ({.val {dim(bulk)}})")
 
 pheno <- qs::qread(file.path(data_dir, "brca_pheno_TCGA.qs"))
@@ -68,8 +71,9 @@ scAB_obj <- scAB::create_scAB.v5(
   phenotype = pheno_bi,
   method = "binary"
 )
+scAB_obj$X[scAB_obj$X < 0] <- 0
 
-if (!file.exists("stats/scab_label_mat1.csv")) {
+if (!file.exists("stats/scab_label_mat1.csv") || RERUN) {
   res_list <- lapply(
     seq_len(nrow(arg_samples)),
     function(i) {
@@ -79,7 +83,7 @@ if (!file.exists("stats/scab_label_mat1.csv")) {
         "stats/scab1",
         glue::glue("process_{i}.csv")
       )
-      if (file.exists(cache_save_path)) {
+      if (file.exists(cache_save_path) && !RERUN) {
         cli::cli_alert("cache found, loading...")
         cache <- data.table::fread(cache_save_path)
         return(cache)

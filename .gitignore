@@ -1,7 +1,7 @@
 *.RData
 *.qs
 .Rproj.user
-scExp.csv 
+scExp.csv
 patExp.csv
 patLab.csv
 Bias*.csv
@@ -13,3 +13,7 @@ nohup.out
 tmp/
 *.log
 .log
+GDCdata/
+*.rds
+MANIFEST.txt
+log

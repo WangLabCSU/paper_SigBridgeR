@@ -37,7 +37,8 @@ bulk_configs <- list(
       "DEGAS",
       "LP_SGL"
       #   ,      "PIPET" # Warning: ✖ No overlapping genes between markers and single-cell data, returning NULL
-    )
+    ),
+    rerun = TRUE
   ),
   GSE140082 = list(
     bulk_qs = "ov_bulkdata_GSE140082.qs",
@@ -79,9 +80,9 @@ run_screening_pipeline <- function(
 
   if (config_name == "GSE32062") {
     surv_data <- pheno %>%
-      tibble::column_to_rownames("Sample_ID") %>%
-      dplyr::select(`OS (M)`, `Death (1)`) %>%
-      dplyr::rename(time = 1, status = 2)
+      dplyr::select(`os (m):ch1`, `death (1):ch1`) %>%
+      dplyr::rename(time = 1, status = 2) %>%
+      dplyr::mutate_all(as.integer)
   } else if (config_name == "GSE140082") {
     surv_data <- pheno %>%
       dplyr::select(`final_ostm:ch1`, `final_osid:ch1`) %>%
@@ -176,12 +177,13 @@ SigBridgeR::setThreads(
 
 # 3. Run pipeline for all datasets sequentially
 # (如需并行，可替换为 future.apply::future_lapply 或 parallel::mclapply)
-lapply(names(bulk_configs), function(name) {
+purrr::walk(names(bulk_configs), function(name) {
   if (
     file.exists(file.path(
       save_path,
       paste0("survival_ov_", name, "_merged_seurat.qs")
-    ))
+    )) &&
+      !isTRUE(bulk_configs[[name]]$rerun)
   ) {
     cli::cli_alert_info("Skipping {.val {name}} (already exists)")
     return(NULL)

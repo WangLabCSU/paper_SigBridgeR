@@ -2,13 +2,18 @@ setwd(file.path(usethis::proj_path(), "2_method_acc/brca_her2"))
 library(dplyr)
 library(SigBridgeR)
 
+RERUN <- TRUE
+
 # * Load Data
 data_dir <- "/home/data/sigbridger/benchmark_data/brca"
 
 sc_data <- qs::qread(file.path(data_dir, "seurat_her2.qs"), nthreads = 8L)
 
-bulk <- qs::qread(file.path(data_dir, "brca_bulkdata_TCGA.qs"), nthreads = 2L)
-bulk <- log2(bulk + 1)
+bulk <- qs::qread(
+  file.path(data_dir, "brca_bulkdata_TCGA_tpm.qs"),
+  nthreads = 2L
+)
+
 cli::cli_alert_info("bulk data loaded: dim = ({.val {dim(bulk)}})")
 
 pheno <- qs::qread(file.path(data_dir, "brca_pheno_TCGA.qs"))
@@ -52,50 +57,54 @@ arg_samples <- data.frame(
   dplyr::add_row(alpha = 0.5, resolution = 0.6, nfold = 5) # default parameters
 
 
-# * run LP_SGL with error handling
-res_list <- lapply(
-  seq_len(nrow(arg_samples)),
-  function(i) {
-    cli::cli_h1("{i} / {nrow(arg_samples)}")
-    result <- Screen(
-      matched_bulk = bulk,
-      sc_data = sc_data,
-      phenotype = pheno_bi,
-      label_type = glue::glue("process_{i}"),
-      phenotype_class = "binary",
-      screen_method = "LP_SGL",
-      alpha = arg_samples$alpha[i], # select_alpha will be used
-      resolution = arg_samples$resolution[i],
-      nfold = as.integer(arg_samples$nfold[i])
-    )
+# * run LP_SGL
+if (!file.exists("stats/lp_sgl_label_mat1.csv") || RERUN) {
+  res_list <- lapply(
+    seq_len(nrow(arg_samples)),
+    function(i) {
+      cli::cli_h1("{i} / {nrow(arg_samples)}")
+      result <- Screen(
+        matched_bulk = bulk,
+        sc_data = sc_data,
+        phenotype = pheno_bi,
+        label_type = glue::glue("process_{i}"),
+        phenotype_class = "binary",
+        screen_method = "LP_SGL",
+        alpha = arg_samples$alpha[i], # select_alpha will be used
+        resolution = arg_samples$resolution[i],
+        nfold = as.integer(arg_samples$nfold[i])
+      )
 
-    # qs::qsave(
-    #     scab_result,
-    #     file = glue::glue("scAB_results/scab_result_{i}.qs")
-    # )
+      # qs::qsave(
+      #     scab_result,
+      #     file = glue::glue("scAB_results/scab_result_{i}.qs")
+      # )
 
-    data <- data.frame(
-      pos_cell = (result$scRNA_data$LP_SGL == "Positive")
-    )
-    colnames(data) = glue::glue("process_{i}")
+      data <- data.frame(
+        pos_cell = (result$scRNA_data$LP_SGL == "Positive")
+      )
+      colnames(data) = glue::glue("process_{i}")
 
-    gc(verbose = FALSE)
+      gc(verbose = FALSE)
 
-    # 返回包含索引和结果的数据框
-    return(data)
-  }
-)
+      # 返回包含索引和结果的数据框
+      return(data)
+    }
+  )
 
+  # 合并所有结果
+  all_results <- do.call(cbind, res_list)
+  rownames(all_results) = colnames(seurat) # each cell is a row
 
-# 合并所有结果
-all_results <- do.call(cbind, res_list)
-rownames(all_results) = colnames(seurat) # each cell is a row
+  data.table::fwrite(
+    all_results,
+    file = "stats/lp_sgl_label_mat1.csv",
+    row.names = TRUE
+  )
+} else {
+  cli::cli_alert_warning("lp_sgl_label_mat1.csv exists, skip")
+}
 
-data.table::fwrite(
-  all_results,
-  file = "stats/lp_sgl_label_mat1.csv",
-  row.names = TRUE
-)
 
 cli::cli_alert_success(crayon::green("(1)lpsgl random search completed."))
 

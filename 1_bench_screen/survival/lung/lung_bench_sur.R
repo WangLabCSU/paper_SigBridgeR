@@ -63,27 +63,27 @@ bulk_configs <- list(
       "scAB",
       "SCIPAC",
       "scPAS",
-      #   "scPP", # Warning: There are no genes negatively correlated with patients' prognosis in this bulk dataset.
+      "scPP", # Warning: There are no genes negatively correlated with patients' prognosis in this bulk dataset.
       "DEGAS",
-      "LP_SGL"
-      #   ,      "PIPET" # Warning: ✖ No overlapping genes between markers and single-cell data, returning NULL
+      "LP_SGL",
+      "PIPET" # Warning: ✖ No overlapping genes between markers and single-cell data, returning NULL
     )
   ),
   TCGA_LUAD = list(
-    bulk_qs = "TCGA_LUAD_bulkdata.qs",
+    bulk_qs = "TCGA_LUAD_bulkdata_tpm.qs",
     pheno_qs = "TCGA_LUAD_surv_pheno.qs",
     is_tcga = TRUE,
-    log_transform = TRUE,
     methods = c(
       "Scissor",
       "scAB",
-      "SCIPAC",
+      #   "SCIPAC", # ! All bootstrap samples failed. First error: Error in response.coxnet(y): Non-positive event times encountered; not permitted for Cox family
       "scPAS",
       "scPP",
       "DEGAS",
       "LP_SGL",
       "PIPET"
-    )
+    ),
+    rerun = TRUE
   )
 )
 
@@ -102,9 +102,6 @@ run_screening_pipeline <- function(
 
   # 1. Load Bulk Data
   bulk <- qs::qread(file.path(data_path, config$bulk_qs), nthreads = 4)
-  if (isTRUE(config$log_transform)) {
-    bulk <- log2(bulk + 1)
-  }
 
   # 2. Process Phenotype & Extract Survival Labels
   surv_data <- qs::qread(file.path(data_path, config$pheno_qs), nthreads = 4)
@@ -192,12 +189,13 @@ SigBridgeR::setThreads(
 
 # 3. Run pipeline for all datasets sequentially
 # (如需并行，可替换为 future.apply::future_lapply 或 parallel::mclapply)
-lapply(names(bulk_configs), function(name) {
+purrr::walk(names(bulk_configs), function(name) {
   if (
     file.exists(file.path(
       save_path,
       paste0("survival_lung_", name, "_merged_seurat.qs")
-    ))
+    )) &&
+      !isTRUE(bulk_configs[[name]]$rerun)
   ) {
     cli::cli_alert_info("Skipping {.val {name}} (already exists)")
     return(NULL)

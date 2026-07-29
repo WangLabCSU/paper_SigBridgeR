@@ -110,7 +110,7 @@ plot_df2 <- plot_df2[!is.na(bulk)] %>%
   ) %>%
   data.table::as.data.table()
 
-# TODO HERE
+
 # ? significance label position
 centers <- plot_df2 %>%
   dtplyr::lazy_dt() %>%
@@ -141,6 +141,18 @@ centers[,
   bulk := toupper(bulk)
 ][,
   bulk := factor(bulk, levels = unique(sort(bulk)))
+]
+plot_df2[,
+  UCell_type := data.table::fcase(
+    UCell_type == "pos" , "pos_ssGSEA" ,
+    UCell_type == "neg" , "neg_ssGSEA"
+  )
+]
+centers[,
+  UCell_type := data.table::fcase(
+    UCell_type == "pos" , "pos_ssGSEA" ,
+    UCell_type == "neg" , "neg_ssGSEA"
+  )
 ]
 
 x_breaks <- seq_along(unique(plot_df2[["bulk"]])) + 0.5
