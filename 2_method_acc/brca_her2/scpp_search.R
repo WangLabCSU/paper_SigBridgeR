@@ -2,14 +2,17 @@
 
 setwd(file.path(usethis::proj_path(), "2_method_acc/brca_her2"))
 library(dplyr)
+RERUN <- TRUE
 
 # * Load Data
 data_dir <- "/home/data/sigbridger/benchmark_data/brca"
 
 sc_data <- qs::qread(file.path(data_dir, "seurat_her2.qs"), nthreads = 8L)
 
-bulk <- qs::qread(file.path(data_dir, "brca_bulkdata_TCGA.qs"), nthreads = 2L)
-bulk <- log2(bulk + 1)
+bulk <- qs::qread(
+  file.path(data_dir, "brca_bulkdata_TCGA_tpm.qs"),
+  nthreads = 2L
+)
 cli::cli_alert_info("bulk data loaded: dim = ({.val {dim(bulk)}})")
 
 pheno <- qs::qread(file.path(data_dir, "brca_pheno_TCGA.qs"))
@@ -68,7 +71,7 @@ res_list <- lapply(
 
     # ! load cache if exists
     cache_save_path <- file.path("stats/scpp1", glue::glue("process_{i}.csv"))
-    if (file.exists(cache_save_path)) {
+    if (file.exists(cache_save_path) && !RERUN) {
       cli::cli_alert("cache found, loading...")
       cache <- data.table::fread(cache_save_path)
       return(cache)

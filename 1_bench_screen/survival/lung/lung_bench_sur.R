@@ -38,7 +38,8 @@ bulk_configs <- list(
       "DEGAS",
       "LP_SGL"
       #   ,      "PIPET" # Warning: No markers found, please try different `lg2FC` and `p.adjust`
-    )
+    ),
+    rerun = TRUE
   ),
   GSE8894 = list(
     bulk_qs = "lung_bulkdata_GSE8894.qs",
@@ -52,7 +53,8 @@ bulk_configs <- list(
       "DEGAS",
       "LP_SGL"
       #   ,       "PIPET" # Warning: No markers found, please try different `lg2FC` and `p.adjust`
-    )
+    ),
+    rerun = TRUE
   ),
   GSE31210 = list(
     bulk_qs = "lung_bulkdata_GSE31210.qs",
@@ -63,11 +65,12 @@ bulk_configs <- list(
       "scAB",
       "SCIPAC",
       "scPAS",
-      "scPP", # Warning: There are no genes negatively correlated with patients' prognosis in this bulk dataset.
+      # "scPP", # Warning: There are no genes negatively correlated with patients' prognosis in this bulk dataset.
       "DEGAS",
       "LP_SGL",
       "PIPET" # Warning: ✖ No overlapping genes between markers and single-cell data, returning NULL
-    )
+    ),
+    rerun = TRUE
   ),
   TCGA_LUAD = list(
     bulk_qs = "TCGA_LUAD_bulkdata_tpm.qs",
@@ -123,7 +126,11 @@ run_screening_pipeline <- function(
       save_path,
       paste0(config_name, "_", m, "_seurat.qs")
     )
-    if (file.exists(single_save_path)) {
+    if (m == "DEGAS") {
+      cm_genes <- intersect(rownames(bulk), rownames(sc_data))
+      bulk <- bulk[cm_genes, ]
+      sc_data <- sc_data[cm_genes, ]
+    } else if (file.exists(single_save_path)) {
       cli::cli_alert_info(
         "Load result method: {.val {m}}, bulk: {.val {config_name}} (already exists)"
       )

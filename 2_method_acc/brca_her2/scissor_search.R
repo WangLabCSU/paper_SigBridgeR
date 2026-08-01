@@ -7,8 +7,10 @@ data_dir <- "/home/data/sigbridger/benchmark_data/brca"
 
 sc_data <- qs::qread(file.path(data_dir, "seurat_her2.qs"), nthreads = 8L)
 
-bulk <- qs::qread(file.path(data_dir, "brca_bulkdata_TCGA.qs"), nthreads = 2L)
-bulk <- log2(bulk + 1)
+bulk <- qs::qread(
+  file.path(data_dir, "brca_bulkdata_TCGA_tpm.qs"),
+  nthreads = 2L
+)
 cli::cli_alert_info("bulk data loaded: dim = ({.val {dim(bulk)}})")
 
 pheno <- qs::qread(file.path(data_dir, "brca_pheno_TCGA.qs"))
@@ -43,7 +45,7 @@ benchmark_label <- colnames(sc_data) %in% tumor_cells
 
 # ? warmup
 
-if (!file.exists("TCGA_BRCA_her2_scissor_cache.RData")) {
+if (!file.exists("TCGA_BRCA_tpm_her2_scissor_cache.RData")) {
   tmp <- SigBridgeR::Screen(
     matched_bulk = bulk,
     sc_data = sc_data,
@@ -53,7 +55,7 @@ if (!file.exists("TCGA_BRCA_her2_scissor_cache.RData")) {
     screen_method = "Scissor",
     alpha = 0.9,
     cutoff = 0.2,
-    path2save_scissor_inputs = "TCGA_BRCA_her2_scissor_cache.RData"
+    path2save_scissor_inputs = "TCGA_BRCA_tpm_her2_scissor_cache.RData"
   )
   rm(tmp)
 }
@@ -71,7 +73,7 @@ results <- lapply(cutoff, \(c) {
     screen_method = "Scissor",
     alpha = alpha,
     cutoff = c,
-    path2load_scissor_cache = "TCGA_BRCA_her2_scissor_cache.RData"
+    path2load_scissor_cache = "TCGA_BRCA_tpm_her2_scissor_cache.RData"
   )
 
   pos_ratio = (res$scRNA_data$scissor == "Positive")

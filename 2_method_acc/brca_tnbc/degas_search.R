@@ -9,8 +9,10 @@ data_dir <- "/home/data/sigbridger/benchmark_data/brca"
 
 sc_data <- qs::qread(file.path(data_dir, "seurat_tnbc.qs"), nthreads = 8L)
 
-bulk <- qs::qread(file.path(data_dir, "brca_bulkdata_TCGA.qs"), nthreads = 2L)
-bulk <- log2(bulk + 1)
+bulk <- qs::qread(
+  file.path(data_dir, "brca_bulkdata_TCGA_tpm.qs"),
+  nthreads = 2L
+)
 cli::cli_alert_info("bulk data loaded: dim = ({.val {dim(bulk)}})")
 
 pheno <- qs::qread(file.path(data_dir, "brca_pheno_TCGA.qs"))
@@ -26,6 +28,10 @@ pheno_bi <- pheno %>%
   }
 
 bulk <- bulk[, names(pheno_bi)]
+
+cm_genes <- intersect(rownames(sc_data), rownames(bulk))
+bulk <- bulk[cm_genes, ]
+sc_data <- sc_data[cm_genes, ]
 
 
 cli::cli_alert_info("pheno data loaded: 1~tumor, 0~normal")

@@ -27,6 +27,10 @@ pheno_bi <- setNames(
 )
 bulk <- bulk[, names(pheno_bi)]
 
+cm_genes <- intersect(rownames(sc_data), rownames(bulk))
+bulk <- bulk[cm_genes, ]
+sc_data <- sc_data[cm_genes, ]
+
 
 cli::cli_alert_info("pheno data loaded: 1~tumor, 0~normal")
 table(pheno_bi)

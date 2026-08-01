@@ -2,7 +2,7 @@ setwd(file.path(usethis::proj_path(), "2_method_acc/brca_her2"))
 library(dplyr)
 library(SigBridgeR)
 
-RERUN <- TRUE
+RERUN <- FALSE
 
 # * Load Data
 data_dir <- "/home/data/sigbridger/benchmark_data/brca"
@@ -29,6 +29,9 @@ pheno_bi <- pheno %>%
 
 bulk <- bulk[, names(pheno_bi)]
 
+cm_genes <- intersect(rownames(sc_data), rownames(bulk))
+bulk <- bulk[cm_genes, ]
+sc_data <- sc_data[cm_genes, ]
 
 cli::cli_alert_info("pheno data loaded: 1~tumor, 0~normal")
 table(pheno_bi)
@@ -71,6 +74,17 @@ if (!file.exists("stats/degas_label_mat1_part1.csv") || RERUN) {
     function(i) {
       cli::cli_h1("{i} / {nrow(arg_samples)}")
 
+      # ! load cache if exists
+      cache_save_path <- file.path(
+        "stats/degas/part1",
+        glue::glue("process_{i}.csv")
+      )
+      if (file.exists(cache_save_path) && !RERUN) {
+        cli::cli_alert("cache found, loading...")
+        cache <- data.table::fread(cache_save_path)
+        return(cache)
+      }
+
       tryCatch(
         {
           arch <- arg_samples[i, "arch"][[1]]
@@ -96,6 +110,9 @@ if (!file.exists("stats/degas_label_mat1_part1.csv") || RERUN) {
           )
           colnames(data) <- glue::glue("process_{i}")
           gc()
+
+          # ! save cache
+          data.table::fwrite(data, cache_save_path)
 
           # 返回包含索引和结果的数据框
           return(data)
@@ -141,6 +158,17 @@ if (!file.exists("stats/degas_label_mat1_part2.csv") || RERUN) {
     function(i) {
       cli::cli_h1("{i} / {nrow(arg_samples2)}")
 
+      # ! load cache if exists
+      cache_save_path <- file.path(
+        "stats/degas/part2",
+        glue::glue("process_{i}.csv")
+      )
+      if (file.exists(cache_save_path) && !RERUN) {
+        cli::cli_alert("cache found, loading...")
+        cache <- data.table::fread(cache_save_path)
+        return(cache)
+      }
+
       tryCatch(
         {
           lamb1 <- arg_samples2[i, "lamb1"][[1]]
@@ -168,6 +196,9 @@ if (!file.exists("stats/degas_label_mat1_part2.csv") || RERUN) {
           )
           colnames(data) = glue::glue("process_{i}")
           gc()
+
+          # ! save cache
+          data.table::fwrite(data, cache_save_path)
 
           # 返回包含索引和结果的数据框
           return(data)
@@ -240,34 +271,45 @@ if (!file.exists("stats/degas_label_mat1_part3.csv") || RERUN) {
       hidden_feats <- arg_samples3[i, "hidden_feats"][[1]]
       do_prc <- round(arg_samples3[i, "do_prc"][[1]], 3)
 
-      result <- Screen(
-        matched_bulk = bulk,
-        sc_data = sc_data,
-        phenotype = pheno_bi,
-        label_type = "DEGAS_",
-        phenotype_class = "binary",
-        screen_method = "DEGAS",
-        degas_params = list(
-          DEGAS.scbatch_sz = scbatch_sz,
-          DEGAS.patbatch_sz = patbatch_sz,
-          DEGAS.hidden_feats = hidden_feats,
-          DEGAS.do_prc = do_prc
-        )
+      tryCatch(
+        {
+          result <- Screen(
+            matched_bulk = bulk,
+            sc_data = sc_data,
+            phenotype = pheno_bi,
+            label_type = "DEGAS_",
+            phenotype_class = "binary",
+            screen_method = "DEGAS",
+            degas_params = list(
+              DEGAS.scbatch_sz = scbatch_sz,
+              DEGAS.patbatch_sz = patbatch_sz,
+              DEGAS.hidden_feats = hidden_feats,
+              DEGAS.do_prc = do_prc
+            )
+          )
+
+          pos <- (result$scRNA_data$DEGAS == "Positive")
+
+          data <- data.frame(
+            pos_cell = pos
+          )
+          colnames(data) = glue::glue("process_{i}")
+          gc()
+
+          # ! save cache
+          data.table::fwrite(data, cache_save_path)
+          # 返回包含索引和结果的数据框
+          return(data)
+        },
+        error = function(e) {
+          cli::cli_alert_danger("ERROR {i}: {e$message}")
+          data <- data.frame(
+            pos_cell = FALSE
+          )
+          colnames(data) = glue::glue("process_{i}")
+          return(data)
+        }
       )
-
-      pos <- (result$scRNA_data$DEGAS == "Positive")
-
-      data <- data.frame(
-        pos_cell = pos
-      )
-      colnames(data) = glue::glue("process_{i}")
-      gc()
-
-      # ! save cache
-      data.table::fwrite(data, cache_save_path)
-
-      # 返回包含索引和结果的数据框
-      return(data)
     }
   )
   gc()

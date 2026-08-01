@@ -15,7 +15,6 @@ bulk <- qs::qread(
   nthreads = 2L
 )
 
-cli::cli_alert_info("bulk data loaded: dim = ({.val {dim(bulk)}})")
 
 pheno <- qs::qread(file.path(data_dir, "brca_pheno_GSE42568.qs"))
 
@@ -28,8 +27,13 @@ pheno_bi <- setNames(
 )
 bulk <- bulk[, names(pheno_bi)]
 
+cm_genes <- intersect(rownames(sc_data), rownames(bulk))
+bulk <- bulk[cm_genes, ]
+sc_data <- sc_data[cm_genes, ]
 
 cli::cli_alert_info("pheno data loaded: 1~tumor, 0~normal")
+cli::cli_alert_info("bulk data loaded: dim = ({.val {dim(bulk)}})")
+
 table(pheno_bi)
 
 if (!all(names(pheno_bi) == colnames(bulk))) {
@@ -90,31 +94,40 @@ if (!file.exists("stats/degas_label_mat2_part1.csv")) {
       ff_depth <- arg_samples[i, "ff_depth"][[1]]
       bag_depth <- arg_samples[i, "bag_depth"][[1]]
 
-      result <- Screen(
-        matched_bulk = bulk,
-        sc_data = sc_data,
-        phenotype = pheno_bi,
-        label_type = "DEGAS_arg1_",
-        phenotype_class = "binary",
-        screen_method = "DEGAS",
-        degas_params = list(
-          DEGAS.architecture = arch,
-          DEGAS.ff_depth = ff_depth,
-          DEGAS.bag_depth = bag_depth
-        )
+      tryCatch(
+        {
+          result <- Screen(
+            matched_bulk = bulk,
+            sc_data = sc_data,
+            phenotype = pheno_bi,
+            label_type = "DEGAS_",
+            phenotype_class = "binary",
+            screen_method = "DEGAS",
+            degas_params = list(
+              DEGAS.architecture = arch,
+              DEGAS.ff_depth = ff_depth,
+              DEGAS.bag_depth = bag_depth
+            )
+          )
+
+          data <- data.frame(
+            pos_cell = (result$scRNA_data$DEGAS == "Positive")
+          )
+          colnames(data) <- glue::glue("process_{i}")
+          gc()
+
+          # 返回包含索引和结果的数据框
+          return(data)
+        },
+        error = function(e) {
+          cli::cli_alert_danger("ERROR {i}: {e$message}")
+          data <- data.frame(
+            pos_cell = FALSE
+          )
+          colnames(data) = glue::glue("process_{i}")
+          return(data)
+        }
       )
-
-      data <- data.frame(
-        pos_cell = (result$scRNA_data$DEGAS == "Positive")
-      )
-      colnames(data) <- glue::glue("process_{i}")
-      gc()
-
-      # ! save cache
-      data.table::fwrite(data, cache_save_path)
-
-      # 返回包含索引和结果的数据框
-      return(data)
     }
   )
 
@@ -167,32 +180,42 @@ if (!file.exists("stats/degas_label_mat2_part2.csv")) {
       lamb2 <- arg_samples2[i, "lamb2"][[1]]
       lamb3 <- arg_samples2[i, "lamb3"][[1]]
 
-      result <- Screen(
-        matched_bulk = bulk,
-        sc_data = sc_data,
-        phenotype = pheno_bi,
-        label_type = "DEGAS_arg2_",
-        phenotype_class = "binary",
-        screen_method = "DEGAS",
-        degas_params = list(
-          DEGAS.lambda1 = lamb1,
-          DEGAS.lambda2 = lamb2,
-          DEGAS.lambda3 = lamb3
-        )
+      tryCatch(
+        {
+          result <- Screen(
+            matched_bulk = bulk,
+            sc_data = sc_data,
+            phenotype = pheno_bi,
+            label_type = "DEGAS_",
+            phenotype_class = "binary",
+            screen_method = "DEGAS",
+            degas_params = list(
+              DEGAS.lambda1 = lamb1,
+              DEGAS.lambda2 = lamb2,
+              DEGAS.lambda3 = lamb3
+            )
+          )
+
+          pos <- (result$scRNA_data$DEGAS == "Positive")
+
+          data <- data.frame(
+            pos_cell = pos
+          )
+          colnames(data) = glue::glue("process_{i}")
+          gc()
+
+          # 返回包含索引和结果的数据框
+          return(data)
+        },
+        error = function(e) {
+          cli::cli_alert_danger("ERROR {i}: {e$message}")
+          data <- data.frame(
+            pos_cell = FALSE
+          )
+          colnames(data) = glue::glue("process_{i}")
+          return(data)
+        }
       )
-
-      pos <- (result$scRNA_data$DEGAS == "Positive")
-
-      data <- data.frame(
-        pos_cell = pos
-      )
-      colnames(data) = glue::glue("process_{i}")
-      gc()
-      # ! save cache
-      data.table::fwrite(data, cache_save_path)
-
-      # 返回包含索引和结果的数据框
-      return(data)
     }
   )
 

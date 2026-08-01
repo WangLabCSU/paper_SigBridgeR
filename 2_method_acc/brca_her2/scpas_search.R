@@ -7,8 +7,10 @@ data_dir <- "/home/data/sigbridger/benchmark_data/brca"
 
 sc_data <- qs::qread(file.path(data_dir, "seurat_her2.qs"), nthreads = 8L)
 
-bulk <- qs::qread(file.path(data_dir, "brca_bulkdata_TCGA.qs"), nthreads = 2L)
-bulk <- log2(bulk + 1)
+bulk <- qs::qread(
+  file.path(data_dir, "brca_bulkdata_TCGA_tpm.qs"),
+  nthreads = 2L
+)
 cli::cli_alert_info("bulk data loaded: dim = ({.val {dim(bulk)}})")
 
 pheno <- qs::qread(file.path(data_dir, "brca_pheno_TCGA.qs"))
@@ -51,18 +53,36 @@ arg_samples <- data.frame(
   add_row(nfeature = 2000, imputation = "None", independent = TRUE)
 
 
+# ! To avoid recomputing, file cache is used
+if (!dir.exists("stats/scpas")) {
+  dir.create("stats/scpas", recursive = TRUE)
+}
+
+
 # * run scpas
 res_list <- lapply(
   seq_len(nrow(arg_samples)),
   function(i) {
+    cli::cli_h1(glue::glue("Processing {i}th sample"))
+
+    cache_save_path <- file.path(
+      "stats/scpas",
+      glue::glue("process_{i}.csv")
+    )
+    if (file.exists(cache_save_path)) {
+      cli::cli_alert("cache found, loading...")
+      cache <- data.table::fread(cache_save_path)
+      return(cache)
+    }
+
     nfeature_i = arg_samples[i, "nfeature"][[1]]
     imputation_i = arg_samples[i, "imputation"][[1]]
     independent_i = arg_samples[i, "independent"][[1]]
 
     if (imputation_i == "None") {
-      scpas_result = Screen(
+      scpas_result = SigBridgeR::Screen(
         matched_bulk = bulk,
-        sc_data = seurat,
+        sc_data = sc_data,
         phenotype = pheno_bi,
         label_type = glue::glue("Tumor"),
         phenotype_class = "binary",
@@ -77,9 +97,9 @@ res_list <- lapply(
         # FDR.threshold = 0.05
       )
     } else {
-      scpas_result = Screen(
+      scpas_result = SigBridgeR::Screen(
         matched_bulk = bulk,
-        sc_data = seurat,
+        sc_data = sc_data,
         phenotype = pheno_bi,
         label_type = glue::glue("Tumor"),
         phenotype_class = "binary",
@@ -102,6 +122,8 @@ res_list <- lapply(
       pos_cell = pos_cell
     )
     colnames(data) = glue::glue("process_{i}")
+
+    data.table::fwrite(data, cache_save_path)
     gc()
 
     # 返回包含索引和结果的数据框
