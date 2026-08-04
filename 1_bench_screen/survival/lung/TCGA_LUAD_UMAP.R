@@ -22,13 +22,9 @@ seurat_merged <- qs::qread(
   ),
   nthreads = 8L
 )
-
-seurat_merged$SCIPAC %>% table()
-# .
-# Positive Negative  Neutral
-#        0        0        0
-
-seurat_merged$SCIPAC <- "Neutral"
+if ("sig" %in% colnames(seurat_merged[[]])) {
+  seurat_merged$SCIPAC <- seurat_merged$sig
+}
 
 
 # umap_cluster <- draw_umap(
@@ -51,7 +47,7 @@ seurat_merged$SCIPAC <- "Neutral"
 c(
   umap_scissor,
   umap_scpas,
-  umap_scipac,
+  #   umap_scipac,
   umap_scpp,
   umap_scab,
   umap_degas,
@@ -62,7 +58,7 @@ c(
     c(
       "scissor",
       "scPAS",
-      "SCIPAC",
+      #   "SCIPAC",
       "scPP",
       'scAB',
       "DEGAS",

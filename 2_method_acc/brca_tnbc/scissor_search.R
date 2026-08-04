@@ -12,7 +12,6 @@ bulk <- qs::qread(
   file.path(data_dir, "brca_bulkdata_TCGA_tpm.qs"),
   nthreads = 2L
 )
-bulk <- log2(bulk + 1)
 cli::cli_alert_info("bulk data loaded: dim = ({.val {dim(bulk)}})")
 
 pheno <- qs::qread(file.path(data_dir, "brca_pheno_TCGA.qs"))

@@ -22,7 +22,9 @@ seurat_merged <- qs::qread(
   ),
   nthreads = 8L
 )
-
+if ("sig" %in% colnames(seurat_merged[[]])) {
+  seurat_merged$SCIPAC <- seurat_merged$sig
+}
 
 seurat_TNBC_tumor <- readRDS(
   "/home/data/data-resource/single-cell/BRCA/GSE161529_Seurat/SeuratObject_TNBCTum.rds"

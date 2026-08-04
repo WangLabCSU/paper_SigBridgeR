@@ -19,6 +19,7 @@ seurat_merged <- qs::qread(
   file.path(data_path, paste0("binary_her2_", bulk_name, "_merged_seurat.qs")),
   nthreads = 8L
 )
+seurat_merged$SCIPAC <- seurat_merged$sig
 
 # seurat_her2_tumor <- readRDS(
 #   "/home/data/data-resource/single-cell/BRCA/GSE161529_Seurat/SeuratObject_HER2Tum.rds"

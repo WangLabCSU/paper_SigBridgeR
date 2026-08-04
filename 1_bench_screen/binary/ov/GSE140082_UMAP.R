@@ -19,7 +19,7 @@ seurat_merged <- qs::qread(
   file.path(data_path, paste0("binary_ov_", bulk_name, "_merged_seurat.qs")),
   nthreads = 8L
 )
-
+seurat_merged$SCIPAC <- seurat_merged$sig
 # umap_cluster <- draw_umap(
 #   seurat = seurat_merged,
 #   group_by = "seurat_clusters",

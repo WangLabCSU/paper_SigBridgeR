@@ -92,7 +92,8 @@ if (!file.exists("stats/degas_label_mat1_part1.csv")) {
               DEGAS.architecture = arch,
               DEGAS.ff_depth = ff_depth,
               DEGAS.bag_depth = bag_depth
-            )
+            ),
+            tmp_dir = "tmp"
           )
 
           data <- data.frame(
@@ -162,7 +163,8 @@ if (!file.exists("stats/degas_label_mat1_part2.csv")) {
               DEGAS.lambda1 = lamb1,
               DEGAS.lambda2 = lamb2,
               DEGAS.lambda3 = lamb3
-            )
+            ),
+            tmp_dir = "tmp"
           )
 
           pos <- (result$scRNA_data$DEGAS == "Positive")
@@ -256,7 +258,8 @@ if (!file.exists("stats/degas_label_mat1_part3.csv")) {
           DEGAS.patbatch_sz = patbatch_sz,
           DEGAS.hidden_feats = hidden_feats,
           DEGAS.do_prc = do_prc
-        )
+        ),
+        tmp_dir = "tmp"
       )
 
       pos <- (result$scRNA_data$DEGAS == "Positive")

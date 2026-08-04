@@ -28,6 +28,7 @@ seurat_merged$is_tumor = ifelse(
   "TRUE",
   "FALSE"
 )
+seurat_merged$SCIPAC <- seurat_merged$sig
 
 umap_cluster <- draw_umap(
   seurat = seurat_merged,

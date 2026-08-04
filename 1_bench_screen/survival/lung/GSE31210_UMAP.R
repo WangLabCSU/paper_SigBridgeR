@@ -22,6 +22,9 @@ seurat_merged <- qs::qread(
   ),
   nthreads = 8L
 )
+if ("sig" %in% colnames(seurat_merged[[]])) {
+  seurat_merged$SCIPAC <- seurat_merged$sig
+}
 
 
 # umap_cluster <- draw_umap(

@@ -12,9 +12,8 @@ data_path <- "/home/data/sigbridger/benchmark_data/lung"
 sc_data <- qs::qread(file.path(data_path, "luad_GSE123902_seurat.qs"))
 
 bulk <- qs::qread(
-  file.path(data_path, "TCGA_LUAD_bulkdata.qs")
+  file.path(data_path, "TCGA_LUAD_bulkdata_tpm.qs")
 )
-bulk <- log2(bulk + 1)
 
 pheno <- qs::qread(file.path(data_path, "TCGA_LUAD_pheno.qs"))
 
@@ -24,7 +23,10 @@ pheno_bi <- mutate(pheno, sample_type = substr(pheno$sample, 14, 15)) %>%
   mutate(sample_type = as.integer(sample_type == "01"))
 pheno_bi <- setNames(pheno_bi$sample_type, pheno_bi$sample)
 
-bulk <- bulk[, names(pheno_bi)]
+cm_samples <- intersect(colnames(bulk), names(pheno_bi))
+
+bulk <- bulk[, cm_samples]
+pheno_bi <- pheno_bi[cm_samples]
 
 if (!all(colnames(bulk) == names(pheno_bi))) {
   stop("bulk and pheno_bi not match")
@@ -38,7 +40,7 @@ if (anyNA(pheno_bi)) {
 
 # ? warmup
 
-if (!file.exists("TCGA_LUAD_lung_scissor_cache.RData")) {
+if (!file.exists("TCGA_LUAD_tpm_lung_scissor_cache.RData")) {
   tmp <- SigBridgeR::Screen(
     matched_bulk = bulk,
     sc_data = sc_data,
@@ -48,7 +50,7 @@ if (!file.exists("TCGA_LUAD_lung_scissor_cache.RData")) {
     screen_method = "Scissor",
     alpha = 0.9,
     cutoff = 0.2,
-    path2save_scissor_inputs = "TCGA_LUAD_lung_scissor_cache.RData"
+    path2save_scissor_inputs = "TCGA_LUAD_tpm_lung_scissor_cache.RData"
   )
   rm(tmp)
 }
@@ -66,7 +68,7 @@ results <- lapply(cutoff, \(c) {
     screen_method = "Scissor",
     alpha = alpha,
     cutoff = c,
-    path2load_scissor_cache = "TCGA_LUAD_lung_scissor_cache.RData"
+    path2load_scissor_cache = "TCGA_LUAD_tpm_lung_scissor_cache.RData"
   )
 
   pos_ratio = (res$scRNA_data$scissor == "Positive")
