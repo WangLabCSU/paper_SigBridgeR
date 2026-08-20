@@ -12,7 +12,6 @@ sc_data <- qs::qread(file.path(data_path, "luad_GSE123902_seurat.qs"))
 bulk <- qs::qread(
   file.path(data_path, "TCGA_LUAD_bulkdata.qs")
 )
-bulk <- log2(bulk + 1)
 
 pheno <- qs::qread(file.path(data_path, "TCGA_LUAD_pheno.qs"))
 
@@ -22,7 +21,10 @@ pheno_bi <- mutate(pheno, sample_type = substr(pheno$sample, 14, 15)) %>%
   mutate(sample_type = as.integer(sample_type == "01"))
 pheno_bi <- setNames(pheno_bi$sample_type, pheno_bi$sample)
 
-bulk <- bulk[, names(pheno_bi)]
+cm_samples <- intersect(colnames(bulk), names(pheno_bi))
+
+bulk <- bulk[, cm_samples]
+pheno_bi <- pheno_bi[cm_samples]
 
 if (!all(colnames(bulk) == names(pheno_bi))) {
   stop("bulk and pheno_bi not match")
@@ -34,9 +36,8 @@ if (anyNA(pheno_bi)) {
   stop("pheno_bi has NA")
 }
 
-# future::plan(future::multicore, workers = 5L)
-SigBridgeR::setThreads(4L)
-
+future::plan(future.mirai::mirai_multisession(workers = 4L))
+# SigBridgeR::setThreads(4L)
 
 # ! To avoid recomputing, file cache is used
 if (!dir.exists("stats/scab1")) {
@@ -93,8 +94,8 @@ if (!file.exists("stats/scab_label_mat1.csv")) {
         cross_k = 5,
         para_1_list = alpha_samples %||% c(0.01, 0.005, 0.001),
         para_2_list = alpha_samples %||% c(0.01, 0.005, 0.001),
-        parallel = FALSE,
-        verbose = TRUE
+        parallel = TRUE,
+        verbose = FALSE
       )
 
       alpha <- para_list$para$alpha_1
@@ -141,3 +142,4 @@ if (!file.exists("stats/scab_label_mat1.csv")) {
 cli::cli_alert_success(crayon::green("(1) scab random search completed."))
 
 # ! TCGA_LUAD
+future::plan(future::sequential())
