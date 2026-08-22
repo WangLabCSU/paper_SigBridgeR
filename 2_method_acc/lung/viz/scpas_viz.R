@@ -1,4 +1,5 @@
 setwd(file.path(usethis::proj_path(), "/2_method_acc/lung"))
+library(dplyr)
 
 stats_dir <- "stats/"
 method <- "scpas"
@@ -17,12 +18,12 @@ label_mats_loaded <- lapply(label_mats, data.table::fread)
 
 
 # * benchmark label
-data_dir <- "/home/data/sigbridger/benchmark_data/brca"
-sc_data <- qs::qread(file.path(data_dir, "seurat_tnbc.qs"), nthreads = 8L)
-seurat_tumor <- readRDS(
-  "/home/data/data-resource/single-cell/BRCA/GSE161529_Seurat/SeuratObject_TNBCTum.rds"
+data_dir <- "/home/data/sigbridger/benchmark_data/lung"
+sc_data <- qs::qread(
+  file.path(data_dir, "luad_GSE123902_seurat.qs"),
+  nthreads = 8L
 )
-tumor_cells <- rownames(seurat_tumor@meta.data)
+tumor_cells <- colnames(sc_data)[sc_data@meta.data$cnv_status == "tumor"]
 benchmark_label <- colnames(sc_data) %in% tumor_cells
 
 # * add bench col to data
@@ -40,7 +41,7 @@ metrics <- lapply(label_mats_loaded, function(dt) {
 
 # * add arg_samples to metrics and save this result
 arg_samples_with_metrics <- purrr::imap(metrics, \(dt, name) {
-  if (name == "mat1") {
+  if (name == "mat1" || name == "mat") {
     set.seed(123)
   } else if (name == "mat2") {
     set.seed(42568)
@@ -135,6 +136,6 @@ f1_bubble_heatmap <- function(
 }
 
 mat1_p <- f1_bubble_heatmap(
-  arg_samples_with_metrics$mat1,
+  arg_samples_with_metrics$mat,
   save_path = "viz/plot/scpas_acc1.png"
 )

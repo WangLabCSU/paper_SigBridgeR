@@ -29,7 +29,7 @@ names(seurats) <- basename(seurats) %>%
 
 
 method_labels <- if (!file.exists("method_labels.qs")) {
-  mirai::mirai_map(seurats, function(file) {
+  method_labels <- mirai::mirai_map(seurats, function(file) {
     seurat_i <- qs::qread(file, nthreads = 8L)
     expected_methods <- c(
       "scissor",
@@ -43,10 +43,17 @@ method_labels <- if (!file.exists("method_labels.qs")) {
     )
     meta <- seurat_i[[]] # data.frame
     col_names <- tolower(colnames(meta))
+    if ("sig" %in% col_names) {
+      if ("scipac" %in% col_names) {
+        stop("Both sig and scipac found in meta, need to fix label")
+      }
+      meta$scipac <- meta$sig
+    }
 
     meta[col_names %in% expected_methods]
   })[mirai::.progress]
   qs::qsave(method_labels, "method_labels.qs", nthreads = 8L)
+  method_labels
 } else {
   cli::cli_alert_info("Found existing {.val method_labels}")
   qs::qread("method_labels.qs", nthreads = 8L)
@@ -147,7 +154,7 @@ ad_test_ucell_score <- purrr::imap(
               null_dist2 = NA_real_,
               method = NA_character_,
               n_sim = NA_real_,
-              message = "分组数不足"
+              message = "No enough groups"
             ))
           }
 

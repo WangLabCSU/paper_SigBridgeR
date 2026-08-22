@@ -1,4 +1,8 @@
-setwd(usethis::proj_path())
+setwd(file.path(
+  usethis::proj_path(),
+  "3_negative_ctrl/binary/brca/her2/GSE42568"
+))
+
 
 library(dplyr)
 
@@ -140,7 +144,7 @@ PlotGroupMeanScores <- function(
 }
 
 mean_scores <- data.table::fread(
-  "Tmp/ssGSEA_negative_compare/binary/brca/her2/GSE42568/her2_bi_100reps_neg_ctrl_stat.csv"
+  "her2_bi_100reps_neg_ctrl_stat.csv"
 )
 
 mean_scores <- tidyr::unite(
@@ -160,10 +164,9 @@ p <- PlotGroupMeanScores(
   x_label = "Screening Group",
   y_label = "Mean Score of ssGSEA",
 )
-p
 
 ggplot2::ggsave(
-  "Tmp/ssGSEA_negative_compare/binary/brca/her2/GSE42568/her2_bi_100reps_neg_ctrl_stat.png",
+  "her2_bi_100reps_neg_ctrl_stat.png",
   p,
   width = 8,
   height = 6,

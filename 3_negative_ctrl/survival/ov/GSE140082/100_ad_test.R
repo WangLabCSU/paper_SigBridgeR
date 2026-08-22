@@ -52,7 +52,7 @@ results <- scores %>%
           null_dist2 = NA,
           method = NA,
           n_sim = NA,
-          message = "分组数不足"
+          message = "No enough groups"
         ))
       }
 

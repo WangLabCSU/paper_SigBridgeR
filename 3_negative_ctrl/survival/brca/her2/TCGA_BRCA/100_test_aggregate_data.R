@@ -12,9 +12,14 @@ seurat <- qs::qread(
   nthreads = 4L
 )
 meta <- seurat[[]]
+colnames_meta <- colnames(meta)
+if (!"SCIPAC" %in% colnames_meta) {
+  meta$SCIPAC <- meta$sig
+  cli::cli_alert_warning("SCIPAC not in meta, use sig label (bug)")
+}
 screened_label <- meta[, grepv(
   "sc[a-zA-Z]+$|DEGAS$|LP_SGL$|PIPET$|SCIPAC$",
-  colnames(meta)
+  colnames_meta
 )]
 
 CalcGroupMeanScores <- function(

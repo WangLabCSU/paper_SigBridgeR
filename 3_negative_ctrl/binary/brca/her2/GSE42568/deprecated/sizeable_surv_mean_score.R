@@ -5,9 +5,10 @@
 # ! GSE161529
 library(dplyr)
 
-setwd(
-  '/home/yyx/R/Project/R_code/SigBridgeR/Tmp/ssGSEA_negative_compare/binary/brca/her2/GSE42568'
-)
+setwd(file.path(
+  usethis::proj_path(),
+  "3_negative_ctrl/binary/brca/her2/GSE42568"
+))
 
 
 score_path <- '/home/yyx/R/Project/R_code/SigBridgeR/Tmp/ssGSEA_negative_compare/brca'

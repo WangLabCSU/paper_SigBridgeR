@@ -1,4 +1,5 @@
 setwd(file.path(usethis::proj_path(), "/2_method_acc/lung"))
+library(dplyr)
 
 stats_dir <- "stats/"
 method <- "scpp"
