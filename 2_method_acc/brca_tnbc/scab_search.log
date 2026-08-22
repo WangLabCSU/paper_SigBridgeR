@@ -2347,3 +2347,40 @@ Alpha = 0.05, alpha_2 = 0.01 ■■■■■■■■■■■■■■■■■
 Alpha = 0.0005, alpha_2 = 0.05 ■■■■■■■                           20% | ETA: 35m
 Alpha = 0.0005, alpha_2 = 0.05 ■■■■■■■■■■■■■                     40% | ETA: 26m
 Alpha = 0.0005, alpha_2 = 0.05 ■■■■■■■■■■■■■■■■■■■               60% | ETA: 17m
+Alpha = 0.0005, alpha_2 = 0.05 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA:  8m
+Alpha = 0.0005, alpha_2 = 0.05 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.001, alpha_2 = 0.05 ■■■■■■■                           20% | ETA: 32m
+Alpha = 0.001, alpha_2 = 0.05 ■■■■■■■■■■■■■                     40% | ETA: 24m
+Alpha = 0.001, alpha_2 = 0.05 ■■■■■■■■■■■■■■■■■■■               60% | ETA: 17m
+Alpha = 0.001, alpha_2 = 0.05 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA:  8m
+Alpha = 0.001, alpha_2 = 0.05 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Warning in coxph.fit(X, Y, istrat, offset, init, control, weights = weights,  :
+  Loglik converged before variable  5 ; coefficient may be infinite. 
+Alpha = 0.005, alpha_2 = 0.05 ■■■■■■■                           20% | ETA: 32m
+Alpha = 0.005, alpha_2 = 0.05 ■■■■■■■■■■■■■                     40% | ETA: 22m
+Alpha = 0.005, alpha_2 = 0.05 ■■■■■■■■■■■■■■■■■■■               60% | ETA: 14m
+Alpha = 0.005, alpha_2 = 0.05 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA:  7m
+Alpha = 0.005, alpha_2 = 0.05 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.01, alpha_2 = 0.05 ■■■■■■■                           20% | ETA: 27m
+Alpha = 0.01, alpha_2 = 0.05 ■■■■■■■■■■■■■                     40% | ETA: 20m
+Alpha = 0.01, alpha_2 = 0.05 ■■■■■■■■■■■■■■■■■■■               60% | ETA: 13m
+Alpha = 0.01, alpha_2 = 0.05 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA:  6m
+Alpha = 0.01, alpha_2 = 0.05 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+Alpha = 0.05, alpha_2 = 0.05 ■■■■■■■                           20% | ETA: 26m
+Alpha = 0.05, alpha_2 = 0.05 ■■■■■■■■■■■■■                     40% | ETA: 17m
+Alpha = 0.05, alpha_2 = 0.05 ■■■■■■■■■■■■■■■■■■■               60% | ETA: 12m
+Alpha = 0.05, alpha_2 = 0.05 ■■■■■■■■■■■■■■■■■■■■■■■■■         80% | ETA:  6m
+Alpha = 0.05, alpha_2 = 0.05 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100% | ETA:  0s
+✔ [2026/08/22 14:28:11] Best `alpha` and `alpha_2` are 0.05 and 0.001
+Warning in multimode::locmodes(x, mod0 = 2) :
+  If the density function has an unbounded support, artificial modes may have been created in the tails
+Warning in multimode::locmodes(x, mod0 = 2) :
+  If the density function has an unbounded support, artificial modes may have been created in the tails
+Warning in multimode::locmodes(x, mod0 = 2) :
+  If the density function has an unbounded support, artificial modes may have been created in the tails
+Warning in multimode::locmodes(x, mod0 = 2) :
+  If the density function has an unbounded support, artificial modes may have been created in the tails
+Warning in multimode::locmodes(x, mod0 = 2) :
+  If the density function has an unbounded support, artificial modes may have been created in the tails
+
+── 17 / 51 ─────────────────────────────────────────────────────────────────────

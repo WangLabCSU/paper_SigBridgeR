@@ -257,7 +257,7 @@ p <- ggplot2::ggplot(plot_df2) +
   ) +
   # 四变量分面
   ggplot2::facet_grid(
-    `ssGSEA type` ~ +type_pheno + tumor_type + bulk,
+    `ssGSEA type` ~ type_pheno + tumor_type + bulk,
     scales = "free", # must be free
     space = "free" # must be free
   )

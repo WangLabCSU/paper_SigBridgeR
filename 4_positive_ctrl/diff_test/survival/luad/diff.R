@@ -69,6 +69,9 @@ purrr::walk(
     files_of_bulk_i <- grep(bulk_i, esmat_files, value = TRUE)
 
     es_df <- qs::qread(file.path(esmat_root, files_of_bulk_i))
+    if ("sig" %in% colnames(es_df) && !"SCIPAC" %in% colnames(es_df)) {
+      es_df$SCIPAC <- es_df$sig
+    }
     # get all the methods when using this bulk
     screen_method <- gsub(
       ".*(scissor|scPAS|scAB|scPP|SCIPAC|LP_SGL|DEGAS|PIPET).*",
