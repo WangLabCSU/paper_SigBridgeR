@@ -17,3 +17,4 @@ GDCdata/
 *.rds
 MANIFEST.txt
 log
+*.tar.gz
