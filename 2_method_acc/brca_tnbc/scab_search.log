@@ -40,12 +40,12 @@ pheno_bi
 • TF_NUM_INTEROP_THREADS: unset -> 2
 • TF_NUM_INTRAOP_THREADS: unset -> 1
 ℹ  Using "RNA_snn" graph for network.
-ℹ [2026/09/04 19:51:59] Calculating L, D and A
-ℹ [2026/09/04 19:52:08] Normalizing quantiles of data
+ℹ [2026/09/12 20:09:34] Calculating L, D and A
+ℹ [2026/09/12 20:09:43] Normalizing quantiles of data
 Warning in asMethod(object) :
   sparse->dense coercion: allocating vector of size 5.3 GiB
-ℹ [2026/09/04 19:53:57] Calculating correlation
-ℹ [2026/09/04 19:54:21] Guanranking
+ℹ [2026/09/12 20:11:33] Calculating correlation
+ℹ [2026/09/12 20:11:57] Guanranking
 
 ── 1 / 51 ──────────────────────────────────────────────────────────────────────
 → cache found, loading...
@@ -123,58 +123,38 @@ Warning in asMethod(object) :
 → cache found, loading...
 
 ── 26 / 51 ─────────────────────────────────────────────────────────────────────
-loss of 2: 0.0173227
-loss of 3: 0.00817028
-loss of 4: 0.00600784
-loss of 5: 0.00449372
-loss of 6: 0.00399084
-Warning in multimode::locmodes(x, mod0 = 2) :
-  If the density function has an unbounded support, artificial modes may have been created in the tails
-Warning in multimode::locmodes(x, mod0 = 2) :
-  If the density function has an unbounded support, artificial modes may have been created in the tails
-Warning in multimode::locmodes(x, mod0 = 2) :
-  If the density function has an unbounded support, artificial modes may have been created in the tails
-Warning in multimode::locmodes(x, mod0 = 2) :
-  If the density function has an unbounded support, artificial modes may have been created in the tails
-Warning in multimode::locmodes(x, mod0 = 2) :
-  If the density function has an unbounded support, artificial modes may have been created in the tails
+→ cache found, loading...
 
 ── 27 / 51 ─────────────────────────────────────────────────────────────────────
-loss of 2: 0.0173164
-loss of 3: 0.00811663
-loss of 4: 0.00613008
-loss of 5: 0.00435117
-loss of 6: 0.00405408
-Warning in multimode::locmodes(x, mod0 = 2) :
-  If the density function has an unbounded support, artificial modes may have been created in the tails
-Warning in multimode::locmodes(x, mod0 = 2) :
-  If the density function has an unbounded support, artificial modes may have been created in the tails
-Warning in multimode::locmodes(x, mod0 = 2) :
-  If the density function has an unbounded support, artificial modes may have been created in the tails
-Warning in multimode::locmodes(x, mod0 = 2) :
-  If the density function has an unbounded support, artificial modes may have been created in the tails
-Warning in multimode::locmodes(x, mod0 = 2) :
-  If the density function has an unbounded support, artificial modes may have been created in the tails
+→ cache found, loading...
 
 ── 28 / 51 ─────────────────────────────────────────────────────────────────────
-loss of 2: 0.0173221
-loss of 3: 0.00811427
-loss of 4: 0.00605573
-loss of 5: 0.0046151
-loss of 6: 0.00394247
-loss of 7: 0.00343073
-Warning in multimode::locmodes(x, mod0 = 2) :
-  If the density function has an unbounded support, artificial modes may have been created in the tails
-Warning in multimode::locmodes(x, mod0 = 2) :
-  If the density function has an unbounded support, artificial modes may have been created in the tails
-Warning in multimode::locmodes(x, mod0 = 2) :
-  If the density function has an unbounded support, artificial modes may have been created in the tails
-Warning in multimode::locmodes(x, mod0 = 2) :
-  If the density function has an unbounded support, artificial modes may have been created in the tails
+→ cache found, loading...
 
 ── 29 / 51 ─────────────────────────────────────────────────────────────────────
-loss of 2: 0.0173212
-loss of 3: 0.00816751
-loss of 4: 0.00630368
-loss of 5: 0.00449105
-loss of 6: 0.00388179
+→ cache found, loading...
+
+── 30 / 51 ─────────────────────────────────────────────────────────────────────
+→ cache found, loading...
+
+── 31 / 51 ─────────────────────────────────────────────────────────────────────
+→ cache found, loading...
+
+── 32 / 51 ─────────────────────────────────────────────────────────────────────
+→ cache found, loading...
+
+── 33 / 51 ─────────────────────────────────────────────────────────────────────
+→ cache found, loading...
+
+── 34 / 51 ─────────────────────────────────────────────────────────────────────
+→ cache found, loading...
+
+── 35 / 51 ─────────────────────────────────────────────────────────────────────
+→ cache found, loading...
+
+── 36 / 51 ─────────────────────────────────────────────────────────────────────
+loss of 2: 0.0173221
+loss of 3: 0.0082148
+loss of 4: 0.00596329
+loss of 5: 0.00465753
+loss of 6: 0.00396653

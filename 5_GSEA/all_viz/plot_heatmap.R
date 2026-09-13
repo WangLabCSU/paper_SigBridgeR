@@ -366,7 +366,7 @@ plot_heatmap3 <- function(
     # column_title = "Hallmarks Gene Set",
     # column_title_side = "bottom",
     column_names_gp = grid::gpar(fontsize = 14),
-    row_names_gp = grid::gpar(fontsize = 14),
+    row_names_gp = grid::gpar(fontsize = 16),
 
     row_labels = gsub(".*_", "", dataset_label) %>%
       stringr::str_replace("SGL", "LP_SGL"),
@@ -587,7 +587,7 @@ plot_heatmap4 <- function(
     # column_title = "Hallmarks Gene Set",
     # column_title_side = "bottom",
     column_names_gp = grid::gpar(fontsize = 14),
-    row_names_gp = grid::gpar(fontsize = 14),
+    row_names_gp = grid::gpar(fontsize = 16),
 
     row_labels = gsub(".*_", "", dataset_label) %>%
       stringr::str_replace("SGL", "LP_SGL"),
@@ -798,7 +798,7 @@ plot_heatmap_red_blue_padj <- function(
     # column_title = "Hallmarks Gene Set",
     # column_title_side = "bottom",
     column_names_gp = grid::gpar(fontsize = 14),
-    row_names_gp = grid::gpar(fontsize = 14),
+    row_names_gp = grid::gpar(fontsize = 16),
 
     row_labels = gsub(".*_", "", dataset_label) %>%
       stringr::str_replace("SGL", "LP_SGL"),
@@ -1043,7 +1043,7 @@ plot_heatmap_red_blue_padj_signif <- function(
     # column_title = "Hallmarks Gene Set",
     # column_title_side = "bottom",
     column_names_gp = grid::gpar(fontsize = 14),
-    row_names_gp = grid::gpar(fontsize = 14),
+    row_names_gp = grid::gpar(fontsize = 16),
 
     row_labels = gsub(".*_", "", dataset_label) %>%
       stringr::str_replace("SGL", "LP_SGL"),

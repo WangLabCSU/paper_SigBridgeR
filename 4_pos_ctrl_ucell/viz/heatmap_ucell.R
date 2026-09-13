@@ -201,7 +201,7 @@ p <- ggplot2::ggplot(plot_df2) +
   ggplot2::geom_text(
     data = centers,
     ggplot2::aes(x = x_center + 0.1, y = y_center - 0.12, label = label),
-    size = 2.4,
+    size = 4,
     fontface = "bold"
   ) +
   ggplot2::scale_x_continuous(
@@ -228,8 +228,8 @@ p <- ggplot2::ggplot(plot_df2) +
     # axis.text.x = ggplot2::element_text(vjust = 0.5, size = 10, angle = 90),
     axis.text.x = ggplot2::element_blank(),
     axis.ticks.y.left = ggplot2::element_blank(),
-    axis.text.y.right = ggplot2::element_text(size = 10, face = "bold"),
-    strip.text.y = ggplot2::element_text(size = 10, face = "bold"),
+    axis.text.y.right = ggplot2::element_text(size = 14, face = "bold"),
+    strip.text.y = ggplot2::element_text(size = 14, face = "bold"),
     strip.text.x = ggplot2::element_text(size = 8, face = "bold"),
     strip.background.y = ggplot2::element_rect(
       color = "white",
@@ -241,6 +241,11 @@ p <- ggplot2::ggplot(plot_df2) +
     ),
     panel.grid.major = ggplot2::element_blank(),
     panel.grid.minor = ggplot2::element_blank(),
+    legend.title = ggplot2::element_text(
+      size = 14,
+      margin = ggplot2::margin(b = 12)
+    ), # 图例标题
+    legend.text = ggplot2::element_text(size = 12)
   ) +
   # 四变量分面
   ggplot2::facet_grid(

@@ -24,7 +24,8 @@ mirai::daemons(4L)
 
 # ? Read labels
 method_labels <- if (!file.exists("method_labels.qs")) {
-  mirai::mirai_map(seurat_files, function(file) {
+  cli::cli_alert_info("Caching method_labels")
+  method_labels <- mirai::mirai_map(seurat_files, function(file) {
     seurat_i <- qs::qread(file, nthreads = 8L)
     expected_methods <- c(
       "scissor",
@@ -37,17 +38,23 @@ method_labels <- if (!file.exists("method_labels.qs")) {
       "scipac"
     )
     meta <- seurat_i[[]] # data.frame
+    if (!"SCIPAC" %in% colnames(meta)) {
+      # bug correction
+      meta$SCIPAC <- meta$sig
+    }
+
     col_names <- tolower(colnames(meta))
 
     meta[col_names %in% expected_methods]
   })[mirai::.progress]
   qs::qsave(method_labels, "method_labels.qs", nthreads = 8L)
+  method_labels
 } else {
   cli::cli_alert_info("Found existing {.val method_labels}")
   qs::qread("method_labels.qs", nthreads = 8L)
 }
 
-# ? "Other"/"Neutral"/"Negative" -> "Positive"
+# ? "Other"/"Neutral"/"Negative" -> "non_Positive"
 binarized_method_labels <- mirai::mirai_map(
   method_labels,
   function(df) {
@@ -125,7 +132,8 @@ find_name <- function(chr = character) {
 
 # ? Make data order the same
 matched_data <- if (!file.exists("matched_data.qs")) {
-  purrr::imap(
+  cli::cli_alert_info("Caching matched_data")
+  matched_data <- purrr::imap(
     binarized_method_labels,
     function(labels_of_seurat, names_of_seurat) {
       names_of_seurat <- tolower(names_of_seurat)
@@ -156,6 +164,7 @@ matched_data <- if (!file.exists("matched_data.qs")) {
     }
   )
   qs::qsave(matched_data, "matched_data.qs", nthreads = 8L)
+  matched_data
 } else {
   cli::cli_alert_info("Found existing {.val matched_data}")
   qs::qread("matched_data.qs", nthreads = 8L)

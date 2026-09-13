@@ -1,4 +1,4 @@
-Counts2TPM <- function(counts, gene_length_bp) {
+counts_to_tpm <- function(counts, gene_length_bp) {
   # counts: gene x sample matrix
   # gene_length_bp: named numeric vector, bp
   common <- intersect(rownames(counts), names(gene_length_bp))

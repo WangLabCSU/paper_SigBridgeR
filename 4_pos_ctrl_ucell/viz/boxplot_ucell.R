@@ -169,11 +169,11 @@ p <- ggplot(
     minor_breaks = scales::breaks_width(0.1)
   ) +
   labs(x = NULL, y = NULL) + # 分面时统一加 lab
-  cowplot::theme_cowplot() +
+  cowplot::theme_cowplot(16) +
   theme(
-    axis.text.x = element_text(angle = 60, hjust = 1, size = 10),
+    axis.text.x = element_text(angle = 60, hjust = 1, size = 14),
     panel.grid.minor = element_blank(),
-    strip.text = element_text(face = "bold", size = 11),
+    strip.text = element_text(face = "bold", size = 14),
     strip.background.y = ggplot2::element_rect(
       color = "white",
       fill = "#EEEEEE"

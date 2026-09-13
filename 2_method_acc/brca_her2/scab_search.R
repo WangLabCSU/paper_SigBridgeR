@@ -46,7 +46,7 @@ benchmark_label <- colnames(sc_data) %in% tumor_cells
 
 # * Screen
 
-# future::plan(future::multicore, workers = 5L)
+future::plan(future.mirai::mirai_multisession(), workers = 4L)
 SigBridgeR::setThreads(4L)
 
 
@@ -83,7 +83,7 @@ if (!file.exists("stats/scab_label_mat1.csv") || RERUN) {
         "stats/scab1",
         glue::glue("process_{i}.csv")
       )
-      if (file.exists(cache_save_path) && !RERUN) {
+      if (file.exists(cache_save_path)) {
         cli::cli_alert("cache found, loading...")
         cache <- data.table::fread(cache_save_path)
         return(cache)
@@ -106,8 +106,8 @@ if (!file.exists("stats/scab_label_mat1.csv") || RERUN) {
         cross_k = 5,
         para_1_list = alpha_samples %||% c(0.01, 0.005, 0.001),
         para_2_list = alpha_samples %||% c(0.01, 0.005, 0.001),
-        parallel = FALSE,
-        verbose = TRUE
+        parallel = TRUE,
+        verbose = FALSE
       )
 
       alpha <- para_list$para$alpha_1
@@ -152,3 +152,4 @@ if (!file.exists("stats/scab_label_mat1.csv") || RERUN) {
 
 
 cli::cli_alert_success(crayon::green("(1) scab random search completed."))
+future::plan(future::sequential())

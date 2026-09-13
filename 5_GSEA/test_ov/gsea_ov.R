@@ -42,10 +42,10 @@ labeled_seurat_loaded <-
 labeled_seurat_loaded <- labeled_seurat_loaded[mirai::.progress]
 
 # * Hallmark gene list
-geneset_hallmark <- msigdbr::msigdbr(species = "Homo sapiens", category = "H")
+geneset_hallmark <- data.table::fread("../geneset_hallmark.csv")
 gene_list <- split(
   geneset_hallmark$gene_symbol,
-  geneset_hallmark$gs_description
+  geneset_hallmark$gs_name
 )
 
 # * Find DEG
@@ -64,6 +64,12 @@ degs <- if (!file.exists(glue::glue("degs_{tissue}.qs"))) {
   degs <- lapply(seq_along(labeled_seurat_loaded), function(i) {
     sc_data <- labeled_seurat_loaded[[i]]
     existing_cols <- colnames(sc_data[[]])
+
+    if ("sig" %in% existing_cols && !"SCIPAC" %in% existing_cols) {
+      # bug correction
+      sc_data$SCIPAC <- sc_data$sig
+      existing_cols <- colnames(sc_data[[]])
+    }
     filtered_cols <- existing_cols[existing_cols %in% methods] # available methods
 
     cli::cli_alert_info(

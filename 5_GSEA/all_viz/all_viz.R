@@ -36,10 +36,10 @@ loaded_degs_file <- lapply(degs_file, \(x) {
 # * viz
 # * Hallmark gene list
 gene_list <- if (!file.exists("hallmarks_gene_list.qs")) {
-  geneset_hallmark <- msigdbr::msigdbr(species = "Homo sapiens", category = "H")
+  geneset_hallmark <- data.table::fread("../geneset_hallmark.csv")
   gene_list <- split(
     geneset_hallmark$gene_symbol,
-    geneset_hallmark$gs_description
+    geneset_hallmark$gs_name
   )
   qs::qsave(gene_list, "hallmarks_gene_list.qs", nthreads = 4L) # < 1 MB
   gene_list
