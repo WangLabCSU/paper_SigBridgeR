@@ -10,7 +10,8 @@ data_paths <- list.files(
   pattern = ".stat\\.csv",
   recursive = TRUE,
   full.names = TRUE
-)
+) %>%
+  grepv("/ad/|/fshd/", ., invert = TRUE)
 bulk <- dirname(data_paths) %>% basename()
 sc_type <- dirname(dirname(data_paths)) %>% basename() %>% toupper()
 pheno_type <- gsub(".*(survival|binary).*", "\\1", data_paths)
@@ -144,17 +145,18 @@ p <- ggplot2::ggplot(
       angle = 60,
       hjust = 1,
       vjust = 1,
-      size = 10
+      size = 14
     ),
-    axis.title.x = ggplot2::element_text(size = 14, face = "bold"),
-    axis.title.y = ggplot2::element_text(size = 14, face = "bold"),
+    axis.text.y = ggplot2::element_text(size = 14),
+    axis.title.x = ggplot2::element_text(size = 16, face = "bold"),
+    axis.title.y = ggplot2::element_text(size = 16, face = "bold"),
     panel.grid.major.x = ggplot2::element_blank(),
     panel.grid.minor = ggplot2::element_blank(),
     panel.grid.major.y = ggplot2::element_line(
       color = "#EEEEEE",
       linewidth = 0.3
     ),
-    strip.text = ggplot2::element_text(face = "bold", size = 11),
+    strip.text = ggplot2::element_text(face = "bold", size = 14),
     strip.background = ggplot2::element_rect(
       fill = "#EEEEEE",
       color = "white"

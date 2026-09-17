@@ -127,7 +127,7 @@ CalcGroupMeanScores <- function(
 }
 
 mean_scores <- CalcGroupMeanScores(
-  scores,
+  t(scores),
   meta,
   meta_cols = colnames(screened_label),
   sample_name = "Sample_100_GSE162228"

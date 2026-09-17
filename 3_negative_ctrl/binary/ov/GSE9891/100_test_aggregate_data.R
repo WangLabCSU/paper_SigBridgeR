@@ -1,5 +1,7 @@
 setwd(file.path(usethis::proj_path(), "3_negative_ctrl"))
 
+library(dplyr)
+
 scores <- qs::qread(
   "ov/ov_Sample_100_ssgsea_score.qs",
   nthreads = 4L
@@ -120,7 +122,7 @@ CalcGroupMeanScores <- function(
 }
 
 mean_scores <- CalcGroupMeanScores(
-  scores,
+  t(scores),
   meta,
   meta_cols = colnames(screened_label),
   sample_name = "Sample_100_GSE9891"

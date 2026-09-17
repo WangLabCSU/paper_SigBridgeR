@@ -8,10 +8,6 @@ mirai::daemons(4L)
 
 neg_score <- qs::qread("../ucell_neg_score/neg_ucell_score.qs", nthreads = 8L)
 
-neg_score_binded <- lapply(neg_score, function(x) {
-  base::do.call(base::cbind, args = x)
-})
-
 seurats <- list.files(
   c(
     "/home/data/sigbridger/benchmark_data",
@@ -43,10 +39,7 @@ method_labels <- if (!file.exists("method_labels.qs")) {
     )
     meta <- seurat_i[[]] # data.frame
     col_names <- tolower(colnames(meta))
-    if ("sig" %in% col_names) {
-      if ("scipac" %in% col_names) {
-        stop("Both sig and scipac found in meta, need to fix label")
-      }
+    if ("sig" %in% col_names && !"scipac" %in% col_names) {
       meta$scipac <- meta$sig
     }
 
@@ -61,7 +54,7 @@ method_labels <- if (!file.exists("method_labels.qs")) {
 
 
 neg_score_nested <- purrr::imap(
-  neg_score_binded,
+  neg_score,
   function(
     rep100_score_mat,
     name # lowercase
@@ -74,7 +67,13 @@ neg_score_nested <- purrr::imap(
           expected_tissue <- "lung"
         }
 
-        if (!grepl(expected_tissue, data_name)) {
+        if (
+          !grepl(
+            pattern = expected_tissue,
+            x = stringr::str_match(data_name, "^[^_]*_([^_]+)_")[, 2]
+          )
+        ) {
+          # if not the tissue, skip
           return(NULL)
         }
 
@@ -120,6 +119,9 @@ qs::qsave(
   file = "neg_score_nested_combined.qs",
   nthreads = 8L
 )
+# neg_score_nested_combined <- qs::qread(
+#   "neg_score_nested_combined.qs"
+# )
 
 ad_test_ucell_score <- purrr::imap(
   neg_score_nested_combined,

@@ -6,7 +6,12 @@ test100_data <- list.files(
   pattern = "rep100.*\\.csv",
   recursive = TRUE,
   full.names = TRUE
-)
+) %>%
+  grepv(
+    "/ad/|/fshd/",
+    .,
+    invert = TRUE
+  )
 bulk <- dirname(test100_data) %>% basename()
 sc_type <- dirname(dirname(test100_data)) %>% basename()
 pheno_type <- gsub(".*(binary|survival).*", "\\1", dirname(test100_data))

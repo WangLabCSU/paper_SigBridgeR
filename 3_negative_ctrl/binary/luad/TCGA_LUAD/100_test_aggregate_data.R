@@ -1,5 +1,7 @@
 setwd(file.path(usethis::proj_path(), "3_negative_ctrl"))
 
+library(dplyr)
+
 scores <- qs::qread(
   "luad/luad_Sample_100_ssgsea_score.qs",
   nthreads = 4L

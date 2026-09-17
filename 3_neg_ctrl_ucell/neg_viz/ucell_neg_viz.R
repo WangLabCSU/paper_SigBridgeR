@@ -8,7 +8,12 @@ library(ggsignif)
 ucell_score <- qs::qread(
   "../neg_ad_test/neg_score_nested_combined.qs",
   nthreads = 4L
-) %>%
+)
+
+filter_tumor <- grepl("_ad_|_fshd_", names(ucell_score))
+ucell_score <- ucell_score[!filter_tumor]
+
+ucell_score <- ucell_score %>%
   purrr::imap(
     ~ {
       dtplyr::lazy_dt(.x) %>%
@@ -153,17 +158,18 @@ p <- ggplot2::ggplot(
       angle = 60,
       hjust = 1,
       vjust = 1,
-      size = 10
+      size = 14
     ),
-    axis.title.x = ggplot2::element_text(size = 14, face = "bold"),
-    axis.title.y = ggplot2::element_text(size = 14, face = "bold"),
+    axis.text.y = ggplot2::element_text(size = 14),
+    axis.title.x = ggplot2::element_text(size = 16, face = "bold"),
+    axis.title.y = ggplot2::element_text(size = 16, face = "bold"),
     panel.grid.major.x = ggplot2::element_blank(),
     panel.grid.minor = ggplot2::element_blank(),
     panel.grid.major.y = ggplot2::element_line(
       color = "#EEEEEE",
       linewidth = 0.3
     ),
-    strip.text = ggplot2::element_text(face = "bold", size = 11),
+    strip.text = ggplot2::element_text(face = "bold", size = 14),
     strip.background = ggplot2::element_rect(
       fill = "#EEEEEE",
       color = "white"
@@ -188,92 +194,91 @@ ggplot2::ggsave(
   height = 24
 )
 
+# p_hairtail <- ggplot2::ggplot(
+#   ucell_score,
+#   ggplot2::aes(
+#     x = cluster,
+#     y = ucell_mean_score,
+#     fill = cluster,
+#     color = cluster
+#   )
+# ) +
+#   gghalves::geom_half_boxplot(
+#     side = "l",
+#     outlier.alpha = 0.2,
+#     outlier.size = 0.5,
+#     outlier.colour = "#cececeff",
+#     width = 0.65,
+#     alpha = 0.5,
+#     errorbar.length = 0.4,
+#     show.legend = FALSE
+#   ) +
+#   gghalves::geom_half_violin(
+#     side = "r",
+#     trim = FALSE,
+#     alpha = 0.5,
+#     show.legend = FALSE,
+#     width = 0.65,
+#     scale = "count"
+#   ) +
+#   #   ggplot2::geom_point(
+#   #     size = 0.3,
+#   #     alpha = 0.7,
+#   #     shape = 16,
+#   #     position = ggplot2::position_jitterdodge(
+#   #       jitter.width = 0.12,
+#   #       jitter.height = 0,
+#   #       dodge.width = 0.75
+#   #     )
+#   #   ) +
+#   # geom_signif(
+#   #   comparisons = list(c("A", "B"), c("A", "D")), # 设置需要比较的组
+#   #   map_signif_level = T, #是否使用星号显示
+#   #   test = t.test, ##计算方法
+#   #   y_position = c(25, 28), #图中横线位置设置
+#   #   tip_length = c(c(0.7, 0.3), c(0.8, 0.3)), #横线下方的竖线设置
+#   #   size = 1,
+#   #   color = "black"
+#   # )  +
+#   ggplot2::scale_fill_manual(values = palette, guide = "none") +
+#   ggplot2::scale_color_manual(values = palette, guide = "none") +
+#   cowplot::theme_cowplot() +
+#   ggplot2::theme(
+#     axis.text.x = ggplot2::element_text(
+#       angle = 60,
+#       hjust = 1,
+#       vjust = 1,
+#       size = 14
+#     ),
+#     axis.text.y = ggplot2::element_text(size = 14),
+#     axis.title.x = ggplot2::element_text(size = 16, face = "bold"),
+#     axis.title.y = ggplot2::element_text(size = 16, face = "bold"),
+#     panel.grid.major.x = ggplot2::element_blank(),
+#     panel.grid.minor = ggplot2::element_blank(),
+#     panel.grid.major.y = ggplot2::element_line(
+#       color = "#EEEEEE",
+#       linewidth = 0.3
+#     ),
+#     strip.text = ggplot2::element_text(face = "bold", size = 14),
+#     strip.background = ggplot2::element_rect(
+#       fill = "#EEEEEE",
+#       color = "white"
+#     )
+#   ) +
+#   ggplot2::labs(
+#     title = "Neg ctrl - UCell",
+#     x = "Screen Group",
+#     y = "UCell Mean Score"
+#   ) +
+#   ggplot2::facet_grid(
+#     bulk ~ sc + pheno,
+#     scales = "free"
+#   )
 
-p_hairtail <- ggplot2::ggplot(
-  ucell_score,
-  ggplot2::aes(
-    x = cluster,
-    y = ucell_mean_score,
-    fill = cluster,
-    color = cluster
-  )
-) +
-  gghalves::geom_half_boxplot(
-    side = "l",
-    outlier.alpha = 0.2,
-    outlier.size = 0.5,
-    outlier.colour = "#cececeff",
-    width = 0.65,
-    alpha = 0.5,
-    errorbar.length = 0.4,
-    show.legend = FALSE
-  ) +
-  gghalves::geom_half_violin(
-    side = "r",
-    trim = FALSE,
-    alpha = 0.5,
-    show.legend = FALSE,
-    width = 0.65,
-    scale = "count"
-  ) +
-  #   ggplot2::geom_point(
-  #     size = 0.3,
-  #     alpha = 0.7,
-  #     shape = 16,
-  #     position = ggplot2::position_jitterdodge(
-  #       jitter.width = 0.12,
-  #       jitter.height = 0,
-  #       dodge.width = 0.75
-  #     )
-  #   ) +
-  # geom_signif(
-  #   comparisons = list(c("A", "B"), c("A", "D")), # 设置需要比较的组
-  #   map_signif_level = T, #是否使用星号显示
-  #   test = t.test, ##计算方法
-  #   y_position = c(25, 28), #图中横线位置设置
-  #   tip_length = c(c(0.7, 0.3), c(0.8, 0.3)), #横线下方的竖线设置
-  #   size = 1,
-  #   color = "black"
-  # )  +
-  ggplot2::scale_fill_manual(values = palette, guide = "none") +
-  ggplot2::scale_color_manual(values = palette, guide = "none") +
-  cowplot::theme_cowplot() +
-  ggplot2::theme(
-    axis.text.x = ggplot2::element_text(
-      angle = 60,
-      hjust = 1,
-      vjust = 1,
-      size = 10
-    ),
-    axis.title.x = ggplot2::element_text(size = 14, face = "bold"),
-    axis.title.y = ggplot2::element_text(size = 14, face = "bold"),
-    panel.grid.major.x = ggplot2::element_blank(),
-    panel.grid.minor = ggplot2::element_blank(),
-    panel.grid.major.y = ggplot2::element_line(
-      color = "#EEEEEE",
-      linewidth = 0.3
-    ),
-    strip.text = ggplot2::element_text(face = "bold", size = 11),
-    strip.background = ggplot2::element_rect(
-      fill = "#EEEEEE",
-      color = "white"
-    )
-  ) +
-  ggplot2::labs(
-    title = "Neg ctrl - UCell\n 100reps",
-    x = "Screen Group",
-    y = "UCell Mean Score"
-  ) +
-  ggplot2::facet_grid(
-    bulk ~ sc + pheno,
-    scales = "free"
-  )
-
-
-ggplot2::ggsave(
-  filename = "ucell_100_test_hairtail.png",
-  plot = p_hairtail,
-  dpi = 400,
-  width = 30,
-  height = 16
-)
+# ggplot2::ggsave(
+#   filename = "ucell_100_test_hairtail.png",
+#   plot = p_hairtail,
+#   dpi = 400,
+#   width = 30,
+#   height = 16
+# )
