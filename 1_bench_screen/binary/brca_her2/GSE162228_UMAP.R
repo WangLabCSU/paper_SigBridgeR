@@ -19,53 +19,60 @@ seurat_merged <- qs::qread(
   file.path(data_path, paste0("binary_her2_", bulk_name, "_merged_seurat.qs")),
   nthreads = 8L
 )
-seurat_merged$SCIPAC <- seurat_merged$sig
 
-# seurat_her2_tumor <- readRDS(
-#   "/home/data/data-resource/single-cell/BRCA/GSE161529_Seurat/SeuratObject_HER2Tum.rds"
-# )
-# seurat_merged$is_tumor = ifelse(
-#   colnames(seurat_merged) %in% rownames(seurat_her2_tumor@meta.data),
-#   "TRUE",
-#   "FALSE"
-# )
+seurat_her2_tumor <- readRDS(
+  "/home/data/data-resource/single-cell/BRCA/GSE161529_Seurat/SeuratObject_HER2Tum.rds"
+)
+seurat_merged$is_tumor = ifelse(
+  colnames(seurat_merged) %in% rownames(seurat_her2_tumor@meta.data),
+  "TRUE",
+  "FALSE"
+)
+if (
+  !"SCIPAC" %in% colnames(seurat_merged[[]]) &&
+    "sig" %in% colnames(seurat_merged[[]])
+) {
+  message("SCIPAC not in meta, use sig instead")
+  # bug compatible
+  seurat_merged$SCIPAC <- seurat_merged$sig
+}
 
 # umap_cluster <- draw_umap(
 #   seurat = seurat_merged,
 #   group.by = "seurat_clusters",
-#   title = "GSE161529 her2 seurat_clusters",
+#   label.size = 4,
+#   title = "Seurat Clusters",
 #   save_path = file.path(save_path, "GSE161529_her2_seurat_clusters_UMAP.png")
 # )
 
 # umap_tumor <- draw_umap(
 #   seurat = seurat_merged,
 #   group.by = "is_tumor",
-#   cols = c("FALSE" = "#386c9b", "TRUE" = "#a02020"),
-#   title = "GSE161529 her2 is tumor cell",
+#   label = FALSE,
+#   cols = c("FALSE" = "#5189bb", "TRUE" = "#c24b4b"),
+#   title = "Tumor Status",
 #   save_path = file.path(save_path, "GSE161529_her2_tumor_UMAP.png")
 # )
 
-c(
-  umap_scissor,
-  umap_scpas,
-  umap_scipac,
-  umap_scpp,
-  umap_scab,
-  umap_degas,
-  umap_lp_sgl
-  #   ,  umap_pipet
-) %<-%
+method_cols <- c(
+  "scissor",
+  "scPAS",
+  "SCIPAC",
+  "scPP",
+  "scAB",
+  "DEGAS",
+  "LP_SGL",
+  "PIPET"
+)
+method_cols_missing <- setdiff(method_cols, colnames(seurat_merged[[]]))
+if (length(method_cols_missing) > 0L) {
+  cli::cli_alert_warning("Skip missing methods: {.val {method_cols_missing}}")
+}
+method_cols <- intersect(method_cols, colnames(seurat_merged[[]]))
+
+umap_methods <-
   purrr::map(
-    c(
-      "scissor",
-      "scPAS",
-      "SCIPAC",
-      "scPP",
-      'scAB',
-      "DEGAS",
-      "LP_SGL"
-      #   ,      "PIPET"
-    ),
+    method_cols,
     ~ draw_umap(
       seurat = seurat_merged,
       group.by = .x,
@@ -73,13 +80,13 @@ c(
       cols = c(
         "Other" = "#CECECE",
         "Neutral" = "#CECECE",
-        "Positive" = "#c24b4b",
-        "Negative" = "#5189bb"
+        "Positive" = "#a02020",
+        "Negative" = "#386c9b"
       ),
-      title = paste0("sc: GSE161529 her2\nbulk: ", bulk_name, "\nmethod: ", .x),
+      title = glue::glue("Method: {.x}"),
       save_path = file.path(
         save_path,
-        paste0("GSE161529_her2_", bulk_name, "_", .x, "_UMAP.png")
+        glue::glue("GSE161529_her2_{bulk_name}_{.x}_UMAP.png")
       )
     ),
     .progress = "Drawing"

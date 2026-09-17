@@ -242,6 +242,16 @@ gene_symbols <- convert_gene_symbol(genes)
 fshd_bulkdata_GSE140261 <- as.matrix(fshd_bulkdata_GSE140261[, -1])
 rownames(fshd_bulkdata_GSE140261) <- gene_symbols
 
+sample_map <- setNames(
+  fshd_pheno_GSE140261$geo_accession,
+  fshd_pheno_GSE140261$title
+)
+names(sample_map) <- stringr::str_remove_all(names(sample_map), "_.*")
+colnames(fshd_bulkdata_GSE140261) <- sample_map[colnames(
+  fshd_bulkdata_GSE140261
+)]
+
+
 qs::qsave(
   fshd_bulkdata_GSE140261,
   file.path(out_dir, "benchmark_data/fshd/fshd_bulkdata_GSE140261.qs"),
@@ -296,6 +306,14 @@ fshd_bulkdata_GSE115650 <- as.matrix(fshd_bulkdata_GSE115650[, -1])
 rownames(fshd_bulkdata_GSE115650) <- gene_symbols
 
 fshd_bulkdata_GSE115650 <- fpkm_to_tpm(fshd_bulkdata_GSE115650)
+
+sample_map <- setNames(
+  fshd_pheno_GSE115650$geo_accession,
+  fshd_pheno_GSE115650$title
+)
+colnames(fshd_bulkdata_GSE115650) <- sample_map[colnames(
+  fshd_bulkdata_GSE115650
+)]
 
 qs::qsave(
   fshd_bulkdata_GSE115650,
@@ -422,6 +440,7 @@ ad_bulkdata_GSE28146 <- aggregate(
   FUN = sum
 )
 ad_bulkdata_GSE28146 <- tibble::column_to_rownames(ad_bulkdata_GSE28146, "gene")
+ad_bulkdata_GSE28146 <- as.matrix(ad_bulkdata_GSE28146)
 ad_bulkdata_GSE28146 <- log2(ad_bulkdata_GSE28146)
 
 qs::qsave(
@@ -434,3 +453,15 @@ qs::qsave(
   file.path(out_dir, "benchmark_data/ad/ad_pheno_GSE28146.qs"),
   nthreads = 4
 )
+
+# -------------------------------------------------------------------------------------------
+
+# fshd_bulk_GSE26852 <- geokit::geo_matrix(
+#   "GSE26852",
+#   odir = "/home/data/sigbridger/benchmark_data/fshd/GSE26852",
+#   add_gpl = TRUE
+# )
+# fshdd_supple_GSE26852 <- geokit::geo_suppl(
+#   "GSE26852",
+#   odir = "/home/data/sigbridger/benchmark_data/ad/GSE28146"
+# )

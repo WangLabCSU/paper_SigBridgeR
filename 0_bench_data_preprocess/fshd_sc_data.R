@@ -32,10 +32,10 @@ fshd_meta <- data.frame(
   barcode = unlist(lapply(names(fshd_counts_list), function(s) {
     colnames(fshd_counts_list[[s]])
   })),
-  sample = rep(
-    names(fshd_counts_list),
-    lengths(lapply(fshd_counts_list, ncol))
-  ),
+  sample = purrr::imap(fshd_counts_list, \(x, name) {
+    rep(name, ncol(x))
+  }) %>%
+    unlist(),
   row.names = NULL
 )
 fshd_meta$condition <- sub("\\.\\d+$", "", fshd_meta$sample) # FSHD1 / FSHD2 / CTRL
@@ -220,12 +220,17 @@ dim_plot <- Seurat::DimPlot(
 )
 
 
+ensembl_id <- rownames(fshd_seurat)
+
 # Genes of bulk data we got were transformed
-ens2sym <- IDConverter::convert_hm_genes(rownames(fshd_seurat), "ensembl")
+ens2sym <- IDConverter::convert_hm_genes(ensembl_id, "ensembl")
 cli::cli_alert_warning("Found {sum(is.na(ens2sym))} NA value{?s}")
 
 which_na <- which(is.na(ens2sym))
-ens2sym[which_na] <- rownames(fshd_seurat)[which_na]
+which_dup <- which(duplicated(ens2sym))
+ens2sym[union(which_na, which_dup)] <- ensembl_id[
+  union(which_na, which_dup)
+]
 
 rownames(fshd_seurat) <- ens2sym
 

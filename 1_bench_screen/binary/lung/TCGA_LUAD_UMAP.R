@@ -19,12 +19,20 @@ seurat_merged <- qs::qread(
   file.path(data_path, paste0("binary_lung_", bulk_name, "_merged_seurat.qs")),
   nthreads = 8L
 )
+if (
+  !"SCIPAC" %in% colnames(seurat_merged[[]]) &&
+    "sig" %in% colnames(seurat_merged[[]])
+) {
+  message("SCIPAC not in meta, use sig instead")
+  # bug compatible
+  seurat_merged$SCIPAC <- seurat_merged$sig
+}
 
 umap_cluster <- draw_umap(
   seurat = seurat_merged,
   group.by = "seurat_clusters",
   label.size = 4,
-  title = "GSE123902 seurat_clusters",
+  title = "Seurat Clusters",
   save_path = file.path(save_path, "GSE123902_seurat_clusters_UMAP.png")
 )
 
@@ -32,47 +40,45 @@ umap_tumor <- draw_umap(
   seurat = seurat_merged,
   group.by = "cnv_status",
   label = FALSE,
-  cols = c("normal" = "#5189bb", "tumor" = "#c24b4b"),
-  title = "GSE123902 luad is tumor cell",
+  cols = c("normal" = "#386c9b", "tumor" = "#a02020"),
+  title = "Tumor Status",
   save_path = file.path(save_path, "GSE123902_tumor_UMAP.png")
 )
 
 
-c(
-  umap_scissor,
-  umap_scpas,
-  umap_scipac,
-  umap_scpp,
-  umap_scab,
-  umap_degas,
-  umap_lp_sgl,
-  umap_pipet
-) %<-%
+method_cols <- c(
+  "scissor",
+  "scPAS",
+  "SCIPAC",
+  "scPP",
+  "scAB",
+  "DEGAS",
+  "LP_SGL",
+  "PIPET"
+)
+method_cols_missing <- setdiff(method_cols, colnames(seurat_merged[[]]))
+if (length(method_cols_missing) > 0L) {
+  cli::cli_alert_warning("Skip missing methods: {.val {method_cols_missing}}")
+}
+method_cols <- intersect(method_cols, colnames(seurat_merged[[]]))
+
+umap_methods <-
   purrr::map(
-    c(
-      "scissor",
-      "scPAS",
-      "SCIPAC",
-      "scPP",
-      'scAB',
-      "DEGAS",
-      "LP_SGL",
-      "PIPET"
-    ),
+    method_cols,
     ~ draw_umap(
       seurat = seurat_merged,
       group.by = .x,
+      label = FALSE,
       cols = c(
         "Other" = "#CECECE",
         "Neutral" = "#CECECE",
-        "Positive" = "#c24b4b",
-        "Negative" = "#5189bb"
+        "Positive" = "#a02020",
+        "Negative" = "#386c9b"
       ),
-      label = FALSE,
-      title = paste0("sc: GSE123902\nbulk: ", bulk_name, "\nmethod: ", .x),
+      title = glue::glue("Method: {.x}"),
       save_path = file.path(
         save_path,
-        paste0("GSE123902_", bulk_name, "_", .x, "_UMAP.png")
+        glue::glue("GSE123902_{bulk_name}_{.x}_UMAP.png")
       )
     ),
     .progress = "Drawing"

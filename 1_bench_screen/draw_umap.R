@@ -3,7 +3,7 @@ draw_umap <- function(
   group.by = character(),
   label = TRUE,
   label.size = 2.5,
-  pt.size = 0.6,
+  pt.size = 0.3,
   cols = NULL,
   title = NULL,
   save_path = NULL,
@@ -68,7 +68,15 @@ draw_umap <- function(
     Seurat::NoAxes() +
     ggplot2::labs(x = "UMAP_1", y = "UMAP_2") +
     tidydr::theme_dr() +
-    ggplot2::theme(panel.grid = ggplot2::element_blank()) +
+    ggplot2::theme(
+      panel.grid = ggplot2::element_blank(),
+      plot.title = ggplot2::element_text(hjust = 0.5, size = 18, face = "bold"),
+      legend.title = ggplot2::element_text(size = 16),
+      legend.text = ggplot2::element_text(size = 14)
+    ) +
+    ggplot2::guides(
+      color = ggplot2::guide_legend(override.aes = list(size = 6))
+    ) +
     ggplot2::ggtitle(title)
 
   if (!is.null(save_path)) {
