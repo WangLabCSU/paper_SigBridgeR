@@ -1,4 +1,7 @@
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+setwd(file.path(
+  usethis::proj_path(),
+  "4_positive_ctrl/diff_test/binary/brca/her2"
+))
 
 library(dplyr)
 library(data.table)

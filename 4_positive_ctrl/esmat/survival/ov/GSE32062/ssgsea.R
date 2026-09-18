@@ -34,18 +34,21 @@ gene_list <- list(
 
 # ? run ssGSEA
 seurat_path <- "/home/data/sigbridger/benchmark_data/ov/ov"
-seurat <- qs::qread(file.path(seurat_path, "survival_ov_GSE32062_merged_seurat.qs"))
+seurat <- qs::qread(file.path(
+  seurat_path,
+  "survival_ov_GSE32062_merged_seurat.qs"
+))
 
-expr <- as.matrix(SeuratObject::LayerData(
+expr <- SeuratObject::LayerData(
   seurat,
   layer = "data",
   assay = "RNA"
-))
+)
 
 # ? run ssGSEA
 param <- BiocParallel::MulticoreParam(workers = 2L)
 
-ssgsea_param_sub <- gsvaParam(
+ssgsea_param_sub <- ssgseaParam(
   exprData = expr,
   geneSets = gene_list,
   # kcdf = auto # * auto choose
@@ -63,6 +66,10 @@ es_df <- t(esmat_sub) %>% cbind(seurat[[]])
 #   es_df,
 #   file = "ssGSEA_score_GSE32062.csv"
 # )
-qs::qsave(es_df, file = "esmat/survival/ov/GSE32062/ssGSEA_score_GSE32062.qs", nthreads = 4L)
+qs::qsave(
+  es_df,
+  file = "esmat/survival/ov/GSE32062/ssGSEA_score_GSE32062.qs",
+  nthreads = 4L
+)
 
 cli::cli_alert_success("Done!")

@@ -38,16 +38,16 @@ seurat <- qs::qread(file.path(
   "survival_lung_TCGA_LUAD_merged_seurat.qs"
 ))
 
-expr <- as.matrix(SeuratObject::LayerData(
+expr <- SeuratObject::LayerData(
   seurat,
   layer = "data",
   assay = "RNA"
-))
+)
 
 # ? run ssGSEA
 param <- BiocParallel::MulticoreParam(workers = 3L)
 
-ssgsea_param_sub <- gsvaParam(
+ssgsea_param_sub <- ssgseaParam(
   exprData = expr,
   geneSets = gene_list,
   # kcdf = auto # * auto choose

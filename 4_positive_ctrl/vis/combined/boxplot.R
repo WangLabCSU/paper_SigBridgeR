@@ -12,7 +12,9 @@ esmats <- list.files(
   pattern = ".qs",
   recursive = TRUE,
   full.names = TRUE
-)
+) %>%
+  grepv("/ad/|/fshd/", ., invert = TRUE)
+
 
 names(esmats) <- paste(
   basename(dirname(dirname(esmats))), # tumor type
@@ -178,9 +180,9 @@ p <- ggplot(
   labs(x = NULL, y = NULL) + # 分面时统一加 lab
   cowplot::theme_cowplot() +
   theme(
-    axis.text.x = element_text(angle = 60, hjust = 1, size = 10),
+    axis.text.x = element_text(angle = 60, hjust = 1, size = 14),
     panel.grid.minor = element_blank(),
-    strip.text = element_text(face = "bold", size = 11),
+    strip.text = element_text(face = "bold", size = 14),
     strip.background.y = ggplot2::element_rect(
       color = "white",
       fill = "#EEEEEE"

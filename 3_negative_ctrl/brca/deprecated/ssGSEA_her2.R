@@ -53,7 +53,7 @@ for (i in seq_len(ncol(markers))) {
 
   # 4. 提取单细胞表达矩阵（基因 × 细胞）
   # 5. 构造 GSVA 参数对象（≥1.50 版写法）
-  ssgsea_param <- gsvaParam(
+  ssgsea_param <- ssgseaParam(
     exprData = expr,
     geneSets = genesets,
     # kcdf = auto # *自动选择了gaussian

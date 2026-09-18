@@ -1,6 +1,7 @@
 setwd(file.path(usethis::proj_path(), "4_positive_ctrl/vis/combined"))
 
 library(data.table)
+library(dplyr)
 
 data_survival <- list.files(
   path = file.path(usethis::proj_path(), "4_positive_ctrl/vis/survival"),
@@ -15,6 +16,7 @@ data_binary <- list.files(
   recursive = TRUE
 )
 data <- c(data_survival, data_binary)
+data <- grepv("_ad_|_fshd_", data, invert = TRUE) # filter tumor samples
 names(data) <- basename(data) %>% tools::file_path_sans_ext()
 
 data_loaded <- lapply(X = data, FUN = data.table::fread)
@@ -214,7 +216,7 @@ p <- ggplot2::ggplot(plot_df2) +
   ggplot2::geom_text(
     data = centers,
     ggplot2::aes(x = x_center + 0.1, y = y_center - 0.12, label = label),
-    size = 2.4,
+    size = 4,
     fontface = "bold"
   ) +
   ggplot2::scale_x_continuous(
@@ -241,8 +243,8 @@ p <- ggplot2::ggplot(plot_df2) +
     # axis.text.x = ggplot2::element_text(vjust = 0.5, size = 10, angle = 90),
     axis.text.x = ggplot2::element_blank(),
     axis.ticks.y.left = ggplot2::element_blank(),
-    axis.text.y.right = ggplot2::element_text(size = 10, face = "bold"),
-    strip.text.y = ggplot2::element_text(size = 10, face = "bold"),
+    axis.text.y.right = ggplot2::element_text(size = 14, face = "bold"),
+    strip.text.y = ggplot2::element_text(size = 14, face = "bold"),
     strip.text.x = ggplot2::element_text(size = 8, face = "bold"),
     strip.background.y = ggplot2::element_rect(
       color = "white",
@@ -254,6 +256,8 @@ p <- ggplot2::ggplot(plot_df2) +
     ),
     panel.grid.major = ggplot2::element_blank(),
     panel.grid.minor = ggplot2::element_blank(),
+    legend.title = ggplot2::element_text(size = 16),
+    legend.text = ggplot2::element_text(size = 14)
   ) +
   # 四变量分面
   ggplot2::facet_grid(
@@ -265,101 +269,101 @@ p <- ggplot2::ggplot(plot_df2) +
 ggplot2::ggsave(
   p,
   filename = "heatmap_combined.png",
-  width = 20,
+  width = 22,
   height = 12,
   dpi = 400
 )
 
-p_hairtail <- ggplot2::ggplot(plot_df2) +
-  ggplot2::geom_polygon(
-    ggplot2::aes(upper.x, upper.y, fill = diff, group = group),
-    colour = "grey",
-    linewidth = 0.1
-  ) +
-  # diff颜色
-  ggplot2::scale_fill_gradientn(
-    colors = grDevices::colorRampPalette(c(
-      "#ffffff",
-      "#FFED99",
-      "#85ac61",
-      "#8ecde0ff",
-      "#7b74e0",
-      "#4941b9",
-      "#991cb9"
-    ))(10),
-    limits = c(0.5, 3.5),
-    na.value = "#e9e9e9ff", # ← NA 灰色
-    name = "Diff"
-  ) +
-  ggnewscale::new_scale("fill") +
-  # 显著性颜色
-  ggplot2::geom_polygon(
-    ggplot2::aes(lower.x, lower.y, fill = neg_log10_p, group = group),
-    colour = "white",
-    linewidth = 0.1
-  ) +
-  ggplot2::scale_fill_gradient(
-    low = "#fceeeeff",
-    high = "#d65456ff",
-    limits = c(0, 300),
-    na.value = "#e9e9e9ff",
-    name = "-log10 (P value)"
-  ) +
-  ggplot2::geom_text(
-    data = centers,
-    ggplot2::aes(x = x_center + 0.1, y = y_center - 0.12, label = label),
-    size = 2.4,
-    fontface = "bold"
-  ) +
-  ggplot2::scale_x_continuous(
-    breaks = x_breaks,
-    labels = x_labels,
-    expand = c(0, 0)
-  ) +
-  ggplot2::scale_y_continuous(
-    expand = c(0, 0),
-    breaks = seq_along(unique(plot_df2[["comparison"]])) + 0.5,
-    labels = sort(unique(plot_df2[["comparison"]])),
-    sec.axis = ggplot2::dup_axis()
-  ) +
-  ggplot2::labs(
-    title = "ssGSEA Pos Ctrl",
-    subtitle = "signif: wilcoxon rank sum test -> ssGSEA score\n
-    diff = mean score / mean score\n
-    -log10 (P value) = -log10 (wilcoxon rank sum test p value)"
-  ) +
-  ggplot2::theme_minimal() +
-  ggplot2::theme(
-    axis.text.y.left = ggplot2::element_blank(),
-    axis.title = ggplot2::element_blank(),
-    # axis.text.x = ggplot2::element_text(vjust = 0.5, size = 10, angle = 90),
-    axis.text.x = ggplot2::element_blank(),
-    axis.ticks.y.left = ggplot2::element_blank(),
-    axis.text.y.right = ggplot2::element_text(size = 10, face = "bold"),
-    strip.text.y = ggplot2::element_text(size = 10, face = "bold"),
-    strip.text.x = ggplot2::element_text(size = 8, face = "bold"),
-    strip.background.y = ggplot2::element_rect(
-      color = "white",
-      fill = "#EEEEEE"
-    ),
-    strip.background.x = ggplot2::element_rect(
-      color = "white",
-      fill = "#EEEEEE"
-    ),
-    panel.grid.major = ggplot2::element_blank(),
-    panel.grid.minor = ggplot2::element_blank(),
-  ) +
-  # 四变量分面
-  ggplot2::facet_grid(
-    ~ `ssGSEA type` + type_pheno + tumor_type + bulk,
-    scales = "free", # must be free
-    space = "free" # must be free
-  )
+# p_hairtail <- ggplot2::ggplot(plot_df2) +
+#   ggplot2::geom_polygon(
+#     ggplot2::aes(upper.x, upper.y, fill = diff, group = group),
+#     colour = "grey",
+#     linewidth = 0.1
+#   ) +
+#   # diff颜色
+#   ggplot2::scale_fill_gradientn(
+#     colors = grDevices::colorRampPalette(c(
+#       "#ffffff",
+#       "#FFED99",
+#       "#85ac61",
+#       "#8ecde0ff",
+#       "#7b74e0",
+#       "#4941b9",
+#       "#991cb9"
+#     ))(10),
+#     limits = c(0.5, 3.5),
+#     na.value = "#e9e9e9ff", # ← NA 灰色
+#     name = "Diff"
+#   ) +
+#   ggnewscale::new_scale("fill") +
+#   # 显著性颜色
+#   ggplot2::geom_polygon(
+#     ggplot2::aes(lower.x, lower.y, fill = neg_log10_p, group = group),
+#     colour = "white",
+#     linewidth = 0.1
+#   ) +
+#   ggplot2::scale_fill_gradient(
+#     low = "#fceeeeff",
+#     high = "#d65456ff",
+#     limits = c(0, 300),
+#     na.value = "#e9e9e9ff",
+#     name = "-log10 (P value)"
+#   ) +
+#   ggplot2::geom_text(
+#     data = centers,
+#     ggplot2::aes(x = x_center + 0.1, y = y_center - 0.12, label = label),
+#     size = 2.4,
+#     fontface = "bold"
+#   ) +
+#   ggplot2::scale_x_continuous(
+#     breaks = x_breaks,
+#     labels = x_labels,
+#     expand = c(0, 0)
+#   ) +
+#   ggplot2::scale_y_continuous(
+#     expand = c(0, 0),
+#     breaks = seq_along(unique(plot_df2[["comparison"]])) + 0.5,
+#     labels = sort(unique(plot_df2[["comparison"]])),
+#     sec.axis = ggplot2::dup_axis()
+#   ) +
+#   ggplot2::labs(
+#     title = "ssGSEA Pos Ctrl",
+#     subtitle = "signif: wilcoxon rank sum test -> ssGSEA score\n
+#     diff = mean score / mean score\n
+#     -log10 (P value) = -log10 (wilcoxon rank sum test p value)"
+#   ) +
+#   ggplot2::theme_minimal() +
+#   ggplot2::theme(
+#     axis.text.y.left = ggplot2::element_blank(),
+#     axis.title = ggplot2::element_blank(),
+#     # axis.text.x = ggplot2::element_text(vjust = 0.5, size = 10, angle = 90),
+#     axis.text.x = ggplot2::element_blank(),
+#     axis.ticks.y.left = ggplot2::element_blank(),
+#     axis.text.y.right = ggplot2::element_text(size = 10, face = "bold"),
+#     strip.text.y = ggplot2::element_text(size = 10, face = "bold"),
+#     strip.text.x = ggplot2::element_text(size = 8, face = "bold"),
+#     strip.background.y = ggplot2::element_rect(
+#       color = "white",
+#       fill = "#EEEEEE"
+#     ),
+#     strip.background.x = ggplot2::element_rect(
+#       color = "white",
+#       fill = "#EEEEEE"
+#     ),
+#     panel.grid.major = ggplot2::element_blank(),
+#     panel.grid.minor = ggplot2::element_blank(),
+#   ) +
+#   # 四变量分面
+#   ggplot2::facet_grid(
+#     ~ `ssGSEA type` + type_pheno + tumor_type + bulk,
+#     scales = "free", # must be free
+#     space = "free" # must be free
+#   )
 
-ggplot2::ggsave(
-  p_hairtail,
-  filename = "heatmap_combined_hairtail.png",
-  width = 40,
-  height = 8,
-  dpi = 400
-)
+# ggplot2::ggsave(
+#   p_hairtail,
+#   filename = "heatmap_combined_hairtail.png",
+#   width = 40,
+#   height = 8,
+#   dpi = 400
+# )

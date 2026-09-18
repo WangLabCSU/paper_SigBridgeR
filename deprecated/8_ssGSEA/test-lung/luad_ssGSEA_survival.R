@@ -49,7 +49,7 @@ expr <- as.matrix(SeuratObject::LayerData(seurat, layer = "data"))
 
 
 # 5. 构造 GSVA 参数对象（≥1.50 版写法）
-ssgsea_param <- gsvaParam(
+ssgsea_param <- ssgseaParam(
   exprData = expr,
   geneSets = genesets
   # kcdf = auto # *自动选择了gaussian

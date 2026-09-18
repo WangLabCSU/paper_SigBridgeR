@@ -48,7 +48,7 @@ expr <- as.matrix(SeuratObject::LayerData(
 # ? run ssGSEA
 param <- BiocParallel::MulticoreParam(workers = 2L)
 
-ssgsea_param_sub <- gsvaParam(
+ssgsea_param_sub <- ssgseaParam(
   exprData = expr,
   geneSets = gene_list,
   # kcdf = auto # * auto choose

@@ -36,19 +36,18 @@ seurat <- qs::qread(file.path(
   "binary_her2_GSE42568_merged_seurat.qs"
 ))
 
-expr <- as.matrix(SeuratObject::LayerData(
+expr <- SeuratObject::LayerData(
   seurat,
   layer = "data",
   assay = "RNA"
-))
+)
 
 # ? run ssGSEA
 param <- BiocParallel::MulticoreParam(workers = 2L)
 
-ssgsea_param_sub <- gsvaParam(
+ssgsea_param_sub <- ssgseaParam(
   exprData = expr,
-  geneSets = gene_list,
-  # kcdf = auto # * auto choose
+  geneSets = gene_list
 )
 esmat_sub <- gsva(
   ssgsea_param_sub,
@@ -59,12 +58,9 @@ esmat_sub <- gsva(
 es_df <- t(esmat_sub) %>% cbind(seurat[[]])
 
 # ? save result
-# data.table::fwrite(
-#   es_df,
-#   file = "ssGSEA_score_GSE42568.csv"
-# )
 qs::qsave(
   es_df,
   file = "esmat/binary/brca/her2/GSE42568/ssGSEA_score_GSE42568.qs",
   nthreads = 4L
 )
+gc()

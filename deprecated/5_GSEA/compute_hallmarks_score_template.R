@@ -31,7 +31,7 @@ expr <- as.matrix(SeuratObject::LayerData(
   assay = "RNA"
 ))
 
-gsea_param <- gsvaParam(
+gsea_param <- ssgseaParam(
   exprData = expr,
   geneSets = gene_list,
   # kcdf = auto # * auto choose

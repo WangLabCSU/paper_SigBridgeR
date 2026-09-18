@@ -39,16 +39,16 @@ seurat <- qs::qread(
   nthreads = 4L
 )
 
-expr <- as.matrix(SeuratObject::LayerData(
+expr <- SeuratObject::LayerData(
   seurat,
   layer = "data",
   assay = "RNA"
-))
+)
 
 # ? run ssGSEA
 param <- BiocParallel::MulticoreParam(workers = 2L)
 
-ssgsea_param <- gsvaParam(
+ssgsea_param <- ssgseaParam(
   exprData = expr,
   geneSets = gene_list,
   # kcdf = auto # * auto choose
