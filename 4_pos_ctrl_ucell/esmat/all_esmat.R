@@ -7,7 +7,10 @@ library(dplyr)
 library(data.table)
 
 # ? Load marker files
-markers_dir <- paste0("../4_positive_ctrl/", c("brca", "luad", "ov"))
+markers_dir <- paste0(
+  "../../4_positive_ctrl/",
+  c("brca", "luad", "ov", "ad", "fshd")
+)
 marker_files <- list.files(
   markers_dir,
   pattern = "\\.csv$",
@@ -26,7 +29,7 @@ loaded_marker_splited <- purrr::imap(
     } else {
       # * binary
       n_risk <- raw_markers[logFC > 0, .N]
-      n_prot <- raw_markers[logFC > 0, .N]
+      n_prot <- raw_markers[logFC < 0, .N]
     }
     if (n_risk < 20 || n_prot < 20) {
       cli::cli_warn(
@@ -62,29 +65,41 @@ loaded_marker_splited <- purrr::imap(
 )
 
 # ? Seurat object
-seurat_path <- c(
-  "/home/data/sigbridger/benchmark_data/brca/seurat_her2.qs",
-  "/home/data/sigbridger/benchmark_data/brca/seurat_tnbc.qs",
-  "/home/data/sigbridger/benchmark_data/lung/luad_GSE123902_seurat.qs",
-  "/home/data/sigbridger/benchmark_data/ov/hgsoc_GSE165897_seurat.qs"
+data_dir <- "/home/data/sigbridger/benchmark_data"
+seurat_path <- file.path(
+  data_dir,
+  c(
+    "brca/seurat_tnbc.qs",
+    "lung/luad_GSE123902_seurat.qs",
+    "brca/seurat_her2.qs",
+    "ov/hgsoc_GSE165897_seurat.qs",
+    "ad/ad_GSE138852_seurat.qs",
+    "fshd/fshd_GSE122873_seurat.qs"
+  )
 )
-seurat <- purrr::map(seurat_path, qs::qread, .args = list(nthreads = 8L))
+seurat <- purrr::map(
+  seurat_path,
+  qs::qread,
+  nthreads = 8L,
+  .progress = "Reading Seurat"
+)
 names(seurat) <- c(
-  "her2",
   "tnbc",
   "lung",
-  "ov"
+  "her2",
+  "ov",
+  "ad",
+  "fshd"
 )
 
 # ? To locate data
 sc_bulk_map <- function(sc = character(), bulk = character(), seurat = list()) {
   if (sc == "her2") {
     cli::cli_alert_info("Seurat: {.field BRCA HER2}")
-
     return(seurat$her2)
-  } else if (sc == "tnbc") {
+  }
+  if (sc == "tnbc") {
     cli::cli_alert_info("Seurat: {.field TNBC}")
-
     return(seurat$tnbc)
   }
 
@@ -102,22 +117,38 @@ sc_bulk_map <- function(sc = character(), bulk = character(), seurat = list()) {
     "GSE32062_GPL6480" = {
       cli::cli_alert_info("Seurat: {.field OV}")
       seurat$ov
-    }
+    },
+    "GSE109887" = ,
+    "GSE28146" = ,
+    "GSE39420" = {
+      cli::cli_alert_info("Seurat: {.field AD}")
+      seurat$ad
+    },
+    "GSE115650" = ,
+    "GSE140261" = ,
+    "GSE56787" = {
+      cli::cli_alert_info("Seurat: {.field FSHD}")
+      seurat$fshd
+    },
+    cli::cli_abort("No seurat found: bulk: {bulk}, sc: {sc}")
   )
 }
 
 # ? run UCell
 BPPARAM <- BiocParallel::MulticoreParam(workers = 16L)
 
-ts_cli <- SigBridgeRUtils::CreateTimeStampCliEnv(cli_functions = "cli_h2")
-
 # * list of matrices, row:cell, col: index
 ucell_res <- purrr::imap(
   loaded_marker_splited,
   function(gene_list, gene_list_name) {
-    ts_cli$cli_h2("Handling {.val {gene_list_name}}")
+    cli::cli_alert_info("Handling {.val {gene_list_name}}")
 
-    sc <- gsub(".*(her2|tnbc).*", "\\1", gene_list_name, ignore.case = TRUE)
+    sc <- gsub(
+      ".*(her2|tnbc|ad|fshd|ov).*",
+      "\\1",
+      gene_list_name,
+      ignore.case = TRUE
+    )
     bulk <- gsub(".*(TCGA.*|GSE.*)", "\\1", gene_list_name, ignore.case = TRUE)
 
     seurat_i <- sc_bulk_map(sc = sc, bulk = bulk, seurat = seurat)
@@ -140,3 +171,8 @@ ucell_res <- purrr::imap(
 )
 
 qs::qsave(ucell_res, file = "ucell_res.qs", nthreads = 16L)
+
+# ucell_res <- qs::qread("ucell_res.qs")
+
+cli::cli_h1("Done!")
+gc()

@@ -272,3 +272,20 @@ Warning in multimode::locmodes(x, mod0 = 2) :
 loss of 2: 0.0173221
 loss of 3: 0.0082148
 loss of 4: 0.00596329
+loss of 5: 0.00465753
+loss of 6: 0.00396653
+loss of 7: 0.00361489
+Warning in multimode::locmodes(x, mod0 = 2) :
+  If the density function has an unbounded support, artificial modes may have been created in the tails
+Warning in multimode::locmodes(x, mod0 = 2) :
+  If the density function has an unbounded support, artificial modes may have been created in the tails
+Warning in multimode::locmodes(x, mod0 = 2) :
+  If the density function has an unbounded support, artificial modes may have been created in the tails
+Warning in multimode::locmodes(x, mod0 = 2) :
+  If the density function has an unbounded support, artificial modes may have been created in the tails
+
+── 44 / 51 ─────────────────────────────────────────────────────────────────────
+loss of 2: 0.0173221
+loss of 3: 0.00811427
+loss of 4: 0.00605573
+loss of 5: 0.0046151

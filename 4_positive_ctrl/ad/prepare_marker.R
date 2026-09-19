@@ -94,7 +94,7 @@ purrr::walk(
   function(bulk_i) {
     data.table::fwrite(
       tibble::rownames_to_column(get(paste0("binary_deg_", bulk_i)), "gene"),
-      file = paste0("binary_deg_", bulk_i, ".csv")
+      file = paste0("binary_deg_ad_", bulk_i, ".csv")
     )
   }
 )

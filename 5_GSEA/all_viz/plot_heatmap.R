@@ -188,7 +188,7 @@
 #     filename = filename,
 #     dpi = 400,
 #     width = 6000,
-#     height = 10000
+#     height = 12000
 #   )
 #   ComplexHeatmap::draw(htmap)
 #   dev.off()
@@ -200,7 +200,11 @@ plot_heatmap3 <- function(
   metrics = "pval",
   col_fun = circlize::colorRamp2(c(0, 100), c("white", "red")),
   filename = "gsea_res_all_stats.png",
-  chr_width = 30L
+  chr_width = 30L,
+  heatmap_height = grid::unit(0.1, "npc"),
+  heatmap_width = grid::unit(0.1, "npc"),
+  height = grid::unit(0.55, "npc"),
+  width = grid::unit(0.85, "npc")
 ) {
   # * Metrics Conversion
   if (metrics == "pval") {
@@ -273,11 +277,11 @@ plot_heatmap3 <- function(
       "#A8D9D8",
       "#F5C0A8",
       "#D5C9E8",
+      "#9BBBD9",
       "#88D5B0",
       "#B8A8E5",
       "#D5E5C0",
-      "#E8D8E8",
-      "#9BBBD9"
+      "#E8D8E8"
     )[seq_len(n_bulk)],
     unique(mat_data$bulk)
   )
@@ -285,13 +289,74 @@ plot_heatmap3 <- function(
   row_anno <- ComplexHeatmap::rowAnnotation(
     # "Tumor" = stringr::str_extract(dataset_label, "BRCA_HER2|TNBC|LUNG|OV"),
     "Bulk Data" = stringr::str_extract(dataset_label, "TCGA_[^_]*|GSE[0-9]*"),
-    annotation_name_gp = grid::gpar(fontface = "bold"),
+    annotation_name_gp = grid::gpar(fontsize = 20, fontface = "bold"),
     annotation_name_rot = 60,
+    annotation_legend_param = list(
+      title_gp = grid::gpar(fontsize = 18, fontface = "bold"),
+      labels_gp = grid::gpar(fontsize = 18)
+    ),
     col = list(
       #   "Tumor" = palette_tumor,
       "Bulk Data" = palette_bulk
     ),
+    # gp = grid::gpar(fontsize = 14),
     gap = grid::unit(0.6, "mm")
+  )
+
+  top_anno <- ComplexHeatmap::columnAnnotation(
+    Distribution = ComplexHeatmap::anno_boxplot(
+      wide_mat_data,
+      gp = grid::gpar(
+        fill = c(
+          "#B8D9A0",
+          "#E8E0DB",
+          "#A8D9D8",
+          "#F5C0A8",
+          "#D5C9E8",
+          "#9BBBD9",
+          "#B8A8E5",
+          "#D5E5C0",
+          "#E8D8E8",
+          "#88D5B0",
+          "#E5B8E5",
+          "#88E0D5",
+          "#A8D5A8",
+          "#E5A8D0",
+          "#F5C8E5",
+          "#F0E890",
+          "#F5E8B8",
+          "#B8BCA0",
+          "#C8E5D0",
+          "#B888D5",
+          "#C5B8E8",
+          "#E5C090",
+          "#D5A0A8",
+          "#88A8D5",
+          "#F5D890",
+          "#D8E5B0",
+          "#B8D5D0",
+          "#E0E8D8",
+          "#E0A8E5",
+          "#A888D5",
+          "#C5B0B8",
+          "#E5A8E8",
+          "#E8A8D5",
+          "#D0C5B8",
+          "#F5A098",
+          "#B0E5D0",
+          "#C0D8E5",
+          "#90C8D5",
+          "#E8A0B0",
+          "#F5E0B8"
+        ),
+        fontsize = 20
+      ),
+      axis_param = list(
+        gp = grid::gpar(fontsize = 16)
+      )
+    ),
+    annotation_name_gp = grid::gpar(fontsize = 20),
+    height = grid::unit(5, "cm")
   )
 
   htmap <- ComplexHeatmap::Heatmap(
@@ -311,86 +376,46 @@ plot_heatmap3 <- function(
     column_dend_height = grid::unit(2.25, "cm"),
     row_dend_width = grid::unit(2.25, "cm"),
 
-    top_annotation = ComplexHeatmap::columnAnnotation(
-      Distribution = ComplexHeatmap::anno_boxplot(
-        wide_mat_data,
-        gp = grid::gpar(
-          fill = c(
-            "#B8D9A0",
-            "#E8E0DB",
-            "#A8D9D8",
-            "#F5C0A8",
-            "#D5C9E8",
-            "#9BBBD9",
-            "#B8A8E5",
-            "#D5E5C0",
-            "#E8D8E8",
-            "#88D5B0",
-            "#E5B8E5",
-            "#88E0D5",
-            "#A8D5A8",
-            "#E5A8D0",
-            "#F5C8E5",
-            "#F0E890",
-            "#F5E8B8",
-            "#B8BCA0",
-            "#C8E5D0",
-            "#B888D5",
-            "#C5B8E8",
-            "#E5C090",
-            "#D5A0A8",
-            "#88A8D5",
-            "#F5D890",
-            "#D8E5B0",
-            "#B8D5D0",
-            "#E0E8D8",
-            "#E0A8E5",
-            "#A888D5",
-            "#C5B0B8",
-            "#E5A8E8",
-            "#E8A8D5",
-            "#D0C5B8",
-            "#F5A098",
-            "#B0E5D0",
-            "#C0D8E5",
-            "#90C8D5",
-            "#E8A0B0",
-            "#F5E0B8"
-          )
-        ),
-      ),
-      height = grid::unit(5, "cm")
-    ),
+    top_annotation = top_anno,
     left_annotation = row_anno,
 
-    # column_title = "Hallmarks Gene Set",
-    # column_title_side = "bottom",
-    column_names_gp = grid::gpar(fontsize = 14),
-    row_names_gp = grid::gpar(fontsize = 16),
+    column_names_gp = grid::gpar(fontsize = 18),
+    row_names_gp = grid::gpar(fontsize = 20),
+    column_title_gp = grid::gpar(fontsize = 20, fontface = "bold"),
+    row_title_gp = grid::gpar(fontsize = 20, fontface = "bold"),
 
     row_labels = gsub(".*_", "", dataset_label) %>%
       stringr::str_replace("SGL", "LP_SGL"),
     row_split = stringr::str_replace(rownames(wide_mat_data), "_SGL", "SGL") %>%
       gsub("_.*", "", .) %>%
       stringr::str_replace("BRCA", "BRCA HER2"),
-    show_parent_dend_line = FALSE,
+
     column_labels = wrap_every_n_chars(
-      colnames(wide_mat_data),
+      stringr::str_remove(colnames(wide_mat_data), "HALLMARK_"),
       width = chr_width
     ),
     column_names_rot = 60,
     column_order = sort(colnames(wide_mat_data)),
 
-    heatmap_height = grid::unit(0.1, "npc"),
-    height = grid::unit(0.7, "npc"),
-    width = grid::unit(0.85, "npc"),
+    heatmap_height = heatmap_height,
+    heatmap_width = heatmap_width,
+    height = height,
+    width = width,
+
+    show_parent_dend_line = FALSE,
+
+    heatmap_legend_param = list(
+      title_gp = grid::gpar(fontsize = 18, fontface = "bold"),
+      labels_gp = grid::gpar(fontsize = 18),
+      at = c(-5, -2, 0, 2, 5)
+    )
   )
 
   Cairo::CairoPNG(
     filename = filename,
     dpi = 400,
     width = 10000,
-    height = 10000
+    height = 12000
   )
   htmap <- ComplexHeatmap::draw(htmap)
   dev.off()
@@ -409,7 +434,12 @@ plot_heatmap4 <- function(
     c("#E8E8E8", "#FDB462", "#FB8072", "#B2182B")
   ),
   filename = "gsea_res_all_stats.png",
-  chr_width = 30L
+  chr_width = 30L,
+  heatmap_height = grid::unit(0.1, "npc"),
+  heatmap_width = grid::unit(0.1, "npc"),
+
+  height = grid::unit(0.55, "npc"),
+  width = grid::unit(0.85, "npc")
 ) {
   # * Metrics Conversion
   if (metrics == "pval") {
@@ -483,11 +513,11 @@ plot_heatmap4 <- function(
       "#A8D9D8",
       "#F5C0A8",
       "#D5C9E8",
+      "#9BBBD9",
       "#88D5B0",
       "#B8A8E5",
       "#D5E5C0",
-      "#E8D8E8",
-      "#9BBBD9"
+      "#E8D8E8"
     )[seq_len(n_bulk)],
     unique(mat_data$bulk)
   )
@@ -495,8 +525,12 @@ plot_heatmap4 <- function(
   row_anno <- ComplexHeatmap::rowAnnotation(
     # "Tumor" = stringr::str_extract(dataset_label, "BRCA_HER2|TNBC|LUNG|OV"),
     "Bulk Data" = stringr::str_extract(dataset_label, "TCGA_[^_]*|GSE[0-9]*"),
-    annotation_name_gp = grid::gpar(fontface = "bold"),
+    annotation_name_gp = grid::gpar(fontsize = 20, fontface = "bold"),
     annotation_name_rot = 60,
+    annotation_legend_param = list(
+      title_gp = grid::gpar(fontsize = 18, fontface = "bold"),
+      labels_gp = grid::gpar(fontsize = 18)
+    ),
     col = list(
       #   "Tumor" = palette_tumor,
       "Bulk Data" = palette_bulk
@@ -516,9 +550,67 @@ plot_heatmap4 <- function(
       "< 0.001"
     ),
     title = "padj",
+    title_gp = grid::gpar(fontsize = 18, fontface = "bold"),
+    labels_gp = grid::gpar(fontsize = 18),
     legend_gp = grid::gpar(
       fill = c("#DDDDDD", "#FDB462", "#FB8072", "#962835")
     )
+  )
+
+  top_anno <- ComplexHeatmap::columnAnnotation(
+    Distribution = ComplexHeatmap::anno_boxplot(
+      wide_mat_data,
+      gp = grid::gpar(
+        fill = c(
+          "#B8D9A0",
+          "#E8E0DB",
+          "#A8D9D8",
+          "#F5C0A8",
+          "#D5C9E8",
+          "#9BBBD9",
+          "#B8A8E5",
+          "#D5E5C0",
+          "#E8D8E8",
+          "#88D5B0",
+          "#E5B8E5",
+          "#88E0D5",
+          "#A8D5A8",
+          "#E5A8D0",
+          "#F5C8E5",
+          "#F0E890",
+          "#F5E8B8",
+          "#B8BCA0",
+          "#C8E5D0",
+          "#B888D5",
+          "#C5B8E8",
+          "#E5C090",
+          "#D5A0A8",
+          "#88A8D5",
+          "#F5D890",
+          "#D8E5B0",
+          "#B8D5D0",
+          "#E0E8D8",
+          "#E0A8E5",
+          "#A888D5",
+          "#C5B0B8",
+          "#E5A8E8",
+          "#E8A8D5",
+          "#D0C5B8",
+          "#F5A098",
+          "#B0E5D0",
+          "#C0D8E5",
+          "#90C8D5",
+          "#E8A0B0",
+          "#F5E0B8"
+        ),
+        fontsize = 20
+      ),
+      axis_param = list(
+        gp = grid::gpar(fontsize = 16)
+      )
+    ),
+    annotation_name_gp = grid::gpar(fontsize = 20),
+    height = grid::unit(5, "cm")
   )
 
   htmap <- ComplexHeatmap::Heatmap(
@@ -529,65 +621,17 @@ plot_heatmap4 <- function(
 
     cluster_rows = TRUE,
     cluster_columns = FALSE,
-    column_dend_height = grid::unit(3, "cm"),
-    row_dend_width = grid::unit(3, "cm"),
+    column_dend_height = grid::unit(2.25, "cm"),
+    row_dend_width = grid::unit(2.25, "cm"),
 
-    top_annotation = ComplexHeatmap::columnAnnotation(
-      Distribution = ComplexHeatmap::anno_boxplot(
-        wide_mat_data,
-        gp = grid::gpar(
-          fill = c(
-            "#B8D9A0",
-            "#E8E0DB",
-            "#A8D9D8",
-            "#F5C0A8",
-            "#D5C9E8",
-            "#9BBBD9",
-            "#B8A8E5",
-            "#D5E5C0",
-            "#E8D8E8",
-            "#88D5B0",
-            "#E5B8E5",
-            "#88E0D5",
-            "#A8D5A8",
-            "#E5A8D0",
-            "#F5C8E5",
-            "#F0E890",
-            "#F5E8B8",
-            "#B8BCA0",
-            "#C8E5D0",
-            "#B888D5",
-            "#C5B8E8",
-            "#E5C090",
-            "#D5A0A8",
-            "#88A8D5",
-            "#F5D890",
-            "#D8E5B0",
-            "#B8D5D0",
-            "#E0E8D8",
-            "#E0A8E5",
-            "#A888D5",
-            "#C5B0B8",
-            "#E5A8E8",
-            "#E8A8D5",
-            "#D0C5B8",
-            "#F5A098",
-            "#B0E5D0",
-            "#C0D8E5",
-            "#90C8D5",
-            "#E8A0B0",
-            "#F5E0B8"
-          )
-        ),
-      ),
-      height = grid::unit(5, "cm")
-    ),
+    top_annotation = top_anno,
     left_annotation = c(row_anno),
 
     # column_title = "Hallmarks Gene Set",
     # column_title_side = "bottom",
-    column_names_gp = grid::gpar(fontsize = 14),
-    row_names_gp = grid::gpar(fontsize = 16),
+    column_names_gp = grid::gpar(fontsize = 18),
+    row_names_gp = grid::gpar(fontsize = 20),
+    column_title_gp = grid::gpar(fontsize = 20, fontface = "bold"),
 
     row_labels = gsub(".*_", "", dataset_label) %>%
       stringr::str_replace("SGL", "LP_SGL"),
@@ -595,16 +639,18 @@ plot_heatmap4 <- function(
       gsub("_.*", "", .) %>%
       stringr::str_replace("BRCA", "BRCA HER2"),
     show_parent_dend_line = FALSE,
+    row_title_gp = grid::gpar(fontsize = 20, fontface = "bold"),
 
     column_labels = wrap_every_n_chars(
-      colnames(wide_mat_data),
+      stringr::str_remove(colnames(wide_mat_data), "HALLMARK_"),
       width = chr_width
     ),
     column_names_rot = 60,
 
-    heatmap_height = grid::unit(0.1, "npc"),
-    height = grid::unit(0.7, "npc"),
-    width = grid::unit(0.85, "npc"),
+    heatmap_height = heatmap_height,
+    heatmap_width = heatmap_width,
+    height = height,
+    width = width,
 
     show_heatmap_legend = FALSE
   )
@@ -613,7 +659,7 @@ plot_heatmap4 <- function(
     filename = filename,
     dpi = 400,
     width = 10000,
-    height = 10000
+    height = 12000
   )
   ComplexHeatmap::draw(htmap, annotation_legend_list = list(lgd))
   dev.off()
@@ -629,6 +675,12 @@ plot_heatmap_red_blue_padj <- function(
   filename = "gsea_res_all_stats.png",
   chr_width = 30L,
   col_order = NULL,
+  heatmap_height = grid::unit(0.1, "npc"),
+  heatmap_width = grid::unit(0.1, "npc"),
+
+  height = grid::unit(0.55, "npc"),
+  width = grid::unit(0.85, "npc"),
+
   ...
 ) {
   combined_stats_file <- dplyr::mutate(
@@ -698,11 +750,11 @@ plot_heatmap_red_blue_padj <- function(
       "#A8D9D8",
       "#F5C0A8",
       "#D5C9E8",
+      "#9BBBD9",
       "#88D5B0",
       "#B8A8E5",
       "#D5E5C0",
-      "#E8D8E8",
-      "#9BBBD9"
+      "#E8D8E8"
     )[seq_len(n_bulk)],
     unique(mat_data$bulk)
   )
@@ -710,8 +762,12 @@ plot_heatmap_red_blue_padj <- function(
   row_anno <- ComplexHeatmap::rowAnnotation(
     # "Tumor" = stringr::str_extract(dataset_label, "BRCA_HER2|TNBC|LUNG|OV"),
     "Bulk Data" = stringr::str_extract(dataset_label, "TCGA_[^_]*|GSE[0-9]*"),
-    annotation_name_gp = grid::gpar(fontface = "bold"),
+    annotation_name_gp = grid::gpar(fontsize = 20, fontface = "bold"),
     annotation_name_rot = 60,
+    annotation_legend_param = list(
+      title_gp = grid::gpar(fontsize = 18, fontface = "bold"),
+      labels_gp = grid::gpar(fontsize = 18)
+    ),
     col = list(
       #   "Tumor" = palette_tumor,
       "Bulk Data" = palette_bulk
@@ -726,10 +782,11 @@ plot_heatmap_red_blue_padj <- function(
       "80 & up"
     ),
     title = ComplexHeatmap::gt_render(
-      "<span> log10(p-adjusted) <br> with direction</span>"
+      "<span style='font-size:18pt'><b> log10(p-adjusted) <br> with direction</b></span>"
     ),
     at = c(-80, 0, 80),
-    col_fun = col_fun
+    col_fun = col_fun,
+    labels_gp = grid::gpar(fontsize = 18)
   )
 
   htmap <- ComplexHeatmap::Heatmap(
@@ -740,65 +797,17 @@ plot_heatmap_red_blue_padj <- function(
 
     cluster_rows = TRUE,
     cluster_columns = FALSE,
-    column_dend_height = grid::unit(3, "cm"),
-    row_dend_width = grid::unit(3, "cm"),
+    column_dend_height = grid::unit(2.25, "cm"),
+    row_dend_width = grid::unit(2.25, "cm"),
 
-    # top_annotation = ComplexHeatmap::columnAnnotation(
-    #   Distribution = ComplexHeatmap::anno_boxplot(
-    #     wide_mat_data,
-    #     gp = grid::gpar(
-    #       fill = c(
-    #         "#B8D9A0",
-    #         "#E8E0DB",
-    #         "#A8D9D8",
-    #         "#F5C0A8",
-    #         "#D5C9E8",
-    #         "#9BBBD9",
-    #         "#B8A8E5",
-    #         "#D5E5C0",
-    #         "#E8D8E8",
-    #         "#88D5B0",
-    #         "#E5B8E5",
-    #         "#88E0D5",
-    #         "#A8D5A8",
-    #         "#E5A8D0",
-    #         "#F5C8E5",
-    #         "#F0E890",
-    #         "#F5E8B8",
-    #         "#B8BCA0",
-    #         "#C8E5D0",
-    #         "#B888D5",
-    #         "#C5B8E8",
-    #         "#E5C090",
-    #         "#D5A0A8",
-    #         "#88A8D5",
-    #         "#F5D890",
-    #         "#D8E5B0",
-    #         "#B8D5D0",
-    #         "#E0E8D8",
-    #         "#E0A8E5",
-    #         "#A888D5",
-    #         "#C5B0B8",
-    #         "#E5A8E8",
-    #         "#E8A8D5",
-    #         "#D0C5B8",
-    #         "#F5A098",
-    #         "#B0E5D0",
-    #         "#C0D8E5",
-    #         "#90C8D5",
-    #         "#E8A0B0",
-    #         "#F5E0B8"
-    #       )
-    #     ),
-    #   ),
-    #   height = grid::unit(5, "cm")
-    # ),
     left_annotation = c(row_anno),
 
     # column_title = "Hallmarks Gene Set",
     # column_title_side = "bottom",
-    column_names_gp = grid::gpar(fontsize = 14),
-    row_names_gp = grid::gpar(fontsize = 16),
+    column_names_gp = grid::gpar(fontsize = 18),
+    row_names_gp = grid::gpar(fontsize = 20),
+    column_title_gp = grid::gpar(fontsize = 20, fontface = "bold"),
+    row_title_gp = grid::gpar(fontsize = 20, fontface = "bold"),
 
     row_labels = gsub(".*_", "", dataset_label) %>%
       stringr::str_replace("SGL", "LP_SGL"),
@@ -808,24 +817,26 @@ plot_heatmap_red_blue_padj <- function(
     show_parent_dend_line = FALSE,
 
     column_labels = wrap_every_n_chars(
-      colnames(wide_mat_data),
+      stringr::str_remove(colnames(wide_mat_data), "HALLMARK_"),
       width = chr_width
     ),
     column_names_rot = 60,
     column_order = col_order,
 
-    heatmap_height = grid::unit(0.1, "npc"),
-    height = grid::unit(0.7, "npc"),
-    width = grid::unit(0.85, "npc"),
+    heatmap_height = heatmap_height,
+    heatmap_width = heatmap_width,
+    height = height,
+    width = width,
 
-    show_heatmap_legend = FALSE
+    show_heatmap_legend = FALSE,
+    heatmap_legend_param = list(legend_direction = "vertical")
   )
 
   Cairo::CairoPNG(
     filename = filename,
     dpi = 400,
     width = 10000,
-    height = 10000
+    height = 12000
   )
   ComplexHeatmap::draw(htmap, annotation_legend_list = list(lgd))
   dev.off()
@@ -854,6 +865,11 @@ plot_heatmap_red_blue_padj_signif <- function(
   filename = "gsea_res_all_stats.png",
   chr_width = 30L,
   col_order = NULL,
+  heatmap_height = grid::unit(0.1, "npc"),
+  heatmap_width = grid::unit(0.1, "npc"),
+
+  height = grid::unit(0.55, "npc"),
+  width = grid::unit(0.85, "npc"),
   ...
 ) {
   combined_stats_file <- dplyr::mutate(
@@ -923,11 +939,11 @@ plot_heatmap_red_blue_padj_signif <- function(
       "#A8D9D8",
       "#F5C0A8",
       "#D5C9E8",
+      "#9BBBD9",
       "#88D5B0",
       "#B8A8E5",
       "#D5E5C0",
-      "#E8D8E8",
-      "#9BBBD9"
+      "#E8D8E8"
     )[seq_len(n_bulk)],
     unique(mat_data$bulk)
   )
@@ -935,8 +951,12 @@ plot_heatmap_red_blue_padj_signif <- function(
   row_anno <- ComplexHeatmap::rowAnnotation(
     # "Tumor" = stringr::str_extract(dataset_label, "BRCA_HER2|TNBC|LUNG|OV"),
     "Bulk Data" = stringr::str_extract(dataset_label, "TCGA_[^_]*|GSE[0-9]*"),
-    annotation_name_gp = grid::gpar(fontface = "bold"),
+    annotation_name_gp = grid::gpar(fontsize = 20, fontface = "bold"),
     annotation_name_rot = 60,
+    annotation_legend_param = list(
+      title_gp = grid::gpar(fontsize = 18, fontface = "bold"),
+      labels_gp = grid::gpar(fontsize = 18)
+    ),
     col = list(
       #   "Tumor" = palette_tumor,
       "Bulk Data" = palette_bulk
@@ -962,8 +982,9 @@ plot_heatmap_red_blue_padj_signif <- function(
       "< 0.001 (up)"
     ),
     title = ComplexHeatmap::gt_render(
-      "<span> log10(p-adjusted) <br> with direction</span>"
+      "<span style='font-size:18pt'><b> log10(p-adjusted) <br> with direction</b></span>"
     ),
+    labels_gp = grid::gpar(fontsize = 18),
     legend_gp = grid::gpar(
       fill = c(
         "#2166AC",
@@ -985,65 +1006,16 @@ plot_heatmap_red_blue_padj_signif <- function(
 
     cluster_rows = TRUE,
     cluster_columns = FALSE,
-    column_dend_height = grid::unit(3, "cm"),
-    row_dend_width = grid::unit(3, "cm"),
+    column_dend_height = grid::unit(2.25, "cm"),
+    row_dend_width = grid::unit(2.25, "cm"),
 
-    # top_annotation = ComplexHeatmap::columnAnnotation(
-    #   Distribution = ComplexHeatmap::anno_boxplot(
-    #     wide_mat_data,
-    #     gp = grid::gpar(
-    #       fill = c(
-    #         "#B8D9A0",
-    #         "#E8E0DB",
-    #         "#A8D9D8",
-    #         "#F5C0A8",
-    #         "#D5C9E8",
-    #         "#9BBBD9",
-    #         "#B8A8E5",
-    #         "#D5E5C0",
-    #         "#E8D8E8",
-    #         "#88D5B0",
-    #         "#E5B8E5",
-    #         "#88E0D5",
-    #         "#A8D5A8",
-    #         "#E5A8D0",
-    #         "#F5C8E5",
-    #         "#F0E890",
-    #         "#F5E8B8",
-    #         "#B8BCA0",
-    #         "#C8E5D0",
-    #         "#B888D5",
-    #         "#C5B8E8",
-    #         "#E5C090",
-    #         "#D5A0A8",
-    #         "#88A8D5",
-    #         "#F5D890",
-    #         "#D8E5B0",
-    #         "#B8D5D0",
-    #         "#E0E8D8",
-    #         "#E0A8E5",
-    #         "#A888D5",
-    #         "#C5B0B8",
-    #         "#E5A8E8",
-    #         "#E8A8D5",
-    #         "#D0C5B8",
-    #         "#F5A098",
-    #         "#B0E5D0",
-    #         "#C0D8E5",
-    #         "#90C8D5",
-    #         "#E8A0B0",
-    #         "#F5E0B8"
-    #       )
-    #     ),
-    #   ),
-    #   height = grid::unit(5, "cm")
-    # ),
     left_annotation = c(row_anno),
 
     # column_title = "Hallmarks Gene Set",
     # column_title_side = "bottom",
-    column_names_gp = grid::gpar(fontsize = 14),
-    row_names_gp = grid::gpar(fontsize = 16),
+    column_names_gp = grid::gpar(fontsize = 18),
+    row_names_gp = grid::gpar(fontsize = 20),
+    column_title_gp = grid::gpar(fontsize = 20, fontface = "bold"),
 
     row_labels = gsub(".*_", "", dataset_label) %>%
       stringr::str_replace("SGL", "LP_SGL"),
@@ -1051,26 +1023,29 @@ plot_heatmap_red_blue_padj_signif <- function(
       gsub("_.*", "", .) %>%
       stringr::str_replace("BRCA", "BRCA HER2"),
     show_parent_dend_line = FALSE,
+    row_title_gp = grid::gpar(fontsize = 20, fontface = "bold"),
 
     column_labels = wrap_every_n_chars(
-      colnames(wide_mat_data),
+      stringr::str_remove(colnames(wide_mat_data), "HALLMARK_"),
       width = chr_width
     ),
     column_names_rot = 60,
     column_order = col_order,
 
-    heatmap_height = grid::unit(0.1, "npc"),
-    height = grid::unit(0.7, "npc"),
-    width = grid::unit(0.85, "npc"),
+    heatmap_height = heatmap_height,
+    heatmap_width = heatmap_width,
+    height = height,
+    width = width,
 
-    show_heatmap_legend = FALSE
+    show_heatmap_legend = FALSE,
+    heatmap_legend_param = list(legend_direction = "vertical")
   )
 
   Cairo::CairoPNG(
     filename = filename,
     dpi = 400,
     width = 10000,
-    height = 10000
+    height = 12000
   )
   ComplexHeatmap::draw(htmap, annotation_legend_list = list(lgd))
   dev.off()

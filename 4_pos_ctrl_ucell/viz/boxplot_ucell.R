@@ -9,6 +9,9 @@ library(gghalves)
 esmats <- qs::qread("../diff_test/method_labels.qs", nthreads = 2L)
 matched_data <- qs::qread("../diff_test/matched_data.qs", nthreads = 2L)
 
+esmats <- esmats[!grepl("_ad_|_fshd_", names(esmats))]
+matched_data <- matched_data[!grepl("_ad_|_fshd_", names(matched_data))]
+
 # ? Find matched datasets
 find_name <- function(chr = character) {
   sc <- gsub(
@@ -141,6 +144,10 @@ names(pallete) <- c(
   "SCIPAC_Neutral"
 )
 
+all_combined[, bulk := toupper(bulk)]
+all_combined[sc == "lung", sc := "luad"]
+label_position[, bulk := toupper(bulk)]
+label_position[sc == "lung", sc := "luad"]
 
 p <- ggplot(
   all_combined,
@@ -171,7 +178,7 @@ p <- ggplot(
   labs(x = NULL, y = NULL) + # 分面时统一加 lab
   cowplot::theme_cowplot(16) +
   theme(
-    axis.text.x = element_text(angle = 60, hjust = 1, size = 14),
+    axis.text.x = element_text(angle = 60, hjust = 1, size = 16),
     panel.grid.minor = element_blank(),
     strip.text = element_text(face = "bold", size = 14),
     strip.background.y = ggplot2::element_rect(

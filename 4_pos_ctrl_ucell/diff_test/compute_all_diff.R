@@ -1,4 +1,5 @@
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+# setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+setwd(file.path(usethis::proj_path(), "4_pos_ctrl_ucell/diff_test"))
 
 library(dplyr)
 library(data.table)
@@ -84,11 +85,10 @@ ucell_mat_map <- function(
   chosen <- names(esmat_files) %>%
     grepv(pheno, .) %>%
     grepv(bulk, .)
-  chosen <- if (!sc %in% c("lung", "ov")) {
-    grepv(sc, chosen) # her2|tnbc
-  } else {
-    grepv("her2|tnbc", chosen, invert = TRUE)
+  if (sc %in% c("her2", "tnbc", "ad", "fshd")) {
+    chosen <- grepv(sc, chosen)
   }
+
   if (length(chosen) == 0L || length(chosen) > 1L) {
     cli::cli_abort(c(
       "x" = "No unique match found or multiple matches found:\
@@ -105,7 +105,7 @@ ucell_mat_map <- function(
 # ? Find matched datasets
 find_name <- function(chr = character) {
   sc <- gsub(
-    ".*(her2|tnbc|lung|ov).*",
+    ".*(her2|tnbc|lung|ov|ad|fshd).*",
     "\\1",
     chr,
     ignore.case = TRUE
@@ -153,11 +153,19 @@ matched_data <- if (!file.exists("matched_data.qs")) {
         pheno = pheno,
         esmat_files = esmat_files
       )
-      if (!all(row.names(ucell_mat) == row.names(labels_of_seurat))) {
-        cli::cli_abort(
+      if (nrow(ucell_mat) != nrow(labels_of_seurat)) {
+        cli::cli_abort(c(
+          "x" = "Number of rows of ucell_mat and labels_of_seurat are not the same: \
+         {.val {names_of_seurat}}",
+          '>' = "nrow(ucell_mat):{.val {nrow(ucell_mat)}}, nrow(labels_of_seurat):{.val {nrow(labels_of_seurat)}}"
+        ))
+      }
+
+      if (!all(rownames(ucell_mat) == rownames(labels_of_seurat))) {
+        cli::cli_abort(c(
           "x" = "Row names of ucell_mat and labels_of_seurat are not the same: \
          {.val {names_of_seurat}}"
-        )
+        ))
       }
 
       cbind(ucell_mat, labels_of_seurat)

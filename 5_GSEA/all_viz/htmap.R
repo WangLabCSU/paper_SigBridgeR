@@ -15,6 +15,9 @@ names(stats_file) <- basename(stats_file) %>%
   tools::file_path_sans_ext() %>%
   gsub("gsea_res_", "", .)
 
+# * keep tumor
+stats_file <- stats_file[!stringr::str_detect(names(stats_file), "ad|fshd")]
+
 # * Load files
 loaded_stats_file <- lapply(stats_file, \(x) {
   qs::qread(x, nthreads = 8L)
@@ -97,7 +100,11 @@ nes_sur_htmap <- plot_heatmap3(
   metrics = "NES",
   col_fun = circlize::colorRamp2(c(-5, 0, 5), c("blue", "white", "red")),
   filename = "gsea_res_all_stats_nes_survival.png",
-  chr_width = 45L
+  chr_width = 45L,
+  heatmap_height = grid::unit(0.9, "npc"),
+  heatmap_width = grid::unit(0.8, "npc"),
+  height = grid::unit(0.65, "npc"),
+  width = grid::unit(0.8, "npc")
 )
 # * only binary - NES
 nes_bi_htmap <- plot_heatmap3(
@@ -107,7 +114,8 @@ nes_bi_htmap <- plot_heatmap3(
   metrics = "NES",
   col_fun = circlize::colorRamp2(c(-5, 0, 5), c("blue", "white", "red")),
   filename = "gsea_res_all_stats_nes_binary.png",
-  chr_width = 45L
+  chr_width = 45L,
+  height = grid::unit(0.6, "npc")
 )
 
 col_order_sur <- ComplexHeatmap::column_order(nes_sur_htmap)
@@ -139,8 +147,12 @@ plot_heatmap_red_blue_padj(
   metrics = "neg_log10_padj",
   col_fun = circlize::colorRamp2(c(-80, 0, 80), c("blue", "white", "red")),
   filename = "gsea_res_all_stats_padj_red_blue_binary.png",
-  chr_width = 35L,
-  col_order = col_order_bi
+  chr_width = 45L,
+  col_order = col_order_bi,
+  heatmap_height = grid::unit(0.9, "npc"),
+  heatmap_width = grid::unit(0.8, "npc"),
+
+  height = grid::unit(0.6, "npc")
 )
 plot_heatmap_red_blue_padj(
   combined_stats_file[
@@ -149,8 +161,12 @@ plot_heatmap_red_blue_padj(
   metrics = "neg_log10_padj",
   col_fun = circlize::colorRamp2(c(-80, 0, 80), c("blue", "white", "red")),
   filename = "gsea_res_all_stats_padj_red_blue_survival.png",
-  chr_width = 35L,
-  col_order = col_order_sur
+  chr_width = 45L,
+  col_order = col_order_sur,
+  heatmap_height = grid::unit(0.9, "npc"),
+  heatmap_width = grid::unit(0.8, "npc"),
+  height = grid::unit(0.65, "npc"),
+  width = grid::unit(0.75, "npc")
 )
 
 # * direction - padj  - significance
@@ -160,8 +176,12 @@ plot_heatmap_red_blue_padj_signif(
   ],
   metrics = "neg_log10_padj",
   filename = "gsea_res_all_stats_padj_red_blue_signif_binary.png",
-  chr_width = 35L,
-  col_order = col_order_bi
+  chr_width = 45L,
+  col_order = col_order_bi,
+  heatmap_height = grid::unit(0.9, "npc"),
+  heatmap_width = grid::unit(0.8, "npc"),
+
+  height = grid::unit(0.6, "npc")
 )
 plot_heatmap_red_blue_padj_signif(
   combined_stats_file[
@@ -169,6 +189,10 @@ plot_heatmap_red_blue_padj_signif(
   ],
   metrics = "neg_log10_padj",
   filename = "gsea_res_all_stats_padj_red_blue_signif_survival.png",
-  chr_width = 35L,
-  col_order = col_order_sur
+  chr_width = 45L,
+  col_order = col_order_sur,
+  heatmap_height = grid::unit(0.9, "npc"),
+  heatmap_width = grid::unit(0.8, "npc"),
+  height = grid::unit(0.65, "npc"),
+  width = grid::unit(0.75, "npc")
 )
