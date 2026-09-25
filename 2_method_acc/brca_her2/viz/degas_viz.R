@@ -1,5 +1,7 @@
 setwd(file.path(usethis::proj_path(), "/2_method_acc/brca_her2"))
 
+library(dplyr)
+
 stats_dir <- "stats/"
 method <- "degas"
 
@@ -135,15 +137,15 @@ f1_bubble_heatmap <- function(
         x = "ff_depth",
         y = "bag_depth"
       ) +
-      ggplot2::theme_minimal(base_size = 14) + # 全局字体基准
+      ggplot2::theme_minimal(base_size = 16) + # 全局字体基准
       ggplot2::theme(
-        axis.text = ggplot2::element_text(size = 12), # 2. 轴文字放大
-        axis.title = ggplot2::element_text(size = 13),
+        axis.text = ggplot2::element_text(size = 16), # 2. 轴文字放大
+        axis.title = ggplot2::element_text(size = 16),
         # 3. x 轴 45° 倾斜
-        axis.text.x = ggplot2::element_text(angle = 60, hjust = 1, vjust = 1),
+        axis.text.x = ggplot2::element_text(vjust = 0.5),
         # 4. 图例文字放大
-        legend.text = ggplot2::element_text(size = 12),
-        legend.title = ggplot2::element_text(size = 13)
+        legend.text = ggplot2::element_text(size = 16),
+        legend.title = ggplot2::element_text(size = 16)
       )
   } else if (any(grepl("lamb1", colnames(data)))) {
     # arg_samples2
@@ -176,15 +178,15 @@ f1_bubble_heatmap <- function(
         x = "lamb1",
         y = "lamb2"
       ) +
-      ggplot2::theme_minimal(base_size = 14) + # 全局字体基准
+      ggplot2::theme_minimal(base_size = 16) + # 全局字体基准
       ggplot2::theme(
-        axis.text = ggplot2::element_text(size = 12), # 2. 轴文字放大
-        axis.title = ggplot2::element_text(size = 13),
+        axis.text = ggplot2::element_text(size = 16), # 2. 轴文字放大
+        axis.title = ggplot2::element_text(size = 16),
         # 3. x 轴 45° 倾斜
-        axis.text.x = ggplot2::element_text(angle = 60, hjust = 1, vjust = 1),
+        axis.text.x = ggplot2::element_text(vjust = 0.5),
         # 4. 图例文字放大
-        legend.text = ggplot2::element_text(size = 12),
-        legend.title = ggplot2::element_text(size = 13)
+        legend.text = ggplot2::element_text(size = 16),
+        legend.title = ggplot2::element_text(size = 16)
       )
   }
   if (any(grepl("do_prc", colnames(data)))) {
@@ -213,32 +215,41 @@ f1_bubble_heatmap <- function(
         labels = seq(25, 100, by = 25)
       ) +
       ggplot2::labs(
-        title = "Validation of the Screening Efficiency of SCIPAC under Random Parameters",
-        subtitle = "x = scbatch_sz, y = patbatch_sz",
+        title = "Validation of the Screening Efficiency of DEGAS under Random Parameters",
+        subtitle = "x = scbatch_sz, y = patbatch_sz, facet = do_prc",
         x = "scbatch_sz",
         y = "patbatch_sz"
       ) +
-      ggplot2::theme_minimal(base_size = 14) + # 全局字体基准
+      ggplot2::theme_minimal(base_size = 16) + # 全局字体基准
       ggplot2::theme(
-        axis.text = ggplot2::element_text(size = 12), # 2. 轴文字放大
-        axis.title = ggplot2::element_text(size = 13),
+        axis.text = ggplot2::element_text(size = 16), # 2. 轴文字放大
+        axis.title = ggplot2::element_text(size = 16),
         # 3. x 轴 45° 倾斜
-        axis.text.x = ggplot2::element_text(angle = 60, hjust = 1, vjust = 1),
+        axis.text.x = ggplot2::element_text(angle = 60, vjust = 0.5),
         # 4. 图例文字放大
-        legend.text = ggplot2::element_text(size = 12),
-        legend.title = ggplot2::element_text(size = 13)
+        legend.text = ggplot2::element_text(size = 16),
+        legend.title = ggplot2::element_text(size = 16)
       ) +
       ggplot2::facet_wrap(~do_prc)
   }
 
-  ggplot2::ggsave(
-    filename = save_path,
-    plot = p,
-    width = width,
-    height = height,
-    dpi = 400
-  )
-
+  if (!any(grepl("do_prc", colnames(data)))) {
+    ggplot2::ggsave(
+      filename = save_path,
+      plot = p,
+      width = width,
+      height = height,
+      dpi = 400
+    )
+  } else {
+    ggplot2::ggsave(
+      filename = save_path,
+      plot = p,
+      width = width * 1.5,
+      height = height * 1.2,
+      dpi = 400
+    )
+  }
   p
 }
 

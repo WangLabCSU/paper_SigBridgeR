@@ -1,5 +1,7 @@
 setwd(file.path(usethis::proj_path(), "/2_method_acc/brca_her2"))
 
+library(dplyr)
+
 stats_dir <- "stats/"
 method <- "scipac"
 
@@ -132,15 +134,14 @@ f1_bubble_heatmap <- function(
         x = "resolution",
         y = "ela_net_alpha"
       ) +
-      ggplot2::theme_minimal(base_size = 14) + # 全局字体基准
+      ggplot2::theme_minimal(base_size = 16) + # 全局字体基准
       ggplot2::theme(
-        axis.text = ggplot2::element_text(size = 12), # 2. 轴文字放大
-        axis.title = ggplot2::element_text(size = 13),
-        # 3. x 轴 45° 倾斜
-        axis.text.x = ggplot2::element_text(angle = 60, hjust = 1, vjust = 1),
+        axis.text = ggplot2::element_text(size = 16), # 2. 轴文字放大
+        axis.title = ggplot2::element_text(size = 16),
+        axis.text.x = ggplot2::element_text(vjust = 0.5),
         # 4. 图例文字放大
-        legend.text = ggplot2::element_text(size = 12),
-        legend.title = ggplot2::element_text(size = 13)
+        legend.text = ggplot2::element_text(size = 16),
+        legend.title = ggplot2::element_text(size = 16)
       )
   } else {
     p <- ggplot2::ggplot(
@@ -172,15 +173,14 @@ f1_bubble_heatmap <- function(
         x = "hvg",
         y = "bt_size"
       ) +
-      ggplot2::theme_minimal(base_size = 14) + # 全局字体基准
+      ggplot2::theme_minimal(base_size = 16) + # 全局字体基准
       ggplot2::theme(
-        axis.text = ggplot2::element_text(size = 12), # 2. 轴文字放大
-        axis.title = ggplot2::element_text(size = 13),
-        # 3. x 轴 45° 倾斜
-        axis.text.x = ggplot2::element_text(angle = 60, hjust = 1, vjust = 1),
+        axis.text = ggplot2::element_text(size = 16), # 2. 轴文字放大
+        axis.title = ggplot2::element_text(size = 16),
+        axis.text.x = ggplot2::element_text(vjust = 0.5),
         # 4. 图例文字放大
-        legend.text = ggplot2::element_text(size = 12),
-        legend.title = ggplot2::element_text(size = 13)
+        legend.text = ggplot2::element_text(size = 16),
+        legend.title = ggplot2::element_text(size = 16)
       )
   }
 
