@@ -90,3 +90,22 @@ all_scab_repeat_times_acc <- robust_kendall_perm(
   y = c(tnbc_scab$Accuracy, her2_scab$Accuracy),
   seed = 128
 )
+
+cli::cli_alert_info(
+  "her2_scab_repeat_times_f1: {her2_scab_repeat_times_f1$p.value}"
+)
+cli::cli_alert_info(
+  "her2_scab_repeat_times_acc: {her2_scab_repeat_times_acc$p.value}"
+)
+cli::cli_alert_info(
+  "tnbc_scab_repeat_times_f1: {tnbc_scab_repeat_times_f1$p.value}"
+)
+cli::cli_alert_info(
+  "tnbc_scab_repeat_times_acc: {tnbc_scab_repeat_times_acc$p.value}"
+)
+cli::cli_alert_info(
+  "all_scab_repeat_times_f1: {all_scab_repeat_times_f1$p.value}"
+)
+cli::cli_alert_info(
+  "all_scab_repeat_times_acc: {all_scab_repeat_times_acc$p.value}"
+)

@@ -90,3 +90,10 @@ all_scab_tred_acc <- robust_kendall_perm(
   y = c(tnbc_scab$Accuracy, her2_scab$Accuracy),
   seed = 128
 )
+
+cli::cli_alert_info("her2_scab_tred_f1: {her2_scab_tred_f1$p.value}")
+cli::cli_alert_info("her2_scab_tred_acc: {her2_scab_tred_acc$p.value}")
+cli::cli_alert_info("tnbc_scab_tred_f1: {tnbc_scab_tred_f1$p.value}")
+cli::cli_alert_info("tnbc_scab_tred_acc: {tnbc_scab_tred_acc$p.value}")
+cli::cli_alert_info("all_scab_tred_f1: {all_scab_tred_f1$p.value}")
+cli::cli_alert_info("all_scab_tred_acc: {all_scab_tred_acc$p.value}")

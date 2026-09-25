@@ -1,4 +1,5 @@
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+# setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+setwd(file.path(usethis::proj_path(), "2_method_acc/viz"))
 
 # ============================
 # 螺旋图：6 个 method 各占 60°，tissue 在螺旋轴上，acc 为径向值
@@ -50,7 +51,6 @@ grDevices::png(
 n <- nrow(spiral_acc)
 
 # * 5 圈
-cli::cli_h2("init")
 
 spiralize::spiral_initialize(
   xlim = c(1, n),
@@ -63,7 +63,11 @@ spiralize::spiral_track(
   ylim = c(0, 1),
   background_gp = grid::gpar(fill = "#EEEEEE")
 )
-spiralize::spiral_yaxis(side = "both", at = c(0, 0.25, 0.5, 0.75, 1))
+spiralize::spiral_yaxis(
+  side = "both",
+  at = c(0, 0.5, 1),
+  labels_gp = grid::gpar(fontsize = 14),
+)
 
 legend_rule <- spiralize::spiral_horizon(
   spiral_acc$x,
@@ -78,10 +82,8 @@ grid::grid.text(
   0,
   0,
   default.units = "native",
-  gp = grid::gpar(fontfamily = "bold")
+  gp = grid::gpar(fontfamily = "bold", fontface = "bold", fontsize = 16)
 )
-
-cli::cli_h2("Annotation")
 
 # * Group Annotation
 sample_group_index <- spiral_acc[, .(indices = list(x)), by = sample_name]
@@ -132,26 +134,33 @@ for (i in seq_len(nrow(method_group_index))) {
   )
 }
 
-cli::cli_h2("Legend")
-
 # * Legend
-acc_lgd <- spiralize::horizon_legend(legend_rule, title = "Accuracy")
+acc_lgd <- spiralize::horizon_legend(
+  legend_rule,
+  title = "Accuracy",
+  labels_gp = grid::gpar(fontsize = 14),
+  title_gp = grid::gpar(fontsize = 16, fontface = "bold")
+)
 method_lgd <- ComplexHeatmap::Legend(
   at = names(palette_method_name),
   title = "Method",
+  labels_gp = grid::gpar(fontsize = 14),
+  title_gp = grid::gpar(fontsize = 16, fontface = "bold"),
   legend_gp = grid::gpar(
-    fill = palette_method_name
+    fill = palette_method_name,
+    fontsize = 14
   )
 )
 sample_lgd <- ComplexHeatmap::Legend(
   at = names(palette_sample_name),
   title = "Sample",
+  labels_gp = grid::gpar(fontsize = 14),
+  title_gp = grid::gpar(fontsize = 16, fontface = "bold"),
   legend_gp = grid::gpar(
-    fill = palette_sample_name
+    fill = palette_sample_name,
+    fontsize = 14
   )
 )
-
-cli::cli_h2("Draw")
 
 ComplexHeatmap::draw(
   acc_lgd,
@@ -161,13 +170,13 @@ ComplexHeatmap::draw(
 ComplexHeatmap::draw(
   sample_lgd,
   x = grid::unit(1, "npc") + grid::unit(2, "mm"),
-  y = grid::unit(0.4, "npc"),
+  y = grid::unit(0.65, "npc"),
   just = "left"
 )
 ComplexHeatmap::draw(
   method_lgd,
   x = grid::unit(1, "npc") + grid::unit(2, "mm"),
-  y = grid::unit(0.28, "npc"),
+  y = grid::unit(0.35, "npc"),
   just = "left"
 )
 

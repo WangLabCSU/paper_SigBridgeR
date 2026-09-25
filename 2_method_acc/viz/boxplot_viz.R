@@ -170,6 +170,15 @@ p_f1 <- combined2 %>%
     alpha = 0.4,
     width = 0.2
   ) +
+  # 无数据的方法（LP_SGL、PIPET）在列中心、纵轴居中处画红叉
+  ggplot2::annotate(
+    "point",
+    x = c("LP_SGL", "PIPET"),
+    y = 0.5,
+    shape = 4,
+    size = 6,
+    color = "red"
+  ) +
   # 应用调色板
   ggplot2::scale_fill_manual(values = palette, guide = "none") +
   ggplot2::scale_color_manual(
@@ -243,6 +252,15 @@ p_acc <- combined2 %>%
     size = 1.5,
     alpha = 0.4,
     width = 0.2
+  ) +
+  # 无数据的方法（LP_SGL、PIPET）在列中心、纵轴居中处画红叉
+  ggplot2::annotate(
+    "point",
+    x = c("LP_SGL", "PIPET"),
+    y = 0.5,
+    shape = 4,
+    size = 6,
+    color = "red"
   ) +
   # 应用调色板
   ggplot2::scale_fill_manual(values = palette, guide = "none") +

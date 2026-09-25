@@ -1,7 +1,7 @@
 ad_p_htmap <- function(
   corr, # wide data: p-value matrix
   p_mat = matrix(),
-  color = colorRampPalette(c("#DDDDDD", "#B2182B")),
+  color = colorRampPalette(c("#b9b9b9", "#dba5ab", "#ff3d53")),
   filename = "ad_p_htmap.png",
   width = 800,
   height = 800,

@@ -1,4 +1,5 @@
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+# setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+setwd(file.path(usethis::proj_path(), "2_method_acc/viz"))
 
 # ============================
 # 螺旋图：6 个 method 各占 60°，tissue 在螺旋轴上，F1 为径向值
@@ -56,7 +57,6 @@ purrr::iwalk(
     n <- nrow(dt)
 
     # * 5 圈
-    cli::cli_h2("init")
 
     spiralize::spiral_initialize(
       xlim = c(1, n),
@@ -69,7 +69,11 @@ purrr::iwalk(
       ylim = c(0, 1),
       background_gp = grid::gpar(fill = "#EEEEEE")
     )
-    spiralize::spiral_yaxis(side = "both", at = c(0, 0.25, 0.5, 0.75, 1))
+    spiralize::spiral_yaxis(
+      side = "both",
+      at = c(0, 0.5, 1),
+      labels_gp = grid::gpar(fontsize = 14),
+    )
 
     col_fun <- circlize::colorRamp2(c(0, 1), c("#ffdddd", "red"))
     spiralize::spiral_rect(
@@ -86,10 +90,8 @@ purrr::iwalk(
       0,
       0,
       default.units = "native",
-      gp = grid::gpar(fontfamily = "bold")
+      gp = grid::gpar(fontfamily = "bold", fontface = "bold", fontsize = 16)
     )
-
-    cli::cli_h2("Annotation")
 
     # * Group Annotation
     sample_group_index <- dt[, .(indices = list(x)), by = sample_name]
@@ -114,19 +116,24 @@ purrr::iwalk(
       )
     }
 
-    cli::cli_h2("Legend")
-
     # * Legend
-    f1_lgd <- ComplexHeatmap::Legend(title = "F1 score", col_fun = col_fun)
+    f1_lgd <- ComplexHeatmap::Legend(
+      title = "F1 score",
+      col_fun = col_fun,
+      labels_gp = grid::gpar(fontsize = 14),
+      title_gp = grid::gpar(fontsize = 16, fontface = "bold"),
+      legend_gp = grid::gpar(fontsize = 14)
+    )
     sample_lgd <- ComplexHeatmap::Legend(
       at = names(palette_sample_name),
       title = "Sample",
+      labels_gp = grid::gpar(fontsize = 14),
+      title_gp = grid::gpar(fontsize = 16, fontface = "bold"),
       legend_gp = grid::gpar(
-        fill = palette_sample_name
+        fill = palette_sample_name,
+        fontsize = 14
       )
     )
-
-    cli::cli_h2("Draw")
 
     ComplexHeatmap::draw(
       f1_lgd,
