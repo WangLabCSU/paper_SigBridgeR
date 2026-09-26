@@ -9,8 +9,13 @@ library(gghalves)
 esmats <- qs::qread("../../diff_test/method_labels.qs", nthreads = 2L)
 matched_data <- qs::qread("../../diff_test/matched_data.qs", nthreads = 2L)
 
-esmats <- esmats[grepl("_ad_|_fshd_", names(esmats))]
-matched_data <- matched_data[grepl("_ad_|_fshd_", names(matched_data))]
+esmats <- esmats[
+  grepl("_ad_|_fshd_", names(esmats)) & !grepl("28146", names(esmats))
+]
+matched_data <- matched_data[
+  grepl("_ad_|_fshd_", names(matched_data)) &
+    !grepl("28146", names(matched_data))
+]
 
 # ? Find matched datasets
 find_name <- function(chr = character) {
@@ -145,11 +150,11 @@ names(pallete) <- c(
 )
 
 all_combined[, `:=`(
-  sc = gsub(".*_([a-zA-Z]+)_.*", "\\1", sc),
+  sc = toupper(gsub(".*_([a-zA-Z]+)_.*", "\\1", sc)),
   bulk = toupper(bulk)
 )]
 label_position[, `:=`(
-  sc = gsub(".*_([a-zA-Z]+)_.*", "\\1", sc),
+  sc = toupper(gsub(".*_([a-zA-Z]+)_.*", "\\1", sc)),
   bulk = toupper(bulk)
 )]
 
@@ -180,9 +185,9 @@ p <- ggplot(
     minor_breaks = scales::breaks_width(0.1)
   ) +
   labs(x = NULL, y = NULL) + # 分面时统一加 lab
-  cowplot::theme_cowplot(16) +
+  cowplot::theme_cowplot() +
   theme(
-    axis.text.x = element_text(angle = 60, hjust = 1, size = 16),
+    axis.text.x = element_text(angle = 60, hjust = 1, size = 13.5),
     panel.grid.minor = element_blank(),
     strip.text = element_text(face = "bold", size = 14),
     strip.background.y = ggplot2::element_rect(

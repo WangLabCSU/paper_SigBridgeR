@@ -76,7 +76,7 @@ legend_rule <- spiralize::spiral_horizon(
   use_bar = TRUE
 )
 
-grid::grid.rect(gp = grid::gpar(fill = NA))
+# grid::grid.rect(gp = grid::gpar(fill = NA))
 grid::grid.text(
   "F1 score",
   0,

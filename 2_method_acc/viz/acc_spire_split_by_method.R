@@ -84,13 +84,19 @@ purrr::iwalk(
       gp = grid::gpar(fill = col_fun(dt$Accuracy), col = NA)
     )
 
-    grid::grid.rect(gp = grid::gpar(fill = NA))
     grid::grid.text(
       "Accuracy",
       0,
       0,
       default.units = "native",
       gp = grid::gpar(fontfamily = "bold", fontface = "bold", fontsize = 16)
+    )
+    grid::grid.text(
+      glue::glue("method: {dt_name}"),
+      x = 0.5,
+      y = 0.98,
+      just = "top",
+      gp = grid::gpar(fontface = "bold", fontsize = 18)
     )
 
     # * Group Annotation

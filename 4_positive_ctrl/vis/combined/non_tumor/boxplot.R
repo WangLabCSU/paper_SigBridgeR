@@ -212,7 +212,7 @@ p <- ggplot(
 ggplot2::ggsave(
   filename = "boxplot_combined.png",
   plot = p,
-  width = 10,
-  height = 14,
+  width = 8,
+  height = 10,
   dpi = 400
 )

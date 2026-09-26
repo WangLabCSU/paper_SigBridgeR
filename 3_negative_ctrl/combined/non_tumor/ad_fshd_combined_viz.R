@@ -177,6 +177,6 @@ ggplot2::ggsave(
   filename = "combined_100_test.png",
   plot = p,
   dpi = 400,
-  width = 10,
-  height = 16
+  width = 8,
+  height = 10
 )

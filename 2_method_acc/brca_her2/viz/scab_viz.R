@@ -106,7 +106,7 @@ f1_bubble_heatmap <- function(
       labels = seq(5, 20, by = 1)
     ) +
     ggplot2::labs(
-      title = "Validation of the Screening Efficiency of Scissor under Random Parameters",
+      title = "Validation of the Screening Efficiency of scAB under Random Parameters",
       subtitle = "x = tred, y = repeat_times",
       x = "tred",
       y = "repeat_times"

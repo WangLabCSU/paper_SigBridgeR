@@ -107,8 +107,7 @@ find_name <- function(chr = character) {
   sc <- gsub(
     ".*(her2|tnbc|lung|ov|ad|fshd).*",
     "\\1",
-    chr,
-    ignore.case = TRUE
+    chr
   )
   bulk <- tolower(gsub(
     ".*(TCGA.*|GSE.*)",

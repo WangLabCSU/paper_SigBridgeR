@@ -10,7 +10,8 @@ ucell_score <- qs::qread(
   nthreads = 4L
 )
 
-filter_tumor <- grepl("_ad_|_fshd_", names(ucell_score))
+filter_tumor <- grepl("_ad_|_fshd_", names(ucell_score)) &
+  !grepl("28146", names(ucell_score))
 ucell_score <- ucell_score[filter_tumor]
 
 ucell_score <- ucell_score %>%
@@ -74,10 +75,10 @@ ucell_score$cluster <- factor(
   )
 )
 ucell_score$sc <- as.factor(
-  ucell_score$sc
+  toupper(ucell_score$sc)
 )
 ucell_score$bulk <- as.factor(
-  ucell_score$bulk
+  toupper(ucell_score$bulk)
 )
 ucell_score$pheno <- as.factor(
   ucell_score$pheno
@@ -190,8 +191,8 @@ ggplot2::ggsave(
   filename = "non_tumor/ucell_100_test.png",
   plot = p,
   dpi = 400,
-  width = 10,
-  height = 16
+  width = 8,
+  height = 10
 )
 
 # p_hairtail <- ggplot2::ggplot(

@@ -4,7 +4,9 @@ library(data.table)
 library(dplyr)
 
 data_combined <- data.table::fread("../../diff_test/all_diff_df.csv")
-data_combined <- data_combined[sc %chin% c("ad", "fshd")]
+data_combined <- data_combined[
+  sc %chin% c("ad", "fshd") & !grepl("tcga|28146", bulk)
+]
 
 # ? all method comparisons, used to complete missing combinations
 method_comparisons <- expand.grid(
@@ -232,7 +234,7 @@ p <- ggplot2::ggplot(plot_df2) +
     axis.ticks.y.left = ggplot2::element_blank(),
     axis.text.y.right = ggplot2::element_text(size = 14, face = "bold"),
     strip.text.y = ggplot2::element_text(size = 14, face = "bold"),
-    strip.text.x = ggplot2::element_text(size = 9, face = "bold"),
+    strip.text.x = ggplot2::element_text(size = 12, face = "bold"),
     strip.background.y = ggplot2::element_rect(
       color = "white",
       fill = "#EEEEEE"
@@ -243,10 +245,7 @@ p <- ggplot2::ggplot(plot_df2) +
     ),
     panel.grid.major = ggplot2::element_blank(),
     panel.grid.minor = ggplot2::element_blank(),
-    legend.title = ggplot2::element_text(
-      size = 16,
-      margin = ggplot2::margin(b = 12)
-    ), # 图例标题
+    legend.title = ggplot2::element_text(size = 16),
     legend.text = ggplot2::element_text(size = 14)
   ) +
   # 四变量分面
@@ -259,8 +258,8 @@ p <- ggplot2::ggplot(plot_df2) +
 ggplot2::ggsave(
   p,
   filename = "heatmap_combined.png",
-  width = 12,
-  height = 12,
+  width = 10,
+  height = 7,
   dpi = 400
 )
 

@@ -786,7 +786,8 @@ plot_heatmap_red_blue_padj <- function(
     ),
     at = c(-80, 0, 80),
     col_fun = col_fun,
-    labels_gp = grid::gpar(fontsize = 18)
+    labels_gp = grid::gpar(fontsize = 18),
+    direction = "vertical"
   )
 
   htmap <- ComplexHeatmap::Heatmap(
@@ -838,7 +839,11 @@ plot_heatmap_red_blue_padj <- function(
     width = 10000,
     height = 12000
   )
-  ComplexHeatmap::draw(htmap, annotation_legend_list = list(lgd))
+  ComplexHeatmap::draw(
+    htmap,
+    annotation_legend_list = list(lgd),
+    annotation_legend_side = "right"
+  )
   dev.off()
 }
 
@@ -985,6 +990,7 @@ plot_heatmap_red_blue_padj_signif <- function(
       "<span style='font-size:18pt'><b> log10(p-adjusted) <br> with direction</b></span>"
     ),
     labels_gp = grid::gpar(fontsize = 18),
+    direction = "vertical",
     legend_gp = grid::gpar(
       fill = c(
         "#2166AC",
@@ -1047,7 +1053,11 @@ plot_heatmap_red_blue_padj_signif <- function(
     width = 10000,
     height = 12000
   )
-  ComplexHeatmap::draw(htmap, annotation_legend_list = list(lgd))
+  ComplexHeatmap::draw(
+    htmap,
+    annotation_legend_list = list(lgd),
+    annotation_legend_side = "right"
+  )
   dev.off()
 }
 
