@@ -48,27 +48,25 @@ if ("sig" %in% colnames(seurat_merged[[]])) {
 #   save_path = file.path(save_path, "GSE161529_her2_tumor_UMAP.png")
 # )
 
-c(
-  umap_scissor,
-  umap_scpas,
-  #   umap_scipac,
-  umap_scpp,
-  umap_scab,
-  umap_degas,
-  umap_lp_sgl
-  #   ,  umap_pipet
-) %<-%
+method_cols <- c(
+  "scissor",
+  "scPAS",
+  "SCIPAC",
+  "scPP",
+  "scAB",
+  "DEGAS",
+  "LP_SGL",
+  "PIPET"
+)
+method_cols_missing <- setdiff(method_cols, colnames(seurat_merged[[]]))
+if (length(method_cols_missing) > 0L) {
+  cli::cli_alert_warning("Skip missing methods: {.val {method_cols_missing}}")
+}
+method_cols <- intersect(method_cols, colnames(seurat_merged[[]]))
+
+umap_methods <-
   purrr::map(
-    c(
-      "scissor",
-      "scPAS",
-      #   "SCIPAC",
-      "scPP",
-      'scAB',
-      "DEGAS",
-      "LP_SGL"
-      #   ,      "PIPET"
-    ),
+    method_cols,
     ~ draw_umap(
       seurat = seurat_merged,
       group.by = .x,
@@ -76,13 +74,13 @@ c(
       cols = c(
         "Other" = "#CECECE",
         "Neutral" = "#CECECE",
-        "Positive" = "#c24b4b",
-        "Negative" = "#5189bb"
+        "Positive" = "#a02020",
+        "Negative" = "#386c9b"
       ),
-      title = paste0("sc: GSE161529 her2\nbulk: ", bulk_name, "\nmethod: ", .x),
+      title = glue::glue("Method: {.x}"),
       save_path = file.path(
         save_path,
-        paste0("GSE161529_her2_", bulk_name, "_", .x, "_UMAP.png")
+        glue::glue("GSE161529_her2_{bulk_name}_{.x}_UMAP.png")
       )
     ),
     .progress = "Drawing"
