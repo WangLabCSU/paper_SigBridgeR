@@ -104,7 +104,7 @@ nes_sur_htmap <- plot_heatmap3(
   heatmap_height = grid::unit(0.9, "npc"),
   heatmap_width = grid::unit(0.8, "npc"),
   height = grid::unit(0.65, "npc"),
-  width = grid::unit(0.8, "npc")
+  width = grid::unit(0.75, "npc")
 )
 # * only binary - NES
 nes_bi_htmap <- plot_heatmap3(

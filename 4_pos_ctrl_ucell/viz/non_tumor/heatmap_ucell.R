@@ -4,8 +4,12 @@ library(data.table)
 library(dplyr)
 
 data_combined <- data.table::fread("../../diff_test/all_diff_df.csv")
+# PIPET idenified only Neutral cell, so we filter it out
 data_combined <- data_combined[
-  sc %chin% c("ad", "fshd") & !grepl("tcga|28146", bulk)
+  sc %chin%
+    c("ad", "fshd") &
+    !grepl("tcga|28146", bulk) &
+    screen_method != "PIPET"
 ]
 
 # ? all method comparisons, used to complete missing combinations
@@ -45,9 +49,13 @@ triangle <- function(pairs, type = "up") {
 
 # ? generate triangle data for ggplot2
 triangle_data <- function(data, row = 1, col = 2) {
-  # 保留原始因子水平顺序
-  row_levels <- unique(data[[row]])
-  col_levels <- unique(data[[col]])
+  # 因子列严格遵从既定 levels；非因子列才按首次出现顺序排列
+  levels_in_order <- function(x) {
+    if (is.factor(x)) levels(x) else unique(x)
+  }
+
+  row_levels <- levels_in_order(data[[row]])
+  col_levels <- levels_in_order(data[[col]])
 
   rows <- length(row_levels)
   cols <- length(col_levels)
@@ -134,8 +142,6 @@ centers <- plot_df2 %>%
   dplyr::filter(label != "" & !is.na(label)) %>%
   data.table::as.data.table()
 
-plot_df2[sc == "her2", sc := "brca her2"]
-centers[sc == "her2", sc := "brca her2"]
 plot_df2[,
   bulk := toupper(bulk)
 ][,
@@ -159,11 +165,12 @@ centers[,
   )
 ]
 
-x_breaks <- seq_along(unique(plot_df2[["bulk"]])) + 0.5
-x_labels <- sort(unique(plot_df2[["bulk"]]))
+# 坐标与 triangle_data() 所用的因子水平完全一致
+x_labels <- levels(plot_df2$bulk)
+x_breaks <- seq_along(x_labels) + 0.5
 
-y_breaks <- seq_along(unique(plot_df2[["comparison"]])) + 0.5
-y_labels <- sort(unique(plot_df2[["comparison"]]))
+y_labels <- levels(plot_df2$comparison)
+y_breaks <- seq_along(y_labels) + 0.5
 
 
 p <- ggplot2::ggplot(plot_df2) +
@@ -179,11 +186,9 @@ p <- ggplot2::ggplot(plot_df2) +
       "#FFED99",
       "#85ac61",
       "#8ecde0ff",
-      "#7b74e0",
-      "#4941b9",
-      "#991cb9"
+      "#7b74e0"
     ))(10),
-    limits = c(0, 6.5),
+    limits = c(0, 3),
     breaks = seq(0, 6.5, by = 1),
     na.value = "#e9e9e9ff", # ← NA 灰色
     name = "Diff"
@@ -215,8 +220,8 @@ p <- ggplot2::ggplot(plot_df2) +
   ) +
   ggplot2::scale_y_continuous(
     expand = c(0, 0),
-    breaks = seq_along(unique(plot_df2[["comparison"]])) + 0.5,
-    labels = sort(unique(plot_df2[["comparison"]])),
+    breaks = y_breaks,
+    labels = y_labels,
     sec.axis = ggplot2::dup_axis()
   ) +
   ggplot2::labs(
@@ -262,98 +267,3 @@ ggplot2::ggsave(
   height = 7,
   dpi = 400
 )
-
-# p_hairtail <- ggplot2::ggplot(plot_df2) +
-#   ggplot2::geom_polygon(
-#     ggplot2::aes(upper.x, upper.y, fill = diff, group = group),
-#     colour = "grey",
-#     linewidth = 0.1
-#   ) +
-#   # diff颜色
-#   ggplot2::scale_fill_gradientn(
-#     colors = grDevices::colorRampPalette(c(
-#       "#ffffff",
-#       "#FFED99",
-#       "#85ac61",
-#       "#8ecde0ff",
-#       "#7b74e0",
-#       "#4941b9",
-#       "#991cb9"
-#     ))(10),
-#     limits = c(0, 6.5),
-#     breaks = seq(0, 6.5, by = 1),
-#     na.value = "#e9e9e9ff", # ← NA 灰色
-#     name = "Diff"
-#   ) +
-#   ggnewscale::new_scale("fill") +
-#   # 显著性颜色
-#   ggplot2::geom_polygon(
-#     ggplot2::aes(lower.x, lower.y, fill = neg_log10_p, group = group),
-#     colour = "white",
-#     linewidth = 0.1
-#   ) +
-#   ggplot2::scale_fill_gradient(
-#     low = "#fceeeeff",
-#     high = "#d65456ff",
-#     limits = c(0, 300),
-#     na.value = "#e9e9e9ff",
-#     name = "-log10 (P value)"
-#   ) +
-#   ggplot2::geom_text(
-#     data = centers,
-#     ggplot2::aes(x = x_center + 0.1, y = y_center - 0.12, label = label),
-#     size = 2.4,
-#     fontface = "bold"
-#   ) +
-#   ggplot2::scale_x_continuous(
-#     breaks = x_breaks,
-#     labels = x_labels,
-#     expand = c(0, 0)
-#   ) +
-#   ggplot2::scale_y_continuous(
-#     expand = c(0, 0),
-#     breaks = seq_along(unique(plot_df2[["comparison"]])) + 0.5,
-#     labels = sort(unique(plot_df2[["comparison"]])),
-#     sec.axis = ggplot2::dup_axis()
-#   ) +
-#   ggplot2::labs(
-#     title = "UCell Pos Ctrl",
-#     subtitle = "signif: wilcoxon rank sum test -> UCell score\n
-#     diff = mean score / mean score\n
-#     -log10 (P value) = -log10 (wilcoxon rank sum test p value)"
-#   ) +
-#   ggplot2::theme_minimal() +
-#   ggplot2::theme(
-#     axis.text.y.left = ggplot2::element_blank(),
-#     axis.title = ggplot2::element_blank(),
-#     # axis.text.x = ggplot2::element_text(vjust = 0.5, size = 10, angle = 90),
-#     axis.text.x = ggplot2::element_blank(),
-#     axis.ticks.y.left = ggplot2::element_blank(),
-#     axis.text.y.right = ggplot2::element_text(size = 10, face = "bold"),
-#     strip.text.y = ggplot2::element_text(size = 10, face = "bold"),
-#     strip.text.x = ggplot2::element_text(size = 8, face = "bold"),
-#     strip.background.y = ggplot2::element_rect(
-#       color = "white",
-#       fill = "#EEEEEE"
-#     ),
-#     strip.background.x = ggplot2::element_rect(
-#       color = "white",
-#       fill = "#EEEEEE"
-#     ),
-#     panel.grid.major = ggplot2::element_blank(),
-#     panel.grid.minor = ggplot2::element_blank(),
-#   ) +
-#   # 四变量分面
-#   ggplot2::facet_grid(
-#     ~ `UCell_type` + pheno + sc + bulk,
-#     scales = "free", # must be free
-#     space = "free" # must be free
-#   )
-
-# ggplot2::ggsave(
-#   p_hairtail,
-#   filename = "heatmap_combined_hairtail.png",
-#   width = 40,
-#   height = 8,
-#   dpi = 400
-# )

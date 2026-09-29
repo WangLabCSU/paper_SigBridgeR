@@ -402,9 +402,12 @@ triangle <- function(pairs, type = "up") {
 
 # ? generate triangle data for ggplot2
 triangle_data <- function(data, row = 1, col = 2) {
-  # 保留原始因子水平顺序
-  row_levels <- unique(data[[row]])
-  col_levels <- unique(data[[col]])
+  levels_in_order <- function(x) {
+    if (is.factor(x)) levels(x) else unique(x)
+  }
+
+  row_levels <- levels_in_order(data[[row]])
+  col_levels <- levels_in_order(data[[col]])
 
   rows <- length(row_levels)
   cols <- length(col_levels)

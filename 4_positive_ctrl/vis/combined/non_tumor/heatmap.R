@@ -74,9 +74,12 @@ triangle <- function(pairs, type = "up") {
 
 # ? generate triangle data for ggplot2
 triangle_data <- function(data, row = 1, col = 2) {
-  # 保留原始因子水平顺序
-  row_levels <- unique(data[[row]])
-  col_levels <- unique(data[[col]])
+  levels_in_order <- function(x) {
+    if (is.factor(x)) levels(x) else unique(x)
+  }
+
+  row_levels <- levels_in_order(data[[row]])
+  col_levels <- levels_in_order(data[[col]])
 
   rows <- length(row_levels)
   cols <- length(col_levels)
@@ -132,7 +135,8 @@ plot_df <- plot_df %>%
 plot_df <- dplyr::filter(
   plot_df,
   !is.na(tumor_type) & !is.na(type_pheno) & !is.na(bulk)
-)
+) %>%
+  dplyr::mutate(comparison = factor(comparison))
 
 plot_df2 <- triangle_data(plot_df, row = "bulk", col = "comparison")
 
@@ -163,22 +167,12 @@ centers <- plot_df2 %>%
   ) %>%
   dplyr::filter(label != "" & !is.na(label))
 
-plot_df2$tumor_type <- ifelse(
-  plot_df2$tumor_type == "HER2",
-  "BRCA HER2",
-  plot_df2$tumor_type
-)
-centers$tumor_type <- ifelse(
-  centers$tumor_type == "HER2",
-  "BRCA HER2",
-  centers$tumor_type
-)
 
-x_breaks <- seq_along(unique(plot_df2[["bulk"]])) + 0.5
-x_labels <- sort(unique(plot_df2[["bulk"]]))
+x_labels <- levels(plot_df2$bulk)
+x_breaks <- seq_along(x_labels) + 0.5
 
-y_breaks <- seq_along(unique(plot_df2[["comparison"]])) + 0.5
-y_labels <- sort(unique(plot_df2[["comparison"]]))
+y_labels <- levels(plot_df2$comparison)
+y_breaks <- seq_along(y_labels) + 0.5
 
 
 p <- ggplot2::ggplot(plot_df2) +
@@ -193,12 +187,9 @@ p <- ggplot2::ggplot(plot_df2) +
       "#ffffff",
       "#FFED99",
       "#85ac61",
-      "#8ecde0ff",
-      "#7b74e0",
-      "#4941b9",
-      "#991cb9"
+      "#8ecde0ff"
     ))(10),
-    limits = c(0.5, 3.5),
+    limits = c(0.5, 2),
     na.value = "#e9e9e9ff", # ← NA 灰色
     name = "Diff"
   ) +
@@ -229,8 +220,8 @@ p <- ggplot2::ggplot(plot_df2) +
   ) +
   ggplot2::scale_y_continuous(
     expand = c(0, 0),
-    breaks = seq_along(unique(plot_df2[["comparison"]])) + 0.5,
-    labels = sort(unique(plot_df2[["comparison"]])),
+    breaks = y_breaks,
+    labels = y_labels,
     sec.axis = ggplot2::dup_axis()
   ) +
   ggplot2::labs(
