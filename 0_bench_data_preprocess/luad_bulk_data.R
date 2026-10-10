@@ -22,7 +22,7 @@ c(gse3141, gse8894, gse31210, tcga_luad) %<-%
 # gse8894 - log2 GC-RMA signal intensity
 # gse31210 - TPM
 
-source("0_bench_data_preprocess/Counts2TPM.R")
+source("0_bench_data_preprocess/counts_to_tpm.R")
 gene_length_cmb <- data.table::fread(
   "0_bench_data_preprocess/gencode_v33_tcga_gene_length.csv"
 )
@@ -30,7 +30,7 @@ gene_length_list <- setNames(
   gene_length_cmb$gene_length,
   gene_length_cmb$gene_id
 )
-tcga_luad_tpm <- Counts2TPM(as.matrix(tcga_luad), gene_length_list)
+tcga_luad_tpm <- counts_to_tpm(as.matrix(tcga_luad), gene_length_list)
 qs::qsave(
   tcga_luad_tpm,
   file.path(data_dir, "TCGA_LUAD_bulkdata_tpm.qs"),
