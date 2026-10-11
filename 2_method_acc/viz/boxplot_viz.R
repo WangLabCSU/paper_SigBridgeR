@@ -196,9 +196,9 @@ p_f1 <- combined2 %>%
   ) +
   ggplot2::scale_x_discrete(drop = FALSE) +
   ggplot2::scale_y_continuous(breaks = seq(0, 1, by = 0.1)) +
-  cowplot::theme_cowplot() +
+  cowplot::theme_cowplot(16L) +
   ggplot2::labs(
-    title = "Scatter-Boxplot of F1 by Method and Tissue",
+    # title = "Scatter-Boxplot of F1 by Method and Tissue",
     x = "",
     y = "F1"
   ) +
@@ -279,9 +279,9 @@ p_acc <- combined2 %>%
   ) +
   ggplot2::scale_x_discrete(drop = FALSE) +
   ggplot2::scale_y_continuous(breaks = seq(0, 1, by = 0.1)) +
-  cowplot::theme_cowplot() +
+  cowplot::theme_cowplot(16L) +
   ggplot2::labs(
-    title = "Scatter-Boxplot of Accuracy by Method and Tissue",
+    # title = "Scatter-Boxplot of Accuracy by Method and Tissue",
     x = "",
     y = "Accuracy"
   ) +

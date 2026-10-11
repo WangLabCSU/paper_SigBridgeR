@@ -1,12 +1,19 @@
 ad_p_htmap <- function(
   corr, # wide data: p-value matrix
   p_mat = matrix(),
-  color = colorRampPalette(c("#b9b9b9", "#dba5ab", "#ff3d53")),
+  color = colorRampPalette(c(
+    "#FEE5D9",
+    "#FCAE91",
+    "#FB6A4A",
+    "#DE2D26",
+    "#A50F15"
+  )),
   filename = "ad_p_htmap.png",
   width = 800,
   height = 800,
   res = 400,
-  tolerance = 1e-300
+  tolerance = 1e-300,
+  ...
 ) {
   # log10 spread + min-max normalize to 0-1 for balanced color differentiation
   corr_trans <- -log10(pmax(corr, tolerance))
@@ -25,10 +32,11 @@ ad_p_htmap <- function(
     col = color(100L),
     outline = "grey",
     diag = TRUE,
-    tl.cex = 1.2,
+    tl.cex = 1.4,
     tl.col = "black",
+    tl.pos = "d", # 'd' means diagonal,
     addCoef.col = "black",
-    number.cex = 0.8,
+    number.cex = 1.4,
     is.corr = FALSE
   )
 
@@ -39,13 +47,13 @@ ad_p_htmap <- function(
     col = color(100L),
     outline = "grey",
     diag = TRUE,
-    tl.cex = 1,
+    tl.cex = 1.2,
     tl.col = "black",
-    tl.pos = "d",
+    tl.pos = "d", # 'd' means diagonal,
     p.mat = p_mat,
     sig.level = c(0.001, 0.01, 0.05),
     insig = "label_sig",
-    pch.cex = 1.2,
+    pch.cex = 1.6,
     addCoef.col = "black",
     number.cex = 0.01,
     add = TRUE,
@@ -60,9 +68,9 @@ ad_p_htmap <- function(
     outline = "grey",
     diag = FALSE,
     tl.pos = "n",
-    cl.pos = "n",
+    cl.pos = "n", # position of color-legend
     addCoef.col = "black",
-    number.cex = 0.9,
+    number.cex = 1.2,
     add = TRUE,
     is.corr = FALSE
   )
