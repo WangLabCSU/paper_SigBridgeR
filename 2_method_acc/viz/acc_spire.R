@@ -66,7 +66,7 @@ spiralize::spiral_track(
 spiralize::spiral_yaxis(
   side = "both",
   at = c(0, 0.5, 1),
-  labels_gp = grid::gpar(fontsize = 14),
+  labels_gp = grid::gpar(fontsize = 16),
 )
 
 legend_rule <- spiralize::spiral_horizon(
@@ -82,7 +82,7 @@ grid::grid.text(
   0,
   0,
   default.units = "native",
-  gp = grid::gpar(fontfamily = "bold", fontface = "bold", fontsize = 16)
+  gp = grid::gpar(fontfamily = "bold", fontface = "bold", fontsize = 18)
 )
 
 # * Group Annotation

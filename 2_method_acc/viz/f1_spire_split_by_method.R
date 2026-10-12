@@ -72,7 +72,7 @@ purrr::iwalk(
     spiralize::spiral_yaxis(
       side = "both",
       at = c(0, 0.5, 1),
-      labels_gp = grid::gpar(fontsize = 14),
+      labels_gp = grid::gpar(fontsize = 18),
     )
 
     col_fun <- circlize::colorRamp2(c(0, 1), c("#ffdddd", "red"))
@@ -89,14 +89,14 @@ purrr::iwalk(
       0,
       0,
       default.units = "native",
-      gp = grid::gpar(fontfamily = "bold", fontface = "bold", fontsize = 16)
+      gp = grid::gpar(fontfamily = "bold", fontface = "bold", fontsize = 24)
     )
     grid::grid.text(
       glue::glue("method: {dt_name}"),
       x = 0.5,
       y = 0.98,
       just = "top",
-      gp = grid::gpar(fontface = "bold", fontsize = 18)
+      gp = grid::gpar(fontface = "bold", fontsize = 24)
     )
 
     # * Group Annotation
