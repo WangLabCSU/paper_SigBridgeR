@@ -2,3 +2,4 @@
 
 # flir files
 ^flir$
+^LICENSE\.md$
